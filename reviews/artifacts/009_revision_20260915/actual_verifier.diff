@@ -1,0 +1,68 @@
+--- historical
++++ revision
+@@ -28,6 +28,33 @@
+     return checks
+ 
+ 
++
++def check_frozen_manifest(path):
++    """Strict artifacts/computation; a past verifier version is provenance only."""
++    m=s.check(path.parent)
++    for name,digest in m.get('dependencies',{}).items():
++        assert s.pilot.digest_file(s.ROOT/name)==digest,(str(path),name)
++    historical_self_check=('verification.json' in m['files'] and
++        s.read_json(path.parent/'verification.json').get('self_check_not_independent_audit') is True)
++    provenance=[]
++    for name,digest in m.get('code_sha256',{}).items():
++        actual=s.pilot.digest_file(s.ROOT/name)
++        if historical_self_check and name=='tasks/009_retrieval_baselines/verify009.py':
++            provenance.append(dict(manifest=path.relative_to(s.ROOT).as_posix(),code=name,
++                recorded_sha256=digest,current_sha256=actual,matches=actual==digest,
++                role='historical_verifier_provenance_not_experimental_computation'))
++        else:
++            assert actual==digest,(str(path),name)
++    return provenance
++
++
++def workspace_snapshot():
++    """Repository state is diagnostic, not a substitute for frozen bindings."""
++    return dict(git_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=s.ROOT,text=True).strip(),
++        tracked_changes=subprocess.check_output(['git','diff','--name-only'],cwd=s.ROOT,text=True).splitlines(),
++        workspace_changes_policy='informational_only; frozen materials and computational code remain strict')
++
++
+ def run(output,tests=True):
+     output=output.resolve()
+     assert output.is_relative_to(s.OUT) and not output.exists()
+@@ -38,17 +65,17 @@
+         for target in ('socket.create_connection','socket.socket.connect','socket.socket.connect_ex'):
+             stack.enter_context(patch(target,side_effect=AssertionError('Network prohibited during 009 replay')))
+         manifest_checks=[]
++        verifier_provenance=[]
+         for path in sorted(s.OUT.rglob('manifest.json')):
+             if path.is_relative_to(output):
+                 continue
+             m=s.read_json(path)
+             if 'files' not in m:
+                 continue
+-            s.check(path.parent)
+-            for name,digest in {**m.get('dependencies',{}),**m.get('code_sha256',{})}.items():
+-                assert s.pilot.digest_file(s.ROOT/name)==digest,(str(path),name)
++            verifier_provenance.extend(check_frozen_manifest(path))
+             manifest_checks.append(path.relative_to(s.ROOT).as_posix())
+         evidence['frozen_manifests']=manifest_checks
++        evidence['historical_verifier_provenance']=verifier_provenance
+         auth=s.read_json(s.OUT/'authority_001.json')
+         for name,digest in auth['immutable_source_sha256'].items():
+             assert s.pilot.digest_file(s.ROOT/name)==digest
+@@ -221,9 +248,7 @@
+             evidence['tests']=dict(run=result.testsRun,errors=len(result.errors),failures=len(result.failures),success=result.wasSuccessful(),network_disabled=True)
+             assert result.wasSuccessful()
+         evidence['network_disabled']=True
+-    evidence['git_head']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=s.ROOT,text=True).strip()
+-    evidence['tracked_changes']=subprocess.check_output(['git','diff','--name-only'],cwd=s.ROOT,text=True).splitlines()
+-    assert set(evidence['tracked_changes'])<= {'README.md','AGENTS.md'}
++    evidence.update(workspace_snapshot())
+     evidence['self_check_not_independent_audit']=True
+     s.pilot.write_json(output/'verification.json',evidence)
+     s.seal(output,[s.OUT/'authority_001.json',s.OUT/'confirmation_protocol_001.json'],[Path(__file__),s.TASK/'retrieval_baseline.py',s.TASK/'score009.py',s.TASK/'score_interventions.py'])

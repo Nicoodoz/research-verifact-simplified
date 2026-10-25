@@ -1,0 +1,17 @@
+# Current CPU/API analysis environment used by scripts/run_research.ps1.
+# Observed 2026-09-27; key dependencies, not a complete transitive lock.
+# No clean installation was performed; old pins are in environment.legacy-analysis.yml.
+name: research-verifact-029
+channels:
+  - defaults
+dependencies:
+  - python=3.11.16
+  - pip
+  - pip:
+      - numpy==2.4.6
+      - scipy==1.17.1
+      - pandas==3.0.6
+      - scikit-learn==1.9.1
+      - duckdb==1.5.5
+      - matplotlib==3.10.8
+      - fonttools==4.65.0

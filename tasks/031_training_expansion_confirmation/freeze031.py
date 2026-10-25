@@ -1,0 +1,21 @@
+"""Finalize pre-response cost scenarios/protocol and fit four original-training Gates."""
+from collections import defaultdict
+import math,sys,importlib.metadata
+import common031 as c
+sys.path.insert(0,str(c.ROOT/'tasks/028_traceable_claim_evidence_verification'))
+import common028 as api28
+def run():
+    out=c.OUT/'freeze_001';c.require(not out.exists(),'Frozen already');mat=c.OUT/'materials_001';meta=c.read(mat/'budget.json');inputs=c.lines(mat/'inputs.jsonl');cached={r['proposition_id'] for r in c.lines(mat/'cached_c48.jsonl')};docs=defaultdict(list)
+    for p in c.lines(mat/'corpus.jsonl'):docs[p['subject_id']].append(len(p['search_text'].encode()))
+    embed=sum(api28.api.old.NATIVE.bound(j) for j in c.lines(mat/'embedding_jobs.jsonl'));rerank=sum((sum(sorted(docs[r['subject_id']],reverse=True)[:120])+min(120,len(docs[r['subject_id']]))*(len(r['text'].encode())+256)+2000)*.07/1e6 for r in inputs if r['proposition_id'] not in cached)
+    n=len(inputs);cost=meta['historical_mean_role_cny'];aux=sum(cost[k] for k in ('qwen','repeat','trace'));base=n*cost['deepseek']+embed+rerank;central=base+math.ceil(n*155/1529)*aux;stress=base+math.ceil(n*.25)*aux
+    budget=dict(central_candidate_rate=155/1529,central_estimate_cny=central,central_plus30pct_plus3reserve_cny=central*1.3+3,stress_candidate_rate=.25,stress_estimate_cny=stress,stress_plus30pct_plus3reserve_cny=stress*1.3+3,hard_cap_cny=80,retrieval_bound_cny=embed+rerank,rerank_union_bound='B48 union C48 <=72; plus A48 <=120; take120 largest actual patient documents, not blanket96x750',mean_role_cost_cny=cost,feasible=central*1.3+3<=80 and stress<=80,initial_budget_retained='materials_001/budget.json used stress as expected plus another30%+3; now separate central/stress rather than assert81CNY is ordinary expected expenditure',risk_note='Stress plus extra margin exceeds80; no unconditional worst-case guarantee. Per-request80 cap, unknown/inflight reservations and remaining-work forecasts enforced; no automatic shrink or replacement.',new_API_calls=0)
+    c.require(budget['feasible'],'Cannot execute whole task within reasonable80 estimate');out.mkdir(parents=True);c.put(out/'budget_002.json',budget)
+    c.put(out/'service_registry.json',dict(verified_date='2026-09-20',models={'score':'deepseek-v4-flash-0731','peer':'qwen3.8-27b','repeat':'deepseek-v4-flash-0731','trace':'deepseek-v4-flash-0731'},prices_cny_per_million={'deepseek':[3,9],'qwen':[3,12],'Pro_BGE':.07},official_sources=['https://help.aliyun.com/zh/model-studio/deepseek-v4-flash#snapshot','https://help.aliyun.com/zh/model-studio/model-pricing','https://siliconflow.cn/pricing','https://help.aliyun.com/zh/model-studio/deepseek-api'],settings='Exact024 scoring bodies(max2048) and028 repeat/trace bodies(max4096), no thinking,temp0',API_calls=0,price_basis='Beijing peak/no-cache estimate, not bill',dependency_added=dict(environment='research-verifact-029',package='duckdb',version=importlib.metadata.version('duckdb'),original_main_environment_unchanged=True)))
+    c.put(out/'feature_schema.json',c.base.schema());c.put(out/'learning_config.json',c.read(c.base.PREP/'config.json'));c.put(out/'environment.json',dict(**c.base.environment(),duckdb=importlib.metadata.version('duckdb')))
+    deps=[c.OUT/'protocol_001.md',c.OUT/'planning_001/manifest.json',mat/'manifest.json',c.base.PREP/'manifest.json']+list(c.TASK.glob('*.py'))+list(out.iterdir());c.put(out/'manifest.json',dict(created_utc=c.now(),sha256={p.relative_to(c.ROOT).as_posix():c.sha(p) for p in deps}))
+    train=c.lines(c.base.PREP/'features.jsonl');config=c.read(c.base.PREP/'config.json');testpatients=c.read(c.OUT/'planning_001/split.json')['confirmation12'];c.require(not set(testpatients)&{r['subject_id'] for r in train},'Patient leakage')
+    for method in ('A','B','C','D'):
+        fitted=c.learning.fold(train,[],c.base.FEATURES[method],'Logistic',config,testpatients);c.put(c.OUT/'before_models'/f'{method}.json',dict(method=method,training_scope='original16,15 candidate-bearing',**fitted))
+    c.put(c.OUT/'before_models/manifest.json',dict(created_utc=c.now(),files={p.name:c.sha(p) for p in (c.OUT/'before_models').iterdir() if p.is_file()},precedes_new_API=True));print(budget)
+if __name__=='__main__':run()

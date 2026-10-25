@@ -1,0 +1,46 @@
+# 当前环境与启动方式（2026-09-27）
+
+092研究已经完成。以下是复查/复现说明，不授权新训练、收费调用、部署或安装。本次只做零API环境探测，未安装、升级或改动现有环境。
+
+## 四类环境必须区分
+
+|用途|当前实际环境|声明/证据|
+|---|---|---|
+|CPU分析、评价、API管理|research-verifact-029，Python3.11.16|根environment.yml；本次CPU零API自检|
+|032/092本地GPU核验器|.local_models/032/venv（继承research），Python3.9.23，RTX3060 Laptop 6GB|environment.local-verifier.yml；本次只读包版本快照|
+|092已完成的AutoDL训练|用户venv092，Python3.12.3，RTX4090 24GB|environment.autodl-verifier.yml；用户导出的原始环境记录|
+|早期分析及021 BGE|research-verifact历史分析；research/research-bge历史GPU|environment.legacy-analysis.yml与environment.local-bge.yml；按原任务复现|
+
+085的A800/vLLM R1 Judge服务是另一条已完成的实验路线，不是092的编码器训练环境。Casperhansen0.9.2与Valdemardi0.10.1.1分支不混为同一checkpoint；不根据旧部署说明访问现有端口或下载权重。
+
+## CPU统一入口
+
+仓库根目录、pwsh：
+
+~~~powershell
+pwsh -NoProfile -File scripts/run_research.ps1 scripts/check_research_environment.py
+~~~
+
+该脚本禁网、不读取密钥/患者、不写研究结果；验证激活、优化器与矩阵计算。实际任务用同一wrapper传入已授权的脚本和参数。内部是conda run -n research-verifact-029 python -B；Windows的Conda DLL搜索路径需要激活，不能把未激活绝对python路径的故障等同于SciPy损坏。
+
+实测NumPy2.4.6、SciPy1.17.1、pandas3.0.6、scikit-learn1.9.1、duckdb1.5.5、Matplotlib3.10.8。irrCAC和pypdf未在此主环境安装；旧分析配置保留其依赖，不能混称当前主环境。证据：[CPU检查](maintenance/2026-09-27_sync/cpu_environment.json)、[包清单](maintenance/2026-09-27_sync/cpu_packages.json)。
+
+## 本地GPU入口
+
+现有032 venv设置include-system-site-packages=true，需配合research激活。如下仅查看解释器与torch版本，不加载权重、不训练、不写研究结果：
+
+~~~powershell
+E:/miniconda3/Scripts/conda.exe run --no-capture-output -n research D:/Research-VeriFact/.local_models/032/venv/Scripts/python.exe -c "import sys,torch; print(sys.version); print(torch.__version__)"
+~~~
+
+GPU分析/推理入口见[092复现说明](../tasks/092_task_adapted_verifier/README.md)，只在有合法私有材料的隔离副本复现。092训练入口已由完成标记阻止默认重跑；模型尺寸直接查看[既有记录](../outputs/092_task_adapted_verifier/model_size.json)，不把会写文件的生成器当只读命令。
+
+本地GPU关键版本为torch2.8.0+cu128、transformers4.56.1、numpy1.26.4、scipy1.13.1、scikit-learn1.6.1、tokenizers0.22.0、sentencepiece0.2.1。云端tokenizers0.22.2、sentencepiece0.2.2、Matplotlib3.10.5，与本地不同；不能声称两个环境逐包一致。权重/输入核验、956条标签数值桥接和12条在线原文部署检查已经完成，但不是跨硬件逐字节一致证明。
+
+## 重建清单与历史环境
+
+environment.yml现在声明CPU主环境，不再声明旧research-verifact。旧清单原样关键依赖保存在environment.legacy-analysis.yml；021专用environment.local-bge.yml仍然是历史BGE配置。新local-verifier/autodl-verifier清单只锁定本次实测的直接关键依赖，不是完整传递锁，也未在空环境安装验证。不要用更新配置直接覆盖一个冻结旧环境。
+
+原模型、tokenizer、权重revision和SHA见各任务manifest。092云端激活缓存未转回，本地E盘junction指向原RTX3060缓存；不能把云端cache_manifest的时长套给本地旧缓存。原文、checkpoint及缓存均保持私有忽略目录。GPU租金未知不代表免费。
+
+旧部署/激活故障详见[同步前历史记录](history/2026-09-27_before_sync/README.md)。只读查结果优先；需要严格重放历史hash时按[复查规则](REPRODUCIBILITY.md)使用对应旧版本。

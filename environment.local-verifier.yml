@@ -1,0 +1,21 @@
+# Observed local 032 venv + research activation; proposed separate rebuild name.
+# Key observed dependencies only; no clean environment installation verified.
+# These packages do not deploy the 085 R1/vLLM service.
+name: research-verifier-092
+channels:
+  - defaults
+dependencies:
+  - python=3.9.23
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.8.0+cu128
+      - transformers==4.56.1
+      - numpy==1.26.4
+      - scipy==1.13.1
+      - scikit-learn==1.6.1
+      - matplotlib==3.5.1
+      - tokenizers==0.22.0
+      - huggingface-hub==0.34.4
+      - safetensors==0.6.2
+      - sentencepiece==0.2.1

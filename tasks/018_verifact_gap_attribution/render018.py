@@ -1,0 +1,128 @@
+"""Render the single Chinese main report and mechanical statistical appendix."""
+from pathlib import Path
+import common018 as c
+
+def table(headers,rows):
+    return '| '+' | '.join(headers)+' |\n|'+ '|'.join(['---']*len(headers))+'|\n'+''.join('| '+' | '.join(map(str,r))+' |\n' for r in rows)+'\n'
+
+def render():
+    out=c.OUT;core=c.csvrows(out/'analysis_001/core_results.csv');strata=c.csvrows(out/'analysis_001/strata.csv')
+    metrics=c.read(out/'analysis_001/metrics.json');pairs=c.read(out/'analysis_001/paired.json')
+    content='''# 018：原VeriFact与C48体系的跨队列差距归因
+
+## 结论先行
+
+**下一阶段应优先研究Judge的支持判定边界及目标关系核验。** 两批患者都重复出现：原VeriFact更容易接受Supported，获得更高PA；C48＋V4更善于拒绝部分NS/NA，MCC反而更高。当前最清楚的差距是这种类别与支持范围权衡，不能概括成“原VeriFact检索全面更好”。
+
+证据选择／表示确有跨队列可定位的缺失，但**尚不能证明哪一层拥有最大的可实现净提升**。本任务给出优先级依据，不宣称已量化总体因果份额或已找到有效方法；不重启013–017失败版本。
+
+本轮为离线诊断，新增API调用及费用均为0。执行者复核已完成，**待独立审计**。
+
+## 1. 范围与可比性
+
+- **O**：002固定的原VeriFact发布系统，`v1.1.0-rater-121`、R1-70B、100 sentence facts等原发布配置。
+- **C**：冻结C48 reference＋V4-Flash。010使用其同期正式C48答案，**不使用009旧答案替代**；016使用首次V4答案，不用repeat/review选优。
+- **V**：仅010具备的发布reference＋V4；**Q**：016正式Qwen，仅作敏感性分析。
+- 010为6人650条，016为另6人601条，全部valid atomic claims、逐ID完整配对。继续002三分类评价、1000次患者cluster bootstrap；LLM/human分开。003开发序19–30，剩余10名development和reserved test未纳入。
+- O与当前后端并非同期，模型、prompt、推理设置及运行服务有别；016的Q为127条硅基流动＋474条阿里云，基础结果跨时段。不能把差异解释为单独权重或检索因果效应。
+
+来源：[010正式结果](../010_verifact_baseline_alignment/report.md)、[016正式结果](../016_disagreement_triggered_review_validation/completion_002/report.md)、[018冻结方案](protocol_001.md)。
+
+## 2. 净差距背后的全部四格
+
+“独对”指仅该系统与原医生GT一致，不等于其解释一定正确。
+
+'''
+    rr=[r for r in strata if r['dimension']=='ALL']
+    content+=table(['队列','N','O独对','C独对','共同错','共同对','O净多对'],[[r['cohort'],r['n'],r['O_only'],r['C_only'],r['both_wrong'],r['both_correct'],r['net_O_minus_C']] for r in rr])
+    content+='''总差72条背后是**156条O独对与84条C独对**，另有123条共同错。156/279=55.9%的C错误是O能答对的，但这只是两个系统的互补上限线索，不能当成能由某层修复的156条。
+
+'''
+    content+=table(['队列/作者','N','O独对','C独对','共同错','共同对','净差'],[[r['cohort']+'/'+r['value'],r['n'],r['O_only'],r['C_only'],r['both_wrong'],r['both_correct'],r['net_O_minus_C']] for r in strata if r['dimension']=='author_type' and r['cohort']!='pooled'])
+    content+='''两队列的净优势都主要来自GT=S：
+
+'''
+    content+=table(['队列/GT','N','O独对','C独对','净差'],[[r['cohort']+'/'+{'Supported':'S','Not Supported':'NS','Not Addressed':'NA'}[r['value']],r['n'],r['O_only'],r['C_only'],r['net_O_minus_C']] for r in strata if r['dimension']=='human_gt' and r['cohort']!='pooled'])
+    content+='''合计**S净+118、NS净−22、NA净−24，抵消后+72**。患者上，010为4人正向、1人持平、1人反向；93640贡献+18/29，明显影响该队列。016六人全部正向，净差分别+11、+5、+9、+11、+2、+5，说明高PA方向不是只有一个患者。各患者仍同时有O独对与C独对，不能推出对所有患者所有类别都占优。
+
+## 3. 高PA的代价：更高S召回、更多false-S、较低MCC
+
+PA为百分比，AC1/MCC为原尺度；false-S=GT为NS/NA却预测S。
+
+'''
+    content+=table(['队列/作者','系统','正确/N','PA%','AC1','MCC','false-S'],[[r['cohort']+'/'+r['author'],r['system'],r['correct']+'/'+r['n'],f"{100*float(r['PA']):.2f}",f"{float(r['AC1']):.4f}",f"{float(r['MCC']):.4f}",r['false_S']] for r in core if r['cohort']!='pooled' and r['system'] in ('O','C')])
+    content+='''O在四个队列×作者分层中PA/AC1均较高、MCC均较低。合计false-S为**O 79、C 27**；O多52条错误支持，不能将PA较高等同于更可靠地识别临床不一致。
+
+类别召回也重复：010 human的S/NS/NA召回，O为92.97%/59.26%/32.84%，C为84.98%/70.37%/49.25%；016 human，O为90.00%/45.24%/25.00%，C为74.19%/69.05%/45.00%。LLM队列高度偏S（010为228/243，016为178/189）；O的LLM NA两队列都未答对，但NA仅5条和1条，不外推稳定性能。
+
+配对患者bootstrap：O−C的PA区间，010 LLM为[+0.80,+12.26]百分点、human为[−0.87,+4.93]；016 LLM为[+4.69,+11.05]、human为[+4.48,+8.08]。四个MCC差值区间均跨0。小患者数、历史非同期及类别不均衡限制仍在，不能宣称统计上证明O整体优于C。
+
+[统计附录](statistics.md)给出全部混淆矩阵、类别指标入口、患者分层、V/Q和完整区间；[全量逐条台账](diagnosis_001/ledger.jsonl)保留1251条的四格与unknown。
+
+## 4. 010固定V4后的桥接：reference没有解释净优势
+
+010正确数为O=555、V=511、C=526，故：
+
+**O−C=+29 = (O−V=+44) + (V−C=−15)。**
+
+固定V4以后，改用发布reference反而少对15条；相对C有39条改对、54条改错。LLM净−4、human净−11。因此不能说原发布系统的+29主要由更好的reference带来。O−V的+44更指向**同reference下的后端／支持边界差异**，但包含模型、prompt、推理策略与运行时差异，不是纯模型因果效应。
+
+逐条桥接也不只看净数：65条O独对中，V仍正确31条，V变错34条；36条C独对中，V正确17条，V错误19条。前31条是reference相关的候选线索，但不能全部认定为关键证据缺失；后34条明确提示“提供同一发布reference仍不能复现O的标签”。不能把31/65或44/29写成因果归因比例。
+
+016没有发布reference＋V4这一臂，故**不能把其+43全部归Judge**。018不为填补此缺口调用新Judge。
+
+## 5. 哪些机制在两批患者上重复
+
+深读完整claim、两套完整reference、O完整reasoning_chain/final及当前完整输出共**78例**：010/016各39例，包括O独对31、C独对23、共同错12、共同对12。优先复用010/012既有方向性诊断，再按患者、作者、方向及GT覆盖固定选择。保留199处逐字锚点，114页材料按完全相同文本与metadata去重阅读。
+
+**方向性深读覆盖54/240（22.5%）；另186条机制保持unknown。** 全1251条机器统计完整，但没有全1251条医学机制裁决，也没有声称全部240条深读完成。`review_001`为阅读前快照（包括仅生成、未作为完整阅读计数的briefs），实际覆盖以`diagnosis_001`为准。目的性样本比例不能外推为总体瓶颈占比。
+
+| 机制/方向 | 010证据 | 016证据 | 能支持的结论 |
+|---|---|---|---|
+| 相近事实已在两包，支持范围不同 | [N182](diagnosis_001/cases/010_old6_N182.md)共同错对照：教学、焦虑均有，V4要求更明确目的；[N364](diagnosis_001/cases/010_old6_N364.md)把转换窦律理解成永久维持 | [S599](diagnosis_001/cases/016_recent6_S599.md)两包都有转科计划/Disposition，C要求完成、Q另要求逐字目的；[S488](diagnosis_001/cases/016_recent6_S488.md)本院手术与外院入院目标不同 | 后端目标/时间/完成状态的支持门槛是重复问题，但O正确也可能靠宽松推断 |
+| 同样的宽松支持会误判；C独对 | [N139](diagnosis_001/cases/010_old6_N139.md)、[N388](diagnosis_001/cases/010_old6_N388.md)全程状态/病灶范围需逐条核对 | [S522](diagnosis_001/cases/016_recent6_S522.md)把beta-blocker和糖尿病治疗共现当用途；[S018](diagnosis_001/cases/016_recent6_S018.md)可能诊断被当确诊 | 不能统一把C往S推来追PA，必须同时保护NS/NA |
+| 检查身份、结果、目的已进候选但未进包；O独对 | [N180](diagnosis_001/cases/010_old6_N180.md)Portable TTE头候选5/重排4，被每note限额排除；[N395](diagnosis_001/cases/010_old6_N395.md)Ortho会诊候选23/25、重排22/21，被字符限额排除 | [S079](diagnosis_001/cases/016_recent6_S079.md)浸润Echo结果候选26/重排32、[S092](diagnosis_001/cases/016_recent6_S092.md)血培养对象候选28/重排21，被字符限额排除；[S517](diagnosis_001/cases/016_recent6_S517.md)维持NSR目的候选26/重排12，被每note限额排除 | 两队列均有真实下游选择/表示损失，不应一律叫retrieval recall不足；尚无这些单点的稳定补回收益证明 |
+| 目标日期在候选前丢失；O独对 | [N526](diagnosis_001/cases/010_old6_N526.md)晚期HR在BM25第79/80，未进C48；[N585](diagnosis_001/cases/010_old6_N585.md)目标日肺塌陷dense53/BM2548，未进C48 | 本轮深读未得到同样强的独立016对应轨迹 | 召回/候选保留确有局部问题，不能据此宣称为两队列主要净差来源 |
+| 切分条件、日期及内容不同 | [N642](diagnosis_001/cases/010_old6_N642.md)STRICT NPO前条件丢失，与给药时间解释并存 | [S575](diagnosis_001/cases/016_recent6_S575.md)较明确diastolic CHF判断在候选13/重排16被字符限额排除；C主要保留Question背景 | 表示与Judge可同时起作用，不强制单因归类 |
+| C也能拥有更完整/更有用信息；C独对 | [N248](diagnosis_001/cases/010_old6_N248.md)C明确继续Lexapro；[N394](diagnosis_001/cases/010_old6_N394.md)神经外科对钙化的判断 | [S281](diagnosis_001/cases/016_recent6_S281.md)C保留完整Consults/P.T.；O把PT咨询误读为凝血检验 | O reference并非逐条占优；正确标签仍不保证所有解释正确 |
+| NS/NA与目标不明确；两边均可能错 | [N077](diagnosis_001/cases/010_old6_N077.md)共存疾病不证明因果；[N427](diagnosis_001/cases/010_old6_N427.md)伤口c/s目标与类别 | [S500](diagnosis_001/cases/016_recent6_S500.md)O漏读自身Acute RF；[S601](diagnosis_001/cases/016_recent6_S601.md)用房颤rate控制推HTN控制，C又NS而GT NA | unknown必须保留；不能以模型理由建立新医学gold |
+
+共同正确对照如[N197](diagnosis_001/cases/010_old6_N197.md)、[S530](diagnosis_001/cases/016_recent6_S530.md)、[S550](diagnosis_001/cases/016_recent6_S550.md)有直接共同证据；共同错如[S524](diagnosis_001/cases/016_recent6_S524.md)均把分散心律记录视作出院前连续48小时，提示即使双方有相关材料也可能错用时间范围。
+
+上述定位复用009/010/012原诊断和017冻结候选，并重建全部1251份C48；9个重点case的11个字面锚点均在同患者同日期已存索引中匹配，详见[候选轨迹](trace_001/anchor_traces.json)。匹配只证明文本与管线位置，零命中不证明EHR不存在；原VeriFact上游排名不可得，不能计算两系统医学证据recall。
+
+## 6. 最大缺口与下一阶段优先级
+
+1. **优先层：Judge decision。** 最强依据是两队列、两作者均重复的S召回—NS/NA拒绝权衡，加上010固定发布reference后的+44后端差距，以及双向支持范围病例。研究目标应是“在保留正确拒绝的同时，准确核验命题要求的关系/范围”，而非单纯提高S比例。它是最值得优先解释的层，**尚非已证明最大可优化净收益层**。
+2. **次优先的工程缺口：已找到证据的选择与表示保真。** 两队列都有候选内的关键头、结果、目的被配额/预算排除；归因比抽象的“相关性不好”更具体。但011/013/017已说明补信息或改选证据会产生harm；017稳定错误0/19救回、稳定正确3/160受损，不支持直接重做utility selector或扩大packing。
+3. **暂不优先全局检索扩宽。** 010确有候选外目标日期，016本轮没有同等强的重复证据；固定V4的发布reference整体还更差。没有evidence gold、原上游日志和同条件单点干预，无法给出retrieval/packing/Judge的全量因果百分比。
+
+016 Qwen敏感性仍呈同方向：O=489、Q=457，O独对80、Q独对48、共同错64、共同对409；O的false-S 42、Q 17，O的LLM/human MCC仍低于Q。Q的PA缩小差距，但未消除S与NS/NA权衡；混合服务限制保留。
+
+**回答“哪层headroom最大”：可观测标签差距最大且重复最稳定的是S支持判定；可实现的最大净headroom目前unknown。** 156条O独对既含证据缺失，也含宽松接受、目标歧义及可见理由错误，不能统一当学习目标。015互补仲裁、016独立复核、017单段utility干预均未形成可推广winner；018不据个例启动新prompt、检索、selector或训练。
+
+## 7. 复核与交审
+
+[离线复核](verification_001/summary.json)在阻断网络下重放002指标/区间、78例诊断与1251份打包，95个内容文件一致；18,121个非导航历史文件未变。018完整性8项负向/正常检查、002统一评价15项测试通过。最初尝试pytest时环境未安装，随后使用仓库原生unittest执行，无新增依赖或付费操作。
+
+[独立审计交接](audit_handoff.md)注明HEAD、工作区及文件指纹。执行者锚点核查和重放不等于独立审计PASS；所有临床语义观察只用于研究诊断，未改医生GT、未产生passage-level gold。
+'''
+    (out/'report.md').write_text(content,encoding='utf-8',newline='\n')
+    appendix='# 018统计附录（主报告的机器结果展开）\n\n只读核查用途；唯一必读主报告为[report.md](report.md)。指标来自002统一实现，行GT、列预测，顺序S/NS/NA。\n\n'
+    for q in ('010','016','pooled'):
+        appendix+=f'## {q}\n\n'
+        for a in ('llm','human'):
+            appendix+=f'### {a}\n\n'
+            appendix+=table(['系统','正确/N','PA','AC1','MCC','false-S'],[[r['system'],r['correct']+'/'+r['n'],r['PA'],r['AC1'],r['MCC'],r['false_S']] for r in core if r['cohort']==q and r['author']==a])
+            for s,m in metrics[q][a].items():
+                appendix+=f'**{s}混淆矩阵**\n\n'+table(['GT / Pred','S','NS','NA'],[[lab,*m['confusion_matrix'][i]] for i,lab in enumerate(('S','NS','NA'))])
+            appendix+='**O−C配对差值与95%患者区间**\n\n'+table(['指标','差值','95%区间'],[[k,v['delta'],str(v['ci95'])] for k,v in pairs[q][a]['O_minus_C']['metrics'].items()])
+    appendix+='## 逐患者四格\n\n'+table(['队列','患者','N','O独对','C独对','共同错','共同对','净差'],[[r['cohort'],r['value'],r['n'],r['O_only'],r['C_only'],r['both_wrong'],r['both_correct'],r['net_O_minus_C']] for r in strata if r['dimension']=='subject_id' and r['cohort']!='pooled'])
+    appendix+='\n逐患者×作者PA/AC1/MCC见[patients.csv](analysis_001/patients.csv)；每类别TP/FP/FN、precision/recall/F1见[classes.csv](analysis_001/classes.csv)；全部交叉分层见[strata.csv](analysis_001/strata.csv)；完整002返回与单系统区间见[metrics.json](analysis_001/metrics.json)；所有桥接配对区间见[paired.json](analysis_001/paired.json)。\n'
+    (out/'statistics.md').write_text(appendix,encoding='utf-8',newline='\n')
+    diagnoses=c.read(out/'diagnosis_001/diagnoses.json');ledger={r['case_id']:r for r in c.jsonlines(out/'preparation_001/ledger.jsonl')}
+    index='# 018已深读病例索引\n\n78例目的性样本，54例方向性＋24例共同对/错；未列出的方向性病例机制保持unknown。非新增医学gold。\n\n'
+    index+=table(['病例','作者/GT','方向','观察层','把握'],[[f"[{n['case_id']}](diagnosis_001/cases/{n['case_id']}.md)",ledger[n['case_id']]['author_type']+'/'+ledger[n['case_id']]['human_gt'],ledger[n['case_id']]['bucket'],n['layer'],n['confidence']] for n in diagnoses])
+    (out/'case_index.md').write_text(index,encoding='utf-8',newline='\n')
+
+if __name__=='__main__':render()

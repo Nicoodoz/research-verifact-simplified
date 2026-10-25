@@ -1,0 +1,7 @@
+# 095 运行适配修订（候选调用前）
+
+独立复核发现未使用的v2计价函数在一个失败响应恰带usage的边缘场景可能释放未知保留；新增pricing095_v3明确仅HTTP200且非outcome_unknown才按usage计价，其他一律保留忙时bound。v2代码原样保留且未实际用于收费执行。
+
+后续baseline恢复必须在原固定ID顺序上排除**所有095阶段**已有的同ID/同body成功B，不能只检查原baseline请求ID。run095_v3新增该排除并保存每次恢复清单指纹。workflow的B选择也扩展为所有阶段的最早同体095成功B；原workflow源码复制保留于workflow095_pre_resume_fix.py，其哈希与pricing_v2_freeze内旧workflow值一致。旧manifest指向旧路径的差异在此说明，不假称旧文件未变。
+
+构造提示、规则、队列、继续条件、原始请求回执、运行中的run095首版均未更改。新wrapper只在旧进程正常退出后用。所有费用仍在原SQLite内，发送前忙时上界原子化保留、总硬限150、常规130。

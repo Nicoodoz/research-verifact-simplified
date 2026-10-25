@@ -1,0 +1,6 @@
+# 033审计附件
+
+initial_check/handoff_snapshot保存285项初始成果指纹；audited_files_sha256保存283项冻结内容，排除当前状态及被verify033更新的进度元信息。execution_status_after_verify保存该副作用，详见主审计。
+verification.log/verification_summary为48422项实际离线核验；tests.log为4项测试。
+independent_check.py/independent_summary独立核对排名、所选面板分数及两主比较各1000次混合包络bootstrap。0 API、0重训；不是全面历史重审。
+撤回reserved准备不属于本次审计/提交；未打开其病例材料。

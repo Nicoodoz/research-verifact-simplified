@@ -1,0 +1,51 @@
+# 007：来源上下文辅助 EHR 检索
+
+> **现行导航（2026-09-27，项目已完成092）：**  [本任务成果入口](../../outputs/007_context_retrieval/README.md)。 独立结论查[审计末尾](../../reviews/007_context_retrieval.md)，不能把下方早期“待审”当最新状态。 [项目现状](../../docs/PROJECT_STATUS.md) · [任务索引](../../docs/TASK_INDEX.md) · [现行环境](../../docs/RUN_ENVIRONMENT.md)。下方正文保留原任务形成时状态、授权和命令；其中“当前/暂停/待运行/预算/不推送”仅适用于当时，不是当前待办。旧导航指纹复查使用[历史快照说明](../../docs/REPRODUCIBILITY.md#更早任务的严格重放)。
+
+## 原任务阶段说明（历史）
+
+原主报告、交审清单、自查记录以及报告源稿中的“等待审计”保留形成时状态；以本入口和审计最新结论判断任务状态。后续研究优先级以[009入口](../../outputs/009_retrieval_baselines/README.md)为准，旧建议不是新的待执行授权。 tasks目录中的report.md/report_template.md及research_notes是本任务报告源稿或定向阅读底稿，不是滚动更新的项目状态页。
+
+**已通过2026-09-14精简独立审计，无阻塞修正；依据见[审计记录](../../reviews/007_context_retrieval.md)。** 唯一优先阅读入口为 [简明中文主报告](../../outputs/007_context_retrieval/run_001/review_001/semantic_001/report.md)。以下保留运行前设计；授权时的逐字快照见 [execution_protocol_001.md](../../outputs/007_context_retrieval/execution_protocol_001.md)。目标是比较查询构造的影响，最终 Judge 始终核验原 atomic claim。
+
+## 能重建什么
+
+作者固定版本 `f115d36cb65fa2073fce0a10df56bb37f4cbcd50` 中，JudgeSubject 将 proposition 文本交给 ReferenceContextMaker；后者按患者/事实类型、CHARTDATE 的目标住院日历日期过滤，构造 dense/sparse/hybrid 检索、文本去重、rerank 和按时间排列的 reference。服务使用 BGE-M3 和 BGE-Reranker-V2-M3。release 有实际最终 reference，但没有索引快照、原始 EHR 事实节点/向量、完整候选分数或精确服务版本；源码快照也不能证明发布结果由该版本完整生成。007 不伪称等价复现，不运行缺失的原检索服务。
+
+新建可复查 BM25 词面基线：只索引选中患者的原 EHR，按 ADMISSIONS 的入院/出院日期（包含首尾整天）限制 CHARTDATE，排除 discharge summary；保留实际 HADM_ID 供回查，不用其代替已声明日期规则。索引单元为原记录空行段落，超过 640 字符在空白处分段，不改文本，保留 note ID、日期、字符偏移。验证所有已索引非空白字符无遗漏。检索代替方案与原 VeriFact 在事实单元、模型、索引、预算及去重上不同；不以新成绩相对发布成绩的差值推断查询贡献。
+
+## 固定设计
+
+- 新验证患者为 003 开发哈希顺序第 9–12 名：21706、55204、65399、47874。前八名已用于 004–006，不作为独立新验证，reserved test 不用于方法选择。
+- 从 406 条 valid claims 按固定 ID 哈希分层选 96 条，每患者/作者 12 条，先最多各 3 条 NS/NA，再以 S 补齐。LLM 为 39 S/5 NS/4 NA，human 为 27 S/9 NS/12 NA；不是自然类别分布或完整患者队列成绩。所有候选/未选 ID 保存，不按旧预测选样。
+- 四臂：`claim` 原 atomic claim；`sentence` 同 BHC、在 parent 内逐字出现且与 claim token Jaccard 最高的既有 sentence proposition；`local` 完整 parent 加前方最多 240 原字符；`mixed` claim 与 local 各取前 100 后等权 RRF，分数为 `1/(60+rank)` 之和。仅 retrieval 查询使用来源文本。sentence 不是默认优于 claim，local 中不一定只有相关断言。
+- BM25 固定 k1=1.2、b=0.75、平滑正 IDF；查询词二值化，简单小写词/数字分词并保留否定，数字前导零归一化；不使用医学同义词表或 LLM 改写。mixed 多一次免费的本地排序，不增加最终证据/模型调用预算。
+- 证据先从各排序前 100 中取最多 24 片段、上限 9,000 字符；再按同一 claim 四臂实际可用量的最小值统一预算。末片可在空白处分割，仍是可定位的原记录子串。仅同日期/类别/逐字文本去重，保留不同日期重复事件。按时间排序、标注 note ID/偏移后交 Judge。四臂平均完整 reference 约 7,764–7,772 字符，不声称严格等 tokenizer 数，另报真实 usage。
+- 四臂 Judge 相同：SiliconFlow DeepSeek-V4-Flash、temperature=0、enable_thinking=false、max_tokens=2048、原 004 common＋structured 提示及相同 JSON schema。输入数据字段仅 `proposition` 和 `reference`，不含来源上下文、查询、作者或 GT。模型别名不是不可变权重版本。
+- 四臂共 384 次请求；每患者/作者再以固定哈希选 1 个 claim，追加相同原生 body 的 `claim_repeat`，共 8 次，合计 392。重复只用于服务变异诊断，不替代原预测、不选优，四臂每个 claim 只保留原始响应。臂顺序按 24 种排列平衡；预设初始并发 2。
+- 默认主比较 mixed−claim；sentence−claim、local−claim 为诊断比较，也报告其他两两关系以理解粒度差异。全部使用 002 evaluate/paired_compare，三分类 micro PA/AC1/MCC、valid-only、固定队列、1,000 次患者 bootstrap，作者分开。缺失、非法标签或截断保持失败，完整作者/臂/配对才评分，不做 available-case。
+- 通信未知先暂停并核对本地空响应回执，登记为未重发失败，保留费用预留，仅继续未发工作；已收回答不因标签/格式重跑。余额无答案错误按原池切换账号。所有尝试跨账号合计、受 ¥16 与每请求最多 5 次限制；不重置预算。
+
+## 离线定位与解释边界
+
+005 C13/C16、006 N15/N23/N45 的关键证据已在 reference，不能直接归为检索失败。N25 的两个片段是否同份 ECG 是证据来源组织问题；本轮可连接到原 note 267779。N50 实际 reference 没有左 EVD 撤除片段，同患者其他 reference 有；新 claim-only 已能找回 note 458866，所以不能把找回当作上下文独有收益。
+
+C17/C18 和 N56 存在来源可提供事件/剂量限定的情况，但单独 parent 可能仍不含前文的关键日期。于是通过已分析病例的离线检查，把最终较宽查询统一设为 parent＋前 240 字符。这是生成新病例 Judge 结果前的设计修订，不是按新结果选最优。C17 的对应再操作耐受、C18 的精确最终剂量反应尚未被充分建立，不能给这些病例伪造检索 gold evidence。
+
+保存的关键词锚点只作已读案例的可定位诊断，不是全量临床 Recall@k 金标准。新结果要同时查看改善、退化和稳定对照的原输入/完整输出及证据；比较正确事件/状态是否加入、是否丢失核心证据、是否被无关来源事实带偏。相同 reference 的跨臂差异和 8 个重复请求用于提示 Judge 波动；不同证据下的单次答案不能证明内部因果机制。
+
+当前正式冻结输入为 [preparation_003](../../outputs/007_context_retrieval/preparation_003/manifest.json)。preparation_001 的段落正则遗漏已在发送前发现，保留为拒用快照；preparation_002 修复索引后用于发现 parent 不足，之后由 003 替代。两者均未发送。原始数据、001–006 历史 run 和审计意见不修改。
+
+主要实现：`retrieval.py`、`prepare.py`、`offline_checks.py`、`run_judge.py`。原算法主来源：[固定作者 ReferenceContextMaker](https://github.com/philipchung/verifact/blob/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/llm_judge/src/llm_judge/reference_context.py)；[BM25 说明](https://nlp.stanford.edu/IR-book/html/htmledition/okapi-bm25-a-non-binary-model-1.html)；[供应商有日期的价格公告](https://docs.siliconflow.cn/docs/release-notes/overview)。
+
+## 实际结果与事后追加
+
+四臂 384 次＋8 次重复基线均有效，主比较 mixed−claim 的 ΔMCC：LLM +0.0089、human −0.0718，两个患者区间均跨 0。sentence 在两作者方向相反，local 两组下降；同一完整 body 的 30 组中 8 组标签不一致，8 次独立重复基线有 2 次改判。18 个主分析病例（76 个完整输出、265 个去重/最大显示范围的证据片段）已深入阅读；R075/R095 的发布 reference 各 100 条全文核对。
+
+发现三例 claim 零候选使主方案的共同最小预算为零，遂按全部零预算案例登记事后固定上限补充对照，不按 GT/效果挑例、不修改原主试验。3 例×4 臂=12 次均有效；R031 从 NA→NS、R078 从 NA→S 符合原 GT，R083 仍未解决。它反映从无到有的候选救回，不是等有效 token 的比较。追加记录在 `zero_budget_sensitivity_001`，主表不替换。研究观察、假设和未决问题见 `semantic_notes.json`。
+
+全部 404 次实际尝试、有效回答 404；主试验 ¥4.0620408、补充 ¥0.108291，累计估算 ¥4.1703318（非账单），低于本任务当时授权的16元（未来任务长期规则为40元，不回写本轮预算）。补充单独 1 元上限，连同先前占用的合计保护量低于 16 元，没有因新 run 重置任务总预算。
+
+124 项断网测试通过，已有回执重评分和 377 处原文锚点验证通过。独立进程准备重建的全部原生请求、reference、队列、排序顺序一致，仅诊断 score 的浮点末位不同，保留记录。`verify_results.py` 只读已有回执，向新的 verification 目录输出；工作区文档只作信息比较，不阻止冻结实验重放。第一次自查见 verification_001，入口同步后复查见 verification_002，实际交审版本见 verification_001/handoff.json。
+
+007当时建议修改召回/证据组织并验证原claim约束重排；相关对照已由008–009执行，不直接扩大本版本；这四患者已用于逐例分析，后续不得称其未接触。API 费用长期规则和原有用户修改继续保留；新任务按冻结开发顺序使用剩余患者，reserved test 保持隔离。执行完成不等于独立审计通过。
