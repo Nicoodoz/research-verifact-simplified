@@ -1,0 +1,100 @@
+{
+  "default_changed": false,
+  "interpretation": "Useful simple baseline if S24 or EHR-all; L24 must also pass matched-length S24 before a whole-note mechanism claim",
+  "mechanism_confirmed": false,
+  "stability_pass": true,
+  "status": "失败停止",
+  "tests": {
+    "C": {
+      "practical": {
+        "MCC_CI_support": false,
+        "MCC_route_point": false,
+        "delta": {
+          "MCC": -0.01940326558436717,
+          "NA_recall": -0.16666666666666669,
+          "NS_recall": -0.07692307692307687,
+          "PA": 0.005291005291005235,
+          "false_S_rate": 0.0
+        },
+        "point_pass": false,
+        "risk_CI_support": false,
+        "risk_route_point": false,
+        "uncertainty_pass": false
+      },
+      "pressure": {
+        "NA_recall_limit": true,
+        "NS_recall_limit": true,
+        "delta": {
+          "MCC": 0.028011214765461534,
+          "NA_recall": 0.0625,
+          "NS_recall": 0.0,
+          "PA": 0.03125,
+          "false_S_rate": -0.0625
+        },
+        "false_S_limit": true,
+        "pass_all": true
+      }
+    },
+    "O": {
+      "practical": {
+        "MCC_CI_support": false,
+        "MCC_route_point": false,
+        "delta": {
+          "MCC": -0.020474088084662057,
+          "NA_recall": -0.08333333333333331,
+          "NS_recall": -0.07692307692307687,
+          "PA": 0.005291005291005235,
+          "false_S_rate": 0.05405405405405406
+        },
+        "point_pass": false,
+        "risk_CI_support": false,
+        "risk_route_point": false,
+        "uncertainty_pass": false
+      },
+      "pressure": {
+        "NA_recall_limit": true,
+        "NS_recall_limit": true,
+        "delta": {
+          "MCC": -0.09782168511490014,
+          "NA_recall": 0.0,
+          "NS_recall": -0.0625,
+          "PA": -0.03125,
+          "false_S_rate": -0.0625
+        },
+        "false_S_limit": true,
+        "pass_all": true
+      }
+    },
+    "S24": {
+      "practical": {
+        "MCC_CI_support": false,
+        "MCC_route_point": false,
+        "delta": {
+          "MCC": -0.01230850746946116,
+          "NA_recall": -0.08333333333333331,
+          "NS_recall": -0.07692307692307687,
+          "PA": 0.005291005291005235,
+          "false_S_rate": 0.0
+        },
+        "point_pass": false,
+        "risk_CI_support": false,
+        "risk_route_point": false,
+        "uncertainty_pass": false
+      },
+      "pressure": {
+        "NA_recall_limit": true,
+        "NS_recall_limit": true,
+        "delta": {
+          "MCC": -0.07554406999806074,
+          "NA_recall": -0.0625,
+          "NS_recall": 0.0,
+          "PA": -0.03125,
+          "false_S_rate": 0.0
+        },
+        "false_S_limit": true,
+        "pass_all": true
+      }
+    }
+  },
+  "winner": "L24"
+}

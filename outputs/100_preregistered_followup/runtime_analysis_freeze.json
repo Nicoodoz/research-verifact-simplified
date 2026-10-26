@@ -1,0 +1,12 @@
+{
+  "before_any100_response": true,
+  "files": {
+    "tasks/100_preregistered_followup/analyze100.py": "09df538074a70489b8afda37804b6255b14de901be961b48e4daeddd5f979288",
+    "tasks/100_preregistered_followup/gates100.py": "ab45e58e0bf0e49b7dd9a95653bb07324e352a1574274f203d10d5aaf9b19ed8",
+    "tasks/100_preregistered_followup/runtime100.py": "de5bffced6f3f47be97faa553b553d31bd5c12c2142f842b1debacb296bb7347",
+    "tasks/100_preregistered_followup/test_execution100.py": "e3b765eceda09e4af1216987853a594646605ab44859d662d8e7cfdd69788539"
+  },
+  "report_and_selfcheck_to_follow_without_rule_changes": true,
+  "selection_and_confirmation_rules_frozen": true,
+  "utc": "2026-10-26T16:06:56.302250+00:00"
+}

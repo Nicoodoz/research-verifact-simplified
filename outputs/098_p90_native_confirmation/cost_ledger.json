@@ -1,0 +1,45 @@
+{
+  "HTTP200": 2122,
+  "attempts": 2128,
+  "by_arm": {
+    "C": {
+      "HTTP200": 460,
+      "attempts": 462,
+      "cost_or_reserved_cny": 3.038142000000001
+    },
+    "F": {
+      "HTTP200": 80,
+      "attempts": 81,
+      "cost_or_reserved_cny": 1.379094
+    },
+    "O": {
+      "HTTP200": 560,
+      "attempts": 561,
+      "cost_or_reserved_cny": 7.224329099999988
+    },
+    "P": {
+      "HTTP200": 560,
+      "attempts": 560,
+      "cost_or_reserved_cny": 7.593730199999994
+    },
+    "Q": {
+      "HTTP200": 460,
+      "attempts": 462,
+      "cost_or_reserved_cny": 6.384519299999999
+    },
+    "Q_construct": {
+      "HTTP200": 2,
+      "attempts": 2,
+      "cost_or_reserved_cny": 0.018945
+    }
+  },
+  "construction_requests": 2,
+  "hard_cap_cny": 50.0,
+  "independent_financial_bill": false,
+  "prices_verified": "tasks/098_p90_native_confirmation/pricing_verification.md",
+  "retries": 6,
+  "target_requests": 2120,
+  "total_decimal_cny": "25.6387596000000004347",
+  "unknown_or_unverified_reservation_cny": 0.9129,
+  "used_or_reserved_cny": 25.638759600000018
+}

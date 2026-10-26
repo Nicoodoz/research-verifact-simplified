@@ -1,0 +1,65 @@
+{
+  "new_hard_cap": 130,
+  "operating_line": 125,
+  "options": [
+    {
+      "assumptions": "No cache or alias savings; full8192 output for every evidence request; full remaining098 cumulative50 capacity ring-fenced; idle input/output1.5/4.5; each request still reserved at peak byte bound",
+      "candidate_paths": {
+        "EHR-all": {
+          "confirmation_logical_jobs": 888,
+          "confirmation_max_output_no_cache_cny": 65.88280350000001
+        },
+        "L24": {
+          "confirmation_logical_jobs": 1192,
+          "confirmation_max_output_no_cache_cny": 68.05648649999993
+        },
+        "S24": {
+          "confirmation_logical_jobs": 888,
+          "confirmation_max_output_no_cache_cny": 47.176195499999984
+        }
+      },
+      "cross_model_no_cache_cny": 67.88307649999997,
+      "development_max_output_no_cache_cny": 28.782222000000022,
+      "prior098_maximum_remaining_task_room_cny": 44.9726699,
+      "profile": {
+        "confirm_n": 240,
+        "confirm_p": 20,
+        "dev_n": 60,
+        "dev_p": 16,
+        "name": "default",
+        "repeat": 24
+      },
+      "worst_new_total_no_cache_max_output_cny": 141.81137839999997
+    },
+    {
+      "assumptions": "No cache or alias savings; full8192 output for every evidence request; full remaining098 cumulative50 capacity ring-fenced; idle input/output1.5/4.5; each request still reserved at peak byte bound",
+      "candidate_paths": {
+        "EHR-all": {
+          "confirmation_logical_jobs": 704,
+          "confirmation_max_output_no_cache_cny": 50.981523000000024
+        },
+        "L24": {
+          "confirmation_logical_jobs": 944,
+          "confirmation_max_output_no_cache_cny": 53.8594365
+        },
+        "S24": {
+          "confirmation_logical_jobs": 704,
+          "confirmation_max_output_no_cache_cny": 37.37621999999997
+        }
+      },
+      "cross_model_no_cache_cny": 63.11780269999999,
+      "development_max_output_no_cache_cny": 22.46462400000003,
+      "prior098_maximum_remaining_task_room_cny": 44.9726699,
+      "profile": {
+        "confirm_n": 192,
+        "confirm_p": 16,
+        "dev_n": 48,
+        "dev_p": 12,
+        "name": "reduced",
+        "repeat": 16
+      },
+      "worst_new_total_no_cache_max_output_cny": 121.29673040000003
+    }
+  ],
+  "utc": "2026-10-26T15:54:37.828754+00:00"
+}

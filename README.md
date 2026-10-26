@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-临床文本与患者EHR的一致性核验研究。097与099选型已完成；[099推荐与限制](outputs/099_judge_selection/report.md)（主qwen3.5-35b-a3b、备qwen3.5-27b；默认不变）。**098已于2026-10-26获用户正式授权并启动**，冻结方法与样本后按峰谷时段执行；发布前发现续跑已中断，结果尚未完成，本次发布不重启。[098协议](tasks/098_p90_native_confirmation/protocol.md)。
+临床文本与患者EHR的一致性核验研究。098—100已完整结项；098 P90停止，100最终：**失败停止**。默认系统不变。[今晚一页结论](outputs/100_preregistered_followup/night_summary.md) · [100报告](outputs/100_preregistered_followup/report.md)。
 
 ## 总体目标
 
@@ -12,7 +12,7 @@ MCC 和 false-S 相对更重要：前者反映类别失衡下的整体分类质�
 
 ## 当前证据
 
-最接近同模型公平比较的是097的V4原作者式简洁任务对照，共同158条：
+最新同模型患者隔离确认见[100一页结论](outputs/100_preregistered_followup/night_summary.md)；结论为失败停止。下面097表只保留此前强对照背景，共同158条：
 
 | 配置（raw） | MCC | PA | 正确数 | false-S |
 |---|---:|---:|---:|---:|

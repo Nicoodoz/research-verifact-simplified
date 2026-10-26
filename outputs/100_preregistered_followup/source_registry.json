@@ -1,0 +1,62 @@
+{
+  "API_context_tokens": 1000000,
+  "files": [
+    {
+      "bytes": 7437,
+      "path": ".local_models/100_preregistered_followup/sources/HF_metadata.json",
+      "sha256": "df2cc34ffa405b89db2e4010bca33fe536c25fb96dda30cb19490db507ed5c04",
+      "url": "https://huggingface.co/api/models/deepseek-ai/DeepSeek-V4-Flash-0731"
+    },
+    {
+      "bytes": 6367146,
+      "path": ".local_models/100_preregistered_followup/sources/tokenizer.json",
+      "sha256": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer.json"
+    },
+    {
+      "bytes": 801,
+      "path": ".local_models/100_preregistered_followup/sources/tokenizer_config.json",
+      "sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer_config.json"
+    },
+    {
+      "bytes": 1888,
+      "path": ".local_models/100_preregistered_followup/sources/config.json",
+      "sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/config.json"
+    },
+    {
+      "bytes": 949125,
+      "path": ".local_models/100_preregistered_followup/sources/prices.html",
+      "sha256": "e4b1c828c9fd43de46ee2c57382891e8c11b2286dd244aad168c95bdb3281baf",
+      "url": "https://platform.qianwenai.com/docs/developer-guides/getting-started/model-prices"
+    },
+    {
+      "bytes": 750406,
+      "path": ".local_models/100_preregistered_followup/sources/capacity.html",
+      "sha256": "5143863637e91bea64693e64cc4cb4e4898a34ba60d2017a9cc73f936750042c",
+      "url": "https://platform.qianwenai.com/docs/developer-guides/getting-started/text-generation-models"
+    }
+  ],
+  "idle_UTC8": "22:00 to next08:00",
+  "local_config_context": 1048576,
+  "model": "deepseek-v4-flash-0731",
+  "no_paid_API": true,
+  "no_weights_downloaded": true,
+  "prices_CNY_per_million": {
+    "idle": [
+      1.5,
+      4.5,
+      0.15
+    ],
+    "peak": [
+      3,
+      9,
+      0.3
+    ]
+  },
+  "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+  "tokenizer_repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "tokenizers_in_CPU_environment": false,
+  "utc": "2026-10-26T15:32:44.034997+00:00"
+}

@@ -219,3 +219,8 @@ docs/papers/** -text
 docs/reading/** -text
 docs/reports/** -text
 docs/sharing/** -text
+
+# Preserve frozen098-100 source bytes across checkout (2026-10-27).
+tasks/098_p90_native_confirmation/** -text
+tasks/099_judge_selection/** -text
+tasks/100_preregistered_followup/** -text

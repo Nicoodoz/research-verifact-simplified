@@ -1,0 +1,34 @@
+{
+  "chosen": {
+    "assumptions": "No cache or alias savings; full8192 output for every evidence request; full remaining098 cumulative50 capacity ring-fenced; idle input/output1.5/4.5; each request still reserved at peak byte bound",
+    "candidate_paths": {
+      "EHR-all": {
+        "confirmation_logical_jobs": 704,
+        "confirmation_max_output_no_cache_cny": 50.981523000000024
+      },
+      "L24": {
+        "confirmation_logical_jobs": 944,
+        "confirmation_max_output_no_cache_cny": 53.8594365
+      },
+      "S24": {
+        "confirmation_logical_jobs": 704,
+        "confirmation_max_output_no_cache_cny": 37.37621999999997
+      }
+    },
+    "cross_model_no_cache_cny": 63.11780269999999,
+    "development_max_output_no_cache_cny": 22.46462400000003,
+    "prior098_maximum_remaining_task_room_cny": 44.9726699,
+    "profile": {
+      "confirm_n": 192,
+      "confirm_p": 16,
+      "dev_n": 48,
+      "dev_p": 12,
+      "name": "reduced",
+      "repeat": 16
+    },
+    "worst_new_total_no_cache_max_output_cny": 121.29673040000003
+  },
+  "no_quality_read": true,
+  "reason": "First of the two user-fixed scales whose most-expensive complete confirmation path fits125 with no cache and max outputs; selected before any100 answer",
+  "utc": "2026-10-26T15:54:41.681984+00:00"
+}

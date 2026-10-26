@@ -1,0 +1,135 @@
+{
+  "F_subset_same_ID": {
+    "C": {
+      "N": 80,
+      "mean_actual_or_reserved_cny": 0.00607025625,
+      "mean_cached": 0,
+      "mean_idle_no_cache_cny": 0.00591538125,
+      "mean_input": 2958.4625,
+      "mean_output": 328.375,
+      "mean_seconds": 4.380362500000047
+    },
+    "F": {
+      "N": 80,
+      "mean_actual_or_reserved_cny": 0.017238675,
+      "mean_cached": 4992,
+      "mean_idle_no_cache_cny": 0.0214033875,
+      "mean_input": 13122.5125,
+      "mean_output": 382.1375,
+      "mean_seconds": 4.691100000000096
+    },
+    "O": {
+      "N": 80,
+      "mean_actual_or_reserved_cny": 0.0134887875,
+      "mean_cached": 0,
+      "mean_idle_no_cache_cny": 0.01309820625,
+      "mean_input": 7484.5125,
+      "mean_output": 415.875,
+      "mean_seconds": 5.1216374999998155
+    },
+    "P": {
+      "N": 80,
+      "mean_actual_or_reserved_cny": 0.01479042375,
+      "mean_cached": 2048,
+      "mean_idle_no_cache_cny": 0.017166375,
+      "mean_input": 10037.5125,
+      "mean_output": 468.9125,
+      "mean_seconds": 5.7899999999995995
+    },
+    "Q": {
+      "N": 80,
+      "mean_actual_or_reserved_cny": 0.016634133750000002,
+      "mean_cached": 2022.4,
+      "mean_idle_no_cache_cny": 0.01683448125,
+      "mean_input": 10014.5125,
+      "mean_output": 402.825,
+      "mean_seconds": 5.033200000000124
+    }
+  },
+  "all_calls_by_arm": {
+    "C": {
+      "N": 460,
+      "mean_actual_or_reserved_cny": 0.006604656521739131,
+      "mean_cached": 200.34782608695653,
+      "mean_idle_no_cache_cny": 0.006298001086956522,
+      "mean_input": 2969.182608695652,
+      "mean_output": 409.8282608695652,
+      "mean_seconds": 5.161115217391014
+    },
+    "F": {
+      "N": 80,
+      "mean_actual_or_reserved_cny": 0.017238675,
+      "mean_cached": 4992,
+      "mean_idle_no_cache_cny": 0.0214033875,
+      "mean_input": 13122.5125,
+      "mean_output": 382.1375,
+      "mean_seconds": 4.691100000000096
+    },
+    "O": {
+      "N": 560,
+      "mean_actual_or_reserved_cny": 0.012900587678571428,
+      "mean_cached": 477.25714285714287,
+      "mean_idle_no_cache_cny": 0.013121086607142857,
+      "mean_input": 7332.258928571428,
+      "mean_output": 471.7107142857143,
+      "mean_seconds": 5.775342857142758
+    },
+    "P": {
+      "N": 560,
+      "mean_actual_or_reserved_cny": 0.0135602325,
+      "mean_cached": 2556.342857142857,
+      "mean_idle_no_cache_cny": 0.016826434821428572,
+      "mean_input": 9885.25892857143,
+      "mean_output": 444.12142857142857,
+      "mean_seconds": 5.553044642857146
+    },
+    "Q": {
+      "N": 460,
+      "mean_actual_or_reserved_cny": 0.013879389782608697,
+      "mean_cached": 2655.721739130435,
+      "mean_idle_no_cache_cny": 0.01650318586956522,
+      "mean_input": 9828.10652173913,
+      "mean_output": 391.3391304347826,
+      "mean_seconds": 4.938795652174082
+    }
+  },
+  "natural_primary_same_ID": {
+    "C": {
+      "N": 400,
+      "mean_actual_or_reserved_cny": 0.00691336125,
+      "mean_cached": 0,
+      "mean_idle_no_cache_cny": 0.0062496675,
+      "mean_input": 2966.325,
+      "mean_output": 400.04,
+      "mean_seconds": 5.07051999999976
+    },
+    "O": {
+      "N": 400,
+      "mean_actual_or_reserved_cny": 0.01352182875,
+      "mean_cached": 0,
+      "mean_idle_no_cache_cny": 0.01292851125,
+      "mean_input": 7283.805,
+      "mean_output": 445.0675,
+      "mean_seconds": 5.473249999999807
+    },
+    "P": {
+      "N": 400,
+      "mean_actual_or_reserved_cny": 0.014098678500000001,
+      "mean_cached": 2035.2,
+      "mean_idle_no_cache_cny": 0.01658739375,
+      "mean_input": 9836.805,
+      "mean_output": 407.1525,
+      "mean_seconds": 5.137852499999845
+    },
+    "Q": {
+      "N": 400,
+      "mean_actual_or_reserved_cny": 0.014797852500000002,
+      "mean_cached": 2035.2,
+      "mean_idle_no_cache_cny": 0.01643973,
+      "mean_input": 9813.805,
+      "mean_output": 382.005,
+      "mean_seconds": 4.852780000000203
+    }
+  },
+  "note": "Actual cache hits can depend on multi-arm/repeat execution. Matched single-arm comparisons also report idle no-cache cost from the same observed tokens; this is a normalized estimate, not an extra charge. Frozen P90 construction has historical cost outside this new-task ledger."
+}

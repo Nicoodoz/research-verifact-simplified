@@ -1,0 +1,79 @@
+{
+  "MCC_leader": "L24",
+  "checks": {
+    "EHR-all": {
+      "coverage": 1.0,
+      "eligible": true,
+      "natural_delta": {
+        "MCC": 0.05805074438899438,
+        "NA_recall": 0.0,
+        "NS_recall": 0.0,
+        "PA": 0.04166666666666674,
+        "false_S_rate": 0.0
+      },
+      "path_A": true,
+      "path_B": true,
+      "pressure_delta": {
+        "MCC": -0.1440195778988196,
+        "NA_recall": 0.0,
+        "NS_recall": -0.08333333333333331,
+        "PA": -0.04166666666666663,
+        "false_S_rate": -0.08333333333333334
+      },
+      "veto": []
+    },
+    "L24": {
+      "coverage": 1.0,
+      "eligible": true,
+      "natural_delta": {
+        "MCC": 0.12082609582347292,
+        "NA_recall": 0.0,
+        "NS_recall": 0.0,
+        "PA": 0.08333333333333337,
+        "false_S_rate": 0.0
+      },
+      "path_A": true,
+      "path_B": true,
+      "pressure_delta": {
+        "MCC": -0.06527163670056627,
+        "NA_recall": 0.08333333333333326,
+        "NS_recall": -0.08333333333333331,
+        "PA": 0.0,
+        "false_S_rate": -0.08333333333333334
+      },
+      "veto": []
+    },
+    "S24": {
+      "coverage": 1.0,
+      "eligible": true,
+      "natural_delta": {
+        "MCC": 0.08789133213248135,
+        "NA_recall": 0.0,
+        "NS_recall": 0.0,
+        "PA": 0.0625,
+        "false_S_rate": 0.0
+      },
+      "path_A": true,
+      "path_B": true,
+      "pressure_delta": {
+        "MCC": -0.22003628320739363,
+        "NA_recall": 0.0,
+        "NS_recall": -0.16666666666666669,
+        "PA": -0.08333333333333331,
+        "false_S_rate": -0.08333333333333334
+      },
+      "veto": []
+    }
+  },
+  "eligible": [
+    "S24",
+    "L24",
+    "EHR-all"
+  ],
+  "nearby": [
+    "L24"
+  ],
+  "rule": "MCC nearby0.03 -> pressure falseS -> natural PA -> matched no-cache actual token cost -> S/L/E identical tie",
+  "status": "development_complete_confirm_one",
+  "winner": "L24"
+}

@@ -1,0 +1,751 @@
+{
+  "body_identity_and_label_changes": {
+    "natural": {
+      "S_L_label_difference": 11,
+      "different_S_L_body": 116,
+      "frozen_N": 192,
+      "label_differences_by_GT": {
+        "Not Addressed": 2,
+        "Not Supported": 3,
+        "Supported": 6
+      },
+      "same_S_L_body": 76,
+      "valid_S_L": 191
+    },
+    "pressure": {
+      "S_L_label_difference": 3,
+      "different_S_L_body": 18,
+      "frozen_N": 32,
+      "label_differences_by_GT": {
+        "Not Addressed": 1,
+        "Not Supported": 2
+      },
+      "same_S_L_body": 14,
+      "valid_S_L": 32
+    }
+  },
+  "interpretation": {
+    "confirmation_delta_MCC_L_O": -0.020474088084662057,
+    "correct_final_status": "失败停止",
+    "decision_stability_pass_is_not_positive_evidence": true,
+    "development_delta_MCC_L_O": 0.12082609582347292,
+    "natural_new_correct_by_GT": {
+      "Not Addressed": -2,
+      "Not Supported": -1,
+      "Supported": 4
+    },
+    "no_GT_or_decision_changes": true,
+    "no_new_API": true,
+    "no_practical_route_passed": true,
+    "repeat_common_N": 15,
+    "repeat_flips": {
+      "L24": 0,
+      "O": 0,
+      "S24": 1
+    },
+    "repeat_second_delta_MCC_L_O": -0.13074359463873564,
+    "stability_clarification": "Primary MCC/risk practical routes both failed. The decision stability_pass flag is inapplicable as a positive claim; L-O repeat MCC is negative and O/L labels did not flip. Do not label this a stable advantage."
+  },
+  "matched_costs_by_panel": {
+    "natural": {
+      "C": {
+        "N": 192,
+        "mean_actual_input": 2950.3072916666665,
+        "mean_actual_output": 452.8177083333333,
+        "mean_no_cache_cny": 0.006463140625
+      },
+      "L24": {
+        "N": 192,
+        "mean_actual_input": 21057.130208333332,
+        "mean_actual_output": 544.8125,
+        "mean_no_cache_cny": 0.0340373515625
+      },
+      "O": {
+        "N": 192,
+        "mean_actual_input": 7451.973958333333,
+        "mean_actual_output": 473.5260416666667,
+        "mean_no_cache_cny": 0.013308828125
+      },
+      "S24": {
+        "N": 192,
+        "mean_actual_input": 21053.46875,
+        "mean_actual_output": 580.9947916666666,
+        "mean_no_cache_cny": 0.0341946796875
+      }
+    },
+    "pressure": {
+      "C": {
+        "N": 32,
+        "mean_actual_input": 2951.75,
+        "mean_actual_output": 510.09375,
+        "mean_no_cache_cny": 0.006723046875
+      },
+      "L24": {
+        "N": 32,
+        "mean_actual_input": 20691.40625,
+        "mean_actual_output": 488.90625,
+        "mean_no_cache_cny": 0.0332371875
+      },
+      "O": {
+        "N": 32,
+        "mean_actual_input": 7466.6875,
+        "mean_actual_output": 657.5,
+        "mean_no_cache_cny": 0.01415878125
+      },
+      "S24": {
+        "N": 32,
+        "mean_actual_input": 20688.6875,
+        "mean_actual_output": 522.3125,
+        "mean_no_cache_cny": 0.0333834375
+      }
+    }
+  },
+  "transfers": {
+    "natural": {
+      "C": {
+        "N": 189,
+        "class_transitions": [
+          {
+            "GT": "Not Addressed",
+            "N": 10,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 4,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 6,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 1,
+            "base": "Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 3,
+            "base": "Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 4,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 6,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Not Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 2,
+            "base": "Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 2,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Supported",
+            "N": 1,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 3,
+            "base": "Not Addressed",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 14,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 6,
+            "base": "Not Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 3,
+            "base": "Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 123,
+            "base": "Supported",
+            "candidate": "Supported"
+          }
+        ],
+        "delta_MCC_CI95": {
+          "ci95": [
+            -0.09909654066805763,
+            0.04613929750447404
+          ],
+          "delta": -0.01940326558436717
+        },
+        "false_S_added": 1,
+        "false_S_prevented": 1,
+        "false_S_rate_delta": 0.0,
+        "false_S_rate_delta_CI95": [
+          -0.08002702702702703,
+          0.0883021390374331
+        ],
+        "harm": 8,
+        "harm_by_GT": {
+          "Not Addressed": 4,
+          "Not Supported": 1,
+          "Supported": 3
+        },
+        "net": 1,
+        "patient_win_loss_tie": [
+          7,
+          6,
+          19
+        ],
+        "rescue": 9,
+        "rescue_by_GT": {
+          "Supported": 9
+        }
+      },
+      "O": {
+        "N": 189,
+        "class_transitions": [
+          {
+            "GT": "Not Addressed",
+            "N": 10,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 2,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 9,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 3,
+            "base": "Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 4,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 5,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 2,
+            "base": "Not Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 2,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Supported",
+            "N": 1,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 3,
+            "base": "Not Addressed",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 14,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 4,
+            "base": "Not Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 3,
+            "base": "Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 125,
+            "base": "Supported",
+            "candidate": "Supported"
+          }
+        ],
+        "delta_MCC_CI95": {
+          "ci95": [
+            -0.10595202679080921,
+            0.04735011509437541
+          ],
+          "delta": -0.020474088084662057
+        },
+        "false_S_added": 2,
+        "false_S_prevented": 0,
+        "false_S_rate_delta": 0.05405405405405406,
+        "false_S_rate_delta_CI95": [
+          0.0,
+          0.15003787878787875
+        ],
+        "harm": 7,
+        "harm_by_GT": {
+          "Not Addressed": 2,
+          "Not Supported": 2,
+          "Supported": 3
+        },
+        "net": 1,
+        "patient_win_loss_tie": [
+          5,
+          5,
+          22
+        ],
+        "rescue": 8,
+        "rescue_by_GT": {
+          "Not Supported": 1,
+          "Supported": 7
+        }
+      },
+      "S24": {
+        "N": 189,
+        "class_transitions": [
+          {
+            "GT": "Not Addressed",
+            "N": 10,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 2,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 9,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 3,
+            "base": "Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 3,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Not Supported",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 5,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Not Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 2,
+            "base": "Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 2,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Supported",
+            "N": 1,
+            "base": "Not Addressed",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 17,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 4,
+            "base": "Not Supported",
+            "candidate": "Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 1,
+            "base": "Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Supported",
+            "N": 127,
+            "base": "Supported",
+            "candidate": "Supported"
+          }
+        ],
+        "delta_MCC_CI95": {
+          "ci95": [
+            -0.07419703880371946,
+            0.03222628936068697
+          ],
+          "delta": -0.01230850746946116
+        },
+        "false_S_added": 1,
+        "false_S_prevented": 1,
+        "false_S_rate_delta": 0.0,
+        "false_S_rate_delta_CI95": [
+          -0.06980897009966777,
+          0.09090909090909091
+        ],
+        "harm": 5,
+        "harm_by_GT": {
+          "Not Addressed": 2,
+          "Not Supported": 2,
+          "Supported": 1
+        },
+        "net": 1,
+        "patient_win_loss_tie": [
+          2,
+          1,
+          29
+        ],
+        "rescue": 6,
+        "rescue_by_GT": {
+          "Not Supported": 1,
+          "Supported": 5
+        }
+      }
+    },
+    "pressure": {
+      "C": {
+        "N": 32,
+        "class_transitions": [
+          {
+            "GT": "Not Addressed",
+            "N": 12,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 1,
+            "base": "Not Supported",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 3,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 6,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Not Supported",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 7,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Supported",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Supported",
+            "candidate": "Not Supported"
+          }
+        ],
+        "delta_MCC_CI95": {
+          "ci95": [
+            -0.20345873265868894,
+            0.18342775347948648
+          ],
+          "delta": 0.028011214765461534
+        },
+        "false_S_added": 0,
+        "false_S_prevented": 2,
+        "false_S_rate_delta": -0.0625,
+        "false_S_rate_delta_CI95": [
+          -0.15625,
+          0.0
+        ],
+        "harm": 1,
+        "harm_by_GT": {
+          "Not Supported": 1
+        },
+        "net": 1,
+        "patient_win_loss_tie": [
+          2,
+          1,
+          12
+        ],
+        "rescue": 2,
+        "rescue_by_GT": {
+          "Not Addressed": 1,
+          "Not Supported": 1
+        }
+      },
+      "O": {
+        "N": 32,
+        "class_transitions": [
+          {
+            "GT": "Not Addressed",
+            "N": 12,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 1,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 2,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 1,
+            "base": "Supported",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 5,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 2,
+            "base": "Not Supported",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 7,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Supported",
+            "candidate": "Not Addressed"
+          }
+        ],
+        "delta_MCC_CI95": {
+          "ci95": [
+            -0.3715892930044198,
+            0.08812935746680431
+          ],
+          "delta": -0.09782168511490014
+        },
+        "false_S_added": 0,
+        "false_S_prevented": 2,
+        "false_S_rate_delta": -0.0625,
+        "false_S_rate_delta_CI95": [
+          -0.15151515151515152,
+          0.0
+        ],
+        "harm": 3,
+        "harm_by_GT": {
+          "Not Addressed": 1,
+          "Not Supported": 2
+        },
+        "net": -1,
+        "patient_win_loss_tie": [
+          1,
+          2,
+          12
+        ],
+        "rescue": 2,
+        "rescue_by_GT": {
+          "Not Addressed": 1,
+          "Not Supported": 1
+        }
+      },
+      "S24": {
+        "N": 32,
+        "class_transitions": [
+          {
+            "GT": "Not Addressed",
+            "N": 13,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 1,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Addressed",
+            "N": 2,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 7,
+            "base": "Not Addressed",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Not Addressed",
+            "candidate": "Not Supported"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 1,
+            "base": "Not Supported",
+            "candidate": "Not Addressed"
+          },
+          {
+            "GT": "Not Supported",
+            "N": 7,
+            "base": "Not Supported",
+            "candidate": "Not Supported"
+          }
+        ],
+        "delta_MCC_CI95": {
+          "ci95": [
+            -0.3273107280942448,
+            0.13849061688423725
+          ],
+          "delta": -0.07554406999806074
+        },
+        "false_S_added": 0,
+        "false_S_prevented": 0,
+        "false_S_rate_delta": 0.0,
+        "false_S_rate_delta_CI95": [
+          0.0,
+          0.0
+        ],
+        "harm": 2,
+        "harm_by_GT": {
+          "Not Addressed": 1,
+          "Not Supported": 1
+        },
+        "net": -1,
+        "patient_win_loss_tie": [
+          1,
+          2,
+          12
+        ],
+        "rescue": 1,
+        "rescue_by_GT": {
+          "Not Supported": 1
+        }
+      }
+    }
+  }
+}

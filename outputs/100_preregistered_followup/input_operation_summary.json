@@ -1,0 +1,342 @@
+{
+  "frozen": {
+    "confirmation": {
+      "L_equals_E": 92,
+      "L_selected_notes": {
+        "N": 224,
+        "max": 36,
+        "mean": 18.334821428571427,
+        "median": 18.0,
+        "min": 9,
+        "p95": 28
+      },
+      "S_L_gap": {
+        "N": 224,
+        "max": 115,
+        "mean": 3.5267857142857144,
+        "median": 0.5,
+        "min": 0,
+        "p95": 15
+      },
+      "S_equals_L": 90,
+      "S_selected_complete_passages": {
+        "N": 224,
+        "max": 178,
+        "mean": 122.61607142857143,
+        "median": 122.0,
+        "min": 54,
+        "p95": 160
+      },
+      "planned_N": 224,
+      "reference_lengths": {
+        "C": {
+          "N": 224,
+          "max": 3043,
+          "mean": 2514.410714285714,
+          "median": 2492.0,
+          "min": 2035,
+          "p95": 2828
+        },
+        "EHR-all": {
+          "N": 224,
+          "max": 251923,
+          "mean": 58922.57142857143,
+          "median": 27894.0,
+          "min": 6695,
+          "p95": 187546
+        },
+        "L24": {
+          "N": 224,
+          "max": 24000,
+          "mean": 20568.535714285714,
+          "median": 23861.0,
+          "min": 6695,
+          "p95": 23995
+        },
+        "O": {
+          "N": 224,
+          "max": 9640,
+          "mean": 7017.727678571428,
+          "median": 6948.0,
+          "min": 5071,
+          "p95": 8525
+        },
+        "S24": {
+          "N": 224,
+          "max": 23998,
+          "mean": 20565.008928571428,
+          "median": 23851.0,
+          "min": 6695,
+          "p95": 23991
+        }
+      }
+    },
+    "development": {
+      "L_equals_E": 45,
+      "L_selected_notes": {
+        "N": 72,
+        "max": 40,
+        "mean": 17.944444444444443,
+        "median": 17.0,
+        "min": 10,
+        "p95": 30
+      },
+      "S_L_gap": {
+        "N": 72,
+        "max": 199,
+        "mean": 5.833333333333333,
+        "median": 0.0,
+        "min": 0,
+        "p95": 23
+      },
+      "S_equals_L": 43,
+      "S_selected_complete_passages": {
+        "N": 72,
+        "max": 205,
+        "mean": 117.91666666666667,
+        "median": 120.5,
+        "min": 47,
+        "p95": 184
+      },
+      "planned_N": 72,
+      "reference_lengths": {
+        "C": {
+          "N": 72,
+          "max": 3104,
+          "mean": 2547.097222222222,
+          "median": 2558.0,
+          "min": 1989,
+          "p95": 2826
+        },
+        "EHR-all": {
+          "N": 72,
+          "max": 309589,
+          "mean": 36727.5,
+          "median": 18553.0,
+          "min": 7953,
+          "p95": 184646
+        },
+        "L24": {
+          "N": 72,
+          "max": 24000,
+          "mean": 17889.833333333332,
+          "median": 18553.0,
+          "min": 7953,
+          "p95": 23973
+        },
+        "O": {
+          "N": 72,
+          "max": 9644,
+          "mean": 7029.291666666667,
+          "median": 6915.0,
+          "min": 5235,
+          "p95": 8838
+        },
+        "S24": {
+          "N": 72,
+          "max": 23999,
+          "mean": 17884,
+          "median": 18553.0,
+          "min": 7953,
+          "p95": 23970
+        }
+      }
+    }
+  },
+  "no_new_API": true,
+  "observed_completed_phases": {
+    "confirmation": {
+      "actual_API_L_minus_S_input_tokens": {
+        "N": 224,
+        "max": 115,
+        "mean": 3.5267857142857144,
+        "median": 0.5,
+        "min": 0,
+        "p95": 15
+      },
+      "all_HTTP200_preserved": true,
+      "by_arm": {
+        "C": {
+          "input_tokens": {
+            "N": 224,
+            "max": 3482,
+            "mean": 2950.5133928571427,
+            "median": 2925.5,
+            "min": 2476,
+            "p95": 3265
+          },
+          "output_tokens": {
+            "N": 224,
+            "max": 3685,
+            "mean": 461,
+            "median": 313.0,
+            "min": 91,
+            "p95": 1322
+          }
+        },
+        "L24": {
+          "input_tokens": {
+            "N": 224,
+            "max": 24448,
+            "mean": 21004.883928571428,
+            "median": 24295.0,
+            "min": 7133,
+            "p95": 24434
+          },
+          "output_tokens": {
+            "N": 224,
+            "max": 3069,
+            "mean": 536.8258928571429,
+            "median": 377.5,
+            "min": 115,
+            "p95": 1554
+          }
+        },
+        "O": {
+          "input_tokens": {
+            "N": 224,
+            "max": 10082,
+            "mean": 7454.075892857143,
+            "median": 7383.0,
+            "min": 5505,
+            "p95": 8967
+          },
+          "output_tokens": {
+            "N": 224,
+            "max": 3318,
+            "mean": 499.8080357142857,
+            "median": 328.0,
+            "min": 111,
+            "p95": 1440
+          }
+        },
+        "S24": {
+          "input_tokens": {
+            "N": 224,
+            "max": 24439,
+            "mean": 21001.35714285714,
+            "median": 24293.5,
+            "min": 7133,
+            "p95": 24427
+          },
+          "output_tokens": {
+            "N": 224,
+            "max": 4183,
+            "mean": 572.6116071428571,
+            "median": 378.0,
+            "min": 111,
+            "p95": 1532
+          }
+        }
+      },
+      "logical_calls": 944,
+      "unique_body_slots": 847
+    },
+    "development": {
+      "actual_API_L_minus_S_input_tokens": {
+        "N": 72,
+        "max": 199,
+        "mean": 5.833333333333333,
+        "median": 0.0,
+        "min": 0,
+        "p95": 23
+      },
+      "all_HTTP200_preserved": true,
+      "by_arm": {
+        "C": {
+          "input_tokens": {
+            "N": 72,
+            "max": 3537,
+            "mean": 2983.5416666666665,
+            "median": 2993.0,
+            "min": 2433,
+            "p95": 3260
+          },
+          "output_tokens": {
+            "N": 72,
+            "max": 3827,
+            "mean": 501.77777777777777,
+            "median": 342.0,
+            "min": 95,
+            "p95": 1354
+          }
+        },
+        "EHR-all": {
+          "input_tokens": {
+            "N": 72,
+            "max": 310031,
+            "mean": 37164.15277777778,
+            "median": 18986.0,
+            "min": 8385,
+            "p95": 185077
+          },
+          "output_tokens": {
+            "N": 72,
+            "max": 3340,
+            "mean": 608.6527777777778,
+            "median": 418.5,
+            "min": 135,
+            "p95": 1657
+          }
+        },
+        "L24": {
+          "input_tokens": {
+            "N": 72,
+            "max": 24442,
+            "mean": 18326.48611111111,
+            "median": 18986.0,
+            "min": 8385,
+            "p95": 24404
+          },
+          "output_tokens": {
+            "N": 72,
+            "max": 2066,
+            "mean": 530.3472222222222,
+            "median": 333.5,
+            "min": 95,
+            "p95": 1639
+          }
+        },
+        "O": {
+          "input_tokens": {
+            "N": 72,
+            "max": 10100,
+            "mean": 7465.944444444444,
+            "median": 7350.0,
+            "min": 5668,
+            "p95": 9279
+          },
+          "output_tokens": {
+            "N": 72,
+            "max": 1793,
+            "mean": 493.52777777777777,
+            "median": 378.5,
+            "min": 117,
+            "p95": 1271
+          }
+        },
+        "S24": {
+          "input_tokens": {
+            "N": 72,
+            "max": 24440,
+            "mean": 18320.652777777777,
+            "median": 18986.0,
+            "min": 8385,
+            "p95": 24401
+          },
+          "output_tokens": {
+            "N": 72,
+            "max": 3046,
+            "mean": 605.3055555555555,
+            "median": 396.5,
+            "min": 135,
+            "p95": 1678
+          }
+        }
+      },
+      "logical_calls": 360,
+      "unique_body_slots": 272
+    }
+  },
+  "token_count_basis": "JSON-escaped reference interior, plus separately recorded actual native prompt usage"
+}

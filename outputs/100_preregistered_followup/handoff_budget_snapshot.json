@@ -1,0 +1,62 @@
+{
+  "GT_files_unchanged": true,
+  "abnormal_margin_cny": 5,
+  "default_env_sha256": "275a43e3766c0ff3089120021ef09cd05ad39ace9f93d74de23b6e08358ed427",
+  "forensic_missing_response_records": [
+    {
+      "attempt": 1,
+      "request_id": "17d040ebb4f90b33c3fd44ece30d",
+      "reserved_cny": 0.111312
+    },
+    {
+      "attempt": 1,
+      "request_id": "7d73ac08562177a7f7bbc346beab",
+      "reserved_cny": 0.175623
+    },
+    {
+      "attempt": 1,
+      "request_id": "a781f0c19ef0f551b8eb89f404f1",
+      "reserved_cny": 0.205959
+    },
+    {
+      "attempt": 1,
+      "request_id": "c1b9b569727ef623ee7ab8fe24b5",
+      "reserved_cny": 0.110832
+    },
+    {
+      "attempt": 1,
+      "request_id": "ee49de935118e0a213d5e6fb39ab",
+      "reserved_cny": 0.168024
+    },
+    {
+      "attempt": 1,
+      "request_id": "165713266d6882cab02e15ede2e1",
+      "reserved_cny": 0.14115
+    }
+  ],
+  "immutable098_sha256": {
+    ".local_models/098_p90_native_confirmation/demonstrations.json": "2ac49afca1713cb37b943071ae604366c461b142cd72bea9001b348285c3095f",
+    ".local_models/098_p90_native_confirmation/jobs.jsonl": "53a7498ed76d7663fa262abf735d19bab90b1ee826c19c5bce0d0bec841dbbe4",
+    ".local_models/098_p90_native_confirmation/sample.jsonl": "823c1264d2b28bfd6c9fc8704df2914e9ef5507b1dddb8f25bb1f2e09e42d5b1",
+    "outputs/098_p90_native_confirmation/budget_plan.json": "446848b70ec5b82abfa12c288416c8180bcc18e9e4d11073c59e0d84e3eacb27",
+    "outputs/098_p90_native_confirmation/cohort.jsonl": "04c100114f45f4d47a0ab30c81ddc1cccd84fc14718712900574791fa29a6c4f",
+    "outputs/098_p90_native_confirmation/demonstration_audit.json": "07e6d50003873f732dc0de45e18af30c565a8aae5b7e1ff91e457f93b92d7039",
+    "tasks/098_p90_native_confirmation/common098.py": "cba06eac49f7da3c1fbb47ab2f124c28b4f3054600bd6ba018e27a0e5519c295",
+    "tasks/098_p90_native_confirmation/prepare098.py": "057097374fe45aaba4b90a201fe11664e367eb93b1dab143f25c67345b7fd399",
+    "tasks/098_p90_native_confirmation/protocol.md": "e9fe29cae928fbfd78b73dc58b343454afa39b8ed232e5cdbcc6ff034e5aaf5b",
+    "tasks/098_p90_native_confirmation/runtime098.py": "a21a10ec0a8cf39f8f4ef1b34fbd581119e0853f07c6cc78b15bf4833151e3f8"
+  },
+  "new_API_hard_cap_cny": 130,
+  "old_unknown_reservations_retained": true,
+  "operating_line_cny": 125,
+  "previous098_HTTP200": 324,
+  "previous098_attempts": 330,
+  "previous098_cost_and_unknown_cny": 5.027330100000001,
+  "previous098_successful_target_requests": 322,
+  "previous099_excluded_from_new_budget": true,
+  "remaining098_target_requests": 1798,
+  "start_main": "d79f37337987d3c6df2826dc1bc24585315b1019",
+  "task098_original_cumulative_cap_cny": 50,
+  "task098_target_requests": 2120,
+  "utc": "2026-10-26T15:28:16.223220+00:00"
+}

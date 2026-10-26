@@ -1,0 +1,67 @@
+{
+  "continue_candidate": false,
+  "default_changed": false,
+  "gates": {
+    "C": {
+      "checks": {
+        "MCC_effect": false,
+        "PA_floor": true,
+        "false_S_limit": true,
+        "minority_recall": false,
+        "uncertainty_or_risk": false
+      },
+      "delta_MCC": 0.002312676683443593,
+      "delta_PA": 0.0025188916876575096,
+      "delta_false_S_rate": -0.020408163265306117,
+      "delta_recall": {
+        "Not Addressed": 0.014925373134328401,
+        "Not Supported": -0.09677419354838712
+      },
+      "pass_all": false
+    },
+    "O": {
+      "checks": {
+        "MCC_effect": false,
+        "PA_floor": true,
+        "false_S_limit": true,
+        "minority_recall": false,
+        "uncertainty_or_risk": false
+      },
+      "delta_MCC": -0.016063573993635893,
+      "delta_PA": -0.005037783375314797,
+      "delta_false_S_rate": -0.010204081632653059,
+      "delta_recall": {
+        "Not Addressed": -0.014925373134328401,
+        "Not Supported": -0.12903225806451613
+      },
+      "pass_all": false
+    },
+    "Q": {
+      "checks": {
+        "MCC_effect": false,
+        "PA_floor": true,
+        "false_S_limit": true,
+        "minority_recall": true,
+        "uncertainty_or_risk": false
+      },
+      "delta_MCC": -0.0026980735886493745,
+      "delta_PA": -0.005037783375314797,
+      "delta_false_S_rate": -0.010204081632653059,
+      "delta_recall": {
+        "Not Addressed": 0.05970149253731338,
+        "Not Supported": -0.032258064516129004
+      },
+      "pass_all": false
+    }
+  },
+  "independent_audit": false,
+  "pressure_checks": {
+    "false_S_limit": true,
+    "minority_recall": false
+  },
+  "recommend_replace_C": false,
+  "repeat_direction_reversal": {
+    "O": false,
+    "Q": true
+  }
+}

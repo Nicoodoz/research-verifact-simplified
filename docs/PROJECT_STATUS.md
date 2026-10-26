@@ -1,6 +1,6 @@
-# 项目现状（2026-10-26，097与099已完成，098尚未完成）
+# 项目现状（2026-10-27，098—100已结项）
 
-097与099选型已完成；098已于2026-10-26获用户正式授权启动，新增API硬限50元。冻结自然400四臂、压力NS/NA各50条O/P、F80及四臂重复60；首批32次正式请求后曾于22:00独立续跑；2026-10-26发布前核对发现进程已退出、计划任务Ready，日志显示中断，状态文件RUNNING已过时。尚无完整分类结论；本次只发布已有材料，不重启或新增API。见[发布时状态](../outputs/098_p90_native_confirmation/publication_status_20261026.json)。[098协议](../tasks/098_p90_native_confirmation/protocol.md) · [冻结与预算](../outputs/098_p90_native_confirmation/execution_freeze.json)。实际HEAD以git为准。默认仍是 **C48 → DeepSeek V4 Flash T-S thinking-high → Frozen PriorG，无示例B**。
+098已完整收尾：2120目标+2构造，P未通过对O/Q/C的继续/实用门槛，停止该版本。100按既定证据分支完成，最终为失败停止；开发48自然+24压力，确认预冻192自然+32压力、重复16，实际执行范围见报告。新API累计及预留¥45.863688/130；旧098成本不重置，其累计仍≤50。默认不变。[今晚一页结论](../outputs/100_preregistered_followup/night_summary.md) · [100报告](../outputs/100_preregistered_followup/report.md) · [098报告](../outputs/098_p90_native_confirmation/report.md)。
 
 ## 当前研究目标与运行事实
 
@@ -12,7 +12,7 @@
 
 ## 最近结果与可主张范围
 
-099已完成四种Qwen Judge选型：608 HTTP200、0重试，目录价¥8.958557/20；主候选qwen3.5-35b-a3b、备选qwen3.5-27b。原reference自然共同78条，主候选MCC0.5225、PA79.49%、false-S2/19；诊断与C48存在代价，不能主张全面更安全。默认未修改，098原冻结不变、尚未完成。[099正式报告](../outputs/099_judge_selection/report.md) · [费用](../outputs/099_judge_selection/cost_ledger.json) · [A800桥接方案](../outputs/099_judge_selection/A800_bridge_plan.md)。
+099四种Qwen Judge选型已完成；原推荐qwen3.5-35b-a3b、备选qwen3.5-27b保持原结论，不据100改变排名，不自动升级默认。[099报告](../outputs/099_judge_selection/report.md)。
 
 097同V4四臂原生接口对照完成：raw共同158条C48 B/简洁任务/现行B＋G正确116/125/135；固定同body桥接12条raw改变4条。原生任务提供更强raw对照但没有最终系统升级。40例源文核查482条都可定位，405条切开父段；自动依赖和B完整四臂费用门槛未过，B无分类成绩。新增492 HTTP200、0重试、忙时原价¥12.967287/20，自检通过、独立审计未执行，默认不变。[正式报告](../outputs/097_native_judge_source_dependence/report.md)。
 

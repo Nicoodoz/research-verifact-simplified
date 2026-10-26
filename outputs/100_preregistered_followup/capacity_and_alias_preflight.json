@@ -1,0 +1,39 @@
+{
+  "actual_identity_counts": {
+    "confirmation": {
+      "L_equals_E": 92,
+      "N": 224,
+      "S_equals_L": 90,
+      "max_S_L_token_gap": 115
+    },
+    "development": {
+      "L_equals_E": 45,
+      "N": 72,
+      "S_equals_L": 43,
+      "max_S_L_token_gap": 199
+    }
+  },
+  "all_EHR_inputs_complete_and_within_capacity": true,
+  "branches": {
+    "cross_model": {
+      "context_capacity": 256000,
+      "logical_jobs": 880,
+      "maximum_input_tokens_forecast": 22494,
+      "unavailable_capacity_cases": 0,
+      "unique_body_slots": 880
+    },
+    "evidence": {
+      "context_capacity": 1000000,
+      "logical_jobs": 1560,
+      "maximum_input_tokens_forecast": 310204,
+      "unavailable_capacity_cases": 0,
+      "unique_body_slots": 1276
+    }
+  },
+  "checks": 9888,
+  "full_confirmation_patients": 32,
+  "no_GT_in_target_payload": true,
+  "no_paid_API": true,
+  "status": "PASS",
+  "utc": "2026-10-26T16:09:33.283444+00:00"
+}

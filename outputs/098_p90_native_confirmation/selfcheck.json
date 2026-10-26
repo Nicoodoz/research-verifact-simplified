@@ -1,0 +1,25 @@
+{
+  "attempts": 2128,
+  "checks": 18788,
+  "default_changed": false,
+  "direct_verdict_only": true,
+  "frozen_P_preserved": true,
+  "independent_audit": false,
+  "native_receipts_checked": 2120,
+  "patient_isolation": true,
+  "scope": "Executor checks plus independent formulas/sklearn; not independent investigator or physician audit.",
+  "status": "PASS",
+  "total_original_or_reserved_cny": "25.63875960",
+  "unknown_reservation_cny": "0.912900",
+  "utc": "2026-10-26T16:11:40.730401+00:00",
+  "verified_panels": {
+    "natural": {
+      "N": 397,
+      "models": 5
+    },
+    "pressure": {
+      "N": 99,
+      "models": 3
+    }
+  }
+}
