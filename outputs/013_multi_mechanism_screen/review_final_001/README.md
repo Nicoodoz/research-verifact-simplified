@@ -1,1 +1,0 @@
-历史诊断初稿。N305的ASA、N425的8月5日拔管、N644的吞咽试验三项入选状态解释已被程序回查纠正；它们本来就在两臂输入中。当前阅读review_final_002，修正源见tasks/013_multi_mechanism_screen/case_corrections.json。旧文字/初版渲染代码保留，不改原模型结果或指标。

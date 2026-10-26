@@ -1,1 +1,0 @@
-历史诊断草稿：refresh48锚点的rerank_rank误引用旧C48分数。现行screen_input_diagnostics_002改用同次新重排分数；其余机器汇总不变。对应初版脚本diagnose_inputs013.py保留，现行脚本diagnose_inputs013_final.py。此修正未改变任何方法、请求、reference、评分或门槛。

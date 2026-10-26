@@ -1,7 +1,0 @@
-# 工程更正：空content的运行元数据汇总
-
-校准143个HTTP200均已落盘，写stage_calibration.json后，append runtime ledger时因finish_reasons同时包含None/字符串键、sort_keys不可比较而退出。原请求、响应、回执及阶段JSON保留。
-
-修复仅作用于新backend的运行元数据：085 parser原样保留；若content=None导致parser早退，usage和finish_reason从真实OpenAI envelope补读。finish频数键统一转为字符串，避免JSON排序错误。valid/verdict/label_scores及无效规则不改，不读GT，不补造评分，不重发成功请求。
-
-恢复时已完成calibration阶段通过其冻结stage记录跳过，全部143成功复用；最终对账按每份原生envelope精确统计token和finish。旧stage统计中遗漏的该类元数据另行更正，不覆盖原快照。这是工程修复，不是提示或方法版本搜索。
