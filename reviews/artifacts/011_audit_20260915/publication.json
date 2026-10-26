@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-09-15T06:34:17.714140+00:00",
+  "audited_handoff_sha256": "ae4caec34e5bb93448d24958429b910fbbfd4dfd2f4cbe789cc4df8df7c4e5bc",
+  "changed_handoff_files_only_current_docs": [
+    "AGENTS.md",
+    "README.md",
+    "outputs/011_evidence_integrity_packaging/README.md",
+    "tasks/011_evidence_integrity_packaging/README.md"
+  ],
+  "updates": {
+    "reviews/README.md": {
+      "before": "a007b45fb482471d49c3705def86029763513e4ba56443a8f59cac1d2deb3750",
+      "after": "c672455df8d79bae0e08f461cc808c62ecbfd4f1eb464e602029efce0c53fccd"
+    },
+    "README.md": {
+      "before": "cc845baed8224059a87c96e319dd1991d8ddaf9f91afe150a256531c521a7a29",
+      "after": "b9de847376240a4eb6907b8edc03a422ba88bfe49a99e864869c98b531401e0b"
+    },
+    "AGENTS.md": {
+      "before": "66ad306690f3b9bad1115d8b1d9b123bb1583fc0e0cf26ac712ecff1fd6b6bf2",
+      "after": "2a56ff7c8b6572d3045a22737b2bacaedad3d7673f876ff83b1b255c374d140d"
+    },
+    "tasks/011_evidence_integrity_packaging/README.md": {
+      "before": "3f7f7c8056a7ea12dfc2713776e17894f20bc67b91539ddb55fb4866e448e08f",
+      "after": "3bae23a4efa36b86080a7897aaebeb4e4aec0eedb58f4b1569d46d73a7ea9805"
+    },
+    "outputs/011_evidence_integrity_packaging/README.md": {
+      "before": "d869cf923f62fcd9a70bc8a9d9fddb74c3f4ef041fbf661060d3d2f3aa6912b0",
+      "after": "84e10e5550a91445dafeadb0686a0eb7ae57dde31825ccc814910fd649b81dda"
+    },
+    ".gitattributes": {
+      "before": "28eb14b55c15824262fc7437ed0ed37fa785ed2de8d4bd76d51e9475180315d2",
+      "after": "7b0dd2e5d7d80de993c2946c090020c35b859a925d2e3b5e34dd32a67e879825"
+    }
+  },
+  "no_new_api_calls": true,
+  "gitignore_and_environment_unchanged": true,
+  "main_not_run": true
+}

@@ -1,0 +1,116 @@
+{
+  "019_support_boundary_screen": {
+    "receipts": 1333,
+    "attempts": 1334,
+    "status_counts": {
+      "200": 1312,
+      "429": 21
+    },
+    "phases": {
+      "probe": {
+        "jobs": 12,
+        "success": 12
+      },
+      "selection": {
+        "jobs": 1300,
+        "success": 1300
+      }
+    },
+    "known_estimate_cny": 16.17636299999998,
+    "unknown_reserved_cny": 1.3277999999999999,
+    "total_cny": 17.50416299999998,
+    "decoded_labels": 4550,
+    "counts": {
+      "0": {
+        "B": {
+          "correct": 530,
+          "false_S": 21
+        },
+        "U0": {
+          "correct": 529,
+          "false_S": 24
+        },
+        "U_lambda_2": {
+          "correct": 567,
+          "false_S": 43
+        },
+        "O": {
+          "correct": 555,
+          "false_S": 37
+        }
+      }
+    },
+    "authority_before_first_send": true,
+    "first_send_utc": "2026-09-18T04:49:55.392987+00:00",
+    "last_send_utc": "2026-09-18T06:47:51.735096+00:00"
+  },
+  "020_lambda2_patient_validation": {
+    "receipts": 4531,
+    "attempts": 4531,
+    "status_counts": {
+      "200": 4524,
+      "0": 3,
+      "500": 3,
+      "400": 1
+    },
+    "phases": {
+      "new10_embedding": {
+        "jobs": 129,
+        "success": 129
+      },
+      "new10_judge": {
+        "jobs": 3516,
+        "success": 3516
+      },
+      "new10_rerank": {
+        "jobs": 879,
+        "success": 879
+      }
+    },
+    "known_estimate_cny": 43.86662652000014,
+    "unknown_reserved_cny": 0.417882,
+    "total_cny": 44.28450852000014,
+    "decoded_labels": 3516,
+    "counts": {
+      "0": {
+        "B": {
+          "correct": 641,
+          "false_S": 17
+        },
+        "U0": {
+          "correct": 650,
+          "false_S": 19
+        },
+        "U2": {
+          "correct": 718,
+          "false_S": 47
+        },
+        "O": {
+          "correct": 674,
+          "false_S": 57
+        }
+      },
+      "1": {
+        "B": {
+          "correct": 632,
+          "false_S": 16
+        },
+        "U0": {
+          "correct": 630,
+          "false_S": 17
+        },
+        "U2": {
+          "correct": 708,
+          "false_S": 52
+        },
+        "O": {
+          "correct": 674,
+          "false_S": 57
+        }
+      }
+    },
+    "authority_before_first_send": true,
+    "first_send_utc": "2026-09-18T07:39:51.175080+00:00",
+    "last_send_utc": "2026-09-18T15:12:59.617202+00:00"
+  }
+}

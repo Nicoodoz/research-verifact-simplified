@@ -1,0 +1,47 @@
+{
+  "head": "1d6e4e0d9d2756f1be8a50305d2605e212b43344",
+  "handoff_sha256": "ae4caec34e5bb93448d24958429b910fbbfd4dfd2f4cbe789cc4df8df7c4e5bc",
+  "handoff_files": 377,
+  "new_api_calls": 0,
+  "receipts": {
+    "402": 4,
+    "200": 195
+  },
+  "cost_cny": "1.2873834",
+  "tokens": {
+    "input": 582936,
+    "output": 60321
+  },
+  "round_net_correct": {
+    "B-A": [
+      -2,
+      0,
+      0
+    ],
+    "C-B": [
+      -1,
+      0,
+      0
+    ]
+  },
+  "main_gate_rejected_before_credentials": true,
+  "protocol_and_inputs_precede_calls": true,
+  "replay": {
+    "gate_proceed_main": false,
+    "git_head": "1d6e4e0d9d2756f1be8a50305d2605e212b43344",
+    "history_files_unchanged": 4884,
+    "independent_audit": false,
+    "network_blocked": true,
+    "new_api_calls": 0,
+    "replayed_content_files": 31,
+    "success": true,
+    "tests": 160,
+    "total_cost_or_reserved_cny": 1.287383400000001,
+    "tracked_changes": [
+      "AGENTS.md",
+      "README.md"
+    ],
+    "workspace_changes_informational": true
+  },
+  "handoff_unchanged_after": true
+}

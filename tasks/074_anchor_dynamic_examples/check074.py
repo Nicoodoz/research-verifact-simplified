@@ -24,7 +24,7 @@ def main():
    text=by[t['id'],arm]['body']['messages'][0]['content'];assert text.startswith(p4) and len(text)>len(p4);n+=1
   s=sels[t['id']];assert .9<=s['added_length_ratio']<=1.1 and len(set(s['dynamic_ids']))==2;n+=1
  unique=r.jobs_for('pilot');aliases=lines(OUT/'pilot_aliases.jsonl');assert len(unique)==len({x['body_sha256'] for x in aliases});n+=1
- assert 'time' in tags('on [CLINICAL_LITERAL_REMOVED]') and '2153' in clean('on [CLINICAL_LITERAL_REMOVED]');n+=1
+ assert 'time' in tags('on [**2153-1-18**]') and '2153' in clean('on [**2153-1-18**]');n+=1
  assert {'causal','quantity','negation'}<=tags('No improvement due to 5 mg medication.');n+=1
  assert r.CAP==20 and r.charge({'http_status':0},.2)==.2;n+=1
  # Forecast from the entire 073 B/F4 observed usage, scaled by actual serialized body length.

@@ -1,0 +1,214 @@
+# Preserve exact artifact bytes so audit manifest hashes survive Git checkout.
+outputs/** -text
+
+# Preserve frozen 018 source and diagnosis bytes.
+tasks/018_verifact_gap_attribution/** -text
+docs/sources/verifact_upstream_f115d36cb65f/** -text
+
+# Preserve newly frozen 009 source and audit bytes across Windows checkout.
+tasks/009_retrieval_baselines/** -text
+tests/test_retrieval_baselines.py -text
+tests/test_retrieval_replay_guard.py -text
+reviews/009_retrieval_baselines.md -text
+reviews/artifacts/009_audit_20260915/** -text
+reviews/artifacts/009_revision_20260915/** -text
+
+# Preserve documentation-sync evidence bytes across Windows checkout.
+README.md -text
+AGENTS.md -text
+reviews/README.md -text
+tasks/002_reproduce_paper_results/README.md -text
+tasks/003_error_analysis/README.md -text
+tasks/005_pilot_effect_analysis/README.md -text
+tasks/006_source_context_feasibility/README.md -text
+tasks/007_context_retrieval/README.md -text
+tasks/008_retrieval_planning/README.md -text
+docs/siliconflow_pool/README.md -text
+docs/动态切分提示词.md -text
+scripts/sync_current_docs.py -text
+scripts/check_documentation_sync.py -text
+
+# Preserve frozen 010 source and audit bytes across Windows checkout.
+tasks/010_verifact_baseline_alignment/** -text
+tests/test_baseline_alignment.py -text
+reviews/010_verifact_baseline_alignment.md -text
+reviews/artifacts/010_audit_20260915/** -text
+
+# Preserve frozen 011 source and audit bytes across Windows checkout.
+tasks/011_evidence_integrity_packaging/** -text
+tests/test_evidence_integrity_packaging.py -text
+reviews/011_evidence_integrity_packaging.md -text
+reviews/artifacts/011_audit_20260915/** -text
+
+# Preserve frozen 012 source bytes across Windows checkout.
+tasks/012_comparative_error_diagnosis/** -text
+tests/test_comparative_diagnosis012.py -text
+
+# Preserve independent 012 audit bytes across Windows checkout.
+reviews/012_comparative_error_diagnosis.md -text
+reviews/artifacts/012_audit_20260915/** -text
+
+# Preserve frozen 013 source bytes across Windows checkout.
+tasks/013_multi_mechanism_screen/** -text
+tests/test_multi_mechanism_screen013.py -text
+
+# Preserve independent 013 audit bytes across Windows checkout.
+reviews/013_multi_mechanism_screen.md -text
+reviews/artifacts/013_audit_20260915/** -text
+
+# Preserve frozen 014/015 code, tests and audit bytes across Windows checkout.
+tasks/014_qwen27b_baseline_comparison/** -text
+tasks/015_disagreement_adjudication/** -text
+tests/test_qwen27b_baseline014.py -text
+tests/test_disagreement015.py -text
+tests/test_replay_history014015.py -text
+reviews/014_qwen27b_baseline_comparison.md -text
+reviews/015_disagreement_adjudication.md -text
+reviews/artifacts/014_015_audit_20260916/** -text
+
+# Exact shared computational dependencies bound by 014/015 preparation manifests.
+src/verifact_research/evaluation/__init__.py -text
+src/verifact_research/evaluation/cli.py -text
+src/verifact_research/evaluation/core.py -text
+src/verifact_research/evaluation/diagnostics.py -text
+src/verifact_research/evaluation/metrics.py -text
+src/verifact_research/evaluation/release.py -text
+src/verifact_research/evaluation/report.py -text
+src/verifact_research/evaluation/reproduction.py -text
+src/verifact_research/inference/siliconflow_pool.py -text
+tasks/004_event_alignment_pilot/pilot.py -text
+tasks/004_event_alignment_pilot/siliconflow.py -text
+
+# Preserve frozen 016 and its directly reused 008 computational sources.
+tasks/016_disagreement_triggered_review_validation/** -text
+tests/test_review_validation016.py -text
+tests/test_finish016.py -text
+tests/test_completion016.py -text
+tests/test_aliyun.py -text
+src/verifact_research/inference/aliyun.py -text
+scripts/run_aliyun.py -text
+docs/aliyun/** -text
+tasks/017_verification_supervised_evidence_utility/** -text
+tests/test_utility017.py -text
+tasks/008_retrieval_planning/common.py -text
+tasks/008_retrieval_planning/services.py -text
+tasks/008_retrieval_planning/planning_core.py -text
+tasks/008_retrieval_planning/build_stages.py -text
+tasks/008_retrieval_planning/prepare_experiment.py -text
+
+# Preserve independent 016 audit evidence bytes.
+reviews/016_disagreement_triggered_review_validation.md -text
+reviews/artifacts/016_audit_20260916/** -text
+
+# Preserve independent 017 audit and current status bytes.
+reviews/017_verification_supervised_evidence_utility.md -text
+reviews/artifacts/017_audit_20260916/** -text
+docs/PROJECT_STATUS.md -text
+docs/API_POLICY.md -text
+
+# Preserve independent 018 audit bytes.
+reviews/018_verifact_gap_attribution.md -text
+reviews/artifacts/018_audit_20260916/** -text
+
+# Preserve frozen019-021 sources and audit/config bytes.
+tasks/019_support_boundary_screen/** -text
+tasks/020_lambda2_patient_validation/** -text
+tasks/021_bge_localization/** -text
+reviews/019_support_boundary_screen.md -text
+reviews/020_lambda2_patient_validation.md -text
+reviews/021_bge_localization.md -text
+reviews/artifacts/019_021_audit_20260919/** -text
+scripts/replay_completed_research.py -text
+tests/test_completed_replay.py -text
+docs/REPRODUCIBILITY.md -text
+environment.yml -text
+environment.local-bge.yml -text
+docs/aliyun/CURRENT.md -text
+tasks/022_competition_aware_support_calibration/** -text
+docs/022_竞争感知支持边界校准_任务计划.md -text
+reviews/022_competition_aware_support_calibration.md -text
+reviews/artifacts/022_audit_20260919/** -text
+tasks/023_lambda_boundary_response_analysis/** -text
+reviews/023_lambda_boundary_response_analysis.md -text
+reviews/artifacts/023_audit_20260919/** -text
+tasks/024_lambda2_transfer_validation/** -text
+reviews/024_lambda2_transfer_validation.md -text
+reviews/artifacts/024_audit_20260919/** -text
+tasks/025_lambda_flip_risk_separability/** -text
+reviews/025_lambda_flip_risk_separability.md -text
+reviews/artifacts/025_audit_20260919/** -text
+tasks/026_frozen_sd_patient_transfer/** -text
+reviews/026_frozen_sd_patient_transfer.md -text
+reviews/artifacts/026_audit_20260919/** -text
+tasks/027_dual_judge_transfer_diagnosis/** -text
+reviews/027_dual_judge_transfer_diagnosis.md -text
+reviews/artifacts/027_audit_20260919/** -text
+tasks/028_traceable_claim_evidence_verification/** -text
+reviews/028_traceable_claim_evidence_verification.md -text
+reviews/artifacts/028_audit_20260919/** -text
+tasks/029_semantic_information_gate/** -text
+reviews/029_semantic_information_gate.md -text
+reviews/artifacts/029_audit_20260920/** -text
+tasks/030_gate_training_stability/** -text
+reviews/030_gate_training_stability.md -text
+reviews/artifacts/030_audit_20260920/** -text
+tasks/031_training_expansion_confirmation/** -text
+reviews/031_training_expansion_confirmation.md -text
+reviews/artifacts/031_audit_20260920/** -text
+tasks/032_evidence_relation_correction/** -text
+reviews/032_evidence_relation_correction.md -text
+reviews/artifacts/032_audit_20260920/** -text
+tasks/033_gate_training_subset/** -text
+reviews/033_gate_training_subset.md -text
+reviews/artifacts/033_audit_20260920/** -text
+tasks/034_same_data_comparison/** -text
+reviews/034_same_data_comparison.md -text
+tasks/035_lambda_boundary_calibration/** -text
+reviews/035_lambda_boundary_calibration.md -text
+reviews/artifacts/034_035_audit_20260920/** -text
+
+# Preserve frozen 036 implementation bytes across Windows checkout.
+tasks/036_final_validation/** -text
+outputs/036_final_validation/retrieval_001/jobs.jsonl filter=lfs diff=lfs merge=lfs -text
+tasks/037_ns_na_decision/** -text
+tasks/038_evidence_explanation_audit/** -text
+tasks/039_full_ehr_attribution/** -text
+tasks/040_route_decision/** -text
+tasks/041_evidence_gated_explanation_sync/** -text
+tasks/042_coverage_aware_evidence_packing/** -text
+tasks/043_targeted_evidence_utility/** -text
+tasks/044_incremental_evidence_recovery/** -text
+tasks/045_semantic_recovery_screen/** -text
+tasks/046_requirement_aware_retrieval_screen/** -text
+tasks/048_end_to_end_evidence_recovery/** -text
+tasks/049_evidence_decision_utilization/** -text
+tasks/050_repeated_score_aggregation/** -text
+tasks/051_thinking_mode_validation/** -text
+tasks/052_first_tier_validation/** -text
+tasks/053_thinking_prior_validation/** -text
+tasks/054_unlabeled_prior_shift/** -text
+tasks/055_zero_label_policy_adaptation/** -text
+tasks/056_shift_decomposition/** -text
+tasks/057_soft_shift_detection/** -text
+tasks/058_unlabeled_batch_scaling/** -text
+tasks/059_joint_prior_judge_drift/** -text
+tasks/060_class_specific_drift/** -text
+tasks/061_prior_anchored_drift/** -text
+tasks/062_low_rank_empirical_transport/** -text
+tasks/063_minimal_label_reliability/** -text
+tasks/064_safe_policy_selection/** -text
+tasks/065_verification_evidence_construction/** -text
+tasks/066_oracle_headroom/** -text
+tasks/067_conservative_evidence_packing/** -text
+
+# Preserve the frozen 087 task instruction bytes.
+docs/087_* -text
+
+# Preserve the frozen 088 task instruction bytes.
+docs/088_* -text
+
+# Preserve the frozen 089 task instruction bytes.
+docs/089_* -text
+
+# Preserve frozen090 instruction bytes.
+docs/090_* -text

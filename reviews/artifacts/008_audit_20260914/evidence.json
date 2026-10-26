@@ -1,0 +1,90 @@
+{
+  "head": "b03a230c0caa05b6198b2d9a2d988c3ef6c05a0b",
+  "handoff_sha256": "861414d7733e3e784c99e4db1ce9195fabb4f24a4fd325d0b3a88313e56754ab",
+  "version_files": 924,
+  "started_utc": "2026-09-14T15:32:52.769088+00:00",
+  "targeted_tests": 9,
+  "status": "limited_audit_checks_passed",
+  "phases": {
+    "planner": {
+      "requests": 144,
+      "estimated_cny": 0.6407561999999999
+    },
+    "embedding_base": {
+      "requests": 72,
+      "estimated_cny": 0.009162929999999996
+    },
+    "embedding_plans": {
+      "requests": 13,
+      "estimated_cny": 0.00014455000000000002
+    },
+    "rerank": {
+      "requests": 144,
+      "estimated_cny": 0.1063034
+    },
+    "judge": {
+      "requests": 311,
+      "estimated_cny": 3.3964146000000004
+    }
+  },
+  "estimated_total_cny": 4.15278168,
+  "cohort": 144,
+  "corpus_passages": 941,
+  "plans": {
+    "valid_schema": 100,
+    "fallback_direct": 44
+  },
+  "used_by_author": {
+    "llm": 65,
+    "human": 35
+  },
+  "whitespace_only_rejections": 28,
+  "original_claim_only_rerank_verified": true,
+  "canonical_judge_jobs": 299,
+  "repeat_jobs": 12,
+  "repeat_label_changes": 0,
+  "score_files_identical": {
+    "attempts.csv": true,
+    "costs.json": true,
+    "metrics.json": true,
+    "normalized_responses.jsonl": true,
+    "patient_metrics.json": true,
+    "predictions_direct.csv": true,
+    "predictions_planner.csv": true,
+    "predictions_simple.csv": true,
+    "repeat_diagnostics.json": true,
+    "retrieval_diagnostics.jsonl": true,
+    "summary.json": true,
+    "transitions.csv": true
+  },
+  "primary_delta": {
+    "llm": {
+      "ci95": [
+        -0.05766877588096021,
+        0.1710331942436471
+      ],
+      "delta": 0.01763733161199793
+    },
+    "human": {
+      "ci95": [
+        -0.05471356013584103,
+        0.058286486059233256
+      ],
+      "delta": 0.0
+    }
+  },
+  "candidate_gate_cases": 6,
+  "all_submitted_files_unchanged": true,
+  "new_api_calls": 0,
+  "finished_utc": "2026-09-14T15:33:05.929830+00:00",
+  "additional_anchor_check": {
+    "count": 79,
+    "all_exact_hashes_and_positions_match": true,
+    "manual_spots": [
+      "P036 direct/planner full Judge outputs and evidence",
+      "P080 direct/planner full Judge outputs and evidence",
+      "P081/P058 candidate gates",
+      "P097 current semantic_003 interpretation"
+    ]
+  }
+}

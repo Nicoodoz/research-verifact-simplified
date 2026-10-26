@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "checks": {
+    "034_source_fingerprints_unchanged": true,
+    "all_input_hashes_match": true,
+    "zero_api_and_no_reserved": true,
+    "main40_exact_development_only": true,
+    "prediction_freeze_hashes_match": true,
+    "main40_all_metrics_exact": true,
+    "temperature_and_task_rules_preserve_u2_labels": true,
+    "all_task_robust_lambda2_and_joint_lambda4": true,
+    "run002_reproduces_all_run001_six_method_metrics": true,
+    "historical_u2_anchors_match": true
+  },
+  "n_checks": 10,
+  "formal_run": "run_001",
+  "exploratory_rerun": "run_002",
+  "new_api_calls": 0,
+  "reserved_used": false
+}

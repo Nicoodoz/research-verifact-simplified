@@ -1,0 +1,479 @@
+{
+  "stage": "independent_revision_review",
+  "started_utc": "2026-09-14T05:29:18.744480+00:00",
+  "base_head": "a282c70698b79a890b279391739a4c20e851d9a5",
+  "version_snapshot": {
+    "review_version_sha256": "5493833f2c21f4d992055cab7e8a612865c84f992f313cf6c0bbd8199d75c034",
+    "files_sha256": {
+      "AGENTS.md": "856f4556587288c4fc7460ab7387d7eb3cdbb4a14618bbeb85e3d6635d004800",
+      "README.md": "5de845c5c1b9838cf054fdf8f6789a067aeacd8e6db291e0684664ae79b6a44e",
+      "outputs/004_event_alignment_pilot/README.md": "f606ca57c8a659512ccca550e1eb436af3d5142d8c2c4b774911687c816e2d16",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/README.md": "2363a0a73593d31489e635b7351ef72f749478680a1d4085d3d9441be1935a25",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/pre_existing_sha256.json": "3506b6bb7d96501d98569e6d45c426c2b89515a42e1efd19f80713c842da3872",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/adherence.json": "f14546812a6ea29fd910e31bda1afebbdcf014b5668bf65caba4208cbddbe28c",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/adherence_by_response.csv": "31c00657298b415ead176e1d1dddda6b242176c177686c62f48e769539a2e781",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/analysis_scope.json": "01210097a9fbcc777e624111eac5320298d4c3978004b9b9bbcc27c53229ab71",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/attempts.csv": "cf8784bb9728939b67a1d234b2ce2e0ebf7f4d4dcf9018263c2803a3ddc3aca1",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/changed_predictions.csv": "7acedd2cc1ad800f844acd850ca53e2c69d7a81bfd7e7a03174a1dbd07089d5a",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/contrasts.csv": "f7a665ce0a6c559942a65bd5543165f0441520e0ae3d3634ea6e368340439fff",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/fictional_api_cost.json": "9c650a31f81c081437747b8fed50256cff433fbf4128528ee6a178c2c7dafcbf",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/manifest.json": "63621b08c3828844994165b5f501988db4f04e2ec77c30351720ab84b405afea",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/metric_summary.csv": "827931c92b7569e2f08312456ec2dc1e3cd9a67823eacdc205f8b0ec503088b5",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/metrics.json": "585461523764037185145ee66ee947f9830824f760ee718e7fccfc1659c488de",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/normalized_responses.jsonl": "b2a8e8e7eff1d7dbbbad385a9057ba51761093e7fc947f7c4bc039cff63c7a66",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/predictions_event_alignment.csv": "9d53738204c494fcfb79bfa85e018d2af2fcdeb300519afee5c42cf272aeb036",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/predictions_routine.csv": "1e63245d5ce1a1b01e42aee319bf7801d88215e9ebaf8d2a5da2aab101b32a9f",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/predictions_structured.csv": "2cb7a07fd0d7b15f8d8ea32d2f5ff694ecf886e8ecf863b7c98d0335601c18b4",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/report.md": "f34ab79796edb105c9d2e02c539d475eee684698fe7c32e97ed0563cbf52a6d0",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/response_checks.json": "216dc3bbe0963c1b09cda232235b2ddb752ce4a99c9509ade651fa6a7ed22689",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/robustness.json": "7f7a609372ba6b1d5738ead125d0a3a34395e6406699f429ca05961dfeeb2d95",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/status.json": "893170c01175507a27940955a0355ba94953da653454958cba41420abcfa03c8",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/replay/usage.json": "ce0a614cae4f7f072f30eba8bb150e17a0acf0a13828ecf2eb29345b3ede3dbf",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/tests.log": "7a81acf8e71c2e05efc2edb93fc38b2c3d289807ea9cd3609b78b3e847d3a38d",
+      "outputs/004_event_alignment_pilot/verification_live/run_002/verification.json": "727737860785985f14fd378660d3ff6cd9f0c4af74c76616c5c09fc3e5358b8a",
+      "tasks/004_event_alignment_pilot/README.md": "f40e25591be4865b859c4b82bd346c88b6dd7e8f64ae323c573390102d98ab5a",
+      "tasks/004_event_alignment_pilot/analyze_live.py": "0e0a0e3978055a14dc3fef0a9e6181a8c0e9f782bfeaa71b67e367191af88d6b",
+      "tasks/004_event_alignment_pilot/replay_bindings.json": "99a80077fada963839b31ce91a8d45d97703a1018d11a1a5368ad1519c72fde4",
+      "tasks/004_event_alignment_pilot/verify_live.py": "190695a339152514706f74f10c8c7882eb0418701df6793403315c4b91208053",
+      "tests/test_live_analysis.py": "99f772c9949b2ac0356d12f803f3b24a52d51522eb3100cecb0d08aae08f98f7"
+    },
+    "submitted_version_mismatches": [],
+    "pre_existing_count": 1983,
+    "pre_existing_mismatches": [],
+    "original_reviews_sha256": {
+      "reviews\\001_dataset_audit.md": "f209cc0c344bb062803de6f63de58a6c9b7459664cba0cdbab4d46e043ccdf9f",
+      "reviews\\002_reproduce_paper_results.md": "b99add855679f9682b85b05cb078e4853595ce3829380b4be884559db342cdb2",
+      "reviews\\003_error_analysis.md": "fe98d50269200e0f44386855ba86e929c529efbcc502a49db2bc6d688ed4df52",
+      "reviews\\004_event_alignment_pilot.md": "7d4230fa2099295d0d99802bfc9182f09d6d6c885cab8baf1519c2f0d879a2d9",
+      "reviews\\README.md": "566f18abcdc6f3d74dcadaf8f01151851941372b5394878792a11594056a989b"
+    }
+  },
+  "tamper_checks": [
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/manifest.json",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Unregistered frozen run"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/cohort_human.csv",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/cohort_llm.csv",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/config.json",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/excluded_invalid.csv",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/historical_predictions_human.csv",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/historical_predictions_llm.csv",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/inputs.jsonl",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/preflight.json",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/prompts/common.md",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/prompts/event_alignment.md",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/prompts/routine.md",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/prompts/structured.md",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/request_schedule.csv",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/requests.jsonl.gz",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/selected_patients.csv",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Frozen input changed"
+    },
+    {
+      "path": "src/verifact_research/evaluation/__init__.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "src/verifact_research/evaluation/cli.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "src/verifact_research/evaluation/core.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "src/verifact_research/evaluation/diagnostics.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "src/verifact_research/evaluation/metrics.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "src/verifact_research/evaluation/release.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "src/verifact_research/evaluation/report.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "src/verifact_research/evaluation/reproduction.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "tasks/004_event_alignment_pilot/live.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "tasks/004_event_alignment_pilot/live_protocol.md",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "tasks/004_event_alignment_pilot/pilot.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "tasks/004_event_alignment_pilot/siliconflow.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "tasks/004_event_alignment_pilot/siliconflow_config.json",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Inference code/settings changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/analysis/manifest.json",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Original analysis manifest changed or missing"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/analysis/manifest.json",
+      "operation": "remove",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Original analysis manifest changed or missing"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/attempt_starts.jsonl",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Saved receipt/start/recovery file changed or missing"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/balance_recovery.json",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Saved receipt/start/recovery file changed or missing"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/receipts/0001_attempt_01.json",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Saved receipt/start/recovery file changed or missing"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/receipts/0001_attempt_01.json",
+      "operation": "remove",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Saved receipt/start/recovery file changed or missing"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/run_003/receipts/independent_extra.json",
+      "operation": "extra_receipt",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Unresolved sent request without receipt"
+    },
+    {
+      "path": "tasks/004_event_alignment_pilot/resume_balance.py",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Recovery code changed"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/api_preflight/run_001/normalized.json",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Fictional cost source changed or missing"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/api_preflight/run_001/normalized.json",
+      "operation": "remove",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Fictional cost source changed or missing"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/api_preflight/run_002/summary.json",
+      "operation": "append",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Fictional cost source changed or missing"
+    },
+    {
+      "path": "outputs/004_event_alignment_pilot/api_preflight/run_002/summary.json",
+      "operation": "remove",
+      "rejected": true,
+      "exception": "ValueError",
+      "expected_error": "Fictional cost source changed or missing"
+    }
+  ],
+  "existing_tests": {
+    "run": 81,
+    "failures": 0,
+    "errors": 0,
+    "successful": true
+  },
+  "frozen_files_independently_verified": 15,
+  "frozen_code_independently_verified": 13,
+  "original_source_files_verified": 1805,
+  "original_analysis_outputs_verified": 18,
+  "baseline_replay": {
+    "byte_identical_files": {
+      "adherence.json": true,
+      "adherence_by_response.csv": true,
+      "attempts.csv": true,
+      "changed_predictions.csv": true,
+      "contrasts.csv": true,
+      "metrics.json": true,
+      "metric_summary.csv": true,
+      "normalized_responses.jsonl": true,
+      "predictions_event_alignment.csv": true,
+      "predictions_routine.csv": true,
+      "predictions_structured.csv": true,
+      "report.md": true,
+      "robustness.json": true,
+      "status.json": true,
+      "usage.json": true
+    },
+    "workspace_diagnostics": [
+      "reviews/004_event_alignment_pilot.md",
+      "reviews/README.md"
+    ],
+    "remaining_differences_limited_to_declared_metadata": true
+  },
+  "fictional_cost": {
+    "probe_responses": 1,
+    "three_arm_responses": 21,
+    "independently_summed_estimated_cny": "0.1744410000000000002",
+    "bound_sources": [
+      {
+        "path": "outputs/004_event_alignment_pilot/api_preflight/run_001/normalized.json",
+        "sha256": "2d67ea3456654593d3445e4d02cad7742534024d433599e110166c258595b34f",
+        "cost_field": [
+          "cost",
+          "cny"
+        ],
+        "estimated_cny": 0.003225
+      },
+      {
+        "path": "outputs/004_event_alignment_pilot/api_preflight/run_002/summary.json",
+        "sha256": "313b8e997037e20e3c93469ce7a2bd0aa694ebbae054193065f87f25021b5187",
+        "cost_field": [
+          "cost_estimate_cny"
+        ],
+        "estimated_cny": 0.17121599999999998
+      }
+    ],
+    "preflight_pin_matches": true,
+    "settlement_verified": false
+  },
+  "changed_documents_and_future_cost_replay": {
+    "byte_identical_files": {
+      "adherence.json": true,
+      "adherence_by_response.csv": true,
+      "attempts.csv": true,
+      "changed_predictions.csv": true,
+      "contrasts.csv": true,
+      "metrics.json": true,
+      "metric_summary.csv": true,
+      "normalized_responses.jsonl": true,
+      "predictions_event_alignment.csv": true,
+      "predictions_routine.csv": true,
+      "predictions_structured.csv": true,
+      "report.md": true,
+      "robustness.json": true,
+      "status.json": true,
+      "usage.json": true
+    },
+    "workspace_diagnostics": [
+      ".vscode/settings.json",
+      "reviews/004_event_alignment_pilot.md",
+      "reviews/README.md"
+    ],
+    "remaining_differences_limited_to_declared_metadata": true
+  },
+  "simulated_doc_changes": [
+    "README.md",
+    "AGENTS.md",
+    "reviews/README.md",
+    "reviews/004_event_alignment_pilot.md",
+    "tasks/004_event_alignment_pilot/README.md",
+    "outputs/004_event_alignment_pilot/README.md",
+    ".vscode/settings.json removed"
+  ],
+  "future_unrelated_cost_ignored_cny": 3000,
+  "scope": {
+    "llm": 181,
+    "human": 240,
+    "patients": 6,
+    "development_only": true,
+    "reserved_test_case_inspection": false
+  },
+  "status_preserved": {
+    "complete_three_arm_predictions": false,
+    "expected_predictions": 1263,
+    "generation_failures": 1,
+    "independent_audit_pass_claimed": false,
+    "real_claims": 421,
+    "reserved_test_used": false,
+    "scored": true,
+    "status": "execution_complete_awaiting_independent_audit",
+    "terminal_responses": 1263,
+    "valid_predictions": 1262
+  },
+  "analysis_scope_preserved": {
+    "available_case": false,
+    "complete_three_arm_predictions": false,
+    "failure_count": 1,
+    "full_denominators_retained": true,
+    "handling": "Only complete author/scope arms and complete pairs are scored with 002 missing=error; failed comparisons stay blocked",
+    "label_imputation": false,
+    "registered_utc": "2026-09-13T14:22:39.717227+00:00",
+    "timing": "Component-wise handling explicitly added after a routine truncation was observed; not a pre-registered all-three-arm scoring gate"
+  },
+  "pre_existing_mismatches_after_audit": [],
+  "reviewed_version_mismatches_after_audit": [],
+  "network_guard_attempts": [],
+  "dependency_versions": {
+    "duckdb": "1.5.5",
+    "pypdf": "6.18.1",
+    "fonttools": "4.65.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.12.0",
+    "scikit-learn": "1.6.1",
+    "irrCAC": "0.4.3"
+  },
+  "finished_utc": "2026-09-14T05:29:57.434348+00:00",
+  "result": "PASS: two prior revision issues close; research limitations retained"
+}

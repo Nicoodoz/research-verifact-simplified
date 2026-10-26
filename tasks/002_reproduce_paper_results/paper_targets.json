@@ -1,0 +1,518 @@
+{
+  "source_pdf": "docs/sources/VeriFact.pdf",
+  "transcription": "Recorded before independently computing any metrics; Figure 3 visually inspected on rendered page 7. Percent agreement stored as fraction.",
+  "rounding_tolerances": {
+    "percent_agreement": 0.0005,
+    "gwet_ac1": 0.005,
+    "mcc": 0.005
+  },
+  "clinician": [
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "all",
+      "subset_total": 13070,
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "percent_agreement": 0.885,
+      "percent_agreement_ci": [
+        0.8759999999999999,
+        0.894
+      ],
+      "gwet_ac1": 0.88,
+      "gwet_ac1_ci": [
+        0.87,
+        0.89
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "all",
+      "subset_total": 13070,
+      "author_type": "llm",
+      "proposition_type": "sentence",
+      "percent_agreement": 0.847,
+      "percent_agreement_ci": [
+        0.83,
+        0.867
+      ],
+      "gwet_ac1": 0.83,
+      "gwet_ac1_ci": [
+        0.81,
+        0.85
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "all",
+      "subset_total": 13070,
+      "author_type": "human",
+      "proposition_type": "claim",
+      "percent_agreement": 0.733,
+      "percent_agreement_ci": [
+        0.723,
+        0.742
+      ],
+      "gwet_ac1": 0.64,
+      "gwet_ac1_ci": [
+        0.63,
+        0.65
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "all",
+      "subset_total": 13070,
+      "author_type": "human",
+      "proposition_type": "sentence",
+      "percent_agreement": 0.669,
+      "percent_agreement_ci": [
+        0.6559999999999999,
+        0.682
+      ],
+      "gwet_ac1": 0.53,
+      "gwet_ac1_ci": [
+        0.51,
+        0.55
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_supported",
+      "subset_total": 10775,
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "percent_agreement": 0.887,
+      "percent_agreement_ci": [
+        0.878,
+        0.895
+      ],
+      "gwet_ac1": 0.88,
+      "gwet_ac1_ci": [
+        0.87,
+        0.89
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_supported",
+      "subset_total": 10775,
+      "author_type": "llm",
+      "proposition_type": "sentence",
+      "percent_agreement": 0.8490000000000001,
+      "percent_agreement_ci": [
+        0.831,
+        0.867
+      ],
+      "gwet_ac1": 0.84,
+      "gwet_ac1_ci": [
+        0.81,
+        0.86
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_supported",
+      "subset_total": 10775,
+      "author_type": "human",
+      "proposition_type": "claim",
+      "percent_agreement": 0.7559999999999999,
+      "percent_agreement_ci": [
+        0.746,
+        0.7659999999999999
+      ],
+      "gwet_ac1": 0.71,
+      "gwet_ac1_ci": [
+        0.7,
+        0.73
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_supported",
+      "subset_total": 10775,
+      "author_type": "human",
+      "proposition_type": "sentence",
+      "percent_agreement": 0.667,
+      "percent_agreement_ci": [
+        0.65,
+        0.684
+      ],
+      "gwet_ac1": 0.59,
+      "gwet_ac1_ci": [
+        0.57,
+        0.61
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_not_supported",
+      "subset_total": 3319,
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "percent_agreement": 0.34,
+      "percent_agreement_ci": [
+        0.321,
+        0.361
+      ],
+      "gwet_ac1": 0.09,
+      "gwet_ac1_ci": [
+        0.06,
+        0.12
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_not_supported",
+      "subset_total": 3319,
+      "author_type": "llm",
+      "proposition_type": "sentence",
+      "percent_agreement": 0.314,
+      "percent_agreement_ci": [
+        0.294,
+        0.337
+      ],
+      "gwet_ac1": 0.06,
+      "gwet_ac1_ci": [
+        0.03,
+        0.1
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_not_supported",
+      "subset_total": 3319,
+      "author_type": "human",
+      "proposition_type": "claim",
+      "percent_agreement": 0.33299999999999996,
+      "percent_agreement_ci": [
+        0.322,
+        0.344
+      ],
+      "gwet_ac1": 0.02,
+      "gwet_ac1_ci": [
+        0,
+        0.03
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_not_supported",
+      "subset_total": 3319,
+      "author_type": "human",
+      "proposition_type": "sentence",
+      "percent_agreement": 0.32299999999999995,
+      "percent_agreement_ci": [
+        0.31,
+        0.336
+      ],
+      "gwet_ac1": 0.01,
+      "gwet_ac1_ci": [
+        -0.02,
+        0.03
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_not_addressed",
+      "subset_total": 3770,
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "percent_agreement": 0.311,
+      "percent_agreement_ci": [
+        0.289,
+        0.336
+      ],
+      "gwet_ac1": 0.03,
+      "gwet_ac1_ci": [
+        -0.01,
+        0.07
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_not_addressed",
+      "subset_total": 3770,
+      "author_type": "llm",
+      "proposition_type": "sentence",
+      "percent_agreement": 0.308,
+      "percent_agreement_ci": [
+        0.256,
+        0.359
+      ],
+      "gwet_ac1": 0.02,
+      "gwet_ac1_ci": [
+        -0.06,
+        0.1
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_not_addressed",
+      "subset_total": 3770,
+      "author_type": "human",
+      "proposition_type": "claim",
+      "percent_agreement": 0.45799999999999996,
+      "percent_agreement_ci": [
+        0.44299999999999995,
+        0.47200000000000003
+      ],
+      "gwet_ac1": 0.25,
+      "gwet_ac1_ci": [
+        0.23,
+        0.28
+      ]
+    },
+    {
+      "source": "Formal paper p6 Table 1",
+      "subset": "any_not_addressed",
+      "subset_total": 3770,
+      "author_type": "human",
+      "proposition_type": "sentence",
+      "percent_agreement": 0.49200000000000005,
+      "percent_agreement_ci": [
+        0.473,
+        0.511
+      ],
+      "gwet_ac1": 0.31,
+      "gwet_ac1_ci": [
+        0.28,
+        0.34
+      ]
+    }
+  ],
+  "ai": [
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Gemma-3-12B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "claim",
+      "top_n": 150,
+      "percent_agreement": 0.922,
+      "mcc": 0.14
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Gemma-3-12B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.9159999999999999,
+      "mcc": 0.09
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Gemma-3-27B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "claim",
+      "top_n": 150,
+      "percent_agreement": 0.9470000000000001,
+      "mcc": 0.12
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Gemma-3-27B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.935,
+      "mcc": 0.06
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Qwen-3-32B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "claim",
+      "top_n": 150,
+      "percent_agreement": 0.902,
+      "mcc": 0.2
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Qwen-3-32B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.9179999999999999,
+      "mcc": 0.19
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Qwen-3-30B-A3B-Thinking",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "claim",
+      "top_n": 150,
+      "percent_agreement": 0.831,
+      "mcc": 0.25
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Qwen-3-30B-A3B-Thinking",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.8640000000000001,
+      "mcc": 0.3
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Qwen-3-30B-A3B-Instruct",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "claim",
+      "top_n": 150,
+      "percent_agreement": 0.929,
+      "mcc": 0.19
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Qwen-3-30B-A3B-Instruct",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.93,
+      "mcc": 0.17
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "R1-8B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "claim",
+      "top_n": 150,
+      "percent_agreement": 0.882,
+      "mcc": 0.15
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "R1-8B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.867,
+      "mcc": 0.1
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "R1-70B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "claim",
+      "top_n": 150,
+      "percent_agreement": 0.922,
+      "mcc": 0.29
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "R1-70B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.932,
+      "mcc": 0.31
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Llama-8B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "claim",
+      "top_n": 150,
+      "percent_agreement": 0.7929999999999999,
+      "mcc": 0.08
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Llama-8B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.8170000000000001,
+      "mcc": 0.03
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Llama-70B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "claim",
+      "top_n": 150,
+      "percent_agreement": 0.905,
+      "mcc": 0.24
+    },
+    {
+      "source": "Formal paper p7 Figure 3 endpoint; endpoint N confirmed in pinned author plot script",
+      "model": "Llama-70B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.888,
+      "mcc": 0.22
+    },
+    {
+      "source": "Formal paper p6 narrative",
+      "model": "R1-70B",
+      "author_type": "llm",
+      "proposition_type": "claim",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.932,
+      "percent_agreement_ci": [
+        0.923,
+        0.94
+      ],
+      "mcc": 0.31,
+      "mcc_ci": [
+        0.24,
+        0.35
+      ]
+    },
+    {
+      "source": "Formal paper pp7-8 narrative; N100 assigned from author endpoint analysis, text itself does not specify N",
+      "model": "Qwen-3-30B-A3B-Thinking",
+      "author_type": "llm",
+      "proposition_type": "sentence",
+      "fact_type": "sentence",
+      "top_n": 100,
+      "percent_agreement": 0.849,
+      "percent_agreement_ci": [
+        0.825,
+        0.872
+      ],
+      "mcc": 0.23,
+      "mcc_ci": [
+        0.16,
+        0.31
+      ]
+    }
+  ],
+  "model_improvement_percentage_points": [7.1, 6.5, 5.1, 4.3],
+  "unverified": [
+    {
+      "source": "Supplementary Appendix Tables S2/S3 and Figs S1-S13",
+      "reason": "No formal appendix in local sources; NEJM full/supplement URL returned HTTP403. Public author code is not a published numeric target."
+    },
+    {
+      "source": "p9 model-size/reasoning PA improvements",
+      "values": [
+        7.1,
+        6.5,
+        5.1,
+        4.3
+      ],
+      "reason": "Formal Figure S11 not acquired. The pinned author 9a script specifies llm claim / sentence facts N100; report exact paired differences and a separately rounded-cell diagnostic, without asserting how the published text was derived."
+    }
+  ]
+}

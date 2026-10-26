@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 import csv, hashlib, json
 
 ROOT=Path(__file__).resolve().parents[2]

@@ -1,0 +1,18 @@
+test_a_new_unknown_stops_execution_and_cannot_use_old_registration (test_source_context_continuation.ContinuationTests.test_a_new_unknown_stops_execution_and_cannot_use_old_registration) ... ok
+test_all_remaining_jobs_finish_without_retrying_unknown_or_received (test_source_context_continuation.ContinuationTests.test_all_remaining_jobs_finish_without_retrying_unknown_or_received) ... ok
+test_unknown_is_immutable_and_not_resent_and_pending_respects_cap (test_source_context_continuation.ContinuationTests.test_unknown_is_immutable_and_not_resent_and_pending_respects_cap) ... ok
+test_context_arm_uses_same_parser_and_truncation_is_still_failure (test_source_context_feasibility.SourceContextFeasibilityTests.test_context_arm_uses_same_parser_and_truncation_is_still_failure) ... ok
+test_context_is_exact_source_span_and_ambiguous_parent_is_rejected (test_source_context_feasibility.SourceContextFeasibilityTests.test_context_is_exact_source_span_and_ambiguous_parent_is_rejected) ... ok
+test_meter_recovers_saved_response_without_duplicate_send_or_double_settlement (test_source_context_feasibility.SourceContextFeasibilityTests.test_meter_recovers_saved_response_without_duplicate_send_or_double_settlement) ... ok
+test_meter_releases_unused_reservation_without_resetting_total_budget (test_source_context_feasibility.SourceContextFeasibilityTests.test_meter_releases_unused_reservation_without_resetting_total_budget) ... ok
+test_no_execution_or_secret_loading_without_matching_approval (test_source_context_feasibility.SourceContextFeasibilityTests.test_no_execution_or_secret_loading_without_matching_approval) ... ok
+test_offline_end_to_end_scoring_uses_complete_pairs_and_does_not_impute_truncation (test_source_context_feasibility.SourceContextFeasibilityTests.test_offline_end_to_end_scoring_uses_complete_pairs_and_does_not_impute_truncation) ... {"budget_used_or_reserved_cny":0.0702,"estimated_cny":0.0702,"expected_responses":18,"failures":[{"errors":["Truncated/filtered/nonfinal generation"],"request_id":"source_context:fictional-llm-0"}],"invoice_verified":false,"label_meaning":"Original independent-claim GT agreement; not contextual clinical correctness","raw_source_is_not_gold":true,"status":"scored_complete_pairs_only_pending_semantic_review","unreceipted_attempts":0,"valid_responses":17}
+ok
+test_only_auxiliary_text_changes_and_gt_is_not_sent (test_source_context_feasibility.SourceContextFeasibilityTests.test_only_auxiliary_text_changes_and_gt_is_not_sent) ... ok
+test_repeat_control_keeps_whole_claim_and_scope_flags_do_not_claim_equivalence (test_source_context_feasibility.SourceContextFeasibilityTests.test_repeat_control_keeps_whole_claim_and_scope_flags_do_not_claim_equivalence) ... ok
+test_sampling_is_fixed_balanced_and_not_input_order_dependent (test_source_context_feasibility.SourceContextFeasibilityTests.test_sampling_is_fixed_balanced_and_not_input_order_dependent) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 2.744s
+
+OK

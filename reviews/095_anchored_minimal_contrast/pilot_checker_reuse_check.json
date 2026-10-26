@@ -1,0 +1,28 @@
+{
+  "four_original_checker_calls_not_repeated": [
+    {
+      "id": "0ed796fa-3ca3-47db-d384-9091f8b9bb2d",
+      "request_id": "2722b720f1ad19cd17c45eb27307",
+      "attempts": 1,
+      "HTTP200": 1
+    },
+    {
+      "id": "6b135b91-e733-0b6e-d415-1f90c5f85d9d",
+      "request_id": "9817f35043a121b9d21fe0a21d95",
+      "attempts": 1,
+      "HTTP200": 1
+    },
+    {
+      "id": "4bce1c25-3f10-c56a-b38b-4d851402a48d",
+      "request_id": "242a9523f69f81ae1149cf3f9d34",
+      "attempts": 1,
+      "HTTP200": 1
+    },
+    {
+      "id": "9ea58575-e8e9-85fc-6ce0-013b6af8e09b",
+      "request_id": "23426f42d8b26ff9be4bf24fa1da",
+      "attempts": 1,
+      "HTTP200": 1
+    }
+  ]
+}

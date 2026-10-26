@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "original_raw_predictions_references_and_full_outputs_bound": 1251,
+  "cohort_results": {
+    "010": {
+      "n": 650,
+      "buckets": {
+        "both_correct": 490,
+        "O_only": 65,
+        "both_wrong": 59,
+        "C_only": 36
+      },
+      "correct": {
+        "O": 555,
+        "C": 526
+      },
+      "false_S": {
+        "O": 37,
+        "C": 13
+      },
+      "net_by_GT": {
+        "Supported": 47,
+        "Not Supported": -7,
+        "Not Addressed": -11
+      }
+    },
+    "016": {
+      "n": 601,
+      "buckets": {
+        "both_correct": 398,
+        "C_only": 48,
+        "O_only": 91,
+        "both_wrong": 64
+      },
+      "correct": {
+        "O": 489,
+        "C": 446
+      },
+      "false_S": {
+        "O": 42,
+        "C": 14
+      },
+      "net_by_GT": {
+        "Supported": 71,
+        "Not Supported": -15,
+        "Not Addressed": -13
+      }
+    },
+    "pooled": {
+      "n": 1251,
+      "buckets": {
+        "both_correct": 888,
+        "O_only": 156,
+        "both_wrong": 123,
+        "C_only": 84
+      },
+      "correct": {
+        "O": 1044,
+        "C": 972
+      },
+      "false_S": {
+        "O": 79,
+        "C": 27
+      },
+      "net_by_GT": {
+        "Supported": 118,
+        "Not Supported": -22,
+        "Not Addressed": -24
+      }
+    }
+  },
+  "bridge010": {
+    "correct": {
+      "O": 555,
+      "V": 511,
+      "C": 526
+    },
+    "O_minus_C": 29,
+    "O_minus_V": 44,
+    "V_minus_C": -15,
+    "reference_rescue": 39,
+    "reference_harm": 54
+  },
+  "Q_sensitivity016": {
+    "both_correct": 409,
+    "C_only": 48,
+    "O_only": 80,
+    "both_wrong": 64
+  },
+  "coverage": {
+    "total_directional": 240,
+    "recorded_deep_read": 54,
+    "unknown": 186
+  },
+  "no_new_metric_implementation": true,
+  "full_case_semantic_auditor_sample": [
+    "010_old6_N180",
+    "016_recent6_S522",
+    "016_recent6_S599"
+  ],
+  "sample_scope": "Full claim, both full references and all full saved clinical outputs; no medical relabeling or prevalence inference.",
+  "new_API_calls": 0
+}

@@ -1,0 +1,213 @@
+[
+  {
+    "case_id": "N086",
+    "note_id": "375697",
+    "anchor": [
+      12108,
+      12117
+    ],
+    "text": "No nausea",
+    "chartdate": "2127-05-21",
+    "charttime": "2127-05-20 15:41:00",
+    "blocks": [
+      {
+        "passage_id": "32ce3ce8991cd9cb9e4123afa129e06c43313062f1c22e320b64a045ec3be677",
+        "span": [
+          12111,
+          12747
+        ],
+        "dense": 13,
+        "bm25": 4,
+        "hybrid": 2,
+        "candidate": 8,
+        "rerank": 1,
+        "selected": 11,
+        "score": 0.5016933679580688,
+        "skip": null
+      },
+      {
+        "passage_id": "c76ac2aeb8e046421ce9b6a3876fd2891599dd2f8bfa88067e7ac5c0e0b1736b",
+        "span": [
+          11471,
+          12110
+        ],
+        "dense": 52,
+        "bm25": null,
+        "hybrid": 52,
+        "candidate": null,
+        "rerank": null,
+        "selected": null,
+        "score": null,
+        "skip": null
+      }
+    ]
+  },
+  {
+    "case_id": "N395",
+    "note_id": "564621",
+    "anchor": [
+      4589,
+      4646
+    ],
+    "text": "Consults: General surgery, Neuro surgery, Ortho, Plastics",
+    "chartdate": "2137-04-30",
+    "charttime": "2137-04-30 05:48:00",
+    "blocks": [
+      {
+        "passage_id": "4232e28e7b1f145f9d421a59ed9b7b961349db50eede917a1e0c1219daa52755",
+        "span": [
+          4504,
+          5072
+        ],
+        "dense": 17,
+        "bm25": 25,
+        "hybrid": 14,
+        "candidate": 23,
+        "rerank": 22,
+        "selected": null,
+        "score": 0.06313122808933258,
+        "skip": "character_cap"
+      }
+    ]
+  },
+  {
+    "case_id": "N395",
+    "note_id": "564631",
+    "anchor": [
+      4589,
+      4646
+    ],
+    "text": "Consults: General surgery, Neuro surgery, Ortho, Plastics",
+    "chartdate": "2137-04-30",
+    "charttime": "2137-04-30 05:48:00",
+    "blocks": [
+      {
+        "passage_id": "1088d673981fe3d72c8dea46f3f0b2f08fc00b9ec783dc40781a3b70ca21b2b1",
+        "span": [
+          4504,
+          5072
+        ],
+        "dense": 18,
+        "bm25": 24,
+        "hybrid": 15,
+        "candidate": 25,
+        "rerank": 21,
+        "selected": null,
+        "score": 0.06316863745450974,
+        "skip": "character_cap"
+      }
+    ]
+  },
+  {
+    "case_id": "N526",
+    "note_id": "476451",
+    "anchor": [
+      927,
+      949
+    ],
+    "text": "HR: 110 (92 - 110) bpm",
+    "chartdate": "2166-09-01",
+    "charttime": "2166-09-01 07:04:00",
+    "blocks": [
+      {
+        "passage_id": "01fba133b6d73ebbf6ef75d8405dbe1b82d6e7abbb0720850b879b08377dda9d",
+        "span": [
+          638,
+          1249
+        ],
+        "dense": null,
+        "bm25": 79,
+        "hybrid": 140,
+        "candidate": null,
+        "rerank": null,
+        "selected": null,
+        "score": null,
+        "skip": null
+      }
+    ]
+  },
+  {
+    "case_id": "N526",
+    "note_id": "476489",
+    "anchor": [
+      927,
+      949
+    ],
+    "text": "HR: 110 (92 - 110) bpm",
+    "chartdate": "2166-09-01",
+    "charttime": "2166-09-01 07:04:00",
+    "blocks": [
+      {
+        "passage_id": "04e3824a1a95a0bf4d8505f29b8926b7d2653c68250a7746aad616b7a1db6356",
+        "span": [
+          638,
+          1249
+        ],
+        "dense": null,
+        "bm25": 80,
+        "hybrid": 142,
+        "candidate": null,
+        "rerank": null,
+        "selected": null,
+        "score": null,
+        "skip": null
+      }
+    ]
+  },
+  {
+    "case_id": "N501",
+    "note_id": "473836",
+    "anchor": [
+      546,
+      603
+    ],
+    "text": "Abdominal CT\n   scan this afternoon after receiving blood",
+    "chartdate": "2166-08-18",
+    "charttime": "2166-08-18 15:40:00",
+    "blocks": [
+      {
+        "passage_id": "0e6e173f5d5898b34e522e9bf725ed4e20d289766eb5e426361cd663565adc8e",
+        "span": [
+          0,
+          637
+        ],
+        "dense": 6,
+        "bm25": null,
+        "hybrid": 23,
+        "candidate": 11,
+        "rerank": 8,
+        "selected": 10,
+        "score": 0.030228862538933754,
+        "skip": null
+      }
+    ]
+  },
+  {
+    "case_id": "N578",
+    "note_id": "470821",
+    "anchor": [
+      7854,
+      7916
+    ],
+    "text": "Renal: low U/O, lasix given to improve diuresis for extubation",
+    "chartdate": "2166-08-05",
+    "charttime": "2166-08-05 05:14:00",
+    "blocks": [
+      {
+        "passage_id": "a1441e074282d3e6b99f3327d5796bf02f265339a46789df402f95f5e5119cce",
+        "span": [
+          7664,
+          8303
+        ],
+        "dense": null,
+        "bm25": 4,
+        "hybrid": 26,
+        "candidate": 7,
+        "rerank": 2,
+        "selected": 4,
+        "score": 0.8104104995727539,
+        "skip": null
+      }
+    ]
+  }
+]

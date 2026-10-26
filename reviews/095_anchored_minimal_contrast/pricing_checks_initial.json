@@ -1,0 +1,52 @@
+{
+  "code_sha256": "c184c5f80b71e6ddbab5820365e794b3386b2f6708eaa6290979885eff2b26fd",
+  "tests": [
+    {
+      "name": "22_exact",
+      "passed": true
+    },
+    {
+      "name": "early_morning",
+      "passed": true
+    },
+    {
+      "name": "08_exact",
+      "passed": true
+    },
+    {
+      "name": "cross_22",
+      "passed": true
+    },
+    {
+      "name": "midnight",
+      "passed": true
+    },
+    {
+      "name": "UTC",
+      "passed": true
+    },
+    {
+      "name": "naive",
+      "passed": true
+    },
+    {
+      "name": "backward",
+      "passed": true
+    },
+    {
+      "name": "long",
+      "passed": true
+    },
+    {
+      "name": "different_window",
+      "passed": true
+    },
+    {
+      "name": "unknown_with_usage_must_keep_bound",
+      "passed": false,
+      "observed": 0.00168,
+      "expected": 1,
+      "synthetic_only": true
+    }
+  ]
+}

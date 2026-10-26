@@ -1,0 +1,3 @@
+[
+  {"case_id":"010_old6_N020","layer":"judge_decision","mechanisms":["deidentification_identity","support_boundary"],"confidence":"moderate","observation":"两包都有EF15–20%及Location1415，claim的Location620未获同样字面支持。O和同发布reference的V均因地名不同判NS，C接受临床EF事实而与GT一致；不是C独有EF证据。","uncertainty":"不能把C的S当成已核实地名映射；医生为何接受此脱敏位置差异仍未知。reference不同与单次生成波动不能排除。","anchors":[{"arm":"O","block":1,"quote":"EF 15-20% from recent ECHO"},{"arm":"C","block":2,"quote":"EF 15-20% from recent ECHO"}],"read_pages":[1,2]}
+]

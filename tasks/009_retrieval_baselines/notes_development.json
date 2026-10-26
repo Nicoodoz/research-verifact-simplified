@@ -1,0 +1,171 @@
+{
+  "role":"execution_reader_not_clinician_ground_truth",
+  "scope":"Full A/B/C references and distinct complete Judge outputs for frozen development reading cases; no new patient result used for method selection.",
+  "cases":[
+    {
+      "case_id":"P124",
+      "observation":"三臂均为NS，不符原GT的S；共同唯一明确PT服务段写consult received、等待起搏器后再评估，其他入选片段多为身体检查/术后通用资料。另查该患者全部Rehab Services及physical therapy/P.T./PT consult字面命中，只见这份接收咨询记录和两处列出P.T.的医师段，未定位到明确已完成评估。",
+      "interpretation":"基础检索均找到了相关PT记录，但该段对实际已见诊的支持有限；需要区分未找回实际评估、原记录未提供该时段，及医生标签接受咨询已介入的边界，不能直接归咎某一路检索。",
+      "uncertainty":"这不是穷尽所有同义表达的医学检索金标准；字面定向搜索未找到不等于实际从未评估。是否咨询已介入就满足原标签仍未新增临床裁决。",
+      "anchors":[
+        {"kind":"ehr","note_id":"654214","start":0,"quote":"Consult received and appreciated."},
+        {"kind":"ehr","note_id":"654214","start":0,"quote":"we will f/u for evaluation s/p procedure."},
+        {"kind":"judge","method":"B48","quote":"evaluation is pending after pacemaker placement"},
+        {"kind":"ehr","note_id":"654366","start":5168,"quote":"Consults: P.T., EP dept"}
+      ]
+    },
+    {
+      "case_id":"P089",
+      "observation":"三臂共同保留coumadin restarted last night及后来为操作暂停/再考虑恢复的时间记录，均为S。B没有A/C的单字母表格残片，但不影响标签。",
+      "interpretation":"基线本身能在该例区分一次已恢复与后来暂停，不是所有时间/状态问题都会失败；也是不需要扩展查询的稳定正确对照。",
+      "uncertainty":"多次复述不等于多次独立重启事件，不能把模型的多次重启概括当额外临床事实。",
+      "anchors":[
+        {"kind":"ehr","note_id":"497561","start":3958,"quote":"coumadin restarted last night, INR > 2.0"},
+        {"kind":"judge","method":"B48","quote":"does not contradict the initial restart"}
+      ]
+    },
+    {
+      "case_id":"P094",
+      "observation":"B从S退为NS，A/C同body且S。三臂共同有反复便秘诊断、数天未排便和泻药治疗；B要求额外的complication因果归属，而原资料多将便秘列为并存问题。B还少了末日解除粪便嵌塞段，但仍有充分便秘发生资料。",
+      "interpretation":"标签差异不仅是找不找得到便秘，而是complication是否要求明确病因/治疗因果；不把缺少同一句术语归为纯检索失败。",
+      "uncertainty":"原GT认为S，是否临床上属于并发症不重新裁决；缺少末日段与判断变严格的因果份额未被证明。",
+      "anchors":[
+        {"kind":"ehr","note_id":"497608","start":1906,"quote":"Constipation (Obstipation, FOS)"},
+        {"kind":"ehr","note_id":"498439","start":0,"quote":"Was dis-impacted last night."},
+        {"kind":"judge","method":"B48","quote":"a concurrent problem without causal attribution"}
+      ]
+    },
+    {
+      "case_id":"P061",
+      "observation":"B将NS改为原GT的NA；A/C相同body且NS。三臂均只有continue lisinopril和用药列表，没有5mg减量或体重下降原因。B未新增相关剂量资料，A把continue自动理解为无剂量改变并视为反证。",
+      "interpretation":"改善是对相同核心药物记录的NS/NA边界及反证解释变化，不能算作补回漏掉的减量证据。continue本身不确定此前是否已减量。",
+      "uncertainty":"不据缺失判断减量在临床上未发生；未建立原5mg原因的新增证据，也没有内部机制证明。",
+      "anchors":[
+        {"kind":"ehr","note_id":"688711","start":4500,"quote":"HTN: Cont lisinopril"},
+        {"kind":"judge","method":"A48","quote":"without dose changes, contradicting the claimed decrease"},
+        {"kind":"judge","method":"B48","quote":"no dose or weight loss details"}
+      ]
+    },
+    {
+      "case_id":"P071",
+      "observation":"B从S退为NS，A/C为S。三臂均有knee fluid preliminary/final no growth及最终阴性；B少了若干Cultures negative, so stopped antibiotics的临床总结段，完整输出要求确认所有可能的cultures而不仅膝关节培养。",
+      "interpretation":"基础阴性结果仍在，临床总结证据减少与复数/全部范围的不同理解共同出现。不能仅以B判错断言它未找回培养结果。",
+      "uncertainty":"一个标本的多份报告不自动等于多次培养；执行者不重新裁决复数覆盖。可用补回临床总结段的诊断检验其作用。",
+      "anchors":[
+        {"kind":"ehr","note_id":"688483","start":3838,"quote":"Final cx no growth"},
+        {"kind":"ehr","note_id":"688711","start":3226,"quote":"Cultures negative, so stopped antibiotics"},
+        {"kind":"judge","method":"B48","quote":"does not address other potential cultures"}
+      ]
+    },
+    {
+      "case_id":"P016",
+      "observation":"B从S退为NS，A/C相同body且S。三臂均有多条CXR unchanged/no significant change及后期possible effusion/opacity；B完整输出承认多次无变化，却把同一后期可能性视为反证。",
+      "interpretation":"关键影像并未从B消失，退化主要可见于时间范围和不确定发现的支持解释，不宜概括成纯dense漏掉全部正确证据。",
+      "uncertainty":"B少了末条医师续段、增加CT/影像外围段可能影响权衡，但不能据一次生成确定内部因果；系列/当前CXR的目标范围仍未重新医学标注。",
+      "anchors":[
+        {"kind":"ehr","note_id":"1029283","start":663,"quote":"there is no\n significant change"},
+        {"kind":"ehr","note_id":"1613637","start":0,"quote":"Repeat CXR 2100 showed no change."},
+        {"kind":"judge","method":"B48","quote":"contradicting a blanket claim"}
+      ]
+    },
+    {
+      "case_id":"P053",
+      "observation":"B从S退为NS，A/C相同body且S。三臂共同有球囊后minimal improvement、TPA置管/输注、次日部分再通记录。B额外要求TPA alone的minimal结果，A/C接受合并治疗过程的有限改善。",
+      "interpretation":"是对复合干预/结果支持范围的不同解释，不能说B未检索到球囊或TPA资料；移除BM25后的标签下降并非都由明确漏检引起。",
+      "uncertainty":"临床上如何归因球囊、溶栓各自效果仍有争议；原GT保留，不从模型解释推出真实因果效果。",
+      "anchors":[
+        {"kind":"ehr","note_id":"1089438","start":4233,"quote":"Minimal improvement after balloon dilatation"},
+        {"kind":"ehr","note_id":"1089602","start":2881,"quote":"though not complete normalization of venous patency."},
+        {"kind":"judge","method":"B48","quote":"No direct statement of minimal improvement from TPA alone."}
+      ]
+    },
+    {
+      "case_id":"P004",
+      "observation":"三臂均NS，原GT为S。三臂共同含两份明确no definite effusion的便携胸片和后续If any, small effusion的胸片；完整输出均把后者的可能性当作与no definite冲突，主要未把CT的明确积液直接混作胸片结论。",
+      "interpretation":"目标影像已正确召回，当前剩余问题更像不确定措辞/系列范围的支持判断，而不是缺少检索词。possible与no definite不应被自动当作肯定-否定矛盾。",
+      "uncertainty":"系列究竟覆盖哪几次影像仍有范围歧义，不能重新给医学GT；本例不证明换Judge必定解决全部问题。",
+      "anchors":[
+        {"kind":"ehr","note_id":"1029113","start":931,"quote":"no definite consolidation or effusion"},
+        {"kind":"ehr","note_id":"1029581","start":939,"quote":"If any, this is a small left pleural effusion."},
+        {"kind":"judge","method":"A48","quote":"introduces uncertainty and partially contradicts"}
+      ]
+    },
+    {
+      "case_id":"P007",
+      "observation":"三臂均S且目标年龄/节段/已手术信息反复出现；B只是多入一个for use tonight短尾片，没有新增关键手术资料。",
+      "interpretation":"这是三条基础链路都足够的稳定正确对照，不需要planner才能读到L4-S1手术；多一个候选或片段不是新增医学收益。",
+      "uncertainty":"B额外解释手术与入院的先后而原claim未要求，不能由正确标签推断所有解释均严格支持。",
+      "anchors":[
+        {"kind":"ehr","note_id":"1029164","start":664,"quote":"status post L4-S1 decompression/fusion"},
+        {"kind":"ehr","note_id":"1613640","start":639,"quote":"for use tonight."}
+      ]
+    },
+    {
+      "case_id":"P101",
+      "observation":"B/C将NS改为原GT的NA。三臂都有5-27/28的EVD开放、计划夹闭试验等资料，都没有5-30早晨撤管计划。A还将5-28仍引流视作反证；B/C说具体未来撤管计划未涉及。",
+      "interpretation":"这是对相同核心证据的时间/NS-NA边界判断差异，并非找到了被A漏检的撤管计划。输入中的5-28在位不能单独推翻5-30撤除计划。",
+      "uncertainty":"原release在本住院实际只提供至5-28的记录，不能据此裁决5-30真实临床过程，也不把正确标签归为内部时间推理已被证明。",
+      "anchors":[
+        {"kind":"ehr","note_id":"534449","start":1277,"quote":"Plan to leave EVD open to drainage for total of 72hrs."},
+        {"kind":"ehr","note_id":"534574","start":1915,"quote":"? clamping trial tomorrow"},
+        {"kind":"judge","method":"A48","quote":"contradicts proposition by indicating EVD remains in place"}
+      ]
+    },
+    {
+      "case_id":"P113",
+      "observation":"C由NS改为原GT的S，A/B均NS。三臂已有同样的家属沟通与会议计划，C没有新增已举行会议的记录；其完整输出承认未确认举行，却接受多次计划支持发生。C输入可直接复用008 planner的同body回答。",
+      "interpretation":"简单候选规则能够得到过去planner的相同结果，但这例不能作为新增目标记录改善的证据；支持充分性/计划与完成边界才是明显的输出差异。",
+      "uncertainty":"姑息团队确有家属交谈，不能反向断言未开过相关会议；原GT保留，执行者不重新定义家庭会议或给临床裁决。",
+      "anchors":[
+        {"kind":"ehr","note_id":"534274","start":1280,"quote":"Family meeting at 12 noon to discuss options"},
+        {"kind":"ehr","note_id":"534234","start":2552,"quote":"spoke with Granddaughter"},
+        {"kind":"judge","method":"C48","quote":"though no note explicitly confirms it took place"}
+      ]
+    },
+    {
+      "case_id":"P080",
+      "observation":"A保留12-15的Dilaudid镇痛段，B/C均没有该段。B只据12-13/14镇痛认为不足以支持throughout而由S退为NS；C同样未覆盖末段时间，却接受多次镇痛足以支持，仍S。",
+      "interpretation":"纯dense存在真实时间覆盖损失；C的正确标签并不等于恢复了该记录，支持范围解释差异同时存在，不能把C优于B全归为候选保留。",
+      "uncertainty":"单一镇痛段是否足以改变判断需补回/移除验证；各reference都没有整个住院逐日用药记录，不能执行者重判临床持续治疗。",
+      "anchors":[
+        {"kind":"ehr","note_id":"498057","start":634,"quote":"Pt also received dilaudid po for pain control."},
+        {"kind":"ehr","note_id":"497643","start":1267,"quote":"dilaudid which seems to help control her pain."},
+        {"kind":"judge","method":"C48","quote":"does not explicitly state treatment throughout the entire hospitalization"},
+        {"kind":"judge","method":"B48","quote":"on two consecutive days"}
+      ]
+    },
+    {
+      "case_id":"P128",
+      "observation":"三臂均保留2-5的NPO条目，均为GT的NS；B/C补入2-8 regular diet计划，并未丢掉008扩展所丢的目标日段。C却同时将2-5称POD1、2-9称POD4，日数不协调。",
+      "interpretation":"三条基础链路都能保住本例目标日资料，未必需要planner；正确标签仍可伴随时间推断或持续NPO的过度概括。",
+      "uncertainty":"早晨NPO不自动证明全天未进食，现有资料与原GT的一致性不是新的医学裁决；不能根据最终NS判断每一步均正确。",
+      "anchors":[
+        {"kind":"ehr","note_id":"653655","start":5774,"quote":"Nutrition: NPO"},
+        {"kind":"ehr","note_id":"654219","start":4509,"quote":"Nutrition: Regular diet, Reval S/S in am"},
+        {"kind":"judge","method":"C48","quote":"February 9, which is post-operative day 4"}
+      ]
+    },
+    {
+      "case_id":"P058",
+      "observation":"三臂均 S。纯 dense 的 B 补入妻子已给 Lovenox、出院准备完成的段落及预计 LMWH 出院记录；A/C 只保留三个月计划、转为 Lovenox 与出院计划，没有这条实际给药段。",
+      "interpretation":"不需要来源扩展或 planner，也可以得到008曾依赖扩展才选入的更完整材料；但原标签已正确，不能计作准确率净收益。",
+      "uncertainty":"计划三个月不证明实际持续服药三个月；本题是出院方案。元数据/文内年份差异不自行修复。",
+      "anchors":[
+        {"kind":"ehr","note_id":"688853","start":632,"quote":"Wife gave dose of lovanox. Dishcharge"},
+        {"kind":"ehr","note_id":"688859","start":0,"quote":"lovenox in AM, which he will be on for the next 3 months"},
+        {"kind":"ehr","note_id":"688849","start":0,"quote":"will anticipate discharge on LMWH."}
+      ]
+    },
+    {
+      "case_id":"P081",
+      "observation":"B 补入入院当天 ortho trauma 评估后紧急筋膜切开的回顾记录，NS→S；A/C reference 和回答完全相同，仍只有后续骨科参与，未选入这段初诊资料。B 输出承认未逐字写 ED，以时间和情景作推断。",
+      "interpretation":"纯 dense 足以取得更贴近目标事件的资料，并伴随原 GT 一致性改善；不能据这个成功案例宣布 B 整体胜出，C 的有限配额也没有保证保留所有 dense 高排记录。",
+      "uncertainty":"ED 地点仍是推断，需小范围补回/移除诊断核对关键段作用，不能把模型解释当临床新GT或内部机制证明。",
+      "anchors":[
+        {"kind":"ehr","note_id":"497323","start":635,"quote":"was evaluated by ortho trauma with concern for left calf compartment"},
+        {"kind":"judge","method":"B48","quote":"does not specify the exact location (ED)"},
+        {"kind":"judge","method":"A48","quote":"describes inpatient care, not an ED encounter"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,987 @@
+{
+  "status": "executor_interpretation_not_independent_audit",
+  "not_clinician_labels": true,
+  "reading_scope": "25 selected cases: complete propositions, references and both complete outputs. Reference blocks read via patient unions with note headers; omitted display segment 93147 indices 97..110 was read separately. Thirteen source parents read subsequently; full BHC read only for C17. Other saved X_ packets have not been closely read.",
+  "reviews": [
+    {
+      "case_id": "C01",
+      "claim_zh": "肾造瘘后患者病情稳定。",
+      "observation": "两臂均引用术后无进一步低血压、无器官功能障碍。structured 要求整体稳定的显式总结句；event 接受这些临床状态共同支持稳定，与发布 GT 一致。",
+      "possible_explanation": "主要差别是总结性陈述的支持门槛，不是新增检索或发现一个此前未输入的事件。",
+      "uncertainty": "GT 经三方分歧后裁决；C02 的近似命题为相反 GT，且实际 reference 不完全相同，不能据此裁定某一标签错误。",
+      "tags": [
+        "support_threshold",
+        "uncertain_gt"
+      ],
+      "reference_numbers": [
+        60,
+        80,
+        87,
+        88,
+        92
+      ],
+      "output_check_indices": {
+        "structured": [
+          2,
+          3,
+          4
+        ],
+        "event_alignment": [
+          2,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": "原 parent 将操作与随后稳定放在同一句。上下文未提供独立临床证据。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C02",
+      "claim_zh": "住院病程在肾造瘘术后出现稳定。",
+      "observation": "event 区分术前稳定与术后无低血压，同时要求明确归因于操作及明确的病程总结，给 NS，恰与 GT 相同；structured 用部分相同状态给 S。",
+      "possible_explanation": "时间与支持范围被重新解释，但 after 不自动等于 caused by；正确标签不能证明附加的因果要求合理。",
+      "uncertainty": "C01/C02 的 GT、措辞与 reference 均有差异。裁决依据未提供，真实稳定范围及收益原因不能确定。",
+      "tags": [
+        "support_threshold",
+        "time_role",
+        "uncertain_gt"
+      ],
+      "reference_numbers": [
+        49,
+        59,
+        70,
+        93
+      ],
+      "output_check_indices": {
+        "structured": [
+          2,
+          3
+        ],
+        "event_alignment": [
+          2,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": "parent 包含 initial instability、后续稳定和转普通病房，比单条 claim 范围更宽；不能由它证明实际病程。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C03",
+      "claim_zh": "患者入院时伴有红斑。",
+      "observation": "structured 把 with erythema 当成以红斑为入院诊断/原因；event 用入院前后右膝红斑记录支持伴随症状，而未要求其为主诊断。",
+      "possible_explanation": "与命题实际要求有关的语义范围调整，比一般的事件清单更具体。",
+      "uncertainty": "这里只能确认两份输出对 with 的解读不同，不知道内部处理或换一次生成是否稳定。",
+      "tags": [
+        "support_threshold",
+        "time_role"
+      ],
+      "reference_numbers": [
+        5,
+        60,
+        79,
+        95
+      ],
+      "output_check_indices": {
+        "structured": [
+          0,
+          3,
+          4
+        ],
+        "event_alignment": [
+          1,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C04",
+      "claim_zh": "住院期间持续处理皮肤完整性问题。",
+      "observation": "structured 因最后一天无皮肤记录否定 throughout；event 接受多次护理记录覆盖病程。两臂都称皮肤记录在 03-11/12/13，实际相关编号属于 03-11 与 03-12，03-13 项主要是影像记录。",
+      "possible_explanation": "总结性持续护理与逐日完整记录的门槛不同；改对标签并不说明时间解释完全准确。",
+      "uncertainty": "不能由未见最后一天护理记录断言未护理，也不能由两天记录独立证明整个住院期间；没有新医生裁决。",
+      "tags": [
+        "support_threshold",
+        "time_role",
+        "explanation_accuracy"
+      ],
+      "reference_numbers": [
+        35,
+        61,
+        62,
+        76,
+        88,
+        97
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          4
+        ],
+        "event_alignment": [
+          0
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C05",
+      "claim_zh": "患者医疗状态出现显著阶段性改善。",
+      "observation": "两臂都看到胸部影像和临床改善，也看到 CMO 与功能受损。event 以整体病情仍重为由拒绝 broad medical status；structured 接受阶段性改善。",
+      "possible_explanation": "改善与未痊愈/重病可能共存；核验范围可能被过度扩张。",
+      "uncertainty": "整体临床趋势及应有支持门槛未重新裁定。原文的说明能限定表达意图，但不能证明改善本身。",
+      "tags": [
+        "support_threshold",
+        "source_context",
+        "evidence_use"
+      ],
+      "reference_numbers": [
+        43,
+        44,
+        81,
+        87,
+        88,
+        97
+      ],
+      "output_check_indices": {
+        "structured": [
+          2,
+          3
+        ],
+        "event_alignment": [
+          2,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": "parent 的同一句紧接 with increased aeration and decreased mediastinal shift，显示该总结关联影像变化；不能把 parent 当 gold evidence。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C06",
+      "claim_zh": "患者在普通病房接受职业治疗以恢复力量。",
+      "observation": "两臂都认定只有 PT 咨询/PT-OT 动员需求，没有已完成的病房 OT 记录；structured 给 NA，event 给 NS。",
+      "possible_explanation": "同一证据关系到标签的映射差异，比是否区分计划/完成更突出；两臂实际都已区分。",
+      "uncertainty": "reference 之外是否发生 OT 未查证；NS 也包括部分支持不足，不能自行改为只表示直接矛盾。",
+      "tags": [
+        "label_boundary",
+        "plan_vs_event"
+      ],
+      "reference_numbers": [
+        54,
+        61,
+        66
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2,
+          4
+        ],
+        "event_alignment": [
+          0,
+          2,
+          4
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C07",
+      "claim_zh": "患者接受过上消化道内镜检查。",
+      "observation": "两臂均看到上消化道内镜已实施；event 因 claim 使用复数 endoscopies 而给 NS，structured 接受操作记录。",
+      "possible_explanation": "数量表达及原句并列结构可能造成额外核验要求。",
+      "uncertainty": "实际做过几次上消化道内镜没有独立确认；不能直接断言复数无关紧要或医生标签错误。",
+      "tags": [
+        "support_threshold",
+        "source_context"
+      ],
+      "reference_numbers": [
+        16,
+        17,
+        54,
+        66,
+        76
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2
+        ],
+        "event_alignment": [
+          2,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": "parent 是 upper and lower endoscopies；提取为 upper endoscopies 后，原并列关系没有保留在独立 claim 中。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C08",
+      "claim_zh": "住院时同时管理系统性红斑狼疮。",
+      "observation": "event 称只有既往史、无当前管理，但 reference 39 有 SLE/vasculitis 与慢性激素，25 有 prednisone，54 明确继续按家庭方案治疗慢病。structured 接受前两项的共同支持。",
+      "possible_explanation": "历史病史与持续治疗被分隔，且对输入中已存在的延续治疗计划解释不足。",
+      "uncertainty": "54 没有逐个列出 SLE，激素适应证也含 presumedly；不能仅靠此分析确定真实具体医嘱。",
+      "tags": [
+        "evidence_use",
+        "support_threshold",
+        "plan_vs_event"
+      ],
+      "reference_numbers": [
+        25,
+        39,
+        54,
+        90
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2
+        ],
+        "event_alignment": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": "parent 将 SLE 与 diabetes 列为同时管理的条件；这里只说明原文意图，不提供事实证明。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C09",
+      "claim_zh": "开始给予万古霉素/哌拉西林他唑巴坦。",
+      "observation": "structured 要求明确 started/启动医嘱，虽看见 given、received 和药物时间仍给 NS；event 接受实施和后续延续记录，与 GT 一致。",
+      "possible_explanation": "对命题是否必须附带精确启动证据的要求不同。",
+      "uncertainty": "首次用药的精确时刻没有独立核定，不能由 gave 一词普遍推出所有 started 陈述都成立。",
+      "tags": [
+        "support_threshold",
+        "plan_vs_event"
+      ],
+      "reference_numbers": [
+        8,
+        9,
+        18,
+        49,
+        51,
+        69
+      ],
+      "output_check_indices": {
+        "structured": [
+          0,
+          2,
+          4
+        ],
+        "event_alignment": [
+          1,
+          2,
+          4
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C10",
+      "claim_zh": "患者于 2171-05-11 09:47 去世。",
+      "observation": "structured 将 reference 44 中较晚的 PFI 报告时间解释为患者仍有后续活动的反证；该项的 note 日期是 05-08，正文 PFI 是 05-11。event 因没有死亡事件/精确时刻的记载给 NA。",
+      "possible_explanation": "记录/报告时刻与事件时刻的区别，以及无记录不等于有反证，是具体可回查的线索。",
+      "uncertainty": "全部输入 reference 中未见死亡记载，不等于全 EHR 没有；本轮未核定真实死亡时间。",
+      "tags": [
+        "time_role",
+        "label_boundary"
+      ],
+      "reference_numbers": [
+        44
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "event_alignment": [
+          0,
+          1,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C11",
+      "claim_zh": "患者正转向仅舒适照护。",
+      "observation": "reference 同时记载 CMO、维持现有治疗以及为舒适继续 NPPV/CHF 治疗。structured 以仍有治疗否定方向性陈述；event 接受 moving towards 与舒适目标。",
+      "possible_explanation": "目标、过渡状态和正在进行的措施被更恰当地组合，而非一看到治疗就与 CMO 对立。",
+      "uncertainty": "不能据此判断所有 CMO 的医学执行规范；这里只核对该命题与输入/GT 的对应。",
+      "tags": [
+        "plan_vs_event",
+        "support_threshold",
+        "evidence_use"
+      ],
+      "reference_numbers": [
+        47,
+        52,
+        75,
+        77,
+        81,
+        99,
+        100
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2,
+          4
+        ],
+        "event_alignment": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C12",
+      "claim_zh": "左颈内静脉导管已移除。",
+      "observation": "structured 把 03-29 导管仍在位作为移除事件的反证；event 指出未记录移除而给 NA。入院结束是 03-30，输入未说明一个在位快照能排除所有后续移除。",
+      "possible_explanation": "时间作用范围与 NA/NS 映射共同变化；event 的两项检查未显式展开完整时间推理。",
+      "uncertainty": "不能推断模型内部完成过特定时间核对，也未确认实际移除事件。",
+      "tags": [
+        "time_role",
+        "label_boundary"
+      ],
+      "reference_numbers": [
+        52,
+        80,
+        90,
+        95
+      ],
+      "output_check_indices": {
+        "structured": [
+          0,
+          1,
+          4
+        ],
+        "event_alignment": [
+          0,
+          1
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C13",
+      "claim_zh": "耻骨上导管移位并阻塞左输尿管。",
+      "observation": "CT 有 may be 的不确定措辞；同时 reference 44/50 的医师记录写 with e/o obstruction。event 引了这些编号，仍把证据统称为仅可能、无确定阻塞；structured 接受综合支持。",
+      "possible_explanation": "对不同来源表述和证据确定性的整合不足，不能只描述为缺少相关检索结果。",
+      "uncertainty": "没有独立医学裁决确定因果关系；明确陈述和保留措辞如何权衡仍需验证。",
+      "tags": [
+        "evidence_use",
+        "support_threshold"
+      ],
+      "reference_numbers": [
+        2,
+        4,
+        44,
+        50,
+        67,
+        81
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2,
+          3
+        ],
+        "event_alignment": [
+          2,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C14",
+      "claim_zh": "患者于 Month 1083 在普通病房被 disease 接诊。",
+      "observation": "原 claim 含异常的服务对象/时间。event 将 Lyme disease 的提及当作相关接诊信息，再因时间不符给 NS；structured 给 NA，但同样未恢复合理指代。",
+      "possible_explanation": "脱敏占位符与命题生成的结构变化可能比普通事件核对更根本。",
+      "uncertainty": "不恢复或猜测被脱敏的真实词语；这条 valid-only 命题仍可有解释困难，不能重判 invalid 或 GT。",
+      "tags": [
+        "deidentification",
+        "source_context",
+        "label_boundary"
+      ],
+      "reference_numbers": [
+        6,
+        14,
+        71,
+        98
+      ],
+      "output_check_indices": {
+        "structured": [
+          0,
+          1,
+          2
+        ],
+        "event_alignment": [
+          0,
+          1,
+          4
+        ]
+      },
+      "source_context_observation": "parent 是 seen by [**Month (only) 1083**] disease，claim 将占位符重组为 in Month 1083；只确认可见结构变化。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C15",
+      "claim_zh": "其 Hospital1 data 在正常范围。",
+      "observation": "structured 用异常超声结果否定 data 全正常；event 要求 Hospital1 特定数据，因无法识别来源而给 NA。",
+      "possible_explanation": "命题中 data 的范围与占位符指代未解决，不能把变化直接归为事件核对能力下降。",
+      "uncertainty": "哪些资料属于这里的 data、其时间范围和医生 NS 的具体依据均未确认。",
+      "tags": [
+        "deidentification",
+        "source_context",
+        "unresolved_referent"
+      ],
+      "reference_numbers": [
+        23,
+        25,
+        26,
+        28,
+        34,
+        79
+      ],
+      "output_check_indices": {
+        "structured": [
+          2,
+          3
+        ],
+        "event_alignment": [
+          0
+        ]
+      },
+      "source_context_observation": "parent 写剩余住院经过平稳、Hospital1 data 与生命体征正常，仍不能恢复 data 的确切含义。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C16",
+      "claim_zh": "已转为仅舒适照护。",
+      "observation": "structured 结合决定与 reference 96 停升压药等实施记录给 S；event 承认不只是计划，却要求正式医嘱/明确执行并给 NS。输入确有实施相关记录，不只是家属意愿。",
+      "possible_explanation": "输入证据利用与额外证据门槛同时出现；不宜由输出未引 96 推断模型根本没读到。",
+      "uncertainty": "真实医嘱流程及内部成因未知；护理 note 的记录时间也不应等同精确实施时刻。",
+      "tags": [
+        "evidence_use",
+        "support_threshold",
+        "plan_vs_event"
+      ],
+      "reference_numbers": [
+        71,
+        94,
+        96,
+        97,
+        100
+      ],
+      "output_check_indices": {
+        "structured": [
+          2,
+          3,
+          4
+        ],
+        "event_alignment": [
+          2,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C17",
+      "claim_zh": "他耐受这次操作良好。",
+      "observation": "event 用 10-17 的 Stable post-op、耐受饮食与舒适状态支持不指明哪次的 procedure；structured 根据并发情况给 NS，两者都偏离 NA。",
+      "possible_explanation": "命题丢失事件指代可能让同主题、不同手术的记录被使用。",
+      "uncertainty": "NA 的医生裁决理由不可见；上下文只用于定位所指手术，不证明其真的耐受良好。",
+      "tags": [
+        "source_context",
+        "unresolved_referent",
+        "event_identity"
+      ],
+      "reference_numbers": [
+        51,
+        52,
+        54,
+        57,
+        68,
+        86
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2,
+          3
+        ],
+        "event_alignment": [
+          0,
+          1
+        ]
+      },
+      "source_context_observation": "为解决 parent 开头的 He，额外读了此病例整份 BHC：该 parent 紧随 10-19 再次 I&D；所引 Stable post-op 则属于 10-17。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": true
+      }
+    },
+    {
+      "case_id": "C18",
+      "claim_zh": "增加美托洛尔后效果良好。",
+      "observation": "两臂均找到多次加量及早期心率改善；structured 给 S，event 用仍需加量/仍心动过速否定 broad good results，均未得到 NA。",
+      "possible_explanation": "缺少剂量与具体加量事件的指代，可能把不同阶段的反应混为一个结果。",
+      "uncertainty": "不能将上下文的 good result 当事实；也不能确认 NA 就是因所指最终剂量无后续反应。",
+      "tags": [
+        "source_context",
+        "unresolved_referent",
+        "event_identity",
+        "support_threshold"
+      ],
+      "reference_numbers": [
+        14,
+        26,
+        46,
+        78,
+        89,
+        96
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          3,
+          4
+        ],
+        "event_alignment": [
+          0,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": "parent 指 increased up to metoprolol 100mg Q6H with good result；reference 的改善在此前较低剂量阶段，最后 100mg QID 计划后的反应未在该输入中明确建立。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C19",
+      "claim_zh": "患者在 [11-15] 被送入手术室。",
+      "observation": "输入记录 OR SENT 为 10-15。structured 另要求手术已实施，event 虽区分送入与手术，却明确把 [11-15] 当作 10-15 来支持。两者均错。",
+      "possible_explanation": "正确处理一个条件同时擅自放宽另一个显式日期，说明清单不能保证忠于原命题。",
+      "uncertainty": "原文也保留 [11-15]，本轮不能裁定其真实日期或将之静默修正；GT 经三方分歧后裁决。",
+      "tags": [
+        "time_role",
+        "source_context",
+        "deidentification",
+        "support_threshold"
+      ],
+      "reference_numbers": [
+        34,
+        41,
+        49
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          3
+        ],
+        "event_alignment": [
+          1,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": "parent 本身是 Later on the [**11-15**]，未找到可授权把 11 改成 10 的原文依据。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C20",
+      "claim_zh": "高速车祸后住院。",
+      "observation": "两臂均结合 high speed MVC 与 ICU admission 记录给 S，包含明确的事件、状态和时间关系。",
+      "possible_explanation": "清楚的指代和直接支持时，普通结构化解释已能处理，额外清单不必然产生增益。",
+      "uncertainty": "此正确对照不证明其他清楚病例均容易；单例不提供机制发生率。",
+      "tags": [
+        "stable_control",
+        "event_identity"
+      ],
+      "reference_numbers": [
+        10,
+        33,
+        48,
+        54
+      ],
+      "output_check_indices": {
+        "structured": [
+          0,
+          1,
+          2
+        ],
+        "event_alignment": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "source_context_observation": "parent 的事件和住院关系已保留在 claim 中，是上下文需求较少的对照。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C21",
+      "claim_zh": "用抗惊厥药经验性治疗疑似肺炎。",
+      "observation": "两臂都区分癫痫用药与疑似感染用抗菌药，不以两者共同出现为用途关系的证据，均给 NS。",
+      "possible_explanation": "明确的药物—用途对应问题无需依赖 event_alignment 才能识别。",
+      "uncertainty": "未重做医学药理裁决；依据是输入分开的管理条目和已有 GT。",
+      "tags": [
+        "stable_control",
+        "event_identity"
+      ],
+      "reference_numbers": [
+        10,
+        12,
+        14,
+        18,
+        22
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2,
+          3
+        ],
+        "event_alignment": [
+          0,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C22",
+      "claim_zh": "患者情况未变。",
+      "observation": "两臂将 condition 扩为所有方面均不变，以新影像发现/干预否定；输入同时含 Neuro unchanged 与 ECG 无显著变化，均给 NS 而 GT 为 S。",
+      "possible_explanation": "泛化临床总结的作用范围未解决；新增事件清单没有纠正共有的严格解释。",
+      "uncertainty": "原文上下文仍不足以精确规定 condition 的临床范围；不能确认医师支持的具体依据。",
+      "tags": [
+        "stable_control",
+        "support_threshold",
+        "source_context"
+      ],
+      "reference_numbers": [
+        10,
+        19,
+        27,
+        69,
+        100
+      ],
+      "output_check_indices": {
+        "structured": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "event_alignment": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "source_context_observation": "parent 在影像变化之后继续写 condition remained unchanged 和维持治疗，提示该总结未必断言所有检查结果逐项不变，但这仍不是新的医学裁决。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C23",
+      "claim_zh": "已咨询社工以提供应对和情绪支持。",
+      "observation": "两臂均用社工记录及 Social work and psych consult done today 支持咨询已发生，没有把患者拒绝交谈等同于没有咨询。",
+      "possible_explanation": "事件是否发生与服务接受程度的区分在普通解释中也已存在。",
+      "uncertainty": "此处只确认咨询记录，不推断实际支持效果。",
+      "tags": [
+        "stable_control",
+        "plan_vs_event"
+      ],
+      "reference_numbers": [
+        50,
+        51,
+        54,
+        58,
+        64
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2,
+          3
+        ],
+        "event_alignment": [
+          0,
+          2,
+          4
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C24",
+      "claim_zh": "用药依从性问题可能导致癫痫。",
+      "observation": "两臂看到癫痫及其他背景，却没有把另一种可能病因直接当成依从性因果的反证，均给 NA。",
+      "possible_explanation": "NA/NS 边界在明确未涉及的关系上可以正确保留，不能将所有 NA 错误归于固定标签定义失灵。",
+      "uncertainty": "全部此例 reference 未见依从性资料，不等于真实患者没有依从性问题。",
+      "tags": [
+        "stable_control",
+        "label_boundary"
+      ],
+      "reference_numbers": [
+        20,
+        25,
+        30,
+        32
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "event_alignment": [
+          0,
+          2
+        ]
+      },
+      "source_context_observation": null,
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": false,
+        "full_bhc": false
+      }
+    },
+    {
+      "case_id": "C25",
+      "claim_zh": "在创伤 ICU 留院数日接受密切监测。",
+      "observation": "两臂均看到 ICU/TSICU、03-11/12 护理与 ICU 去向，却要求更明确的单位及持续天数，均给 NS 而 GT 为 S。",
+      "possible_explanation": "可能混合缩写解释、时长支持门槛和局部证据不完整；不是仅增加检查项即可消除的错误。",
+      "uncertainty": "真实 ICU 住院时长未独立核实；不能把全院住院日期直接当 ICU 起止时间。",
+      "tags": [
+        "stable_control",
+        "support_threshold",
+        "time_role"
+      ],
+      "reference_numbers": [
+        43,
+        44,
+        80,
+        85,
+        86,
+        94
+      ],
+      "output_check_indices": {
+        "structured": [
+          1,
+          2,
+          3
+        ],
+        "event_alignment": [
+          0,
+          1,
+          2,
+          4
+        ]
+      },
+      "source_context_observation": "parent 明确 Trauma ICU several days，并连着 03-12 操作；它能呈现文档意图，但不能自行证明数日 ICU 记录。",
+      "reading": {
+        "proposition": true,
+        "full_structured_output": true,
+        "full_event_alignment_output": true,
+        "full_reference": true,
+        "parent_context": true,
+        "full_bhc": false
+      }
+    }
+  ]
+}

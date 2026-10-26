@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "history_hashes": 17905,
+  "ranking": {
+    "025": {
+      "patients": 10,
+      "candidates": 103,
+      "AUC_CIs_checked": 5,
+      "paired_AUC_CIs_checked": 4
+    },
+    "026": {
+      "patients": 6,
+      "candidates": 52,
+      "AUC_CIs_checked": 5,
+      "paired_AUC_CIs_checked": 4
+    }
+  },
+  "conflicts": {
+    "025": {
+      "exact_groups": 46,
+      "mixed_groups": 6,
+      "mixed_claims": 37,
+      "minimum_errors": 10
+    },
+    "026": {
+      "exact_groups": 27,
+      "mixed_groups": 7,
+      "mixed_claims": 22,
+      "minimum_errors": 9
+    },
+    "pooled_descriptive": {
+      "exact_groups": 56,
+      "mixed_groups": 13,
+      "mixed_claims": 73,
+      "minimum_errors": 22
+    }
+  },
+  "high_rescue_ceiling": {
+    "025": {
+      "states": 31,
+      "max_gain": 14.0,
+      "states_gain_atleast3": 16
+    },
+    "026": {
+      "states": 10,
+      "max_gain": 2.3684210526315823,
+      "states_gain_atleast3": 0
+    }
+  },
+  "case_packets_bound": 31,
+  "quote_offsets": 53,
+  "full_packet_text_read_by_auditor": [
+    "C06",
+    "C16",
+    "C14",
+    "C29"
+  ],
+  "saved_probability_order_unchanged": true,
+  "network_blocked": true,
+  "new_fits_blocked": true
+}

@@ -1,0 +1,38 @@
+{
+  "updates": {
+    "README.md": {
+      "before": "ee05f0e55163b03f6a1ab57fb16deff4bc10616045a9e47d288d3de9699f4c50",
+      "after": "82895be37d92b6c4aa9604c530b3bf0019191a33c88f8943c78657fd0f4968f2"
+    },
+    "AGENTS.md": {
+      "before": "523c3934f7f192e5668e5c80fbae729e76709b0ef38f956cac285a3ca3d27c12",
+      "after": "415eb596cb4bce20b2c3f24f89c892c47aa0c7694a536c9db256755ec2c33d31"
+    },
+    "tasks/013_multi_mechanism_screen/README.md": {
+      "before": "27595678f8302b5dbc741f68c7d1c388c6bc7f791805e7695226a64174cc725b",
+      "after": "88db7d6ab6964bc699386582065df711bf752008a9bef160da047a09a3da997d"
+    },
+    "outputs/013_multi_mechanism_screen/README.md": {
+      "before": "e5704a6ad689ca9546478368467c1f77d344b2cb40c5474ee76d22873b375428",
+      "after": "38b07888b8b0152429e9c64a350360ab85e19bde795e56149a4a6fa81d0dfff7"
+    },
+    ".gitattributes": {
+      "before": "85d3244af913cdaae7d052678ef9ea729209e88e37c5a602aeaf5b151d67a10e",
+      "after": "c047b77cd794e68fe108995e5626d2554ba8d4200a8b745ebe9ffc08186e3414"
+    },
+    "reviews/013_multi_mechanism_screen.md": {
+      "before": "a866e6b2571fae7d62508e48ed3f887ec8895204c9e3fe8659e6a71aec47ff3b",
+      "after": "ae352607be9077473b6d9c71ed79d1d01b0f952eb8f2ceb342a87a7415dca634"
+    }
+  },
+  "changed_handoff_files": [
+    ".gitattributes",
+    "AGENTS.md",
+    "README.md",
+    "outputs/013_multi_mechanism_screen/README.md",
+    "reviews/README.md",
+    "tasks/013_multi_mechanism_screen/README.md"
+  ],
+  "frozen_experiment_unchanged": true,
+  "new_api_calls": 0
+}

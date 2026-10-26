@@ -1,0 +1,23 @@
+{
+  "equal": true,
+  "files": 16,
+  "checks": {
+    "candidates.csv": true,
+    "conflicts.json": true,
+    "conflict_pairs.csv": true,
+    "costs.json": true,
+    "cost_ledger.csv": true,
+    "coverage.json": true,
+    "curves.csv": true,
+    "decision.json": true,
+    "matched.json": true,
+    "metrics.json": true,
+    "normalized.jsonl": true,
+    "paired.json": true,
+    "paired_valid_sensitivity.json": true,
+    "patients.csv": true,
+    "predictions.csv": true,
+    "transitions.json": true
+  },
+  "network_blocked": true
+}

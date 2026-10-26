@@ -1,0 +1,28 @@
+{
+  "development_001_anchors": {
+    "count": 45,
+    "kinds": {
+      "ehr": 29,
+      "judge": 16
+    }
+  },
+  "confirmation_001_anchors": {
+    "count": 86,
+    "kinds": {
+      "ehr": 55,
+      "judge": 31
+    }
+  },
+  "review_sample": {
+    "first_rule_cases": 27,
+    "all_NS_changes_added": 8,
+    "final": 35
+  },
+  "isolated_negative_controls": [
+    "receipt byte tamper rejected",
+    "frozen request changed rejected",
+    "missing real score rejected",
+    "mixed-patient evidence rejected"
+  ],
+  "network_disabled": true
+}

@@ -1,0 +1,15 @@
+{
+  "purpose":"Post-hoc evidence add/remove/repeat diagnostics, never production or new GT",
+  "selection":"Three prior development loss anchors, three new supportive-record cases, two original-NA counterexamples, and one original-NS datatype case. Selected after primary results, before intervention outputs. All classes and both directions retained.",
+  "cases":[
+    {"folder":"development_001","case_id":"P081","receiver":"A48","donor":"B48","keys":[["497323",635]],"avoid":"ortho|fasci|compartment|emergency|\\bED\\b","interpretation":"initial orthopedic evaluation"},
+    {"folder":"development_001","case_id":"P071","receiver":"B48","donor":"A48","keys":[["688711",3226]],"avoid":"cultur|microorgan|growth|antibio|septic|knee","interpretation":"clinical culture summary"},
+    {"folder":"development_001","case_id":"P080","receiver":"B48","donor":"A48","keys":[["498057",634]],"avoid":"pain|dilaud|analgesi|morph|oxyco","interpretation":"later-date pain treatment"},
+    {"folder":"confirmation_001","case_id":"N293","receiver":"B48","donor":"C48","keys":[["637617",4477]],"avoid":"agitat|neuro|mental|psychi|confus|disorient|calm","interpretation":"early agitation amid later negative assessment"},
+    {"folder":"confirmation_001","case_id":"N302","receiver":"B48","donor":"A48","keys":[["564665",636]],"avoid":"bolus|resusc|fluid|\\bLR\\b|transfus|blood product|hct","interpretation":"fluid bolus with observed response"},
+    {"folder":"confirmation_001","case_id":"N394","receiver":"A48","donor":"C48","keys":[["564420",2646]],"avoid":"neuro|temporal|calc|SAH|head|hemorrhage|haemorrhage","interpretation":"neurosurgical interpretation and observation plan"},
+    {"folder":"confirmation_001","case_id":"N352","receiver":"A48","donor":"C48","keys":[["564534",1270]],"avoid":"hand|finger|fractur|operat|surg","interpretation":"related finger-fracture context that may mislead trigger-finger judgment"},
+    {"folder":"confirmation_001","case_id":"N487","receiver":"B48","donor":"A48","keys":[["470327",2554],["470439",2546]],"avoid":"flat|supine|position|\\bCT\\b|obstruct","interpretation":"matching posture evidence with malformed-date subject and NA GT"},
+    {"folder":"confirmation_001","case_id":"N410","receiver":"A48","donor":"C48","keys":[["475441",636]],"avoid":"ventilat|PSV|CPAP|5/5|5-27|command|trach|wean","interpretation":"later ventilation terminology clue, not direct proof of the claimed earlier date"}
+  ]
+}

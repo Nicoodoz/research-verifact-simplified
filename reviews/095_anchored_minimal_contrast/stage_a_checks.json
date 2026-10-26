@@ -1,0 +1,218 @@
+{
+  "utc": "2026-09-27T15:34:09.762060+00:00",
+  "scope": "Independent stage A cache identity, earliest-selection and live ledger snapshot; not final task audit",
+  "selected_native_requests_verified": 1885,
+  "sample_40": [
+    {
+      "id": "fdb38c6b-6db0-ba33-60a0-87fa161261a2",
+      "request_sha256": "3dea3919d06eff63171f195219e71c3b6017b4acad61f7d47a72a8138c84e81c",
+      "receipt_sha256": "d7a4e3b6889742c01828d990dd7b6058eeb0d863b2bb4e86f28a19eebadc2448"
+    },
+    {
+      "id": "33239183-2c4a-2343-3153-069b94dee859",
+      "request_sha256": "ece586b292e911a5e5c406d18e44b65114e248479c27fa565a9b62c68d80a455",
+      "receipt_sha256": "c68547a8c59231a5e39d73a272553bcb68e53ee8152bc659689624b98c0bce52"
+    },
+    {
+      "id": "fde48eec-ad06-dfef-571b-1d0f42b7fdc5",
+      "request_sha256": "d181b425800816180800d16b292e3b3c78bbfb8a075f6d091283ebdb7c3cb6b2",
+      "receipt_sha256": "de0264a5d592d3dd4c5da1e6733590945eda967fb76d396ef049d6635f96c297"
+    },
+    {
+      "id": "887aecda-1261-64fd-5fcc-601172d12335",
+      "request_sha256": "68b433ae96d6e57e938b8c873b85ba25f971b13731b400e0bb57f26b2124244c",
+      "receipt_sha256": "075b824eba7243e09577adfbf0e99323ee64fa4192d44b715587b3fc9b4ac108"
+    },
+    {
+      "id": "19cb1fd6-cdbb-437e-c4af-d607937efd45",
+      "request_sha256": "c67463020229438ce18362e9d036fb30c71b31d26e571fb102361e2001d1ee3d",
+      "receipt_sha256": "cf9760830107caa3c3259a5484f1d8f4dc3c172f8ec399c31f3f739c8f135943"
+    },
+    {
+      "id": "ed4866f8-8c90-c820-a402-00935bbc6841",
+      "request_sha256": "91dfde558865f131684aec28de670f94ccd003494add8ac0af685903249057af",
+      "receipt_sha256": "352cbd2e4301d4836a68e5711294bf3b1903adab2fb05e85f63818ff66a63d30"
+    },
+    {
+      "id": "761fce90-a9d6-32fe-9cbf-fe30c3de2ba1",
+      "request_sha256": "78d10fda6f4c7f9e953d0d393a23f534f8d059e1a8acbca6708b2b36499b1f8f",
+      "receipt_sha256": "aba8b94b0474377a73a89535b17e8db6f6cb03762f3e877628d842eed4e0984b"
+    },
+    {
+      "id": "ff717637-a54b-58c6-cfd2-b82bd5624a2e",
+      "request_sha256": "83f3072624af3c7ba765a68feb00c25495573060c79793128ec6a4b306a5eb69",
+      "receipt_sha256": "d09cd29b976e3092402ad0633007c9520b0645298b1cd640794b0ed4c7cccd48"
+    },
+    {
+      "id": "1e7ca16d-5a1c-0550-e43a-27889df4d981",
+      "request_sha256": "6ca64248443922b2d78d4932683d9be7909fdaf45f4c9b9853cb2d09d2269a1f",
+      "receipt_sha256": "5180070f5d944f041701a187c327e0e46935d2d795a38a5df1c9c84dcda9f0a5"
+    },
+    {
+      "id": "10a98348-0358-f588-0848-045a4368c1e7",
+      "request_sha256": "cb05c072b5bf6b4e464910b2c6d96fa77773cb5a735bb0672cb5dc89132ae97b",
+      "receipt_sha256": "791161214c825fd63918246f75b067797fde17ab08d5c348191c88ace1bf5ef0"
+    },
+    {
+      "id": "c2bc9792-2eab-5195-dadc-84314b4df242",
+      "request_sha256": "8424c34756720b9bab7d829e0643e9fedd43e718be454d2bb12c0c22e230f421",
+      "receipt_sha256": "c454ed083edd25e6d7eda4bb61b721e7841a717ea706df4fa6638fb10bcd791f"
+    },
+    {
+      "id": "52990e1f-107d-0bf0-91e8-fc6cca0d7328",
+      "request_sha256": "955e2d19f5af80907f7223f5e2f10533722497868af90b74823a5bc54171f133",
+      "receipt_sha256": "144c335ec784ec8ff5f22017f1fdf3054b0d2894810361749531129389b57a3b"
+    },
+    {
+      "id": "0b79ff4e-3643-c6ee-fd5a-e7d3abe1a2a9",
+      "request_sha256": "c3a607ed287e4d3a5d65c0eb83330960c35e47349bdd238ddcf896d65b143f2e",
+      "receipt_sha256": "c241364858b73da79abfaa1360413cf47ad043de58eaa10afb52e635dc15bc83"
+    },
+    {
+      "id": "9716abf4-db1d-9ce9-e4b6-a1b6d6a1f28a",
+      "request_sha256": "acc21de30076032b1bdf7e831d35c760ca43aedcf9b92392b200d5e368b77b38",
+      "receipt_sha256": "ab794d9af4c4b9065a2113dd6a1aa41982d2085616b8d2b0d30ed23da6be2662"
+    },
+    {
+      "id": "1f474077-9969-fe9f-657f-57539784f4ca",
+      "request_sha256": "f362d9ad3105fe3233a6afe9a67de125d009eca18169fc122cb5f3acda6de4cb",
+      "receipt_sha256": "185e894d31d59a893fdad759c22f21a9853f27eff27124842bfd864148313081"
+    },
+    {
+      "id": "2bd4d544-7561-8ffd-adb4-ef533e2d3524",
+      "request_sha256": "65e3f577c44add2af36b6aec99b3bd42e75b926744eee819ca810c855cad4f6c",
+      "receipt_sha256": "c07f7c2248fe08ea0b06338c6171cba2b132edd999f343e1f58418d3e8f4c01a"
+    },
+    {
+      "id": "de6be94a-3c5b-cdbe-0081-e39e4ad39b89",
+      "request_sha256": "093caa7cd0ca6d7b2b9e4e2d7d3d781602019df0b525636cf33f103d819c0df5",
+      "receipt_sha256": "bc03ae832db201e4c750ed0b65798a07838146d9a87a94aae8789899a26437ff"
+    },
+    {
+      "id": "3fd6837c-e93e-8370-1897-54b3549cf32b",
+      "request_sha256": "3e1e026a8cc08148c50d657ebb68bc49998ff2290ad0739bff99103bfc5dcf12",
+      "receipt_sha256": "1502114c988a1807b78e8ce401fda567afac97f4bfbf9e45b796e8c0eeb0ff2d"
+    },
+    {
+      "id": "e3a4c6b9-db3b-0c17-006d-fed13f0c80c3",
+      "request_sha256": "48cf6c9e133c43538792399e7a92cec65223cbd10d29c4ae7d57857709f2ada3",
+      "receipt_sha256": "e9ccebf17219bd6448dd9dd3e893d7e96fac638f7b87a7e360ae41f4db601e30"
+    },
+    {
+      "id": "175cde3f-5ece-a597-1dc7-c126abb14b22",
+      "request_sha256": "fce903453ca273beef2d73f0dc6dc849f16fe47069122007850a8fe8d81d00c8",
+      "receipt_sha256": "b33ac44f48e4c5da64aee5cb4877a620f307e67b9d3873fed0666627a27d8faa"
+    },
+    {
+      "id": "e7ae800c-8815-e23d-0361-473b2fa2163d",
+      "request_sha256": "cf8efecc39bd7259de2d66d0132b33dd5edfc04717f4a09e6b61d3976a1c5f83",
+      "receipt_sha256": "a48327af2fe948952a929620421c04b2f16cc0f9c582c7b123bd6356fdbc351e"
+    },
+    {
+      "id": "c379263a-1a4c-926c-bc04-e90d27daabc8",
+      "request_sha256": "a84351f3f7631bc055679861ee5158fed3fdc6d7899f114b14bf4c9a8740cca7",
+      "receipt_sha256": "497907c4ca9da1aa624541a88706091c31b88a80499b0c8e02a7e154640ae034"
+    },
+    {
+      "id": "426c5398-09d3-5419-a07d-b1f86e5ade9e",
+      "request_sha256": "0801a801550d6b1af4b34ca63b45b811646f411c051909bc0f6fe7bf4a8fa766",
+      "receipt_sha256": "8f4e18b9ec5dedcf90c20592f3ad8da0c91107c4088b4b65c303bef7b9b2582d"
+    },
+    {
+      "id": "b4c228fb-f067-cc80-e933-e3cb4b211c3c",
+      "request_sha256": "190efa7f57b6afa05b432b92140f176dc4e5d181056f7fc9b45bcc73b34605c5",
+      "receipt_sha256": "e241942ee271955fdd2095189dd6999602078d32f40ea78fc15112d07faa2dc0"
+    },
+    {
+      "id": "2a61d596-14dc-b49a-7e1b-2e0220efc69f",
+      "request_sha256": "89cb906d8d031f849b5e6de6178cb43cffa937aa5e64cf9b13cb2c313d07cf0d",
+      "receipt_sha256": "18487492e22c5e15346453508c1aa8c5fcbf263721f8279e27a9a4ec2defdd4d"
+    },
+    {
+      "id": "f1a396af-ede9-5359-36bf-6caa63d926f7",
+      "request_sha256": "e14b8d15c60bd8f1a22a49fae042f640efcc7311fd3c638065f084b7087a4118",
+      "receipt_sha256": "23fbed5d7a990556dbcdcac9c610c05056511c9dbff512969abee035a185f2a3"
+    },
+    {
+      "id": "fd97acc5-bd59-3dd7-d96d-95534cc12443",
+      "request_sha256": "a14de0d9f0e7788349a85df7de582e8c6bbc5bbcdb4d3edec0f21c23197df694",
+      "receipt_sha256": "1565aa9b4e8356b63d11ffce8d015b464e8b7d71beaae1bbd097198843da5dac"
+    },
+    {
+      "id": "871ccdeb-fdb6-e060-dc33-cea8c2850995",
+      "request_sha256": "c7e5ec5e89d3e9cdad95e2309a8a73069f92d20b4f04c08fbe77eb10ca24e5b1",
+      "receipt_sha256": "f736ef60455da0e001a17f5e87bfbe95541f498618e059827758052c0d1c7b3a"
+    },
+    {
+      "id": "d4d8af46-a2e8-4d22-78b9-f7a7d225616a",
+      "request_sha256": "1812c7873b781cbad67190735fab003bcf7cce52b187baa7e3d01fb17bddbed2",
+      "receipt_sha256": "84a361c6d31684221e6a209012595078c280efefa627e86b1efcb155f150fe0d"
+    },
+    {
+      "id": "99fb193f-03a8-894c-224c-15a5ffc1f11e",
+      "request_sha256": "a7e7fa6ffcdf02118619bf72c298eb843467675b2f5cefef1b69d02e74461e2d",
+      "receipt_sha256": "d59303e13ac5abe33a3a0b2c2970b6ce240b0477fbef6dd8bf00db628866fba4"
+    },
+    {
+      "id": "d4919dc5-9e8a-9ce4-75a3-e96f7e2fb38a",
+      "request_sha256": "efef6a9bf3c979e42a687b38bb204efeb5a2e2de6a6c2ea33f4e0de84a3fd6ae",
+      "receipt_sha256": "aad596e8c1e0fc3ab9decb63e9249493c93cc8161b802c77a8bee8aec29dec94"
+    },
+    {
+      "id": "b10b3c5f-2c19-23b6-b252-54f7ef729a74",
+      "request_sha256": "6e5877c556b7dae559429dd7f762ceab9896f6a1aff295b2fa86fe97813d40c4",
+      "receipt_sha256": "cf8f69dad10b46c21a1adf719f5fe7e382a2a6e0d218a5c508f3a3695f113948"
+    },
+    {
+      "id": "806037a6-c033-35ab-c14a-d145add5672e",
+      "request_sha256": "e9bd26c954bcc1dc80ed1c28d533962255f249e4c1dee8aba7734fd43986b227",
+      "receipt_sha256": "099afde16b3ce38fdbec540868038023e43bbfd8567b25c9b4dd9e3cccfc2d4a"
+    },
+    {
+      "id": "44291dd5-a4d2-3776-ed57-d349227a26da",
+      "request_sha256": "6ea5873f0eee8f9e417880e59b9d0031ad7cae7f14b46ec582540104249715c2",
+      "receipt_sha256": "bdadcfe010973ce0c4b8858c8130b3c226d8b3af374c3acd194032041e5ba3f2"
+    },
+    {
+      "id": "0b203f48-be48-8b47-e751-8a5597c8deef",
+      "request_sha256": "ca86b985767c39d68381434cf31efc2c4775581a3f56bbb414d9407369f5630b",
+      "receipt_sha256": "2e2e46039bac1df8c5547f0df61ef7f5ff41cfbb81b60310a364600d00234554"
+    },
+    {
+      "id": "024c9f6b-41f7-23c5-824b-1896d0a00415",
+      "request_sha256": "6e428b1b27321d655cf8c6f51a718ebf36726e85d4b8a3095f62cd6a2e413f7b",
+      "receipt_sha256": "d902e60e2d9c194742a818ba38b4c20ee4c5d30052f4ae56b4ad9842f43eed72"
+    },
+    {
+      "id": "5da35115-7ab3-7a90-1584-9741d7266c23",
+      "request_sha256": "dcd9b879c492da27702cdd4ad22ee875388b11e5e7108441735011cf6429f5de",
+      "receipt_sha256": "d7bdc48e12fa713c60ba3013cda356dd5a3c9aed5510ead0bbce61d19abbc6f2"
+    },
+    {
+      "id": "bf498135-cc6f-d674-df6a-580c666ce6fc",
+      "request_sha256": "d06796b6f654c5c05495dfb8d7232ae19f3022a5898a310ea1323b918720a420",
+      "receipt_sha256": "36c4105946118b1ea0576817e8cde5dba7901dac081e1b5779f77269b8fd0c8f"
+    },
+    {
+      "id": "aad161af-eba8-4bb3-9d0f-37b9cb014e40",
+      "request_sha256": "aa8449b38eefa1baf6984f14f4c5b859be4ac99ab4ac7edccfbcc8c90b3357f8",
+      "receipt_sha256": "c370775056cf3bd514cd305569c177d6e3d82d39d1a5fd80672e7541a8bdad2d"
+    },
+    {
+      "id": "b9d8b59b-89cb-0e0b-1b8c-586694fb163f",
+      "request_sha256": "5b36d975199f9d3ef5a90700838be0270bf4882b5f5b36603bf01f8bf9efb0b0",
+      "receipt_sha256": "e9e9183f183fad60fd6470749a56884b3e22cc5090c6c73e4c50d2fa45b3713a"
+    }
+  ],
+  "reference_bindings_verified": 9065,
+  "new_jobs_verified": 7180,
+  "cached_core_invalid_retained": 14,
+  "cached_raw_invalid_retained": 5,
+  "snapshot_attempts": 121,
+  "snapshot_status": {
+    "200": 105,
+    "0": 16
+  },
+  "snapshot_charge_or_reserve": 4.495833,
+  "status": "PASS_WITH_SCOPE_LIMITS"
+}

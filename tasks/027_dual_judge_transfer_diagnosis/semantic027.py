@@ -24,7 +24,7 @@ NOTES=[
 ('C19','focus_vs_component','肾功能监测确有记录；两理由仍依据多系统管理否决focus。Gate将正确NS改成S，语义裁决本身仍不由本任务重标。',['RENAL: boderline urine output, monitor Cr.']),
 ('C20','numeric_remainder_scope','早期Hct低值与后期29–32附近值共存；remainder的起点未在原子claim给出。双方按全住院范围反驳而GT=S，是时间范围/关系压缩疑问。',['Hct 29.3 29.2 27.9 30.1 30.4 29.7 29.5','Hematocrit: 24.5']),
 ('C21','diagnostic_relation_modality','reference同现small temporal SAH及hyperdensity可为hemorrhage/calcification；instead被模型读作排除/替换关系。GT=S保持，是否应接受这种转述unknown。',['Punctate hyperdense focus in the left temporal lobe which may represent hemmorhage or calcification.']),
-('C22','deidentification_time_ambiguity','[CLINICAL_LITERAL_REMOVED]与通气设置和8月日期同现；两输出都质疑日期读取。不得把模型推测的原始设置当已还原事实。Gate保留GT NS。',['did well on [CLINICAL_LITERAL_REMOVED] but not following commands','tolerating PSV 5/5 well.']),
+('C22','deidentification_time_ambiguity','[**5-27**]与通气设置和8月日期同现；两输出都质疑日期读取。不得把模型推测的原始设置当已还原事实。Gate保留GT NS。',['did well on [**5-27**] but not following commands','tolerating PSV 5/5 well.']),
 ('C23','syndrome_vs_observation','reference有respiratory failure/aspiration与低氧数据，但这些片段未明确ARDS名称。双方低分；不自行以生理标准新增ARDS医学标签。',['Billing Diagnosis: (Respiratory distress: Failure)','PaO2 / FiO2: 148']),
 ('C24','summary_trajectory','可见胸痛缓解、撤NTG、术后耐受；D要求持续全住院明确语句，Q接受轨迹概括。作为GT R正确保留对照，说明Q信号确有用。',['Ntg weaned off.','Tolerated procedure well.']),
 ('C25','inconsistent_numbers_intent','记录Tylenol数量30/40/20并存，双方低分却GT=S，Gate正确保留。说明数字冲突理由并不总对应应拒绝；不重判服药意图。',['50 tablets of aspirin and 40 tablets of tylenol.','50 tablets of aspirin and 20 tablets of tylenol.']),

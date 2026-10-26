@@ -2,7 +2,7 @@ import json,unittest
 import common028 as c
 class Trace(unittest.TestCase):
     def setUp(self):
-        self.text='The patient received oxygen.';self.ref='Hospital Admission Start: [CLINICAL_LITERAL_REMOVED]\n1. Date: [CLINICAL_LITERAL_REMOVED], Note ID: 123 | Text: The patient received oxygen by mask.'
+        self.text='The patient received oxygen.';self.ref='Hospital Admission Start: 2100-01-01\n1. Date: 2100-01-01, Note ID: 123 | Text: The patient received oxygen by mask.'
         self.job=dict(arm='trace',model_key='deepseek',body=c.body(self.text,self.ref,'trace'))
         self.obj=dict(claim_coverage='complete',requirements=[dict(claim_quote='received oxygen',requirement='Received oxygen',evidence_fact='Oxygen by mask',relation='supported',evidence=[dict(reference_id=1,quote='received oxygen by mask.')])],summary='Supported requirement')
     def tr(self,obj=None,raw=None):return dict(http_status=200,body_text=json.dumps(dict(model=c.MODEL,choices=[dict(message=dict(content=raw or json.dumps(obj or self.obj)),finish_reason='stop')],usage=dict(prompt_tokens=10,completion_tokens=20,total_tokens=30))))

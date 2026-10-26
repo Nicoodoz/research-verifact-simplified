@@ -1,0 +1,40 @@
+[
+  {
+    "path": "tasks/014_qwen27b_baseline_comparison/verify014.py",
+    "rejected": true,
+    "error": "Registered verifier or original snapshot changed: tasks/014_qwen27b_baseline_comparison/verify014.py"
+  },
+  {
+    "path": "outputs/014_qwen27b_baseline_comparison/revision_001/original/tasks/014_qwen27b_baseline_comparison/verify014.py",
+    "rejected": true,
+    "error": "Registered verifier or original snapshot changed: tasks/014_qwen27b_baseline_comparison/verify014.py"
+  },
+  {
+    "path": "tasks/014_qwen27b_baseline_comparison/common014.py",
+    "rejected": true,
+    "error": "Frozen file changed: tasks/014_qwen27b_baseline_comparison/common014.py"
+  },
+  {
+    "path": "outputs/014_qwen27b_baseline_comparison/report.md",
+    "rejected": true,
+    "error": "Frozen file changed: outputs/014_qwen27b_baseline_comparison/report.md"
+  },
+  {
+    "path": "outputs/009_retrieval_baselines/revision_001/README.md",
+    "rejected": true,
+    "error": "Frozen file changed: outputs/009_retrieval_baselines/revision_001/README.md"
+  },
+  {
+    "path": "reviews/README.md",
+    "history_drift_visible": true,
+    "experiment_binding_still_strict": true
+  },
+  {
+    "path": ".gitattributes",
+    "history_drift_visible": true,
+    "experiment_binding_still_strict": true
+  },
+  {
+    "unregistered_computation_rebinding_rejected": true
+  }
+]

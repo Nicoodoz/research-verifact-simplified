@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "initial_handoff_files": 421,
+  "historical_frozen_files": 21226,
+  "features_checked": 155,
+  "models_replayed_without_fit": 3096,
+  "folds": 216,
+  "confusion_matrices": 357,
+  "independent_LP_operating_points": 406,
+  "primary_bootstrap_draws": 2000,
+  "primary_CIs": {
+    "A-Logistic": [
+      2.0,
+      18.26352339181287
+    ],
+    "B-Logistic": [
+      1.441666666666665,
+      14.05278637770898
+    ]
+  },
+  "primary_LOO_positive_each": 16,
+  "API_calls": 0
+}

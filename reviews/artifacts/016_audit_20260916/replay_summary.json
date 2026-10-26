@@ -1,0 +1,19 @@
+{
+  "status": "executor_self_check_not_independent_audit",
+  "external_calls": 0,
+  "raw_preparation_files": 10,
+  "C48_reconstructed": 601,
+  "actual_Judge_bodies_reconstructed": 1386,
+  "disagreements": 92,
+  "analysis_content_files_replayed": 34,
+  "negative_checks": {
+    "reserved_phase": true,
+    "missing_review": true,
+    "illegal_label": true,
+    "body_tamper": true
+  },
+  "windows_checkout_files": 37,
+  "historical_files": 13766,
+  "whole_task_cny": 21.79039103000001,
+  "no_reserved_test": true
+}

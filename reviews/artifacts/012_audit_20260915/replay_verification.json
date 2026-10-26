@@ -1,0 +1,27 @@
+{
+  "additional_011_history_bindings": 4884,
+  "all_650_predictions_metrics_unchanged": true,
+  "base_head": "b710543fd5caf8ca9b9017ec230cac9ac242f721",
+  "cost_cny": 0,
+  "executor_selfcheck": true,
+  "historical_tracked_files_equal_HEAD_and_unchanged": 10288,
+  "independent_audit": false,
+  "material_source_checks": {
+    "case_source_rows": 72,
+    "corpus_equal_009": true,
+    "raw_notes": 416
+  },
+  "mutable_readme_agents_reviews_not_replay_dependencies": true,
+  "network_blocked": true,
+  "new_api_calls": 0,
+  "replayed_content_files": 45,
+  "tests": 165,
+  "tests_success": true,
+  "tracked_changes_informational": [
+    ".gitattributes",
+    "AGENTS.md",
+    "README.md",
+    "docs/siliconflow_pool/README.md",
+    "reviews/README.md"
+  ]
+}

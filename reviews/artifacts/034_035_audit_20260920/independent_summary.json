@@ -1,0 +1,163 @@
+{
+  "passed": true,
+  "source034_exact_rows": 3675,
+  "folds_patient_isolation": 16,
+  "prediction_method_fold_replays": 196,
+  "max_logprob_difference": 0.0,
+  "joint_slsqp_comparisons": [
+    {
+      "name": "old_R0/fold0",
+      "success": true,
+      "saved_nll": 0.4730138302985644,
+      "slsqp_nll": 0.4730138302985644,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "old_R0/fold1",
+      "success": true,
+      "saved_nll": 0.44036267268052914,
+      "slsqp_nll": 0.44036267268052914,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "old_R0/fold2",
+      "success": true,
+      "saved_nll": 0.5071943437187721,
+      "slsqp_nll": 0.5071943437187721,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "old_R0/fold3",
+      "success": true,
+      "saved_nll": 0.49374005892598377,
+      "slsqp_nll": 0.49374005892598377,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "main40/fold0",
+      "success": true,
+      "saved_nll": 0.5110509194964538,
+      "slsqp_nll": 0.5110509194964538,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "main40/fold1",
+      "success": true,
+      "saved_nll": 0.5073823293195199,
+      "slsqp_nll": 0.5073823293195199,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "main40/fold2",
+      "success": true,
+      "saved_nll": 0.5286549891804595,
+      "slsqp_nll": 0.5286549891804595,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "main40/fold3",
+      "success": true,
+      "saved_nll": 0.5170534330574071,
+      "slsqp_nll": 0.5170534330574071,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "bridge_deepseek/fold0",
+      "success": true,
+      "saved_nll": 0.6187274273528556,
+      "slsqp_nll": 0.6187274273528556,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "bridge_deepseek/fold1",
+      "success": true,
+      "saved_nll": 0.5809553211227116,
+      "slsqp_nll": 0.5809553211227116,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "bridge_deepseek/fold2",
+      "success": true,
+      "saved_nll": 0.6467022795306556,
+      "slsqp_nll": 0.6467022795306556,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "bridge_deepseek/fold3",
+      "success": true,
+      "saved_nll": 0.6311104577695329,
+      "slsqp_nll": 0.6311104577695329,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "bridge_qwen/fold0",
+      "success": true,
+      "saved_nll": 0.5753179535320202,
+      "slsqp_nll": 0.5753179535320202,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "bridge_qwen/fold1",
+      "success": true,
+      "saved_nll": 0.5525841854259105,
+      "slsqp_nll": 0.5525841854259105,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "bridge_qwen/fold2",
+      "success": true,
+      "saved_nll": 0.6003152914528993,
+      "slsqp_nll": 0.6003152914528993,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "bridge_qwen/fold3",
+      "success": true,
+      "saved_nll": 0.6257737169707465,
+      "slsqp_nll": 0.6257737169707465,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    },
+    {
+      "name": "full_main40",
+      "success": true,
+      "saved_nll": 0.5161475401063556,
+      "slsqp_nll": 0.5161475401063556,
+      "gap": 0.0,
+      "saved_lambda": 4.0,
+      "slsqp_lambda": 4.0
+    }
+  ],
+  "API_calls": 0
+}

@@ -1,0 +1,27 @@
+# 研究数据
+/data/
+
+# 密钥
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# VS Code 本机状态，但保留共享设置
+.vscode/*
+!.vscode/settings.json
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+
+# 本地模型权重、下载分片与可重建的复查副本（2026-09-19用户授权）
+/.local_models/
+/outputs/replays/

@@ -1,0 +1,109 @@
+{
+  "commit": "f115d36cb65fa2073fce0a10df56bb37f4cbcd50",
+  "files": [
+    {
+      "bytes": 1069,
+      "path": "LICENSE",
+      "sha256": "bac82748cc393585df6143fe27dec7b140e20cc837c3ec2e4e1235210e4e3829",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/LICENSE"
+    },
+    {
+      "bytes": 42384,
+      "path": "packages/irr_metrics/src/irr_metrics/interrater.py",
+      "sha256": "1c06a4562d40b6d8677036e33d58869284015a9c18f7f7dba5cb639d36701a81",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/irr_metrics/src/irr_metrics/interrater.py"
+    },
+    {
+      "bytes": 16588,
+      "path": "packages/irr_metrics/src/irr_metrics/classification_metrics.py",
+      "sha256": "a42327d67ddffb0c1d699b612ad09e3627cf147071652d667fb7b2066ea672b6",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/irr_metrics/src/irr_metrics/classification_metrics.py"
+    },
+    {
+      "bytes": 30020,
+      "path": "packages/irr_metrics/src/irr_metrics/metric_bunch.py",
+      "sha256": "51ed209aa69c4cce1daf28c74da1ed72a36c4852af57ab8f8bdec2e8648627c4",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/irr_metrics/src/irr_metrics/metric_bunch.py"
+    },
+    {
+      "bytes": 967,
+      "path": "packages/irr_metrics/src/irr_metrics/constants.py",
+      "sha256": "e4d2bc708d0d25ee7a3c9caffa03bfefdddb142e08f33a9cb9e8bfb9c57ec267",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/irr_metrics/src/irr_metrics/constants.py"
+    },
+    {
+      "bytes": 9473,
+      "path": "scripts/analysis_interrater/1_compute_interrater_agreement.py",
+      "sha256": "c083d00750deb3b4536f410a0820eac06403d8f89a7335e30ea189dba8ccc3b9",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_interrater/1_compute_interrater_agreement.py"
+    },
+    {
+      "bytes": 7769,
+      "path": "scripts/analysis_interrater/2_interrater_agreement_tables.py",
+      "sha256": "ab140f65235e2f407f0bc6c9191909b265aa3151f4f475e04cb74d5e4a9e9a07",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_interrater/2_interrater_agreement_tables.py"
+    },
+    {
+      "bytes": 3656,
+      "path": "scripts/analysis_interrater/README.md",
+      "sha256": "1cd73d1fb80de3c4ba1fe1a31d3698fa2a4b68097a929e1c8417d5211a1dd7ea",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_interrater/README.md"
+    },
+    {
+      "bytes": 13641,
+      "path": "scripts/analysis_verifact/README.md",
+      "sha256": "0fb5745a58a0e46f4bce91c3d7db08f127e8ae9582a9ab6f4bc7aa0e62a5715a",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_verifact/README.md"
+    },
+    {
+      "bytes": 17107,
+      "path": "scripts/analysis_verifact/release_data.py",
+      "sha256": "7aef3047c23c34aa094b16cb13e45498fb60ed7b12217a4cc1d527e3987b263c",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_verifact/release_data.py"
+    },
+    {
+      "bytes": 6779,
+      "path": "scripts/analysis_verifact/2_compute_verifact_metrics.py",
+      "sha256": "ee140996be762bfa71594f6d4da866a69e2b25bf67979448b09ee5317d850904",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_verifact/2_compute_verifact_metrics.py"
+    },
+    {
+      "bytes": 21736,
+      "path": "scripts/analysis_verifact/3_sensitivity_analysis_plots.py",
+      "sha256": "32333a8bc07c1bf000e67726c2e946b3f8c791c38f84a33c83332a50435c26eb",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_verifact/3_sensitivity_analysis_plots.py"
+    },
+    {
+      "bytes": 134671,
+      "path": "scripts/analysis_verifact/4_agreement_mcc_plots.py",
+      "sha256": "35d576017316f3e49a4021a3ac78d8bdf2c814c772238a136bb394fca47c629b",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_verifact/4_agreement_mcc_plots.py"
+    },
+    {
+      "bytes": 8340,
+      "path": "scripts/analysis_verifact/5_best_model_classification_metrics.py",
+      "sha256": "394cb0067a6ac1cc890395eea13861f65f3fe35515ecaccbfab938aa25b8929c",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_verifact/5_best_model_classification_metrics.py"
+    },
+    {
+      "bytes": 9186,
+      "path": "scripts/analysis_verifact/6_metric_result_tables.py",
+      "sha256": "cbcb5528963b9b3452d84bc37f50112d4c522cd5c1b54f0dea8119e686f1ac44",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_verifact/6_metric_result_tables.py"
+    },
+    {
+      "bytes": 6335,
+      "path": "scripts/analysis_verifact/11_compute_verifact_metrics_stratified.py",
+      "sha256": "b8e99e39308538997ab9ba6b5fea80d73970f4e5f3da86571344dc8381d64304",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_verifact/11_compute_verifact_metrics_stratified.py"
+    },
+    {
+      "bytes": 3419,
+      "path": "scripts/analysis_verifact/12_analyze_verifact_agreement_stratified.py",
+      "sha256": "6e4bb72f61577b1e8323ff7a26c705fbe669fb2e4537bb170caaf2ffe89c05ea",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/analysis_verifact/12_analyze_verifact_agreement_stratified.py"
+    }
+  ],
+  "repository": "https://github.com/philipchung/verifact",
+  "retrieved_utc": "2026-09-13T00:36:42.291637+00:00"
+}

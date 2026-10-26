@@ -1,0 +1,1 @@
+{"seed":92027,"folds":5,"inner_validation_patients":16,"max_length":512,"overlap":32,"epochs":5,"encoder_lr":0.00002,"head_lr":0.001,"weight_decay":0.01,"head_dropout":0.1,"effective_batch_claims":8,"window_microbatch":8,"unfreeze_last_blocks":1,"loss":"cross_entropy","activation_cache":"E:/Research-VeriFact-private/092/activations"}

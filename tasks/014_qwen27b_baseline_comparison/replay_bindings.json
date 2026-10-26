@@ -1,0 +1,10 @@
+{
+  "purpose": "R1 replay-only source revision; no experiment code or result replacement",
+  "historical_verifier_revisions": {
+    "tasks/014_qwen27b_baseline_comparison/verify014.py": {
+      "original_path": "outputs/014_qwen27b_baseline_comparison/revision_001/original/tasks/014_qwen27b_baseline_comparison/verify014.py",
+      "original_sha256": "b68550aba8c495e75046e13817d88cbd3c3f3298f6274e2a9fac97e9af2f55ba",
+      "current_sha256": "c87b4d88b3cc36ead24912d690cf5c64aec5d460d22d016e33909552441f6ca5"
+    }
+  }
+}

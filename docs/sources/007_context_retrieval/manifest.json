@@ -1,0 +1,61 @@
+{
+  "revision": "f115d36cb65fa2073fce0a10df56bb37f4cbcd50",
+  "downloaded_utc": "2026-09-14T12:19:05.595232+00:00",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/LICENSE",
+      "sha256": "bac82748cc393585df6143fe27dec7b140e20cc837c3ec2e4e1235210e4e3829"
+    },
+    {
+      "path": "packages/llm_judge/src/llm_judge/reference_context.py",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/llm_judge/src/llm_judge/reference_context.py",
+      "sha256": "be70b65a9369a0b6b17888d0224afd7d326ca567031f6bbf15051f2c2a943434"
+    },
+    {
+      "path": "packages/llm_judge/src/llm_judge/judge_subject.py",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/llm_judge/src/llm_judge/judge_subject.py",
+      "sha256": "11fd3be7a8c836252715f22461ab94a9c9af4b249fac5a98ac60886077b403d4"
+    },
+    {
+      "path": "packages/llm_judge/src/llm_judge/judge.py",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/llm_judge/src/llm_judge/judge.py",
+      "sha256": "22178e944cc74690e9a59c5f70a9387a9ff06922fa115710251db81333d2847d"
+    },
+    {
+      "path": "packages/rag/src/rag/node_parser/single_sentence_parser.py",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/rag/src/rag/node_parser/single_sentence_parser.py",
+      "sha256": "c014ac2b522866e39d9ed863296cca35499e237def14dbc6e850bfa6d41f6324"
+    },
+    {
+      "path": "packages/rag/src/rag/embedding/m3_embedding.py",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/rag/src/rag/embedding/m3_embedding.py",
+      "sha256": "8e65f83318a784dd0f90b821c6d27a137f49e412637dd1f71612193342f040a7"
+    },
+    {
+      "path": "packages/rag/src/rag/postprocessor/m3_reranker.py",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/rag/src/rag/postprocessor/m3_reranker.py",
+      "sha256": "6e0ffa902cc4c7c875031e045a433f3121a9f8355d16b47eecf6096bee0f79b3"
+    },
+    {
+      "path": "packages/rag/src/rag/vector_stores/qdrant.py",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/rag/src/rag/vector_stores/qdrant.py",
+      "sha256": "791c14dc81ff02e783959775a0f80f1fe3faa0e26a1eed2ec035f8db06ebfa23"
+    },
+    {
+      "path": "scripts/dataset/decompose_text.py",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/scripts/dataset/decompose_text.py",
+      "sha256": "1b41919235a993e5e5e243dfbd2c265c07d00c5dbbdef679954b66f5d4dd974c"
+    },
+    {
+      "path": "services/embed/README.md",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/services/embed/README.md",
+      "sha256": "d7d47905140819e56fac0c94cf6cc69ef553e066aa15bebc27cf58d1e2122489"
+    },
+    {
+      "path": "services/rerank/README.md",
+      "url": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/services/rerank/README.md",
+      "sha256": "a5714bfb9aa3a36d29050838bf2209829871c33d167c38d4492f6b95d2466b29"
+    }
+  ]
+}

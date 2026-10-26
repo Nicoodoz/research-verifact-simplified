@@ -1,0 +1,17 @@
+{
+  "task": "033_gate_training_subset",
+  "historical_methods": ["A", "B", "D"],
+  "search_methods": ["A", "D"],
+  "seed_sizes": [8, 11, 14],
+  "neighbors_per_seed": ["drop_low", "add_high", "swap_low_high", "reverse_swap_control"],
+  "max_directed_sets": 24,
+  "max_directed_final_fits": 48,
+  "max_total_new_final_fits": 350,
+  "training_rescue_target": 0.8,
+  "bootstrap_iterations": 1000,
+  "rank": "retention>=0.8 first; then worst full/leave-one-patient matched gain per100R against complete global mixture and fixed original16 A mixture; then MCC, correct, lower risk, fewer patients, lexical setID",
+  "selection_panel": "031 expansion12,998 claims,91 candidates",
+  "confirmation_panel": "031 confirmation12; no033 selection on its labels until subsets and directed variants frozen",
+  "API_calls": 0,
+  "reserved_used": false
+}

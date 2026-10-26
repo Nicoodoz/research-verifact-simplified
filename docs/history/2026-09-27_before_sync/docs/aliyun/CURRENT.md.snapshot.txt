@@ -1,0 +1,35 @@
+# 阿里云当前使用说明
+
+更新：2026-09-23，071结项后。路由、费用与恢复统一见[API政策](../API_POLICY.md)和[研究执行原则](../RESEARCH_EXECUTION.md)。
+
+## 当前状态
+
+主Judge直接使用阿里云DeepSeek，当前研究模型为`deepseek-v4-flash-0731`，可选Qwen也走阿里云；不等待硅基流动全池耗尽。BGE仍采用硅基流动及冻结缓存。071已完成首轮：288个逻辑主请求、289个HTTP200（含预检）、6个原始通信未知回执保留，含未知及前置预留累计¥12.063351/20元。用户已决定首轮结项，不据此自动恢复071或启动072。[071结果](../../outputs/071_judge_icl_feasibility/report.md)
+
+## 配置与换key
+
+本地凭据文件为`D:\Research-VeriFact\.env.aliyun`；真实key只保存在该文件，不放进模板、聊天或审计附件。
+
+| 变量 | 作用 |
+|---|---|
+| `DASHSCOPE_API_KEY` | 鉴权凭据；同一服务下换key通常只改这一项 |
+| `DASHSCOPE_BASE_URL` | 对应地域、工作空间/实例的OpenAI兼容基础地址，以当前本地配置和阿里云控制台为准；换账号或服务时核对 |
+| `DASHSCOPE_MODEL` | 通用客户端默认模型；具体研究任务可能用冻结模型ID覆盖它 |
+
+071记录的服务地址是`https://ws-czxuc8anhqs8o4lk.cn-beijing.maas.aliyuncs.com/compatible-mode/v1`。这是该次运行的工作空间，不保证新账号也有权限；旧`llm-jfynwotrbct4d0g7`地址只属于历史配置。不要因文档更新自动覆盖真实`.env.aliyun`。
+
+加载器只读取指定文件，不受进程环境变量覆盖；进程启动时读入，运行中不会自动刷新key。068/069等执行器明确使用任务冻结的DeepSeek模型ID，因此修改默认MODEL不等于改变实验模型。基础URL不重复添加`/chat/completions`。
+
+本地格式检查（不联网、不显示key、不证明在线权限）：
+
+```powershell
+pwsh -NoProfile -File scripts/run_research.ps1 scripts/run_aliyun.py check-config
+```
+
+## 执行与恢复
+
+新任务默认累计20元，含预检、重试、重复及未知/在途预留。预算内普通通信故障由任务执行器有限重试、退避、必要时降并发后继续；成功回答不重发。无法确认是否计费的旧尝试保留预留，重试另记账，不因换key重置。
+
+`AliyunClient.send`及`run_aliyun.py call`仍是单次传输/留档工具，没有自动重试能力；旧`call_once`与CLI默认40元属于历史实现。新任务必须显式传入当前有效上限（通常`task_cap_cny=20`或`--task-cap-cny 20`），由任务层实现最新恢复策略。不得把单次客户端的“不自动重试”误读成研究任务必须等待用户批准。
+
+016跨平台执行是历史已审结果，见[016报告](../../outputs/016_disagreement_triggered_review_validation/completion_002/report.md)及[审计](../../reviews/016_disagreement_triggered_review_validation.md)。旧协议与071已结束任务的停发条件不追溯改写。

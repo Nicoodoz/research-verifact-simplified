@@ -10,9 +10,9 @@ def run():
     items={x['case_id']:x for x in s.pilot.jsonl(folder/'judge_preparation/inputs.jsonl')}
     corpus=s.pilot.jsonl(folder/'preparation/corpus.jsonl')
     specifications=[('N071',dict(notes=['99065'])),('N561',dict(notes=['1088126'])),
-        ('N405',dict(dates=['[CLINICAL_LITERAL_REMOVED]'],pattern=r'bronch|mucous|mucus|RLL|right lower')),
-        ('N585',dict(dates=['[CLINICAL_LITERAL_REMOVED]'],pattern=r'RLL|right lower|bronch')),
-        ('N343',dict(dates=['[CLINICAL_LITERAL_REMOVED]'],pattern=r'resus|transf|ICU'))]
+        ('N405',dict(dates=['2166-08-03'],pattern=r'bronch|mucous|mucus|RLL|right lower')),
+        ('N585',dict(dates=['2166-08-20'],pattern=r'RLL|right lower|bronch')),
+        ('N343',dict(dates=['2137-04-29'],pattern=r'resus|transf|ICU'))]
     result=[]
     for cid,spec in specifications:
         own=[p for p in corpus if p['subject_id']==items[cid]['subject_id']]

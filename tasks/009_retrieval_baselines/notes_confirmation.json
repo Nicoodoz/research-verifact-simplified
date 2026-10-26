@@ -1,0 +1,115 @@
+{
+  "role":"execution_reader_not_clinician_ground_truth",
+  "scope":"Frozen confirmation sample, full original claim and all actual A/B/C evidence plus distinct full outputs. No interventions replace primary predictions.",
+  "cases":[
+    {
+      "case_id":"N075",
+      "observation":"原GT为NS，B改成S，A/C仍NS。三臂都有Humalog sliding scale用药列表及DM计划，continue home直接写在lantus项目，Humalog另列一行；没有B独有的明确home Humalog继续记录。",
+      "interpretation":"B更容易把同一计划中home/continued的范围延伸到相邻药物，属于限定范围及药物延续的判断差异，并非新查到明确家用方案证据。",
+      "uncertainty":"用药列表是否在完整原文中另有home标题、住院滑动方案是否一致仍需更完整上下文；原GT不重判，不能把相同药名出现自动当完整方案延续。",
+      "anchors":[
+        {"kind":"ehr","note_id":"375735","start":5749,"quote":"continue home lantus\n   - humalog sliding scale"},
+        {"kind":"judge","method":"B48","quote":"home Humalog sliding scale was continued"}
+      ]
+    },
+    {
+      "case_id":"N410",
+      "observation":"C从S改为GT的NS。三臂都有8-5记录did well on [**5-27**] but not following commands；A/B把5-27当日期，B还把8-5康复评估说成8-4。C认为5-27可能是通气设置，并新增8-27明确PSV 5/5后转气切面罩的记录。",
+      "interpretation":"额外材料可能帮助识别被脱敏或抽取为日期的参数，而非找到了5月27日事件；C的改善伴随对原token含义的谨慎处理，需干预而不是直接认定新片段导致。",
+      "uncertainty":"不能据后期相似表述恢复原始被脱敏值，也不能静默改claim日期。C判断为likely仍是解释；原GT和脱敏异常均保留。",
+      "anchors":[
+        {"kind":"ehr","note_id":"470821","start":2547,"quote":"did well on [**5-27**] but not following commands"},
+        {"kind":"ehr","note_id":"475441","start":636,"quote":"PSV 5/5 well."},
+        {"kind":"judge","method":"C48","quote":"likely refers to a ventilator setting"}
+      ]
+    },
+    {
+      "case_id":"N352",
+      "observation":"C将GT的NA改为NS。三臂都有手指X光无急性骨折；C新增疑似中指骨折、hand to see、认为非骨折的护理段，却仍无trigger finger或该病手术决策。C把更相关的手指背景当作足以涉及目标治疗判断。",
+      "interpretation":"新增相近部位资料不一定改善对特定病变的核验；骨折排除与trigger finger手术指征不能直接等同。这是适合误导片段增加/移除的负向对照。",
+      "uncertainty":"不据无骨折自行判断无需手术；原GT与临床管理事实保持分开，模型称hand team assessment也比原文hand to see更强。",
+      "anchors":[
+        {"kind":"ehr","note_id":"564534","start":1270,"quote":"Hand to see patient, do not think it is fractured."},
+        {"kind":"ehr","note_id":"1069156","start":623,"quote":"There is no evidence\n of acute fracture."},
+        {"kind":"judge","method":"C48","quote":"implying no operative intervention was needed"}
+      ]
+    },
+    {
+      "case_id":"N487",
+      "observation":"B由S改为GT的NA，但A/C有明确回顾8-1在CT中lying flat的两段，B都没有，换成较晚的卧位/康复记录。原claim的主语形如日期：[**8-1**] was lying flat，A/C将其解释为患者在该日平卧。",
+      "interpretation":"B的名义改善来自丢掉相当匹配的记录，不能当作证据质量提高；命题抽取/主语语义与原医生标签的边界需要保留。",
+      "uncertainty":"不能据此断言医生标错或强行修成新claim；A/C的解释可能恢复了省略主体，但不是已有GT已经独立验证的新目标。可用补回/移除说明分数与证据完整性可能背离。",
+      "anchors":[
+        {"kind":"ehr","note_id":"470327","start":2554,"quote":"obstructed while in CT, lying flat"},
+        {"kind":"ehr","note_id":"470439","start":2546,"quote":"obstructed while in CT, lying flat"},
+        {"kind":"judge","method":"B48","quote":"contains no statement about the patient's position being flat"}
+      ]
+    },
+    {
+      "case_id":"N336",
+      "observation":"B/C从NS改为GT的S。三臂均有左下肢和颈部静脉超声的标题，A却认为multiple意味着超过两项或不同日期；B/C最终接受两项足够。",
+      "interpretation":"改对没有新增决定性超声记录，主要是数量词支持边界不同。也说明单行标题不一定是无用片段：具体检查标题可提供程序身份，不能把所有短标题自动删除。",
+      "uncertainty":"两个报告标题与实际独立检查次数仍需原记录背景，不能把模型对检查模态的其他概括当医学事实；原GT保留。",
+      "anchors":[
+        {"kind":"ehr","note_id":"1069430","start":901,"quote":"LEFT LOWER EXTREMITY VENOUS ULTRASOUND:"},
+        {"kind":"ehr","note_id":"1069432","start":891,"quote":"NECK VENOUS ULTRASOUND:"},
+        {"kind":"judge","method":"A48","quote":"implies more than two or several"}
+      ]
+    },
+    {
+      "case_id":"N394",
+      "observation":"C由NS改为GT的S，B为NA。C补入神经外科认为左颞高密度更像钙化而非SAH、神经检查正常并计划复查CT的医师评估；A/B没有这条评估，主要保留检查/体检资料。",
+      "interpretation":"有明确更贴近目标管理决策的证据变化；这是适合补回/移除的正面候选，不能与只改支持阈值的案例混算。该段正位于另一已选片段后方，也值得检查切段/候选门槛。",
+      "uncertainty":"原文没有逐字写no intervention warranted，C仍作了保守观察方案到无需手术的推断；需干预判断该段对标签的作用，不新增医学裁决。",
+      "anchors":[
+        {"kind":"ehr","note_id":"564420","start":2646,"quote":"Neurosurgery\n   following - believes to be calc rather than SAH."},
+        {"kind":"ehr","note_id":"564636","start":639,"quote":"Punctate hyperdense focus in the left temporal lobe"},
+        {"kind":"judge","method":"C48","quote":"implying no surgical intervention was indicated"}
+      ]
+    },
+    {
+      "case_id":"N302",
+      "observation":"B/C从S退为NS。A/C保留因心动过速、Hct下降而给予LR bolus并有反应的护理段；B丢掉该段，只剩常规输液/液体平衡等。C虽已看到bolus，仍要求明确写required resuscitation。",
+      "interpretation":"同例同时有B的实际事件证据损失和C的支持范围要求增加。补回bolus是否足够改变B不能预设；A的正确标签也不等于所有普通输液都叫复苏。",
+      "uncertainty":"小量bolus与resuscitation、临床必要性的等价需要谨慎；不新增医学判断。适合局部补回/移除诊断。",
+      "anchors":[
+        {"kind":"ehr","note_id":"564665","start":636,"quote":"150ml LR bolus administered"},
+        {"kind":"ehr","note_id":"564665","start":636,"quote":"HR decreased to 90"},
+        {"kind":"judge","method":"C48","quote":"does not explicitly confirm a requirement"}
+      ]
+    },
+    {
+      "case_id":"N343",
+      "observation":"A为GT的S，B/C为NS。三臂实际主要记录4-30从病房再次返回TSICU，原因是快速房颤/Hct下降；不是明确的首次创伤复苏后转ICU顺序。A将这一较晚回ICU事件当支持，B/C指出初次顺序未说明。",
+      "interpretation":"名义退化不必意味着证据理解更差，A的正确标签伴随可能的事件错配。不能把B/C改错都解释成丢失初次转运证据。",
+      "uncertainty":"尚需索引/原始早期记录追溯确认首次转运片段；原GT保留，不凭本例重判医生标签。",
+      "anchors":[
+        {"kind":"ehr","note_id":"564761","start":0,"quote":"back to TSICU later in the evening"},
+        {"kind":"judge","method":"A48","quote":"transferred there on 4-30"},
+        {"kind":"judge","method":"B48","quote":"only documents a later transfer back to TSICU"}
+      ]
+    },
+    {
+      "case_id":"N290",
+      "observation":"B将NS改为原GT的S，A/C相同body仍NS。三臂都有APAP被记为nontoxic、非毒性范围及下降趋势；B只多了头痛缓解段，没有新增APAP被称为low的记录。",
+      "interpretation":"改对更像对low与nontoxic的语境对应采用不同支持标准，不是新检索找到特定药物水平证据。",
+      "uncertainty":"low的医学参照范围未重新裁决；不能把剂量/浓度数值自行解释为临床安全阈值，也不将模型解释当因果机制。",
+      "anchors":[
+        {"kind":"ehr","note_id":"637722","start":0,"quote":"APAP level was not in the toxic range"},
+        {"kind":"ehr","note_id":"637686","start":1279,"quote":"Pt denies ha at this time"},
+        {"kind":"judge","method":"A48","quote":"does not explicitly state the level was 'low'"}
+      ]
+    },
+    {
+      "case_id":"N293",
+      "observation":"C从NS改为GT的S。A/C都有01:09的tachypnec and agitated和01:40的No(t) Agitated；B失去早期阳性段，剩下阴性而NS。A以较晚阴性否定入院阳性，C认为较晚状态不否定较早记录。",
+      "interpretation":"既存在B的正向事件证据丢失，也存在A/C在同一关键资料上的时间/支持判断差异。可对C移除阳性段、对B补回该段来检验局部作用，但不能先当成检索已经解决时间问题。",
+      "uncertainty":"两条记录只差约半小时，可能是状态变化或文档不一致；C断言较晚记录不属于入院仍有解释成分，无新增医生裁决。",
+      "anchors":[
+        {"kind":"ehr","note_id":"637617","start":4477,"quote":"patient tachypnec and agitated"},
+        {"kind":"ehr","note_id":"637615","start":1909,"quote":"No(t) Agitated"},
+        {"kind":"judge","method":"C48","quote":"does not negate the admission finding"}
+      ]
+    }
+  ]
+}

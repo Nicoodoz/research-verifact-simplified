@@ -1,0 +1,266 @@
+{
+  "status": "execution_semantic_reading_not_independent_audit",
+  "scope": "Complete original claim, local source, planner output, three selected references and all distinct Judge outputs for each listed case. Candidate-only anchors identify additional targeted reading explicitly.",
+  "not_new_clinician_ground_truth": true,
+  "cases": [
+    {
+      "case_id":"P140",
+      "tags":["stable_correct_control","literal_evidence_already_retrieved","citation_format_not_mechanism"],
+      "observation":"三臂 S，均有术后影像最终报告明确写 expected appearance、left lower lobe collapse；planner 加 LLL 缩写未新增决定性发现。Direct 用真实 Note ID 而非要求的 reference 序号引用，属于格式偏离，但对应病历确实在输入中。",
+      "interpretation":"本例区分格式合规与实际证据理解：不能由编号格式错误推断没有找到/判断对应影像；也不能将 planner 合规引用等同于检索净收益。",
+      "uncertainty":"只核对可见输出和原记录，未证明模型内部过程；其他影像术语仍可能需要扩展，不能由单个字面匹配病例泛化。",
+      "anchors":[
+        {"kind":"ehr","note_id":"1055430","passage_start":1870,"quote":"small amount of pneumomediastinum and left lower lobe collapse and surgical"},
+        {"kind":"judge","method":"direct","quote":"[1055430, 1055431]"},
+        {"kind":"planner","quote":"LLL collapse chest x-ray postop"}
+      ]
+    },
+    {
+      "case_id":"P127",
+      "tags":["stable_correct_control","target_time_already_retrieved"],
+      "observation":"三臂均 S。Direct 本已同时取得 2-4 手术/2-5 POD1 标识、2-5 呼吸治疗实际拔管及次日追记 EXTUBATION 时间，planner 保留这些核心资料，只增换少量无关瓣膜/血糖资料。",
+      "interpretation":"固定原 claim 的 hybrid 基线已经能找到并组合这次明确术后事件，不能将 planner 也答对算成事件规划收益。",
+      "uncertainty":"部分护理记录在同篇 assessment 写插管、action 写拔管，文档时刻不等于每句话的发生时刻；正确标签不保证所有引用编号都精确。",
+      "anchors":[
+        {"kind":"ehr","note_id":"653743","passage_start":0,"quote":"Pt extubated to cool aerosol without incident."},
+        {"kind":"ehr","note_id":"653898","passage_start":636,"quote":"EXTUBATION - At [**2189-2-5**] 01:12 PM"},
+        {"kind":"ehr","note_id":"653701","passage_start":633,"quote":"[**2-5**] POD #1"}
+      ]
+    },
+    {
+      "case_id":"P128",
+      "tags":["stable_correct_control","lost_target_time_evidence","judge_backward_time_inference"],
+      "observation":"三臂均为 GT 的 NS，但 planner 丢失 direct/simple 所含 2-5 NPO 条目，保留了 2-6 NPO 和 2-9 术后实际进食，并新增 2-8 regular diet 计划。Planner 输出由 POD2 的 NPO 推到 POD1 未进食，还称一直 NPO 到 2-9，所给材料不足以支持这种连续状态概括。",
+      "interpretation":"标签未变不等于事件证据变好；这里原 claim 的目标日资料变少，后续日期被倒推成目标日状态。原 claim 明确 POD1，不能被后来的另一项手术/饮食状态替代。",
+      "uncertainty":"早晨 NPO 也不自动证明整天未进食；执行者不重新判定 POD1 临床真值，只记录引用日期和支持范围的问题。",
+      "anchors":[
+        {"kind":"ehr","note_id":"653655","passage_start":5774,"quote":"Nutrition: NPO"},
+        {"kind":"ehr","note_id":"653905","passage_start":0,"quote":"remain NPO until PPM then ADAT."},
+        {"kind":"ehr","note_id":"654219","passage_start":4509,"quote":"Nutrition: Regular diet, Reval S/S in am"},
+        {"kind":"judge","method":"planner","quote":"indicating the patient was not on a diet on POD 1 or 2"}
+      ]
+    },
+    {
+      "case_id":"P058",
+      "tags":["stable_correct_control","added_administration_evidence","evidence_gain_without_label_gain"],
+      "observation":"三臂均 S；共同已有三个月抗凝计划和转为 Lovenox 的医师记录。Simple/planner 额外选入妻子实际给药、出院准备完成的护理段，planner 还多了预计 LMWH 出院的主治记录；标签未增加，但给药/出院证据更完整。",
+      "interpretation":"正面材料补充，不是总体准确率收益，也不是 LLM 独有，因为 simple 同样做到。需核对原候选及同文重复记录，才能区分召回与选择收益。",
+      "uncertainty":"未新增三个月真实服药的临床随访，原 claim 是出院方案；建议记录中的年份原文 2106 与 CHARTDATE 2107 不一致，保留不修，不能静默作时间精确证明。",
+      "anchors":[
+        {"kind":"ehr","note_id":"688853","passage_start":632,"quote":"Wife gave dose of lovanox. Dishcharge"},
+        {"kind":"ehr","note_id":"688859","passage_start":0,"quote":"lovenox in AM, which he will be on for the next 3 months"},
+        {"kind":"ehr","note_id":"688849","passage_start":0,"quote":"will anticipate discharge on LMWH."},
+        {"kind":"ehr","note_id":"1089602","passage_start":4559,"quote":"at least three to  six months."}
+      ]
+    },
+    {
+      "case_id":"P076",
+      "tags":["stable_correct_control","simple_relevant_but_insufficient","specific_procedure_boundary"],
+      "observation":"三臂均为 GT 的 NA。Simple 补入 Vagal maneuvers were tried 的初次 SVT 处理段；direct/planner 没有这一段，planner 仅增加其他 SVT/疼痛资料和极短表格残片。Simple Judge 明确区分笼统动作与具体 carotid massage，没有据此自证执行。",
+      "interpretation":"来源长查询在此找到更贴近目标的上位动作，但不自动构成特定操作的充分证据；planner 同义词扩展未显示额外优势。",
+      "uncertainty":"不能以该段没有明确手法推断现实中未做；也未用关键词命中作为 gold recall。需要候选/最终选择两层比较。",
+      "anchors":[
+        {"kind":"ehr","note_id":"497323","passage_start":1267,"quote":"Vagal maneuvers were tried on the"},
+        {"kind":"ehr","note_id":"498422","passage_start":592,"quote":"T"},
+        {"kind":"judge","method":"simple","quote":"does not specify carotid massage"},
+        {"kind":"planner","quote":"carotid sinus massage"}
+      ]
+    },
+    {
+      "case_id":"P041",
+      "tags":["stable_correct_control","literal_evidence_already_retrieved"],
+      "observation":"三臂均 S，且共同 reference 2 为头 CT 原文 age-related volume loss。Planner 生成 cerebral atrophy 等术语查询，仅改变外围胸片材料，没有新增判断所需的头 CT 发现。",
+      "interpretation":"明确字面影像发现已被较强 direct 找到；通用查询扩展并不总有新增价值，这是必要的稳定正确对照。",
+      "uncertainty":"本例不能代表所有影像或术语任务，也不能据正确标签证明每个外围引用都精确。",
+      "anchors":[
+        {"kind":"ehr","note_id":"1122860","passage_start":944,"quote":"age-related volume loss."},
+        {"kind":"planner","quote":"head CT report cerebral atrophy"}
+      ]
+    },
+    {
+      "case_id":"P047",
+      "tags":["stable_wrong_control","count_requirement","shared_key_evidence"],
+      "observation":"三臂 NS，原 GT 为 NA。三臂均有两处 TropT 数值和 first set of cardiac biomarkers 的记录，没有新补出三次检测的对应证据。Planner 需求写了三次独立测试，但实际新查询只用 cardiac biomarkers negative / troponin negative；数量覆盖没有落实成候选选择要求。",
+      "interpretation":"换术语仍未解决数量充分性；标签偏差也涉及已有部分证据时 NS/NA 的分界，不能仅归为检索器找不到 cardiac biomarkers。",
+      "uncertainty":"未对数值是否临床阴性重新裁决，也不声称完整 EHR 中不存在第三次检测。原始表格日期与数值的对应可能需要更完整记录结构。",
+      "anchors":[
+        {"kind":"ehr","note_id":"725352","passage_start":3853,"quote":"Troponin-T:1143/14/0.02"},
+        {"kind":"ehr","note_id":"725471","passage_start":3833,"quote":"TropT\n   0.01"},
+        {"kind":"ehr","note_id":"725366","passage_start":8948,"quote":"first set\n   of cardiac biomarkers"},
+        {"kind":"planner","quote":"\"troponin negative\""}
+      ]
+    },
+    {
+      "case_id":"P100",
+      "tags":["simple_better","wrong_entity_despite_correct_label","planner_interface_loss","late_source_event"],
+      "observation":"Direct/planner 输入相同且 NA，simple 为原 GT 的 NS；但 direct 将 SQH 猜为脑室引流/分流，simple 猜为 EVD 的笔误，均用 EVD 在位解释。来源明确分别叙述停 SQH 与随后撤 EVD；planner 原输出将 SQH 解释为 subcutaneous heparin 并给出两条相关查询，却因引句检查失败未使用。",
+      "interpretation":"Simple 标签虽正确，其所核验实体并不可靠；不能当作来源检索成功找到停 SQH 证据。也不能说 planner 没有识别术语，它在输出中已区分，只是接口退回且术语不进入 Judge。",
+      "uncertainty":"没有新增停药的医生裁决或晚期病历证据；来源的 5-30 事件晚于已索引非出院记录末日。不能推断放行计划后一定改对。",
+      "anchors":[
+        {"kind":"planner","quote":"subcutaneous heparin discontinued"},
+        {"kind":"source","quote":"The SQH was discontinued and plan was for the drain to be"},
+        {"kind":"ehr","note_id":"534574","passage_start":1272,"quote":"No changes made to EVD today"},
+        {"kind":"judge","method":"simple","quote":"likely a typo for EVD, external ventricular drain"}
+      ]
+    },
+    {
+      "case_id":"P117",
+      "tags":["stable_wrong_control","degree_of_improvement","shared_key_evidence","temporal_comparison"],
+      "observation":"三臂均 NS，不符原 GT S。三臂已含 5-27 清醒、遵嘱、言语清楚和改善材料；simple 增加当天吞咽评估的改善/定向片段仍不改判。Planner 新增前一天的 mild interval improvement，但三种输出都要求 markedly 的程度，未建立明确起点到当前状态的比较。",
+      "interpretation":"有证据仍无法稳定判断改善程度，支持充分性及变化的比较基点比继续加同义词更突出。计划提到对照 5-26，实际两条查询却均以 5-27 为中心，需求文字并不自动成为证据选择策略。",
+      "uncertainty":"未新增医生对 markedly 的量化标准，不把全文没有具体论证等同于模型未考虑比较；所见护理 5-27 又复述早前 mild 描述，记录时间与叙述阶段仍可能混淆。",
+      "anchors":[
+        {"kind":"ehr","note_id":"534385","passage_start":636,"quote":"Speech\n   clear."},
+        {"kind":"ehr","note_id":"534322","passage_start":634,"quote":"Patient with improving\nalertness."},
+        {"kind":"ehr","note_id":"534136","passage_start":639,"quote":"Mild interval improvement"},
+        {"kind":"judge","method":"planner","quote":"not the specific degree 'markedly'"}
+      ]
+    },
+    {
+      "case_id":"P081",
+      "tags":["simple_better","recovered_event_evidence_without_label_gain","judge_placeholder_error","setting_ambiguity"],
+      "observation":"Simple/planner 都补入 12-10 初诊时由 ortho trauma 评估后紧急筋膜切开的回顾段；direct 最终 evidence 主要是后续骨科建议/换药。Simple 由 NS→S；planner 虽明确识别该段，仍要求显式 ED，并把 [**Known lastname **] 当需确认的真实姓氏，维持 NS。",
+      "interpretation":"确有比 direct 最终材料更贴近目标初诊事件的补充，但未转化为 planner 标签收益；非单纯重复原文。相同新增核心片段下，Judge 对场景推断和脱敏占位符的处理不同。",
+      "uncertainty":"新段只写到医院初诊，并未逐字写 ED；不能用执行者判断当临床 gold。候选日志另查究竟是候选召回还是选择变化，不自动称 dense 或 BM25 漏检。",
+      "anchors":[
+        {"kind":"ehr","note_id":"497323","passage_start":635,"quote":"was evaluated by ortho trauma with concern for left calf compartment"},
+        {"kind":"ehr","note_id":"497897","passage_start":1910,"quote":"Ortho stop this am but did not leave a note at this time."},
+        {"kind":"judge","method":"planner","quote":"nor does it confirm the patient's last name"},
+        {"kind":"planner","quote":"seen by orthopedics emergency department"}
+      ]
+    },
+    {
+      "case_id":"P097",
+      "tags":["simple_better","same_direct_planner_body","support_threshold","source_scope_risk"],
+      "observation":"Direct/planner 输入完全相同且 NS，simple 为 S。三臂同有多个日期的 oriented x2/对人地点定向，亦有年份/地点偶尔错误。Simple 认为基本定向持续，direct/planner 要求完整持续定向。Planner 的有效计划把来源 EVD 撤除加入实际查询，而原 claim 未明示撤除；其候选变化没有改变最终 reference。",
+      "interpretation":"当前标签差异来自相同核心定向资料的范围要求，不是补回原句对应的撤管后资料。这个有效计划提供来源范围风险例子，但本例没有造成最终 Judge 输入变化，不能把它写成已发生的目标收窄后果。",
+      "uncertainty":"现有 selected evidence 至 5-28，而来源描述 5-30 撤管后，不能据此证明恢复了原语境；不对原医生 GT 进行语境化重判。",
+      "anchors":[
+        {"kind":"ehr","note_id":"534449","passage_start":0,"quote":"Occasionally will think she is at"},
+        {"kind":"ehr","note_id":"534322","passage_start":634,"quote":"Patient was oriented to self and place"},
+        {"kind":"planner","quote":"orientation status after EVD removal"},
+        {"kind":"judge","method":"simple","quote":"continued basic orientation"}
+      ]
+    },
+    {
+      "case_id":"P005",
+      "tags":["simple_better","label_boundary","shared_key_evidence","terminology_scope"],
+      "observation":"原 GT=NS，direct/planner=NA、simple=NS。三臂都有 CPAP/氧支持下降与室内空气耐受，均未输出发现拔管记录。Planner 将来源 CPAP 转换为搜索线索并增加部分非侵入性支持记录，但并未改善标签。三个完整输出主要在涉及呼吸支持是否构成 NS 或 NA 上分歧。",
+      "interpretation":"Simple 的标签优势不能直接归于找回了机械通气撤除证据。模型把 mechanical ventilation 主要解释为有创插管，这一术语范围本身也限制可归因性。",
+      "uncertainty":"不依据模型说法断言 CPAP 与机械通气在医学上必然不等价；本轮没有医生重判术语范围或遗漏的通气史。",
+      "anchors":[
+        {"kind":"ehr","note_id":"1613636","passage_start":637,"quote":"Pt weaned from nonrebreather to hi flow mask."},
+        {"kind":"ehr","note_id":"1613644","passage_start":19,"quote":"O2 decreased to 6 without incident."},
+        {"kind":"judge","method":"planner","quote":"No record of extubation or removal from ventilator."},
+        {"kind":"planner","quote":"extubated transitioned CPAP"}
+      ]
+    },
+    {
+      "case_id":"P066",
+      "tags":["simple_better","same_direct_planner_body","judge_date_or_coverage_error","shared_key_evidence"],
+      "observation":"Direct/planner 完整输入相同且共同为 NS，simple 为原 GT 的 S。三臂都有 7-11、7-12、7-13 慢性正细胞贫血资料；simple 只将一个体检段换成抗凝/出院背景，没有新增贫血段。Direct 完整输出却将贫血归为只见于 7-11/12，并概括 7-13 缺失，所引 reference 11 实际就是 7-13 的贫血条目。",
+      "interpretation":"明确存在已输入日期/病情资料的错误概括或过度要求最后一条护理记录也提贫血。不是 planner 缺少新检索词，simple 改对也不是找到新末日贫血证据。",
+      "uncertainty":"识别为输出与输入日期不符不等于已知道模型内部忽略过程。管理是否包括问题列表/检查的支持边界仍依原 GT 评价。",
+      "anchors":[
+        {"kind":"ehr","note_id":"688859","passage_start":4553,"quote":"Chronic normocytic anemia: felt due to anemia of chronic"},
+        {"kind":"ehr","note_id":"688482","passage_start":5732,"quote":"disease. TSH, B12, folate wnl."},
+        {"kind":"judge","method":"direct","quote":"No mention of anemia in the final 7/13 note"},
+        {"kind":"judge","method":"simple","quote":"Physician notes from 7/11, 7/12, and 7/13"}
+      ]
+    },
+    {
+      "case_id":"P080",
+      "tags":["primary_worsening","lost_relevant_evidence","temporal_coverage","support_threshold"],
+      "observation":"S→NS。Direct 含 12-15 Dilaudid 口服镇痛段，simple/planner 均失去该段，转入贫血/通用 ICU 页尾等材料；三臂仍共同含 12-13/14 镇痛，planner 还有 12-12 pain well controlled。Direct 接受多个日期的治疗支持 throughout，另外两臂要求整个住院时段。",
+      "interpretation":"存在可回查的相关后期镇痛材料丢失，时间覆盖被削弱；与支持范围要求变严格同时发生。Planner 的短查询只写 pain treatment/analgesic，没有表达 throughout 的覆盖需要，原 claim 仍保留但不足以保证该片段入选。",
+      "uncertainty":"丢失一日资料不证明补回即可恢复 S；Direct 本来也没有逐日覆盖，不能用标签证明整个住院一直治疗。需要候选/筛选日志定位丢失环节。",
+      "anchors":[
+        {"kind":"ehr","note_id":"498057","passage_start":634,"quote":"Pt also received dilaudid po for pain control."},
+        {"kind":"ehr","note_id":"497643","passage_start":1267,"quote":"dilaudid which seems to help control her pain."},
+        {"kind":"ehr","note_id":"498027","passage_start":5124,"quote":"# Normocytic anemia: HCT 26.8."},
+        {"kind":"planner","quote":"\"analgesic\""},
+        {"kind":"judge","method":"planner","quote":"not necessarily throughout every day"}
+      ]
+    },
+    {
+      "case_id":"P113",
+      "tags":["primary_improvement","shared_key_evidence","planned_vs_completed","support_threshold"],
+      "observation":"NS→S。三臂都有家属/姑息沟通、翌日/当日中午 family meeting 的计划；planner 新增用药/沟通页尾，没有新增会议已经举行的记录。Planner 完整输出承认未显式确认举行，却认为多次计划支持 occurrence；direct/simple 不接受。",
+      "interpretation":"改对原 GT，但不是 planner 找到了 direct 漏掉的已举行会议证据。主要是同一计划/沟通材料是否足以支持完成事件的判断差异。",
+      "uncertainty":"现实中是否已有符合原 claim 的家庭讨论不能在此重新裁决；姑息团队确有与家属交谈，不能反向宣称会议未发生。生成解释不能证明内部的放宽机制。",
+      "anchors":[
+        {"kind":"ehr","note_id":"534234","passage_start":2552,"quote":"spoke with Granddaughter"},
+        {"kind":"ehr","note_id":"534274","passage_start":1280,"quote":"Family meeting at 12 noon to discuss options"},
+        {"kind":"ehr","note_id":"534490","passage_start":5829,"quote":"Comments: family meeting this noon"},
+        {"kind":"judge","method":"planner","quote":"though no note explicitly confirms it took place"}
+      ]
+    },
+    {
+      "case_id":"P114",
+      "tags":["primary_improvement","shared_key_evidence","planned_vs_completed","wrong_event_heading"],
+      "observation":"NS→S，simple 也为 S。三臂共同有 Disposition: Transfer to step down 及护理转运计划。Planner 新增了康复评估的空 Transfer: 标题和 minutes 等内容，没有新增已完成转运的记录；最终两臂对已有 disposition/计划是否足够采用不同标准。",
+      "interpretation":"有转运目标匹配，但原基线已经找到；不能把改对视作补回遗漏目标事件。空的康复 Transfer: 与病区转运不是同一类信息，显示短查询也可能召回同词不同事件。",
+      "uncertainty":"Disposition 和护理计划在本数据的支持强度需按原标签评价，不新增实际完成状态裁决。没有逐例重复，不能排除不同输入引出的 Judge 变异。",
+      "anchors":[
+        {"kind":"ehr","note_id":"534526","passage_start":6481,"quote":"Disposition: Transfer to step down"},
+        {"kind":"ehr","note_id":"534574","passage_start":2551,"quote":"Transfer to [**Hospital Ward Name 289**] 11- step-down"},
+        {"kind":"ehr","note_id":"534359","passage_start":2663,"quote":"Transfer:"},
+        {"kind":"judge","method":"direct","quote":"does not confirm the transfer was completed"},
+        {"kind":"judge","method":"planner","quote":"nursing plan for transfer to a step-down unit, fully supporting"}
+      ]
+    },
+    {
+      "case_id":"P024",
+      "tags":["primary_worsening","shared_key_evidence","support_threshold","selection_loss"],
+      "observation":"S→NS。三臂 reference 15 都是最新护理记录：to Tx 到所指病房且 has bed。Direct 认为足以支持获准转运；simple/planner 要求显式医疗 clearance 或医嘱。Planner 另失去精神状态明显改善的一段，但保留最新转运计划，新增多段影像头部和心率记录。",
+      "interpretation":"不是漏掉目标转运计划；可见支持充分性要求改变。丢失改善段可能影响对早期不稳定状态的权衡，但 simple 有该段仍判 NS，不能认定其为充分原因。",
+      "uncertainty":"clearance 与护理转运计划的临床等价未重新裁决；脱敏病房标识不能恢复真实院区。无法用一次生成确证取舍的内部机制。",
+      "anchors":[
+        {"kind":"ehr","note_id":"1613645","passage_start":671,"quote":"Pt to Tx to [**Hospital Ward Name 54**] 11, has bed."},
+        {"kind":"ehr","note_id":"337027","passage_start":3840,"quote":"MS much improved after morphine pain control"},
+        {"kind":"judge","method":"planner","quote":"No physician order or clearance note for transfer is present; only a nursing plan."},
+        {"kind":"judge","method":"simple","quote":"lacks explicit clearance language"}
+      ]
+    },
+    {
+      "case_id":"P036",
+      "tags":["primary_improvement","added_reinforcing_evidence","support_threshold"],
+      "observation":"NS→S。Planner 新增明确高钾从 6.1 降至 4.6 的段落并引用；但三臂共同已有纠正酸中毒、hypercarbia improved、creatinine improved、血压稳定。Direct/simple 完整输出承认这些改善，却因仍插管/发热等认为整体改善不足；planner 接受改善可与持续重症并存。",
+      "interpretation":"新增更明确的改善材料可能增强支持，但不是从无证据到有证据，也没有证明恢复了来源特定事件。对 improved 是否暗含全面恢复的要求不同，是输出中直接可见的重要因素。",
+      "uncertainty":"没有隔离新检验段的消融，不能分清新增材料和 Judge 对支持范围变化的因果份额。医学整体改善没有新增医生裁决。",
+      "anchors":[
+        {"kind":"ehr","note_id":"725366","passage_start":9584,"quote":"Initially 6.1 now resolved to 4.6."},
+        {"kind":"ehr","note_id":"725350","passage_start":1280,"quote":"ABG with corrected acidosis on current setting"},
+        {"kind":"ehr","note_id":"725471","passage_start":5111,"quote":"Creatinine improved."},
+        {"kind":"judge","method":"direct","quote":"incomplete or partial improvement rather than full recovery"},
+        {"kind":"judge","method":"planner","quote":"these do not contradict the overall improvement"}
+      ]
+    },
+    {
+      "case_id": "P014",
+      "tags": ["primary_improvement", "label_boundary", "no_new_target_evidence", "irrelevant_header"],
+      "observation": "NS→NA 符合原 GT，但三臂均有未婚妻为 RN、家属探视，均无家属能监督的明确资料；三个完整输出都承认这一点。Planner 新增了 ADD:、RESPIRATORY CARE: 等短标题，未新增监督安排证据。",
+      "interpretation": "主要可见变化是对相同核心资料采用不同的 NS/NA 边界，不能把改对归为找回家属监督证据。",
+      "uncertainty": "输入整体有变化，不能断言纯随机；12 次重复不覆盖此例，也不能证明内部原因。未据 reference 缺失宣称全部 EHR 均不存在安排。",
+      "anchors": [
+        {"kind":"ehr","note_id":"1613636","passage_start":637,"quote":"Fiancee who is RN visiting and updated by MD'S with 2 sons."},
+        {"kind":"ehr","note_id":"1613645","passage_start":622,"quote":"Family in to visit, updated by this rn."},
+        {"kind":"ehr","note_id":"1613641","passage_start":0,"quote":"ADD:"},
+        {"kind":"judge","method":"planner","quote":"no statement confirms they can provide supervision"}
+      ]
+    },
+    {
+      "case_id": "P030",
+      "tags": ["primary_worsening", "label_boundary", "shared_key_evidence", "irrelevant_header"],
+      "observation": "NA→NS 退化。三臂共同 reference 11 均记 Lopressor 后低血压、1L NS 后改善，均无 1.5L 回升到 90s 的完整对应。Direct 将 1L 视作另一次/不同细节且选 NA，planner 将 1L 与 1.5L 视为矛盾而选 NS。Planner 仅以插管随访标题替代头 CT 段，没有新增这次补液的决定性记录。",
+      "interpretation": "实际退化更像已存在资料的事件/量值关系及 NS/NA 映射变化，不是新查询找回了 1L 反证。计划中的 1500mL 是原 1.5L 的换算，不是新剂量。",
+      "uncertainty": "原记录是否同一次完整补液过程仍不足以医学裁决；不能以自动标签说明真正矛盾。不同整体输入可能影响判断，但未做此例重复或证据消融。",
+      "anchors": [
+        {"kind":"ehr","note_id":"725494","passage_start":0,"quote":"NS IVB w/improvement in BP."},
+        {"kind":"ehr","note_id":"1122984","passage_start":660,"quote":"Followup of the patient after intubation."},
+        {"kind":"judge","method":"direct","quote":"cumulative IVF totals and a separate 1L bolus"},
+        {"kind":"judge","method":"planner","quote":"contradicts the specific volume (1L vs 1.5L)"}
+      ]
+    }
+  ]
+}

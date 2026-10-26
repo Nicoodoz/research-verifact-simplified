@@ -1,4 +1,4 @@
-"""050 append-only DeepSeek repeated-scoring runner."""
+﻿"""050 append-only DeepSeek repeated-scoring runner."""
 from pathlib import Path
 from collections import Counter,deque
 import concurrent.futures,json,os,sys

@@ -1,0 +1,37 @@
+{
+  "user_authorized_scope": "Rapid independent audit019-021; synchronize descriptions/gitignore/environment and push GitHub",
+  "audited_HEAD": "4681fee466910f36cd10c13c3ba51092b2181ec3",
+  "preserved_audited_files": 7557,
+  "all_7557_unchanged": true,
+  "current_files_sha256": {
+    ".gitattributes": "8c795419e76fd22c8c1869029b02f45affea8dfe73e5d3304c5c390d99309540",
+    ".gitignore": "e31f95d9e956fb4fed3f2a7189550972cab14d8667806a7efa827432d197bf3e",
+    "environment.yml": "d400be058e1792180b9754b57c9ecd99155bcbd9e1668dcc8db1582d15059bcc",
+    "environment.local-bge.yml": "83646fb20977cca7fe4fed35e90ccecc89a836cc9b941570a9536ef803012841",
+    "AGENTS.md": "57ef3393cd91804f5eb3018d72c2d1d423da851d187e0c9404a13204aef3fc6b",
+    "README.md": "92c7ca165fcd8ebf69cb8e4344a6b24131dbdcf635d55a77d7c1bd942f10d0e2",
+    "docs/PROJECT_STATUS.md": "38fbf2b3b601489f5f10517404e9d5c42e8e00a3c261adc29cb5d2e6ed2ddc73",
+    "docs/API_POLICY.md": "d837dc965cf55442ab5529ffa469295f12d87afa38a7d27fef000d95b5732205",
+    "docs/aliyun/CURRENT.md": "059a29d5a84dfabf03019f8f89ec6dbb18e6958d894c3f97e33e989dcc702ae9",
+    "docs/siliconflow_pool/README.md": "df6052f4c6889cb8276206aa2a45598ccbcb41aa66fe2cd3e0105ccce83ede18",
+    "docs/REPRODUCIBILITY.md": "2fdaf22b19a7a1946c4920c8f1304e7c56a7ee6f9694a1632b24c6f70ad23a51",
+    "reviews/README.md": "b9cec9de862f4c910fd65818145b3186076c273afda7d46b2757eb9c40028454",
+    "scripts/replay_completed_research.py": "f6a3cd961c8e03671692525cc2d991446e6ec6b0e0f56db0d0824813eb37fc83",
+    "tests/test_completed_replay.py": "19d273df9e221aefa4817f128f3d7c41832a90f45299076c08c66505366f64d4"
+  },
+  "tests": {
+    "original_regression_passed": 265,
+    "new_replay_guards_passed": 4,
+    "total": 269
+  },
+  "root_pip_check": "PASS",
+  "new_yaml_versions_match_existing_environment": true,
+  "fresh_environment_install_tested": false,
+  "ignored_by_shared_gitignore": [
+    ".local_models/",
+    "outputs/replays/"
+  ],
+  "API_calls": 0,
+  "model_weights_committed": false,
+  "navigation_and_config_are_post_audit_updates": true
+}

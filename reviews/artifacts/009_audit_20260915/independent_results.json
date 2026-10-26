@@ -1,0 +1,825 @@
+{
+  "scope": "independent auditor checks, no inference API",
+  "network_disabled": true,
+  "handoff": {
+    "sha256": "0dee324e82f33240b4159b0b33bffd50a510d7679194c7001031e92d8bee895d",
+    "files_matched": 3114
+  },
+  "receipt_accounting": {
+    "phases": {
+      "confirm_embed": {
+        "jobs": 175,
+        "attempts": 175,
+        "status_counts": {
+          "200": 175
+        },
+        "kinds": {
+          "embedding": 175
+        },
+        "tokens": {
+          "provider_input": 321421
+        },
+        "cost_cny": "0.02249947",
+        "first": "2026-09-14T16:57:28.661230+00:00",
+        "last": "2026-09-14T16:58:11.041768+00:00"
+      },
+      "confirm_judge": {
+        "jobs": 1315,
+        "attempts": 1319,
+        "status_counts": {
+          "200": 1315,
+          "402": 4
+        },
+        "kinds": {
+          "chat": 1315
+        },
+        "tokens": {
+          "prompt": 3992893,
+          "completion": 382726,
+          "cached": 354560
+        },
+        "cost_cny": "14.4659010",
+        "first": "2026-09-14T17:06:37.121914+00:00",
+        "last": "2026-09-14T17:31:04.205969+00:00"
+      },
+      "confirm_rerank": {
+        "jobs": 650,
+        "attempts": 650,
+        "status_counts": {
+          "200": 650
+        },
+        "kinds": {
+          "rerank": 650
+        },
+        "tokens": {
+          "provider_input": 7000629
+        },
+        "cost_cny": "0.49004403",
+        "first": "2026-09-14T16:59:47.104547+00:00",
+        "last": "2026-09-14T17:04:12.336332+00:00"
+      },
+      "dev_embed": {
+        "jobs": 144,
+        "attempts": 144,
+        "status_counts": {
+          "200": 144
+        },
+        "kinds": {
+          "rerank": 144
+        },
+        "tokens": {
+          "provider_input": 1564384
+        },
+        "cost_cny": "0.10950688",
+        "first": "2026-09-14T16:39:31.729054+00:00",
+        "last": "2026-09-14T16:40:28.956004+00:00"
+      },
+      "dev_judge": {
+        "jobs": 246,
+        "attempts": 246,
+        "status_counts": {
+          "200": 246
+        },
+        "kinds": {
+          "chat": 246
+        },
+        "tokens": {
+          "prompt": 737061,
+          "completion": 69144,
+          "cached": 58624
+        },
+        "cost_cny": "2.6751942",
+        "first": "2026-09-14T16:44:41.371196+00:00",
+        "last": "2026-09-14T16:49:09.602657+00:00"
+      },
+      "dev_rerank": {
+        "jobs": 110,
+        "attempts": 110,
+        "status_counts": {
+          "200": 110
+        },
+        "kinds": {
+          "rerank": 110
+        },
+        "tokens": {
+          "provider_input": 194227
+        },
+        "cost_cny": "0.01359589",
+        "first": "2026-09-14T16:33:11.242177+00:00",
+        "last": "2026-09-14T16:33:35.806376+00:00"
+      },
+      "diagnostics": {
+        "jobs": 52,
+        "attempts": 56,
+        "status_counts": {
+          "402": 4,
+          "200": 52
+        },
+        "kinds": {
+          "chat": 52
+        },
+        "tokens": {
+          "prompt": 151096,
+          "completion": 15729,
+          "cached": 55552
+        },
+        "cost_cny": "0.3054402",
+        "first": "2026-09-14T17:59:38.832113+00:00",
+        "last": "2026-09-14T18:00:32.297633+00:00"
+      }
+    },
+    "total_cny": "18.08218167",
+    "errors": [
+      {
+        "phase": "confirm_judge",
+        "request_id": "confirmjud:abffaf4f618f95715b51bcc066a6975c57d769c1809bc58317ccac9f7a575a68",
+        "attempt": 1,
+        "account": "account_1",
+        "code": 30001
+      },
+      {
+        "phase": "confirm_judge",
+        "request_id": "confirmjud:096a920e7a783e72847fa6c9f2fd88c80e0103daf22b29028d7b17b4afe1c727",
+        "attempt": 1,
+        "account": "account_1",
+        "code": 30001
+      },
+      {
+        "phase": "confirm_judge",
+        "request_id": "confirmjud:ec6f286f15a94c41e6459dd0a14338c19caa3aea49a671c4c587a3b8c24c045c",
+        "attempt": 1,
+        "account": "account_1",
+        "code": 30001
+      },
+      {
+        "phase": "confirm_judge",
+        "request_id": "confirmjud:ed6c0471153b73ab8d1aa39545d2e61063c3f0d6e042431f5a351a5fd442707e",
+        "attempt": 1,
+        "account": "account_1",
+        "code": 30001
+      },
+      {
+        "phase": "diagnostics",
+        "request_id": "diag:118c843d59c4e037741d4ea87c89b28dcf9ea67a043f7b54d7b42038e7df32da",
+        "attempt": 1,
+        "account": "account_1",
+        "code": 30001
+      },
+      {
+        "phase": "diagnostics",
+        "request_id": "diag:b571390fd0b381e750b98a58399aea3b8ccd3879800d05336fb08048a5e4cbc4",
+        "attempt": 1,
+        "account": "account_1",
+        "code": 30001
+      },
+      {
+        "phase": "diagnostics",
+        "request_id": "diag:3ab9b12e4b786ecf3c2c9fbfc553f76ab70182d491b0d6617f54e4a3de5af9ee",
+        "attempt": 1,
+        "account": "account_1",
+        "code": 30001
+      },
+      {
+        "phase": "diagnostics",
+        "request_id": "diag:7bf5c7000bb2c74eb0f1ab52e6522b71e252c45c77cfc5781fe1b1b697386169",
+        "attempt": 1,
+        "account": "account_1",
+        "code": 30001
+      }
+    ],
+    "models": {
+      "Pro/BAAI/bge-m3": 175,
+      "deepseek-ai/DeepSeek-V4-Flash": 1613,
+      "Pro/BAAI/bge-reranker-v2-m3": 904
+    },
+    "estimated_not_invoice": true
+  },
+  "chronology": {
+    "authority": "2026-09-14T16:33:07.910231+00:00",
+    "confirmation_protocol": "2026-09-14T16:56:24.036818+00:00",
+    "development_refresh_before_judge": true,
+    "diagnostic_preparation_before_calls": true
+  },
+  "independent_predictions_candidates_scores": {
+    "development_001": {
+      "conditions": {
+        "A48": 144,
+        "B48": 144,
+        "C48": 144,
+        "A80": 24,
+        "B48_no_note_cap": 24,
+        "B48_no_rerank": 24,
+        "B80": 24
+      },
+      "distinct_bodies": 329,
+      "metrics": {
+        "llm": {
+          "n": 72,
+          "gold_counts": {
+            "Supported": 67,
+            "Not Addressed": 1,
+            "Not Supported": 4
+          },
+          "methods": {
+            "A48": {
+              "pa": 0.8333333333333334,
+              "mcc": 0.4090187688225088,
+              "confusion_S_NS_NA": [
+                [
+                  57,
+                  10,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "B48": {
+              "pa": 0.7916666666666666,
+              "mcc": 0.36008751557267454,
+              "confusion_S_NS_NA": [
+                [
+                  54,
+                  13,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "C48": {
+              "pa": 0.8472222222222222,
+              "mcc": 0.4282934009870367,
+              "confusion_S_NS_NA": [
+                [
+                  58,
+                  9,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            }
+          },
+          "contrasts": {
+            "B48-A48": {
+              "unchanged": 69,
+              "worsened": 3
+            },
+            "C48-A48": {
+              "unchanged": 71,
+              "improved": 1
+            }
+          }
+        },
+        "human": {
+          "n": 72,
+          "gold_counts": {
+            "Supported": 41,
+            "Not Supported": 13,
+            "Not Addressed": 18
+          },
+          "methods": {
+            "A48": {
+              "pa": 0.7083333333333334,
+              "mcc": 0.5892908506696615,
+              "confusion_S_NS_NA": [
+                [
+                  30,
+                  11,
+                  0
+                ],
+                [
+                  0,
+                  12,
+                  1
+                ],
+                [
+                  1,
+                  8,
+                  9
+                ]
+              ]
+            },
+            "B48": {
+              "pa": 0.6388888888888888,
+              "mcc": 0.4960155344845714,
+              "confusion_S_NS_NA": [
+                [
+                  26,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  2
+                ],
+                [
+                  2,
+                  7,
+                  9
+                ]
+              ]
+            },
+            "C48": {
+              "pa": 0.7222222222222222,
+              "mcc": 0.6071799792052536,
+              "confusion_S_NS_NA": [
+                [
+                  30,
+                  11,
+                  0
+                ],
+                [
+                  0,
+                  12,
+                  1
+                ],
+                [
+                  1,
+                  7,
+                  10
+                ]
+              ]
+            }
+          },
+          "contrasts": {
+            "B48-A48": {
+              "unchanged": 60,
+              "worsened": 8,
+              "changed_wrong": 1,
+              "improved": 3
+            },
+            "C48-A48": {
+              "unchanged": 71,
+              "improved": 1
+            }
+          }
+        }
+      }
+    },
+    "confirmation_001": {
+      "conditions": {
+        "A48": 650,
+        "B48": 650,
+        "C48": 650
+      },
+      "distinct_bodies": 1303,
+      "metrics": {
+        "llm": {
+          "n": 243,
+          "gold_counts": {
+            "Supported": 228,
+            "Not Supported": 10,
+            "Not Addressed": 5
+          },
+          "methods": {
+            "A48": {
+              "pa": 0.8024691358024691,
+              "mcc": 0.26516615042726416,
+              "confusion_S_NS_NA": [
+                [
+                  187,
+                  40,
+                  1
+                ],
+                [
+                  2,
+                  7,
+                  1
+                ],
+                [
+                  3,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "B48": {
+              "pa": 0.8065843621399177,
+              "mcc": 0.2856522869507839,
+              "confusion_S_NS_NA": [
+                [
+                  187,
+                  38,
+                  3
+                ],
+                [
+                  2,
+                  8,
+                  0
+                ],
+                [
+                  3,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "C48": {
+              "pa": 0.8024691358024691,
+              "mcc": 0.26535534696999724,
+              "confusion_S_NS_NA": [
+                [
+                  187,
+                  40,
+                  1
+                ],
+                [
+                  3,
+                  7,
+                  0
+                ],
+                [
+                  2,
+                  2,
+                  1
+                ]
+              ]
+            }
+          },
+          "contrasts": {
+            "B48-A48": {
+              "unchanged": 217,
+              "worsened": 12,
+              "improved": 13,
+              "changed_wrong": 1
+            },
+            "C48-A48": {
+              "unchanged": 230,
+              "worsened": 6,
+              "changed_wrong": 1,
+              "improved": 6
+            }
+          }
+        },
+        "human": {
+          "n": 407,
+          "gold_counts": {
+            "Supported": 313,
+            "Not Addressed": 67,
+            "Not Supported": 27
+          },
+          "methods": {
+            "A48": {
+              "pa": 0.7641277641277642,
+              "mcc": 0.5113555871884067,
+              "confusion_S_NS_NA": [
+                [
+                  260,
+                  45,
+                  8
+                ],
+                [
+                  3,
+                  18,
+                  6
+                ],
+                [
+                  6,
+                  28,
+                  33
+                ]
+              ]
+            },
+            "B48": {
+              "pa": 0.714987714987715,
+              "mcc": 0.4587443090639369,
+              "confusion_S_NS_NA": [
+                [
+                  239,
+                  64,
+                  10
+                ],
+                [
+                  4,
+                  18,
+                  5
+                ],
+                [
+                  6,
+                  27,
+                  34
+                ]
+              ]
+            },
+            "C48": {
+              "pa": 0.7714987714987716,
+              "mcc": 0.5271850717310917,
+              "confusion_S_NS_NA": [
+                [
+                  262,
+                  43,
+                  8
+                ],
+                [
+                  2,
+                  20,
+                  5
+                ],
+                [
+                  6,
+                  29,
+                  32
+                ]
+              ]
+            }
+          },
+          "contrasts": {
+            "B48-A48": {
+              "unchanged": 347,
+              "worsened": 36,
+              "improved": 16,
+              "changed_wrong": 8
+            },
+            "C48-A48": {
+              "unchanged": 386,
+              "improved": 10,
+              "worsened": 7,
+              "changed_wrong": 4
+            }
+          }
+        }
+      }
+    }
+  },
+  "intervention_transformations": [
+    {
+      "case_id": "P081",
+      "key_lengths": [
+        631
+      ],
+      "addition_control_lengths": [
+        631
+      ],
+      "donor_control_lengths": [
+        631
+      ],
+      "shared_replacements": 3,
+      "results": {
+        "case_id": "P081",
+        "donor_minus_control": "Not Supported",
+        "donor_minus_key": "Not Supported",
+        "donor_removal_control_missing": false,
+        "donor_repeat": "Not Supported",
+        "gt": "Supported",
+        "original_donor": "Supported",
+        "original_receiver": "Not Supported",
+        "receiver_plus_control": "Not Addressed",
+        "receiver_plus_key": "Supported",
+        "receiver_repeat": "Not Supported"
+      }
+    },
+    {
+      "case_id": "P071",
+      "key_lengths": [
+        630
+      ],
+      "addition_control_lengths": [
+        631
+      ],
+      "donor_control_lengths": [
+        628
+      ],
+      "shared_replacements": 3,
+      "results": {
+        "case_id": "P071",
+        "donor_minus_control": "Supported",
+        "donor_minus_key": "Supported",
+        "donor_removal_control_missing": false,
+        "donor_repeat": "Supported",
+        "gt": "Supported",
+        "original_donor": "Supported",
+        "original_receiver": "Not Supported",
+        "receiver_plus_control": "Not Supported",
+        "receiver_plus_key": "Supported",
+        "receiver_repeat": "Supported"
+      }
+    },
+    {
+      "case_id": "P080",
+      "key_lengths": [
+        630
+      ],
+      "addition_control_lengths": [
+        630
+      ],
+      "donor_control_lengths": [
+        636
+      ],
+      "shared_replacements": 1,
+      "results": {
+        "case_id": "P080",
+        "donor_minus_control": "Not Supported",
+        "donor_minus_key": "Not Supported",
+        "donor_removal_control_missing": false,
+        "donor_repeat": "Supported",
+        "gt": "Supported",
+        "original_donor": "Supported",
+        "original_receiver": "Not Supported",
+        "receiver_plus_control": "Not Supported",
+        "receiver_plus_key": "Supported",
+        "receiver_repeat": "Not Supported"
+      }
+    },
+    {
+      "case_id": "N293",
+      "key_lengths": [
+        636
+      ],
+      "addition_control_lengths": [
+        636
+      ],
+      "donor_control_lengths": [
+        637
+      ],
+      "shared_replacements": 2,
+      "results": {
+        "case_id": "N293",
+        "donor_minus_control": "Supported",
+        "donor_minus_key": "Not Supported",
+        "donor_removal_control_missing": false,
+        "donor_repeat": "Supported",
+        "gt": "Supported",
+        "original_donor": "Supported",
+        "original_receiver": "Not Supported",
+        "receiver_plus_control": "Not Supported",
+        "receiver_plus_key": "Not Supported",
+        "receiver_repeat": "Not Supported"
+      }
+    },
+    {
+      "case_id": "N302",
+      "key_lengths": [
+        636
+      ],
+      "addition_control_lengths": [
+        636
+      ],
+      "donor_control_lengths": [
+        98
+      ],
+      "shared_replacements": 1,
+      "results": {
+        "case_id": "N302",
+        "donor_minus_control": "Supported",
+        "donor_minus_key": "Not Supported",
+        "donor_removal_control_missing": false,
+        "donor_repeat": "Supported",
+        "gt": "Supported",
+        "original_donor": "Supported",
+        "original_receiver": "Not Supported",
+        "receiver_plus_control": "Not Supported",
+        "receiver_plus_key": "Supported",
+        "receiver_repeat": "Not Supported"
+      }
+    },
+    {
+      "case_id": "N394",
+      "key_lengths": [
+        638
+      ],
+      "addition_control_lengths": [
+        638
+      ],
+      "donor_control_lengths": [
+        639
+      ],
+      "shared_replacements": 4,
+      "results": {
+        "case_id": "N394",
+        "donor_minus_control": "Supported",
+        "donor_minus_key": "Supported",
+        "donor_removal_control_missing": false,
+        "donor_repeat": "Supported",
+        "gt": "Supported",
+        "original_donor": "Supported",
+        "original_receiver": "Not Supported",
+        "receiver_plus_control": "Not Addressed",
+        "receiver_plus_key": "Supported",
+        "receiver_repeat": "Not Supported"
+      }
+    },
+    {
+      "case_id": "N352",
+      "key_lengths": [
+        305
+      ],
+      "addition_control_lengths": [
+        305
+      ],
+      "donor_control_lengths": [
+        37
+      ],
+      "shared_replacements": 1,
+      "results": {
+        "case_id": "N352",
+        "donor_minus_control": "Not Addressed",
+        "donor_minus_key": "Not Addressed",
+        "donor_removal_control_missing": false,
+        "donor_repeat": "Not Addressed",
+        "gt": "Not Addressed",
+        "original_donor": "Not Supported",
+        "original_receiver": "Not Addressed",
+        "receiver_plus_control": "Not Addressed",
+        "receiver_plus_key": "Not Addressed",
+        "receiver_repeat": "Not Addressed"
+      }
+    },
+    {
+      "case_id": "N487",
+      "key_lengths": [
+        634,
+        639
+      ],
+      "addition_control_lengths": [
+        639,
+        634
+      ],
+      "donor_control_lengths": [
+        634,
+        639
+      ],
+      "shared_replacements": 3,
+      "results": {
+        "case_id": "N487",
+        "donor_minus_control": "Supported",
+        "donor_minus_key": "Not Addressed",
+        "donor_removal_control_missing": false,
+        "donor_repeat": "Supported",
+        "gt": "Not Addressed",
+        "original_donor": "Supported",
+        "original_receiver": "Not Addressed",
+        "receiver_plus_control": "Not Addressed",
+        "receiver_plus_key": "Not Supported",
+        "receiver_repeat": "Not Addressed"
+      }
+    },
+    {
+      "case_id": "N410",
+      "key_lengths": [
+        468
+      ],
+      "addition_control_lengths": [
+        466
+      ],
+      "donor_control_lengths": [],
+      "shared_replacements": 1,
+      "results": {
+        "case_id": "N410",
+        "donor_minus_key": "Supported",
+        "donor_removal_control_missing": true,
+        "donor_repeat": "Supported",
+        "gt": "Not Supported",
+        "original_donor": "Not Supported",
+        "original_receiver": "Supported",
+        "receiver_plus_control": "Supported",
+        "receiver_plus_key": "Not Supported",
+        "receiver_repeat": "Not Supported"
+      }
+    }
+  ],
+  "drift_and_prespecified_repeats": {
+    "bridge_pairs": 12,
+    "over_1e_6": 10,
+    "max_difference": 0.0013740062713623047,
+    "repeats": {
+      "development_001": {
+        "pairs": 12,
+        "flips": []
+      },
+      "confirmation_001": {
+        "pairs": 12,
+        "flips": [
+          "N119"
+        ]
+      }
+    }
+  },
+  "final_frozen_files_unchanged": 3114
+}

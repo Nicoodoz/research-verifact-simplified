@@ -1,0 +1,80 @@
+{
+  "head": "61c059dab1d970d76b5408e58a22edd4a689723c",
+  "handoff_sha256": "6b2e452981cd80363f1c53ea5f188f43b95e6cdf34b13f89677bb3a586851a5a",
+  "version_files": 477,
+  "started_utc": "2026-09-14T11:41:56.576102+00:00",
+  "targeted_tests": 12,
+  "status": "PASS_limited_mechanical_review",
+  "patients": [
+    "45115",
+    "89909"
+  ],
+  "claims": 64,
+  "attempts": 192,
+  "received": 190,
+  "valid": 189,
+  "unknown": 2,
+  "truncated": 1,
+  "continued_unsent": 77,
+  "accounts": [
+    "account_1"
+  ],
+  "estimated_received_cny": 3.6145175999999997,
+  "unknown_reserved_cny": 0.251589,
+  "total_budget_cny": 3.8661065999999997,
+  "primary_comparisons_blocked": true,
+  "human_source_minus_repeat": {
+    "bootstrap_iterations": 1000,
+    "coverage": {
+      "coverage": 1.0,
+      "evaluated_cohort_sha256": "e8f2d3b24b09eb902692d2ebdce9b6623c82ad2fdfef6820cd2b0d78c4b61238",
+      "evaluated_n": 32,
+      "evaluated_patients": 2,
+      "expected_cohort_sha256": "e8f2d3b24b09eb902692d2ebdce9b6623c82ad2fdfef6820cd2b0d78c4b61238",
+      "expected_n": 32,
+      "expected_patients": 2,
+      "missing_ids": [],
+      "missing_n": 0,
+      "missing_policy": "error"
+    },
+    "direction": "candidate minus baseline",
+    "metrics": {
+      "gwet_ac1": {
+        "ci95": [
+          -0.09992077492684884,
+          0.19149443290544454
+        ],
+        "delta": 0.047040021195358384
+      },
+      "mcc": {
+        "ci95": [
+          -0.12795208378069323,
+          0.19297143126776062
+        ],
+        "delta": 0.032627806567677387
+      },
+      "percent_agreement": {
+        "ci95": [
+          -0.0625,
+          0.125
+        ],
+        "delta": 0.03125
+      }
+    },
+    "resampling": "paired patients, seeds 0..iterations-1"
+  },
+  "score_files_identical": {
+    "attempts.csv": true,
+    "metrics.json": true,
+    "normalized_responses.jsonl": true,
+    "predictions_repeat_claim.csv": true,
+    "predictions_source_context.csv": true,
+    "predictions_structured.csv": true,
+    "summary.json": true,
+    "transitions.csv": true
+  },
+  "anchors_verified": 316,
+  "version_unchanged": true,
+  "no_inference_calls": true,
+  "finished_utc": "2026-09-14T11:42:02.361582+00:00"
+}

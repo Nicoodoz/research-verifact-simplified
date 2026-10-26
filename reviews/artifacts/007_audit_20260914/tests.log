@@ -1,0 +1,14 @@
+test_bm25_known_term_outweighs_unrelated_and_repeat_query_is_invariant (test_context_retrieval.RetrievalTests.test_bm25_known_term_outweighs_unrelated_and_repeat_query_is_invariant) ... ok
+test_fixed_ceiling_does_not_erase_source_candidates_when_claim_is_empty (test_context_retrieval.RetrievalTests.test_fixed_ceiling_does_not_erase_source_candidates_when_claim_is_empty) ... ok
+test_four_arm_scoring_blocks_only_incomplete_comparisons (test_context_retrieval.RetrievalTests.test_four_arm_scoring_blocks_only_incomplete_comparisons) ... {"by_arm":{"claim":{"adherence_flags":{},"input_tokens":6000,"output_tokens":600,"received":6,"valid":6},"claim_repeat":{"adherence_flags":{},"input_tokens":0,"output_tokens":0,"received":0,"valid":0},"local":{"adherence_flags":{},"input_tokens":6000,"output_tokens":600,"received":6,"valid":5},"mixed":{"adherence_flags":{},"input_tokens":6000,"output_tokens":600,"received":6,"valid":6},"sentence":{"adherence_flags":{},"input_tokens":6000,"output_tokens":600,"received":6,"valid":6}},"expected_requests":24,"failures":[{"errors":["Truncated/filtered/nonfinal generation"],"kind":"invalid_response","request_id":"local:fake-human-0"}],"identical_body_groups":0,"identical_body_groups_with_label_disagreement":0,"invoice_verified":false,"no_gold_evidence_recall_claim":true,"received":24,"settled_and_reserved_cny":0.0936,"state_budget_cny":0.0936,"status":"offline_scored_pending_semantic_review","time_metadata_conflicts":0,"valid":23}
+ok
+test_packing_equalizes_budget_and_retains_raw_substrings (test_context_retrieval.RetrievalTests.test_packing_equalizes_budget_and_retains_raw_substrings) ... ok
+test_patient_and_calendar_filter_prevents_cross_patient_and_future_notes (test_context_retrieval.RetrievalTests.test_patient_and_calendar_filter_prevents_cross_patient_and_future_notes) ... ok
+test_registered_unknown_is_not_resent_and_budget_is_retained (test_context_retrieval.RetrievalTests.test_registered_unknown_is_not_resent_and_budget_is_retained) ... ok
+test_sentence_choice_is_literal_and_independent_of_order (test_context_retrieval.RetrievalTests.test_sentence_choice_is_literal_and_independent_of_order) ... ok
+test_spans_preserve_final_paragraph_and_all_nonwhite_characters (test_context_retrieval.RetrievalTests.test_spans_preserve_final_paragraph_and_all_nonwhite_characters) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 4.088s
+
+OK

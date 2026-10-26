@@ -1,0 +1,115 @@
+{
+  "phase": "post_audit_current_status_sync",
+  "updated_utc": "2026-09-14T05:38:09.443647+00:00",
+  "phase_one_boundary": {
+    "audit_recorded_utc": "2026-09-14T05:33:32.999979+00:00",
+    "audit_record_sha256": "ec3fd27491699a8ba69ba382c2d408bfc13cc7540d614e5c3e40ce510250d19c",
+    "audit_original_prefix_preserved": true,
+    "evidence_sha256": "ddb7a42081b7e4923b6c23a61da46d4f2a6e3b335865f40c1f2fb2e55f021557"
+  },
+  "documentation_changes": {
+    "README.md": {
+      "before_sha256": "5de845c5c1b9838cf054fdf8f6789a067aeacd8e6db291e0684664ae79b6a44e",
+      "after_sha256": "79b7de6f41b3a4a3dbbe10df39e179acdf0463e440103c8895822cfbf241595f",
+      "encoding": "utf-8",
+      "line_endings": "CRLF"
+    },
+    "AGENTS.md": {
+      "before_sha256": "856f4556587288c4fc7460ab7387d7eb3cdbb4a14618bbeb85e3d6635d004800",
+      "after_sha256": "0d33c28ebd1f023d0704488cfb61e4aeefb194ee954ab74ec44d32a32195c096",
+      "encoding": "utf-8",
+      "line_endings": "CRLF"
+    },
+    "reviews/README.md": {
+      "before_sha256": "566f18abcdc6f3d74dcadaf8f01151851941372b5394878792a11594056a989b",
+      "after_sha256": "f7e32e0c0d7d5ffeaf2f6a9879bea4582f75d91337cd85fb0213890e0c70e92f",
+      "encoding": "utf-8",
+      "line_endings": "LF"
+    },
+    "tasks/004_event_alignment_pilot/README.md": {
+      "before_sha256": "f40e25591be4865b859c4b82bd346c88b6dd7e8f64ae323c573390102d98ab5a",
+      "after_sha256": "88210cd807100b60f7f660a8fd0fb158bbbd0e89d3f09a461585410001d3c2aa",
+      "encoding": "utf-8",
+      "line_endings": "LF"
+    },
+    "outputs/004_event_alignment_pilot/README.md": {
+      "before_sha256": "f606ca57c8a659512ccca550e1eb436af3d5142d8c2c4b774911687c816e2d16",
+      "after_sha256": "23d59fa783b8feb32d2e6c86377e48e83676f4e7537ce8f642e29182c5655d51",
+      "encoding": "utf-8",
+      "line_endings": "LF"
+    },
+    "tasks/003_error_analysis/README.md": {
+      "before_sha256": "b0b85c8c0d51bed5b759b7bf2862a899fd239105fd7c1b5ecfe27516aad4b8d5",
+      "after_sha256": "83832959e937ea0e542d38600a9a33be2cf150ee1cae7935c61fe85cb55f72f9",
+      "encoding": "utf-8",
+      "line_endings": "LF"
+    },
+    "outputs/003_error_analysis/README.md": {
+      "before_sha256": "a2e448bd0cbf27d24e003ccf2747c1d069993dd4d85abe6439e63bf661edc461",
+      "after_sha256": "c8f36abfa69daee635a1f319f016b6dac6e13c8c0a0e107840bce56f5f79ea4b",
+      "encoding": "utf-8",
+      "line_endings": "LF"
+    },
+    "tasks/001_dataset_audit/README.md": {
+      "before_sha256": "8688769912b9bed6f44c6092fc841d46051c67c3769ab427cb0f29f7e0fde995",
+      "after_sha256": "dc1d39a7e3f26951b187b0ded95e6b9e997aef323090d9288817d7d388b99c3c",
+      "encoding": "utf-8",
+      "line_endings": "LF"
+    }
+  },
+  "environment_yml_changed": false,
+  "environment_yml_sha256": "c317d27027f1ace63afc90660da617e3dd57bef938456e7370a36d1715c82627",
+  "environment_reason": "SiliconFlow uses urllib; no Groq dependency. Existing pinned versions retained, including fonttools recorded by 001 runner.",
+  "reviewed_code_changed_in_this_phase": false,
+  "new_inference_calls": 0,
+  "status_wording": "004 completed; independent revision review PASS; eligible for formal freeze/closure",
+  "checked_utc": "2026-09-14T05:40:59.606524+00:00",
+  "checks": {
+    "local_links_checked": 151,
+    "broken_local_links": [],
+    "encodings_and_line_endings_preserved": true,
+    "git_diff_check_passed": true,
+    "unexpected_changed_paths": [],
+    "pre_existing_snapshot_entries": 1983,
+    "changed_current_docs_within_prior_snapshot": [
+      "outputs/004_event_alignment_pilot/README.md",
+      "reviews/004_event_alignment_pilot.md",
+      "reviews/README.md"
+    ],
+    "all_other_pre_existing_hashes_unchanged": true,
+    "changed_submitted_files_limited_to_authorized_status_docs": [
+      "AGENTS.md",
+      "README.md",
+      "outputs/004_event_alignment_pilot/README.md",
+      "tasks/004_event_alignment_pilot/README.md"
+    ],
+    "audit_record_and_phase_one_evidence_unchanged": true,
+    "post_sync_receipt_collection": {
+      "expected_requests": 1263,
+      "receipts": 1803,
+      "terminal_responses": 1263,
+      "real_patients": 6,
+      "real_claims": 421,
+      "protected_files_policy": "workspace_snapshot_nonblocking",
+      "protected_files_changes": [
+        "reviews/004_event_alignment_pilot.md",
+        "reviews/README.md"
+      ],
+      "original_receipt_hashes_verified": true
+    },
+    "post_sync_failure_count": 1,
+    "fictional_cost_estimated_cny": 0.17444099999999998,
+    "package_versions": {
+      "duckdb": "1.5.5",
+      "pypdf": "6.18.1",
+      "fonttools": "4.65.0",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.12.0",
+      "scikit-learn": "1.6.1",
+      "irrCAC": "0.4.3"
+    },
+    "pip_check": "No broken requirements found.",
+    "new_inference_calls": 0
+  }
+}

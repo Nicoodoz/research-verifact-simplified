@@ -1,0 +1,36 @@
+{
+  "entirely_fictional": true,
+  "purpose": "Handwritten fake examples for software plumbing only; labels are fixture constants, not medical annotations.",
+  "cases": [
+    {
+      "proposition": "The fictional patient completed the walking assessment on March 2.",
+      "reference": "1. Date: 2001-03-02, Time: 10:00, Note Category: synthetic, Note Description: invented | Text: The walking assessment was completed today.\n",
+      "fixture_label": "Supported"
+    },
+    {
+      "proposition": "The fictional patient had completed the walking assessment by March 1.",
+      "reference": "1. Date: 2001-03-02, Time: 10:00, Note Category: synthetic, Note Description: invented | Text: The walking assessment was first completed today; it was not completed yesterday.\n",
+      "fixture_label": "Not Supported"
+    },
+    {
+      "proposition": "The fictional patient underwent a hearing assessment.",
+      "reference": "1. Date: 2001-03-03, Time: 09:00, Note Category: synthetic, Note Description: invented | Text: The note describes a routine walking assessment and contains no hearing assessment information.\n",
+      "fixture_label": "Not Addressed"
+    },
+    {
+      "proposition": "A walking assessment was planned for the fictional patient.",
+      "reference": "1. Date: 2001-03-04, Time: 08:00, Note Category: synthetic, Note Description: invented | Text: Plan: arrange a walking assessment tomorrow.\n",
+      "fixture_label": "Supported"
+    },
+    {
+      "proposition": "Both fictional assessments were completed.",
+      "reference": "1. Date: 2001-03-05, Time: 11:00, Note Category: synthetic, Note Description: invented | Text: Assessment A was completed. Assessment B was canceled before it began.\n",
+      "fixture_label": "Not Supported"
+    },
+    {
+      "proposition": "The fictional patient received a travel certificate.",
+      "reference": "1. Date: 2001-03-06, Time: Unknown, Note Category: synthetic, Note Description: invented | Text: This invented note only records the patient's scheduled walking assessment.\n",
+      "fixture_label": "Not Addressed"
+    }
+  ]
+}

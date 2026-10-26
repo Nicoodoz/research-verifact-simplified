@@ -10,7 +10,7 @@ def passage(text,lo=0,hi=None,category='Nursing'):
     hi=len(text) if hi is None else hi
     note=dict(ROW_ID='1',SUBJECT_ID='2',TEXT=text,DESCRIPTION='Real description')
     piece=dict(note_id='1',subject_id='2',start=lo,end_exclusive=hi,text=text[lo:hi],note_sha256=s.pilot.digest_text(text),
-        description=note['DESCRIPTION'],category=category,date='[CLINICAL_LITERAL_REMOVED]',time='00:00:00')
+        description=note['DESCRIPTION'],category=category,date='2100-01-01',time='00:00:00')
     return piece,note
 
 class IntegrityPackagingTests(unittest.TestCase):

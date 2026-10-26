@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "executable": "E:\\miniconda3\\envs\\research-verifact-029\\python.exe",
+  "conda_environment": "research-verifact-029",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "duckdb": "1.5.5",
+    "matplotlib": "3.10.8"
+  },
+  "optimizers": {
+    "L-BFGS-B": {
+      "success": true,
+      "objective": 0.0
+    },
+    "SLSQP": {
+      "success": true,
+      "objective": 0.0
+    }
+  },
+  "matrix_multiply": "matches scalar contraction",
+  "network": "blocked",
+  "API_calls": 0
+}

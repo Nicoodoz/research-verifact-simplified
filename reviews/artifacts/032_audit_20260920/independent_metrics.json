@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "confusion_PA_MCC_falseS_groups": 27,
+  "primary_bootstrap_draws": 1000,
+  "PA_CI": [
+    -0.01435125804313904,
+    0.02623600223356686
+  ],
+  "MCC_CI": [
+    -0.08072477528847129,
+    0.01675179580462212
+  ],
+  "API_calls": 0
+}

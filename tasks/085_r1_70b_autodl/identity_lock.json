@@ -1,0 +1,2484 @@
+{
+  "chat_template_sha256": "56a1447ad31926fdc21fb07e56e5642bd9c850c4f52d8c8af7bbe5f079a84f5f",
+  "model": {
+    "api_url": "https://huggingface.co/api/models/casperhansen/deepseek-r1-distill-llama-70b-awq/revision/main?blobs=true",
+    "files": {
+      ".gitattributes": {
+        "git_blob": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+        "sha256": null,
+        "size": 1570
+      },
+      "README.md": {
+        "git_blob": "acb132c8f50ba394d4f63c298904c290319877a2",
+        "sha256": null,
+        "size": 20
+      },
+      "config.json": {
+        "git_blob": "aebcd4bcde5a5d9fe99c18f5cc0729d4fc96d683",
+        "sha256": null,
+        "size": 1207
+      },
+      "generation_config.json": {
+        "git_blob": "9161cf69ad2c2fdbf682b2fc5f45a27be2e6b139",
+        "sha256": null,
+        "size": 198
+      },
+      "model-00001-of-00009.safetensors": {
+        "git_blob": "2b7ca8ed39a0a5de9eaaca83bb015b15b40384fe",
+        "sha256": "1259a0eb24d6b3869c4b79433d1af89443a39433a77f3bcee68a2c92f4bf608f",
+        "size": 4969219144
+      },
+      "model-00002-of-00009.safetensors": {
+        "git_blob": "20e1bdfa9cc57c685e7acc400e8d507205383740",
+        "sha256": "717b30d87ef8afc4857a1f178d1a1902b498dbfc18a1fdbcaa3ac8d4a3897a05",
+        "size": 4890226920
+      },
+      "model-00003-of-00009.safetensors": {
+        "git_blob": "a5ed50a9f0c18704c533b97593d18c62c2726c8b",
+        "sha256": "564096a747a94c0207c4e186b449972f8958f93d46f876fdef54a08184bd5e46",
+        "size": 4890227016
+      },
+      "model-00004-of-00009.safetensors": {
+        "git_blob": "7b290ecfafaf9e25d20bd41d23168115e7c4a2e3",
+        "sha256": "b9f75516ba8314782c851c7c336799926fb99de36540313ad765ef8c0a9ba216",
+        "size": 4890227016
+      },
+      "model-00005-of-00009.safetensors": {
+        "git_blob": "db9ff3fc569e7f5cea5615ff1040043fbaeced53",
+        "sha256": "668590ee08670bbd1ec50789cdae478c6975e7f9b950fdf4409f3de0b271034e",
+        "size": 4890227016
+      },
+      "model-00006-of-00009.safetensors": {
+        "git_blob": "4b151c97b691ec0e8c8872bf7ef617b622b96735",
+        "sha256": "760571573d326b318e68362adf5d30254607b190f880e56fb88b9b5203ec2007",
+        "size": 4890227016
+      },
+      "model-00007-of-00009.safetensors": {
+        "git_blob": "40c08e1042e179bcfe8e2383dcb386fb6aec5c26",
+        "sha256": "d2e13b062b0a4bd614fda93ab0926c2389a85b454f54dfc93db68af21f80a9b8",
+        "size": 4890227016
+      },
+      "model-00008-of-00009.safetensors": {
+        "git_blob": "9364cd925b61c1e1284a5617f2f32ea22afc952c",
+        "sha256": "724ec4b452898bd90e52856c9a8ec2813f5ab10d645be966d64c6779d41a6512",
+        "size": 3356068856
+      },
+      "model-00009-of-00009.safetensors": {
+        "git_blob": "c4de75f4ac6ece7739f8c1362f9107b76a2068c3",
+        "sha256": "ee0b056e97c867d5282cad7b62f782b41dc7cac7da2df623215ad8b85f611634",
+        "size": 2101346432
+      },
+      "model.safetensors.index.json": {
+        "git_blob": "a97121035face0cef4e0d14b8292c82c0fa58975",
+        "sha256": null,
+        "size": 151233
+      },
+      "special_tokens_map.json": {
+        "git_blob": "1d385d62cf08bca35254547902b792c243656ec1",
+        "sha256": null,
+        "size": 485
+      },
+      "tokenizer.json": {
+        "git_blob": "4f47952a1bdada713048f5e45fd3b52ad615fb34",
+        "sha256": "d91915040cfac999d8c55f4b5bc6e67367c065e3a7a4e4b9438ce1f256addd86",
+        "size": 17209530
+      },
+      "tokenizer_config.json": {
+        "git_blob": "e02acbaca1496da0b21a4b7f687cef9658df9dbf",
+        "sha256": null,
+        "size": 52921
+      }
+    },
+    "metadata": {
+      "config.json": {
+        "content": {
+          "_name_or_path": "/root/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-R1-Distill-Llama-70B/snapshots/07a264a567ba0863a4ab34fdb3c2b8a54e0bb494",
+          "architectures": [
+            "LlamaForCausalLM"
+          ],
+          "attention_bias": false,
+          "attention_dropout": 0.0,
+          "bos_token_id": 128000,
+          "eos_token_id": [
+            128001,
+            128008,
+            128009
+          ],
+          "head_dim": 128,
+          "hidden_act": "silu",
+          "hidden_size": 8192,
+          "initializer_range": 0.02,
+          "intermediate_size": 28672,
+          "max_position_embeddings": 131072,
+          "mlp_bias": false,
+          "model_type": "llama",
+          "num_attention_heads": 64,
+          "num_hidden_layers": 80,
+          "num_key_value_heads": 8,
+          "pretraining_tp": 1,
+          "quantization_config": {
+            "bits": 4,
+            "group_size": 128,
+            "modules_to_not_convert": null,
+            "quant_method": "awq",
+            "version": "gemm",
+            "zero_point": true
+          },
+          "rms_norm_eps": 1e-05,
+          "rope_scaling": {
+            "factor": 8.0,
+            "high_freq_factor": 4.0,
+            "low_freq_factor": 1.0,
+            "original_max_position_embeddings": 8192,
+            "rope_type": "llama3"
+          },
+          "rope_theta": 500000.0,
+          "tie_word_embeddings": false,
+          "torch_dtype": "bfloat16",
+          "transformers_version": "4.47.1",
+          "use_cache": false,
+          "vocab_size": 128256
+        },
+        "sha256": "e702885158d1f675496fa01ae124cc6d8dd1fddf0937c03c0dc6935b76cbfe05"
+      },
+      "generation_config.json": {
+        "content": {
+          "_from_model_config": true,
+          "bos_token_id": 128000,
+          "do_sample": true,
+          "eos_token_id": [
+            128001,
+            128008,
+            128009
+          ],
+          "transformers_version": "4.47.1",
+          "use_cache": false
+        },
+        "sha256": "897e7aefa7229e88d89f54b2b4585ef81b9821f311c1c41459ae13ac1e219dc3"
+      },
+      "tokenizer_config.json": {
+        "content": {
+          "add_bos_token": true,
+          "add_eos_token": false,
+          "add_prefix_space": null,
+          "added_tokens_decoder": {
+            "128000": {
+              "content": "<｜begin▁of▁sentence｜>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128001": {
+              "content": "<｜end▁of▁sentence｜>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128002": {
+              "content": "<|reserved_special_token_0|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128003": {
+              "content": "<|reserved_special_token_1|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128004": {
+              "content": "<|finetune_right_pad_id|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128005": {
+              "content": "<|reserved_special_token_2|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128006": {
+              "content": "<|start_header_id|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128007": {
+              "content": "<|end_header_id|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128008": {
+              "content": "<|eom_id|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128009": {
+              "content": "<|eot_id|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128010": {
+              "content": "<|python_tag|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128011": {
+              "content": "<｜User｜>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": false
+            },
+            "128012": {
+              "content": "<｜Assistant｜>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": false
+            },
+            "128013": {
+              "content": "<think>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": false
+            },
+            "128014": {
+              "content": "</think>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": false
+            },
+            "128015": {
+              "content": "<｜▁pad▁｜>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128016": {
+              "content": "<|reserved_special_token_8|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128017": {
+              "content": "<|reserved_special_token_9|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128018": {
+              "content": "<|reserved_special_token_10|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128019": {
+              "content": "<|reserved_special_token_11|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128020": {
+              "content": "<|reserved_special_token_12|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128021": {
+              "content": "<|reserved_special_token_13|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128022": {
+              "content": "<|reserved_special_token_14|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128023": {
+              "content": "<|reserved_special_token_15|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128024": {
+              "content": "<|reserved_special_token_16|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128025": {
+              "content": "<|reserved_special_token_17|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128026": {
+              "content": "<|reserved_special_token_18|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128027": {
+              "content": "<|reserved_special_token_19|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128028": {
+              "content": "<|reserved_special_token_20|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128029": {
+              "content": "<|reserved_special_token_21|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128030": {
+              "content": "<|reserved_special_token_22|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128031": {
+              "content": "<|reserved_special_token_23|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128032": {
+              "content": "<|reserved_special_token_24|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128033": {
+              "content": "<|reserved_special_token_25|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128034": {
+              "content": "<|reserved_special_token_26|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128035": {
+              "content": "<|reserved_special_token_27|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128036": {
+              "content": "<|reserved_special_token_28|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128037": {
+              "content": "<|reserved_special_token_29|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128038": {
+              "content": "<|reserved_special_token_30|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128039": {
+              "content": "<|reserved_special_token_31|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128040": {
+              "content": "<|reserved_special_token_32|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128041": {
+              "content": "<|reserved_special_token_33|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128042": {
+              "content": "<|reserved_special_token_34|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128043": {
+              "content": "<|reserved_special_token_35|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128044": {
+              "content": "<|reserved_special_token_36|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128045": {
+              "content": "<|reserved_special_token_37|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128046": {
+              "content": "<|reserved_special_token_38|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128047": {
+              "content": "<|reserved_special_token_39|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128048": {
+              "content": "<|reserved_special_token_40|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128049": {
+              "content": "<|reserved_special_token_41|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128050": {
+              "content": "<|reserved_special_token_42|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128051": {
+              "content": "<|reserved_special_token_43|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128052": {
+              "content": "<|reserved_special_token_44|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128053": {
+              "content": "<|reserved_special_token_45|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128054": {
+              "content": "<|reserved_special_token_46|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128055": {
+              "content": "<|reserved_special_token_47|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128056": {
+              "content": "<|reserved_special_token_48|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128057": {
+              "content": "<|reserved_special_token_49|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128058": {
+              "content": "<|reserved_special_token_50|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128059": {
+              "content": "<|reserved_special_token_51|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128060": {
+              "content": "<|reserved_special_token_52|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128061": {
+              "content": "<|reserved_special_token_53|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128062": {
+              "content": "<|reserved_special_token_54|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128063": {
+              "content": "<|reserved_special_token_55|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128064": {
+              "content": "<|reserved_special_token_56|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128065": {
+              "content": "<|reserved_special_token_57|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128066": {
+              "content": "<|reserved_special_token_58|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128067": {
+              "content": "<|reserved_special_token_59|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128068": {
+              "content": "<|reserved_special_token_60|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128069": {
+              "content": "<|reserved_special_token_61|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128070": {
+              "content": "<|reserved_special_token_62|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128071": {
+              "content": "<|reserved_special_token_63|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128072": {
+              "content": "<|reserved_special_token_64|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128073": {
+              "content": "<|reserved_special_token_65|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128074": {
+              "content": "<|reserved_special_token_66|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128075": {
+              "content": "<|reserved_special_token_67|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128076": {
+              "content": "<|reserved_special_token_68|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128077": {
+              "content": "<|reserved_special_token_69|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128078": {
+              "content": "<|reserved_special_token_70|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128079": {
+              "content": "<|reserved_special_token_71|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128080": {
+              "content": "<|reserved_special_token_72|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128081": {
+              "content": "<|reserved_special_token_73|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128082": {
+              "content": "<|reserved_special_token_74|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128083": {
+              "content": "<|reserved_special_token_75|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128084": {
+              "content": "<|reserved_special_token_76|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128085": {
+              "content": "<|reserved_special_token_77|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128086": {
+              "content": "<|reserved_special_token_78|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128087": {
+              "content": "<|reserved_special_token_79|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128088": {
+              "content": "<|reserved_special_token_80|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128089": {
+              "content": "<|reserved_special_token_81|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128090": {
+              "content": "<|reserved_special_token_82|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128091": {
+              "content": "<|reserved_special_token_83|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128092": {
+              "content": "<|reserved_special_token_84|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128093": {
+              "content": "<|reserved_special_token_85|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128094": {
+              "content": "<|reserved_special_token_86|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128095": {
+              "content": "<|reserved_special_token_87|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128096": {
+              "content": "<|reserved_special_token_88|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128097": {
+              "content": "<|reserved_special_token_89|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128098": {
+              "content": "<|reserved_special_token_90|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128099": {
+              "content": "<|reserved_special_token_91|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128100": {
+              "content": "<|reserved_special_token_92|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128101": {
+              "content": "<|reserved_special_token_93|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128102": {
+              "content": "<|reserved_special_token_94|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128103": {
+              "content": "<|reserved_special_token_95|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128104": {
+              "content": "<|reserved_special_token_96|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128105": {
+              "content": "<|reserved_special_token_97|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128106": {
+              "content": "<|reserved_special_token_98|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128107": {
+              "content": "<|reserved_special_token_99|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128108": {
+              "content": "<|reserved_special_token_100|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128109": {
+              "content": "<|reserved_special_token_101|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128110": {
+              "content": "<|reserved_special_token_102|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128111": {
+              "content": "<|reserved_special_token_103|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128112": {
+              "content": "<|reserved_special_token_104|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128113": {
+              "content": "<|reserved_special_token_105|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128114": {
+              "content": "<|reserved_special_token_106|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128115": {
+              "content": "<|reserved_special_token_107|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128116": {
+              "content": "<|reserved_special_token_108|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128117": {
+              "content": "<|reserved_special_token_109|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128118": {
+              "content": "<|reserved_special_token_110|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128119": {
+              "content": "<|reserved_special_token_111|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128120": {
+              "content": "<|reserved_special_token_112|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128121": {
+              "content": "<|reserved_special_token_113|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128122": {
+              "content": "<|reserved_special_token_114|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128123": {
+              "content": "<|reserved_special_token_115|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128124": {
+              "content": "<|reserved_special_token_116|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128125": {
+              "content": "<|reserved_special_token_117|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128126": {
+              "content": "<|reserved_special_token_118|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128127": {
+              "content": "<|reserved_special_token_119|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128128": {
+              "content": "<|reserved_special_token_120|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128129": {
+              "content": "<|reserved_special_token_121|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128130": {
+              "content": "<|reserved_special_token_122|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128131": {
+              "content": "<|reserved_special_token_123|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128132": {
+              "content": "<|reserved_special_token_124|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128133": {
+              "content": "<|reserved_special_token_125|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128134": {
+              "content": "<|reserved_special_token_126|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128135": {
+              "content": "<|reserved_special_token_127|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128136": {
+              "content": "<|reserved_special_token_128|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128137": {
+              "content": "<|reserved_special_token_129|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128138": {
+              "content": "<|reserved_special_token_130|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128139": {
+              "content": "<|reserved_special_token_131|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128140": {
+              "content": "<|reserved_special_token_132|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128141": {
+              "content": "<|reserved_special_token_133|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128142": {
+              "content": "<|reserved_special_token_134|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128143": {
+              "content": "<|reserved_special_token_135|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128144": {
+              "content": "<|reserved_special_token_136|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128145": {
+              "content": "<|reserved_special_token_137|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128146": {
+              "content": "<|reserved_special_token_138|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128147": {
+              "content": "<|reserved_special_token_139|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128148": {
+              "content": "<|reserved_special_token_140|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128149": {
+              "content": "<|reserved_special_token_141|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128150": {
+              "content": "<|reserved_special_token_142|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128151": {
+              "content": "<|reserved_special_token_143|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128152": {
+              "content": "<|reserved_special_token_144|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128153": {
+              "content": "<|reserved_special_token_145|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128154": {
+              "content": "<|reserved_special_token_146|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128155": {
+              "content": "<|reserved_special_token_147|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128156": {
+              "content": "<|reserved_special_token_148|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128157": {
+              "content": "<|reserved_special_token_149|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128158": {
+              "content": "<|reserved_special_token_150|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128159": {
+              "content": "<|reserved_special_token_151|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128160": {
+              "content": "<|reserved_special_token_152|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128161": {
+              "content": "<|reserved_special_token_153|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128162": {
+              "content": "<|reserved_special_token_154|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128163": {
+              "content": "<|reserved_special_token_155|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128164": {
+              "content": "<|reserved_special_token_156|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128165": {
+              "content": "<|reserved_special_token_157|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128166": {
+              "content": "<|reserved_special_token_158|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128167": {
+              "content": "<|reserved_special_token_159|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128168": {
+              "content": "<|reserved_special_token_160|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128169": {
+              "content": "<|reserved_special_token_161|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128170": {
+              "content": "<|reserved_special_token_162|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128171": {
+              "content": "<|reserved_special_token_163|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128172": {
+              "content": "<|reserved_special_token_164|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128173": {
+              "content": "<|reserved_special_token_165|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128174": {
+              "content": "<|reserved_special_token_166|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128175": {
+              "content": "<|reserved_special_token_167|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128176": {
+              "content": "<|reserved_special_token_168|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128177": {
+              "content": "<|reserved_special_token_169|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128178": {
+              "content": "<|reserved_special_token_170|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128179": {
+              "content": "<|reserved_special_token_171|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128180": {
+              "content": "<|reserved_special_token_172|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128181": {
+              "content": "<|reserved_special_token_173|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128182": {
+              "content": "<|reserved_special_token_174|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128183": {
+              "content": "<|reserved_special_token_175|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128184": {
+              "content": "<|reserved_special_token_176|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128185": {
+              "content": "<|reserved_special_token_177|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128186": {
+              "content": "<|reserved_special_token_178|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128187": {
+              "content": "<|reserved_special_token_179|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128188": {
+              "content": "<|reserved_special_token_180|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128189": {
+              "content": "<|reserved_special_token_181|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128190": {
+              "content": "<|reserved_special_token_182|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128191": {
+              "content": "<|reserved_special_token_183|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128192": {
+              "content": "<|reserved_special_token_184|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128193": {
+              "content": "<|reserved_special_token_185|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128194": {
+              "content": "<|reserved_special_token_186|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128195": {
+              "content": "<|reserved_special_token_187|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128196": {
+              "content": "<|reserved_special_token_188|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128197": {
+              "content": "<|reserved_special_token_189|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128198": {
+              "content": "<|reserved_special_token_190|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128199": {
+              "content": "<|reserved_special_token_191|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128200": {
+              "content": "<|reserved_special_token_192|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128201": {
+              "content": "<|reserved_special_token_193|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128202": {
+              "content": "<|reserved_special_token_194|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128203": {
+              "content": "<|reserved_special_token_195|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128204": {
+              "content": "<|reserved_special_token_196|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128205": {
+              "content": "<|reserved_special_token_197|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128206": {
+              "content": "<|reserved_special_token_198|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128207": {
+              "content": "<|reserved_special_token_199|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128208": {
+              "content": "<|reserved_special_token_200|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128209": {
+              "content": "<|reserved_special_token_201|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128210": {
+              "content": "<|reserved_special_token_202|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128211": {
+              "content": "<|reserved_special_token_203|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128212": {
+              "content": "<|reserved_special_token_204|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128213": {
+              "content": "<|reserved_special_token_205|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128214": {
+              "content": "<|reserved_special_token_206|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128215": {
+              "content": "<|reserved_special_token_207|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128216": {
+              "content": "<|reserved_special_token_208|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128217": {
+              "content": "<|reserved_special_token_209|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128218": {
+              "content": "<|reserved_special_token_210|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128219": {
+              "content": "<|reserved_special_token_211|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128220": {
+              "content": "<|reserved_special_token_212|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128221": {
+              "content": "<|reserved_special_token_213|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128222": {
+              "content": "<|reserved_special_token_214|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128223": {
+              "content": "<|reserved_special_token_215|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128224": {
+              "content": "<|reserved_special_token_216|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128225": {
+              "content": "<|reserved_special_token_217|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128226": {
+              "content": "<|reserved_special_token_218|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128227": {
+              "content": "<|reserved_special_token_219|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128228": {
+              "content": "<|reserved_special_token_220|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128229": {
+              "content": "<|reserved_special_token_221|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128230": {
+              "content": "<|reserved_special_token_222|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128231": {
+              "content": "<|reserved_special_token_223|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128232": {
+              "content": "<|reserved_special_token_224|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128233": {
+              "content": "<|reserved_special_token_225|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128234": {
+              "content": "<|reserved_special_token_226|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128235": {
+              "content": "<|reserved_special_token_227|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128236": {
+              "content": "<|reserved_special_token_228|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128237": {
+              "content": "<|reserved_special_token_229|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128238": {
+              "content": "<|reserved_special_token_230|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128239": {
+              "content": "<|reserved_special_token_231|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128240": {
+              "content": "<|reserved_special_token_232|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128241": {
+              "content": "<|reserved_special_token_233|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128242": {
+              "content": "<|reserved_special_token_234|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128243": {
+              "content": "<|reserved_special_token_235|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128244": {
+              "content": "<|reserved_special_token_236|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128245": {
+              "content": "<|reserved_special_token_237|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128246": {
+              "content": "<|reserved_special_token_238|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128247": {
+              "content": "<|reserved_special_token_239|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128248": {
+              "content": "<|reserved_special_token_240|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128249": {
+              "content": "<|reserved_special_token_241|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128250": {
+              "content": "<|reserved_special_token_242|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128251": {
+              "content": "<|reserved_special_token_243|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128252": {
+              "content": "<|reserved_special_token_244|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128253": {
+              "content": "<|reserved_special_token_245|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128254": {
+              "content": "<|reserved_special_token_246|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            },
+            "128255": {
+              "content": "<|reserved_special_token_247|>",
+              "lstrip": false,
+              "normalized": false,
+              "rstrip": false,
+              "single_word": false,
+              "special": true
+            }
+          },
+          "bos_token": "<｜begin▁of▁sentence｜>",
+          "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<｜User｜>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<｜Assistant｜><｜tool▁calls▁begin｜><｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{{'<｜tool▁calls▁end｜><｜end▁of▁sentence｜>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<｜tool▁outputs▁end｜>' + message['content'] + '<｜end▁of▁sentence｜>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<｜Assistant｜>' + content + '<｜end▁of▁sentence｜>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<｜tool▁outputs▁begin｜><｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<｜tool▁outputs▁end｜>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<｜Assistant｜>'}}{% endif %}",
+          "clean_up_tokenization_spaces": false,
+          "eos_token": "<｜end▁of▁sentence｜>",
+          "extra_special_tokens": {},
+          "legacy": true,
+          "model_max_length": 16384,
+          "pad_token": "<｜end▁of▁sentence｜>",
+          "sp_model_kwargs": {},
+          "tokenizer_class": "LlamaTokenizer",
+          "unk_token": null,
+          "use_default_system_prompt": false
+        },
+        "sha256": "1dd0191e04767e4bb08ded463e8cfc118ec5089c442a38e0c8221bff425f2e7b"
+      }
+    },
+    "repo": "casperhansen/deepseek-r1-distill-llama-70b-awq",
+    "revision": "a1ab7653aae77fbabc536cbcbac5bb2e2fb5354f"
+  },
+  "official_tokenizer_files": {
+    "config.json": {
+      "bytes": 879,
+      "sha256": "95ef9768e4741543dbfaf0c274f101855883ff338b235c99eca2b6a4f4abee12"
+    },
+    "generation_config.json": {
+      "bytes": 181,
+      "sha256": "cd5194726d1e8f7361a8c8425fc11d33ade5e69de1fd7615eb23fae5601af68b"
+    },
+    "tokenizer.json": {
+      "bytes": 9084480,
+      "sha256": "b9c9eb63a8e03059914880f918cd28a880dec8b6e15e4461e1ff677e3743dbb8"
+    },
+    "tokenizer_config.json": {
+      "bytes": 3071,
+      "sha256": "8ac8c85fb242563c2260baec0909debd69d718af6a0b3d90e6cab62b4d341cd5"
+    }
+  },
+  "original_checkpoint_revision_known": false,
+  "tokenizer": {
+    "api_url": "https://huggingface.co/api/models/deepseek-ai/DeepSeek-R1-Distill-Llama-70B/revision/b1c0b44b4369b597ad119a196caf79a9c40e141e?blobs=true",
+    "files": {
+      ".gitattributes": {
+        "git_blob": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "sha256": null,
+        "size": 1519
+      },
+      "LICENSE": {
+        "git_blob": "d42fae903e9fa07f3e8edb0db00a8d905ba49560",
+        "sha256": null,
+        "size": 1064
+      },
+      "README.md": {
+        "git_blob": "1ae2b2ccda9cb58fb4179e30c1798b6e75980618",
+        "sha256": null,
+        "size": 15994
+      },
+      "config.json": {
+        "git_blob": "adf1f490f126443b5f6297e7182d8aa7b2975858",
+        "sha256": null,
+        "size": 879
+      },
+      "figures/benchmark.jpg": {
+        "git_blob": "d1fd67ec1bf748c24b244b6efd825ded1b147787",
+        "sha256": null,
+        "size": 777314
+      },
+      "generation_config.json": {
+        "git_blob": "b0334803c2c033a8276ccec19455277343e0b5d3",
+        "sha256": null,
+        "size": 181
+      },
+      "model-00001-of-000017.safetensors": {
+        "git_blob": "126d81bf4cb80326a14261c278b6db756a8dc9cf",
+        "sha256": "4f57a2538539d61f9f22785d3c48f089227829948ee66572808dd13d5b08d63e",
+        "size": 8946552810
+      },
+      "model-00002-of-000017.safetensors": {
+        "git_blob": "95674444bf97f89cf7e0d5f1fb145d664739e022",
+        "sha256": "3f948c2df3e4f3e678e1b4c75b345ce646c4843a23e7c9089462cf3995d2af45",
+        "size": 8690800055
+      },
+      "model-00003-of-000017.safetensors": {
+        "git_blob": "9bbdc6ce67f3cd09432ce6db890bbee21b93b9bf",
+        "sha256": "aa4b0afa70d26873dabc927e59b7dbc24a0e8eda323d4fdba17927d316d3516c",
+        "size": 1577092016
+      },
+      "model-00004-of-000017.safetensors": {
+        "git_blob": "49c60cdf5544cabb8e8b9785bdbf52be1020278d",
+        "sha256": "077f51bc9eb56b50868cb95c7cf0d6d0f0a524b824ba3af8b248c78a46593e97",
+        "size": 8690767122
+      },
+      "model-00005-of-000017.safetensors": {
+        "git_blob": "8913b36625b1052eddf3cb2fa06f1acfa1b3fd0c",
+        "sha256": "e826381017b2d8a9d8704be34ee0e0ceeb0a3a9abca27beaa4555d370d5a4f10",
+        "size": 8422331428
+      },
+      "model-00006-of-000017.safetensors": {
+        "git_blob": "1c58f5c58d6fb828b5e6e660628dda624f341c9d",
+        "sha256": "b1d4326d0d4187830fcea956d8ccfafbf6871fa7baed1b759c1ed843cafe92c0",
+        "size": 8690767122
+      },
+      "model-00007-of-000017.safetensors": {
+        "git_blob": "b039fcb82d91bb8b616bc8df5886f2a56f848413",
+        "sha256": "62a83ba7af95d532065e46322ae2c17ee020c3c8e92b7285420c09ca0d6f68f0",
+        "size": 8422331428
+      },
+      "model-00008-of-000017.safetensors": {
+        "git_blob": "23f40f661c0f6d08f8894d885ef6460acd02577c",
+        "sha256": "8189753d14d5f9b3c31466d1f5a185bb7ffc7fc346cbc06a5453e48e07c2b97b",
+        "size": 8690767122
+      },
+      "model-00009-of-000017.safetensors": {
+        "git_blob": "d725e161d866661ec9e7331f5ce32cf56e03ce6d",
+        "sha256": "928bea3ae97c3962b3eb3f51a66f674be4cd5858caae541becd3e175f3305403",
+        "size": 8422331428
+      },
+      "model-00010-of-000017.safetensors": {
+        "git_blob": "4a9edd6ca4e7b510118f321b6236eecdfbe2bf0a",
+        "sha256": "1db6d4f8387897b0f40e505310a1542f6d0308370526fa86c42cdc99451d2200",
+        "size": 8690767122
+      },
+      "model-00011-of-000017.safetensors": {
+        "git_blob": "017f1f313267be6a97179c8be0b2de598d06fdd7",
+        "sha256": "31a5eb90d0773f1514ae7b240ed62961412e48f9eb160fdac6226221b87fe61f",
+        "size": 8422331428
+      },
+      "model-00012-of-000017.safetensors": {
+        "git_blob": "b17f69c74546ee50647fdcf3e5323c9bf2b54e9c",
+        "sha256": "d01c2823a0393ded7f97556995b69965dad78665664853f1c8a2be901e643a44",
+        "size": 8690767122
+      },
+      "model-00013-of-000017.safetensors": {
+        "git_blob": "7669a8ca8416245e666673da1df8b6ba32147db6",
+        "sha256": "3c43532c1b128f0135edc587ace540dfa53759916836960db06b73ab718e5eca",
+        "size": 8422331428
+      },
+      "model-00014-of-000017.safetensors": {
+        "git_blob": "6a985437064ba1f6596f34cb6905cc4f48532ecc",
+        "sha256": "0f2ce0194b017ae009448602d7fd4ac24d7f25059c0a87d42fc496000f7bdacc",
+        "size": 8690767122
+      },
+      "model-00015-of-000017.safetensors": {
+        "git_blob": "bde1f47ca2c457254f2bbf7604653083e1a972dd",
+        "sha256": "572ed974eb237aacf3de9ddfeaa373c62d39038a96ffd7f2beec6ea8f8a7b16e",
+        "size": 8422331428
+      },
+      "model-00016-of-000017.safetensors": {
+        "git_blob": "764cf2cc0c5c1ae7662a76e979405802b32892ab",
+        "sha256": "e5a581377b62f0a918bf515d05f2514281eec031ea2748e7ce8123b910403bba",
+        "size": 8690767122
+      },
+      "model-00017-of-000017.safetensors": {
+        "git_blob": "49270d83a23c22c5c91ea5e556fccc4d3bea5892",
+        "sha256": "605b29e86ec80aaa3a38bb3aab4bc859e4df26928fe49bbca00f127f55897e8d",
+        "size": 10523694303
+      },
+      "model.safetensors.index.json": {
+        "git_blob": "88f04619aa84e11a3a0d44b9568046af5ee1c4a6",
+        "sha256": null,
+        "size": 60337
+      },
+      "tokenizer.json": {
+        "git_blob": "e9c8e7a2359b81191c8021d0f3c5f28c67f20962",
+        "sha256": null,
+        "size": 9084480
+      },
+      "tokenizer_config.json": {
+        "git_blob": "9967ff32d94b21c94dc7e2b3bcbea295a46cde50",
+        "sha256": null,
+        "size": 3071
+      }
+    },
+    "metadata": {
+      "config.json": {
+        "content": {
+          "architectures": [
+            "LlamaForCausalLM"
+          ],
+          "attention_bias": false,
+          "attention_dropout": 0.0,
+          "bos_token_id": 128000,
+          "eos_token_id": [
+            128001,
+            128008,
+            128009
+          ],
+          "head_dim": 128,
+          "hidden_act": "silu",
+          "hidden_size": 8192,
+          "initializer_range": 0.02,
+          "intermediate_size": 28672,
+          "max_position_embeddings": 131072,
+          "mlp_bias": false,
+          "model_type": "llama",
+          "num_attention_heads": 64,
+          "num_hidden_layers": 80,
+          "num_key_value_heads": 8,
+          "pretraining_tp": 1,
+          "rms_norm_eps": 1e-05,
+          "rope_scaling": {
+            "factor": 8.0,
+            "high_freq_factor": 4.0,
+            "low_freq_factor": 1.0,
+            "original_max_position_embeddings": 8192,
+            "rope_type": "llama3"
+          },
+          "rope_theta": 500000.0,
+          "tie_word_embeddings": false,
+          "torch_dtype": "bfloat16",
+          "transformers_version": "4.47.0.dev0",
+          "use_cache": true,
+          "vocab_size": 128256
+        },
+        "sha256": "95ef9768e4741543dbfaf0c274f101855883ff338b235c99eca2b6a4f4abee12"
+      },
+      "generation_config.json": {
+        "content": {
+          "_from_model_config": true,
+          "bos_token_id": 128000,
+          "do_sample": true,
+          "eos_token_id": 128001,
+          "temperature": 0.6,
+          "top_p": 0.95,
+          "transformers_version": "4.39.3"
+        },
+        "sha256": "cd5194726d1e8f7361a8c8425fc11d33ade5e69de1fd7615eb23fae5601af68b"
+      },
+      "tokenizer_config.json": {
+        "content": {
+          "add_bos_token": true,
+          "add_eos_token": false,
+          "bos_token": {
+            "__type": "AddedToken",
+            "content": "<｜begin▁of▁sentence｜>",
+            "lstrip": false,
+            "normalized": true,
+            "rstrip": false,
+            "single_word": false
+          },
+          "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<｜User｜>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<｜Assistant｜><｜tool▁calls▁begin｜><｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{{'<｜tool▁calls▁end｜><｜end▁of▁sentence｜>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<｜tool▁outputs▁end｜>' + message['content'] + '<｜end▁of▁sentence｜>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<｜Assistant｜>' + content + '<｜end▁of▁sentence｜>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<｜tool▁outputs▁begin｜><｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<｜tool▁outputs▁end｜>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<｜Assistant｜><think>\\n'}}{% endif %}",
+          "clean_up_tokenization_spaces": false,
+          "eos_token": {
+            "__type": "AddedToken",
+            "content": "<｜end▁of▁sentence｜>",
+            "lstrip": false,
+            "normalized": true,
+            "rstrip": false,
+            "single_word": false
+          },
+          "legacy": true,
+          "model_max_length": 16384,
+          "pad_token": {
+            "__type": "AddedToken",
+            "content": "<｜end▁of▁sentence｜>",
+            "lstrip": false,
+            "normalized": true,
+            "rstrip": false,
+            "single_word": false
+          },
+          "sp_model_kwargs": {},
+          "tokenizer_class": "LlamaTokenizerFast",
+          "unk_token": null
+        },
+        "sha256": "8ac8c85fb242563c2260baec0909debd69d718af6a0b3d90e6cab62b4d341cd5"
+      }
+    },
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+    "revision": "b1c0b44b4369b597ad119a196caf79a9c40e141e"
+  },
+  "vllm_version": "0.9.2"
+}

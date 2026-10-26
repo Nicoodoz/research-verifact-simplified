@@ -1,0 +1,14 @@
+test_cost_reservation (test031.Tests.test_cost_reservation) ... ok
+test_no_GT_in_metadata_material (test031.Tests.test_no_GT_in_metadata_material) ... ok
+test_role_settings_and_payload (test031.Tests.test_role_settings_and_payload) ... ok
+test_score_duplicate_core_rules (test031.Tests.test_score_duplicate_core_rules) ... ok
+test_split_blind_and_disjoint (test031.Tests.test_split_blind_and_disjoint) ... ok
+test_before_models_training_isolation_and_inference (test_analysis031.Tests.test_before_models_training_isolation_and_inference) ... ok
+test_existing_feature_parity (test_analysis031.Tests.test_existing_feature_parity) ... ok
+test_fallback_remains_U0_at_every_curve_point (test_analysis031.Tests.test_fallback_remains_U0_at_every_curve_point) ... ok
+test_primary_multiplicity_interval (test_analysis031.Tests.test_primary_multiplicity_interval) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.104s
+
+OK

@@ -1,0 +1,19 @@
+{
+  "equal": true,
+  "files": 11,
+  "checks": {
+    "candidates.json": true,
+    "case_selection.json": true,
+    "composition.csv": true,
+    "conflicts.json": true,
+    "curves.csv": true,
+    "distributions.csv": true,
+    "global_curves.csv": true,
+    "high_rescue.csv": true,
+    "ranking.csv": true,
+    "reliability.csv": true,
+    "uncertainty.json": true
+  },
+  "network_blocked": true,
+  "new_fits_blocked": true
+}

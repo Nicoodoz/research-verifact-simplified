@@ -1,0 +1,5 @@
+# 030 当前执行边界
+
+固定029 A/B/D Logistic，run_001已完成。2026-09-20追加授权收尾后，中文报告及快速独立审计已完成，PASS，可冻结／结项。
+
+[中文主报告](../../outputs/030_gate_training_stability/report.md) · [交审](../../outputs/030_gate_training_stability/audit_handoff.md)。训练覆盖有积极线索，组成敏感性未解决，不能确定稳定最低人数。用户本轮授权审计通过后提交推送；不自动031或reserved40。见[独立审计](../../reviews/030_gate_training_stability.md)。0新增API，原research-verifact环境保持不变。

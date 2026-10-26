@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-09-15T00:50:06.155899+00:00",
+  "head": "42d28c4909b901056207c6770e1be733998123cf",
+  "branch": "main",
+  "origin_main_after_fetch": "42d28c4909b901056207c6770e1be733998123cf",
+  "reviewed_handoff_sha256": "0dee324e82f33240b4159b0b33bffd50a510d7679194c7001031e92d8bee895d",
+  "reviewed_files_before_and_after_unchanged": 3114,
+  "preexisting_modified_tracked": [
+    "AGENTS.md",
+    "README.md"
+  ],
+  "preexisting_untracked": [
+    "outputs/009_retrieval_baselines/",
+    "tasks/009_retrieval_baselines/",
+    "tests/test_retrieval_baselines.py"
+  ],
+  "audit_changes": [
+    "reviews/009_retrieval_baselines.md",
+    "reviews/README.md",
+    "reviews/artifacts/009_audit_20260915/"
+  ],
+  "tracked_diff_after": [
+    "AGENTS.md",
+    "README.md",
+    "reviews/README.md"
+  ],
+  "staged_diff": [],
+  "inference_calls_during_audit": 0,
+  "reserved_test_case_access_during_audit": false,
+  "audit_report_sha256": "2435ee2aa3e82f7bd814232e36dc2cfb3812a0e7e928ef61f09b1901776b9e1f",
+  "evidence_sha256": {
+    "additional_checks.py": "1bffc088a509683532f58595592732d2a0298d09a38d63b8e4c242f422692885",
+    "additional_results.json": "a8907d7585a83c9193fca44d32ac60dbc8fc9b670d9e8e147e29459b5893058a",
+    "handoff.json": "0dee324e82f33240b4159b0b33bffd50a510d7679194c7001031e92d8bee895d",
+    "independent_checks.py": "f12305f58767aba6ea2d2e4440d88e51604cb6368ab5eae4ed088a3510581c81",
+    "independent_results.json": "4dd883e20983bc7eeb128312f6459ae322d69520caf17f56b011007839f81406",
+    "post_review_replay.json": "e0ab6000bc42a94204a0820a5707b1a053651788cbea7c5b494b60a8ef8105d3",
+    "README.md": "84a1d54d1d2b220a5f8e02a9c57557710b491f6cc8a5c64aa1d5f7c4f6313714",
+    "read_cases.py": "0d8a56d133eaab22303ee1276d07f1abe1ac2c3b8a080b877b522e34dc441b00",
+    "replay_after_review_update.py": "711680bb28958b459c91e9eebbbd1246edbcf9c72b9d309f92051ac56467ba2c",
+    "replay_verification.json": "6b2ee33ebcaac2b4119e5031b801a3201e0e41ede0068ae28a8876b2fa6ae44a",
+    "run_replay.py": "db694113188149e2f2f1f6794ee5717db12280eba9bec6777af5d731c1202b63",
+    "tests.log": "c10193477e000a810259cb3dac5a02bb9f740dfe60cada5f4e80e4f6e96ee2c6"
+  },
+  "initial_audit_report_draft_sha256": "fabe317fff1c638ecc07976ec2fc2c71a4f941c1c6c6150dda26a4f9031d43ed",
+  "finalized_utc": "2026-09-15T00:53:36.444022+00:00",
+  "final_conclusion": "conditional: core experiment verified; mutable-review-document replay blocker requires repair"
+}

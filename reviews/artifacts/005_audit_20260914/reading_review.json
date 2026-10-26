@@ -1,0 +1,292 @@
+{
+  "completed_utc": "2026-09-14T09:12:37.262022+00:00",
+  "scope": "All 25 interpretations and 50 full outputs; 13 source parents and C17 BHC; complete reference for C13/C16/C17/C18; all 265 anchors and 2489 reference-item mappings separately verified by code. Other X packets not manually reviewed.",
+  "cases": [
+    {
+      "case_id": "C01",
+      "packet_sha256": "a511b8954ce070706e127c12201f76d048fabfb4935923656e9f4845823e9f97",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C02",
+      "packet_sha256": "0eea3e779fa95fc5df1217c44fde4d9c206f09974c69758b95247715a12427ce",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C03",
+      "packet_sha256": "c5449b808ef1da671cd2c102043e0b9392c4c5e332c6200bd92a318df2d09635",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C04",
+      "packet_sha256": "fde11796463c18a79eb0e579215534263f0e247e5c9b8df0cec1dbf98fb89aa8",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C05",
+      "packet_sha256": "4a1d395cfce22a86e3b57ff029ecab7c21ee46f77290ff4af1877a3f13d5c770",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C06",
+      "packet_sha256": "c4fedbe32afc000a247b184613039f32684858cdacfac5533db4a69d019181ba",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C07",
+      "packet_sha256": "98a1c41ebdc6417a6b839e1fea3ec5c541fceb1451988cb529b3a6be80d66ea3",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C08",
+      "packet_sha256": "394bc83d519aed645c5dad043e9f83792ab9e2fd1fee9b0cc42f0d7a1c1ed386",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C09",
+      "packet_sha256": "c2e4a9ff33cbb41ce10090eb9794b982f043486c73984e83fecf51bd7e083d27",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C10",
+      "packet_sha256": "a924d3e1e712e1383789a9ef4ee3c09cc6528b2c543558f7276f2c58d89e259f",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C11",
+      "packet_sha256": "361f178ddab6ebef91c873a432eb36b9de8cc63ca33a6f50a6acea5aa6e40bf1",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C12",
+      "packet_sha256": "7be9daa84a18f15d6bd4b7e551f3f9995e140c84964277dea8cd93548414b315",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C13",
+      "packet_sha256": "188177878a3d4b14a141dae0a986ce3c5c87914f74abaf9acc2851b83e6c8276",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "complete_reference",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C14",
+      "packet_sha256": "a08cc708e4a0c183a1a017890f1592a51ea8abdb6cf416ec373c9ecfcb81402b",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C15",
+      "packet_sha256": "7312d997ce6f0ca593a2f4a00951dced55a507641552c998137aac874e8b5caa",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C16",
+      "packet_sha256": "4d20cf5ee589cabd4b49d7834b356a13c667c87afee78ee3cac40a6e5d90978e",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "complete_reference",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C17",
+      "packet_sha256": "4dd71c046c62e9104516ce834edaa49ff44d4e3215adc853f2b4f49bf4011f0b",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "complete_reference",
+      "parent_read": true,
+      "full_bhc_read": true
+    },
+    {
+      "case_id": "C18",
+      "packet_sha256": "12c5ad90fda6942080caba38f9a612491f8ececbd71a3f03c7175b2750c5ff4c",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "complete_reference",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C19",
+      "packet_sha256": "d9eca5ff8e924cd4269ab6b28b9d5ba99fa2adcccf9adef68e6bba5f9cba63f1",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C20",
+      "packet_sha256": "7675bc687f791c4eb5b44fae34c8a9420d06fa23a448bd8fb05403283b7ea0a2",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C21",
+      "packet_sha256": "73080e779fd5013cd332d9e86de7ef00b66e49f4bcb19b044350bf6e6cf4433b",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C22",
+      "packet_sha256": "87be95f8424e480528add004df707b48a72c7d590e9e35fa67ff9e2728e7a8a4",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C23",
+      "packet_sha256": "43051406b1866310aa0921b1ac4c3e529e5af99572aca4f80d6ef9fa3fe2c121",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C24",
+      "packet_sha256": "629cbe866721570ceaaae4d9906c0e41e2a5089f8d33e2b1b175bdf4c852788a",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": false,
+      "full_bhc_read": false
+    },
+    {
+      "case_id": "C25",
+      "packet_sha256": "548265cc4372f2dcd4f15ec4592fc401926a87cbae65da280ac0900aaca09ff6",
+      "complete_outputs_read": [
+        "structured",
+        "event_alignment"
+      ],
+      "reference_reading": "cited_reference_passages",
+      "parent_read": true,
+      "full_bhc_read": false
+    }
+  ],
+  "clinical_gt_rejudged": false,
+  "overall": "Observations and stated uncertainty consistent; context priority is a feasibility/research judgement, not proof of dominant cause or intervention efficacy.",
+  "design_followups": [
+    "Freeze interpretation role and context selection; do not silently add dose/date restrictions or score new assertions with inherited labels.",
+    "Two-arm/two-patient feasibility cannot isolate semantic context from input length or repetition; retain appropriate controls for later effect claims."
+  ],
+  "literature_scope": "Official ACL abstracts only",
+  "literature_urls": [
+    "https://aclanthology.org/2024.findings-emnlp.215/",
+    "https://aclanthology.org/2024.starsem-1.13/"
+  ]
+}

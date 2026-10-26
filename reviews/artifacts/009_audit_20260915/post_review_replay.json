@@ -1,0 +1,11 @@
+{
+  "only_in_memory_adaptation": "output location guard, identical to first successful replay",
+  "tests_repeated": false,
+  "status": "blocked",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\13359\\AppData\\Local\\Temp\\verifact_009_audit_mewu89kp\\replay_after_review_update.py\", line 14, in <module>\n    namespace['run'](scratch/'replay_after_review_update',False)\n  File \"D:\\Research-VeriFact\\tasks\\009_retrieval_baselines\\verify009.py\", line 226, in run\n    assert set(evidence['tracked_changes'])<= {'README.md','AGENTS.md'}\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "content_files_rebuilt_before_failure_identical": 109,
+  "handoff_files_unchanged": 3114,
+  "trigger": "Normal reviews/README.md update; frozen execution files unchanged",
+  "public_entry": "tasks/009_retrieval_baselines/verify009.py:226",
+  "inference_calls": 0
+}

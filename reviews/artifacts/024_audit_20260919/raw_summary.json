@@ -1,0 +1,338 @@
+{
+  "status": "PASS",
+  "history_hashes": 7708,
+  "requests": 3516,
+  "attempts": 3620,
+  "http_counts": {
+    "200": 3516,
+    "0": 104
+  },
+  "raw_complete_json": 3516,
+  "valid": 3515,
+  "anomalous_or_invalid": [
+    {
+      "request_id": "0b02ea89a70cd6dd7668e5dc",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "identical_core_duplicate:verdict"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "168131e9e11f55dc41cf2f02",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate",
+        "explanation_format_anomaly:reason"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "1ad210d8db163d4d8926edad",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "2b4d203f10a66733073d7435",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "50f6ec910edfb8c3161010bc",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate",
+        "explanation_format_anomaly:reason"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "511697dd941909be500dad6a",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "invalid_core_fields",
+      "errors": [
+        "conflicting_duplicate_verdict"
+      ],
+      "diagnostics": [],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "5534f97498c16e7b428615f4",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate",
+        "explanation_format_anomaly:reason"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "6100ae8e8f09586491f8d926",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate",
+        "explanation_format_anomaly:reason"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "63ab2316101d5abad2faa794",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "6b7ec29daffc4441f1e184b1",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate",
+        "explanation_format_anomaly:reason"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "705466c4643d5fde4c823ed1",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "7c8b31c99cef05ceecdcb35d",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate",
+        "explanation_format_anomaly:reason"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "80e5797278e09d02bc2a0435",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "88ee8e24a5f2ccb0d7052784",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate",
+        "explanation_format_anomaly:reason"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "8ae1300564b3d35be6befd55",
+      "arm": "B",
+      "model": "qwen",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "explanation_format_anomaly:checks"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "8e96b9f75e5e547643effb38",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "97e4ec8bbb8151c386341a59",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "9fb3e6dfb90b75d6bc125ccc",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate",
+        "explanation_format_anomaly:reason"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "a79978caa6db82e27890402d",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "b011f3af2201d0ec40f7c102",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "b893f088a897489b35337349",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate",
+        "explanation_format_anomaly:reason"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "bd7b127f47d0657059c032f5",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "c0bbfff792f346d5c7c9405b",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "identical_core_duplicate:verdict"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "da0be745c7bac6e4cd6544a3",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "identical_core_duplicate:verdict"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "ed27e972fbd4418f4cc723fe",
+      "arm": "S",
+      "model": "qwen",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "explanation_format_anomaly:checks"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "f5c108c02c56a1a8af8f63d9",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "f6d12461e9c77980d6c0aae0",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "identical_core_duplicate:verdict"
+      ],
+      "finish_reason": "stop"
+    },
+    {
+      "request_id": "fa7df9587018802609bb095b",
+      "arm": "B",
+      "model": "deepseek",
+      "status": "valid_with_format_anomaly",
+      "errors": [],
+      "diagnostics": [
+        "reason_duplicate"
+      ],
+      "finish_reason": "stop"
+    }
+  ],
+  "usage_cny": "50.876109",
+  "unknown_reservation_cny": "6.658335",
+  "total_cny": "57.534444",
+  "peak_reconstructed_reserved_cny": "59.126484",
+  "comparison_count": 42,
+  "paired_patient_rows": 40,
+  "network_blocked": true
+}

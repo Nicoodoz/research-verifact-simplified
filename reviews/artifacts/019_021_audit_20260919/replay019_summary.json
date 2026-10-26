@@ -1,0 +1,31 @@
+{
+  "task": "019",
+  "status": "PASS",
+  "compared_files": [
+    "selection/analysis_001/metrics.json",
+    "selection/analysis_001/normalized.jsonl",
+    "selection/analysis_001/paired.json",
+    "selection/analysis_001/patients.csv",
+    "selection/analysis_001/predictions_r0.csv",
+    "selection/analysis_001/random_draws_r0_lambda0.5.jsonl",
+    "selection/analysis_001/random_draws_r0_lambda0.jsonl",
+    "selection/analysis_001/random_draws_r0_lambda1.5.jsonl",
+    "selection/analysis_001/random_draws_r0_lambda1.jsonl",
+    "selection/analysis_001/random_draws_r0_lambda2.jsonl",
+    "selection/analysis_001/random_draws_r0_lambda3.jsonl",
+    "selection/analysis_001/random_draws_r0_lambda4.jsonl",
+    "selection/analysis_001/random_r0_lambda0.5.json",
+    "selection/analysis_001/random_r0_lambda0.json",
+    "selection/analysis_001/random_r0_lambda1.5.json",
+    "selection/analysis_001/random_r0_lambda1.json",
+    "selection/analysis_001/random_r0_lambda2.json",
+    "selection/analysis_001/random_r0_lambda3.json",
+    "selection/analysis_001/random_r0_lambda4.json",
+    "selection/analysis_001/score_diagnostics.json",
+    "selection/analysis_001/thresholds.csv",
+    "selection/analysis_001/transitions.csv"
+  ],
+  "API_calls": 0,
+  "GPU_inference": false,
+  "note": "021 generated report is a renderer snapshot; frozen editorial report is retained."
+}

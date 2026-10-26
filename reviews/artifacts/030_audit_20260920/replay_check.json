@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "closeout_files_byte_equal": [
+    "checks.json",
+    "coefficient_ledger.csv",
+    "leave_one_test_patient_means.csv",
+    "occurrence_and_unique_stability.csv",
+    "patient_mean_directions.csv",
+    "ranking_summary.csv"
+  ],
+  "full_experiment_retrained": false,
+  "sampled_refit_models": 33,
+  "sampled_refit_states": 222
+}

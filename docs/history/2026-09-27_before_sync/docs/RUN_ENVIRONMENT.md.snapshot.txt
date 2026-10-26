@@ -1,0 +1,55 @@
+# 当前实验环境与统一启动方式
+
+**085 Valdemardi正式运行（2026-09-27）：** 用户管理的AutoDL A800/vLLM服务经本机loopback用于固定R1-B/F4各180条；公开服务名和20K上下文经过本机观察，checkpoint字节/远端版本仍未独立核验。单客户端并发1，357条新增＋3条Stage B复用，0重试。正式R1调用走独立`tasks/085_r1_70b_valdemardi/formal_runner.py`，统计评价走本页`research-verifact-029`启动器；两套环境用途不混淆。默认V4系统、旧085A/Casperhansen/AWS分支不改。[正式报告](../outputs/085_r1_70b_valdemardi/report_formal.md)。
+
+**090最新（2026-09-27）：** 090固定示例构造修复与同期比较完成：P两长槽真实构造，第2工程版只分离不相容来源替代项并补回具体遗漏；自然176条B/F4/P90/Q90＋PriorG正确145/143/144/144，压力66条正确34/31/32/32，两面板分报。原价及未知预留¥32.964970/40，构造/测试/核对¥0.094507/4。自检PASS、独立审计未执行。默认不变、不用reserved、不改.gitignore；新临床原文/回执仅私有忽略目录，公开ID/哈希/指标。今晚085/AutoDL/AWS/R1暂停，Casperhansen0.9.2与Valdemardi0.10.1.1差异只备忘、不改身份锁；不自动091。 [报告](../outputs/090_demo_constructor_repair_validation/report.md) · [085备忘](../outputs/090_demo_constructor_repair_validation/085_resume_memo.md)。
+
+**085 AutoDL恢复（2026-09-26）：** 用户恢复085并改走手工管理AutoDL/direct vLLM；旧085A/AWS文件和暂停历史不改。精确AWQ仓库及resolved revision已锁定，084的180条/21患者与360个B/F4输入复用，V4不重调。离线adapter/脚本/manifest/账本/预检及评价就绪，自检2308项、11项测试PASS；0推理/0新API费，实际GPU与端点未验证，租金未知。等待用户建立tunnel、提供实际manifest与小时单价；A/B后先预测费用，正式大批量须另行明确授权。默认不变、不用reserved、不改.gitignore、不自动其他任务；正式085完成后提交推送。 [操作说明](../tasks/085_r1_70b_autodl/AUTODL_HANDOFF.md) · [离线报告](../outputs/085_r1_70b_autodl/report_offline.md)。
+
+**085A/086更新（2026-09-26）：** 085A的AWS adapter/tokenizer专用venv与缓存保留在被忽略的`.local_models`，状态为`PREDEPLOY_READY_PAUSED_BY_USER`；普通研究入口、`research-verifact-029`和阿里云Judge未切换到AWS。086通过现有`scripts/run_research.ps1`执行，只有任务独立`run086.py`是收费入口；不自动加载R1或访问AWS。[暂停记录](../tasks/085_r1_70b_model_swap/PAUSED_BY_USER.md)。
+
+现行结果见[项目总览](PROJECT_STATUS.md)，研究/重试原则见[研究执行原则](RESEARCH_EXECUTION.md)。以下启动器与历史环境证据保留；本次未安装、升级或重测依赖。
+
+**036执行记录：** 本轮已获用户另行授权，并以本页指定`research-verifact-029`及启动器完成reserved40。下方“不授权启动”是环境说明自身的权限边界，不撤销036明确授权；本轮未修改任何环境依赖。见[036结果](../outputs/036_final_validation/report.md)。
+
+## 结论
+
+当前CPU分析、API-BGE及阿里云Judge相关新任务统一使用 **research-verifact-029**，经下方启动器运行。reserved40已在036完成最终评价，不存在本页所授权的“剩余40人”待执行任务。环境入口不授权启动实验，也不替代具体任务的设计与预算登记。
+
+唯一推荐入口（仓库根目录、pwsh）：
+
+~~~powershell
+pwsh -NoProfile -File scripts/run_research.ps1 scripts/check_research_environment.py
+pwsh -NoProfile -File scripts/run_research.ps1 path/to/task.py --argument value
+~~~
+
+第一条是零API、无患者数据的环境自检。第二条中的任务及参数按该实验冻结入口填写。不要把路径占位符直接当真实脚本，也不要拿历史生成器作为新实验入口。
+
+启动器内部调用：
+
+~~~powershell
+E:/miniconda3/Scripts/conda.exe run --no-capture-output -n research-verifact-029 python -B <script.py> <arguments>
+~~~
+
+它保留参数、返回子进程退出码，并设置仓库工作目录。不修改全局PATH或包版本。已经正确conda activate的终端可直接python；为避免不同聊天/终端状态差异，项目统一使用上述脚本。
+
+## 035环境故障的实测结论
+
+2026-09-20在未激活的终端，直接启动E:/miniconda3/envs/research-verifact-029/python.exe，最小L-BFGS-B二次函数在输出before后进程退出；同一文件、同一解释器通过conda run激活后成功。SLSQP、矩阵乘法也通过。故障与缺少conda激活所设置的原生库运行路径有关，**没有证据支持“029环境的SciPy优化器本身不可用”**。未定位到单一具体DLL，不把猜测写成已证实的二进制损坏。
+
+无需重装环境或降级NumPy/SciPy。035的布尔数组相减另属代码类型问题，应显式转数值；现有代码已正确处理，与激活故障不同。保留原工程失败记录及替代求解器；本次用恢复正常的SLSQP核对全部17个联合NLL拟合，目标值完全一致。
+
+035于2026-09-20记录的实测版本（本次仅同步文档，未重新探测环境）：Python3.11环境，NumPy2.4.6、SciPy1.17.1、pandas3.0.6、scikit-learn1.9.1、duckdb1.5.5、Matplotlib3.10.8；完整运行证据见[环境自检](../reviews/artifacts/034_035_audit_20260920/environment_check.json)。
+
+## 各环境用途
+
+| 环境 | 用途 |
+|---|---|
+| research-verifact-029 | 当前CPU数值分析、Gate、API请求/回执和既定API-BGE链路的主运行环境；新任务按自身协议记录环境 |
+| research-verifact | 001起历史复现及带irrCAC的评价交叉测试；保持不变，不用来临时替换029训练库 |
+| .local_models/032/venv ＋ research激活 | 032专属本地GPU/NLI重放；不是当前CPU/API主环境 |
+| 本地BGE/GPU环境 | 021严格等价未通过，不因环境可用就替换当前API-BGE |
+
+API-BGE和远端Judge计算在服务端，主链路不要求本机GPU。若将来另行选择本地NLI/BGE，则需独立冻结该组件与环境，不能把其成绩当作现API链路的直接继承。
+
+旧任务README、协议和engineering_notes中未激活的绝对python命令/故障判断保留历史快照；现行启动指导以本页为准。

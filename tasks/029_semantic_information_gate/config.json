@@ -1,0 +1,14 @@
+{
+  "task": "029_semantic_information_gate",
+  "seed": 29,
+  "lambda": 2,
+  "training_rescue_target": 0.8,
+  "bootstrap_iterations": 1000,
+  "logistic": {"C": 0.1, "solver": "lbfgs", "max_iter": 2000, "tol": 1e-8, "l1_ratio": 0.0, "random_state": 29},
+  "xgboost": {"n_estimators": 40, "max_depth": 2, "learning_rate": 0.05, "min_child_weight": 5, "reg_lambda": 5, "reg_alpha": 1, "gamma": 0, "subsample": 1, "colsample_bytree": 1, "scale_pos_weight": 1, "base_score": 0.5, "objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "n_jobs": 1, "random_state": 29},
+  "inputs": ["A", "B", "C", "D", "C_no_quality", "D_no_quality"],
+  "estimators": ["Logistic", "XGBoost"],
+  "offline_only": true,
+  "fallback": {"empty_training_probability": 0.5, "single_class_probability": "(R+1)/(N+2)", "no_training_R_threshold": 0},
+  "no_parameter_search": true
+}

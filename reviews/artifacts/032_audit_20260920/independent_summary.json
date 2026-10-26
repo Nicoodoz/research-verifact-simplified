@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "historical_frozen_files": 43115,
+  "input_claims": 3675,
+  "NLI_pairs_rebuilt": 54236,
+  "all_head_models_replayed": 135,
+  "OOF_max_abs_difference": 0.0,
+  "training_options_recomputed": 40,
+  "primary_model_refit": 1,
+  "refit_max_weight_difference": 0.0,
+  "NLI_encoder_not_rerun": true,
+  "API_calls": 0
+}

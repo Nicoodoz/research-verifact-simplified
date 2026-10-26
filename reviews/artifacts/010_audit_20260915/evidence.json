@@ -1,0 +1,168 @@
+{
+  "handoff_sha256": "4bf2736805521b8023bc882eb238572141c22ac0f8e78910e3e21bc63c7eec2d",
+  "handoff_files": 1528,
+  "api_calls": 0,
+  "receipts": {
+    "statuses": {
+      "402": 4,
+      "200": 1324,
+      "0": 1
+    },
+    "usage_estimate_cny": "23.3620932",
+    "unknown_reservation_cny": "0.105018",
+    "unknown": [
+      {
+        "request_id": "judge:786d6ee9f3d6bcb33b0ee4c59c899a330dad0ad645771c0b2b1e0b1d8867cea4",
+        "attempt": 1,
+        "reserved_cny": "0.105018"
+      }
+    ],
+    "one_success_per_job": true
+  },
+  "independent_metrics": {
+    "llm": {
+      "verifact_reference": {
+        "n": 243,
+        "pa": 0.8395061728395061,
+        "mcc": 0.28898842847595035,
+        "confusion_S_NS_NA": [
+          [
+            197,
+            28,
+            3
+          ],
+          [
+            2,
+            7,
+            1
+          ],
+          [
+            3,
+            2,
+            0
+          ]
+        ]
+      },
+      "c48_reference": {
+        "n": 243,
+        "pa": 0.8559670781893004,
+        "mcc": 0.3462254259941185,
+        "confusion_S_NS_NA": [
+          [
+            200,
+            27,
+            1
+          ],
+          [
+            2,
+            8,
+            0
+          ],
+          [
+            2,
+            3,
+            0
+          ]
+        ]
+      },
+      "release_system": {
+        "n": 243,
+        "pa": 0.9300411522633745,
+        "mcc": 0.3218044820548749,
+        "confusion_S_NS_NA": [
+          [
+            222,
+            5,
+            1
+          ],
+          [
+            5,
+            4,
+            1
+          ],
+          [
+            5,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "human": {
+      "verifact_reference": {
+        "n": 407,
+        "pa": 0.7542997542997543,
+        "mcc": 0.48972954958527254,
+        "confusion_S_NS_NA": [
+          [
+            260,
+            46,
+            7
+          ],
+          [
+            6,
+            18,
+            3
+          ],
+          [
+            5,
+            33,
+            29
+          ]
+        ]
+      },
+      "c48_reference": {
+        "n": 407,
+        "pa": 0.7813267813267813,
+        "mcc": 0.5394351337654982,
+        "confusion_S_NS_NA": [
+          [
+            266,
+            43,
+            4
+          ],
+          [
+            4,
+            19,
+            4
+          ],
+          [
+            5,
+            29,
+            33
+          ]
+        ]
+      },
+      "release_system": {
+        "n": 407,
+        "pa": 0.8083538083538083,
+        "mcc": 0.5056789932820912,
+        "confusion_S_NS_NA": [
+          [
+            291,
+            19,
+            3
+          ],
+          [
+            10,
+            16,
+            1
+          ],
+          [
+            17,
+            28,
+            22
+          ]
+        ]
+      }
+    }
+  },
+  "repeat_flips": [
+    "N103",
+    "N261"
+  ],
+  "tests": 150,
+  "replayed_files": 53,
+  "009_unchanged": 3317,
+  "handoff_unchanged_after": true
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "initial_files_unchanged": 521,
+  "local_links_checked": 445,
+  "secret_scan_files": 539,
+  "secret_matches": 0,
+  "no_package_installs": true,
+  "no_API": true,
+  "withdrawn_reserved_archive_excluded": true,
+  "committed_files_verified": 552,
+  "normal_Git_newline_conversion": [
+    ".gitattributes",
+    "docs/RUN_ENVIRONMENT.md",
+    "scripts/check_research_environment.py",
+    "scripts/run_research.ps1"
+  ],
+  "frozen_files_still_exact": 521,
+  "whitespace_warnings_preserved_in_original_files": [
+    "outputs/034_same_data_comparison/lambda_extension_001/run_001/figures/brier.svg",
+    "outputs/034_same_data_comparison/lambda_extension_001/run_001/figures/class_recall.svg",
+    "outputs/034_same_data_comparison/lambda_extension_001/run_001/figures/nll.svg",
+    "outputs/034_same_data_comparison/lambda_extension_001/run_001/figures/temperatures.svg"
+  ]
+}

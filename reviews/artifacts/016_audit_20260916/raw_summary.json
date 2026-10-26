@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "attempt_records": 2137,
+  "physical_receipts": 2133,
+  "unreceipted_reservations": 4,
+  "status_counts": {
+    "200": 2099,
+    "503": 12,
+    "0": 26
+  },
+  "canonical_judge_answers": 1386,
+  "disagreements": 92,
+  "qwen_providers": {
+    "siliconflow": 127,
+    "aliyun": 474
+  },
+  "correct": {
+    "v4_first": 446,
+    "qwen": 457,
+    "cross_repeat": 451,
+    "cross_review": 452
+  },
+  "correct_by_author": {
+    "human": {
+      "v4_first": 286,
+      "qwen": 287,
+      "cross_repeat": 286,
+      "cross_review": 285
+    },
+    "llm": {
+      "v4_first": 160,
+      "qwen": 170,
+      "cross_repeat": 165,
+      "cross_review": 167
+    }
+  },
+  "known_usage_or_determined_cny": 19.375265419999995,
+  "unknown_reserved_cny": 2.415125609999999,
+  "total_cny": 21.790391029999995,
+  "timeline": {
+    "base": {
+      "frozen_utc": "2026-09-16T06:40:07.460926+00:00",
+      "first_send_utc": "2026-09-16T06:41:35.553334+00:00",
+      "last_return_utc": "2026-09-16T07:05:41.986547+00:00"
+    },
+    "review": {
+      "frozen_utc": "2026-09-16T07:06:07.939452+00:00",
+      "first_send_utc": "2026-09-16T07:06:37.700123+00:00",
+      "last_return_utc": "2026-09-16T07:11:22.370497+00:00"
+    }
+  },
+  "external_calls": 0,
+  "notes": "Independent standard-library parsing; no executor normalizer, cost function or analysis imported. Full metric replay separately invokes unified evaluation."
+}

@@ -1,0 +1,21 @@
+{
+  "scope": "Targeted novelty/context check of official abstracts only; not a systematic review or full-paper close reading.",
+  "checked_date": "2026-09-14",
+  "clinical_text_sent_to_search": false,
+  "sources": [
+    {
+      "title": "Molecular Facts: Desiderata for Decontextualization in LLM Fact Verification",
+      "authors": "Anisha Gunjal; Greg Durrett",
+      "year": 2024,
+      "url": "https://aclanthology.org/2024.findings-emnlp.215/",
+      "relevance": "Atomic facts can lack interpretive context; decontextuality and minimality are already established research considerations. Adding context alone is not a novelty claim."
+    },
+    {
+      "title": "A Closer Look at Claim Decomposition",
+      "authors": "Miriam Wanner; Seth Ebner; Zhengping Jiang; Mark Dredze; Benjamin Van Durme",
+      "year": 2024,
+      "url": "https://aclanthology.org/2024.starsem-1.13/",
+      "relevance": "Decomposition choices can alter factuality evaluation; errors should not all be attributed to the source document or the verifier."
+    }
+  ]
+}

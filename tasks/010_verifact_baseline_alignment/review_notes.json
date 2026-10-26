@@ -1,0 +1,652 @@
+{
+  "cases": [
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 10,
+          "quote": "DM2"
+        },
+        {
+          "arm": "c48_reference",
+          "block": 4,
+          "quote": "Diabetes Mellitus (DM), Type I"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "more authoritative diagnosis"
+        }
+      ],
+      "case_id": "N056",
+      "interpretation": "没有新增决定性的糖尿病类型证据，主要是同类矛盾信息的权重/支持关系不同。",
+      "observation": "发布reference把C48的S改成GT的NS，但两臂都同时有DM2与护理Type I/IDDM。C输出优先采信医师DM2，发布输出认为信息冲突。",
+      "uncertainty": "不根据任何一臂重新判糖尿病类型，不把原GT一致性当作临床裁决。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 97,
+          "quote": "IMPRESSION: No apical thrombus."
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "these predate the repeat TTE"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "no finding about a clot is documented"
+        }
+      ],
+      "case_id": "N071",
+      "interpretation": "发布包恢复了更贴近目标检查的证据，但这不是原GT一致性改善。若用旧C48代替同期C48会把错误转移类型也算错。",
+      "observation": "010发布reference判S，C48判NA，原GT为NS，两臂均未对上原标签。发布输出准确引用96–99的Definity和无血栓结论；C48说明只有检查头而无结果。旧009 C48为NS，本次同body已改成NA。",
+      "uncertainty": "不据后期原文重判医生标签；原GT与目标语境的关系仍未确认。完整参考包差异不能单归于格式。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 5,
+          "quote": "20meq kcl for low K+"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "recommendation of 20 mEq KCl"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "No mention of potassium supplements"
+        }
+      ],
+      "case_id": "N095",
+      "interpretation": "既有真实治疗片段遗漏，也有C的缩写/状态解释疑点。不能因为C标签正确，就说它正确理解了给药证据。",
+      "observation": "C48 NS符合原GT，发布NA为名义退化；C48有护理20meq kcl for low K+及同句also rec d lasix，发布100条未保留KCl处理。C输出却将Rec d解释为recommendation，并以无实际给药拒绝。",
+      "uncertainty": "Rec d在该护理上下文更像received而非recommended，但不据执行者释义改GT；需要与原标注边界区分。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 3,
+          "quote": "likely secondary to dehydration"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "not directly caused by the infection"
+        }
+      ],
+      "case_id": "N103",
+      "interpretation": "已存在关键关系信息，主要是直接/间接因果支持范围不同，不能称发布漏掉肾衰。",
+      "observation": "GT S；C S，发布NS。两臂都有病毒胃肠炎、脱水以及acute on chronic renal failure likely secondary to dehydration。C接受经脱水的间接关系，发布要求感染直接导致肾衰。 预设同一发布reference重复由NS变S，完整重复解释改为接受经脱水的因果链。",
+      "uncertainty": "同输入重复证明此案例标签可在没有任何reference变化时翻转；主结果保留原canonical，不能归因于reference包装或用重复替换。重复全文见additional_diagnostics_001。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 69,
+          "quote": "will continue home inhaler"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "does not mention inhaler teaching"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "does not state that inhaler teaching was provided"
+        }
+      ],
+      "case_id": "N119",
+      "interpretation": "名义退化更像在相近事实与缺失特定行为之间选择NS或NA的边界，而非发布输入丢掉教学记录。",
+      "observation": "010 C48为NA、发布reference为NS，GT为NA。两份完整解释都说只有home inhaler继续和neb治疗，没有inhaler teaching；更长发布reference没有增加教学事实。009对同一完整body的预设重复也发生过NA/NS翻转。",
+      "uncertainty": "不同输入下的一次标签变化不能证明新增背景导致；旧重复诊断与本轮两臂对照分开，不以另一个LLM重新裁定原GT。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 11,
+          "quote": "tried without O2, desat to 88"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "but these are not at rest"
+        }
+      ],
+      "case_id": "N120",
+      "interpretation": "有反向背景证据遗漏，也有症状范围和时间解释差异。不能把100事实视为完整症状覆盖。",
+      "observation": "C48 NS符合GT，发布S为退化。两套都有症状/舒适与无SOB记录；C48还保留稍晚移除氧气后desat88和腹泻，发布本例未保留这条脱氧低饱和段。发布输出将asymptomatic缩到呼吸舒适，并称早期dyspnea不在rest但原文未明确。",
+      "uncertainty": "原claim的remained/asymptomatic at rest时间范围仍不清楚；早晚症状变化不能自动互相否定，未新增医学GT。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 62,
+          "quote": "BP b/w 85-110."
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "no mention of a 500 cc bolus"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "specific claim is not addressed"
+        }
+      ],
+      "case_id": "N148",
+      "interpretation": "标签变化主要是将相近但不匹配的数值视为反证还是未涉及，不能计作恢复目标事件。",
+      "observation": "发布NS相对C48 NA对上GT。两套都没有500cc后升到120s的目标事件，都有5L补液、1L bolus及90–110附近血压；未发现发布新增关键500cc记录。",
+      "uncertainty": "其他时刻低血压不自动否定未记录的另一次120s；不以最大已见值冒充全病程上界，不改GT。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 99,
+          "quote": "tried without O2, desat to 88"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "not at admission"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "when oxygen was temporarily removed"
+        }
+      ],
+      "case_id": "N152",
+      "interpretation": "原文关键事件没有单侧丢失，差异更像对room air/high80s及时间范围的解释，正确标签也可能伴随额外限定。",
+      "observation": "两套均有tried without O2, desat to88；C48为GT的NS，发布为S。C输出仍称未记录room-air high80s，并增加at admission限定；发布接受移除补氧时88作为原无日期claim的证据。",
+      "uncertainty": "不擅自重判原医生NS；不能把C要求入院时的理由当作原claim已经明确要求，也不将发布S等同医学最终裁决。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 99,
+          "quote": "Pt had diarrhea x2"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "does not explicitly state the patient denied GI symptoms at discharge"
+        }
+      ],
+      "case_id": "N158",
+      "interpretation": "目标时刻缺证和NS/NA边界并存；不是两个不同标签中必有一个正确理解原文。",
+      "observation": "GT S；C NS、发布NA。两臂均有症状缓解和出院前一天腹泻，无出院当日否认GI症状的明确记录；发布新增两条前一天腹泻，但没有补回出院时刻。",
+      "uncertainty": "未据reference推断原始EHR必有出院当日记录；早期腹泻不能直接否定次日无症状。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "no note of counseling about its benefits"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "no counseling discussion"
+        }
+      ],
+      "case_id": "N167",
+      "interpretation": "主要是未涉及与不支持的标签边界差异，非明确新增或丢失宣教证据。",
+      "observation": "GT NA；C NA，发布NS。两套都有氧疗和撤氧计划，都未记载关于氧疗益处的宣教；输出对缺少宣教的观察一致。",
+      "uncertainty": "缺少记录不代表没有发生宣教，不将模型标签变动解释为医学事实改变。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 92,
+          "quote": "Test: Portable TTE (Complete)"
+        },
+        {
+          "arm": "c48_reference",
+          "block": 11,
+          "quote": "Normal global and regional biventricular systolic function"
+        }
+      ],
+      "case_id": "N180",
+      "interpretation": "这是检查身份与结果分离的清楚实例：结果已找到，缺少身份限定妨碍C判断。发布补回同一检查头部而非改变claim。",
+      "observation": "GT S；C NS，发布S。两套有同一Echo正常双心室功能结果；C48没有Portable TTE身份，发布92明确Test: Portable TTE (Complete)，并被输出引用。",
+      "uncertainty": "尚未在相同内容池内只补身份做干预，不能证明全部差异仅来自这段；也不能把每个标题都视为无用。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 6,
+          "quote": "Emotional support, SW consult ordered"
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 50,
+          "quote": "Anxious MI diagnosis"
+        }
+      ],
+      "case_id": "N181",
+      "interpretation": "稳定正确对照：简短连续护理段已能覆盖行动、对象与目的，不是所有claim都需要100事实。",
+      "observation": "两臂均S，和GT及旧C一致。两套都保留焦虑评估、Emotional support动作及社工参与；发布更多社工背景未改变标签。",
+      "uncertainty": "单次稳定不能证明不受内容或采样波动影响。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 5,
+          "quote": "continue home medications (topamax, keppra, gabapentin)"
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 45,
+          "quote": "continue home medications (topamax, keppra, gabapentin)"
+        }
+      ],
+      "case_id": "N208",
+      "interpretation": "支持状态/证据充分性门槛不同；没有找到发布独有的实际给药凭据。",
+      "observation": "GT S；C NS、发布S。两套都有continue home medications (topamax, keppra, gabapentin)。C要求实际给药记录，发布接受连续医嘱作为继续治疗证据。",
+      "uncertainty": "继续用药医嘱与实际给药不严格同义，但也不能把医生GT强行改成执行者标准。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 24,
+          "quote": "HbA1c in a.m."
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "after the current admission"
+        }
+      ],
+      "case_id": "N221",
+      "interpretation": "更多计划与查询泛化并存，重要问题是further的时间参照不清，不能凭标签差异归因检索。",
+      "observation": "GT NA；C NS，发布S，均错。C本有cath计划，发布另有serial EKG、echo、HbA1c。C自行要求住院后/已做检查之外的未来计划，发布按无明确日期的claim接受住院中计划。",
+      "uncertainty": "本次没有将来源原文交Judge，也不据执行者补出原claim未明示的时间限定。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 5,
+          "quote": "continue home lexapro"
+        }
+      ],
+      "case_id": "N248",
+      "interpretation": "反向用药证据在发布reference丢失，与其NA判断相对应；100事实不保证关键药物状态覆盖。",
+      "observation": "GT NS；C NS，发布NA。C48明确有PTSD: continue home lexapro，发布虽包含精神科和中毒背景，却未保留Lexapro继续用药。",
+      "uncertainty": "未做补回干预，不能将全部标签差异因果归于单段。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 7,
+          "quote": "Bicarb was discontinued"
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 52,
+          "quote": "gtt could be shut off"
+        }
+      ],
+      "case_id": "N280",
+      "interpretation": "时间顺序和因果/先后解释混在一起，新增护理记录有价值，但不构成对原claim时间关系的无争议证明。",
+      "observation": "GT NS；C NS，发布S。两臂均有ASA下降和停止bicarb的文字，但原句Bicarb was discontinued once ASA level.本来不完整。发布另有06:10允许停滴、08:06下降值；输出据此接受停后改善。C还讨论是否因停药改善，原claim只写after。",
+      "uncertainty": "记录时间不等于化验发生时间；不能由08:06汇总推断所有下降均在06:10之后，不修补原断句或GT。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 8,
+          "quote": "patient tachypnec and agitated"
+        }
+      ],
+      "case_id": "N293",
+      "interpretation": "更长reference并非所有相反状态的超集；本例较短C也能处理不同时间状态。",
+      "observation": "两臂均S。C48同时有早期agitated和稍后No(t) Agitated，输出明确后者不否定入院表现；发布保留早期中毒躁动，没有同一稍后否定片段。",
+      "uncertainty": "未通过移除对照证明任一片段决定标签，不能把未输入的否定片段等同真实临床冲突。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 50,
+          "quote": "resolved with fluid ressusitation."
+        }
+      ],
+      "case_id": "N302",
+      "interpretation": "发布提供更明确的关系陈述，但同期没有增益；不能将旧C错误到本次发布正确算作reference收益。",
+      "observation": "两臂本次均S，旧009 C为NS。发布有明确A fib and hypotension resolved with fluid ressusitation，C48也有补液、心率和血流动力学片段。",
+      "uncertainty": "新增明确关系片段与009原150mL锚点不完全同一记录，未验证决定性。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 40,
+          "quote": "transvered back to ICU"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "single continuous ICU admission"
+        }
+      ],
+      "case_id": "N310",
+      "interpretation": "发布确实恢复转回ICU事件；与原GT仍不一致，说明恢复事件不等于提高原标签一致性。",
+      "observation": "GT NA；C NS，发布S，均错。C只有连续ICU处置片段；发布40/43/59明确因快速房颤、Hct下降转回ICU。C把整个hospital admission header误当连续ICU住院并作反证。",
+      "uncertainty": "不重判医生标签；readmitted与院内转回、模糊ongoing concerns的标注范围未解决。发布对转移日期也可能把回顾时间当事件时间。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 5,
+          "quote": "Patient with episodes of aggiation"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "not throughout the entire admission"
+        }
+      ],
+      "case_id": "N312",
+      "interpretation": "稳定错误对照：增加时间覆盖未解决对episodes throughout的强范围要求。",
+      "observation": "两臂均NS，GT S。C与发布都有多次躁动，发布增加早期记录但双方都要求throughout覆盖整个住院期；发布还把睡眠/感觉好写成calm。",
+      "uncertainty": "throughout不一定表示每日持续，不把输出推成真实临床反证；没有新医生判定。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 4,
+          "quote": "converted to NSR shortly before midnight on her own"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "the proposition does not specify permanence"
+        }
+      ],
+      "case_id": "N364",
+      "interpretation": "主要是状态持续范围判断，不能把已有转复和最终ECG说成发布才找回。",
+      "observation": "GT S；C NS、发布S。两套都有自行转NSR、后续复发及最后ECG窦律。C以非永久稳定转复拒绝，发布明确原claim未要求永久。",
+      "uncertainty": "发布的更多中间窦律记录可能影响权重，但未隔离这种影响；不把解释当机制。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 39,
+          "quote": "Punctate hyperdense focus in the left temporal lobe"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "Neurosurgery's assessment supports conservative management."
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "does not explicitly confirm that none was warranted"
+        }
+      ],
+      "case_id": "N394",
+      "interpretation": "这是C48保留更相关管理意见的反例，不能说原VeriFact包全面覆盖C48。内容缺失与Judge对warranted的支持要求共同存在。",
+      "observation": "010 C48为S、发布reference为NS，GT为S。C48输出引用神外认为calc而非SAH的评估；发布输出指出无神外明确决策，只见保守监测。该评估实际在C48原文中，却未进入100条发布reference。",
+      "uncertainty": "神外原意见到无需手术仍有推断，没有新医生裁决；本任务没做仅移除意见的对照，不能宣布该段是唯一原因。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 22,
+          "quote": "24 Hour Events:"
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 87,
+          "quote": "Vent weaned from [**8-30**] to [**5-27**]"
+        }
+      ],
+      "case_id": "N410",
+      "interpretation": "发布名义改对主要对应日期/范围判断，不是输出证明它识别了疑似被脱敏的呼吸机设置。两臂另有PSV5/5或weaned to [**5-27**]语境。",
+      "observation": "GT NS；C S，发布NS。两套均有8-5回顾did well on [**5-27**] but not following commands；发布增加8-4不遵指令/间歇遵指令。C接受回顾，发布要求5-27当天证明并质疑8-4完全不遵指令。",
+      "uncertainty": "不擅自将5-27还原为5/5或修改命题；8-4状态可随时间变化。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 9,
+          "quote": "endurance training"
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 60,
+          "quote": "Impaired endurance"
+        }
+      ],
+      "case_id": "N420",
+      "interpretation": "发布缺失目的/关系证据，不能只用PT或endurance词出现断言覆盖充分；长reference可丢失有用连续段。",
+      "observation": "GT S；C S、发布NS。C有PT首评、impaired endurance以及多份endurance training计划；发布保留受损耐力与PT参与，却没有C中明确耐力训练计划。",
+      "uncertainty": "未做单段补回，不证明唯一因果；首次PT启动时间仍需完整病程才能界定。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 69,
+          "quote": "Fluid boluses  500cc x 2."
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "other bolus mentions"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "it contradicts with 690 mL IV fluid"
+        }
+      ],
+      "case_id": "N430",
+      "interpretation": "改善对应到新增目标日期/剂量证据；C48同时存在用记录中的流量汇总替代特定治疗事件的判断问题。",
+      "observation": "010发布reference S、C48 NS，GT为S。发布输出用69号8-16两次500cc合计1L，明确把其他日期或药物bolus排除；C48把同日早间flowsheet中的690mL当作反证，实际未收到下午补液段。",
+      "uncertainty": "不能将某个时刻的累计量当整日完整用量，也不把两个500cc额外改写成单次1L；没有新医学标签。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 65,
+          "quote": "subclavian"
+        }
+      ],
+      "case_id": "N527",
+      "interpretation": "兼有证据描述增加和诊断术语支持范围差异，不能直接称找回了明确thrombophlebitis诊断。",
+      "observation": "C为NS、发布为S，GT为S。发布保留更完整上肢DVT超声；两臂均未保留009找到的明确thrombophlebitis问题清单。C要求炎症/该诊断，发布接受静脉血栓作为支持。",
+      "uncertainty": "DVT与该命题术语是否充分等价需医学裁决，本分析不重新标注。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 47,
+          "quote": "FINDINGS:  BRAIN MRI:"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "Note 8 (dated 08-09)"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "MRI report from 2166-08-03"
+        }
+      ],
+      "case_id": "N561",
+      "interpretation": "MRI身份材料在两套输入中的差异真实存在，但本次没有额外标签收益。把旧C48的NS和新发布S比较会误算成reference方法改善，正确标签也不保证解释日期准确。",
+      "observation": "010两臂均S，GT为S；旧009同一个C48 body却是NS。发布reference中MRI身份与结果连在一起，输出正确引用8-3MRI。新C48也接受结果为MRI，但把实际8-3的第8条误述为8-9。",
+      "uncertainty": "同输入变化可能来自服务生成变异等，模型版本不可冻结；没有标题单变量干预，不能断言补标题的因果收益或C48确已可靠处理模态。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 31,
+          "quote": "MR HEAD W/O CONTRAST"
+        }
+      ],
+      "case_id": "N563",
+      "interpretation": "检查身份在发布中更显式，但此次标签改善不是发布reference独有收益。",
+      "observation": "两臂本次均S，旧C为NS。发布有MR HEAD描述、BRAIN MRI及无mass effect/midline shift；C48已有相应影像结果，本次也识别为MRI。",
+      "uncertainty": "尚未单独控制metadata，无法证明显式身份是否提高稳定性。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 7,
+          "quote": "FENa 0.1"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "decreased by 0.09"
+        }
+      ],
+      "case_id": "N582",
+      "interpretation": "稳定错误包含命题数值语义不完整和事件跨时段连接，不是单纯没检索FENa。",
+      "observation": "两臂均NS，GT NA。均见早期FENA0及后期0.1，没有明确0.09；两输出都将decreased 0.09理解为下降了0.09，并以相隔数周的两点作反证。",
+      "uncertainty": "不能擅自补by/to，亦不能用稀疏两点排除中间变化，不重写GT。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 74,
+          "quote": "Pt with right lower lung collapse"
+        },
+        {
+          "arm": "verifact_reference",
+          "kind": "output",
+          "quote": "Reference 74 (8-20 nursing note)"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "leaving a gap"
+        }
+      ],
+      "case_id": "N585",
+      "interpretation": "改对对应到正确日期记录的加入，补充材料更有针对性；这不是只有周边日期推断得到的标签变化。",
+      "observation": "010发布reference为S、C48为NA，GT为S。发布输出明确引用74号8-20护理及相邻日材料；C48输出只见8-5到8-8和8-24/25，说明目标日缺证。",
+      "uncertainty": "原系统上游排名未发布，不能定位它在哪一级比C48更好；C48从旧NS到新NA还有同body类别边界变化，需与主要S改善分开。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 3,
+          "quote": "intubated (fiberoptic) for resp depression"
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 20,
+          "quote": "intubated (fiberoptic) for resp depression"
+        }
+      ],
+      "case_id": "N607",
+      "interpretation": "稳定正确对照：重复事件虽多，有直接对应段时两套都可正确核验。",
+      "observation": "两臂均S，GT S。两套都明确保留fiberoptic for resp depression，并有其他插管/呼吸衰竭记录。输出均引用直接匹配原因与方式的片段。",
+      "uncertainty": "不能据本例推断所有无日期插管claim均无事件歧义。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 3,
+          "quote": "24 Hour Events:"
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 40,
+          "quote": "Order date: [**8-8**]"
+        }
+      ],
+      "case_id": "N639",
+      "interpretation": "相同关键时间线索仍有不同解释，不能说发布缺少24 Hour Events或8-8医嘱。",
+      "observation": "GT NA；C S、发布NS，均错。两套都有8-9的24 Hour Events剂量增加及8-8 08:43的10mg医嘱；C联系这两点，发布把note日期当成增加发生日。",
+      "uncertainty": "医嘱时间与实际给药时间不同；未取得原医生对本例具体时间边界的解释。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "c48_reference",
+          "block": 5,
+          "quote": "STRICT NPO."
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 52,
+          "quote": "Metoprolol Tartrate 25 mg PO TID"
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 49,
+          "quote": "If there are any"
+        }
+      ],
+      "case_id": "N642",
+      "interpretation": "直接确认切分/选段后条件断裂，同时存在时间解释及额外PO医嘱差异；这是值得受控检验的证据组织问题。",
+      "observation": "GT S；C NS，发布S。原note471448已回查：第6项If there are any concerns for aspiration...STRICT NPO为条件建议，C48块5从字符4457的STRICT NPO起，确实丢失条件。发布49保留完整条件，并含PO饮食许可与8-8 PO医嘱；C输出却视为当天无条件禁食。",
+      "uncertainty": "原文建议不等于实际给药，未验证仅补条件是否足以改变标签；当前两套内容与预算同时不同，不能视为packaging因果实验。原文偏移及哈希见additional_diagnostics_001/N642_raw_condition.json。"
+    },
+    {
+      "anchors": [
+        {
+          "arm": "verifact_reference",
+          "block": 59,
+          "quote": "Cont TPN and ground diet."
+        },
+        {
+          "arm": "verifact_reference",
+          "block": 69,
+          "quote": "was advanced to\nthin liquids and ground solids last week"
+        },
+        {
+          "arm": "c48_reference",
+          "kind": "output",
+          "quote": "but no direct confirmation for 8-9"
+        }
+      ],
+      "case_id": "N644",
+      "interpretation": "这里没有目标实施资料的单侧缺失，判错集中在具体日期的支持范围；不能把旧C48 S与新发布NS相比较称发布reference导致退化。",
+      "observation": "010两臂均NS、GT为S；旧009同一C48输入曾为S。两套reference均有8-8建议、8-10继续及8-11回顾已实施；两个新输出都要求8-9当日明确记录。",
+      "uncertainty": "相邻日期记录是否充分支持8-9不新增医学裁决；同body跨运行变化保留，模型解释不是内部机制证明。"
+    }
+  ],
+  "scope": "Executor observations, not new medical GT; complete reference/output reading with identical block reuse ledger; initial 26 plus all eight remaining changed NS"
+}

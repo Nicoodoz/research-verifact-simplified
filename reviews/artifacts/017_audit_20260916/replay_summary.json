@@ -1,0 +1,21 @@
+{
+  "status": "execution_self_check_passed_not_independent_audit",
+  "claims": 192,
+  "reconstructed_requests": 1572,
+  "logical_conditions": 1920,
+  "byte_identical_analysis_files": 32,
+  "protected_history_files": 16398,
+  "changed_mutable_navigation": [
+    ".gitattributes",
+    "AGENTS.md",
+    "README.md",
+    "docs/API_POLICY.md",
+    "docs/PROJECT_STATUS.md",
+    "reviews/README.md"
+  ],
+  "history_HEAD": "87cb27de4ffe547b63594af3eba4682523cad74d",
+  "HEAD": "87cb27de4ffe547b63594af3eba4682523cad74d",
+  "no_API_called": true,
+  "new10_clinical_data_used": false,
+  "reserved_test_used": false
+}

@@ -1,0 +1,4 @@
+[
+ {"case_id":"010_old6_N191","layer":"mixed","mechanisms":["reference_asymmetry_C","discharge_vs_inpatient_plan","support_inference"],"confidence":"moderate","observation":"C第9段保留Plavix一周后每日的持续方案，本例O包仅有住院给药及高剂量clopidogrel，未见该详细持续方案。O/V要求明确出院处方，C把持续计划解释为出院计划而S。","uncertainty":"C原段本身没有写discharge，不能把其输出称explicit discharge plan当原文事实；无最终出院用药表，判定范围与证据差异并存。","anchors":[{"arm":"C","block":9,"quote":"for one week, then 75 mg daily"},{"arm":"O","block":78,"quote":"high-dose clopidogrel"}],"read_pages":[20]},
+ {"case_id":"010_old6_N197","layer":"no_identified_gap","mechanisms":["direct_shared_evidence"],"confidence":"high","observation":"共同正确对照：一般Plavix治疗在两包有实际给药和继续用药。相对于同患者N191，本claim没有出院限定；不能把N191分歧泛化成药名识别失败。","uncertainty":"比较的是不同claim各自reference，非只删限定词的干预。","anchors":[{"arm":"O","block":19,"quote":"He was given ASA, plavix"},{"arm":"C","block":3,"quote":"He was given ASA, plavix"}],"read_pages":[21]}
+]

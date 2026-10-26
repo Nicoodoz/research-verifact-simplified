@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-09-15T01:07:40.085169+00:00",
+  "audit_result": "PASS",
+  "reviewed_handoff_sha256": "9ada325eaa988ca73906c39c9cdaf4a08b6b9671041d4f53b29f735171a7e7f7",
+  "state_updates": {
+    "reviews/009_retrieval_baselines.md": {
+      "before": "2435ee2aa3e82f7bd814232e36dc2cfb3812a0e7e928ef61f09b1901776b9e1f",
+      "after": "6e3740afdc1b6f25dd638eb54ab412f7277541d5f06ca93bedf4b2e2a81ec84d"
+    },
+    "reviews/README.md": {
+      "before": "729060cb19bcdd984521f12df975acc6b063eb129986db8d530dd8cb49dad2df",
+      "after": "2845afc5574692abf21be2ecfba1e3ab556d6d5cac716f87fab67d2f5555b26c"
+    },
+    "README.md": {
+      "before": "6ee3a3a7c866c5f7349890f231ea6d0bef076bdf1e607971090bcb7025ec7125",
+      "after": "7e6edab8c5a1b03e26ab9319d550105fe00780435e56e352ce707d2b51de9791"
+    },
+    "AGENTS.md": {
+      "before": "db038cc2fe5e9f84a6fc87e6570e05c853b438fde45b6b88d43a70caf291f807",
+      "after": "d29dc7313fa6356f27fb599ed1c5c9b8656bd7c92a1b739c3bd1d0fb3c0f0f0b"
+    },
+    "tasks/009_retrieval_baselines/README.md": {
+      "before": "8ec0232f42eae329af2804e8941e7ad77605b3b78d32008829e77060c393a1c8",
+      "after": "0c567dd377383335dc79bb81f28c9f2ba60ba3131e2fe1239efbf3b40b4491f2"
+    },
+    "outputs/009_retrieval_baselines/README.md": {
+      "before": "e356781f268a2633f1f14212d14de456c9252c7fcdb1137a4032c16baef629df",
+      "after": "62ae0fc24a673c4c476e40ed52d760b3b1256b29e1ea0030f3a7197d467fa6bd"
+    },
+    ".gitattributes": {
+      "before": "005df302c4c56a02152ffd3985303269bdd375f4de4bdbec0fa82b549d0f2ca4",
+      "after": "099e02558c2c56079fe1a5f2ccb16b451a74a04be51941d8e8326ae9cb5f65da"
+    }
+  },
+  "reviewed_files_changed_after_conclusion_only": [
+    "AGENTS.md",
+    "README.md",
+    "outputs/009_retrieval_baselines/README.md",
+    "reviews/009_retrieval_baselines.md",
+    "reviews/README.md",
+    "tasks/009_retrieval_baselines/README.md"
+  ],
+  "environment_changed": false,
+  "gitignore_changed": false,
+  "api_calls": 0,
+  "evidence_sha256": {
+    "actual_verifier.diff": "09816af72eb24b96216df3e8ce17c83ca1bf888c0e76562ab1ad7873019283c6",
+    "audit_revision.py": "1ca72cf51f001abe63733d802b6744b8f7e22d7554ea0fec72765b22fe7a8a59",
+    "README.md": "8814b1a61327f18af7d13c686bc689d0bd325d038ace26fc96957948ef1e8c43",
+    "replay_verification.json": "d7c7f13c1b7a4b850aa6597dde8ce9f8942bbde139d24a3e2bc7e29858fd75c1",
+    "results.json": "dab25207220baae3eb9d4f9fe074a8e46209adb93872859e785c680f9c93e8f2",
+    "tests.log": "03dad8aa1524ed2847b9e4dd061496d2329909850820a9d1b35762018204a75b"
+  }
+}

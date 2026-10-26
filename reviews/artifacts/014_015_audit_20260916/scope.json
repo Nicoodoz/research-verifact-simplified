@@ -1,0 +1,25 @@
+{
+  "head": "de3da2f5af4045a4c814bc4279c4aab6a48c389d",
+  "reference_branch": "de3da2f5af4045a4c814bc4279c4aab6a48c389d",
+  "changed_task_artifacts": [],
+  "unchanged_task_artifacts": 1208,
+  "api_calls": 0,
+  "commit_created": false,
+  "pushed": false,
+  "full_semantic_cases": {
+    "014": [
+      "N383",
+      "N489"
+    ],
+    "015": [
+      "N216",
+      "N528"
+    ]
+  },
+  "sources_checked": [
+    "https://siliconflow.cn/pricing",
+    "https://huggingface.co/Qwen/Qwen3.8-27B",
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash"
+  ],
+  "scope": "Fast independent audit; no claim of clinical relabeling, full semantic review or invoiced costs"
+}

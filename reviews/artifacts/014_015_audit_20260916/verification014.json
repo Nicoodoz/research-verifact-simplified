@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-09-16T00:10:57.638983+00:00",
+  "tests": 189,
+  "tests_passed": true,
+  "negative_checks": [
+    "model",
+    "temperature",
+    "max_tokens",
+    "enable_thinking",
+    "messages",
+    "response_format",
+    "claim_mapping",
+    "missing",
+    "duplicate",
+    "illegal"
+  ],
+  "exact_model_only_bodies": 650,
+  "replayed_content_files": 65,
+  "history_files_unchanged": 12374,
+  "full_v4_metrics_identical_to_010": true,
+  "network_blocked": true,
+  "api_calls": 0,
+  "independent_audit": false,
+  "head": "de3da2f5af4045a4c814bc4279c4aab6a48c389d"
+}

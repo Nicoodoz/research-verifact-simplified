@@ -1,0 +1,383 @@
+[
+  {
+    "case_id": "N323",
+    "observation": "B从S退为NS，但三臂都保留Transferred here及trans from外院的明确记录；B仍要求逐字our facility。",
+    "interpretation": "是指示词与机构身份对应的支持范围差异，不是目标转院证据漏检。",
+    "uncertainty": "不能由单次生成判断稳定心理机制；其他背景变化和随机波动仍可能影响。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "564420",
+        "start": 0,
+        "quote": "Transferred here for management of orthopedic injuries."
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "not explicitly to 'our facility'"
+      }
+    ]
+  },
+  {
+    "case_id": "N331",
+    "observation": "稳定正确对照，三臂都有右肾上腺血肿的CT正文与结论，均S；A仍打包FINDINGS空标题及其他部位血肿，B/C也包含无直接作用的体检段。",
+    "interpretation": "关键证据充分时多余片段未改变标签，但浪费位置真实存在。",
+    "uncertainty": "没有去除这些背景的对照，不能推断它们总是无害或移除必有收益。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "1069092",
+        "start": 5565,
+        "quote": "Right adrenal gland hematoma"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "1069156",
+        "start": 611,
+        "quote": "FINDINGS:"
+      }
+    ]
+  },
+  {
+    "case_id": "N405",
+    "observation": "三臂未取到8-3实际bronchoscopy记录，A/C为NS、B为NA，均未对上GT的S。定向回查索引发现当日呼吸治疗Bronchoscopy (1200)和护理bronched，另有当日RLL collapse影像；不是整个日期记录缺失。",
+    "interpretation": "目标事件部分确实漏检，A/C还把8-10左肺另一次事件当反证。",
+    "uncertainty": "8-3原文已找到的是thin secretions和RLL collapse，未在本次限定回查中见逐字RLL mucus plugging的操作结果，不能宣布目标全部支持或完整原始记录不存在。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "470501",
+        "start": 1279,
+        "quote": "Bronchoscopy (1200)"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "1088145",
+        "start": 773,
+        "quote": "Right lower lobe is collapsed."
+      },
+      {
+        "kind": "judge",
+        "method": "A48",
+        "quote": "This contradicts the proposition's location and date."
+      }
+    ]
+  },
+  {
+    "case_id": "N430",
+    "observation": "A/B为NA、C为NS，均未对上GT的S。原索引中8-16护理明确Fluid boluses 500cc x 2，三臂本例都没有；该段在N528的三臂却都有。",
+    "interpretation": "同索引中可回查的日期/剂量互补段未进入本claim最终reference，不能误称原记录日期缺失。",
+    "uncertainty": "两次500cc与1L概括仍不等于单次1L；需要沿排名与打包追溯具体门槛，未为本例追加收费干预。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "473395",
+        "start": 1911,
+        "quote": "Fluid boluses  500cc x 2."
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "no mention of a 1L bolus on 8-16"
+      }
+    ]
+  },
+  {
+    "case_id": "N439",
+    "observation": "B从NS改为S。三臂都有床椅转移与协助活动，B新增另一天stand-pivot细节，但A/C要求在椅子内移动，甚至引入independent要求。",
+    "interpretation": "主差异是move around in a chair的解释，不是是否已有协助下椅子活动记录。",
+    "uncertainty": "原claim表达含糊，不能以GT认可所有释义，也不能由多查到一次转移就归因全部增益。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "471082",
+        "start": 3819,
+        "quote": "to get from bed to chair"
+      },
+      {
+        "kind": "judge",
+        "method": "A48",
+        "quote": "independent movement within the chair"
+      }
+    ]
+  },
+  {
+    "case_id": "N495",
+    "observation": "稳定正确：B替换大量发热记录，但仍有Tmax101.5护理段及温度表；A/C保留更多8-13、8-17等事件。原claim无日期，三臂均S。",
+    "interpretation": "不带日期的存在性命题可由不同日期的明确记录核验；更多重复文本未产生额外标签收益。",
+    "uncertainty": "不能将此成功外推到N405/N585这类明确日期的命题。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "472684",
+        "start": 0,
+        "quote": "Tmax 101.5"
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "other fever values (101.1, 101.4) are separate episodes"
+      }
+    ]
+  },
+  {
+    "case_id": "N527",
+    "observation": "B由NS改S，三臂都有右臂DVT与Lovenox；B新增超声头部但该段在extending from断开。A/C拒绝DVT与thrombophlebitis对应，B接受。另在同索引474536等problem list确有THROMBOPHLEBITIS, SUPERFICIAL，但未被本例三臂选中。",
+    "interpretation": "B的名义收益没有找回这个明确术语记录，不能说语义检索已解决术语问题；共存候选损失及医学术语支持边界。",
+    "uncertainty": "不自行裁决DVT与浅表血栓性静脉炎等同，problem list也非完整临床诊断金标准。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "472925",
+        "start": 6412,
+        "quote": "Lovenox for right arm DVT"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "474536",
+        "start": 5157,
+        "quote": "THROMBOPHLEBITIS, SUPERFICIAL"
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "which is a form of thrombophlebitis"
+      }
+    ]
+  },
+  {
+    "case_id": "N528",
+    "observation": "B/C由NS改S，三臂原本就有8-16明确Hypovolemia、低尿量与补液段。A要求throughout涵盖住院早期，B/C解释为住院期间发生；C甚至少了后期problem list仍S。",
+    "interpretation": "不宜把改善归为新增诊断证据，核心是时间量词支持范围。",
+    "uncertainty": "throughout与during不能自动互换；原GT和原claim均保留，没有新医生裁决。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "473395",
+        "start": 1911,
+        "quote": "Hypovolemia (Volume Depletion - without shock)"
+      },
+      {
+        "kind": "judge",
+        "method": "A48",
+        "quote": "not mentioned in early notes"
+      }
+    ]
+  },
+  {
+    "case_id": "N561",
+    "observation": "C由S退NS，三臂都有同一8-3报告的no acute infarct及MRA结论；C说未标明MRI。回查原报告发现FINDINGS: BRAIN MRI短标题及EXAM: MRI brain and MRA head均正确入索引，却未随结果送入Judge。",
+    "interpretation": "实际结果没丢，模态身份和结果被切开，C因身份不足拒绝。证明完整片段并不等于语义自足段。",
+    "uncertainty": "A/B正确标签包含对模态的推断，不代表它们看到了被省略标题；未对本例做补标题实验。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "1088126",
+        "start": 1206,
+        "quote": "There is no acute infarct seen."
+      },
+      {
+        "kind": "ehr",
+        "note_id": "1088126",
+        "start": 1182,
+        "quote": "FINDINGS:  BRAIN MRI:"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "1088126",
+        "start": 639,
+        "quote": "EXAM:  MRI brain and MRA head."
+      }
+    ]
+  },
+  {
+    "case_id": "N563",
+    "observation": "与N561同一MRI报告，三臂已取到no midline shift结果，却均说MRI未记载，A/C为NS、B为NA而GT是S。原报告BRAIN MRI标题没有跟随结果片段。",
+    "interpretation": "模态身份丢失与NS/NA边界共同存在；不能只扩大召回后期待Judge自动补全片段归属。",
+    "uncertainty": "没有新临床标签，模型所称MRA不能评估某结果不当作医学知识结论。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "1088126",
+        "start": 1206,
+        "quote": "no mass effect, midline shift, or"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "1088126",
+        "start": 1182,
+        "quote": "FINDINGS:  BRAIN MRI:"
+      }
+    ]
+  },
+  {
+    "case_id": "N585",
+    "observation": "B从NA改为S但引用的是8-24/25管理及8-27历史，明确承认没有8-20段；C改NS仍错。定向回查8-20护理确有right lower lung collapse及前一天bronch，三臂都未选中。",
+    "interpretation": "同例既有实际日期证据遗漏，也有Judge用邻近日期推断得到正确标签；指标改善不等同找回日期证据。",
+    "uncertainty": "回查不是完整gold evidence集合；未用医生标签反向修改正式检索结果。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "474161",
+        "start": 639,
+        "quote": "Pt with right lower lung collapse"
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "though no note on exact date"
+      }
+    ]
+  },
+  {
+    "case_id": "N644",
+    "observation": "B由S退NS，保留8-8ground solids建议和8-9starting POs，却失去8-10 Cont TPN and ground diet及8-11回顾已经advanced的记录。A/C有这些互补材料。",
+    "interpretation": "B确实丢失由建议到实施的状态证据，体现时间互补记录的价值，不只是药食关键词是否出现。",
+    "uncertainty": "8-10回顾覆盖8-9有时间推断，未作干预验证；不能把一切recommendation都当已实施。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "471721",
+        "start": 1904,
+        "quote": "Cont TPN and ground diet."
+      },
+      {
+        "kind": "ehr",
+        "note_id": "472092",
+        "start": 0,
+        "quote": "was advanced to\nthin liquids and ground solids last week"
+      }
+    ]
+  },
+  {
+    "case_id": "N071",
+    "observation": "C由NA改为GT的NS，三臂只有Definity检查头及心包结论、另有较早cannot exclude clot，C用早期不确定性判断NS。回查完整5-22 Definity报告实际写No apical thrombus等，已入索引但三臂未选。",
+    "interpretation": "C的名义改善未恢复目标检查结果，反而依赖先前检查；本例暴露每note上限/排序与评价语境边界，不能把GT一致性当正确证据理解。",
+    "uncertainty": "原医生NS与后期报告文字不一致的原因不能擅自归为标错，可能涉及标注时间/上下文；不改GT、不删案例。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "99065",
+        "start": 0,
+        "quote": "Contrast: Definity"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "99065",
+        "start": 709,
+        "quote": "IMPRESSION: No apical thrombus."
+      },
+      {
+        "kind": "judge",
+        "method": "C48",
+        "quote": "which contradicts the proposition's claim of no clot"
+      }
+    ]
+  },
+  {
+    "case_id": "N248",
+    "observation": "B由GT的NS退为NA，三臂均有continue home lexapro，B自己也读到了，却因缺具体psych建议与实施记录判未涉及；A/C作为反向证据。",
+    "interpretation": "证据已在reference，差异发生在复合命题的反证与关系缺失如何落入NS/NA。",
+    "uncertainty": "lexapro计划不等同每次实际给药；但不能据B的最终标签声称模型完全没看到反证。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "637737",
+        "start": 7727,
+        "quote": "PTSD: continue home lexapro"
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "it only shows continuation as part of the plan"
+      }
+    ]
+  },
+  {
+    "case_id": "N339",
+    "observation": "B/C从NA改成GT的NS，但未恢复超声真正结果。A/C有NECK VENOUS ULTRASOUND标题，B换成CT question的检查适应证并误称该记录为CT报告。",
+    "interpretation": "名义改善主要是缺结果时选NS或NA的边界；B还因标题断开错误判断检查模态。",
+    "uncertainty": "不能把提及损伤或检查计划自动当检查证实，亦不能从一个空标题断言报告原文无结果。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "1069432",
+        "start": 891,
+        "quote": "NECK VENOUS ULTRASOUND:"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "1069432",
+        "start": 585,
+        "quote": "CT with question of brachiocephalic dissection."
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "the radiology note concerns CT, not ultrasound"
+      }
+    ]
+  },
+  {
+    "case_id": "N356",
+    "observation": "B从NA改成GT的NS，三臂均有IVF累计量及1000mL LR药单，均没有1.5L bolus事件；B多的是另一天相似药单。",
+    "interpretation": "没有新找到决定性剂量反证，只是部分涉及与未涉及的分类差异；日累计输入量不应作为一次bolus量。",
+    "uncertainty": "完整EHR还存在其他补液事件，当前reference缺1.5L不是实际未给过的证明。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "565074",
+        "start": 0,
+        "quote": "1000 mL LR"
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "fluid totals are cumulative daily inputs, not bolus events"
+      }
+    ]
+  },
+  {
+    "case_id": "N388",
+    "observation": "C由GT的NS退S，三臂均有肺部护理和其他系统管理。A/B要求the focus具有排他性，C认为a key focus足够；C并未缺心血管反向背景。",
+    "interpretation": "焦点范围的语言/支持关系判断差异，不能由检索多了肺部片段就证明目标更正确。",
+    "uncertainty": "focus是否排他及原来源语境均不新增医学裁决；不把模型解释当内部原因证明。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "565100",
+        "start": 4552,
+        "quote": "PULM: Aggressive pulm toilet."
+      },
+      {
+        "kind": "judge",
+        "method": "A48",
+        "quote": "not the exclusive one"
+      },
+      {
+        "kind": "judge",
+        "method": "C48",
+        "quote": "other systems are also managed"
+      }
+    ]
+  },
+  {
+    "case_id": "N586",
+    "observation": "B从NA改GT的NS，新增较早右肺plugging资料，但仍无8-20左舌段目标证据；A/C有相邻日泛化支气管镜资料。",
+    "interpretation": "不同日期/部位的资料被当作反向或部分相关来选NS，不是找回原日明确反证。",
+    "uncertainty": "原claim说plugging病况，C却解释成plugging procedure；不可将执行者或Judge改释当GT。8-20有bronch不等于已知左舌段结果。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "1086842",
+        "start": 2407,
+        "quote": "Right lung base atelectasis with proximal mucus plugging."
+      },
+      {
+        "kind": "judge",
+        "method": "C48",
+        "quote": "plugging procedure"
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "014": {
+    "total": 12374,
+    "strict": 12332,
+    "mutable_changed": [
+      ".gitattributes",
+      "reviews/README.md"
+    ],
+    "registered": 0
+  },
+  "015": {
+    "total": 13202,
+    "strict": 13157,
+    "mutable_changed": [
+      ".gitattributes",
+      "outputs/014_qwen27b_baseline_comparison/README.md",
+      "reviews/README.md",
+      "tasks/014_qwen27b_baseline_comparison/README.md"
+    ],
+    "registered": 1
+  },
+  "original_task_changes_only": [
+    "tasks/014_qwen27b_baseline_comparison/README.md",
+    "tasks/014_qwen27b_baseline_comparison/verify014.py",
+    "outputs/014_qwen27b_baseline_comparison/README.md",
+    "tasks/015_disagreement_adjudication/README.md",
+    "tasks/015_disagreement_adjudication/verify015.py",
+    "outputs/015_disagreement_adjudication/README.md"
+  ]
+}

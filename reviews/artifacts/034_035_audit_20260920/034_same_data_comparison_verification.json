@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "n": 3675,
+  "patients": 40,
+  "checks": [
+    "unique_ids",
+    "all_metrics_exact",
+    "all_primary_pairs_exact"
+  ]
+}

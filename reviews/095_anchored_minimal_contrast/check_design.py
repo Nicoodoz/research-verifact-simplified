@@ -22,7 +22,7 @@ for j in rows(P/'construct_jobs.jsonl'):
     assert u=={'claim':x['text'],'reference':x['reference']}
     assert b['enable_thinking'] is False and b['model']=='deepseek-v4-flash-0731'
     assert j['phase']=='method'
-ref='1. Date: [CLINICAL_LITERAL_REMOVED], Time: 12:00:00, Note Category: Synthetic, Note ID: synthetic, Raw characters: [0,32) | Text: Dose was increased to 20 mg daily.'
+ref='1. Date: 2100-01-01, Time: 12:00:00, Note Category: Synthetic, Note ID: synthetic, Raw characters: [0,32) | Text: Dose was increased to 20 mg daily.'
 r={'text':'Dose was increased to 10 mg daily.','reference':ref}
 v=m.validate({'applicable':True,'attribute':'number','old_span':'10','new_span':'20','source_value':'20','anchors':[{'reference_id':1,'quote':'Dose was increased to 20 mg daily.'}]},r)
 assert v['valid'] and v['alternative']=='Dose was increased to 20 mg daily.'

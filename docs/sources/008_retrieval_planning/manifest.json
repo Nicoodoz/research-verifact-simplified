@@ -1,0 +1,45 @@
+{
+  "fetched_utc": "2026-09-14T14:12:34.870561+00:00",
+  "sources": [
+    {
+      "file": "query2doc.pdf",
+      "url": "https://aclanthology.org/2023.emnlp-main.585.pdf",
+      "sha256": "b3026d44fed97a360bfa269d9e028a6ff233fa89b119bf823e1fe0f16963db86"
+    },
+    {
+      "file": "query_rewriting.pdf",
+      "url": "https://aclanthology.org/2023.emnlp-main.322.pdf",
+      "sha256": "47f985749bc248b330dd5b965a2c072413017972523f052c5702ae22f3bd75e3"
+    },
+    {
+      "file": "rarr.pdf",
+      "url": "https://aclanthology.org/2023.acl-long.910.pdf",
+      "sha256": "012e1231dc847c4cee6c7cb0e6ffee43f5799f70754930c815db1674ceffeab9"
+    },
+    {
+      "file": "pricing.html",
+      "url": "https://siliconflow.cn/pricing",
+      "sha256": "048d31e7467236951cbc0d72cb057cfe3a14f6d5df72ff2b5286340aeb09d08b"
+    },
+    {
+      "file": "embedding_api.html",
+      "url": "https://api-docs.siliconflow.cn/docs/api/embeddings-post",
+      "sha256": "dac0f75529f73e8eb0cd4ecadff83e656fd405e57bad504497576e605361b016"
+    },
+    {
+      "file": "rerank_api.html",
+      "url": "https://api-docs.siliconflow.cn/docs/api/rerank-post",
+      "sha256": "cd7fd7c383d131caf89f382289478ba6bd54f4622e0f03fe711d7b451e840813"
+    },
+    {
+      "file": "release_notes.html",
+      "url": "https://docs.siliconflow.cn/docs/release-notes/overview",
+      "sha256": "e1892d8fd3c6a1d36b7a2e3d7efcf7728d57c36e7160c19139cd62dbf8f065a0"
+    },
+    {
+      "file": "bge_m3_card.md",
+      "url": "https://huggingface.co/BAAI/bge-m3/raw/main/README.md",
+      "sha256": "0b81ccf9134e5874d620a86e6905062ea999e779c34eb1a7e65eaeb7fe00e450"
+    }
+  ]
+}

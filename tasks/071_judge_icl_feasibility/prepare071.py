@@ -131,7 +131,7 @@ def main():
     jsonl(OUT / "main_jobs.jsonl", alljobs)
     preflight = copy.deepcopy(jobs053[(evaluable[0]["id"], "T-S")]["body"])
     preflight["messages"][-1]["content"] = json.dumps({"proposition": "The patient received aspirin.",
-        "reference": "Hospital Admission Start: [CLINICAL_LITERAL_REMOVED] 00:00:00\nElectronic Health Record Context\n1. Date: [CLINICAL_LITERAL_REMOVED], Time: 01:00:00, Note Category: Nursing, Note ID: 1 | Text: Aspirin administered to the patient."},
+        "reference": "Hospital Admission Start: 2100-01-01 00:00:00\nElectronic Health Record Context\n1. Date: 2100-01-01, Time: 01:00:00, Note Category: Nursing, Note ID: 1 | Text: Aspirin administered to the patient."},
         ensure_ascii=False, separators=(",", ":"))
     write(OUT / "preflight_body.json", preflight)
     freeze = {"status": "FROZEN_BEFORE_071_API", "patient_order": patient_order,

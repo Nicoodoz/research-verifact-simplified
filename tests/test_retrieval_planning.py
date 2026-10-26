@@ -38,7 +38,7 @@ class PlanningTests(unittest.TestCase):
     def test_terminology_normalization_and_negation(self):
         self.assertEqual(pc.tokenize("post-bypass"),pc.tokenize("POSTBYPASS"))
         self.assertIn("not",pc.tokenize("It was not performed."))
-        self.assertNotIn("lastname",pc.tokenize("[CLINICAL_LITERAL_REMOVED]"))
+        self.assertNotIn("lastname",pc.tokenize("[**Known lastname 12**]"))
 
     def test_source_never_redefines_claim_and_quote_validation(self):
         item=dict(text="A procedure occurred.",source=dict(local="On day 5 a procedure occurred."))

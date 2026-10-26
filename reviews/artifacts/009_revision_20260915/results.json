@@ -1,0 +1,63 @@
+{
+  "head": "42d28c4909b901056207c6770e1be733998123cf",
+  "revision_handoff_sha256": "9ada325eaa988ca73906c39c9cdaf4a08b6b9671041d4f53b29f735171a7e7f7",
+  "revision_handoff_files_matched": 3288,
+  "old_handoff_changed": [
+    "outputs/009_retrieval_baselines/README.md",
+    "tasks/009_retrieval_baselines/README.md",
+    "tasks/009_retrieval_baselines/verify009.py"
+  ],
+  "old_handoff_unchanged": 3111,
+  "old_verifier_snapshot_matches": true,
+  "prior_audit_files_preserved": 46,
+  "negative_controls": [
+    "input.json",
+    "receipt.json",
+    "predictions.csv",
+    "verification.json",
+    "score.py",
+    "config.json",
+    "verifier bound as experimental computation",
+    "verifier listed as strict dependency"
+  ],
+  "inference_calls": 0,
+  "actual_workspace_snapshot": {
+    "git_head": "42d28c4909b901056207c6770e1be733998123cf",
+    "tracked_changes": [
+      "AGENTS.md",
+      "README.md",
+      "reviews/README.md"
+    ],
+    "workspace_changes_policy": "informational_only; frozen materials and computational code remain strict"
+  },
+  "unrelated_workspace_changes_informational": true,
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "network_disabled": true,
+    "run": 146,
+    "success": true
+  },
+  "replay_files_identical": 109,
+  "provider_tokens_unchanged": true,
+  "historical_verifier_provenance": [
+    {
+      "code": "tasks/009_retrieval_baselines/verify009.py",
+      "current_sha256": "e6e6d57eff6d6ffac34b83cc6a2d82c63e97cf8f96c7b9ac457381bd0bb3ec67",
+      "manifest": "outputs/009_retrieval_baselines/revision_001/verification_001/manifest.json",
+      "matches": true,
+      "recorded_sha256": "e6e6d57eff6d6ffac34b83cc6a2d82c63e97cf8f96c7b9ac457381bd0bb3ec67",
+      "role": "historical_verifier_provenance_not_experimental_computation"
+    },
+    {
+      "code": "tasks/009_retrieval_baselines/verify009.py",
+      "current_sha256": "e6e6d57eff6d6ffac34b83cc6a2d82c63e97cf8f96c7b9ac457381bd0bb3ec67",
+      "manifest": "outputs/009_retrieval_baselines/verification_001/manifest.json",
+      "matches": false,
+      "recorded_sha256": "71e6c0584a9eb49bdb23e31b77c12c68d9311b2f32c35fa246f3adbef19ef39a",
+      "role": "historical_verifier_provenance_not_experimental_computation"
+    }
+  ],
+  "replay_complete_with_review_index_modified": true,
+  "revision_handoff_unchanged_after_audit": true
+}

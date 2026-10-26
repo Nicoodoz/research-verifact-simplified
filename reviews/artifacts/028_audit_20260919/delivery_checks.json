@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "frozen_files_unchanged": 785,
+  "current_local_links_checked": 329,
+  "unchanged_files": [
+    ".gitignore",
+    "environment.yml",
+    "docs/API_POLICY.md"
+  ],
+  "secret_scan_files": 707,
+  "secret_matches": 0,
+  "no_new_api_calls": true,
+  "staged_blob_parity_files": 715,
+  "whitespace_warnings_preserved_in_frozen_files": [
+    "outputs/028_traceable_claim_evidence_verification/figures_001/risk_rescue.svg"
+  ]
+}

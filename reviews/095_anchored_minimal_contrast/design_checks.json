@@ -1,0 +1,13 @@
+{
+  "status": "PASS scoped structural design checks",
+  "N": 300,
+  "extension_N": 600,
+  "GT_input_whitelist_verified": true,
+  "E_C_only_alternative_difference_verified": true,
+  "synthetic_source_validation_verified": true,
+  "source_freeze": {
+    "tasks\\095_anchored_minimal_contrast\\workflow095.py": "feaef17be40bc3a8b7874590ae51a594339ee7d9c0880eda92a504cca430c538",
+    "tasks\\095_anchored_minimal_contrast\\decision_clarification.md": "8a96a05eeaa2608b17b9f86f2db8e3fcbf50c79d61297092289c7bccbac30955",
+    "tasks\\095_anchored_minimal_contrast\\method095.py": "80bf738c39fa0ea81a97d1783b0e795700cbb3b81c9edc7abc53d0cbe6df3535"
+  }
+}

@@ -1,0 +1,738 @@
+{
+  "api_calls": 0,
+  "network_blocked": true,
+  "independent_audit": false,
+  "mutable_update_full_replays": {
+    "014": {
+      "tests": 196,
+      "tests_passed": true,
+      "replayed_content_files": 65,
+      "history_validation": {
+        "total_historical_entries": 12374,
+        "strict_unchanged_files": 12332,
+        "mutable_entries": [
+          {
+            "path": ".gitattributes",
+            "historical_sha256": "c047b77cd794e68fe108995e5626d2554ba8d4200a8b745ebe9ffc08186e3414",
+            "current_sha256": "050865b6434e7d8252037b896bef3027061e08bd232444471bb481172f3eedd4",
+            "changed": true,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "docs/siliconflow_pool/README.md",
+            "historical_sha256": "e24dc8e238d3cec56d104d5b70b207adbc50de1c2ee0eb4f4c2482dcd00fc6e2",
+            "current_sha256": "e24dc8e238d3cec56d104d5b70b207adbc50de1c2ee0eb4f4c2482dcd00fc6e2",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/001_dataset_audit/README.md",
+            "historical_sha256": "31df1d6357aca7ae7eccf4488cdfa550503c837e825b3d9c7e38a9fdd1abacea",
+            "current_sha256": "31df1d6357aca7ae7eccf4488cdfa550503c837e825b3d9c7e38a9fdd1abacea",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/002_reproduce_paper_results/README.md",
+            "historical_sha256": "79467a0645f31bbc88e7fe86b8be063ced9ddf3857bee444d468232bb7bbc582",
+            "current_sha256": "79467a0645f31bbc88e7fe86b8be063ced9ddf3857bee444d468232bb7bbc582",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/003_error_analysis/README.md",
+            "historical_sha256": "49b29971966a3dc549c08c5a7c56e9112789da13fab4deba388c4a4987194009",
+            "current_sha256": "49b29971966a3dc549c08c5a7c56e9112789da13fab4deba388c4a4987194009",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/004_event_alignment_pilot/README.md",
+            "historical_sha256": "0187c245c5b28e8a3ee4d02f3508675b9877943b0e74fa0a1e4d374dd1a3bb89",
+            "current_sha256": "0187c245c5b28e8a3ee4d02f3508675b9877943b0e74fa0a1e4d374dd1a3bb89",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/005_pilot_effect_analysis/README.md",
+            "historical_sha256": "a3c943f18b54cbf0655d15bcebe54c5f699c5d9a9c5ec4feab7c95c43fda8a53",
+            "current_sha256": "a3c943f18b54cbf0655d15bcebe54c5f699c5d9a9c5ec4feab7c95c43fda8a53",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/006_source_context_feasibility/README.md",
+            "historical_sha256": "4022df340086a7b0c0e399c987136d7f41ed1b89a2697a324a698342d31296b3",
+            "current_sha256": "4022df340086a7b0c0e399c987136d7f41ed1b89a2697a324a698342d31296b3",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/007_context_retrieval/README.md",
+            "historical_sha256": "0eacad73dfad664116e8ad571c48f08b93deb9319c89557bd49790dfd273fb8b",
+            "current_sha256": "0eacad73dfad664116e8ad571c48f08b93deb9319c89557bd49790dfd273fb8b",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/008_retrieval_planning/README.md",
+            "historical_sha256": "3d46a94ecae7cc485d8086cf7641ba4567ccce23950601009e26bb3cf3edb8f1",
+            "current_sha256": "3d46a94ecae7cc485d8086cf7641ba4567ccce23950601009e26bb3cf3edb8f1",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/009_retrieval_baselines/README.md",
+            "historical_sha256": "62122429fd2314b091b036f8180b259117080f175147209f80dff03e97b4eade",
+            "current_sha256": "62122429fd2314b091b036f8180b259117080f175147209f80dff03e97b4eade",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/010_verifact_baseline_alignment/README.md",
+            "historical_sha256": "71421416fb1f02c97c1b8e896b7a1f05123f268a3fab5e528366fc9e3e8cce4e",
+            "current_sha256": "71421416fb1f02c97c1b8e896b7a1f05123f268a3fab5e528366fc9e3e8cce4e",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/011_evidence_integrity_packaging/README.md",
+            "historical_sha256": "84e10e5550a91445dafeadb0686a0eb7ae57dde31825ccc814910fd649b81dda",
+            "current_sha256": "84e10e5550a91445dafeadb0686a0eb7ae57dde31825ccc814910fd649b81dda",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/012_comparative_error_diagnosis/README.md",
+            "historical_sha256": "f220ebdfc83f7094018a066a64b736eff2e17b9a87408c68ec0162647cba32cd",
+            "current_sha256": "f220ebdfc83f7094018a066a64b736eff2e17b9a87408c68ec0162647cba32cd",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/013_multi_mechanism_screen/README.md",
+            "historical_sha256": "dd0663927298fea1cde8c7936dfdbef34091bc98f96f2443f6f95a4742af0d54",
+            "current_sha256": "dd0663927298fea1cde8c7936dfdbef34091bc98f96f2443f6f95a4742af0d54",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/001_dataset_audit.md",
+            "historical_sha256": "f209cc0c344bb062803de6f63de58a6c9b7459664cba0cdbab4d46e043ccdf9f",
+            "current_sha256": "f209cc0c344bb062803de6f63de58a6c9b7459664cba0cdbab4d46e043ccdf9f",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/002_reproduce_paper_results.md",
+            "historical_sha256": "b99add855679f9682b85b05cb078e4853595ce3829380b4be884559db342cdb2",
+            "current_sha256": "b99add855679f9682b85b05cb078e4853595ce3829380b4be884559db342cdb2",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/003_error_analysis.md",
+            "historical_sha256": "fe98d50269200e0f44386855ba86e929c529efbcc502a49db2bc6d688ed4df52",
+            "current_sha256": "fe98d50269200e0f44386855ba86e929c529efbcc502a49db2bc6d688ed4df52",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/004_event_alignment_pilot.md",
+            "historical_sha256": "ec3fd27491699a8ba69ba382c2d408bfc13cc7540d614e5c3e40ce510250d19c",
+            "current_sha256": "ec3fd27491699a8ba69ba382c2d408bfc13cc7540d614e5c3e40ce510250d19c",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/005_pilot_effect_analysis.md",
+            "historical_sha256": "4d2f8efa2532e1c340c3c9a4ff87960964ba1b7808789a0a9d17aac674ee62f3",
+            "current_sha256": "4d2f8efa2532e1c340c3c9a4ff87960964ba1b7808789a0a9d17aac674ee62f3",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/006_source_context_feasibility.md",
+            "historical_sha256": "d4033fc2711de3a37b468525526d6f80f000712c1fd59ab8fbc20d15b2a0e06c",
+            "current_sha256": "d4033fc2711de3a37b468525526d6f80f000712c1fd59ab8fbc20d15b2a0e06c",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/007_context_retrieval.md",
+            "historical_sha256": "03c56bb4dae6d38706f29e1f1709bce1a4b50d14ad4b5c61f1ed4ebd33b199cd",
+            "current_sha256": "03c56bb4dae6d38706f29e1f1709bce1a4b50d14ad4b5c61f1ed4ebd33b199cd",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/008_retrieval_planning.md",
+            "historical_sha256": "194c3890415fa91b049f81b9700b4e584ce4b92470a2df054c718d59ad64ee79",
+            "current_sha256": "194c3890415fa91b049f81b9700b4e584ce4b92470a2df054c718d59ad64ee79",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/009_retrieval_baselines.md",
+            "historical_sha256": "6e3740afdc1b6f25dd638eb54ab412f7277541d5f06ca93bedf4b2e2a81ec84d",
+            "current_sha256": "6e3740afdc1b6f25dd638eb54ab412f7277541d5f06ca93bedf4b2e2a81ec84d",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/010_verifact_baseline_alignment.md",
+            "historical_sha256": "27ec24ebf0b6b16ef58dcd1357bb8aca98287e052c7f67754fe3dc36931c0f93",
+            "current_sha256": "27ec24ebf0b6b16ef58dcd1357bb8aca98287e052c7f67754fe3dc36931c0f93",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/011_evidence_integrity_packaging.md",
+            "historical_sha256": "956079357ff4002cb761a0057ece2888ff81ee7a5f26a115c7690da4a7c6cfbc",
+            "current_sha256": "956079357ff4002cb761a0057ece2888ff81ee7a5f26a115c7690da4a7c6cfbc",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/012_comparative_error_diagnosis.md",
+            "historical_sha256": "be9fb873d25cf9ab2aebbdb1bee2651611ced4a3e77d4da8277936dd69935d8d",
+            "current_sha256": "be9fb873d25cf9ab2aebbdb1bee2651611ced4a3e77d4da8277936dd69935d8d",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/013_multi_mechanism_screen.md",
+            "historical_sha256": "ae352607be9077473b6d9c71ed79d1d01b0f952eb8f2ceb342a87a7415dca634",
+            "current_sha256": "985d1baf7c09de358153f845f105ddf9e9c859ac4e89aa88252e7be16114c3e7",
+            "changed": true,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/README.md",
+            "historical_sha256": "97c32ae88fbd5ac2154d338dae2c2749147c461ccf111b90511aaab60ed7f5a1",
+            "current_sha256": "eb0cd923fb38257a20adb7f106747ea8c6459fc43d38a41854878be37b35f3fe",
+            "changed": true,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/001_dataset_audit/README.md",
+            "historical_sha256": "dc1d39a7e3f26951b187b0ded95e6b9e997aef323090d9288817d7d388b99c3c",
+            "current_sha256": "dc1d39a7e3f26951b187b0ded95e6b9e997aef323090d9288817d7d388b99c3c",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/002_reproduce_paper_results/README.md",
+            "historical_sha256": "d9e7f9af120b9392cdd0180cd3c44796900a27a7e9cc8b4afd94cc33e3fd9fcc",
+            "current_sha256": "d9e7f9af120b9392cdd0180cd3c44796900a27a7e9cc8b4afd94cc33e3fd9fcc",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/003_error_analysis/README.md",
+            "historical_sha256": "40420cb715b79c89c2fdf8665614bd9ec13c22f3754cffb3e0d510c84dbefc74",
+            "current_sha256": "40420cb715b79c89c2fdf8665614bd9ec13c22f3754cffb3e0d510c84dbefc74",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/004_event_alignment_pilot/README.md",
+            "historical_sha256": "0c0d547b5026e0d4a8a8650d658c586a4bde21b118198b2c8c59d7c119a1c8b6",
+            "current_sha256": "0c0d547b5026e0d4a8a8650d658c586a4bde21b118198b2c8c59d7c119a1c8b6",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/005_pilot_effect_analysis/README.md",
+            "historical_sha256": "0d1a98ff1789f61287a622f2200be2cddf76cf749241b7e658ba06787684f288",
+            "current_sha256": "0d1a98ff1789f61287a622f2200be2cddf76cf749241b7e658ba06787684f288",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/006_source_context_feasibility/README.md",
+            "historical_sha256": "ff5cfb8f11bd04f22b099a83094efbc1ea5a1fb1b78e6242ce09610015a42f7f",
+            "current_sha256": "ff5cfb8f11bd04f22b099a83094efbc1ea5a1fb1b78e6242ce09610015a42f7f",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/007_context_retrieval/README.md",
+            "historical_sha256": "eb9a31e260ee56b28bca44b225602a4ac0d5cebf96e8162644387676cd697818",
+            "current_sha256": "eb9a31e260ee56b28bca44b225602a4ac0d5cebf96e8162644387676cd697818",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/008_retrieval_planning/README.md",
+            "historical_sha256": "679e1a691bc225f80e2f190f1bc1381435522d12803297e7f9ab9d049a5af63a",
+            "current_sha256": "679e1a691bc225f80e2f190f1bc1381435522d12803297e7f9ab9d049a5af63a",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/009_retrieval_baselines/README.md",
+            "historical_sha256": "0c567dd377383335dc79bb81f28c9f2ba60ba3131e2fe1239efbf3b40b4491f2",
+            "current_sha256": "0c567dd377383335dc79bb81f28c9f2ba60ba3131e2fe1239efbf3b40b4491f2",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/010_verifact_baseline_alignment/README.md",
+            "historical_sha256": "0911a35b2f5a15576d2e1eb1fadb00f9eb6aee31efa80b9dc2d12c5333723867",
+            "current_sha256": "0911a35b2f5a15576d2e1eb1fadb00f9eb6aee31efa80b9dc2d12c5333723867",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/011_evidence_integrity_packaging/README.md",
+            "historical_sha256": "3bae23a4efa36b86080a7897aaebeb4e4aec0eedb58f4b1569d46d73a7ea9805",
+            "current_sha256": "3bae23a4efa36b86080a7897aaebeb4e4aec0eedb58f4b1569d46d73a7ea9805",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/012_comparative_error_diagnosis/README.md",
+            "historical_sha256": "cdadcb0f6c34dfcd571f5baba93095ffd73e09c637d665e3a08d5b0ab741e94e",
+            "current_sha256": "cdadcb0f6c34dfcd571f5baba93095ffd73e09c637d665e3a08d5b0ab741e94e",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/013_multi_mechanism_screen/README.md",
+            "historical_sha256": "7828943f8c96a44b2ec6170a8ca4e6b5365a9d0c14623f35891617d55a574bca",
+            "current_sha256": "7828943f8c96a44b2ec6170a8ca4e6b5365a9d0c14623f35891617d55a574bca",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          }
+        ],
+        "registered_verifier_revisions": [],
+        "policy": "exact top-level navigation/status allowlist; all other history strict; experiment manifests always strict"
+      }
+    },
+    "015": {
+      "tests": 196,
+      "tests_passed": true,
+      "replayed_content_files": 60,
+      "history_validation": {
+        "total_historical_entries": 13202,
+        "strict_unchanged_files": 13157,
+        "mutable_entries": [
+          {
+            "path": ".gitattributes",
+            "historical_sha256": "c047b77cd794e68fe108995e5626d2554ba8d4200a8b745ebe9ffc08186e3414",
+            "current_sha256": "050865b6434e7d8252037b896bef3027061e08bd232444471bb481172f3eedd4",
+            "changed": true,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "docs/siliconflow_pool/README.md",
+            "historical_sha256": "e24dc8e238d3cec56d104d5b70b207adbc50de1c2ee0eb4f4c2482dcd00fc6e2",
+            "current_sha256": "e24dc8e238d3cec56d104d5b70b207adbc50de1c2ee0eb4f4c2482dcd00fc6e2",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/001_dataset_audit/README.md",
+            "historical_sha256": "31df1d6357aca7ae7eccf4488cdfa550503c837e825b3d9c7e38a9fdd1abacea",
+            "current_sha256": "31df1d6357aca7ae7eccf4488cdfa550503c837e825b3d9c7e38a9fdd1abacea",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/002_reproduce_paper_results/README.md",
+            "historical_sha256": "79467a0645f31bbc88e7fe86b8be063ced9ddf3857bee444d468232bb7bbc582",
+            "current_sha256": "79467a0645f31bbc88e7fe86b8be063ced9ddf3857bee444d468232bb7bbc582",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/003_error_analysis/README.md",
+            "historical_sha256": "49b29971966a3dc549c08c5a7c56e9112789da13fab4deba388c4a4987194009",
+            "current_sha256": "49b29971966a3dc549c08c5a7c56e9112789da13fab4deba388c4a4987194009",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/004_event_alignment_pilot/README.md",
+            "historical_sha256": "0187c245c5b28e8a3ee4d02f3508675b9877943b0e74fa0a1e4d374dd1a3bb89",
+            "current_sha256": "0187c245c5b28e8a3ee4d02f3508675b9877943b0e74fa0a1e4d374dd1a3bb89",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/005_pilot_effect_analysis/README.md",
+            "historical_sha256": "a3c943f18b54cbf0655d15bcebe54c5f699c5d9a9c5ec4feab7c95c43fda8a53",
+            "current_sha256": "a3c943f18b54cbf0655d15bcebe54c5f699c5d9a9c5ec4feab7c95c43fda8a53",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/006_source_context_feasibility/README.md",
+            "historical_sha256": "4022df340086a7b0c0e399c987136d7f41ed1b89a2697a324a698342d31296b3",
+            "current_sha256": "4022df340086a7b0c0e399c987136d7f41ed1b89a2697a324a698342d31296b3",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/007_context_retrieval/README.md",
+            "historical_sha256": "0eacad73dfad664116e8ad571c48f08b93deb9319c89557bd49790dfd273fb8b",
+            "current_sha256": "0eacad73dfad664116e8ad571c48f08b93deb9319c89557bd49790dfd273fb8b",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/008_retrieval_planning/README.md",
+            "historical_sha256": "3d46a94ecae7cc485d8086cf7641ba4567ccce23950601009e26bb3cf3edb8f1",
+            "current_sha256": "3d46a94ecae7cc485d8086cf7641ba4567ccce23950601009e26bb3cf3edb8f1",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/009_retrieval_baselines/README.md",
+            "historical_sha256": "62122429fd2314b091b036f8180b259117080f175147209f80dff03e97b4eade",
+            "current_sha256": "62122429fd2314b091b036f8180b259117080f175147209f80dff03e97b4eade",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/010_verifact_baseline_alignment/README.md",
+            "historical_sha256": "71421416fb1f02c97c1b8e896b7a1f05123f268a3fab5e528366fc9e3e8cce4e",
+            "current_sha256": "71421416fb1f02c97c1b8e896b7a1f05123f268a3fab5e528366fc9e3e8cce4e",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/011_evidence_integrity_packaging/README.md",
+            "historical_sha256": "84e10e5550a91445dafeadb0686a0eb7ae57dde31825ccc814910fd649b81dda",
+            "current_sha256": "84e10e5550a91445dafeadb0686a0eb7ae57dde31825ccc814910fd649b81dda",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/012_comparative_error_diagnosis/README.md",
+            "historical_sha256": "f220ebdfc83f7094018a066a64b736eff2e17b9a87408c68ec0162647cba32cd",
+            "current_sha256": "f220ebdfc83f7094018a066a64b736eff2e17b9a87408c68ec0162647cba32cd",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/013_multi_mechanism_screen/README.md",
+            "historical_sha256": "dd0663927298fea1cde8c7936dfdbef34091bc98f96f2443f6f95a4742af0d54",
+            "current_sha256": "dd0663927298fea1cde8c7936dfdbef34091bc98f96f2443f6f95a4742af0d54",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "outputs/014_qwen27b_baseline_comparison/README.md",
+            "historical_sha256": "17b66028b1fdd9b420564a8d72b8457843fef37a42f2768901d38fcb3c77454e",
+            "current_sha256": "26b7a85b9603373c6486f08b1f7da33932bbe17ce4582e11807e0cd4f66859c9",
+            "changed": true,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/001_dataset_audit.md",
+            "historical_sha256": "f209cc0c344bb062803de6f63de58a6c9b7459664cba0cdbab4d46e043ccdf9f",
+            "current_sha256": "f209cc0c344bb062803de6f63de58a6c9b7459664cba0cdbab4d46e043ccdf9f",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/002_reproduce_paper_results.md",
+            "historical_sha256": "b99add855679f9682b85b05cb078e4853595ce3829380b4be884559db342cdb2",
+            "current_sha256": "b99add855679f9682b85b05cb078e4853595ce3829380b4be884559db342cdb2",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/003_error_analysis.md",
+            "historical_sha256": "fe98d50269200e0f44386855ba86e929c529efbcc502a49db2bc6d688ed4df52",
+            "current_sha256": "fe98d50269200e0f44386855ba86e929c529efbcc502a49db2bc6d688ed4df52",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/004_event_alignment_pilot.md",
+            "historical_sha256": "ec3fd27491699a8ba69ba382c2d408bfc13cc7540d614e5c3e40ce510250d19c",
+            "current_sha256": "ec3fd27491699a8ba69ba382c2d408bfc13cc7540d614e5c3e40ce510250d19c",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/005_pilot_effect_analysis.md",
+            "historical_sha256": "4d2f8efa2532e1c340c3c9a4ff87960964ba1b7808789a0a9d17aac674ee62f3",
+            "current_sha256": "4d2f8efa2532e1c340c3c9a4ff87960964ba1b7808789a0a9d17aac674ee62f3",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/006_source_context_feasibility.md",
+            "historical_sha256": "d4033fc2711de3a37b468525526d6f80f000712c1fd59ab8fbc20d15b2a0e06c",
+            "current_sha256": "d4033fc2711de3a37b468525526d6f80f000712c1fd59ab8fbc20d15b2a0e06c",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/007_context_retrieval.md",
+            "historical_sha256": "03c56bb4dae6d38706f29e1f1709bce1a4b50d14ad4b5c61f1ed4ebd33b199cd",
+            "current_sha256": "03c56bb4dae6d38706f29e1f1709bce1a4b50d14ad4b5c61f1ed4ebd33b199cd",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/008_retrieval_planning.md",
+            "historical_sha256": "194c3890415fa91b049f81b9700b4e584ce4b92470a2df054c718d59ad64ee79",
+            "current_sha256": "194c3890415fa91b049f81b9700b4e584ce4b92470a2df054c718d59ad64ee79",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/009_retrieval_baselines.md",
+            "historical_sha256": "6e3740afdc1b6f25dd638eb54ab412f7277541d5f06ca93bedf4b2e2a81ec84d",
+            "current_sha256": "6e3740afdc1b6f25dd638eb54ab412f7277541d5f06ca93bedf4b2e2a81ec84d",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/010_verifact_baseline_alignment.md",
+            "historical_sha256": "27ec24ebf0b6b16ef58dcd1357bb8aca98287e052c7f67754fe3dc36931c0f93",
+            "current_sha256": "27ec24ebf0b6b16ef58dcd1357bb8aca98287e052c7f67754fe3dc36931c0f93",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/011_evidence_integrity_packaging.md",
+            "historical_sha256": "956079357ff4002cb761a0057ece2888ff81ee7a5f26a115c7690da4a7c6cfbc",
+            "current_sha256": "956079357ff4002cb761a0057ece2888ff81ee7a5f26a115c7690da4a7c6cfbc",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/012_comparative_error_diagnosis.md",
+            "historical_sha256": "be9fb873d25cf9ab2aebbdb1bee2651611ced4a3e77d4da8277936dd69935d8d",
+            "current_sha256": "be9fb873d25cf9ab2aebbdb1bee2651611ced4a3e77d4da8277936dd69935d8d",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/013_multi_mechanism_screen.md",
+            "historical_sha256": "ae352607be9077473b6d9c71ed79d1d01b0f952eb8f2ceb342a87a7415dca634",
+            "current_sha256": "985d1baf7c09de358153f845f105ddf9e9c859ac4e89aa88252e7be16114c3e7",
+            "changed": true,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "reviews/README.md",
+            "historical_sha256": "97c32ae88fbd5ac2154d338dae2c2749147c461ccf111b90511aaab60ed7f5a1",
+            "current_sha256": "eb0cd923fb38257a20adb7f106747ea8c6459fc43d38a41854878be37b35f3fe",
+            "changed": true,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/001_dataset_audit/README.md",
+            "historical_sha256": "dc1d39a7e3f26951b187b0ded95e6b9e997aef323090d9288817d7d388b99c3c",
+            "current_sha256": "dc1d39a7e3f26951b187b0ded95e6b9e997aef323090d9288817d7d388b99c3c",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/002_reproduce_paper_results/README.md",
+            "historical_sha256": "d9e7f9af120b9392cdd0180cd3c44796900a27a7e9cc8b4afd94cc33e3fd9fcc",
+            "current_sha256": "d9e7f9af120b9392cdd0180cd3c44796900a27a7e9cc8b4afd94cc33e3fd9fcc",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/003_error_analysis/README.md",
+            "historical_sha256": "40420cb715b79c89c2fdf8665614bd9ec13c22f3754cffb3e0d510c84dbefc74",
+            "current_sha256": "40420cb715b79c89c2fdf8665614bd9ec13c22f3754cffb3e0d510c84dbefc74",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/004_event_alignment_pilot/README.md",
+            "historical_sha256": "0c0d547b5026e0d4a8a8650d658c586a4bde21b118198b2c8c59d7c119a1c8b6",
+            "current_sha256": "0c0d547b5026e0d4a8a8650d658c586a4bde21b118198b2c8c59d7c119a1c8b6",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/005_pilot_effect_analysis/README.md",
+            "historical_sha256": "0d1a98ff1789f61287a622f2200be2cddf76cf749241b7e658ba06787684f288",
+            "current_sha256": "0d1a98ff1789f61287a622f2200be2cddf76cf749241b7e658ba06787684f288",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/006_source_context_feasibility/README.md",
+            "historical_sha256": "ff5cfb8f11bd04f22b099a83094efbc1ea5a1fb1b78e6242ce09610015a42f7f",
+            "current_sha256": "ff5cfb8f11bd04f22b099a83094efbc1ea5a1fb1b78e6242ce09610015a42f7f",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/007_context_retrieval/README.md",
+            "historical_sha256": "eb9a31e260ee56b28bca44b225602a4ac0d5cebf96e8162644387676cd697818",
+            "current_sha256": "eb9a31e260ee56b28bca44b225602a4ac0d5cebf96e8162644387676cd697818",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/008_retrieval_planning/README.md",
+            "historical_sha256": "679e1a691bc225f80e2f190f1bc1381435522d12803297e7f9ab9d049a5af63a",
+            "current_sha256": "679e1a691bc225f80e2f190f1bc1381435522d12803297e7f9ab9d049a5af63a",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/009_retrieval_baselines/README.md",
+            "historical_sha256": "0c567dd377383335dc79bb81f28c9f2ba60ba3131e2fe1239efbf3b40b4491f2",
+            "current_sha256": "0c567dd377383335dc79bb81f28c9f2ba60ba3131e2fe1239efbf3b40b4491f2",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/010_verifact_baseline_alignment/README.md",
+            "historical_sha256": "0911a35b2f5a15576d2e1eb1fadb00f9eb6aee31efa80b9dc2d12c5333723867",
+            "current_sha256": "0911a35b2f5a15576d2e1eb1fadb00f9eb6aee31efa80b9dc2d12c5333723867",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/011_evidence_integrity_packaging/README.md",
+            "historical_sha256": "3bae23a4efa36b86080a7897aaebeb4e4aec0eedb58f4b1569d46d73a7ea9805",
+            "current_sha256": "3bae23a4efa36b86080a7897aaebeb4e4aec0eedb58f4b1569d46d73a7ea9805",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/012_comparative_error_diagnosis/README.md",
+            "historical_sha256": "cdadcb0f6c34dfcd571f5baba93095ffd73e09c637d665e3a08d5b0ab741e94e",
+            "current_sha256": "cdadcb0f6c34dfcd571f5baba93095ffd73e09c637d665e3a08d5b0ab741e94e",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/013_multi_mechanism_screen/README.md",
+            "historical_sha256": "7828943f8c96a44b2ec6170a8ca4e6b5365a9d0c14623f35891617d55a574bca",
+            "current_sha256": "7828943f8c96a44b2ec6170a8ca4e6b5365a9d0c14623f35891617d55a574bca",
+            "changed": false,
+            "role": "navigation_or_audit_status_not_computation"
+          },
+          {
+            "path": "tasks/014_qwen27b_baseline_comparison/README.md",
+            "historical_sha256": "0a4f4c65ce8d383b7468579fba93d24e1966d6f0a1b130aa21cbf598c3ca7648",
+            "current_sha256": "7c4cd4294a8d2a3c5032fac0dbeb4ad33a608d3819c8805d2cde9e1d2ba2b499",
+            "changed": true,
+            "role": "navigation_or_audit_status_not_computation"
+          }
+        ],
+        "registered_verifier_revisions": [
+          {
+            "path": "tasks/014_qwen27b_baseline_comparison/verify014.py",
+            "original_path": "outputs/014_qwen27b_baseline_comparison/revision_001/original/tasks/014_qwen27b_baseline_comparison/verify014.py",
+            "original_sha256": "b68550aba8c495e75046e13817d88cbd3c3f3298f6274e2a9fac97e9af2f55ba",
+            "current_sha256": "c87b4d88b3cc36ead24912d690cf5c64aec5d460d22d016e33909552441f6ca5",
+            "role": "explicit_replay_only_revision"
+          }
+        ],
+        "policy": "exact top-level navigation/status allowlist; all other history strict; experiment manifests always strict"
+      }
+    }
+  },
+  "isolated_document_edits": [
+    "reviews/README.md",
+    "reviews/013_multi_mechanism_screen.md",
+    "tasks/014_qwen27b_baseline_comparison/README.md",
+    "outputs/014_qwen27b_baseline_comparison/README.md",
+    ".gitattributes"
+  ],
+  "frozen_tampering_rejected": [
+    {
+      "task": "014",
+      "category": "input",
+      "path": "outputs/014_qwen27b_baseline_comparison/preparation_001/jobs.jsonl",
+      "rejected": true,
+      "error": "Frozen file changed: outputs/014_qwen27b_baseline_comparison/preparation_001/jobs.jsonl"
+    },
+    {
+      "task": "014",
+      "category": "receipt",
+      "path": "outputs/014_qwen27b_baseline_comparison/live/receipt_000001_01.json",
+      "rejected": true,
+      "error": "Receipt hash mismatch"
+    },
+    {
+      "task": "014",
+      "category": "computation",
+      "path": "tasks/014_qwen27b_baseline_comparison/common014.py",
+      "rejected": true,
+      "error": "Frozen file changed: tasks/014_qwen27b_baseline_comparison/common014.py"
+    },
+    {
+      "task": "014",
+      "category": "configuration",
+      "path": "outputs/014_qwen27b_baseline_comparison/authority_001.json",
+      "rejected": true,
+      "error": "Authority changed"
+    },
+    {
+      "task": "014",
+      "category": "metrics",
+      "path": "outputs/014_qwen27b_baseline_comparison/analysis_001/metrics.json",
+      "rejected": true,
+      "error": "Frozen file changed: outputs/014_qwen27b_baseline_comparison/analysis_001/metrics.json"
+    },
+    {
+      "task": "014",
+      "category": "report",
+      "path": "outputs/014_qwen27b_baseline_comparison/report.md",
+      "rejected": true,
+      "error": "Report replay mismatch"
+    },
+    {
+      "task": "015",
+      "category": "input",
+      "path": "outputs/015_disagreement_adjudication/preparation_001/jobs.jsonl",
+      "rejected": true,
+      "error": "Frozen file changed: outputs/015_disagreement_adjudication/preparation_001/jobs.jsonl"
+    },
+    {
+      "task": "015",
+      "category": "receipt",
+      "path": "outputs/015_disagreement_adjudication/live/receipt_000001_01.json",
+      "rejected": true,
+      "error": "Receipt changed"
+    },
+    {
+      "task": "015",
+      "category": "computation",
+      "path": "tasks/015_disagreement_adjudication/common015.py",
+      "rejected": true,
+      "error": "Frozen file changed: tasks/015_disagreement_adjudication/common015.py"
+    },
+    {
+      "task": "015",
+      "category": "configuration",
+      "path": "outputs/015_disagreement_adjudication/authority_001.json",
+      "rejected": true,
+      "error": "Authority changed"
+    },
+    {
+      "task": "015",
+      "category": "metrics",
+      "path": "outputs/015_disagreement_adjudication/analysis_001/metrics.json",
+      "rejected": true,
+      "error": "Frozen file changed: outputs/015_disagreement_adjudication/analysis_001/metrics.json"
+    },
+    {
+      "task": "015",
+      "category": "report",
+      "path": "outputs/015_disagreement_adjudication/report.md",
+      "rejected": true,
+      "error": "Report mismatch"
+    }
+  ],
+  "windows_checkout_files": 39,
+  "windows_checkout_identical": true
+}

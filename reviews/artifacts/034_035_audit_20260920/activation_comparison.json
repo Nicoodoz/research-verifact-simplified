@@ -1,0 +1,12 @@
+{
+  "unactivated_absolute_python": {
+    "returncode": 3228369023,
+    "stdout": "before\n",
+    "stderr": ""
+  },
+  "conda_activated_same_python": {
+    "returncode": 0,
+    "stdout": "before\nafter True [1. 2.] 0.0\n",
+    "stderr": ""
+  }
+}

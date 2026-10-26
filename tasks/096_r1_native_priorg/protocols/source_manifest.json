@@ -1,0 +1,20 @@
+[
+  {
+    "archive": "00_offline_user_prompt.md",
+    "source_sha256": "d87b359a490d94cf9a37f4edae346cd9b15ed9dd6bdab563dad1d2374198ee05",
+    "archive_sha256": "d87b359a490d94cf9a37f4edae346cd9b15ed9dd6bdab563dad1d2374198ee05",
+    "note": "task-only authorized user protocol; source user-owned file not staged; UTF8 no BOM archive"
+  },
+  {
+    "archive": "01_live_user_prompt.md",
+    "source_sha256": "c90f3abadae6bde3c11439e35960b966a23112b90d606ea9444881d43c62aa3f",
+    "archive_sha256": "ec381a281c37e752f24eccde42d5feeaf63a8add13a462835f76a51e952c988d",
+    "note": "task-only authorized user protocol; source user-owned file not staged; UTF8 no BOM archive"
+  },
+  {
+    "archive": "02_marlin_user_prompt.md",
+    "source_sha256": "1c585d6ed21c278823764aae5f916c093b4ac9478db31b1a56b8344ea0297711",
+    "archive_sha256": "9a2958bff69493f1394ab52ecab8a44941aac41f4111b38cfabd43b7c84b096f",
+    "note": "task-only authorized user protocol; source user-owned file not staged; UTF8 no BOM archive"
+  }
+]

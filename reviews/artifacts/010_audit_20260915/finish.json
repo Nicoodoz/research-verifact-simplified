@@ -1,0 +1,14 @@
+{
+  "head": "b336a6fd01755e2e6cbf1da55656826e43b51182",
+  "handoff_sha256": "4bf2736805521b8023bc882eb238572141c22ac0f8e78910e3e21bc63c7eec2d",
+  "handoff_files_unchanged": 1528,
+  "negative_controls_rejected": [
+    "input",
+    "code.py",
+    "prediction"
+  ],
+  "mutable_review_document_allowed": true,
+  "all_frozen_manifests_after_index_update_pass": true,
+  "audit_result": "PASS",
+  "new_api_calls": 0
+}

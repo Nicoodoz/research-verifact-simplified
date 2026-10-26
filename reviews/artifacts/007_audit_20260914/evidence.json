@@ -1,0 +1,69 @@
+{
+  "head": "5779189369f80261a26b8c214cc1225df2b5e818",
+  "handoff_sha256": "f1f5cf2b2f4ab989151fd7381f54d7d0d32752fe5cc1651758923cac0bc41cef",
+  "version_files": 737,
+  "started_utc": "2026-09-14T13:32:08.190767+00:00",
+  "targeted_tests": 8,
+  "status": "limited_mechanical_audit_pass",
+  "patients": [
+    "21706",
+    "55204",
+    "65399",
+    "47874"
+  ],
+  "claims": 96,
+  "indexed_spans": 3423,
+  "raw_note_coverage_checked": 562,
+  "rankings_and_references_rebuilt": 384,
+  "attempts": 404,
+  "valid": 404,
+  "account_aliases": [
+    "account_1"
+  ],
+  "costs": {
+    "primary": 4.062040800000003,
+    "supplementary": 0.108291
+  },
+  "total_estimated_cny": 4.170331800000003,
+  "same_body_groups": 30,
+  "same_body_disagree": 8,
+  "repeat_changes": 2,
+  "primary_delta": {
+    "llm": {
+      "ci95": [
+        -0.06218932396908661,
+        0.054998116969210586
+      ],
+      "delta": 0.008871935025208222
+    },
+    "human": {
+      "ci95": [
+        -0.19428963108119623,
+        0.04625255111163029
+      ],
+      "delta": -0.07178562710848546
+    }
+  },
+  "zero_budget_cases": [
+    "R031",
+    "R078",
+    "R083"
+  ],
+  "score_files_identical": {
+    "attempts.csv": true,
+    "metrics.json": true,
+    "normalized_responses.jsonl": true,
+    "predictions_claim.csv": true,
+    "predictions_local.csv": true,
+    "predictions_mixed.csv": true,
+    "predictions_sentence.csv": true,
+    "retrieval_diagnostics.csv": true,
+    "same_input_diagnostics.json": true,
+    "summary.json": true,
+    "transitions.csv": true
+  },
+  "anchors_verified": 377,
+  "submitted_files_unchanged": true,
+  "new_api_calls": 0,
+  "finished_utc": "2026-09-14T13:32:20.508583+00:00"
+}

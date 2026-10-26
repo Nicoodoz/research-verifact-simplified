@@ -1,0 +1,38 @@
+{
+  "reason": "Programmatic selected-ID backcheck corrects three initial interpretations of the reading view. The view displays changed OR cited blocks; a block not displayed in an arm can still be present but uncited. No experiment input, output, label, metric, rule or gate is changed.",
+  "overrides": {
+    "N305": {
+      "observation": "GT S，baseline S→selector NS。程序核对发现ASA given PO实际动作和Heparin药单都仍在selector最终包中；撤回初稿ASA被移除的说法。selector的Judge输出只强调Heparin无用途，未利用仍在输入的ASA动作。",
+      "interpretation": "证据集合确有其他变化，但本例不能归为ASA证据丢失。可见输出的用途/required门槛与证据利用差异更贴合事实；未提及不证明内部未读。",
+      "counterevidence": "ASA和Heparin记录真实保留，但ASA该句仍未明确具体目的；不能由执行者自动推定唯一适应证或必要性。",
+      "uncertainty": "没有单因素补回干预；不能由生成解释证明内部原因。初稿错误已经按实际入选ID修正，原GT与所有推理结果不变。",
+      "anchors": [
+        {"arm":"baseline","kind":"reference","quote":"ASA given PO to pt."},
+        {"arm":"selector","kind":"reference","quote":"ASA given PO to pt."},
+        {"arm":"selector","kind":"output","quote":"Heparin is listed without indication"}
+      ]
+    },
+    "N425": {
+      "observation": "GT S，baseline/refresh S、wide NS。程序核对确认8月5日Pt extubated at 0800片段在wide仍入选，真实rerank第5，未被舍弃；撤回初稿丢掉该时点的解释。wide输出仍只认可一次再插管，没有把这条仍在输入的拔管记录纳入其计数。",
+      "interpretation": "本例不是8月5日证据丢失的例子。reference其他部分改变后，已有事件链的使用/次数解释不同；不能将未被模型引用或阅读界面未展开误算为未输入。",
+      "counterevidence": "原baseline也从后续仍intubated推多次再插管，未见每次完整操作日志；不能由标签S证明精确次数医学金标。",
+      "uncertainty": "其他材料取舍和生成差异未隔离，不宣布单一Judge内部机制。当前结论以真实selected_ids、原文位置和新reference为准。",
+      "anchors": [
+        {"arm":"baseline","kind":"reference","quote":"Pt extubated at 0800."},
+        {"arm":"wide_candidates","kind":"reference","quote":"Pt extubated at 0800."},
+        {"arm":"wide_candidates","kind":"output","quote":"no evidence of additional reintubations"}
+      ]
+    },
+    "N644": {
+      "observation": "GT S，baseline/refresh S、wide NS。8月8吞咽试验正文和ground solids建议、8月9 starting POs、8月10 Cont TPN and ground diet都已在两包；撤回初稿称wide新增吞咽试验的说法。wide仍要求8月9逐字饮食记录而拒绝。",
+      "interpretation": "关键前后时点与吞咽试验均未丢，也不是新找回这些内容。其他reference变化伴随时间/状态支持门槛不同，不能据标签归为召回损失。",
+      "counterevidence": "8月8是条件性建议/评估，前后两天不能在所有病例自动证明中间日；原S与完整病历语境仍有解释限制。",
+      "uncertainty": "没有把时间邻接推断新标为医学金标，也不由输出未引用推断内部未考虑。程序差分优先于展示片段的直观印象。",
+      "anchors": [
+        {"arm":"baseline","kind":"reference","quote":"PO trials included ice chips, thin liquids"},
+        {"arm":"wide_candidates","kind":"reference","quote":"PO trials included ice chips, thin liquids"},
+        {"arm":"wide_candidates","kind":"output","quote":"no evidence confirms the diet on 8-9 itself"}
+      ]
+    }
+  }
+}

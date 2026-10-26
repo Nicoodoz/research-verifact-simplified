@@ -22,7 +22,7 @@ for cid,nid,lo,hi in [('N086','375697',12108,12117),('N395','564621',4589,4646),
     if cid=='N526':assert all(x['bm25'] in (79,80) and x['hybrid'] in (140,142) and x['dense'] is None and x['candidate'] is None and x['score'] is None for x in found)
 (T/'raw_trace_checks.json').write_text(json.dumps(details,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(details,ensure_ascii=False,indent=2))
-for cid,pattern in [('N086',r'No nausea|N/V|nausea, no abdominal'),('N395',r'Consults|F/u Ortho|per ortho'),('N526',r'[CLINICAL_LITERAL_REMOVED]|76 - 107|81 - 103|improved'),('N501',r'Abdominal CT|f/u CT|CT Results|CT with contrast'),('N578',r'low U/O|lasix held|hold lasix')]:
+for cid,pattern in [('N086',r'No nausea|N/V|nausea, no abdominal'),('N395',r'Consults|F/u Ortho|per ortho'),('N526',r'2166-09-01|76 - 107|81 - 103|improved'),('N501',r'Abdominal CT|f/u CT|CT Results|CT with contrast'),('N578',r'low U/O|lasix held|hold lasix')]:
     p=packets[cid];print('CASE',cid)
     for arm,ref in p['input']['references'].items():
         print('REFERENCE',arm)

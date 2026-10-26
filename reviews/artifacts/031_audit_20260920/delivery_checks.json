@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "frozen_files_unchanged": 9160,
+  "current_links_checked": 379,
+  "secret_scan_files": 9196,
+  "secret_matches": 0,
+  "unchanged": [
+    ".gitignore",
+    "environment.yml",
+    "docs/API_POLICY.md"
+  ],
+  "total_tests": 24,
+  "API_calls": 0,
+  "largest_file_bytes": 57074664,
+  "staged_blob_parity_files": 9205,
+  "whitespace_warnings_preserved_in_frozen_files": [
+    "outputs/031_training_expansion_confirmation/figures_001/risk_rescue.svg",
+    "outputs/031_training_expansion_confirmation/figures_002/risk_rescue.svg"
+  ]
+}

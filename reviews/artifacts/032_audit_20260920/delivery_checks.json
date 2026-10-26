@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "frozen_files_unchanged": 369,
+  "current_links_checked": 393,
+  "total_tests": 20,
+  "API_calls": 0,
+  "pre_delivery_checks": "pre_delivery_checks.json",
+  "replayed_head_models": 135,
+  "NLI_input_pairs_reconstructed": 54236,
+  "evaluation_files_byte_equal": 7,
+  "staged_blob_parity_files": 397,
+  "whitespace_warnings_preserved_in_frozen_files": [
+    "outputs/032_evidence_relation_correction/analysis_001/metrics.csv",
+    "outputs/032_evidence_relation_correction/analysis_001/patients.csv",
+    "outputs/032_evidence_relation_correction/analysis_001/transitions.csv"
+  ]
+}

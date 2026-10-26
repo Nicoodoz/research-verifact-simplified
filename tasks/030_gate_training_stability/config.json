@@ -1,0 +1,15 @@
+{
+  "task": "030_gate_training_stability",
+  "methods": ["A", "B", "D"],
+  "estimator": "Logistic",
+  "training_sizes": [3, 5, 8, 11, 14],
+  "repetitions": 20,
+  "hash_seed": "030-fixed-training-composition-v1",
+  "source_size": 5,
+  "source_compositions": {"mostly025": [4, 1], "mostly026": [1, 4], "mixed": [3, 2]},
+  "bootstrap_iterations": 1000,
+  "lambda": 2,
+  "reuse_exact_training_set_models": true,
+  "no_parameter_selection": true,
+  "API_calls": 0
+}

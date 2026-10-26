@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "task": "004_event_alignment_pilot",
+  "stage": "offline_preparation_only",
+  "live_inference_authorized": false,
+  "patient_count": 6,
+  "partition_sha256": "72a57beecc3ac659b9d8eaa35fd247d9eaa986b0060ff727ac505e1fc8b0dfae",
+  "reference_rater_alias": "v1.1.0-rater-121",
+  "reference_model": "R1-70B",
+  "arms": ["routine", "structured", "event_alignment"],
+  "schedule_seed": "004_event_alignment_pilot/request-order/v1:",
+  "judge": {
+    "provider": "pending_bedrock_approval",
+    "model_id": null,
+    "model_revision": null,
+    "region": null,
+    "inference_profile": null,
+    "context_window_tokens": null,
+    "tokenizer_or_counting_method": null
+  },
+  "generation": {
+    "max_output_tokens": 2048,
+    "temperature": 0.0,
+    "thinking_mode": "disabled_if_supported_otherwise_refreeze_equal_budget",
+    "seed": null,
+    "provider_parameter_mapping_verified": false
+  },
+  "budget": {
+    "successful_generations_per_proposition_per_arm": 1,
+    "content_repair_calls": 0,
+    "automatic_retries": 0,
+    "visible_explanation_word_limit": 200,
+    "structured_checks": 5,
+    "structured_to_event_instruction_word_ratio_max": 1.1,
+    "maximum_usd": null
+  },
+  "evaluation": {
+    "profile": "research_patient",
+    "iterations": 1000,
+    "missing": "error",
+    "primary_comparison": "event_alignment_minus_structured",
+    "primary_metric": "mcc",
+    "secondary_comparisons": ["event_alignment_minus_routine", "structured_minus_routine"],
+    "authors": ["llm", "human"],
+    "time_conflict_sensitivity": "exclude_flagged_ids_equally_from_all_arms_after_primary"
+  }
+}

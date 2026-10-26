@@ -1,0 +1,21 @@
+{
+  "all_equal": true,
+  "network_disabled": true,
+  "checks": {
+    "costs.json": true,
+    "cost_ledger.csv": true,
+    "coverage.json": true,
+    "decision.json": true,
+    "excluded.json": true,
+    "gate_inference.json": true,
+    "global_frontier.csv": true,
+    "metrics.json": true,
+    "missing_sensitivity.json": true,
+    "normalized.jsonl": true,
+    "paired.json": true,
+    "patients.csv": true,
+    "predictions.csv": true,
+    "summary.json": true,
+    "transitions.csv": true
+  }
+}

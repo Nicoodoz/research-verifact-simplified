@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "history_hashes": 18044,
+  "requests": 310,
+  "valid": 310,
+  "costs": {
+    "repeat": "1.868667",
+    "trace": "1.929360"
+  },
+  "total_cny": "3.798027",
+  "peak_reserved_cny": "4.872963",
+  "citations": 359,
+  "invalid_citations": 15,
+  "citation_failure_cases": 10,
+  "citation_only_veto_R": 4,
+  "requirements": 233,
+  "requirements_distribution": {
+    "1": 90,
+    "2": 53,
+    "3": 11,
+    "4": 1
+  },
+  "relation_counts": {
+    "unaddressed": 72,
+    "contradicted": 8,
+    "supported": 109,
+    "uncertain": 44
+  },
+  "matched": {
+    "025": {
+      "SD": {
+        "gain": -15.5,
+        "ci95": [
+          -43.01,
+          1.6704545454545432
+        ]
+      },
+      "repeat": {
+        "gain": -3.23076923076923,
+        "ci95": [
+          -17.26527777777778,
+          9.13564516129032
+        ]
+      },
+      "global_lambda": {
+        "gain": -10.0,
+        "ci95": [
+          -31.23392857142857,
+          0.46845194424064573
+        ]
+      }
+    },
+    "026": {
+      "SD": {
+        "gain": 1.0,
+        "ci95": [
+          -7.166666666666668,
+          13.0
+        ]
+      },
+      "repeat": {
+        "gain": 4.764705882352942,
+        "ci95": [
+          -3.1875,
+          12.0
+        ]
+      },
+      "global_lambda": {
+        "gain": 10.5,
+        "ci95": [
+          -2.0009259259259258,
+          24.0
+        ]
+      }
+    },
+    "pooled": {
+      "SD": {
+        "gain": -10.42857142857143,
+        "ci95": [
+          -39.00208333333333,
+          12.024999999999977
+        ]
+      },
+      "repeat": {
+        "gain": 2.02325581395349,
+        "ci95": [
+          -15.120261437908496,
+          16.25056818181818
+        ]
+      },
+      "global_lambda": {
+        "gain": 1.0,
+        "ci95": [
+          -21.071638655462188,
+          30.01666666666665
+        ]
+      }
+    }
+  },
+  "case_packets_bound": 11,
+  "case_anchors": 19,
+  "network_blocked": true
+}

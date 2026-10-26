@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-09-15T04:21:28.717905+00:00",
+  "audited_handoff_sha256": "4bf2736805521b8023bc882eb238572141c22ac0f8e78910e3e21bc63c7eec2d",
+  "frozen_manifests_passed_after_status_updates": 16,
+  "changed_handoff_files_only_current_docs": [
+    "AGENTS.md",
+    "README.md",
+    "outputs/010_verifact_baseline_alignment/README.md",
+    "tasks/010_verifact_baseline_alignment/README.md"
+  ],
+  "updates": {
+    "README.md": {
+      "before": "6160f02767900a7d3901f5d206ab99eea25c990bd7ab85d0c37ebffb2c4e8621",
+      "after": "d06996fc229ae87487696dd0f0dcba640149b5045dcb74364c943eb4b5c36742"
+    },
+    "AGENTS.md": {
+      "before": "3580b98d7d0fb1982e9a1d0883c286aa0726b143ed078d157d921c8dc08b7b43",
+      "after": "7b125b4271d93570003df5be6d2b88fdb334ab1ffce0cb3b9c8ec75f4c1c96ee"
+    },
+    "tasks/010_verifact_baseline_alignment/README.md": {
+      "before": "85b2a76aa6c78d06143188a9829fbc44b0bbf1331652c5d9c87692e6f2f970b3",
+      "after": "0911a35b2f5a15576d2e1eb1fadb00f9eb6aee31efa80b9dc2d12c5333723867"
+    },
+    "outputs/010_verifact_baseline_alignment/README.md": {
+      "before": "9a6f2f8b1b4db0d6fbf317ae45832813e66c68cfdb8e013d23ad33edc0a14b4e",
+      "after": "71421416fb1f02c97c1b8e896b7a1f05123f268a3fab5e528366fc9e3e8cce4e"
+    },
+    ".gitattributes": {
+      "before": "20e199b2539494cbcb8dbaaa827a53aa482837a014a7f09bf0b536e047a93da4",
+      "after": "28eb14b55c15824262fc7437ed0ed37fa785ed2de8d4bd76d51e9475180315d2"
+    },
+    "reviews/010_verifact_baseline_alignment.md": {
+      "before": "4b4a1cee7bcb885bcf4155aba1b38aef58098ea30deffd394433bcc069caf5ad",
+      "after": "27ec24ebf0b6b16ef58dcd1357bb8aca98287e052c7f67754fe3dc36931c0f93"
+    }
+  },
+  "new_api_calls": 0,
+  "environment_and_gitignore_unchanged": true
+}

@@ -1,0 +1,12 @@
+{
+  "status": "execution_reading_notes_before_reading_Judge_labels",
+  "selection": "All five accepted-plan numeric-expansion flags; not selected on final labels",
+  "not_new_medical_ground_truth": true,
+  "cases": [
+    {"case_id":"P002","observation":"Original claim only says initially recovered well from surgery. Queries add source L4-S1 and later shortness of breath/confusion. The plan explicitly calls source unverified and initially vague.","possible_explanation":"Source supplies a useful surgery referent, but later complications could compete with immediate recovery evidence.","uncertain":"Need actual candidate/selection/output comparison; keywords alone do not establish event correctness."},
+    {"case_id":"P030","observation":"A query converts the original 1.5 L to 1500 mL; the numeric flag is unit conversion, not an invented amount. Evidence-needs additionally asks for maintained BP, a source detail absent from the original claim. Queries do not add the maintenance condition.","possible_explanation":"Need-list scope expansion is visible, but only queries affect retrieval; cannot say this unused field changed the Judge target.","uncertain":"Clinical support and the BP referent require EHR inspection."},
+    {"case_id":"P035","observation":"Numeric 2 comes from PaCO2/pCO2, not a new dose or date. The plan generates diagnosis and ABG-related queries and labels terminology as synonyms/related findings.","possible_explanation":"A terminology/measurement bridge is being attempted; retrieval relevance is not diagnostic equivalence.","uncertain":"Need actual records to determine whether they support the diagnosis."},
+    {"case_id":"P130","observation":"Original claim asserts pacemaker placement without complications. Source-only POD 5 enters both evidence-needs and one query. The other query and retained original claim do not require POD 5; no hard filter is applied.","possible_explanation":"Useful episode clue and potential scope overrestriction coexist; the plan's evidence-needs treats optional timing as something to verify.","uncertain":"Cannot infer harm or truth from this plan alone; need candidate and final evidence comparison."},
+    {"case_id":"P142","observation":"POD 1 is an abbreviation of original post operative day one. The automatic numeric flag is lexical normalization, not extra patient information.","possible_explanation":"A terminology conversion may improve retrieval; it is not evidence of new event reasoning.","uncertain":"Need final retrieval comparison to assess usefulness."}
+  ]
+}

@@ -4,7 +4,7 @@ import common044 as c
 import selector044 as s
 class Contracts(unittest.TestCase):
     def setUp(self):
-        self.ps={str(i):dict(passage_id=str(i),date='[CLINICAL_LITERAL_REMOVED]',time='12:00:00',category='Nursing',
+        self.ps={str(i):dict(passage_id=str(i),date='2100-01-01',time='12:00:00',category='Nursing',
           note_id=str(i),start=0,end_exclusive=20,text='Plan for scan' if i<2 else ('Scan cancelled today' if i==2 else 'Scan completed next day'),
           search_text='Scan',subject_id='p') for i in range(4)}
         self.base='Hospital context\n1. '+c.pc.display_line(1,self.ps['0']).split('. ',1)[1]

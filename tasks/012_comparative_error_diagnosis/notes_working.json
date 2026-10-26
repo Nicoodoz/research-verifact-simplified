@@ -1,0 +1,278 @@
+{
+  "cases": [
+    {
+      "case_id": "N050",
+      "layers": [
+        "target_evaluation",
+        "judge"
+      ],
+      "mechanisms": [
+        "event_identity",
+        "time",
+        "scope_sufficiency"
+      ],
+      "observation": "三套均NS且符合GT；完整输出都用本次住院supratherapeutic INR解释停coumadin。原parent却说数年前因房颤服coumadin、之后因不明原因停止，atomic claim没有保留数年前。",
+      "interpretation": "共同正确对照仍有核验事件/评价目标歧义，不能用正确标签证明还原了来源事件。",
+      "counterevidence": "本次住院明确hold coumadin及INR理由，在原claim无日期的读法下确有相关反向信息；不应忽略这条证据。",
+      "uncertainty": "不将parent的更窄过去事件继承原GT，不推断医生标错；早年停药的实际EHR证据尚未确定。",
+      "anchors": [
+        {
+          "system": "V",
+          "kind": "reference",
+          "quote": "hold coumadin for supratherapeutic INR"
+        },
+        {
+          "kind": "parent",
+          "quote": "several years ago"
+        },
+        {
+          "system": "C",
+          "kind": "output",
+          "quote": "supratherapeutic INR"
+        }
+      ]
+    },
+    {
+      "case_id": "N077",
+      "layers": [
+        "final_reference",
+        "judge",
+        "target_evaluation"
+      ],
+      "mechanisms": [
+        "scope_sufficiency",
+        "complementary_evidence"
+      ],
+      "observation": "O/V NA，C NS，GT NA。C同时保留CRI和DM2，但三套没有明确糖尿病导致CKD的患者关系证据。O/V没有明确CRI段；C完整输出承认关系未涉及，仍按NS输出。医生三票为NS/NA/NA。",
+      "interpretation": "更多实体/问题清单不等于补足关系；本地退化与未涉及/未支持的边界有关，并有证据包差异。",
+      "counterevidence": "C确实更清楚列出CRI，不能说其肾病证据更少；共病知识不足以证明本患者病因。",
+      "uncertainty": "没有新医生裁决；不把三票分歧当作删除样本理由或全部错误的解释。",
+      "anchors": [
+        {
+          "system": "C",
+          "kind": "reference",
+          "quote": "#. CRI: Stable from discharge"
+        },
+        {
+          "system": "C",
+          "kind": "output",
+          "quote": "the relationship is not addressed"
+        },
+        {
+          "system": "O",
+          "kind": "output",
+          "field": "reasoning_chain",
+          "quote": "well-known medical fact"
+        }
+      ]
+    },
+    {
+      "case_id": "N086",
+      "layers": [
+        "segmentation_index",
+        "reference_packaging",
+        "final_reference",
+        "judge",
+        "target_evaluation"
+      ],
+      "mechanisms": [
+        "local_context_loss",
+        "negation_conflict",
+        "time",
+        "scope_sufficiency"
+      ],
+      "observation": "O/V NS，C S，GT S。O/V全文都讨论HPI的N/V与No nausea。原note375697 [12108,12117)确为No nausea，C所选后片从12111开始；No在前片末尾，前片dense52未入C48。后片C候选8、rerank1，输出据破损片称later note documents nausea。",
+      "interpretation": "机械边界损失已由原文与日志确认，名义改对伴随极性误读；不是已证明标签S由破损造成。O/V对入院症状与另一否定的支持范围也有困难。",
+      "counterevidence": "C第1和8段真实入院N/V本来已在，足以作为另一支持线索；不能说标签S全由丢No导致。",
+      "uncertainty": "未做干预。note的CHARTDATE为5月21，但CHARTTIME为5月20 15:41，description Admission Note；不能由显示日期认定后续临床事件。同一note的HPI与评估范围不自动互相否定，保持GT及2S/1NS。",
+      "anchors": [
+        {
+          "system": "C",
+          "kind": "reference",
+          "quote": "Raw characters: [12111,12747) | Text: nausea"
+        },
+        {
+          "system": "V",
+          "kind": "reference",
+          "quote": "s/p transaminitis: No nausea, no abdominal pain."
+        },
+        {
+          "system": "C",
+          "kind": "output",
+          "quote": "a later physician note documents nausea"
+        },
+        {
+          "system": "C",
+          "kind": "reference",
+          "quote": "increased SOB, N/V, and fatigue"
+        }
+      ]
+    },
+    {
+      "case_id": "N095",
+      "layers": [
+        "final_reference",
+        "judge",
+        "target_evaluation"
+      ],
+      "mechanisms": [
+        "terminology_modality",
+        "state_plan_execution",
+        "scope_sufficiency"
+      ],
+      "observation": "O/V NA，C NS，最终GT NS。发布reference没有KCl处理段，C有护理Rec d 20meq kcl；C将其理解为recommendation。原医生第一轮NS/NA/S、第二轮NS/S，评论同时提到recommendation未执行，并称NS或NA均可解释。",
+      "interpretation": "有真实证据包遗漏，但C名义改善同时涉及原医生已记录的模糊边界，不是已证明更正确的给药理解。",
+      "counterevidence": "护理同句也写rec d lasix并有随后的利尿反应，rec d可能是received；不能用执行者释义覆盖医生原评论或相反地视评论为完整医学证明。",
+      "uncertainty": "需保留原最终NS与其裁决过程；不把NA作为无争议错误，也不重新赋标签或将低K判定当医学真值。",
+      "anchors": [
+        {
+          "system": "C",
+          "kind": "reference",
+          "quote": "20meq kcl for low K+"
+        },
+        {
+          "system": "C",
+          "kind": "output",
+          "quote": "recommendation of 20 mEq KCl"
+        },
+        {
+          "kind": "human",
+          "field": "adjudicated_comment",
+          "quote": "Either Not Supported or Not Addressed."
+        }
+      ]
+    },
+    {
+      "case_id": "N104",
+      "layers": [
+        "final_reference",
+        "judge"
+      ],
+      "mechanisms": [
+        "complementary_evidence"
+      ],
+      "observation": "三套均S且三位医生均S。两套reference都有实际5L NS和BP improved with aggressive IV rehydration，输出也引用这些实际治疗而不只引用计划。",
+      "interpretation": "正向稳定对照：原claim无特殊时地限定时，两套不同长度证据包都足以提供直接支持。",
+      "counterevidence": "仍有IVF as needed等计划与背景，但不是唯一支持；不能只根据计划否定已记录的治疗。",
+      "uncertainty": "不外推到精确剂量、地点或时间关系命题；没有宣称所有方案临床等效。",
+      "anchors": [
+        {
+          "system": "C",
+          "kind": "reference",
+          "quote": "treated with 5 liters of NS"
+        },
+        {
+          "system": "V",
+          "kind": "reference",
+          "quote": "aggressive IV rehydration"
+        },
+        {
+          "system": "O",
+          "kind": "output",
+          "field": "reasoning_chain",
+          "quote": "This directly mentions IV rehydration"
+        }
+      ]
+    },
+    {
+      "case_id": "N114",
+      "layers": [
+        "target_evaluation",
+        "final_reference",
+        "judge"
+      ],
+      "mechanisms": [
+        "event_identity",
+        "time",
+        "scope_sufficiency"
+      ],
+      "observation": "O S，V/C NS，GT NS。两套都包含5L补液、之后仍低血压、再补1L和最终回到baseline。O把改善串成resolved；V/C更强调尚未立即/完全解决。护理原文写ED补5L后送MICU，与claim的in the ICU也存在地点对应问题。",
+      "interpretation": "当前后端减少了一例宽泛支持，但不应把它直接解读为已正确解决所有事件限定。",
+      "counterevidence": "最终确有BP回到baseline；after不自动要求立即或仅由5L造成，因此过严标准也可能伤害N139式正确概括。",
+      "uncertainty": "医生2NS/1S无具体评论；不能确定其NS是因为地点、因果或程度边界，不能把输出说明当内部原因。",
+      "anchors": [
+        {
+          "system": "C",
+          "kind": "reference",
+          "quote": "fluids in and was sent to MICU"
+        },
+        {
+          "system": "C",
+          "kind": "output",
+          "quote": "not immediate or solely due to the 5 L"
+        },
+        {
+          "system": "O",
+          "kind": "output",
+          "field": "reasoning_chain",
+          "quote": "led to the resolution of hypotension"
+        }
+      ]
+    },
+    {
+      "case_id": "N121",
+      "layers": [
+        "raw_records_scope",
+        "final_reference",
+        "judge"
+      ],
+      "mechanisms": [
+        "record_availability",
+        "scope_sufficiency"
+      ],
+      "observation": "三套NA、GT NA。两套有一般症状改善、舒适及其他生命体征，但没有明确行走过程中持续无症状；发布有baseline不使用walker/cane，仍不是目标活动期间证据。",
+      "interpretation": "共同正确的缺证边界对照，不能用一般改善推出特定活动状态，也不应把无关早期症状当行走时反证。",
+      "counterevidence": "原parent写asymptomatic at rest and with ambulation，但来源文本不能自证；病历中无助行器的生活状态不是此处承诺。",
+      "uncertainty": "目前仅对实际reference可确认未出现目标支持；有限原EHR查找不等于整个实际病程不存在该情况。",
+      "anchors": [
+        {
+          "system": "V",
+          "kind": "reference",
+          "quote": "does not use a walker or"
+        },
+        {
+          "system": "C",
+          "kind": "output",
+          "quote": "does not address ambulation"
+        },
+        {
+          "kind": "parent",
+          "quote": "asymptomatic at rest and with ambulation"
+        }
+      ]
+    },
+    {
+      "case_id": "N139",
+      "layers": [
+        "final_reference",
+        "judge",
+        "target_evaluation"
+      ],
+      "mechanisms": [
+        "time",
+        "scope_sufficiency"
+      ],
+      "observation": "O S、V/C NS，GT三票S。原reference与C都已有最终BP returned to baseline/VSS及早期低血压；O接受最终稳定，C明确要求throughout admission，原claim没有throughout。",
+      "interpretation": "同reference换后端即可出现退化，不能全归咎本地检索。支持范围过严可损失原系统已正确的恢复性概括。",
+      "counterevidence": "早期低血压和下降到79是实际记录，不能删除反证来人为做高分；关键是它是否否定命题实际时间范围。",
+      "uncertainty": "O和V不仅权重不同，还有提示/推理/结构化和运行期差异，未隔离单组件因果。",
+      "anchors": [
+        {
+          "system": "V",
+          "kind": "reference",
+          "quote": "BP has returned to"
+        },
+        {
+          "system": "C",
+          "kind": "reference",
+          "quote": "VSS,C/O floor"
+        },
+        {
+          "system": "C",
+          "kind": "output",
+          "quote": "does not establish stability throughout the admission"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+[
+  {
+    "case_id": "N205",
+    "observation": "稳定正确对照：三臂均保留心导管明确L mid-circ 90% lesion及LCX记录，全部S。B多出体检/液体平衡片段，但没有新增关键狭窄证据。",
+    "interpretation": "缩写与解剖定位在现有direct链路已能核验；不能把额外不同片段本身当收益。",
+    "uncertainty": "多份重复病程不是多个独立证据来源；未进行新的影像或临床裁决。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "626435",
+        "start": 0,
+        "quote": "L mid-circ 90% lesion"
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "confirming the stenosis and location"
+      }
+    ]
+  },
+  {
+    "case_id": "N216",
+    "observation": "稳定错误对照：三臂均有小血肿、变软、稳定及持续监测，均NS而GT是S。重要护理句在decrease in处被640字符切段，后续恢复文字没有在本例reference连上；A/C还保留较晚stable记录。",
+    "interpretation": "有支持终点范围的争议，也有局部相邻文字断裂，不能将所有错误归为检索漏掉血肿事件。B甚至把未完整呈现的decrease in解释为缩小。",
+    "uncertainty": "stable或变软是否足以支持resolved without complications不新增医学裁决；需查原文结尾而非猜缺字。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "626354",
+        "start": 635,
+        "quote": "soft with decrease in"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "626496",
+        "start": 639,
+        "quote": "R FEMORAL  CATH SITE STABLE"
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "decreased in size"
+      }
+    ]
+  },
+  {
+    "case_id": "N217",
+    "observation": "稳定正确对照：三臂均有胸痛缓解、操作耐受与稳定体征，均S。A/C保留下降酶趋势，B替换为其他稳定护理/背景段，结论不变。",
+    "interpretation": "对整体continued to improve这类宽泛总结，多种证据组合可能足够；不要求每个输入差异都有指标差异。",
+    "uncertainty": "B称从入院到出院的全程证据强于本reference实际范围，正确标签不保证所有解释准确。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "626354",
+        "start": 0,
+        "quote": "Tolerated procedure well."
+      },
+      {
+        "kind": "judge",
+        "method": "B48",
+        "quote": "from admission to discharge"
+      }
+    ]
+  },
+  {
+    "case_id": "N256",
+    "observation": "三臂均NS而GT是NA：已有K 2.7治疗后3.3及低钾处理记录，但未见multiple checks确认now stable。B额外查到带时间的3.3化验，未改变结论。",
+    "interpretation": "本例新增同一次复查的明确数值不是补齐后期稳定性证据；主要显示NA/NS与部分支持的边界问题。",
+    "uncertainty": "不能把没有后续记录推断为临床未稳定，或只凭关键词宣布完整记录中没有其他复查。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "637737",
+        "start": 8363,
+        "quote": "Hypokalemia: got 40mEq"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "637783",
+        "start": 2553,
+        "quote": "3.3 mEq/L"
+      }
+    ]
+  },
+  {
+    "case_id": "N261",
+    "observation": "三臂均NS而GT是S，均同时有ECG报告Otherwise normal ECG与医师mildly prolong QTc。模型看到两者后判部分冲突，而不是漏检ECG报告。",
+    "interpretation": "otherwise依赖省略的异常范围，兼有记录间解释差异；单换候选规则未解决。",
+    "uncertainty": "不能据原GT选择性删除QTc反向证据，不能自行判断两项是否同一检查或哪个医学表述优先。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "215292",
+        "start": 0,
+        "quote": "Otherwise normal ECG"
+      },
+      {
+        "kind": "ehr",
+        "note_id": "637615",
+        "start": 3859,
+        "quote": "mildly prolong QTc"
+      }
+    ]
+  },
+  {
+    "case_id": "N310",
+    "observation": "C由S改NS但仍未对上GT的NA。A/B有明确从病房因AF/RVR转回ICU的段；C失去该段，只见ICU disposition，进而把单次住院日期当成没有ICU再入室的反证。",
+    "interpretation": "C在此丢失实际转运事件，还混淆hospital admission与ICU readmission层级。虽然标签发生变化，不是正确改善。",
+    "uncertainty": "原claimongoing concerns的范围及GT对应语境未重新裁决；保留原标签，不把有回ICU记录自动认定GT错误。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "564783",
+        "start": 0,
+        "quote": "transvered back to ICU"
+      },
+      {
+        "kind": "judge",
+        "method": "C48",
+        "quote": "no gap or re-entry"
+      }
+    ]
+  },
+  {
+    "case_id": "N321",
+    "observation": "三臂均NS而GT为NA，都有cardiology consult及IV metoprolol/response记录；没有明确由cardiology作出的beta blockade建议。B少一个consult计划段而标签不变。",
+    "interpretation": "检索已覆盖治疗和专科参与，但关系主体不能由共现补齐。缺特定建议时采用NS还是NA仍是标签边界问题。",
+    "uncertainty": "不把另一团队执行治疗等同专科推荐，也不凭有限reference断言原始EHR没有会诊意见。",
+    "anchors": [
+      {
+        "kind": "ehr",
+        "note_id": "565211",
+        "start": 0,
+        "quote": "Responded well to IV beta blockers"
+      },
+      {
+        "kind": "judge",
+        "method": "A48",
+        "quote": "no explicit beta blockade recommendation"
+      }
+    ]
+  }
+]

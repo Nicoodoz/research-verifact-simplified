@@ -1,0 +1,14 @@
+test_candidate_constraints (__main__.Tests.test_candidate_constraints) ... ok
+test_joint_feasible_and_improves (__main__.Tests.test_joint_feasible_and_improves) ... ok
+test_joint_gradient (__main__.Tests.test_joint_gradient) ... ok
+test_logit_ratio_equivalence_away_ties (__main__.Tests.test_logit_ratio_equivalence_away_ties) ... ok
+test_positive_temperature_preserves_labels (__main__.Tests.test_positive_temperature_preserves_labels) ... ok
+test_probability_normalization (__main__.Tests.test_probability_normalization) ... ok
+test_socket_blocked (__main__.Tests.test_socket_blocked) ... ok
+test_temperature_objective (__main__.Tests.test_temperature_objective) ... ok
+test_ties (__main__.Tests.test_ties) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.057s
+
+OK

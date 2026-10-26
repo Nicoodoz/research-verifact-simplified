@@ -1,0 +1,29 @@
+test_feature_whitelist_and_quality_ablation (test029.Tests.test_feature_whitelist_and_quality_ablation) ... ok
+test_full_synthetic_evaluation (test029.Tests.test_full_synthetic_evaluation) ... ok
+test_holdout_GT_has_no_effect (test029.Tests.test_holdout_GT_has_no_effect) ... ok
+test_mapping_preserves_U0 (test029.Tests.test_mapping_preserves_U0) ... ok
+test_single_class_and_empty (test029.Tests.test_single_class_and_empty) ... ok
+test_strict_outer_exclusion (test029.Tests.test_strict_outer_exclusion) ... ok
+test_threshold_ties_and_fallback (test029.Tests.test_threshold_ties_and_fallback) ... ok
+test_trace_quality_not_semantic (test029.Tests.test_trace_quality_not_semantic) ... ok
+test_evaluation (unittest.loader._FailedTest.test_evaluation) ... ERROR
+
+======================================================================
+ERROR: test_evaluation (unittest.loader._FailedTest.test_evaluation)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_evaluation
+Traceback (most recent call last):
+  File "E:\miniconda3\envs\research-verifact-029\Lib\unittest\loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\miniconda3\envs\research-verifact-029\Lib\unittest\loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "D:\Research-VeriFact\tests\test_evaluation.py", line 11, in <module>
+    from irrCAC.raw import CAC
+ModuleNotFoundError: No module named 'irrCAC'
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.370s
+
+FAILED (errors=1)

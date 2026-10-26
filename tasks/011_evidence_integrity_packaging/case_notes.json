@@ -1,0 +1,75 @@
+{
+  "reading_scope": "Executor full-reference and full-output diagnostic observations; not new clinician labels. Cases include improvements, degradation, stable controls and repeated variability.",
+  "cases": [
+    {
+      "case_id": "N087",
+      "observation": "A三次NS，B/C三次S，GT S。三套原本都有入院N/V；B补长附近病史、description并改变两条入选背景，C仅另给一段心衰计划加Assessment and Plan。A输出要求vomiting是主要入院原因，B/C接受其为伴随症状。",
+      "interpretation": "这是本小组稳定的B阶段得分改善，但没有新找回此前缺失的vomiting事实，主要可见差异仍是支持范围解释；不能归为C结构恢复收益。",
+      "uncertainty": "多处正文/metadata与预算选择同时改变，未单独验证何项引起支持范围变化；三次稳定也不证明跨运行永久稳定。",
+      "anchors": [
+        {"arm":"A","quote":"increased SOB, N/V, and fatigue"},
+        {"arm":"B","quote":"increased SOB, N/V, and fatigue"},
+        {"kind":"output","arm":"A","round":1,"quote":"as the primary complaint"},
+        {"kind":"output","arm":"C","round":1,"quote":"only claims vomiting was a symptom"}
+      ]
+    },
+    {
+      "case_id": "N642",
+      "observation": "原note471448条件句在B完整恢复：有误吸担忧才STRICT NPO。A三轮S/NS/NS，B与C同body共享为NS/S/S，GT S。A第0轮已按次日24 Hour Events接受；B第0轮虽明确提到if aspiration仍拒绝，后两轮接受。B还补长24 Hour Events所在段并失去两条其他原片段。",
+      "interpretation": "确有基本完整性修复，但它不是保证改对的充分条件；时间回顾和条件/实际PO状态的判断仍变动。B/C完全同输入，不能把本例计作结构恢复额外收益。",
+      "uncertainty": "补条件不是本例唯一输入差异，未做单独因果移除/补回；原记录的医嘱、回顾与实际给药证据不能强行等同。",
+      "anchors": [
+        {"arm":"B","quote":"6. Maintain strict aspiration precautions. If there are any"},
+        {"arm":"B","quote":"24 Hour Events:"},
+        {"kind":"output","arm":"B","round":0,"quote":"keeping the patient NPO if aspiration is a concern"},
+        {"kind":"output","arm":"B","round":2,"quote":"strict NPO if aspiration concerns"}
+      ]
+    },
+    {
+      "case_id": "N145",
+      "observation": "GT NA；A三轮NA、B/C三轮NS。三套都没有出院日早晨90/60，最新血压仍是出院前一天的117/55。B丢掉另一个99/36时刻，但没有恢复目标日记录；C再换了一条处置片段。B/C输出仍主要以值缺失或不同日数值判不支持。",
+      "interpretation": "稳定退化没有伴随新的目标日反证，更像NS/NA边界和时间范围的解释差异；不能把不同日117/55当作目标日90/60的反证。",
+      "uncertainty": "缺少目标时刻记录不证明原来没有发生。没有重新临床标注，也没有证明被丢片段是唯一原因。",
+      "anchors": [
+        {"arm":"B","quote":"S:117"},
+        {"kind":"output","arm":"A","round":2,"quote":"no note on 03-07 morning"},
+        {"kind":"output","arm":"B","round":0,"quote":"never records a specific 90/60 reading"}
+      ]
+    },
+    {
+      "case_id":"N119",
+      "observation":"GT NA。B三轮NS，C为NA/NS/NA，A为NA/NS/NS。B与C入选正文相同，C仅添加Assessment and Plan标题；三套都没有吸入器宣教记录，完整输出均观察到这一缺失。",
+      "interpretation":"C唯一达到两轮改对的案例没有恢复新的宣教事实；更像标签边界/输入格式敏感性与波动，不能作为临床证据获取改善证明。",
+      "uncertainty":"不能仅由两轮NA断言标题稳定改变NS/NA规则，也不能把无宣教记录当作宣教未发生。",
+      "anchors":[{"arm":"C","quote":"Source heading [3099,3118): Assessment and Plan"},{"kind":"output","arm":"C","round":0,"quote":"does not document any teaching about inhaler use"},{"kind":"output","arm":"C","round":1,"quote":"does not address teaching"}]
+    },
+    {
+      "case_id":"N338",
+      "observation":"GT S。A三次S，B为S/NS/S，C为NS/S/NS。B/C因预算丢失A的CT torso多部位骨折总结，保留肱骨骨折等X线结果；C与B正文/入选ID相同，仅给肩部两段添加FINDINGS及IMPRESSION。B/C不同轮对确认部分损伤还是全部损伤采用不同标准。",
+      "interpretation":"同时可见B阶段预算丢失更完整影像总结、C阶段标题不带来稳定改善，以及同一输入的范围判断波动。C第1轮单次改对不能忽略另两轮改错。",
+      "uncertainty":"CT并非狭义平片，原claim对radiographs及injuries范围仍需保留；没有证明丢掉总结或加标题是某次判定的唯一原因。",
+      "anchors":[{"arm":"A","quote":"pelvic and sacral fractures"},{"arm":"C","quote":"Source heading [950,961): IMPRESSION:"},{"kind":"output","arm":"C","round":0,"quote":"not all injuries are radiographically confirmed"},{"kind":"output","arm":"C","round":1,"quote":"confirmed at least one injury"}]
+    },
+    {
+      "case_id":"N389",
+      "observation":"GT NS；A三次NS。B与C完全同body，共享的三次标签为NS/NS/S。三套均有renal管理和其他系统问题；B/C第三轮把one of several focuses视作足够支持the focus，前两轮则拒绝。没有C新增标题。",
+      "interpretation":"本例是同输入波动及重点/唯一重点支持范围问题，并有一次少数类NS误接受S，不能归为C结构带偏或新的肾脏证据收益。",
+      "uncertainty":"B还改变若干背景片段，不能断言与A之间全部差异纯随机；三轮也不足以估计长期错误概率。",
+      "anchors":[{"arm":"B","quote":"RENAL: boderline urine output, monitor Cr."},{"kind":"output","arm":"B","round":1,"quote":"not the singular focus"},{"kind":"output","arm":"B","round":2,"quote":"though not the sole focus"}]
+    },
+    {
+      "case_id":"N180",
+      "observation":"GT S。C从同note90821补回Test: Portable TTE (Complete)，B仅Report description，A/B本无portable字段；本轮三套各三次均S。A/B完整输出明确承认portable缺失，却把它视作不影响功能结论的次要细节。010同一C48 body曾判NS。",
+      "interpretation":"身份恢复真实存在，但本轮没有新增标签收益；基础Judge是否要求核验全部限定会随运行变化。不能将010错误与011 C正确相减宣称结构收益。",
+      "uncertainty":"本次没有测独立临床语义覆盖率，不能因三套都S就说身份字段无价值或A完整核验了portable。",
+      "anchors":[{"arm":"C","quote":"Test: Portable TTE (Complete)"},{"kind":"output","arm":"A","round":0,"quote":"lack of explicit 'portable' designation"},{"kind":"output","arm":"B","round":0,"quote":"a minor detail"}]
+    },
+    {
+      "case_id":"N248",
+      "observation":"GT NS，三套各三次均NS。B/C虽然换入、丢失若干背景片段，但均保留continue home lexapro，所有输出据此拒绝未继续SSRI的命题。C只给另一中毒/精神科处置段加总标题。",
+      "interpretation":"稳定正确的少数类反向证据对照；基本用药状态已明确时，结构字段不一定带来额外标签收益，预算变动也不一定造成退化。",
+      "uncertainty":"继续医嘱不是逐笔给药记录，本例没有重新裁定真实处置；不能外推到所有计划/实施命题。",
+      "anchors":[{"arm":"A","quote":"PTSD: continue home lexapro"},{"arm":"B","quote":"PTSD: continue home lexapro"},{"arm":"C","quote":"PTSD: continue home lexapro"}]
+    }
+  ]
+}

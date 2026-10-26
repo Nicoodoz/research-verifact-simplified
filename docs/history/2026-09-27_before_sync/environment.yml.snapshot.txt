@@ -1,0 +1,19 @@
+# Frozen analysis dependencies below; local GPU inference uses environment.local-bge.yml.
+# Current safe replay instructions: docs/REPRODUCIBILITY.md
+name: research-verifact
+
+channels:
+  - defaults
+
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - duckdb==1.5.5
+      - pypdf==6.18.1
+      - fonttools==4.65.0
+      - numpy==1.26.4
+      - pandas==2.2.3
+      - scipy==1.12.0
+      - scikit-learn==1.6.1
+      - irrCAC==0.4.3

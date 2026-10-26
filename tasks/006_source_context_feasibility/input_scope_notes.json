@@ -1,0 +1,76 @@
+{
+  "stage": "prospective_input_review_before_new_model_responses",
+  "preparation": "preparation_001",
+  "scope": "All 64 original claims and exact extracted source windows were read after deterministic selection; model responses do not yet exist. No selection or prompt changes were made from this reading.",
+  "not_clinician_ground_truth": true,
+  "default": "Target appears interpretable as an independent claim given the known patient/admission; semantic equivalence is still not proven.",
+  "groups": {
+    "source_artifact_or_claim_context_conflict": [
+      1,
+      27,
+      47
+    ],
+    "aggregation_or_narrative_scope": [
+      5,
+      11,
+      16,
+      21,
+      36,
+      37,
+      43,
+      51,
+      57
+    ],
+    "referent_or_event_time_binding": [
+      8,
+      12,
+      20,
+      26,
+      38,
+      44,
+      50,
+      55,
+      56,
+      58
+    ],
+    "auxiliary_details_must_not_become_requirements": [
+      6,
+      9,
+      19,
+      24,
+      29,
+      39,
+      40,
+      41,
+      42,
+      46,
+      64
+    ]
+  },
+  "case_comments": {
+    "1": "原文的 Protonix 40mg 后接脱敏占位符，claim 将其当地点；不得用上下文恢复未提供的真实字段。",
+    "5": "总量 claim 没有期间限定；来源片段只覆盖早期输血叙述，不能自动把全程总量变成某阶段总量。",
+    "6": "EGD 发生本身与单个溃疡/烧灼是不同断言；额外发现不能变成验证 EGD 是否发生的必要条件。",
+    "8": "溃疡已有部位及数量描述；上下文可说明 EGD 关系，但不能额外要求原 claim 未写的日期。",
+    "9": "Foley 放置不等于必须证实排出 1–2L 或 Cr 下降；这些是附加来源陈述。",
+    "11": "total 7 units 的时间覆盖不能因来源片段范围而静默改变。",
+    "12": "symptoms 的具体所指未完整写明；来源中呼吸症状和 GI 问题并存，不应任选一种当新限定。",
+    "20": "所需药物及 safety 的具体目标未指定；可解释但不能把某药名或剂量直接加入必要条件。",
+    "21": "泛化的稳定可能被限定在 ICU 转出前后；原独立命题标签不保证对应这一更窄时段。",
+    "26": "subsequent 相对于哪次 ECG、覆盖哪些时段，需要说明，不能把新时间范围当原 GT 已覆盖。",
+    "27": "脱敏姓名不能补成可验证的人名；来源仅提供家庭关系线索，不恢复身份。",
+    "36": "源句的 throughout 修饰整个并列病程总结；不能自动削弱原 claim 的显式时间表达。",
+    "37": "需区分病程中出现与持续全程存在，保留原 claim 而非自动改写。",
+    "38": "her conditions 可能从上下文被绑定为整组并列疾病；不应要求每个附加疾病均由药物处理。",
+    "43": "some respiratory improvement 的具体时段未写明，上下文可能选取某次过渡，不保证标签等价。",
+    "44": "ongoing care 可能被限制成出院康复计划，原文没有出现在独立 claim 中的条件应单列。",
+    "47": "before considering 与 if she did not improve 的条件关系可能不同；不能用来源修正原 claim。",
+    "50": "上下文给出 6-7 附近的叙述，但 L EVD 拔除 claim 本身无日期；引入该日期将更具体。",
+    "51": "vastly improved 的时段和评价范围可能改变，不将原 GT 当新语境标签。",
+    "55": "mouthing words 本身无日期；源段的出院阶段不是自动继承的时间限定。",
+    "56": "post-operatively 可绑定到 6-16 夹闭，而患者有多次操作；这会改变证据选择，GT 可迁移性未证实。",
+    "57": "eventually weaned 的永久/间歇与时间范围都可能受上下文影响，不能仅按 source 的结论判 S。",
+    "58": "ongoing care 与具体术后计划的绑定未由原 claim 明确规定。"
+  },
+  "interpretation": "These are risk flags, not automatic exclusions or a new accuracy target. Additional number strings alone do not prove semantic change. Final output review must check what the model actually did."
+}

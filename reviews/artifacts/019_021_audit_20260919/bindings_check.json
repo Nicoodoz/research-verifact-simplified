@@ -1,0 +1,28 @@
+{
+  "019_support_boundary_screen": {
+    "checked": 18522,
+    "navigation_changes": [
+      "AGENTS.md",
+      "README.md",
+      "docs/API_POLICY.md",
+      "docs/PROJECT_STATUS.md"
+    ],
+    "non_navigation_unchanged": true,
+    "authority_hash_differences": []
+  },
+  "020_lambda2_patient_validation": {
+    "checked": 21383,
+    "navigation_changes": [
+      "AGENTS.md",
+      "README.md",
+      "docs/API_POLICY.md",
+      "docs/PROJECT_STATUS.md"
+    ],
+    "non_navigation_unchanged": true,
+    "authority_hash_differences": []
+  },
+  "021": {
+    "manifest_files": 52,
+    "all_match": true
+  }
+}

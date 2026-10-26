@@ -1,0 +1,56 @@
+{
+  "created_utc": "2026-09-15T08:42:11.728664+00:00",
+  "audited_handoff_sha256": "601ebad81bece9b8a4ad6310b0e9758c1183ec35ebfc958f1123e61ecade00b2",
+  "post_audit_changed_files": [
+    ".gitattributes",
+    "AGENTS.md",
+    "README.md",
+    "outputs/012_comparative_error_diagnosis/README.md",
+    "reviews/README.md",
+    "tasks/012_comparative_error_diagnosis/README.md"
+  ],
+  "current_docs_and_git_attributes_only": true,
+  "unchanged_existing_account_document": true,
+  "frozen_manifests_passed_after_status_update": 10,
+  "new_api_calls": 0,
+  "updates": {
+    "README.md": {
+      "before": "68450c7859c6600f5597cf18b9ff7d52c89ba83a1049cdbbaee634b73738327e",
+      "after": "3dde14912cab8d390784d20e3071d34100e0e4fd4e3a122edbdc413fd46a45a0"
+    },
+    "AGENTS.md": {
+      "before": "36d4007f037ed4db85a55f71cc502bf2c7673cb8a7d1ff369748bd3fc10ee3e6",
+      "after": "a3e996028e377d644b3634f285c8044e4f9d4599aca3f21a539a8295a666945d"
+    },
+    "tasks/012_comparative_error_diagnosis/README.md": {
+      "before": "f7185923c98cecd7d23bef971ef58b29e2426317461d128c5ab3595010ef756e",
+      "after": "cdadcb0f6c34dfcd571f5baba93095ffd73e09c637d665e3a08d5b0ab741e94e"
+    },
+    "outputs/012_comparative_error_diagnosis/README.md": {
+      "before": "c06f8fe737b224b09f2e5e940f1f8e772722716a67e24f0c47ee06d9ece48be1",
+      "after": "f220ebdfc83f7094018a066a64b736eff2e17b9a87408c68ec0162647cba32cd"
+    },
+    "reviews/README.md": {
+      "before": "dfdbd6ce30781a4f40554b755f4e5a5bdf16ba1b312bfb373b6691bdf1a29040",
+      "after": "621581629c1c54a9c17f329adbef58f9a3589c02f8890be01d9f588eeb12dffc"
+    },
+    ".gitattributes": {
+      "before": "dad19832b455372b57c091c2e9c071eed65e8b3c8bea177c9a6139872ae1c9ff",
+      "after": "ea6cd1be6756b0b478765af856d091d7119c9cecaf6f19b70c1c34fd7296b49a"
+    }
+  },
+  "evidence_sha256": {
+    "finish_checks.json": "14834e724e6f9b5a0e28035b42e81199d27618ea4aa4a72946066c6f2b8b93c7",
+    "finish_checks.py": "28fe9740ff005181709e59d3c21b81485dfaec234b9d85f191d5265b7558c61a",
+    "independent.py": "ac104c3efb9dd6528e0c5618e678dc82b75221b91f2a4f3be9ab0e6bebdfc018",
+    "independent_results.json": "df83f53e85e1e0c178a9a48d47c247512b3db66e67ab6cc993a032c3ed5844da",
+    "raw_trace_checks.json": "0c4e1a061e3d2481aef771584a80577a2e320ee55b30b43573a86cb359feb20e",
+    "read012.py": "d1194f1962aa3f751a1835bef7c811e2ad667ab3dbfb966335552f2e3048e017",
+    "README.md": "8ed5eab925bd7b2aeaaaa6de11495d248e919460fb9b5edfea1dd45a20cfe0c6",
+    "replay.py": "c2094d2e93e1e4c083379f6bf68bcd6f285ae1eb2a0a23f3b500bde03fc463ae",
+    "replay_verification.json": "a6b58b9e1f4f5c5042b59402e9878582e8c9f8d5d1432788eab7d628b6a71f01",
+    "tests.log": "70153a4feadc322ac92433ab2e3d28299f01d17a3b09b44dbf0297051d345d8e",
+    "trace_checks.py": "509ecfb528b55b9f97159b0d6c57596f0576eabe7b4e1aad69c3ab83cd6ce940",
+    "version.json": "884d54c953a9c9b0e34a69f1c0dbc480ee5cf5da076593ff640ffd90e6aaad68"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "executor_self_check": true,
+  "independent_audit": false,
+  "passed": 5338,
+  "numeric": {
+    "SD": {
+      "global_mixture_R": 26.894736842105264,
+      "mixture_components": [
+        {
+          "lambda_value": 0.6931471805599455,
+          "risk": 4.0,
+          "R": 13.0,
+          "weight": 0.5789473684210527
+        },
+        {
+          "lambda_value": 13.304684934198283,
+          "risk": 23.0,
+          "R": 46.0,
+          "weight": 0.42105263157894735
+        }
+      ]
+    },
+    "peer_U2": {
+      "global_mixture_R": 14.736842105263158,
+      "mixture_components": [
+        {
+          "lambda_value": 0.6931471805599455,
+          "risk": 4.0,
+          "R": 13.0,
+          "weight": 0.9473684210526316
+        },
+        {
+          "lambda_value": 13.304684934198283,
+          "risk": 23.0,
+          "R": 46.0,
+          "weight": 0.05263157894736841
+        }
+      ]
+    }
+  },
+  "request_counts": {
+    "deepseek_B": 650,
+    "deepseek_S": 650,
+    "qwen_S": 52
+  },
+  "parse_status": {
+    "valid": 1323,
+    "valid_with_format_anomaly": 29
+  },
+  "models_returned": {
+    "deepseek-v4-flash-0731": 1300,
+    "qwen3.8-27b": 52
+  },
+  "max_reserved_budget": 17.987382000000007
+}

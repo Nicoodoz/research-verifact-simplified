@@ -1,0 +1,13 @@
+test_bootstrap_vectorization_matches_scalar_weights (test030.Tests.test_bootstrap_vectorization_matches_scalar_weights) ... ok
+test_deterministic_nested_plan (test030.Tests.test_deterministic_nested_plan) ... ok
+test_fallback_and_threshold_tie (test030.Tests.test_fallback_and_threshold_tie) ... ok
+test_nested_model_test_GT_irrelevant (test030.Tests.test_nested_model_test_GT_irrelevant) ... ok
+test_original_feature_and_config_contract (test030.Tests.test_original_feature_and_config_contract) ... ok
+test_plan_isolation_and_source_quota (test030.Tests.test_plan_isolation_and_source_quota) ... ok
+test_saved_model_inference_matches_original (test030.Tests.test_saved_model_inference_matches_original) ... ok
+test_synthetic_statistics_pipeline (test030.Tests.test_synthetic_statistics_pipeline) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.320s
+
+OK

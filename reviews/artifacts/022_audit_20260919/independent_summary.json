@@ -1,0 +1,166 @@
+{
+  "R0": {
+    "n": 1529,
+    "rescue": 10,
+    "harm": 38,
+    "removed_false_S": 21,
+    "new_false_S": 0
+  },
+  "R1": {
+    "n": 879,
+    "rescue": 6,
+    "harm": 19,
+    "removed_false_S": 19,
+    "new_false_S": 0
+  },
+  "status": "PASS",
+  "historical_hashes": 7557,
+  "historical_mismatches": [],
+  "patient_fold_check": true,
+  "fit_checks": [
+    {
+      "fold": 0,
+      "method": "G",
+      "objective_delta": -2.220446049250313e-16,
+      "max_parameter_delta": 1.3933587617032117e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 0,
+      "method": "C",
+      "objective_delta": -4.440892098500626e-16,
+      "max_parameter_delta": 2.770541573937635e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 0,
+      "method": "M",
+      "objective_delta": -2.220446049250313e-16,
+      "max_parameter_delta": 1.9977663967551962e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 0,
+      "method": "V",
+      "objective_delta": 5.551115123125783e-17,
+      "max_parameter_delta": 6.431065679990411e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 0,
+      "method": "T",
+      "objective_delta": 0.0,
+      "max_parameter_delta": 6.858863477177124e-11,
+      "labels_equal": true
+    },
+    {
+      "fold": 1,
+      "method": "G",
+      "objective_delta": 2.220446049250313e-16,
+      "max_parameter_delta": 4.834466160730244e-11,
+      "labels_equal": true
+    },
+    {
+      "fold": 1,
+      "method": "C",
+      "objective_delta": -2.220446049250313e-16,
+      "max_parameter_delta": 4.1200620692904977e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 1,
+      "method": "M",
+      "objective_delta": 0.0,
+      "max_parameter_delta": 5.870636199389878e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 1,
+      "method": "V",
+      "objective_delta": -5.551115123125783e-17,
+      "max_parameter_delta": 1.6686141357524775e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 1,
+      "method": "T",
+      "objective_delta": 1.1102230246251565e-16,
+      "max_parameter_delta": 6.912881378440261e-11,
+      "labels_equal": true
+    },
+    {
+      "fold": 2,
+      "method": "G",
+      "objective_delta": 0.0,
+      "max_parameter_delta": 1.554958384275551e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 2,
+      "method": "C",
+      "objective_delta": 0.0,
+      "max_parameter_delta": 9.955369861813779e-11,
+      "labels_equal": true
+    },
+    {
+      "fold": 2,
+      "method": "M",
+      "objective_delta": -2.220446049250313e-16,
+      "max_parameter_delta": 7.565521542574061e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 2,
+      "method": "V",
+      "objective_delta": 0.0,
+      "max_parameter_delta": 3.281496185891797e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 2,
+      "method": "T",
+      "objective_delta": -1.1102230246251565e-16,
+      "max_parameter_delta": 6.860476076120392e-11,
+      "labels_equal": true
+    },
+    {
+      "fold": 3,
+      "method": "G",
+      "objective_delta": 2.220446049250313e-16,
+      "max_parameter_delta": 1.6009860104304607e-11,
+      "labels_equal": true
+    },
+    {
+      "fold": 3,
+      "method": "C",
+      "objective_delta": -4.440892098500626e-16,
+      "max_parameter_delta": 5.785250056788982e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 3,
+      "method": "M",
+      "objective_delta": 0.0,
+      "max_parameter_delta": 6.292423249121271e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 3,
+      "method": "V",
+      "objective_delta": -1.6653345369377348e-16,
+      "max_parameter_delta": 2.695360601379093e-10,
+      "labels_equal": true
+    },
+    {
+      "fold": 3,
+      "method": "T",
+      "objective_delta": 0.0,
+      "max_parameter_delta": 6.665307195063974e-11,
+      "labels_equal": true
+    }
+  ],
+  "core_metric_rows": 90,
+  "probability_rows": 63,
+  "C_G_equal_labels": 2408,
+  "network_blocked": true
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "registration": "2026-09-14 offline execution revision; retrospective provenance binding, not an inference preregistration",
+  "basis": "run_003 preflight already pins api_preflight/run_002/summary.json; the initial api_preflight/run_001 probe is separately included in the saved report and the 2026-09-13 independent audit. No later test is automatically attributed to this run.",
+  "runs": {
+    "4fa06bfba6c20b2c033beec8404d29cc9785304f1b14d5959f48a5ee9f0752e0": {
+      "run": "outputs/004_event_alignment_pilot/run_003",
+      "analysis_manifest_sha256": "ab797f5affad75b5bb5a88f3e22791db776dcef5788d42ec29fcdae6d4417a23",
+      "fictional_api_sources": [
+        {
+          "path": "outputs/004_event_alignment_pilot/api_preflight/run_001/normalized.json",
+          "sha256": "2d67ea3456654593d3445e4d02cad7742534024d433599e110166c258595b34f",
+          "cost_field": ["cost", "cny"]
+        },
+        {
+          "path": "outputs/004_event_alignment_pilot/api_preflight/run_002/summary.json",
+          "sha256": "313b8e997037e20e3c93469ce7a2bd0aa694ebbae054193065f87f25021b5187",
+          "cost_field": ["cost_estimate_cny"]
+        }
+      ]
+    }
+  }
+}

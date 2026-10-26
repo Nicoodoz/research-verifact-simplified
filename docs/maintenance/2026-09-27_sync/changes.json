@@ -1,0 +1,975 @@
+[
+  {
+    "path": "README.md",
+    "reason": "Replace contradictory accumulated stage snapshots with one current policy/status.",
+    "before_sha256": "ccdd8c5365b14ce2dc0fa92985b7385164ea9037501956d169e272fa8fb87db1",
+    "after_sha256": "e654b477ce72aa74aa4084ee8501766b83488bbb9bc07aa3b628dcc07c469b57",
+    "archive": "docs/history/2026-09-27_before_sync/README.md.snapshot.txt"
+  },
+  {
+    "path": "AGENTS.md",
+    "reason": "Replace contradictory accumulated stage snapshots with one current policy/status.",
+    "before_sha256": "a8d2221dbc3ba6a19d8a55f37d57f4159ccf90968032a4f53daf88902ca87c1d",
+    "after_sha256": "9438bfdfb7e3371b85301cc88e3cf75f5941229ca861c2d15c9fe2e180bef37e",
+    "archive": "docs/history/2026-09-27_before_sync/AGENTS.md.snapshot.txt"
+  },
+  {
+    "path": "docs/PROJECT_STATUS.md",
+    "reason": "Replace contradictory accumulated stage snapshots with one current policy/status.",
+    "before_sha256": "71969cf568715d8ab15717a725cb9fc461a8b6c0ce7fad7418a16ffbd30a53db",
+    "after_sha256": "73af56c905be5817deff3f98465f635ecd461c0166c626362eda653902d423e8",
+    "archive": "docs/history/2026-09-27_before_sync/docs/PROJECT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "docs/RESEARCH_EXECUTION.md",
+    "reason": "Replace contradictory accumulated stage snapshots with one current policy/status.",
+    "before_sha256": "0ebfaf69d91a6b2a7ef62ae8a95c7bc6f272440cb11abbe6a2bbcda39cfceea9",
+    "after_sha256": "e45b2c485b6c0743d04eb3be5887faa24a88e137652d5c6a9ad21dd1a0563043",
+    "archive": "docs/history/2026-09-27_before_sync/docs/RESEARCH_EXECUTION.md.snapshot.txt"
+  },
+  {
+    "path": "docs/API_POLICY.md",
+    "reason": "Replace contradictory accumulated stage snapshots with one current policy/status.",
+    "before_sha256": "9a723bce044a575594ebba29bcf7bc4ec49b9cdf3b13284592c7560e38e2dac7",
+    "after_sha256": "eed33b91ce1173bb25f496a7ca1809be8cc69584edfeefa08a713be5d461ffeb",
+    "archive": "docs/history/2026-09-27_before_sync/docs/API_POLICY.md.snapshot.txt"
+  },
+  {
+    "path": "docs/RUN_ENVIRONMENT.md",
+    "reason": "Replace contradictory accumulated stage snapshots with one current policy/status.",
+    "before_sha256": "be8c20992d34989d1c8a4f3bcdfa1b94b1bf56d9cc64e682de81fab35c3cadd5",
+    "after_sha256": "deeccead7ba5ae8f1eae5a5ad29937932a4c83b6f51243a0d0db95c7fb8a7310",
+    "archive": "docs/history/2026-09-27_before_sync/docs/RUN_ENVIRONMENT.md.snapshot.txt"
+  },
+  {
+    "path": "docs/REPRODUCIBILITY.md",
+    "reason": "Replace contradictory accumulated stage snapshots with one current policy/status.",
+    "before_sha256": "0184eb01cefeaa60b90e202242a52d96136a4fca23b6a9be96e9575da86b1c0e",
+    "after_sha256": "9bec0ac0cd51b42be0e782ea0a335d8f020626a6c589f7624a6ab02f3a1f2a6c",
+    "archive": "docs/history/2026-09-27_before_sync/docs/REPRODUCIBILITY.md.snapshot.txt"
+  },
+  {
+    "path": "docs/aliyun/CURRENT.md",
+    "reason": "Replace contradictory accumulated stage snapshots with one current policy/status.",
+    "before_sha256": "62597c18901609fa0a6fd39d5c1394a217c5604a8a11e4ed54334b5adda53266",
+    "after_sha256": "25e6ab5d99ea5841f35001bd3c014314ffba672c0619b5364fc6f34884a80804",
+    "archive": "docs/history/2026-09-27_before_sync/docs/aliyun/CURRENT.md.snapshot.txt"
+  },
+  {
+    "path": "docs/aliyun/README.md",
+    "reason": "Replace contradictory accumulated stage snapshots with one current policy/status.",
+    "before_sha256": "c06f01fd15db05ca598e88e8e8e96fcc1d983b802c6ddab10544958a27fa234e",
+    "after_sha256": "a8d3caea11db64bb3a5fc317b88972bad8abd71008f8ada14fb61c520b8bcfb5",
+    "archive": "docs/history/2026-09-27_before_sync/docs/aliyun/README.md.snapshot.txt"
+  },
+  {
+    "path": "environment.legacy-analysis.yml",
+    "reason": "Preserve early analysis dependencies instead of silently rewriting their history.",
+    "before_sha256": null,
+    "after_sha256": "87ffa06daf95202d2ef8e6a74be9a872001ee830d838a5732abecb7664412045",
+    "archive": null
+  },
+  {
+    "path": "environment.yml",
+    "reason": "Align default environment name and versions with actual CPU runtime.",
+    "before_sha256": "d400be058e1792180b9754b57c9ecd99155bcbd9e1668dcc8db1582d15059bcc",
+    "after_sha256": "ac16778a112da749b46add1fafe50079258a3d2854736f7547fb65041abf0379",
+    "archive": "docs/history/2026-09-27_before_sync/environment.yml.snapshot.txt"
+  },
+  {
+    "path": "environment.local-verifier.yml",
+    "reason": "Separate local verifier and cloud training dependencies from legacy BGE and CPU.",
+    "before_sha256": null,
+    "after_sha256": "913a59ab843f15d12a9bc770464a0be915448535891f37d507ce6b331276e296",
+    "archive": null
+  },
+  {
+    "path": "environment.autodl-verifier.yml",
+    "reason": "Separate local verifier and cloud training dependencies from legacy BGE and CPU.",
+    "before_sha256": null,
+    "after_sha256": "dc964dd81cc0b3e02c79ead93fec756d8d3f97fb19a73bb9967ae6b6d51b2094",
+    "archive": null
+  },
+  {
+    "path": "environment.local-bge.yml",
+    "reason": "Clarify legacy BGE scope without changing pinned dependencies.",
+    "before_sha256": "83646fb20977cca7fe4fed35e90ccecc89a836cc9b941570a9536ef803012841",
+    "after_sha256": "f49a18c4903c89e802d2b3d5751196b689bf73a92a22e63dfc09a4a8bb60609c",
+    "archive": "docs/history/2026-09-27_before_sync/environment.local-bge.yml.snapshot.txt"
+  },
+  {
+    "path": "tasks/001_dataset_audit/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "dc1d39a7e3f26951b187b0ded95e6b9e997aef323090d9288817d7d388b99c3c",
+    "after_sha256": "0f8769547a026b762c10f7c3a2748755223ba64c31d7bf3c97681959b0c28d12",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/001_dataset_audit/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/002_reproduce_paper_results/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "d9e7f9af120b9392cdd0180cd3c44796900a27a7e9cc8b4afd94cc33e3fd9fcc",
+    "after_sha256": "f0600115b57d0a43a8a0c291726ec1f7e96d44a511828ae87cca8dc5b6bd0cce",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/002_reproduce_paper_results/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/003_error_analysis/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "40420cb715b79c89c2fdf8665614bd9ec13c22f3754cffb3e0d510c84dbefc74",
+    "after_sha256": "d2e9051352acd46c3fd0d235dd67c706f4e9fcbc659d7d44f928c9c1e040530f",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/003_error_analysis/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/004_event_alignment_pilot/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "0c0d547b5026e0d4a8a8650d658c586a4bde21b118198b2c8c59d7c119a1c8b6",
+    "after_sha256": "95932d52f60b80ae4d55ba9c5acd8e77bb4758109a90283e4d491d12bf70a747",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/004_event_alignment_pilot/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/005_pilot_effect_analysis/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "0d1a98ff1789f61287a622f2200be2cddf76cf749241b7e658ba06787684f288",
+    "after_sha256": "de9299bf2965ae39678a0a0cecbe353b0a1d02b11364e9b5f24cafc4cf3f1be9",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/005_pilot_effect_analysis/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/006_source_context_feasibility/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "ff5cfb8f11bd04f22b099a83094efbc1ea5a1fb1b78e6242ce09610015a42f7f",
+    "after_sha256": "2389d07dccf766d2a970e4a00e357a2b27b888839e064f7387e5288f9ea165cd",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/006_source_context_feasibility/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/007_context_retrieval/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "eb9a31e260ee56b28bca44b225602a4ac0d5cebf96e8162644387676cd697818",
+    "after_sha256": "22f30f5b04d43ad80c4bf14d603258e5492c2b95aa6c60f535e6682af875ec3a",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/007_context_retrieval/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/008_retrieval_planning/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "679e1a691bc225f80e2f190f1bc1381435522d12803297e7f9ab9d049a5af63a",
+    "after_sha256": "cbe396275fb284c7411c9635d338b517a122c018e75955dc77b835da7c557dba",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/008_retrieval_planning/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/009_retrieval_baselines/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "0c567dd377383335dc79bb81f28c9f2ba60ba3131e2fe1239efbf3b40b4491f2",
+    "after_sha256": "bdc0eb4cb7636c9b39d18fb6feafff6c8782257f87920107f7a9bc50a64e7d29",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/009_retrieval_baselines/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/010_verifact_baseline_alignment/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "0911a35b2f5a15576d2e1eb1fadb00f9eb6aee31efa80b9dc2d12c5333723867",
+    "after_sha256": "4b4bba96e43b30c458a18393ec9f605b4d291688cd8a40139bd666fae298a3e3",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/010_verifact_baseline_alignment/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/011_evidence_integrity_packaging/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "3bae23a4efa36b86080a7897aaebeb4e4aec0eedb58f4b1569d46d73a7ea9805",
+    "after_sha256": "ae59de366f236b8ac5798541a682d7d4b18e2f350f8447ac5f522d4ab625e46a",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/011_evidence_integrity_packaging/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/012_comparative_error_diagnosis/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "cdadcb0f6c34dfcd571f5baba93095ffd73e09c637d665e3a08d5b0ab741e94e",
+    "after_sha256": "c4765f84ceb557ab950750f021f2512f6e1cf66fba544f98352970705b882d61",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/012_comparative_error_diagnosis/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/013_multi_mechanism_screen/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "7828943f8c96a44b2ec6170a8ca4e6b5365a9d0c14623f35891617d55a574bca",
+    "after_sha256": "31964d817179d5c22c81f3c8610d11b0432b8a8187d25108cd9b7ef45210d430",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/013_multi_mechanism_screen/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/014_qwen27b_baseline_comparison/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "6fb10aae2f4c41e9f6312a6787ad2072d92c170dcefb546ceb98fa118422e460",
+    "after_sha256": "8f362b9f560fef042fcd2ddbaac430c33dbdf3d50961133307c79e41b638ebc2",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/014_qwen27b_baseline_comparison/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/015_disagreement_adjudication/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "adda06926e90c74d38e2ed9671722682b3956659c0ddfb782b1c4c04d8b5f5f7",
+    "after_sha256": "ebdce5ed9f13964f98ef890d1e9daaa7da19e354041b692f4abc0d2153777d68",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/015_disagreement_adjudication/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/016_disagreement_triggered_review_validation/CURRENT.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "f41eadd267311ed3d22c7b9f62bd9f81b12b461b0456ba166fb433aead2c7bdc",
+    "after_sha256": "b887d64ade536c5fd7a362b11f871351f4b05efc42f4f104ca80c63f06090011",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/016_disagreement_triggered_review_validation/CURRENT.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/016_disagreement_triggered_review_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "912fb096d5487a68f7f342164eb199546dd7f7eaee121670c2f643faf1d68c8e",
+    "after_sha256": "62360249da1c54426277473f102d859809f26752f233ae0d90254fa2b4f3306d",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/016_disagreement_triggered_review_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/017_verification_supervised_evidence_utility/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "5f7cb36bba4071594d2a37dbdaec9d69b4216492e8c90c413708f07d0c8502dc",
+    "after_sha256": "9d8c8f453cee1ee523c4d80402ca82dfbe9db6dd485f60f967cb0bed617fa746",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/017_verification_supervised_evidence_utility/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/018_verifact_gap_attribution/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "510b5e96ecb38d8bcb46245d8779c16a0d36f7091a629075cd95d64adca02c3d",
+    "after_sha256": "1aa064b86c6761ff1faabbd231996fb7da440e27430c6009c01c1994b630f206",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/018_verifact_gap_attribution/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/019_support_boundary_screen/CURRENT.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "db6c7c65f5fbc542f6f315c9a363711609001d089011bd698986d678608281c7",
+    "after_sha256": "74f15dbdf430efcee4e683eb8b645c81fdc1db7bc39d72422fdafb5779e28c61",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/019_support_boundary_screen/CURRENT.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/019_support_boundary_screen/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "b2f5fd51cd98e4baf3d17eed0c4045b3f7ea382fc9daeab0deeb7f472843435a",
+    "after_sha256": "ade294627f2ee7587a22bdad9c3ee1672ddf22cd0f56b343c148538858422b4d",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/019_support_boundary_screen/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/019_support_boundary_screen/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "18e33e7463dee4f1572bbf7f1a3ecdfbb30885dc06e1ee566658cf44959b1f84",
+    "after_sha256": "ea18429623387217cc865bcd1629fbab1575c2aed6d237fa126d3b21ad1b60fe",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/019_support_boundary_screen/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/020_lambda2_patient_validation/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "4083d08ab16a1e56fdc5e282c47cf70f2d262478467ceb4ea3f84b1c5c69ad8d",
+    "after_sha256": "7256d74a0ce3e6e09ab3673b78704de237e287e92b8ce605341c3ab243a6a93f",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/020_lambda2_patient_validation/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/020_lambda2_patient_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "05c13fb451eeebce1ede3ca12855470abae928332664a2f8ae1afee71a51d8df",
+    "after_sha256": "3017b1758d6c677167d5f2fea96b3214558eecf9f50f6625982dd18bebd3e7cb",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/020_lambda2_patient_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/021_bge_localization/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "85aff47c6b2738f6bd3d6893d9f17cc78e0c601df3def15ded1841b9bc4fa007",
+    "after_sha256": "82712206a360e9331a3415cb7674610a718c7ed0fb7830b13e7a3a5353ed4e80",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/021_bge_localization/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/021_bge_localization/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "a5b2e3b008254530043006ccb4d22bd494c10c2e8572be58cb1a3a3406b26256",
+    "after_sha256": "9b61d34f088a739502df4bacf03325f4a0ed7bb781d0d4320254010ae10c9f3b",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/021_bge_localization/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/022_competition_aware_support_calibration/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "9016c34015dd1a5f2312091ea04fd2e4ae7308096d218b298ad38a8a78fdeb34",
+    "after_sha256": "56bddadc6e64aaeaad4e6ce90f7bfa28944d9a38de3aec9060bd020a5a27c7c9",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/022_competition_aware_support_calibration/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/022_competition_aware_support_calibration/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "f52bef8504461850e254b16adaa91a4b2c0fbe8fd35179c7e7248d32646c25b7",
+    "after_sha256": "fcaead66738e3b11958f9831b836d1d9e1a42fe860a6581aac69709e5b795c61",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/022_competition_aware_support_calibration/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/023_lambda_boundary_response_analysis/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "4407f5c97fd80b3af067ed9c84292d351d7c94f3cfb4311f6cea1ee1b0e2074b",
+    "after_sha256": "9d90b1cb7fd115211028b7a44d38743c97dd975ac2a8a6eafe83b24df3e45e20",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/023_lambda_boundary_response_analysis/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/023_lambda_boundary_response_analysis/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "634953debfc4a5307bd8a2cf7115abf6f0b7e8e03a1018894288c88e798728e4",
+    "after_sha256": "c2f6ee021442e3f6d945f6b156a8ac2a31ba15d08a2a413b5fc884e85c5bfd4a",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/023_lambda_boundary_response_analysis/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/024_lambda2_transfer_validation/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "84b8c933d2d50727a1fb0f393c6dd7ce27f6044955937f71ca55f52f8479e630",
+    "after_sha256": "0085c58e4af5adba402b7115c9c2609605b351de026fca7725adc7afa0fcafc7",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/024_lambda2_transfer_validation/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/024_lambda2_transfer_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "fb655096f187cd205286410c596a5b9d77843f9502883844dc0802aa70c702ae",
+    "after_sha256": "e177999d89457c45de52dc62dd529c64bc260e52b260203a05f243edfc2143b6",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/024_lambda2_transfer_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/025_lambda_flip_risk_separability/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "e4768923121eae8c210c5e2ef89761c52cc41b711db8bd0e4632f948bb71d23d",
+    "after_sha256": "bf0c359750e00dc867c11af2c7d369b8e6238bb420120c633b84bffba765d0f5",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/025_lambda_flip_risk_separability/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/025_lambda_flip_risk_separability/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "9367034f4eaf5d737c5bdfebec94aa98f1d3cfc43f07c3e069a3064612784ff4",
+    "after_sha256": "c6904da432a16a616ba5b2b464bab3f629f9527cac1aa636bbc768bb2aef9b3c",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/025_lambda_flip_risk_separability/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/026_frozen_sd_patient_transfer/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "6341a6b4daf308820596e8dd06800a355f376c37ff43c8ecdafab776741da22f",
+    "after_sha256": "3543bb9c8ef5bbbbec01b6769cec55b5d79ad82b57047a1284f4bf6c8b1829ed",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/026_frozen_sd_patient_transfer/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/026_frozen_sd_patient_transfer/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "2c6c08208d121c939344528798f544f889491ee1efb630d307aa4b691c082f06",
+    "after_sha256": "54af89d4c27164b3f1a588cb582b84b66edbd10ade0cd29efb3f86029ab10e16",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/026_frozen_sd_patient_transfer/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/027_dual_judge_transfer_diagnosis/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "144f7f34e51fe422bd05d3f214d577fc1677c5444b71e259a7bb539c90b7c39e",
+    "after_sha256": "7544ae9bbeecf0003c012400d56002f6ee2f23c2cfb165d8e103ab75139556de",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/027_dual_judge_transfer_diagnosis/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/027_dual_judge_transfer_diagnosis/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "08803d56ad0d266d290382441cbb3097a0d5e7bc944106ef27d3068e30193048",
+    "after_sha256": "3ccdd4dc82e94e9c2f2c899f92a324bec515340c7cc7dcc5ad2913e7fa0eeb1c",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/027_dual_judge_transfer_diagnosis/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/028_traceable_claim_evidence_verification/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "0c6f1dea580eafa71b672307296fb2cc9e0302827e4edb3d178dbdca1163b01e",
+    "after_sha256": "b4c0df90ff3be244b13a15fdf40e986ff1fcaf518e6dbd863d46d32d4ae6e500",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/028_traceable_claim_evidence_verification/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/028_traceable_claim_evidence_verification/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "8508a7e29801961e4aeb276d43c65e2e462492f151f054aa62f588351579c44b",
+    "after_sha256": "36486adb31f79c0399e0019d2a11742ea59bcfa29a4307522b6ff1797da49737",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/028_traceable_claim_evidence_verification/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/029_semantic_information_gate/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "735f149b31cb61674d1f346fc005a348d51fd86cf6cd70003806d06fa37490d3",
+    "after_sha256": "5683f6a66c8570db2c6291e3cfc42528fd3d8f4075b82ece0d964f74f6ebc299",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/029_semantic_information_gate/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/029_semantic_information_gate/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "64d9577c3ebaa3d53d51f5c4084a2ce111c7143c51c0ba7274cb3adf33a3c444",
+    "after_sha256": "17d9de735270747c31e5b0fe67c166224e8fdd7bb0c8975777d35455e255cf65",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/029_semantic_information_gate/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/030_gate_training_stability/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "d7b0b0d38ca5643559e430af0a4f33803919f62bdfcd1ecdf1cecafa76cb8aee",
+    "after_sha256": "a92b5cef99f985f3912116c998af9d3984d92a27f70d2c9da36ab06b7fa25341",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/030_gate_training_stability/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/030_gate_training_stability/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "45ce1f5085e8f4c349c0c8166f53845b4bc3893bcdd5cbb17864bb0913b9cfdb",
+    "after_sha256": "3f25bd568734a2abc41bc0c09d14add7c389513b3dcb393b10144667b958afc7",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/030_gate_training_stability/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/031_training_expansion_confirmation/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "3eab3739def49738256ef7d789b935218d6611a7f3a809871b349ee6e70b6fce",
+    "after_sha256": "0466fa2ef6c80fbb240c03f54cac1d89c953778b1a66c4f4262a5e7f37d5e294",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/031_training_expansion_confirmation/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/031_training_expansion_confirmation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "1e66c10d781ccbb73eac29714c5f4617e5d1637fd648629e5ad7fb72926bf22e",
+    "after_sha256": "3fb7aef8c897217143c81fa6462d4c8da71e29b3ee3013f49b5f9d87e1c5fd44",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/031_training_expansion_confirmation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/032_evidence_relation_correction/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "0fb587840570ca21ac8a893b84082d91f75c4f37eaee299142d1fe8e69ddc839",
+    "after_sha256": "c92cd7a8e9d314a40f28e1b98b4758bf7ecc20946e70d138a9a42c41a19e04e5",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/032_evidence_relation_correction/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/032_evidence_relation_correction/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "4ce68378327375cbf88eaddeb1d66195b4b6dcf4fe4510739ee66111c228ebb3",
+    "after_sha256": "77c66487d30412ef40187583d2cb4463aa7981ea3fdbda5d02a4a03c306139e9",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/032_evidence_relation_correction/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/033_gate_training_subset/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "b235bc6d6bdb60624340bd1d32fc219b3671179ce9155936221021ea9745f5a9",
+    "after_sha256": "dad1a21ef568e040f368aa61d2a3f33494d37e0816f8c2c70ff1daa80d5eb978",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/033_gate_training_subset/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/034_same_data_comparison/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "cf2690be191d3b5763a180695701372e4ade6876ee6b904f6f67c0e460cac93a",
+    "after_sha256": "1163aeba06617b88ee3944683c24d27fcbb71f755018329800fe45571dcb251b",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/034_same_data_comparison/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/034_same_data_comparison/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "e4ce5fc46e2b52d82827d63c2c82262dd08afc90a90bb59f23a0adc183ba14ef",
+    "after_sha256": "16c06e82e4ef3a5dac3efa8d1f38368c3c142884d0a4fa6b62aa6a51e797db57",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/034_same_data_comparison/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/035_lambda_boundary_calibration/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "d2d03b236d8862efc97f29720ab86789c9efe60eebea399d96c698e2813b1ed8",
+    "after_sha256": "bbae6dd0f06e41d1ce53466645d84e6a038378c2f303c5fbd6e62f38d0eb0a37",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/035_lambda_boundary_calibration/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/035_lambda_boundary_calibration/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "6d7199f4f061434b3fac86e939040322e9c2a5667fe2eb6d97a976d19ef8c485",
+    "after_sha256": "efe661b0fb7f12eb84c604eb9a9743f6e8e9c3c2234605b5596b8de82c50ad2f",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/035_lambda_boundary_calibration/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/036_final_validation/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "518d15d1d9bf0013988bac0ee813ecb2d6b9e43c5d88c47c7c779dd6c5627797",
+    "after_sha256": "afcffa42b40b286aa33f5ec367bcf03194bac14c1ba0b0c3713de79ba8384e9a",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/036_final_validation/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/036_final_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "6df3d570b7fd43690cd1a6a967f94bf544c489b40bc989373cb7a19425cb3c4b",
+    "after_sha256": "acc2ff21fc4feadded45dc85c46900bb52b4009daa50fe23143557fb8a1e794d",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/036_final_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/037_ns_na_decision/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "0caccb22f5a91fec6e9988f9069482a62ecbea95bd4081942189ce8c3751c252",
+    "after_sha256": "fef9c60a4efab7c8547820a9506c7d673f3fb4dff1820ab992416c057cd16fc3",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/037_ns_na_decision/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/038_evidence_explanation_audit/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "34281d500ef045da9de8270c5765525ba069f89868b7ab18a68a16e61f6282a1",
+    "after_sha256": "2bdc178a68e1a9c89812c7c0d31f0b475a5003f0261447fa6e32444c75b8fd8e",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/038_evidence_explanation_audit/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/039_full_ehr_attribution/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "a90acd4277d91ba23cb4d7c3b8bdd937876f31c6a8ca36fe51f92ee306263f94",
+    "after_sha256": "081be8f0a980be799c22fb5c92bc957edd88eb96ff447e0f003e331ae8fd4df0",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/039_full_ehr_attribution/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/040_route_decision/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "f3b052baeb5de1353a9cf24de368402da4ff6a8d42ba099683e86968290a28f2",
+    "after_sha256": "6cb7d2cd3d67f759ba2d5ba24ca337e518e475c437a06037ff4cd9dba47151a0",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/040_route_decision/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/041_evidence_gated_explanation_sync/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "68b9a7159c4d1b49dd68dd5fddd5ce0c43fc7ab43adc05653616321e5cc16af3",
+    "after_sha256": "5e168e402a73ef4f7f5a41f602a71a1cc7ff95c105d3a25ff4a246a51ba5e691",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/041_evidence_gated_explanation_sync/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/042_coverage_aware_evidence_packing/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "a792c653479b18bcb73b7e37ba4a277a62c639df7c11058679b93ea4b0570ebd",
+    "after_sha256": "8690363a65a4030cc02eca5b10fd66a4e1b2e215fe6fde724609403bfe52fac5",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/042_coverage_aware_evidence_packing/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/043_targeted_evidence_utility/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "24483faa95b9a3dfa264594c314ee74f3e3e645c07fcf3968f60fc3f29746006",
+    "after_sha256": "6185f128028dafcd11c2774d3afc27463c4f5d6ab5165e445bda3f4cff3b057f",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/043_targeted_evidence_utility/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/047_mechanism_stratified_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "191d59dc8434cb6344c1b14e9121aff1b3e9a8a27120084d4af6cc809538bf22",
+    "after_sha256": "3b09654741ba43535549ca2543e6a48b7088ed7fc97b5a900f060e4fc603191d",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/047_mechanism_stratified_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/048_end_to_end_evidence_recovery/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "c0a5d2facbbbf47135867b8b3064c7980857343c924c85882dd0cea603688b22",
+    "after_sha256": "8e5068cb2c2a56fffb9015ed4d8b04a82c5b52b8bf30d0fbe1150508e8e4f199",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/048_end_to_end_evidence_recovery/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/049_evidence_decision_utilization/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "8c2d2ff418325ebcf88b1cec696edb1535b7363f856398236b67203dff48873f",
+    "after_sha256": "777139a589c2ad0db70990a14e377fd6c61c067a4a7dedd95d5c0130b200c95a",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/049_evidence_decision_utilization/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/050_repeated_score_aggregation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "22563cac90ff72e8a63103615563bfba69766f7338e4c2ab97bee165e158988b",
+    "after_sha256": "5c4fa27d421167a71e9586074015eb11a67ac2d794d5cc672f7a34050f05beb1",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/050_repeated_score_aggregation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/051_thinking_mode_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "4c2f991089bc723c40ee1e1a84dc68ac4d3cb7df5b8c5c5020333a3656058cc2",
+    "after_sha256": "3ad9bd557131a8a9160e11eff2a173dc83c631a15b421637c316ff9c23c8ff6a",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/051_thinking_mode_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/052_first_tier_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "72309a800190dbba603db872c930c6a53c58ed37d65333134f3125025b50f4b2",
+    "after_sha256": "a1437ef8eb01101a17333aa72afd9ac661865d3c3609bc7889c6bdc0372b267e",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/052_first_tier_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/053_thinking_prior_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "02972b6f2a4e7a78e3240286480fef4de4866b1be04b73212535ad3b5dbc50d7",
+    "after_sha256": "151b4fc3f0b4034d839fab97799e026b5ea93d56c2628511114144f3dd6fed2d",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/053_thinking_prior_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/054_unlabeled_prior_shift/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "e6f9388d04996f0708854e57a3091d6eeabd43e6ea012acca0eb9f8f0019b799",
+    "after_sha256": "3aea9e7edc6826aff5787b00f6b40da1472fc46478e1a5cbfeb917613634dcca",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/054_unlabeled_prior_shift/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/055_zero_label_policy_adaptation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "10b6e0b35d2fb1b06d35cad12d2f89661afd3f30b6d52d4826865e162a396092",
+    "after_sha256": "f998156b4aa06a5e5aec4138febb76598154adf4849e7c92b3206f1a49ab092f",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/055_zero_label_policy_adaptation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/056_shift_decomposition/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "7601e1eedc09bf72803b6e2d70dc111e92215139e8112d007ef344277aba38c6",
+    "after_sha256": "5895f36604b54d3a11011b6dc372486844a9730d55ce784dee3ace8c9ba950f7",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/056_shift_decomposition/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/057_soft_shift_detection/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "6cd2c89143c7cc99e5e5198a11af8f741041b37e6cfe0a1eb1f1bacc369682a2",
+    "after_sha256": "b26fca5f16dc0deea9ec812a572edffb70b525b70f15c73cd21b4d8f78f105e7",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/057_soft_shift_detection/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/058_unlabeled_batch_scaling/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "b95a03f199bf44c5d1d2d24eb95068e59c6649d268c3d445c06622b26314d62a",
+    "after_sha256": "0c5ebc23df8f29b7a46a7d8946d2520159ef4484daa928e1e4be1375386ee595",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/058_unlabeled_batch_scaling/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/059_joint_prior_judge_drift/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "c09c93ebfdb831ffe8314728be81ae4631042fb911f6575c1fd5e31657887f83",
+    "after_sha256": "f066ffc12d6b3c257d39970ee67fc938f93a054162308cc918db0568d3396a95",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/059_joint_prior_judge_drift/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/060_class_specific_drift/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "6bfd2dacc1b19bd003c951a0651d8a852cae239ce8a74104538d2bd19f34aa63",
+    "after_sha256": "dfe5ccc8d5a57012492534bbfcda79ed8bd80d84afa6a6a2c192f94ef260ad8b",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/060_class_specific_drift/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/061_prior_anchored_drift/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "e5161460f3f81b00005106d81e0f795713d7c60f969cf9adebc8a924c0eb1a7a",
+    "after_sha256": "09a0f9cc6196f89f8e2f6bbef832ca345ca46aaca3308cbcc96ac991b57047bb",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/061_prior_anchored_drift/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/062_low_rank_empirical_transport/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "8b161275927a84474d3404aed931d427ac606f4535a6df4ca674b93d04a6e725",
+    "after_sha256": "ccf86033fe3470a24fd7a0e35dbdcbdc9ba24b99036a36393d9ec70d7f38d92e",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/062_low_rank_empirical_transport/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/063_minimal_label_reliability/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "7dc58cfaec3efb28fbfa2b57d1d2eee6c3ce7d630e69391a84bb852137b2bf24",
+    "after_sha256": "ee75a2a1a3b6597dbee0dfd469ba9d8e80115644c32f664977169770539fe771",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/063_minimal_label_reliability/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/064_safe_policy_selection/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "8806597f46b1eb417fb45516bb29c1fcf90bdb20f1e1afba86e586f5e181063a",
+    "after_sha256": "fd338cba6decae3e17bbacce5a28380c5dd6c6eafbaa1c80c90848be05530340",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/064_safe_policy_selection/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/065_verification_evidence_construction/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "2f78da8c4326ecdb9c082238052fcd6146e302e55e9184653e48d06a7e2b31d3",
+    "after_sha256": "456e53263768b643c17171462bad9331f4ef331210276cc4163081fab7f432a8",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/065_verification_evidence_construction/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/066_oracle_headroom/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "654280542d21fa4fcdd36b6690b59e0a171a6ada77979e508fcaf2914e699a83",
+    "after_sha256": "c77b6f18817dd50b3048ba2d5937a7934dca87795f7d2efc3a0d514cdd9091f6",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/066_oracle_headroom/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/067_conservative_evidence_packing/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "0bc22d0b4dbbbd63b22aac91814f8b88581d6ec9e732e4cfbfe6b663f3afd5d8",
+    "after_sha256": "feb32a9ee1a13de1f254975e3e1e5fe6ebbed7064c69deac2039cce6396727e6",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/067_conservative_evidence_packing/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/068_final_pack_utility_diagnosis/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "21209febc4741b788a229adfbf76e4c9368b6bcbc643f0179a12f88397220b63",
+    "after_sha256": "26ec022ceec4ef2f1cca0945638fed7bf01de8eb45d0be2983701c4ac825fa47",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/068_final_pack_utility_diagnosis/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/069_final_pack_controlled_repair/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "ed8e9c27ec54b97e616a86f107342180db0d9ef44c80040140506f8e4244f57a",
+    "after_sha256": "e12f369251c003264070fdd1d2c8e9b4fcf1352118e09ff7022aef86c9a2c718",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/069_final_pack_controlled_repair/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/070_fixed_evidence_reasoning_diagnosis/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "4b6dab906a3478cfd05438f215649c35e158a92f8cc2fc321f93be6c293dcb22",
+    "after_sha256": "2c1747ed65b88c22bd51cf90b4b990b793db33db9460cc212dbad00f919f4de5",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/070_fixed_evidence_reasoning_diagnosis/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/071_judge_icl_feasibility/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "57f12a193923f3c875aa63aed722bacd2b3e8d1170aea75a2918cafc1fb841d4",
+    "after_sha256": "4147820040f70f47b8e682c95fc56e2772e3610070a763ee1ce2c55751611096",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/071_judge_icl_feasibility/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/072_adaptive_judge_examples/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "02a54d9354d8afe917f58595c4378b789ccc65aea3d6840ea4e7c55d9a53947a",
+    "after_sha256": "ef3b1aa75fc057aac7a315101052d5d2ff3cb0f88490eb9d4c272f61ed639fc7",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/072_adaptive_judge_examples/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/073_clinical_example_matching/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "cd21d53e34adf1a6c82d9ea5ae9293b5ba2a69b26c632cdd5cc805af520c0378",
+    "after_sha256": "bb0e066bd4ddf0191a18b040182f8cbec2b3e4a3460488d33fd357f62fa4fca5",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/073_clinical_example_matching/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/073_clinical_example_matching/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "f6cc3f30260f3bd3d64d15745ef6b4a3211f191bbb4d7f5f7bb1de8b8d396058",
+    "after_sha256": "07094a92db8e45cb0b3f999739956003f7719c270df25fa9a8f6f88a6cb353e5",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/073_clinical_example_matching/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/074_anchor_dynamic_examples/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "7d23644bd29b74a2b33300474220921714b0ab971baf5309aa52f67605d19f45",
+    "after_sha256": "21b1d6277d43465f11c444d7f6a4aa5fd96e9df47243538e28b9a8f6f28ba0a9",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/074_anchor_dynamic_examples/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/074_anchor_dynamic_examples/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "155ec2eb0044c6a6c3b639a8e52a816e0023a4544b158d4745b0f936c54bb6a0",
+    "after_sha256": "76b83e630da8a4b09a5c700a737fc699636c1747c19c388adc791ca64bed2140",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/074_anchor_dynamic_examples/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/075_annotated_static_examples/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "35da89fe1682fc000d7ee6b667e475fab4a96dc569589764e414dc13414b6fd1",
+    "after_sha256": "1cea3527aa3d5d57d922a923eb842d1283fc1cc0745009b96854c02be6f395c3",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/075_annotated_static_examples/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/075_annotated_static_examples/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "4b10c7f90b2e07bde450aab678ee82421665c040d476b4b063c46813316fcc71",
+    "after_sha256": "cf66501d3b074788d086e2c5f9d07cc9abcdb51f7fc82e043ecccd7e7d0050af",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/075_annotated_static_examples/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/076_existing_results_synthesis/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "5db48f086d86480b2ce9d5a87af6a416523ba1f96a143db291e767a638d7d88f",
+    "after_sha256": "4bf3026efc07bbb678c87331784fd61223ad764ce53ad3d6bf80ea7ff7465036",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/076_existing_results_synthesis/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/076_existing_results_synthesis/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "6dc343663f941ea94858144f0c3081b3c458bc5ab2d1825b9d47ae7f308cc895",
+    "after_sha256": "004774e2f66c2f4599deb50c80658571fcb855bd2ca2d19d42429bdecb24ba7f",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/076_existing_results_synthesis/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/077_static_example_discrimination/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "ae36ccdf4273f437ffbe275683fc33833c4ee358032d591877d544366f936b1b",
+    "after_sha256": "5ecf5be4d80b14bec6bb09a613edb5d06a8b2351f5d39625f3aa1566cba28c2f",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/077_static_example_discrimination/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/077_static_example_discrimination/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "7c89b80b0bb4d8a4ab94fedad62d4168b6111ab21a9d3adf1e5135b499830e3d",
+    "after_sha256": "a315f62b8615faf0be0e1e549ac153255145387b1bce6816875a9f8d09c4f382",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/077_static_example_discrimination/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/078_component_ablation/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "ce955fb388711308c13af3395c21837e5e2a95276dc0599bb5f666665fc31933",
+    "after_sha256": "573e795df0f11bc330f1483ad99bb95e182d9798c50331eb0fc821adb259a3ca",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/078_component_ablation/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/078_component_ablation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "272f08512c46d9afd15d9d3cb5a6afadfc49444a9f772f36818e7a838b62fa45",
+    "after_sha256": "776f902540aa110b01cf37aeed16706c7fdddfdffb07322e380e227e1fa03fa7",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/078_component_ablation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/079_f4_priorg_adaptation/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "eeda5b85feb3b73c9bdc2eb3aea31c397c061a02d504fb4e1540ba5f2c0f9b2d",
+    "after_sha256": "13ffcedd23116c15a85b3ea266b94815ae70650c7c2d2d213d1a5bfaa3f75121",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/079_f4_priorg_adaptation/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/079_f4_priorg_adaptation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "4f0496fec10f24ed26f873f5fa30f75fc1ea43ec48ea8a2b19b5667b9bd8d2fc",
+    "after_sha256": "69c2462ad57e0a06e28ab2a8a87b13ee6cc20fc384a0f2f45409b466ac3d0f99",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/079_f4_priorg_adaptation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/080_final_decision_adaptation/CURRENT_STATUS.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "a8dce93341cba9afd947f48e6f88cad720667dd6903b2b549845fad1b74f1b19",
+    "after_sha256": "670749eea980f5f49f7c3eca7f0da59697753ad84ee3450ad23c31ad2eb2aba7",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/080_final_decision_adaptation/CURRENT_STATUS.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/080_final_decision_adaptation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "ea2c022c5b079e560f582de97d9e43301373464b98aec58f4879a3619e5b8835",
+    "after_sha256": "7d627cb55a2e2dc70e9b52fdddaf1d84494647f8b4a3901330257a5eb3392815",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/080_final_decision_adaptation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/081_gt_blind_evidence_selection/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "f225498fe4fd342da4be5e8a5913fa65cba755e945709d88bfba35e5c40914a5",
+    "after_sha256": "145c9292b35ff2cbb150fb1f730fda2aca137fad4b8d1ebbd448360af79b5b42",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/081_gt_blind_evidence_selection/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/082_anchor_configuration_adaptation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "bb6f7b6ffb69f1fcd75bf0591d5586ea364c84111919bff6e347c06867f493e8",
+    "after_sha256": "9c854cf12e47efbfa7e32508f7b6a65830398af0edf14ff3b8f6c6b478236411",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/082_anchor_configuration_adaptation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/083_native_rationale_information/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "987f3085d7071b2277ebc72178ce77009d1505414d2a72b2b74168bc8c21cb10",
+    "after_sha256": "eaefe8800863b59e112237900afb25a5a6b821f4037366abcbffb64eb4f2afc6",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/083_native_rationale_information/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/084_f4_coverage_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "4d20ad78319f4b8de93ccc978612a98e6379ea789e57b279dc38ad75624fc470",
+    "after_sha256": "fe84097523169b54c793c6a49d692eea1c7a4b66d9fadea67abdaa6af0786100",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/084_f4_coverage_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/085_r1_70b_autodl/AUTODL_HANDOFF.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "e48f41a6cf421f2deb769c19cd651fe8cf19d7c05e5f0dd7c89a1b88f0b2dd7b",
+    "after_sha256": "c956e74f6655a15d2c5a96b358053775d5225a853b4b5afbd03da69737acd4a5",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/085_r1_70b_autodl/AUTODL_HANDOFF.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/085_r1_70b_autodl/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "6e426fa9dbc3a6053f7a8663309c64975ac21d9b9d92bb3ee3324e7d238ee44c",
+    "after_sha256": "65e66bb44b0d563d925797e50bd04b4b0b10c8dc39fb060f95f30546c06fc3a6",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/085_r1_70b_autodl/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/085_r1_70b_model_swap/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "e74ec0e72c79283bc8951ad04a651057943fc1c64685bff47003aab008c010ed",
+    "after_sha256": "a639f4a63ab7f31a0283bddc3f94f60eda6cac3ff4f52e7cdf7e6baf63b87062",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/085_r1_70b_model_swap/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/085_r1_70b_valdemardi/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "6a4d3538b043cb67c3271ff614d7637a588d3986408c1706a0ff1cb82a31ce9c",
+    "after_sha256": "fee1097e03c3f745cb7d0a5ab9deebd82aca972b46d533be2303b09d442f1b86",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/085_r1_70b_valdemardi/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/086_global_demonstration_selection/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "c8fb2511b5236a4d5f67bd4ba4341421800e3b30db1ec85cd451b65262a422d9",
+    "after_sha256": "1ea420e7d2448c97bb8fcf5f587db4052bd725dd38b22096ac1fe6d1c797ab19",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/086_global_demonstration_selection/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/087_f4_evidence_intervention/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "10e5ebd3e2d1d71d5bb31e7a1a6c5518a4761ed5448e7a2039d4d0f520973b4e",
+    "after_sha256": "fd71a1aefcee036ebec2fb5facc3f89a16e56787fb11637fdabedd284659e9c7",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/087_f4_evidence_intervention/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/088_evidence_preserving_demonstration_compression/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "b636c8204d0e2ff4ee369740a40ab02019b7ac0e675124bf538abafa9aaa0eaf",
+    "after_sha256": "d33149025bfdf956cd7ed2c706939b6df9525981366005ce35b75dc91c44b992",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/088_evidence_preserving_demonstration_compression/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/089_source_audited_demo_compression/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "fa39a928c9abca98939d5b0da1b9c0da5e1ad3ba7401c9e5f12cf4afd62bb15c",
+    "after_sha256": "76470af387793e57f8212daab7b3d66f6cc5ec62d3d74a304e1a4ffd917f91a7",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/089_source_audited_demo_compression/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/090_demo_constructor_repair_validation/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "fbe7d49326cadc7e2cea30df7c6f4fabb35cd2754138ca9ecdd87aeed27c06ea",
+    "after_sha256": "c86a8922c1de54e3e9b338f2778ee06dac694f4c3f28a28d8de10688ada2bfc3",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/090_demo_constructor_repair_validation/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/091_integrated_evidence_decision_study/README.md",
+    "reason": "Scope historical task navigation and point to actual final report/audit/current policy.",
+    "before_sha256": "acb2aea13f14d13bb069979ef965b44e9c134b39bd8ef2174f224a169795aa8e",
+    "after_sha256": "3cb1d3bad79b49cf88e3ceb62af854985b334f9f874704287fc98c9f7af9dbc6",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/091_integrated_evidence_decision_study/README.md.snapshot.txt"
+  },
+  {
+    "path": "tasks/092_task_adapted_verifier/README.md",
+    "reason": "Remove obsolete resume instruction after task completion.",
+    "before_sha256": "13216134886ebfe080bce532960eb9b42113f258aa3cd75d4501eadbd9f94823",
+    "after_sha256": "bd8b8a0751bb71edc8d69ec43ae5eb54f566ffbe51ce67f27251e5d2746f3174",
+    "archive": "docs/history/2026-09-27_before_sync/tasks/092_task_adapted_verifier/README.md.snapshot.txt"
+  },
+  {
+    "path": "docs/TASK_INDEX.md",
+    "reason": "Provide complete authoritative navigation for all research stages.",
+    "before_sha256": null,
+    "after_sha256": "cfd57b3b9012b2dcf62ea29de73253838a721ac07ff9818fecda384f5af451ec",
+    "archive": null
+  },
+  {
+    "path": "reviews/README.md",
+    "reason": "Update stale latest-task/audit/budget index without modifying audit judgments.",
+    "before_sha256": "2b9098e0478554e9c694648f4e88a306f6d80d30c9f30d60591ec08858905a72",
+    "after_sha256": "e3209f273d8c870b8fa4e199d47619778078e429b776ffc2702982841c7a9124",
+    "archive": "docs/history/2026-09-27_before_sync/reviews/README.md.snapshot.txt"
+  },
+  {
+    "path": "docs/siliconflow_pool/README.md",
+    "reason": "Remove 016-as-latest implication and clarify current task/routing scope.",
+    "before_sha256": "15da51c4cdf5a0c3545284b12ce02d7ab8b265e05634bc54f718bc9524836e1a",
+    "after_sha256": "7da82df39516939392acba8a5f6a9df168c4516d6381ac4403b9b7afd2aa7dac",
+    "archive": "docs/history/2026-09-27_before_sync/docs/siliconflow_pool/README.md.snapshot.txt"
+  },
+  {
+    "path": "docs/VeriFact_论文草稿_v1.md",
+    "reason": "Point old manuscript drafts to the current complete manuscript without rewriting history.",
+    "before_sha256": "c128d2cfb845510d68a70d9c984380ec9bcfa4cbae86f3605bba2b38bbe0536c",
+    "after_sha256": "093f5281700ed1e5db203127630323786199c403ad0ee6a2b07e085a1698f2e8",
+    "archive": "docs/history/2026-09-27_before_sync/docs/VeriFact_论文草稿_v1.md.snapshot.txt"
+  },
+  {
+    "path": "docs/VeriFact_论文草稿_v1_036已回填.md",
+    "reason": "Point old manuscript drafts to the current complete manuscript without rewriting history.",
+    "before_sha256": "cabee0254f3cc3956f091349513977fa00eb7e341aa77575f2c98f67599b0841",
+    "after_sha256": "6cf4635b829897a605a779ca22332c7499cb7e0b273dcd310362e109ff2ecb43",
+    "archive": "docs/history/2026-09-27_before_sync/docs/VeriFact_论文草稿_v1_036已回填.md.snapshot.txt"
+  },
+  {
+    "path": "docs/README.md",
+    "reason": "Classify historical prompts, notebooks, drafts and imported sources rather than relabel them as current work.",
+    "before_sha256": null,
+    "after_sha256": "08d096fa936c8dad122b58bf08a7ce8149c2286fb08fb98a53fbe2e7ec749e69",
+    "archive": null
+  }
+]

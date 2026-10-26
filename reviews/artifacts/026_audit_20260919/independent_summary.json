@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "history_hashes": 15138,
+  "templates": 1950,
+  "requests": 1352,
+  "counts": {
+    "deepseek_B": 650,
+    "deepseek_S": 650,
+    "qwen_S": 52
+  },
+  "parse_statuses": {
+    "valid": 1323,
+    "valid_with_format_anomaly": 29
+  },
+  "training_patients": 10,
+  "validation_patients": 6,
+  "freeze_order_pass": true,
+  "threshold": 0.686248968514202,
+  "costs": {
+    "deepseek_B": "7.711185",
+    "deepseek_S": "8.159301",
+    "qwen_S": "0.912228"
+  },
+  "total_cny": "16.782714",
+  "peak_reserved_cny": "17.987382",
+  "reference_check": {
+    "SD": {
+      "R": 29,
+      "risk": 12,
+      "gain": 2.10526315789474,
+      "ci95": [
+        -6.894736842105264,
+        11.0
+      ],
+      "loo_positive": 4
+    },
+    "peer_U2": {
+      "R": 23,
+      "risk": 5,
+      "gain": 8.263157894736842,
+      "ci95": [
+        -3.526315789473683,
+        21.5
+      ],
+      "loo_positive": 6
+    }
+  },
+  "network_blocked": true
+}

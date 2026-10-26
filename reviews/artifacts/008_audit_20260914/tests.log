@@ -1,0 +1,16 @@
+test_candidate_cap_and_direct_reservation (test_retrieval_planning.PlanningTests.test_candidate_cap_and_direct_reservation) ... ok
+test_crash_after_receipt_recovers_without_resend (test_retrieval_planning.PlanningTests.test_crash_after_receipt_recovers_without_resend) ... ok
+test_dense_retrieval_rescues_zero_lexical_query (test_retrieval_planning.PlanningTests.test_dense_retrieval_rescues_zero_lexical_query) ... ok
+test_native_usage_and_fixed_phase_allocation (test_retrieval_planning.PlanningTests.test_native_usage_and_fixed_phase_allocation) ... ok
+test_saved_answers_no_resend_and_balance_rotation (test_retrieval_planning.PlanningTests.test_saved_answers_no_resend_and_balance_rotation) ... planner received 0 budget 0.0
+ok
+test_selector_does_not_truncate_hit_or_zero_other_arms (test_retrieval_planning.PlanningTests.test_selector_does_not_truncate_hit_or_zero_other_arms) ... ok
+test_source_never_redefines_claim_and_quote_validation (test_retrieval_planning.PlanningTests.test_source_never_redefines_claim_and_quote_validation) ... ok
+test_terminology_normalization_and_negation (test_retrieval_planning.PlanningTests.test_terminology_normalization_and_negation) ... ok
+test_unknown_response_pauses_without_retry (test_retrieval_planning.PlanningTests.test_unknown_response_pauses_without_retry) ... planner received 0 budget 0.0108
+ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.183s
+
+OK

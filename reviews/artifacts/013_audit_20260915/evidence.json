@@ -1,0 +1,93 @@
+{
+  "handoff_sha256": "4501c92ffd3a7d2e62a46c0b802d2db34f241d74f157a5b40ca26216f516c642",
+  "handoff_files": 1727,
+  "new_api_calls": 0,
+  "phases": {
+    "unit_aux": {
+      "requests": 16,
+      "http": {
+        "200": 16
+      },
+      "kinds": {
+        "rerank": 8,
+        "chat": 8
+      },
+      "usage_cost": "0.26049813",
+      "reserved": "0",
+      "total": "0.26049813",
+      "first": "2026-09-15T09:46:59.634684+00:00"
+    },
+    "unit_judge": {
+      "requests": 15,
+      "http": {
+        "200": 15
+      },
+      "kinds": {
+        "chat": 15
+      },
+      "usage_cost": "0.1903188",
+      "reserved": "0",
+      "total": "0.1903188",
+      "first": "2026-09-15T09:48:26.139961+00:00"
+    },
+    "screen_aux": {
+      "requests": 462,
+      "http": {
+        "200": 462
+      },
+      "kinds": {
+        "rerank": 231,
+        "chat": 231
+      },
+      "usage_cost": "7.69694908",
+      "reserved": "0",
+      "total": "7.69694908",
+      "first": "2026-09-15T09:52:57.677191+00:00"
+    },
+    "screen_judge": {
+      "requests": 942,
+      "http": {
+        "200": 942,
+        "0": 1
+      },
+      "kinds": {
+        "chat": 942
+      },
+      "usage_cost": "10.5931986",
+      "reserved": "0.05928",
+      "total": "10.6524786",
+      "first": "2026-09-15T10:06:18.902259+00:00"
+    }
+  },
+  "total_cny": "18.80024461",
+  "http": {
+    "200": 1435,
+    "0": 1
+  },
+  "independent_nets": {
+    "contract": -12,
+    "text_guard": -4,
+    "wide_candidates": -5,
+    "selector": -5,
+    "refresh48": -7
+  },
+  "main_body_count": 930,
+  "all_six_conditions_complete": true,
+  "no_combination_or_confirmation": true,
+  "replay": {
+    "git_head": "a7fca7edfde3a632f340649bbce8fc2fdeccbdbd",
+    "history_files_unchanged": 10437,
+    "independent_audit": false,
+    "network_blocked": true,
+    "new_verification_API_calls": 0,
+    "raw_files_equal_001": 25,
+    "reconstructed_assignments": 1398,
+    "reconstructed_references": 1386,
+    "score_content_files_equal": 58,
+    "task_cost_or_reserved_cny": 18.80024461,
+    "tests": 174,
+    "tests_success": true,
+    "unique_screen_judge_requests": 942
+  },
+  "handoff_unchanged_after": true
+}

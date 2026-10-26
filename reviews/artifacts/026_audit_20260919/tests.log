@@ -1,0 +1,27 @@
+test_body_matches024_except_claim_reference (test026.FrozenGate.test_body_matches024_except_claim_reference) ... ok
+test_core_conflict_is_invalid (test026.FrozenGate.test_core_conflict_is_invalid) ... ok
+test_features_equal025 (test026.FrozenGate.test_features_equal025) ... ok
+test_noncore_conflict_does_not_block (test026.FrozenGate.test_noncore_conflict_does_not_block) ... ok
+test_final_fit_reproduces_from_development_only (test_gate026.Scope.test_final_fit_reproduces_from_development_only) ... ok
+test_qwen_not_eligible_before_candidate_freeze (test_gate026.Scope.test_qwen_not_eligible_before_candidate_freeze) ... ok
+test_scalar_tie_and_lambda_unchanged (test_gate026.Scope.test_scalar_tie_and_lambda_unchanged) ... ok
+test_cohort_hash_detects_gt_or_order_change (test_evaluation.AlignmentTests.test_cohort_hash_detects_gt_or_order_change) ... ok
+test_external_cohort_cannot_change_release_labels_or_validity (test_evaluation.AlignmentTests.test_external_cohort_cannot_change_release_labels_or_validity) ... ok
+test_extra_duplicate_and_invalid_label_rejected (test_evaluation.AlignmentTests.test_extra_duplicate_and_invalid_label_rejected) ... ok
+test_missing_requires_explicit_opt_in_and_preserves_denominator (test_evaluation.AlignmentTests.test_missing_requires_explicit_opt_in_and_preserves_denominator) ... ok
+test_ordered_id_alignment (test_evaluation.AlignmentTests.test_ordered_id_alignment) ... ok
+test_paired_identical_methods_have_zero_delta_interval (test_evaluation.AlignmentTests.test_paired_identical_methods_have_zero_delta_interval) ... ok
+test_patient_bootstrap_is_row_order_invariant (test_evaluation.AlignmentTests.test_patient_bootstrap_is_row_order_invariant) ... ok
+test_ac1_matches_irrcac_three_label_two_rater (test_evaluation.MetricTests.test_ac1_matches_irrcac_three_label_two_rater) ... ok
+test_ac1_matches_irrcac_with_rotating_sparse_clinicians (test_evaluation.MetricTests.test_ac1_matches_irrcac_with_rotating_sparse_clinicians) ... ok
+test_bootstrap_matches_pandas_resampling (test_evaluation.MetricTests.test_bootstrap_matches_pandas_resampling) ... ok
+test_clinician_agreement_uses_pairs_not_majority (test_evaluation.MetricTests.test_clinician_agreement_uses_pairs_not_majority) ... ok
+test_constant_prediction_and_absent_class_reported (test_evaluation.MetricTests.test_constant_prediction_and_absent_class_reported) ... ok
+test_hand_calculated_confusion_and_class_ratios (test_evaluation.MetricTests.test_hand_calculated_confusion_and_class_ratios) ... ok
+test_mcc_matches_sklearn_random_and_degenerate (test_evaluation.MetricTests.test_mcc_matches_sklearn_random_and_degenerate) ... ok
+test_patient_sampling_retains_unequal_cluster_sizes (test_evaluation.MetricTests.test_patient_sampling_retains_unequal_cluster_sizes) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.352s
+
+OK

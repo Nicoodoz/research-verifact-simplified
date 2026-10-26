@@ -1,0 +1,15 @@
+{
+  "task": "021",
+  "status": "PASS",
+  "compared_files": [
+    "local_candidates_fp32.jsonl",
+    "candidate_fp32_summary.json",
+    "rerank_pair_ids_fp32.jsonl",
+    "rerank_pair_fp32_summary.json",
+    "claim_comparison.csv",
+    "comparison_summary.json"
+  ],
+  "API_calls": 0,
+  "GPU_inference": false,
+  "note": "021 generated report is a renderer snapshot; frozen editorial report is retained."
+}

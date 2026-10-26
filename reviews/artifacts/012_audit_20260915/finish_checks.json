@@ -1,0 +1,21 @@
+{
+  "reading_dedup_normalizes_whitespace": true,
+  "groups_with_nonidentical_text_after_normalized_match": 7,
+  "affected_cases": [
+    "N121",
+    "N139",
+    "N186",
+    "N188",
+    "N220",
+    "N501",
+    "N526"
+  ],
+  "literal_reference_payloads_preserved": true,
+  "negative_controls_rejected": [
+    "input.json",
+    "compute.py",
+    "pred.json",
+    "cross_patient_trace"
+  ],
+  "mutable_audit_document_allowed": true
+}

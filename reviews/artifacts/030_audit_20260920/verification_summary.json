@@ -1,0 +1,82 @@
+{
+  "executor_self_check": true,
+  "independent_audit": false,
+  "passed": 293495,
+  "saved_models_recomputed": 32688,
+  "new_fits": 0,
+  "API_calls": 0,
+  "fallbacks": [
+    {
+      "model": "A_0836f90dbfcca5b72cde/inner2",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "A_156fe5d76f05aea1d05f/inner0",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "A_aa6998fc5b1902715fd6/inner2",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "A_d1eee3385c9a30fd091b/inner0",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "B_0836f90dbfcca5b72cde/inner2",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "B_156fe5d76f05aea1d05f/inner0",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "B_aa6998fc5b1902715fd6/inner2",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "B_d1eee3385c9a30fd091b/inner0",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "D_0836f90dbfcca5b72cde/inner2",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "D_156fe5d76f05aea1d05f/inner0",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "D_aa6998fc5b1902715fd6/inner2",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    },
+    {
+      "model": "D_d1eee3385c9a30fd091b/inner0",
+      "fallback": "single_class",
+      "n": 9,
+      "R": 9
+    }
+  ]
+}

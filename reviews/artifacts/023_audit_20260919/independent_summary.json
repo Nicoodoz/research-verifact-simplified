@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "history_files": 7625,
+  "history_mismatches": [],
+  "score_observations": 2408,
+  "switch_checks": 2408,
+  "metric_rows": {
+    "dense_grid": 4812,
+    "exact_states": 213,
+    "patient_curves": 16842,
+    "leave_one_out_curves": 10426,
+    "local_sensitivity": 132,
+    "patient_local_sensitivity": 462
+  },
+  "anchor_groups": 33,
+  "plateaus": {
+    "019": {
+      "exact": [
+        1.9459101490553132,
+        2.079441541679836
+      ],
+      "near_U2": [
+        1.8,
+        2.77
+      ]
+    },
+    "020_R0": {
+      "exact": [
+        1.9459101490553132,
+        2.079441541679836
+      ],
+      "near_U2": [
+        1.95,
+        2.83
+      ]
+    },
+    "020_R1": {
+      "exact": [
+        1.9459101490553132,
+        2.079441541679836
+      ],
+      "near_U2": [
+        1.95,
+        3.8
+      ]
+    },
+    "pooled_R0": {
+      "exact": [
+        1.9459101490553132,
+        2.079441541679836
+      ],
+      "near_U2": [
+        1.95,
+        2.83
+      ]
+    }
+  },
+  "connection022_labels": 2408,
+  "network_blocked": true
+}

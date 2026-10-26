@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-09-16T00:10:59.060276+00:00",
+  "head": "de3da2f5af4045a4c814bc4279c4aab6a48c389d",
+  "tests": 189,
+  "tests_passed": true,
+  "negative_checks": [
+    "claim",
+    "reference",
+    "GT",
+    "candidate_label",
+    "candidate_reason",
+    "model",
+    "temperature",
+    "mapping",
+    "missing",
+    "duplicate",
+    "illegal"
+  ],
+  "exact_jobs": 156,
+  "agreement_passthrough": 572,
+  "replayed_content_files": 60,
+  "history_files_unchanged": 13202,
+  "baseline_metrics_identical": true,
+  "api_calls": 0,
+  "network_blocked": true,
+  "independent_audit": false
+}

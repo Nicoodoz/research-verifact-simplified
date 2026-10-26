@@ -1,0 +1,10 @@
+{
+  "status": "PASS targeted runtime-v3 regression",
+  "non200_and_unknown_preserve_bound": true,
+  "cross_phase_same_ID_body_B_filtered": true,
+  "different_body_and_arm_preserved": true,
+  "invalid_HTTP200_not_repeated": true,
+  "original_order_preserved": true,
+  "old_workflow_snapshot_exact": true,
+  "runtime_freeze_sha256": "b9dd11a47e7a1bfa21710f1968c4b999b3e7c27c3ab171333af14d84dc7e2e86"
+}

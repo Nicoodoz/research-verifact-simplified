@@ -1,0 +1,23 @@
+{
+  "fetched_date": "2026-09-14",
+  "sources": [
+    {
+      "path": "DnDScore_EMNLP2025.pdf",
+      "url": "https://aclanthology.org/2025.emnlp-main.1205.pdf",
+      "sha256": "2aad30e63913086cf036c23db1f3382164e2671162b5956c5df974f617658f16",
+      "bytes": 805412
+    },
+    {
+      "path": "Molecular_Facts_EMNLP2024.pdf",
+      "url": "https://aclanthology.org/2024.findings-emnlp.215.pdf",
+      "sha256": "95558cdd9c5489ff07b46a1ef268e55ecbd3d06fbd9478abb0cbe2a854bd07ec",
+      "bytes": 926105
+    },
+    {
+      "path": "verifact_tree_f115d36.json",
+      "url": "https://api.github.com/repos/philipchung/verifact/git/trees/f115d36cb65fa2073fce0a10df56bb37f4cbcd50?recursive=1",
+      "sha256": "a8203ca8bbe837c32fd54a3d36a995f68d2e4f5c6871dc930c888d76ad41fb07",
+      "bytes": 60047
+    }
+  ]
+}

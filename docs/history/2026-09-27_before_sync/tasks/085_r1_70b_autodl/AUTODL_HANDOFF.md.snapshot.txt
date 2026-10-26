@@ -1,0 +1,110 @@
+# 085 AutoDL操作入口
+
+当前只完成离线准备，未租GPU、未部署、未执行A/B或正式推理。旧085A/AWS与暂停记录原位保留；新路线见[协议](protocol.md)。无需提供任何密码、token或密钥。
+
+## 1. 用户手工准备远端
+
+使用单张A800服务时先核对实际显存容量；脚本记录型号、容量和驱动，不预设服务必能启动。用户自行租用、停止与释放实例。容器无需Docker。建议Python3.10/3.11的独立环境装固定vLLM0.9.2，环境、pip缓存、HF缓存均放数据盘：
+
+```bash
+mkdir -p /root/autodl-tmp/verifact085/tools
+python -m venv /root/autodl-tmp/verifact085/venv
+source /root/autodl-tmp/verifact085/venv/bin/activate
+export PIP_CACHE_DIR=/root/autodl-tmp/pip-cache
+export HF_HOME=/root/autodl-tmp/huggingface
+python -m pip install 'vllm==0.9.2'
+```
+
+这是用户远端执行命令，本地任务不会自动安装vLLM或下载权重。约39.77GB的目标权重已通过公开metadata列明，不能放约30GB系统盘。新下载前脚本检查全部预计文件加8GiB余量；环境/pip所需空间另留。已有合法模型路径优先使用，绝不为命名方便重新下载；但必须逐文件核对目标revision的SHA。校验读约40GB磁盘会花时间，应算入租赁准备成本。
+
+把本目录的`remote_server.py`、`identity_lock.json`、`start_server.sh`、`server_manifest.sh`复制到远端，例如`/root/autodl-tmp/verifact085/tools/`。这些脚本不含数据集病例或凭据。可用AutoDL文件界面上传，或用户本地手工scp（密码只在SSH终端输入，不写入命令/仓库/聊天）：
+
+```powershell
+scp -P <SSH端口> tasks/085_r1_70b_autodl/remote_server.py tasks/085_r1_70b_autodl/identity_lock.json tasks/085_r1_70b_autodl/start_server.sh tasks/085_r1_70b_autodl/server_manifest.sh root@<SSH主机>:/root/autodl-tmp/verifact085/tools/
+```
+
+## 2. 远端启动（两种方式择一）
+
+已预置权重和官方tokenizer时，优先传真实路径：
+
+```bash
+cd /root/autodl-tmp/verifact085/tools
+bash start_server.sh --model-path /实际的AWQ模型目录 --tokenizer-path /实际的官方tokenizer目录 --run-dir /root/autodl-tmp/verifact085/run001
+```
+
+已在标准HF缓存时可省略路径，脚本先查固定revision本地缓存。确实缺文件且用户决定下载时，才使用：
+
+```bash
+bash start_server.sh --download-if-missing --run-dir /root/autodl-tmp/verifact085/run001
+```
+
+两种方式都核验同一个lock。错误checkpoint/版本/哈希会停止，保存`identity_failure.json`，不自动换模型或声称原VeriFact精确模型。run目录不可重复覆盖；若已准备但尚未启动，用新的run目录执行launch，模型文件复用、不重复下载。脚本内不买实例、不访问AutoDL/AWS API。服务监听远端127.0.0.1:8000，api-key是本地惯例EMPTY；端口已占用时停止。
+
+启动参数固定TP1/PP1、max_model_len20000、max_num_seqs4等；`--generation-config vllm`使默认采样不被HF generation_config悄然改写。请求明确temperature0/top_p1/max_tokens8192。若OOM/上下文不够，检查真实错误后报告，不擅自缩证据、换checkpoint或改生成参数。
+
+run目录保存`server_manifest.json`、`launch.json`、`server.log`和`observation_*.json`。manifest包括实际文件、revision、config/quantization、vLLM/torch/transformers等版本、GPU、完整argv；观察文件绑定实际进程参数、/models、/version和运行时引擎日志。观察不发送推理。
+
+之后再次观察GPU/服务可执行（PID取launch.json）：
+
+```bash
+bash server_manifest.sh --run-dir /root/autodl-tmp/verifact085/run001 --pid <服务PID>
+```
+
+本地一旦绑定首份manifest/观察，就不静默更换该绑定；后续观察供诊断。停止服务可由用户在远端对自己的该PID执行`kill <服务PID>`；停止进程不等于停止实例计费，实例仍需用户手动管理。
+
+## 3. 用户本地建立tunnel
+
+Windows PowerShell另开一个终端保持运行：
+
+```powershell
+ssh -N -L 127.0.0.1:8000:127.0.0.1:8000 -p <SSH端口> root@<SSH主机>
+```
+
+把远端server_manifest.json及一个成功observation文件复制到本地任意已有目录，记住文件路径。不要复制密码、SSH私钥或AutoDL token。然后在项目运行终端设：
+
+```powershell
+$env:R1_BASE_URL='http://127.0.0.1:8000/v1'
+```
+
+如果本地8000占用，可将tunnel左侧与R1_BASE_URL改成本地另一个端口；远端服务配置仍不变。无endpoint时的下一条安全命令：
+
+```powershell
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/085_r1_70b_autodl/runner.py dry-run
+```
+
+## 4. 租赁账本及A→B预检
+
+将实例实际开始计费时间和平台给出的小时价格记入独立账本（示例占位符须替换，不默认20元GPU预算）：
+
+```powershell
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/085_r1_70b_autodl/runtime_ledger.py event --kind instance_start --at '<实际ISO时间含时区>' --hourly-price <元每小时>
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/085_r1_70b_autodl/runtime_ledger.py event --kind service_start --at '<观察到服务就绪的ISO时间>'
+```
+
+用户本次已说明先A/B后费用预测；在tunnel和身份文件齐备后，执行以下阶段命令。manifest与观察路径请用同一份实际文件，不能拿requirements模板代替：
+
+```powershell
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/085_r1_70b_autodl/runner.py A --allow-inference --server-manifest '<本地server_manifest.json路径>' --server-observation '<本地observation路径>'
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/085_r1_70b_autodl/runner.py B --allow-inference --server-manifest '<同一manifest路径>' --server-observation '<同一observation路径>' --hourly-price <元每小时>
+```
+
+A虚构病例；B用085A冻结三例。B的第一份HTTP200计入正式360臂位，不因错误/无效重发。三例均可解析、无截断、实际token长度一致才冻结parser。B结束即输出剩余实际臂位（通常357）的串行时间、50%规划余量与租金预测，**此处停止等待用户明确授权正式批量**。不根据3例正确性选择模型、prompt或parser，不打开GT。
+
+## 5. 正式运行：只有另行明确授权后
+
+正式命令需要用户已看过真实预测并给出允许的运行小时数与单价，不能现在替用户填值：
+
+```powershell
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/085_r1_70b_autodl/runner.py formal --allow-inference --allow-formal --approval-note '<用户正式授权原意及日期>' --max-runtime-hours <授权时长> --hourly-price <元每小时> --server-manifest '<同一manifest路径>' --server-observation '<同一observation路径>'
+```
+
+默认并发1，不把服务max_num_seqs4当成已测并发4吞吐。短时故障最多3次有限恢复，成功不重发，B自动复用；持续故障或运行时长预留不足则停止派发。之后再次同命令只续未成功位置，不重置尝试链。已运行时间及GPU租赁持续消耗留在账本，不能清零。
+
+完整运行后再执行预测物化及评价，复用084的V4、不调用V4或8B辅助模型：
+
+```powershell
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/085_r1_70b_autodl/evaluate_autodl.py materialize
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/085_r1_70b_autodl/evaluate_autodl.py evaluate --allow-evaluation
+```
+
+实例/服务结束由用户记录实际结束时刻。runtime_ledger summary分开显示实例租赁和正式推理，重叠区间不相加。最终报告必须写明“相同AWQ checkpoint目标”“当前研究prompt的受控model swap”“不是完整原VeriFact pipeline逐字节复现”，并列TP、并发、temperature、tokenizer版本与原配置差异。085完成报告、自检后提交推送；当前未完成正式研究，不自动其他任务。

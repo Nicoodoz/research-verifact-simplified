@@ -1,0 +1,20 @@
+{
+  "task": "020",
+  "status": "PASS",
+  "compared_files": [
+    "analysis_001/decision.json",
+    "analysis_001/leave_one_patient_out.csv",
+    "analysis_001/metrics.json",
+    "analysis_001/normalized.jsonl",
+    "analysis_001/paired.json",
+    "analysis_001/patients.csv",
+    "analysis_001/predictions_r0.csv",
+    "analysis_001/predictions_r1.csv",
+    "analysis_001/released_predictions.csv",
+    "analysis_001/stability.csv",
+    "analysis_001/transitions.csv"
+  ],
+  "API_calls": 0,
+  "GPU_inference": false,
+  "note": "021 generated report is a renderer snapshot; frozen editorial report is retained."
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "analysis_files_byte_equal": [
+    "bootstrap_draws.json",
+    "coverage.json",
+    "curves.csv",
+    "information_difference.json",
+    "leave_one_patient.csv",
+    "matched.json",
+    "metadata.json",
+    "metrics.csv",
+    "metrics.json",
+    "paired.json",
+    "patients.csv",
+    "predictions.csv",
+    "transitions.csv"
+  ],
+  "GT_table_equal_by_ID": true,
+  "excluded_metadata": [
+    "manifest.json",
+    "GT_connection.json"
+  ],
+  "all_eight_models_refit": true
+}

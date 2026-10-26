@@ -1,0 +1,21 @@
+{
+  "service_ready_confirmed_by_user": false,
+  "execute_r1_authorized": false,
+  "execute_metered_api_authorized": false,
+  "pricing_confirmation_path": null,
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model": "Valdemardi/DeepSeek-R1-Distill-Llama-70B-AWQ",
+  "api_key": "EMPTY",
+  "gpu_hourly_cny": null,
+  "gpu_billing_start": null,
+  "gpu_cap_cny": null,
+  "metered_api_cap_cny": null,
+  "stop_sending_at": null,
+  "private_server_manifest_path": null,
+  "client_concurrency": 2,
+  "timeout_seconds": 900,
+  "shutdown_margin_seconds": 120,
+  "suggested_not_authorized_gpu_cap_cny": 30,
+  "suggested_not_authorized_metered_api_cap_cny": 10,
+  "note": "Copy into ignored private directory and fill only after user service-ready message. Template is not authorization. Stopping requests does not stop AutoDL billing."
+}
