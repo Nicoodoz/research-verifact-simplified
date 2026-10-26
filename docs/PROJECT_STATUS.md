@@ -1,6 +1,6 @@
-# 项目现状（2026-10-26，研究完成至097）
+# 项目现状（2026-10-26，097与099已完成，098尚未完成）
 
-当前研究已完成至097；097起始HEAD为71c183aab93cc947cbd99b2b8dd30ebfee251944，实际HEAD以git为准。097已完成，不自动启动下一任务。默认仍是 **C48 → DeepSeek V4 Flash T-S thinking-high → Frozen PriorG，无示例B**。
+097与099选型已完成；098已于2026-10-26获用户正式授权启动，新增API硬限50元。冻结自然400四臂、压力NS/NA各50条O/P、F80及四臂重复60；首批32次正式请求后曾于22:00独立续跑；2026-10-26发布前核对发现进程已退出、计划任务Ready，日志显示中断，状态文件RUNNING已过时。尚无完整分类结论；本次只发布已有材料，不重启或新增API。见[发布时状态](../outputs/098_p90_native_confirmation/publication_status_20261026.json)。[098协议](../tasks/098_p90_native_confirmation/protocol.md) · [冻结与预算](../outputs/098_p90_native_confirmation/execution_freeze.json)。实际HEAD以git为准。默认仍是 **C48 → DeepSeek V4 Flash T-S thinking-high → Frozen PriorG，无示例B**。
 
 ## 当前研究目标与运行事实
 
@@ -8,9 +8,11 @@
 
 服务更新（2026-10-26）：用户已授权启用https://maas.qianwenaiapi.com/compatible-mode/v1及新Key；主配置.env.aliyun已切换，默认模型deepseek-v4-flash-0731、thinking-high。原配置只留在受忽略的私有备份。此前新端点两次合成调用均HTTP200，无重试；其中thinking-high输入6571/输出288 tokens，估算¥0.022305。连接测试累计保留¥0.159494未对账预留，不因启用新默认清零。旧403记录仍属历史；此次配置切换未新增API调用，不构成临床实验或科学等价证明。
 
-2026-10-26用户更新约定：只说“推送到GitHub”即同时更新research-verifact完整成果归档和research-verifact-simplified关键成果版本；两仓库outputs之外使用同一份允许发布文件快照。没有推送指令仍不自动发布。最近已发布精简版本为21d6a95（2026-10-26），当时outputs之外已与本地允许同步范围逐字节一致；此后本地文档编辑不等于已推送。发布规则见[AGENTS](../AGENTS.md)。
+2026-10-26用户更新约定：只说“推送到GitHub”即同时更新research-verifact完整成果归档和research-verifact-simplified关键成果版本；两仓库outputs之外使用同一份允许发布文件快照。没有推送指令仍不自动发布。上次已发布精简版本为34e51aa（2026-10-26）；本次发布状态以两仓库远端main及本地发布回执为准，不以本地文档编辑代替推送成功。发布规则见[AGENTS](../AGENTS.md)。
 
 ## 最近结果与可主张范围
+
+099已完成四种Qwen Judge选型：608 HTTP200、0重试，目录价¥8.958557/20；主候选qwen3.5-35b-a3b、备选qwen3.5-27b。原reference自然共同78条，主候选MCC0.5225、PA79.49%、false-S2/19；诊断与C48存在代价，不能主张全面更安全。默认未修改，098原冻结不变、尚未完成。[099正式报告](../outputs/099_judge_selection/report.md) · [费用](../outputs/099_judge_selection/cost_ledger.json) · [A800桥接方案](../outputs/099_judge_selection/A800_bridge_plan.md)。
 
 097同V4四臂原生接口对照完成：raw共同158条C48 B/简洁任务/现行B＋G正确116/125/135；固定同body桥接12条raw改变4条。原生任务提供更强raw对照但没有最终系统升级。40例源文核查482条都可定位，405条切开父段；自动依赖和B完整四臂费用门槛未过，B无分类成绩。新增492 HTTP200、0重试、忙时原价¥12.967287/20，自检通过、独立审计未执行，默认不变。[正式报告](../outputs/097_native_judge_source_dependence/report.md)。
 

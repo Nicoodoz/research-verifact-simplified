@@ -1,0 +1,11 @@
+{
+  "classification_quality_not_computed": true,
+  "files": {
+    "tasks/099_judge_selection/analyze099.py": "25a3ef87a03603454c7c8a50c2b33cd248e4ec412f701cf383138d1397db29f1",
+    "tasks/099_judge_selection/selfcheck099.py": "10fd1efbc2a0b537a5afd2ad1321d2874a09cb74f832dcde690c2d499e986366"
+  },
+  "main_O_selection_unchanged": true,
+  "reason": "O/C auxiliary tables and paired deltas use joint valid IDs across both contexts and all four models; full frozen coverage retained",
+  "scientific_conditions_unchanged": true,
+  "utc": "2026-10-26T13:52:14.925299+00:00"
+}

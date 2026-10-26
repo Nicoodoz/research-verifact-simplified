@@ -1,0 +1,23 @@
+{
+  "GT_not_in_requests": true,
+  "attempts": 608,
+  "checks": 5927,
+  "independent_audit": false,
+  "model_only_generation_contrast": true,
+  "native_receipts": 608,
+  "no_GPU_or_weights_download": true,
+  "original_GT_preserved": true,
+  "original_strict_parser_retained": true,
+  "scope": "Executor selfcheck, independent formulas/sklearn/Decimal; not independent reviewer or physician audit",
+  "status": "PASS",
+  "total_directory_price_cny": "8.9585567",
+  "unchanged098": true,
+  "unchanged_default": true,
+  "utc": "2026-10-26T14:24:08.277934+00:00",
+  "verified_panels": {
+    "C_subset": 32,
+    "O_matched_C_subset": 32,
+    "O_natural": 78,
+    "diagnostic": 32
+  }
+}

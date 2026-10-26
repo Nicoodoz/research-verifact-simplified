@@ -1,0 +1,31 @@
+{
+  "HTTP200_before_and_after": 34,
+  "check_only_switch": "-CheckOnly",
+  "credentials_stored_by_scheduler": false,
+  "execution_freeze_sha256": "46de0f4f34332a1a29d6a5450d21ba1cd6a897f73e9bc1d7d18acf617e856347",
+  "files": {
+    "arrange_resume098.ps1": "ae403c5d5ffabfbe281fa9ef77cabb7f45de31bfeea2fc01b2e11bca70e214d5",
+    "resume098.ps1": "68e34b609d6ade4ae4c1b9fb83dc9df60c12644faa5eeb99d5e50f8327dc9a1b",
+    "resume_check098.py": "74c71b9937d6753413b67bb6f07c2e4119f526bda1d2b667d67c6a7c569dee42"
+  },
+  "frozen_configuration_unchanged": true,
+  "hard_cap_cny": 50,
+  "independent_of_codex": true,
+  "log_path": "D:\\Research-VeriFact\\.local_models\\098_p90_native_confirmation\\logs\\resume_20261026_201842_829_43564.log",
+  "manual_entry": "tasks/098_p90_native_confirmation/resume098.ps1",
+  "next_trigger_UTC8": "2026-10-26T22:00:00+08:00",
+  "old_session_waiter_pid": 43512,
+  "old_session_waiter_stopped": true,
+  "remaining_targets": 2088,
+  "same_budget_sqlite": true,
+  "science_or_criteria_changed": false,
+  "status_path": ".local_models/098_p90_native_confirmation/background_status.json",
+  "successful_target_before_and_after": 32,
+  "task_name": "Research-VeriFact-098-Resume",
+  "task_state": "Running",
+  "used_or_reserved_cny": 0.7022298,
+  "utc": "2026-10-26T12:20:17.835704+00:00",
+  "windows_requirements": "Computer powered on, current Windows user logged in; wake/start-when-available enabled; manual entry available after missed window",
+  "wrapper_parent_name": "svchost.exe",
+  "wrapper_pid": 43564
+}

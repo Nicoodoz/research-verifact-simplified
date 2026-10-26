@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-26T14:30:08.242776+00:00",
+  "state": "INTERRUPTED_INCOMPLETE",
+  "scheduled_task": "Research-VeriFact-098-Resume",
+  "task_state_observed": "Ready",
+  "last_task_result": 3221225786,
+  "parent_pid_42220_absent": true,
+  "log_ended_with_interrupt": true,
+  "log_sha256": "5c0d558a829ff9b9ad029bc9bd679e9e2c2ca076c09e9e500d771704980c58de",
+  "background_status_file_stale": true,
+  "attempts": 330,
+  "HTTP200": 324,
+  "used_or_reserved_cny": 5.027330100000001,
+  "successful_requests_preserved": true,
+  "no_API_calls_by_publication": true,
+  "no_restart_or_experiment_change": true,
+  "private_log": ".local_models/098_p90_native_confirmation/logs/resume_20261026_220003_017_42220.log"
+}

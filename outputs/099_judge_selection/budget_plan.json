@@ -1,0 +1,137 @@
+{
+  "chosen": {
+    "C_subset": 32,
+    "by_model": {
+      "qwen3.5-27b": 2.713139760000001,
+      "qwen3.5-35b-a3b": 1.8087598400000002,
+      "qwen3.8-27b": 8.8378908,
+      "qwen3.8-flash": 2.1597788799999993
+    },
+    "diagnostic_each": 16,
+    "jobs": 608,
+    "natural": 80,
+    "repeat_cases": 8,
+    "total_no_cache_upper_output_forecast_cny": 15.51956928
+  },
+  "forecasts": [
+    {
+      "C_subset": 64,
+      "by_model": {
+        "qwen3.5-27b": 4.986277680000001,
+        "qwen3.5-35b-a3b": 3.324185120000001,
+        "qwen3.8-27b": 16.222268399999987,
+        "qwen3.8-flash": 3.9630582399999983
+      },
+      "diagnostic_each": 24,
+      "jobs": 1120,
+      "natural": 160,
+      "repeat_cases": 8,
+      "total_no_cache_upper_output_forecast_cny": 28.49578943999999
+    },
+    {
+      "C_subset": 56,
+      "by_model": {
+        "qwen3.5-27b": 4.415384399999999,
+        "qwen3.5-35b-a3b": 2.9435895999999997,
+        "qwen3.8-27b": 14.363129999999991,
+        "qwen3.8-flash": 3.5087599999999988
+      },
+      "diagnostic_each": 20,
+      "jobs": 992,
+      "natural": 144,
+      "repeat_cases": 8,
+      "total_no_cache_upper_output_forecast_cny": 25.230863999999986
+    },
+    {
+      "C_subset": 48,
+      "by_model": {
+        "qwen3.5-27b": 4.004580000000002,
+        "qwen3.5-35b-a3b": 2.669719999999999,
+        "qwen3.8-27b": 13.055603999999988,
+        "qwen3.8-flash": 3.1911903999999987
+      },
+      "diagnostic_each": 20,
+      "jobs": 896,
+      "natural": 128,
+      "repeat_cases": 8,
+      "total_no_cache_upper_output_forecast_cny": 22.921094399999987
+    },
+    {
+      "C_subset": 48,
+      "by_model": {
+        "qwen3.5-27b": 3.704801520000001,
+        "qwen3.5-35b-a3b": 2.469867679999999,
+        "qwen3.8-27b": 12.054375599999993,
+        "qwen3.8-flash": 2.9449321599999987
+      },
+      "diagnostic_each": 20,
+      "jobs": 832,
+      "natural": 112,
+      "repeat_cases": 8,
+      "total_no_cache_upper_output_forecast_cny": 21.173976959999994
+    },
+    {
+      "C_subset": 40,
+      "by_model": {
+        "qwen3.5-27b": 3.2817655200000013,
+        "qwen3.5-35b-a3b": 2.1878436799999994,
+        "qwen3.8-27b": 10.685691599999998,
+        "qwen3.8-flash": 2.611053760000001
+      },
+      "diagnostic_each": 20,
+      "jobs": 736,
+      "natural": 96,
+      "repeat_cases": 8,
+      "total_no_cache_upper_output_forecast_cny": 18.76635456
+    },
+    {
+      "C_subset": 32,
+      "by_model": {
+        "qwen3.5-27b": 2.713139760000001,
+        "qwen3.5-35b-a3b": 1.8087598400000002,
+        "qwen3.8-27b": 8.8378908,
+        "qwen3.8-flash": 2.1597788799999993
+      },
+      "diagnostic_each": 16,
+      "jobs": 608,
+      "natural": 80,
+      "repeat_cases": 8,
+      "total_no_cache_upper_output_forecast_cny": 15.51956928
+    }
+  ],
+  "framing_tokens": 256,
+  "hard_cap_cny": 20,
+  "input_tokens_per_character_envelope": 0.4,
+  "maximum_answer": 512,
+  "maximum_thinking": 2048,
+  "no_peak_wait": true,
+  "operating_cap_cny": 19,
+  "per_attempt_hard_reservation": "UTF8 bytes+2048, conservative tier, thinking+answer+32",
+  "prices": {
+    "qwen3.5-27b": [
+      0.6,
+      4.8,
+      null
+    ],
+    "qwen3.5-35b-a3b": [
+      0.4,
+      3.2,
+      null
+    ],
+    "qwen3.8-27b": [
+      3.0,
+      12.0,
+      0.6
+    ],
+    "qwen3.8-flash": [
+      0.8,
+      2.7,
+      0.1
+    ]
+  },
+  "prior099_cost_cny": 0,
+  "remaining_to_hard_cap_cny": 4.480430719999999,
+  "source": "https://platform.qianwenai.com/docs/developer-guides/getting-started/model-prices",
+  "usage_source": "097 concise native mean O7482/C2975 input; mean output460/441, prediction-free usage only",
+  "utc": "2026-10-26T13:26:36.320357+00:00"
+}

@@ -1,0 +1,62 @@
+{
+  "API_point_leader": "qwen3.5-35b-a3b",
+  "MCC_leader_deployable": "qwen3.5-35b-a3b",
+  "backup": "qwen3.5-27b",
+  "decision_basis": "O natural direct verdict first; predefined deployment and cost tie-breaks; never C-O improvement or PriorG",
+  "default_changed": false,
+  "eligible": [
+    "qwen3.5-27b",
+    "qwen3.5-35b-a3b"
+  ],
+  "floors": {
+    "qwen3.5-27b": {
+      "checks": {
+        "NA_diagnostic": true,
+        "NS_diagnostic": true,
+        "PA_floor": true,
+        "coverage": true
+      },
+      "pass_all": true,
+      "single_A800_high_fidelity": true
+    },
+    "qwen3.5-35b-a3b": {
+      "checks": {
+        "NA_diagnostic": true,
+        "NS_diagnostic": true,
+        "PA_floor": true,
+        "coverage": true
+      },
+      "pass_all": true,
+      "single_A800_high_fidelity": true
+    },
+    "qwen3.8-27b": {
+      "checks": {
+        "NA_diagnostic": true,
+        "NS_diagnostic": true,
+        "PA_floor": false,
+        "coverage": true
+      },
+      "pass_all": false,
+      "single_A800_high_fidelity": true
+    },
+    "qwen3.8-flash": {
+      "checks": {
+        "NA_diagnostic": true,
+        "NS_diagnostic": true,
+        "PA_floor": false,
+        "coverage": true
+      },
+      "pass_all": false,
+      "single_A800_high_fidelity": false
+    }
+  },
+  "practical_nearby": [
+    "qwen3.5-35b-a3b"
+  ],
+  "primary": "qwen3.5-35b-a3b",
+  "primary_is_conditional": false,
+  "risk_cost_nearby": [
+    "qwen3.5-35b-a3b"
+  ],
+  "warning": "Small exposed selection panel: recommendation is provisional, not demonstrated population-wide model superiority or API/local equivalence."
+}

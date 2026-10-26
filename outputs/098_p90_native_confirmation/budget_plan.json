@@ -1,0 +1,59 @@
+{
+  "chosen": {
+    "F_n": 80,
+    "all_peak_plan_cny": 82.93274580000005,
+    "conservative_idle_plan_cny": 42.05133900000002,
+    "jobs": 2120,
+    "natural_n": 400,
+    "pressure_each": 50,
+    "repeat_n": 60
+  },
+  "expected_completion_tokens": 800,
+  "forecast_is_not_guaranteed_completion": true,
+  "hard_cap_cny": 50,
+  "idle_UTC8": "22:00-08:00",
+  "input_token_per_char_envelope": 0.4,
+  "no_cache_assumed": true,
+  "operating_cap_cny": 48,
+  "peak_first_calls": 32,
+  "per_attempt_full_upper_bound_enforced": true,
+  "price_source": "https://help.aliyun.com/zh/model-studio/model-pricing",
+  "prices": {
+    "cached_fraction": 0.1,
+    "idle_input": 1.5,
+    "idle_output": 4.5,
+    "peak_input": 3,
+    "peak_output": 9
+  },
+  "proposals": [
+    {
+      "F_n": 100,
+      "all_peak_plan_cny": 99.14023980000006,
+      "conservative_idle_plan_cny": 50.150754600000035,
+      "jobs": 2540,
+      "natural_n": 500,
+      "pressure_each": 50,
+      "repeat_n": 60
+    },
+    {
+      "F_n": 90,
+      "all_peak_plan_cny": 90.85708020000003,
+      "conservative_idle_plan_cny": 46.00917480000002,
+      "jobs": 2330,
+      "natural_n": 450,
+      "pressure_each": 50,
+      "repeat_n": 60
+    },
+    {
+      "F_n": 80,
+      "all_peak_plan_cny": 82.93274580000005,
+      "conservative_idle_plan_cny": 42.05133900000002,
+      "jobs": 2120,
+      "natural_n": 400,
+      "pressure_each": 50,
+      "repeat_n": 60
+    }
+  ],
+  "reserve_to_hard_cap": 7.94866099999998,
+  "utc": "2026-10-26T11:01:32.319433+00:00"
+}

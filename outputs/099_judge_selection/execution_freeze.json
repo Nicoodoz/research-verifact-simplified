@@ -1,0 +1,69 @@
+{
+  "all_patients_previously_exposed": true,
+  "chosen": {
+    "C_subset": 32,
+    "by_model": {
+      "qwen3.5-27b": 2.713139760000001,
+      "qwen3.5-35b-a3b": 1.8087598400000002,
+      "qwen3.8-27b": 8.8378908,
+      "qwen3.8-flash": 2.1597788799999993
+    },
+    "diagnostic_each": 16,
+    "jobs": 608,
+    "natural": 80,
+    "repeat_cases": 8,
+    "total_no_cache_upper_output_forecast_cny": 15.51956928
+  },
+  "files": {
+    ".local_models/099_judge_selection/jobs.jsonl": "a06d5e9a75caab81f6873f5028f57012fd8df484e158cd1a9da41eaa90f791ab",
+    ".local_models/099_judge_selection/sample.jsonl": "e8a332fb7e8bcef8907819129adbffd4418bd9c58400d4085efca98b1e368ad6",
+    "outputs/099_judge_selection/budget_plan.json": "b2227ef9f159e1a582aff5d02a814f60ac6eaef500d5a5daff87bb5349906910",
+    "outputs/099_judge_selection/cohort.jsonl": "acbfb1e102b10d5b98afd5ef46c1f979363bc8554a4ceccd5dda3a7241ae8f50",
+    "outputs/099_judge_selection/future_A800_bridge24.jsonl": "a682d279a8d73427201394dfab0f04c47e0e30ca4a78d80500424b0b9e49dc07",
+    "outputs/099_judge_selection/model_metadata.json": "36a1187d57d98e713eac06e74af63dfa97735b7f4386f7b12982f37c3db870b3",
+    "outputs/099_judge_selection/official_source_manifest.json": "e53f7343e0e9ac5391a13a74a7045523d351672879f807a96cec2af3223e45cb",
+    "tasks/097_native_judge_source_dependence/prepare_a.py": "29a144583aae93a4acd808f8741e7f5b18f9f8c0b2f36c611601214d7bfb1cc5",
+    "tasks/099_judge_selection/common099.py": "7ce3dd8a9888cd8609c4e0c0ee3af9252b9d0c926a01411360cb6f403328b535",
+    "tasks/099_judge_selection/prepare099.py": "6220c7efba6f1af64c725f6832af616ef4e27d59f5328948354ad74ae586bed9",
+    "tasks/099_judge_selection/protocol.md": "7d87e4fec7c9b406c8d81bb780e27a8340f1e0b62c0aa4d7f0d75d6ef1542500",
+    "tasks/099_judge_selection/runtime099.py": "d9efb1e55fc9bc13383efdc1bbba3bb34c76093eb276855e0ce35f681203924c"
+  },
+  "first_four_request_ids": [
+    "6d664bb6a818ab5082aceb347422",
+    "206425487156cac6795015750eb9",
+    "ff4e05b104f5651299c07c6c1b6f",
+    "244b2bb35fd168b7e23f512e2f7e"
+  ],
+  "natural_GT": {
+    "Not Addressed": 13,
+    "Not Supported": 6,
+    "Supported": 61
+  },
+  "natural_author": {
+    "human": 50,
+    "llm": 30
+  },
+  "natural_patients": 55,
+  "no_target_answers_before_freeze": true,
+  "original_source_files": {
+    ".local_models\\092\\inputs.jsonl": "2b5e6bd2b91d385a9ca273f6affa18632aeb0228a34b40ef98fcbf645f84b0aa",
+    "outputs\\092_task_adapted_verifier\\cohort.jsonl": "4dc330c70cab0760bfcf4f55997ae3c7af5858d10085cd39a52faeee1b7652ed",
+    "outputs\\096_r1_native_priorg\\main_panel.jsonl": "b955906a1f7c33b1157957d5aa9bad8bccc1887396b22d1103b97e0a14b175e0",
+    "outputs\\097_native_judge_source_dependence\\a_execution_panel.jsonl": "c599346b770471c28ba34b2d400bd7eddceeb7efcbed97cac2ac8aed42bbdbb7",
+    "outputs\\097_native_judge_source_dependence\\a_same_id.jsonl": "95884f818acad8dc071843b65c3aa0e5e3943072510903edc5f84a24d07a9fce"
+  },
+  "patients": 64,
+  "start_main": "742f05ed4c3bb801ce37856ba36a038c3b4269d7",
+  "unchanged_098_fingerprints": {
+    ".local_models\\098_p90_native_confirmation\\jobs.jsonl": "53a7498ed76d7663fa262abf735d19bab90b1ee826c19c5bce0d0bec841dbbe4",
+    ".local_models\\098_p90_native_confirmation\\sample.jsonl": "823c1264d2b28bfd6c9fc8704df2914e9ef5507b1dddb8f25bb1f2e09e42d5b1",
+    "outputs\\098_p90_native_confirmation\\execution_freeze.json": "46de0f4f34332a1a29d6a5450d21ba1cd6a897f73e9bc1d7d18acf617e856347",
+    "tasks\\098_p90_native_confirmation\\protocol.md": "e9fe29cae928fbfd78b73dc58b343454afa39b8ed232e5cdbcc6ff034e5aaf5b",
+    "tasks\\098_p90_native_confirmation\\runtime098.py": "a21a10ec0a8cf39f8f4ef1b34fbd581119e0853f07c6cc78b15bf4833151e3f8"
+  },
+  "unchanged_default_files": {
+    ".env.aliyun": "275a43e3766c0ff3089120021ef09cd05ad39ace9f93d74de23b6e08358ed427",
+    "src\\verifact_research\\inference\\aliyun.py": "e35e971aeb2cb7c07af37f6e2eff57e7974f6ed8822a5d6c289e231f287bfbe5"
+  },
+  "utc": "2026-10-26T13:26:36.331791+00:00"
+}

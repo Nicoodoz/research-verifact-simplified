@@ -1,9 +1,11 @@
-# 全部任务与当前入口（研究截至097，文档核对2026-10-26）
+# 全部任务与当前入口（097与099完成，098尚未完成；2026-10-26）
 
 当前默认、授权和环境以[PROJECT_STATUS](PROJECT_STATUS.md)、[AGENTS](../AGENTS.md)及[RUN_ENVIRONMENT](RUN_ENVIRONMENT.md)为准。此表只导航真实工件，不把任务结束解释成方法通过；旧协议、输出内README/CURRENT和审计正文保持原阶段语义。最新稿为[095完整论文](../outputs/095_anchored_minimal_contrast/manuscript_zh.md)。
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
+|099_judge_selection|[正式报告](../outputs/099_judge_selection/report.md) · [费用](../outputs/099_judge_selection/cost_ledger.json)|[执行者自检](../outputs/099_judge_selection/selfcheck.json)，独立审计未执行|四模型608 HTTP200；主35B-A3B、备27B，O优先但诊断/C48有代价；默认与098不变|
+|098_p90_native_confirmation|[协议](../tasks/098_p90_native_confirmation/protocol.md) · [执行冻结](../outputs/098_p90_native_confirmation/execution_freeze.json)|尚未完成；独立审计未执行|用户已授权50元；自然400/压力100、F80、重复60，发布前核对续跑已中断，分类未完成；保留成功请求与账本，不按首批成绩扩量|
 |097_native_judge_source_dependence|[正式报告](../outputs/097_native_judge_source_dependence/report.md) · [同ID表](../outputs/097_native_judge_source_dependence/a_same_id.csv)|[执行者自检](../outputs/097_native_judge_source_dependence/selfcheck.json)，独立审计未执行|同V4原生接口raw有信号但未超过B＋G；B构造与费用门槛未过，默认不变|
 |096_r1_native_priorg|[正式报告](../outputs/096_r1_native_priorg/report.md) · [论文更新](../outputs/096_r1_native_priorg/manuscript_implications.md)|[执行者自检](../outputs/096_r1_native_priorg/valdemardi_r1_70b_awq_marlin_vllm0101_fp16_20k/selfcheck.json)，独立审计未执行|AWQ-Marlin1143 HTTP200；自然R1 raw599/800，适配595；停止适配、默认不变，不自动097|
 |095_anchored_minimal_contrast|[总报告](../outputs/095_anchored_minimal_contrast/report.md)|[独立最终复核](../reviews/095_anchored_minimal_contrast/final_review.md)|统一9065母体B补齐与诊断；C构造语义失败，未运行分类，默认不变、不自动096|

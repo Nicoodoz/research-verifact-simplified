@@ -1,0 +1,26 @@
+{
+  "after_report_sha256": "a6b2aff28a302028ff6bea183a5f1b9076e946e978817c4da1870cd67e53050c",
+  "before": {
+    "report.md": "6e5f95f0b48e5c388aebc5bbfd97d4f63ef1943fb48abf3ef808f2bec0a10222",
+    "selfcheck.json": "09a9e2cbfd78ac3113882914db2f13de9689fcd57a287289de0b18d420348e58"
+  },
+  "changes": [
+    "Label model names in O-to-C rows",
+    "Explain natural NA / diagnostic false-S / C48 losses",
+    "Explain strict five-case intersection and both recommended models strict80/80",
+    "Navigation only"
+  ],
+  "first_selfcheck_passed": true,
+  "history_private_path": ".local_models/099_judge_selection/presentation_history",
+  "original_generator_sha256": "fb90f29deead47927faa6898ac5a483ca4862acc2cbce85c284df1bbde789889",
+  "scientific_results_unchanged": {
+    "analysis.json": "aa9bb41469582c1ca9c6a33350546ed43f5b4fb4bd70b3ebc5ad178ed38298b5",
+    "attempt_ledger.jsonl": "af7573fd91af4043816052d584434a5c9345b76c98a685f64b512b026395bacc",
+    "cost_ledger.json": "da934437233999a1056548140e3ff0d3cad4ccb78641a0a41bdef8c88d23f089",
+    "predictions.jsonl": "af1bf652acf76cd45405fe107620af2062e3803269c489855af4d7afee58d555",
+    "selection.json": "b274cb864d7bf06194e5d4e12b04e6c71f00944fd5537f3cc507f6a4c4992993",
+    "usage.jsonl": "7c549e7c96cdd32616552b9e2d1206b0bbf20b6da488aef012d6c9b1914f3809"
+  },
+  "updated_generator_sha256": "df093a0dc5efc80bf5b01d2136534b3bb05a1afb2ac107f3ece30ae8e8f644a4",
+  "utc": "2026-10-26T14:23:44.474413+00:00"
+}
