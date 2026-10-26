@@ -10,8 +10,8 @@ import urllib.request
 
 from .siliconflow_pool import canonical, fingerprint, require, save, NoRedirect
 
-DEFAULT_BASE_URL = 'https://llm-jfynwotrbct4d0g7.cn-beijing.maas.aliyuncs.com/compatible-mode/v1'
-DEFAULT_MODEL = 'qwen3.8-27b'
+DEFAULT_BASE_URL = 'https://maas.qianwenaiapi.com/compatible-mode/v1'
+DEFAULT_MODEL = 'deepseek-v4-flash-0731'
 
 
 @dataclass(frozen=True)
@@ -28,7 +28,7 @@ class Config:
         require(url.scheme == 'https' and not url.username and not url.password and url.port in (None, 443)
                 and not url.query and not url.fragment and url.path.rstrip('/') == '/compatible-mode/v1'
                 and (host.endswith('.maas.aliyuncs.com') or host in
-                     {'dashscope.aliyuncs.com', 'dashscope-intl.aliyuncs.com', 'dashscope-us.aliyuncs.com'}),
+                     {'dashscope.aliyuncs.com', 'dashscope-intl.aliyuncs.com', 'dashscope-us.aliyuncs.com', 'maas.qianwenaiapi.com'}),
                 'Use an Alibaba HTTPS OpenAI-compatible base URL, without chat/completions')
         require(isinstance(self.model, str) and self.model and not any(x.isspace() for x in self.model), 'Invalid model ID')
 
@@ -98,8 +98,14 @@ class AliyunClient:
         return redact(transport)
 
 
-def chat_body(config, messages, *, max_tokens=2048):
-    return dict(model=config.model, messages=messages, temperature=0, max_tokens=max_tokens, enable_thinking=False, stream=False)
+def chat_body(config, messages, *, max_tokens=2048, enable_thinking=True, reasoning_effort='high'):
+    require(type(enable_thinking) is bool, 'enable_thinking must be boolean')
+    body = dict(model=config.model, messages=messages, temperature=0, max_tokens=max_tokens,
+                enable_thinking=enable_thinking, stream=False)
+    if enable_thinking:
+        require(reasoning_effort in {'low', 'medium', 'high'}, 'Invalid reasoning effort')
+        body['reasoning_effort'] = reasoning_effort
+    return body
 
 
 def call_once(config, body, output: Path, *, max_cost_cny, task_used_cny, task_cap_cny=40, client=None):

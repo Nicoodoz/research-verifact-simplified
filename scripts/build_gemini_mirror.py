@@ -27,7 +27,7 @@ CSV_NAME=re.compile(r'table|metric|summary|curve|performance|bootstrap|strat|com
 FIG_NAME=re.compile(r'figure|confusion|matrix|risk_rescue|stage_decomposition|decision_paths|calibration|performance|distribution|ablation|frontier|auc|roc|score|cost|tradeoff',re.I)
 BLOCK_CONTENT={'text','claim','proposition','reference','ehr','claim_text','proposition_text','reference_text','ehr_text','prompt','system_prompt','user_prompt','messages','body','request_body','response_body','raw_response','reason','reasoning','reasoning_content','evidence_text','quotation','quote','quotes','rationale','patient_text','medical_text','raw_text','raw_content','content'}
 LABELS={'Supported','Not Supported','Not Addressed','S','NS','NA'}
-EXTRAS={'docs/导师汇报_F4_raw复核.json','docs/GEMINI_READING_PACK.md','scripts/build_gemini_reading_pack.py','scripts/build_gemini_mirror.py'}
+EXTRAS={'docs/reports/导师汇报_F4_raw复核.json','docs/sharing/GEMINI_READING_PACK.md','scripts/build_gemini_reading_pack.py','scripts/build_gemini_mirror.py'}
 
 
 def git(*args):return subprocess.check_output(['git',*args],cwd=ROOT).decode('utf-8')
@@ -175,7 +175,7 @@ def main():
         if any(SKIP_PART.fullmatch(x) for x in parts):continue
         if p.suffix=='.json' and parts[0] in {'outputs','docs','reviews'}:
             if len(parts)>5 or p.name.lower() in {'request.json','response.json','receipt.json','tokenizer.json','config.json'}:continue
-            if not AGG_NAME.search(p.stem) and path!='docs/导师汇报_F4_raw复核.json':continue
+            if not AGG_NAME.search(p.stem) and path!='docs/reports/导师汇报_F4_raw复核.json':continue
             candidates.append(path)
         elif p.suffix=='.csv' and parts[0] in {'outputs','reviews'} and len(parts)<=5 and CSV_NAME.search(p.stem) and not re.search(r'case|prediction|candidate|material|input|request|response|receipt',p.stem,re.I):
             candidates.append(path)
@@ -221,9 +221,9 @@ def main():
 ## 阅读顺序
 
 1. [项目现状](docs/PROJECT_STATUS.md)、[工作约定](AGENTS.md)、[研究原则](docs/RESEARCH_EXECUTION.md)。
-2. [前处理与推理汇报](docs/2026-10-15_导师汇报_前处理与大模型推理.md)、`reading_data/docs_reference.json`内的F4离线复核。
+2. [前处理与推理汇报](docs/reports/2026-10-15_导师汇报_前处理与大模型推理.md)、`reading_data/docs_reference.json`内的F4离线复核。
 3. 097、096、095、092、090、087、084、078、071、069、068、066的`outputs/.../report.md`及`tasks/.../protocol.md`。
-4. [原论文/源码审读](docs/01_原论文源码与路线审读.md)、[文献筛查](docs/02_27项文献筛查.md)、`docs/sources/`中的作者代码。
+4. [原论文/源码审读](docs/reading/01_原论文源码与路线审读.md)、[文献筛查](docs/reading/02_27项文献筛查.md)、`docs/sources/`中的作者代码。
 5. `src/verifact_research/evaluation/`、009/008检索打包、051推理控制、071示例、078消融、092训练及095–097源码。
 6. [全部任务索引](docs/TASK_INDEX.md)、`reading_data/`汇总、`reviews/`审计及原仓库[README](README_SOURCE.md)。
 

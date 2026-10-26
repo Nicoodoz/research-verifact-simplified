@@ -201,7 +201,7 @@ def main() -> None:
         c['bytes'] += r['bytes']
     candidates = sorted({r['path'] for r in tree if selected(r['path'])})
     # Explicitly include this session's new aggregate audit, never arbitrary untracked files.
-    extra = 'docs/导师汇报_F4_raw复核.json'
+    extra = 'docs/reports/导师汇报_F4_raw复核.json'
     if (ROOT / extra).is_file() and extra not in candidates:
         candidates.append(extra)
     code_folder = out / 'Research-VeriFact-Gemini-code'
@@ -254,10 +254,10 @@ def main() -> None:
 ## 阅读顺序
 
 - 先读当前`docs/PROJECT_STATUS.md`、`docs/RESEARCH_EXECUTION.md`、`AGENTS.md`。
-- 再读`docs/2026-10-15_导师汇报_前处理与大模型推理.md`及其复核JSON。
+- 再读`docs/reports/2026-10-15_导师汇报_前处理与大模型推理.md`及其复核JSON。
 - 然后看097、096、095、092、090、084、078、071、069、068、066正式报告和协议。
 - 需要实现细节时，再看`src/verifact_research/evaluation/`、009/008检索打包、051推理控制、071示例、078消融、092训练、095–097代码。
-- 原系统事实以`docs/01_原论文源码与路线审读.md`和归档作者代码为定位；候选建议不等于实验有效。
+- 原系统事实以`docs/reading/01_原论文源码与路线审读.md`和归档作者代码为定位；候选建议不等于实验有效。
 
 ## 包里已经包含的近期离线核查
 
@@ -306,7 +306,7 @@ Google帮助：
     task_index=defaultdict(list)
     for path in sorted(contents):
         p=Path(path); top=p.parts[0]; text=contents[path]
-        if path=='docs/导师汇报_F4_raw复核.json':
+        if path=='docs/reports/导师汇报_F4_raw复核.json':
             bundles['02_RESULTS.md'] += code_section(path,text)
             quick_sources.add(path)
         elif path in {'AGENTS.md','README.md','docs/PROJECT_STATUS.md','docs/RESEARCH_EXECUTION.md','docs/RUN_ENVIRONMENT.md','docs/API_POLICY.md'}:
@@ -329,7 +329,7 @@ Google帮助：
                 quick_sources.add(path)
             else:
                 task_index[p.parts[1]].append(p.name)
-        elif path in {'docs/01_原论文源码与路线审读.md','docs/02_27项文献筛查.md','reviews/095_anchored_minimal_contrast/final_review.md'}:
+        elif path in {'docs/reading/01_原论文源码与路线审读.md','docs/reading/02_27项文献筛查.md','reviews/095_anchored_minimal_contrast/final_review.md'}:
             bundles['06_PAPER_AND_REVIEWS.md'] += code_section(path,text) if p.suffix=='.py' else text_section(path,text)
             quick_sources.add(path)
     bundles['05_TASK_CODE.md'] += '\n\n## 其余源码：扩展代码目录中的任务索引\n\n'

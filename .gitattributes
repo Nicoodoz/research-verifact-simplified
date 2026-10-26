@@ -212,3 +212,10 @@ docs/089_* -text
 
 # Preserve frozen090 instruction bytes.
 docs/090_* -text
+
+# Preserve relocated documentation bytes (2026-10-26).
+docs/prompts/** -text
+docs/papers/** -text
+docs/reading/** -text
+docs/reports/** -text
+docs/sharing/** -text

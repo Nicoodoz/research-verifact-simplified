@@ -39,12 +39,32 @@ class AliyunTests(unittest.TestCase):
             file.write_text('DASHSCOPE_API_KEY=a\nDASHSCOPE_API_KEY=b\n', encoding='utf-8')
             with self.assertRaises(ValueError):load_config(file)
 
+    def test_default_route_and_explicit_non_thinking(self):
+        self.assertEqual(self.config.base_url, 'https://maas.qianwenaiapi.com/compatible-mode/v1')
+        self.assertEqual(self.config.model, 'deepseek-v4-flash-0731')
+        self.assertTrue(self.body['enable_thinking'])
+        self.assertEqual(self.body['reasoning_effort'], 'high')
+        plain = chat_body(self.config, [{'role': 'user', 'content': 'Synthetic.'}],
+                          max_tokens=32, enable_thinking=False)
+        self.assertFalse(plain['enable_thinking'])
+        self.assertNotIn('reasoning_effort', plain)
+        with self.assertRaises(ValueError):
+            chat_body(self.config, [], enable_thinking='yes')
+
     def test_wrong_endpoint_rejected(self):
         for url in ('http://dashscope.aliyuncs.com/compatible-mode/v1',
                     'https://dashscope.aliyuncs.com.evil.example/compatible-mode/v1',
                     'https://dashscope.aliyuncs.com/api/v1',
                     'https://key@dashscope.aliyuncs.com/compatible-mode/v1'):
             with self.assertRaises(ValueError):Config('test', url)
+
+    def test_qianwen_official_endpoint_and_lookalikes(self):
+        url = 'https://maas.qianwenaiapi.com/compatible-mode/v1'
+        self.assertEqual(Config('synthetic', url).endpoint, url + '/chat/completions')
+        for bad in ('https://maas.qianwenaiapi.com.evil.example/compatible-mode/v1',
+                    'https://fake.maas.qianwenaiapi.com/compatible-mode/v1',
+                    'http://maas.qianwenaiapi.com/compatible-mode/v1'):
+            with self.assertRaises(ValueError): Config('synthetic', bad)
 
     def test_exact_http_body_authorization_and_usage_receipt(self):
         opener = self.opener()
@@ -55,7 +75,8 @@ class AliyunTests(unittest.TestCase):
             self.assertEqual(request.full_url, self.config.endpoint)
             self.assertEqual(request.get_header('Authorization'), 'Bearer '+self.config.api_key)
             self.assertEqual(json.loads(request.data), self.body)
-            self.assertFalse(json.loads(request.data)['enable_thinking'])
+            self.assertTrue(json.loads(request.data)['enable_thinking'])
+            self.assertEqual(json.loads(request.data)['reasoning_effort'], 'high')
             self.assertEqual(summary['usage']['prompt_tokens'], 10)
             self.assertAlmostEqual(summary['cumulative_reserved_cny'], 11.91100623)
             self.assertEqual(opener.open.call_count, 1)

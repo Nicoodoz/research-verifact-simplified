@@ -685,15 +685,15 @@ L-C13
 
 本导读只使用仓库内的这些文件：
 
-- [官方数据字典](../data/00_raw/verifact-bhc/1.1.0/README.md)。
-- [propositions.csv.gz](../data/00_raw/verifact-bhc/1.1.0/propositions/propositions.csv.gz)：BHC、来源块、命题、患者及住院标识。
-- [human_verdicts.csv.gz](../data/00_raw/verifact-bhc/1.1.0/propositions/human_verdicts.csv.gz)：医生个体投票和最终标签。
-- [proposition_validity.csv.gz](../data/00_raw/verifact-bhc/1.1.0/propositions/proposition_validity.csv.gz)：最终有效性字段。
-- [admissions.csv.gz](../data/00_raw/verifact-bhc/1.1.0/reference_ehr/admissions.csv.gz)：目标住院信息。
-- [ehr_noteevents.csv.gz](../data/00_raw/verifact-bhc/1.1.0/reference_ehr/ehr_noteevents.csv.gz)：参考 note 与原始正文。
-- [rater_configurations.csv](../data/00_raw/verifact-bhc/1.1.0/verifact/rater_configurations.csv)：本节使用的模型及检索配置。
-- [verdicts.parquet](../data/00_raw/verifact-bhc/1.1.0/verifact/verdicts.parquet)：作者发布的 AI 判断与理由。
-- [reference_payloads.parquet](../data/00_raw/verifact-bhc/1.1.0/verifact/reference_payloads.parquet)：真实模型输入上下文。
+- [官方数据字典](../../data/00_raw/verifact-bhc/1.1.0/README.md)。
+- [propositions.csv.gz](../../data/00_raw/verifact-bhc/1.1.0/propositions/propositions.csv.gz)：BHC、来源块、命题、患者及住院标识。
+- [human_verdicts.csv.gz](../../data/00_raw/verifact-bhc/1.1.0/propositions/human_verdicts.csv.gz)：医生个体投票和最终标签。
+- [proposition_validity.csv.gz](../../data/00_raw/verifact-bhc/1.1.0/propositions/proposition_validity.csv.gz)：最终有效性字段。
+- [admissions.csv.gz](../../data/00_raw/verifact-bhc/1.1.0/reference_ehr/admissions.csv.gz)：目标住院信息。
+- [ehr_noteevents.csv.gz](../../data/00_raw/verifact-bhc/1.1.0/reference_ehr/ehr_noteevents.csv.gz)：参考 note 与原始正文。
+- [rater_configurations.csv](../../data/00_raw/verifact-bhc/1.1.0/verifact/rater_configurations.csv)：本节使用的模型及检索配置。
+- [verdicts.parquet](../../data/00_raw/verifact-bhc/1.1.0/verifact/verdicts.parquet)：作者发布的 AI 判断与理由。
+- [reference_payloads.parquet](../../data/00_raw/verifact-bhc/1.1.0/verifact/reference_payloads.parquet)：真实模型输入上下文。
 
 本次按患者 ID 筛选并通过命题 ID 连接，不按相同文本猜测标签。完成核对的内容包括：两份 BHC 的唯一性、50 条命题及中英对照的完整性、所有标签与原始行的一致性、引用 EHR 片段确实存在于注明的 note、选定模型结果及 reference_id 的对应关系。
 

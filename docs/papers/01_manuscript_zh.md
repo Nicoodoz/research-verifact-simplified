@@ -1,5 +1,6 @@
 # 冻结大模型的患者级临床事实核验：全队列分类质量、错误支持与证据约束
 
+> 2026-10-26适用范围：本稿是截至095的历史写作底稿，默认系统与后处理主线不等于当前“同模型、前处理／Judge raw超越”目标已经实现。096/097结果及后续修改要求见[修改指南](02_revision_handoff_zh.md)；本次保留正文数值，不把未测方法补写成贡献。
 **Patient-Specific Clinical Fact Verification with a Frozen LLM: Full-Cohort Evaluation, False Support, and Evidence Constraints**
 
 > **编辑状态（投稿前删除）**：本稿更新至任务095，依据仓库提交 `28daf95e9b12270d8089246176023c66c4cf298e`。已完成9,065个目标ID的B回执覆盖；主分类比较是8,997条共同核心有效命题，不是9,065条均有有效最终分类。095近邻构造完成，但E/C最终Judge均未调用，本文不填造其分类结果。系统主线仍为无示例B＋Frozen PriorG，092仅作监督式参照。段落职责、证据出处、图表重绘及下一轮修改接口见 `02_revision_handoff_zh.md`。

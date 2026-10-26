@@ -1,21 +1,38 @@
-# 阿里云当前使用说明（2026-09-28）
+# 当前Judge配置（2026-10-26）
 
-095已完成，新增目录价及未知预留¥95.769536/150；092历史新增API仍0。没有自动下一任务调用，095缺口/完整覆盖以其报告为准。主Judge仍直接阿里云DeepSeek，研究冻结模型deepseek-v4-flash-0731（T-S thinking-high）；可选Qwen同路。BGE仍默认硅基流动与冻结缓存。预算和恢复见[API政策](../API_POLICY.md)。
+## 已启用的默认方式
 
-## 配置与换key
+用户已授权将通过测试的新端点及Key用于后续调用，根目录.env.aliyun已更新：
 
-凭据在项目根.env.aliyun，不输出或提交。DASHSCOPE_API_KEY为鉴权，DASHSCOPE_BASE_URL为账号/地域适用的OpenAI兼容基础地址，DASHSCOPE_MODEL是通用默认；任务可用冻结模型ID覆盖。具体地址以本地合法配置为准，旧报告中的工作空间不保证新账号可用；文档同步不修改.env。
+| 配置 | 当前值 |
+|---|---|
+| DASHSCOPE_BASE_URL | https://maas.qianwenaiapi.com/compatible-mode/v1 |
+| DASHSCOPE_MODEL | deepseek-v4-flash-0731 |
+| DASHSCOPE_API_KEY | 仅保存于本地.env.aliyun，不在文档展示 |
+| 通用思考默认 | enable_thinking=true、reasoning_effort=high |
 
-加载器调用时读取指定文件；已创建客户端不会自动刷新key。095在每个逻辑请求创建客户端，以冻结执行器为准，不应依赖修改通用默认来更改科学请求。更改默认MODEL不等于更改任务冻结模型。基础URL不重复添加/chat/completions。
+客户端默认值和无密钥模板同步；正式研究的prompt、输出上限、格式契约、队列与费用仍按任务冻结。此次更换接入配置不是默认研究方法升级，也不将测试用200条库存记录或2048输出上限用于临床实验。
 
-~~~powershell
-pwsh -NoProfile -File scripts/run_research.ps1 scripts/run_aliyun.py check-config
-~~~
+load_config只读取指定文件，环境变量不覆盖它；运行中的客户端不会自动刷新。原配置保存在受忽略的.env.aliyun.before_qianwen_20261026；测试配置.env.aliyun.qianwen_test仅作私有留档，后续正常使用主配置，无需再指定测试文件。三个文件均已确认被Git忽略。
 
-这是本地格式检查，不证明在线权限或余额。真实预检要计入任务总预算；不为文档核对发送收费探针。
+## 实际测试证据
 
-## 客户端与执行器
+| 时间／配置 | 结果 |
+|---|---|
+| 2026-10-25旧端点，三模型 | 403 AccessDenied.Unpurchased，保留历史失败记录 |
+| 2026-10-26新端点，V4非思考极简请求 | HTTP200，回答OK.，输入9／输出2 tokens，估算¥0.000045 |
+| 2026-10-26新端点，V4 thinking-high合成库存JSON请求 | HTTP200，输入6571／输出288 tokens（109推理tokens），返回verdict、checks和三分数；估算¥0.022305 |
 
-AliyunClient.send及CLI call仍为单次传输/留档层，不自动重试；研究执行器须落实预算内有限技术恢复。旧call_once/CLI默认40元是代码历史保护值，新任务显式传通常20元的有效上限。成功回答不重发；HTTP200核心无效按冻结研究规则，不因成绩差重试。
+成功调用均无重试、未发送患者数据。价格按输入3／输出9元每百万token保守估算，不是已核账单；连接检查累计保留¥0.159494未知／未对账预留，启用主配置不清零。此次默认切换只做离线检查，未追加成功调用。
 
-092未更换默认服务；085 Valdemardi是已完成的独立模型替换实验，不使R1成为默认Judge。[项目现状](../PROJECT_STATUS.md)与[全部任务](../TASK_INDEX.md)提供最新研究入口，016/071等运行回执仅解释历史。
+上述结果证明端点、账号及所测思考/JSON请求可用；没有验证冻结临床prompt的逐字段契约、并发、数值稳定性或跨平台科学等价。合成测试中checks返回列表，不能直接据此宣称完整T-S协议已通过。
+
+私有测试台账位于outputs/replays/qianwen_connection_20261026T081723258799Z/及outputs/replays/qianwen_thinking_smoke_20261026T083326959560Z/。历史资料不因启用配置改写。
+
+## 费用与恢复
+
+新任务默认总上限20元，专项授权优先；预检、重试、未知和在途预留共同累计。成功回答不因内容不好重发；普通网络故障有限恢复，持续鉴权或模型条件异常停止相关发送。详见[API政策](../API_POLICY.md)。
+
+AliyunClient.send是单次传输层，不自动重试。旧CLI/call_once默认40元是历史代码保护值，新任务显式传通常20元的有效上限。不能仅换Key就把旧任务的累计费用归零。
+
+[官方Key与端点说明](https://platform.qianwenai.com/docs/api-reference/preparation/api-key) · [无密钥模板](config.env.example)

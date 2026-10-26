@@ -1,6 +1,14 @@
-# 项目现状（2026-09-28，097完成）
+# 项目现状（2026-10-26，研究完成至097）
 
 当前研究已完成至097；097起始HEAD为71c183aab93cc947cbd99b2b8dd30ebfee251944，实际HEAD以git为准。097已完成，不自动启动下一任务。默认仍是 **C48 → DeepSeek V4 Flash T-S thinking-high → Frozen PriorG，无示例B**。
+
+## 当前研究目标与运行事实
+
+目标是在VeriFact数据集上以相同推理模型、同ID和统一评价形成有实际价值的优势；重点是前处理与Judge raw，不以更强模型或PriorG的收益替代。MCC与false-S相对优先，允许其他指标有合理代价，但须披露误报、三类损失与PA。这里减少false-S指少漏掉真实不一致；不是疾病漏诊率，也不允许靠全判NS/NA制造安全假象。目标不等于已经达成，默认配置未自动升级。
+
+服务更新（2026-10-26）：用户已授权启用https://maas.qianwenaiapi.com/compatible-mode/v1及新Key；主配置.env.aliyun已切换，默认模型deepseek-v4-flash-0731、thinking-high。原配置只留在受忽略的私有备份。此前新端点两次合成调用均HTTP200，无重试；其中thinking-high输入6571/输出288 tokens，估算¥0.022305。连接测试累计保留¥0.159494未对账预留，不因启用新默认清零。旧403记录仍属历史；此次配置切换未新增API调用，不构成临床实验或科学等价证明。
+
+2026-10-26用户更新约定：只说“推送到GitHub”即同时更新research-verifact完整成果归档和research-verifact-simplified关键成果版本；两仓库outputs之外使用同一份允许发布文件快照。没有推送指令仍不自动发布。最近已发布精简版本为21d6a95（2026-10-26），当时outputs之外已与本地允许同步范围逐字节一致；此后本地文档编辑不等于已推送。发布规则见[AGENTS](../AGENTS.md)。
 
 ## 最近结果与可主张范围
 

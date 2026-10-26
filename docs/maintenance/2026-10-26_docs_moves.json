@@ -1,0 +1,398 @@
+{
+  "date": "2026-10-26",
+  "scope": "Physical docs organization; unchanged research results and frozen task code",
+  "root_files_retained": [
+    "API_POLICY.md",
+    "PROJECT_STATUS.md",
+    "README.md",
+    "REPRODUCIBILITY.md",
+    "RESEARCH_EXECUTION.md",
+    "RUN_ENVIRONMENT.md",
+    "TASK_INDEX.md"
+  ],
+  "moves": [
+    {
+      "old": "docs/2026-10-15_导师汇报_前处理与大模型推理.md",
+      "new": "docs/reports/2026-10-15_导师汇报_前处理与大模型推理.md",
+      "before_sha256": "967e9ef3a3967521b1dc9e0088507cb3d0f5d718cbf87994d19dbd48364952ae",
+      "bytes": 12755,
+      "after_sha256": "8dc2f4e36be18026812089fa74cf50e869e6fac4f83a258478362cc52483a847",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/2026-10-15_导师汇报_前处理与大模型推理.pdf",
+      "new": "docs/reports/2026-10-15_导师汇报_前处理与大模型推理.pdf",
+      "before_sha256": "8ab88703a0097839af8cbdf59ed650cc5b911654c39f51ae31d147456e9f2d53",
+      "bytes": 1180350,
+      "after_sha256": "8ab88703a0097839af8cbdf59ed650cc5b911654c39f51ae31d147456e9f2d53",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/导师汇报_F4_raw复核.json",
+      "new": "docs/reports/导师汇报_F4_raw复核.json",
+      "before_sha256": "9aaabd4b6619f41382977b556eeac2341bb8128468b36bc93c06417eb5ed0d5d",
+      "bytes": 51365,
+      "after_sha256": "9aaabd4b6619f41382977b556eeac2341bb8128468b36bc93c06417eb5ed0d5d",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/01_manuscript_zh.md",
+      "new": "docs/papers/01_manuscript_zh.md",
+      "before_sha256": "69e6a2655bc54933ad1220e951ea7e331c5d85212717694ec4c7b88546b35b78",
+      "bytes": 49774,
+      "after_sha256": "69e6a2655bc54933ad1220e951ea7e331c5d85212717694ec4c7b88546b35b78",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/02_revision_handoff_zh.md",
+      "new": "docs/papers/02_revision_handoff_zh.md",
+      "before_sha256": "c68255a7883abb73ee579cfbaca48f9b4c52388fcb6544954a069644b83a8f86",
+      "bytes": 3171,
+      "after_sha256": "c3e9bebda4d4bbc8263a88b3faf131381944e40e2c963408a79a14793a59ad69",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/论文草稿_截至094.md",
+      "new": "docs/papers/论文草稿_截至094.md",
+      "before_sha256": "3a61d76e152ebd1b481fb8295a916d0223465d9d2c815cabf0671094c3b932c4",
+      "bytes": 50591,
+      "after_sha256": "ec8578029d9cd269257a02689d1f393e5852d7a9b4736d391defea43a5da01cc",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/VeriFact_论文草稿_v1.md",
+      "new": "docs/papers/VeriFact_论文草稿_v1.md",
+      "before_sha256": "baae50a2ce84dea82cb49370e1933e29e0367ba6d8db8a7d9075da10f2930e23",
+      "bytes": 64189,
+      "after_sha256": "210472f305b6b25c2764549d3e96bb4c1c85104f2fb911d3d251b14082634f07",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/VeriFact_论文草稿_v1_036已回填.md",
+      "new": "docs/papers/VeriFact_论文草稿_v1_036已回填.md",
+      "before_sha256": "300b55e64e4e29262c779d7e970a1ccbabf9f1d54b3da57c24554cbec7261bee",
+      "bytes": 72623,
+      "after_sha256": "bda7078fffb76c815a51ad3bd5efd732a4706bb911082fd1b70fe7fb2050a284",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/manuscript_095_中英文修订版.zip",
+      "new": "docs/papers/manuscript_095_中英文修订版.zip",
+      "before_sha256": "72d8cc5db2a9ccf8a89e3004e826fde0edeedc6d257cd699c530f083a7acef2f",
+      "bytes": 1141745,
+      "after_sha256": "72d8cc5db2a9ccf8a89e3004e826fde0edeedc6d257cd699c530f083a7acef2f",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/写论文提示词.txt",
+      "new": "docs/papers/写论文提示词.txt",
+      "before_sha256": "2b25edf3f6b9dd5ca334965c6e6f92d48700f17e723d6f0cecc9489ecc118625",
+      "bytes": 1146,
+      "after_sha256": "2b25edf3f6b9dd5ca334965c6e6f92d48700f17e723d6f0cecc9489ecc118625",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/skillpaperwritingrevision.md",
+      "new": "docs/papers/skillpaperwritingrevision.md",
+      "before_sha256": "cf0fc1acae7dd6d0970152b5bd28c1a3c4c83087fabff07020f7276f64890648",
+      "bytes": 4701,
+      "after_sha256": "cf0fc1acae7dd6d0970152b5bd28c1a3c4c83087fabff07020f7276f64890648",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/01_原论文源码与路线审读.md",
+      "new": "docs/reading/01_原论文源码与路线审读.md",
+      "before_sha256": "746eb8143bfe638eb711818e9265f2309ba62fe8e1a7c1c7c6618e1c9dfb3118",
+      "bytes": 17666,
+      "after_sha256": "746eb8143bfe638eb711818e9265f2309ba62fe8e1a7c1c7c6618e1c9dfb3118",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/02_27项文献筛查.md",
+      "new": "docs/reading/02_27项文献筛查.md",
+      "before_sha256": "ae1efc88c11443db7527ffb0481e9a7784a9a4b3da7c1c3d16796b56c70e7e0a",
+      "bytes": 10353,
+      "after_sha256": "ae1efc88c11443db7527ffb0481e9a7784a9a4b3da7c1c3d16796b56c70e7e0a",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/论文笔记.md",
+      "new": "docs/reading/论文笔记.md",
+      "before_sha256": "fe132cc5ea9263bf968fff68d582d9ab6338bd62d1ec7f479bad498455ab83b3",
+      "bytes": 6782,
+      "after_sha256": "ce727cd89369c1a00238339e80734e46b8ce07c89919838e5972d21d3243c098",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/数据集笔记.md",
+      "new": "docs/reading/数据集笔记.md",
+      "before_sha256": "8b4689a2b30d078a6926da5632e24f90afbf57418115d340f91abaf4a8548e2f",
+      "bytes": 2904,
+      "after_sha256": "e0f7d2ec26b22cb5ffd16f6df03d20a05b3946eb28158c8863754164a4b5879a",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/VeriFact-BHC_单病例中文导读_患者5954.md",
+      "new": "docs/reading/VeriFact-BHC_单病例中文导读_患者5954.md",
+      "before_sha256": "224a71789fbb70610fb541dd972eb40694166005ff0d25775bc58f59aabc4d6e",
+      "bytes": 46736,
+      "after_sha256": "97b90e18ef5610860661e7efc606c42bc44fec835567dd9cbcbc072e95ff7d1d",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/skillpaperreading.md",
+      "new": "docs/reading/skillpaperreading.md",
+      "before_sha256": "8c6e0394430903382c605ebbd32e7f82b5181e73463db6b949bef9bbfc947175",
+      "bytes": 18493,
+      "after_sha256": "8c6e0394430903382c605ebbd32e7f82b5181e73463db6b949bef9bbfc947175",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/GEMINI_READING_PACK.md",
+      "new": "docs/sharing/GEMINI_READING_PACK.md",
+      "before_sha256": "ffe99efba98485821db674977701d715b41ddacba7976d8257bffab2f3eae62d",
+      "bytes": 2476,
+      "after_sha256": "50f55cac6d72689a003d1883f8e201d6bdd333fed8898e0eb2c4d251e29a071a",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/01_codex_execution_prompt.md",
+      "new": "docs/prompts/01_codex_execution_prompt.md",
+      "before_sha256": "d87b359a490d94cf9a37f4edae346cd9b15ed9dd6bdab563dad1d2374198ee05",
+      "bytes": 12369,
+      "after_sha256": "d87b359a490d94cf9a37f4edae346cd9b15ed9dd6bdab563dad1d2374198ee05",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/022_竞争感知支持边界校准_任务计划.md",
+      "new": "docs/prompts/022_竞争感知支持边界校准_任务计划.md",
+      "before_sha256": "05b2a14e733937c9929b6eec7c14cebcb72cec18b437d65a74d1966e15f3467f",
+      "bytes": 22719,
+      "after_sha256": "05b2a14e733937c9929b6eec7c14cebcb72cec18b437d65a74d1966e15f3467f",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/02_autodl_workflow.md",
+      "new": "docs/prompts/02_autodl_workflow.md",
+      "before_sha256": "fe0e0d39361928cfc87aeb063f7abf8ce7662d797c0a7e0ab38223d90768d12e",
+      "bytes": 16807,
+      "after_sha256": "fe0e0d39361928cfc87aeb063f7abf8ce7662d797c0a7e0ab38223d90768d12e",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/082_Codex_锚点驱动配置适配_执行提示词.md",
+      "new": "docs/prompts/082_Codex_锚点驱动配置适配_执行提示词.md",
+      "before_sha256": "8c0d658ede9d5ccfba2c5abb9dcde422ab8e244ffd6102fbc1cf354bd7217825",
+      "bytes": 20993,
+      "after_sha256": "8c0d658ede9d5ccfba2c5abb9dcde422ab8e244ffd6102fbc1cf354bd7217825",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/083_Codex_原生理由增量信息验证_执行提示词.md",
+      "new": "docs/prompts/083_Codex_原生理由增量信息验证_执行提示词.md",
+      "before_sha256": "97f8aca93b5ce70f9a88c7b87bbc48f59a0a66988f9573cfb5b32b386bdf81ce",
+      "bytes": 17030,
+      "after_sha256": "97f8aca93b5ce70f9a88c7b87bbc48f59a0a66988f9573cfb5b32b386bdf81ce",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/084_Codex_固定F4扩展验证与083离线结项_执行提示词.md",
+      "new": "docs/prompts/084_Codex_固定F4扩展验证与083离线结项_执行提示词.md",
+      "before_sha256": "34803a91721dafd854126079931fe21f807ebae115ccd75397f9843832eae58c",
+      "bytes": 15547,
+      "after_sha256": "34803a91721dafd854126079931fe21f807ebae115ccd75397f9843832eae58c",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/086_Codex_全局固定示范集选择与085A暂停整理_执行提示词.md",
+      "new": "docs/prompts/086_Codex_全局固定示范集选择与085A暂停整理_执行提示词.md",
+      "before_sha256": "53eea2a11e54b98b4dfae132236a434f9f4ec4142aad86c7b3e3e01c8c2780c4",
+      "bytes": 22574,
+      "after_sha256": "53eea2a11e54b98b4dfae132236a434f9f4ec4142aad86c7b3e3e01c8c2780c4",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/087_Codex_F4证据信息干预与紧凑示范验证_执行提示词.md",
+      "new": "docs/prompts/087_Codex_F4证据信息干预与紧凑示范验证_执行提示词.md",
+      "before_sha256": "157d4c6bc3e758585e94d2d17cefec4da5d6919e7f033303a3a6ba870f6676b1",
+      "bytes": 16119,
+      "after_sha256": "157d4c6bc3e758585e94d2d17cefec4da5d6919e7f033303a3a6ba870f6676b1",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/088_Codex_保留判定依据的固定示例压缩_执行提示词.md",
+      "new": "docs/prompts/088_Codex_保留判定依据的固定示例压缩_执行提示词.md",
+      "before_sha256": "d589928854e2a26b93d42120e2621cbe206aab2b8c8a8cc4efe248eea121b483",
+      "bytes": 17290,
+      "after_sha256": "d589928854e2a26b93d42120e2621cbe206aab2b8c8a8cc4efe248eea121b483",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/089_Codex_具体遗漏核对驱动的示例压缩与实测_执行提示词.md",
+      "new": "docs/prompts/089_Codex_具体遗漏核对驱动的示例压缩与实测_执行提示词.md",
+      "before_sha256": "e74f825163d1d9044a6a78d9fc2ea78f77d56cdfbe5b63ec4206caac8d546452",
+      "bytes": 17623,
+      "after_sha256": "e74f825163d1d9044a6a78d9fc2ea78f77d56cdfbe5b63ec4206caac8d546452",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/090_Codex_夜间构造修复与示例方案补验_执行提示词.md",
+      "new": "docs/prompts/090_Codex_夜间构造修复与示例方案补验_执行提示词.md",
+      "before_sha256": "8290318b28c32aa7ef1480f7af6606053aca751953c8e5a434956bc5d74bc2db",
+      "bytes": 19417,
+      "after_sha256": "8290318b28c32aa7ef1480f7af6606053aca751953c8e5a434956bc5d74bc2db",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/096_codex_execution_prompt.md",
+      "new": "docs/prompts/096_codex_execution_prompt.md",
+      "before_sha256": "22f1e10ef26387e1632bc9ecc2ffbe31d64b1607a5d4672eeac673022acc579a",
+      "bytes": 9488,
+      "after_sha256": "22f1e10ef26387e1632bc9ecc2ffbe31d64b1607a5d4672eeac673022acc579a",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/097_codex执行提示词.md",
+      "new": "docs/prompts/097_codex执行提示词.md",
+      "before_sha256": "4e72184e64030e61e1fd5ab2909974517bf2b6241e28aa98d82582ed93eaf9f4",
+      "bytes": 12535,
+      "after_sha256": "4e72184e64030e61e1fd5ab2909974517bf2b6241e28aa98d82582ed93eaf9f4",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/动态切分提示词.md",
+      "new": "docs/prompts/动态切分提示词.md",
+      "before_sha256": "f960324163003a1002e90702f4c70d1f2be6d077602702ff9491ba450ea8080a",
+      "bytes": 47975,
+      "after_sha256": "246e4a2819309f9d8d99090f19414a413a5904749097ff2f514a62a2ebc519b1",
+      "byte_identical": false
+    },
+    {
+      "old": "docs/assets/fig01_framework.mmd",
+      "new": "docs/papers/assets/fig01_framework.mmd",
+      "before_sha256": "ad2ef743ec4892a878d5cc816ae77d7486b92eded27f95e66e424dfb3cb8bbcb",
+      "bytes": 421,
+      "after_sha256": "ad2ef743ec4892a878d5cc816ae77d7486b92eded27f95e66e424dfb3cb8bbcb",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/assets/fig02_full8997_tradeoff.png",
+      "new": "docs/papers/assets/fig02_full8997_tradeoff.png",
+      "before_sha256": "7d6d5ba4ae67a88c3ce5bb91d4cac1c7578409204be6eb97e65a159d6b34f22a",
+      "bytes": 136685,
+      "after_sha256": "7d6d5ba4ae67a88c3ce5bb91d4cac1c7578409204be6eb97e65a159d6b34f22a",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/assets/fig03_full8997_class_recall.png",
+      "new": "docs/papers/assets/fig03_full8997_class_recall.png",
+      "before_sha256": "3c5d497487a7d1c4a3f5cdab9d935f4e518ca70c54f93acd169936bd9448feba",
+      "bytes": 82993,
+      "after_sha256": "3c5d497487a7d1c4a3f5cdab9d935f4e518ca70c54f93acd169936bd9448feba",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/assets/fig04_author_net_correct.png",
+      "new": "docs/papers/assets/fig04_author_net_correct.png",
+      "before_sha256": "cbf83bdfcc119e21d21728fc9bb93433a911ad3d5968f272bd4d021bd293ea20",
+      "bytes": 91170,
+      "after_sha256": "cbf83bdfcc119e21d21728fc9bb93433a911ad3d5968f272bd4d021bd293ea20",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/assets/fig05_raw_to_final_counts.png",
+      "new": "docs/papers/assets/fig05_raw_to_final_counts.png",
+      "before_sha256": "ed1a265c153a401265ab7746fc768260c34d3a52b72f96471a1935859593efb9",
+      "bytes": 96040,
+      "after_sha256": "ed1a265c153a401265ab7746fc768260c34d3a52b72f96471a1935859593efb9",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/assets/fig06_construction_stages.png",
+      "new": "docs/papers/assets/fig06_construction_stages.png",
+      "before_sha256": "dcd7ee74abd1bbd7c0e01926756caafe967714a49b8889d0282bd2dd9fd6ef3c",
+      "bytes": 120890,
+      "after_sha256": "dcd7ee74abd1bbd7c0e01926756caafe967714a49b8889d0282bd2dd9fd6ef3c",
+      "byte_identical": true
+    },
+    {
+      "old": "docs/assets/figA1_text_adaptation_gain.png",
+      "new": "docs/papers/assets/figA1_text_adaptation_gain.png",
+      "before_sha256": "49bc9b386451eb953dd17d5f83e8a59a7e3b48d369290c81f01d18ce40abdfb2",
+      "bytes": 94662,
+      "after_sha256": "49bc9b386451eb953dd17d5f83e8a59a7e3b48d369290c81f01d18ce40abdfb2",
+      "byte_identical": true
+    }
+  ],
+  "live_reference_edits": [
+    {
+      "path": "README.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/README.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/papers/02_revision_handoff_zh.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/papers/VeriFact_论文草稿_v1.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/papers/VeriFact_论文草稿_v1_036已回填.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/papers/论文草稿_截至094.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/prompts/动态切分提示词.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/reading/VeriFact-BHC_单病例中文导读_患者5954.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/reading/数据集笔记.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/reading/论文笔记.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/reports/2026-10-15_导师汇报_前处理与大模型推理.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "docs/sharing/GEMINI_READING_PACK.md",
+      "reason": "Rebase live Markdown links after move"
+    },
+    {
+      "path": "scripts/build_gemini_reading_pack.py",
+      "reason": "Update maintained export-helper paths"
+    },
+    {
+      "path": "scripts/build_gemini_mirror.py",
+      "reason": "Update maintained export-helper paths"
+    },
+    {
+      "path": "docs/README.md",
+      "reason": "Replace root listing with concise actual-directory description"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "reason": "Document frozen replay boundary after physical relocation"
+    },
+    {
+      "path": ".gitattributes",
+      "reason": "Protect relocated files from line-ending conversion"
+    }
+  ],
+  "historical_paths": "Historical code/manifests keep original paths; replay corresponding historical checkout."
+}

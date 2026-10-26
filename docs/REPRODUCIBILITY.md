@@ -1,8 +1,11 @@
-# 当前复查与复现入口（2026-09-28）
+# 当前复查与复现入口（2026-10-26）
 
-095研究已结项，含B真实补齐、来源诊断与构造停止；本文是离线复查入口，不自动调用API或开启下一任务。环境见[RUN_ENVIRONMENT](RUN_ENVIRONMENT.md)，各任务的历史入口见[TASK_INDEX](TASK_INDEX.md)。
+研究完成至097；095含B补齐与构造停止，096含跨Judge适配，097含原生接口对照与阶段B未启动；本文是离线复查入口，不自动调用API或开启下一任务。环境见[RUN_ENVIRONMENT](RUN_ENVIRONMENT.md)，各任务的历史入口见[TASK_INDEX](TASK_INDEX.md)。
 
 ## 优先只读
+
+最新先看[097报告](../outputs/097_native_judge_source_dependence/report.md)及[096报告](../outputs/096_r1_native_priorg/report.md)，不是重新发送成功请求。精简仓库只保留关键outputs文档，不能假设其机器附件齐全或所有复算命令可直接运行；完整复查应使用主仓库及合法私有材料。
+
 
 先看[095总报告](../outputs/095_anchored_minimal_contrast/report.md)、[统一9065表](../outputs/095_anchored_minimal_contrast/unified_9065_predictions.jsonl)和[最新稿](../outputs/095_anchored_minimal_contrast/manuscript_zh.md)。零API、无临床原文复算：
 
@@ -30,9 +33,16 @@ pwsh -NoProfile -File scripts/run_research.ps1 scripts/check_research_environmen
 
 ## 更早任务的严格重放
 
+2026-10-26文档已按用途移入子目录，旧路径见[迁移清单](maintenance/2026-10-26_docs_moves.json)。087–091及096等历史准备／验证脚本包含旧docs路径与指纹，保持冻结不修改；严格复查请用对应旧checkout。当前工作区不是所有旧脚本的无改动重跑环境。
+
+
+
+历史navigation_before／prior_documents快照中的相对链接按原项目位置解释，report_template及tasks中的报告源稿可能按最终outputs目录写链接；不能把它们当作独立可浏览的现行入口。请从任务索引进入正式报告，或在对应历史checkout恢复原位置。外部来源卡片未下载的图片也不补造。
+
+
 协议、报告、审计、来源、计算代码和manifest保持形成时内容。本次更新的是现行导航和环境声明；某些旧manifest把README等导航也登记了SHA。若严格验证涉及这些旧导航，在对应历史commit的隔离checkout运行，或先核对归档原字节；**不得修改旧manifest、放宽哈希或把当前README当当年文件**。
 
-本次修改前导航逐文件原字节在[历史快照](history/2026-09-27_before_sync/README.md)，基准commit ee8060a2b。更早冻结版本由任务manifest/审计记录指定，不能认为ee8060a2b适合所有早期任务。
+2026-09-27同步前导航逐文件原字节在[历史快照](history/2026-09-27_before_sync/README.md)，基准commit ee8060a2b。更早冻结版本由任务manifest/审计记录指定，不能认为ee8060a2b适合所有早期任务。
 
 019–021曾提供scripts/replay_completed_research.py，要求全新outputs/replays目录并禁网；其他任务各有输出/路径限制，按其正式交审说明执行。历史复查使用对应环境：environment.legacy-analysis.yml保留早期包版本，现行environment.yml为029分析环境；不自动升级旧依赖。
 
