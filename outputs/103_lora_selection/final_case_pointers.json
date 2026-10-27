@@ -1,0 +1,497 @@
+[
+  {
+    "GT": "Supported",
+    "after": "Supported",
+    "base": "nine_direct",
+    "before": "Not Supported",
+    "candidate": "nine_lora",
+    "id": "8b0ab099-df0f-de9f-04bc-aa9b7b549c97",
+    "interpretation": "概括性改善：NS→S救回。窗口存在局部改善描述，但不能仅凭局部原文证明广义总结或模型内部推理。",
+    "panel": "natural",
+    "reference_sha256": "fe58f16871b9d74317e1b2659a0191d1449e1c97fa05004ea9f83d8e9a75e995",
+    "sid": "25027",
+    "source_spans": [
+      {
+        "end": 11311,
+        "sha256": "37c253a0005a042389286a694e61ed6f035a46e4068eeee25a37073530fb57bf",
+        "start": 10985
+      }
+    ]
+  },
+  {
+    "GT": "Supported",
+    "after": "Supported",
+    "base": "nine_direct",
+    "before": "Not Supported",
+    "candidate": "nine_lora",
+    "id": "fd69206d-8b20-7ca8-1b85-faa24d58a95f",
+    "interpretation": "重复阴性结果及时间对应：NS→S救回。需区分同一次结果被重复记录与独立多次检查。",
+    "panel": "natural",
+    "reference_sha256": "a450d505ea0e0672d6277d1863ee5edf53afecd7a50c66b4998e320825e885d0",
+    "sid": "59752",
+    "source_spans": [
+      {
+        "end": 1095,
+        "sha256": "338f5cfc5b5a525cc22f6f4b02b7e9d7149f9e8354ee47ab06c9d99f488a128b",
+        "start": 770
+      },
+      {
+        "end": 1662,
+        "sha256": "d41bcf66c4c0ac41560a337c63eced514968aecddfef3b789aae21b06a5f1467",
+        "start": 1336
+      },
+      {
+        "end": 2285,
+        "sha256": "381824e2a597e8dda991ffd62cba93c0172bb296cc46e6bb65d160c6792af776",
+        "start": 1959
+      },
+      {
+        "end": 3286,
+        "sha256": "7f3db1842711b4df2bdaff234f8328d067f30bba51480ed12281f994fa5d1d97",
+        "start": 2959
+      },
+      {
+        "end": 3767,
+        "sha256": "16aa274b13c8344abf983f66f110648ea39d9b9878ef99c40e96b2f32d9d2cfd",
+        "start": 3441
+      }
+    ]
+  },
+  {
+    "GT": "Not Addressed",
+    "after": "Not Addressed",
+    "base": "nine_direct",
+    "before": "Not Supported",
+    "candidate": "nine_lora",
+    "id": "868018da-0e43-4d8b-d797-2fb46897014f",
+    "interpretation": "具体结论与主题相关性：NS→NA救回。reference有相关检查及部分结果，不能将本例描述成完全没有相关主题。",
+    "panel": "natural",
+    "reference_sha256": "b8d8dd571804dbfb5d34b7065628ed2c1604a8a5c4b9cca9170e6a7cf720c49e",
+    "sid": "59752",
+    "source_spans": [
+      {
+        "end": 1546,
+        "sha256": "d254388f34cba0b9bc7512ca5ab83460122ee593803962597f583130d100c093",
+        "start": 1222
+      },
+      {
+        "end": 16000,
+        "sha256": "0b8774674d273a1d9f4faa1ca6e2012d806048a05496f3fb10b895df260ce274",
+        "start": 15676
+      },
+      {
+        "end": 16379,
+        "sha256": "40ce3a246a174d45c97de77e674d5606de02693f12787f8af48a7165a14957c5",
+        "start": 16055
+      },
+      {
+        "end": 16915,
+        "sha256": "2d71468b59f40788c8de876a51a71568981ca2eb8ab8270ef4b102d86fcfe759",
+        "start": 16591
+      },
+      {
+        "end": 17484,
+        "sha256": "8c3a1912a50697fc10613ffb9054d606fb898d5152fd78361222d09ad843c51c",
+        "start": 17160
+      }
+    ]
+  },
+  {
+    "GT": "Not Addressed",
+    "after": "Not Addressed",
+    "base": "nine_direct",
+    "before": "Not Supported",
+    "candidate": "nine_lora",
+    "id": "e18d8cc8-1192-95c2-6f41-246fafa03053",
+    "interpretation": "特定事件参与者或内容：NS→NA救回。关键词未命中不等于证明完整EHR不存在；沿医生GT评价。",
+    "panel": "natural",
+    "reference_sha256": "d3f0100b002f4b782167ce27d11d9b54817fcdcd1b3fae6a9754d8317484d1d2",
+    "sid": "98089",
+    "source_spans": []
+  },
+  {
+    "GT": "Not Supported",
+    "after": "Supported",
+    "base": "nine_direct",
+    "before": "Not Supported",
+    "candidate": "nine_lora",
+    "id": "fef68761-dcf7-fc21-cd06-ea79973fdbae",
+    "interpretation": "执行与耐受状态：NS→S误伤。存在操作执行记录，并不完整支持其耐受属性。",
+    "panel": "pressure",
+    "reference_sha256": "88d7acbe6487a56d690bb52ba46ae304a156dcc8fafd3bac4873370de09d792f",
+    "sid": "98089",
+    "source_spans": [
+      {
+        "end": 4911,
+        "sha256": "e04c86f7e6158af6d270dfb891427413ec0375ed87ac499432b0b2b9196d813d",
+        "start": 4588
+      },
+      {
+        "end": 5676,
+        "sha256": "b6292b16bfd20306969d6a1b9b8cf97cb4411cb9b93eab348afe253c092a0fd1",
+        "start": 5353
+      },
+      {
+        "end": 7960,
+        "sha256": "329e32916a226f59aa576621fdebe347311eaa1050b29381f9275c17e694d0ff",
+        "start": 7637
+      },
+      {
+        "end": 9986,
+        "sha256": "7e39350f8f1339c63f663214ec9f066921a6fac34c40f208eb0899d759f008d0",
+        "start": 9663
+      },
+      {
+        "end": 11005,
+        "sha256": "79af750204affee62f96750287083b869d82d0aa7360df54ab7134c014594b2d",
+        "start": 10682
+      }
+    ]
+  },
+  {
+    "GT": "Not Supported",
+    "after": "Supported",
+    "base": "nine_direct",
+    "before": "Not Supported",
+    "candidate": "nine_lora",
+    "id": "92c6deb0-315c-7cb7-7e1e-728e16f0dcb8",
+    "interpretation": "药物剂量与因果归因：NS→S误伤。原文有多个可能原因及后续相关用药事件，不能将相关提及等同于完整剂量和因果支持。",
+    "panel": "pressure",
+    "reference_sha256": "55690d6ad2006f860d91a65ffc45850f4f6cd9ff19c8aa08de917b71e57e2915",
+    "sid": "1084",
+    "source_spans": [
+      {
+        "end": 857,
+        "sha256": "f7aa5689f1eb59695ef599c694f9c38ff3a8ab3a4bea234f11360245d29cf89e",
+        "start": 529
+      },
+      {
+        "end": 5488,
+        "sha256": "df03f6324fc6c3a8eb3cc534dc05b68cd68af9db5c445600e7786503b7af91e7",
+        "start": 5161
+      },
+      {
+        "end": 11955,
+        "sha256": "75439b4fd00fc064ac0d72fe6c2d799eeb5fa52a06f5d80adc70199a3e539996",
+        "start": 11628
+      },
+      {
+        "end": 12361,
+        "sha256": "34af13fecb666f975648bac6f62f96ac187417ad08302f5dc6a5f81cac466246",
+        "start": 12034
+      },
+      {
+        "end": 14161,
+        "sha256": "3a9b28d25c559a06bd60d19a6ce95d13df2ea113cd707d16f2abf7ee95273e5d",
+        "start": 13835
+      }
+    ]
+  },
+  {
+    "GT": "Supported",
+    "after": "Supported",
+    "base": "moe_direct",
+    "before": "Not Addressed",
+    "candidate": "moe_lora",
+    "id": "e088751d-057d-52e0-2867-b8b4a8a6ecd0",
+    "interpretation": "概括性恢复：NA→S救回。局部改善与持续问题并存，正确GT不能当成推理过程被验证。",
+    "panel": "natural",
+    "reference_sha256": "cc6c5e1c498ea5ed3991486ca0142973b4be2436c1bdadf89800d5b154dd5a5c",
+    "sid": "69023",
+    "source_spans": [
+      {
+        "end": 1931,
+        "sha256": "2bdc95c87b55de12c6a6aef91b206120edc23fb1149d30d22cb9d1b1f5fb0ea8",
+        "start": 1605
+      },
+      {
+        "end": 2676,
+        "sha256": "edafafed04b6030ea44f092648ddcd54b5ba859dc4cda72e375db1952843fd75",
+        "start": 2350
+      },
+      {
+        "end": 8232,
+        "sha256": "0ca3acc8eecc9abe1262d352bb5c9eb97ed499be75ae27e0efd1b645f4df9cbe",
+        "start": 7906
+      },
+      {
+        "end": 11102,
+        "sha256": "85e48d5a0a6b6498a9c03b3b2da4f0410854945b5e229cc7d1ad4743ad533ef6",
+        "start": 10776
+      },
+      {
+        "end": 12068,
+        "sha256": "861a5c7e2bb3108b8b65ca0163b3c945526daa2fc22ac55e24d84c3be2815a0e",
+        "start": 11742
+      }
+    ]
+  },
+  {
+    "GT": "Supported",
+    "after": "Supported",
+    "base": "moe_direct",
+    "before": "Not Supported",
+    "candidate": "moe_lora",
+    "id": "d93ff58a-1f26-bcef-fe98-1d9648a50d98",
+    "interpretation": "结果与检查类型归属：NS→S救回。原文多种检查并存，保留GT/reference解释限制，不自行作医学重标。",
+    "panel": "natural",
+    "reference_sha256": "a4e92622a11259ee00ec7ca84b9b73a2a234e774274170429d4b4fe2c38e12ac",
+    "sid": "82030",
+    "source_spans": [
+      {
+        "end": 489,
+        "sha256": "81dbb41c2bdce6630721fd3ce582b64884840d8e49251e3566ffd870f5151ba8",
+        "start": 159
+      },
+      {
+        "end": 833,
+        "sha256": "b6e5b58752defe596ca80a5cce0f7787e9acdfa6a9d5228fefdeab108d4c6575",
+        "start": 503
+      },
+      {
+        "end": 1286,
+        "sha256": "de5a46561acb2864684d840f5f5ce1aac66e1d20366f4e4239b4929b672a455d",
+        "start": 956
+      },
+      {
+        "end": 19691,
+        "sha256": "6e7fa2b42a884023624a3c1683fe501a8bd5fc178ad65ee384fcb6d119a36ca8",
+        "start": 19367
+      },
+      {
+        "end": 20058,
+        "sha256": "8a1baaae6ae2b7f8754793221fbc15325a24427bd731a2233e5d4af0cdc4cfe1",
+        "start": 19734
+      }
+    ]
+  },
+  {
+    "GT": "Not Addressed",
+    "after": "Supported",
+    "base": "moe_direct",
+    "before": "Not Supported",
+    "candidate": "moe_lora",
+    "id": "b2cc479c-2006-c198-9824-fa9c8c55c33e",
+    "interpretation": "一般状态与具体亚型：NS→S，错误仍错误但新增false-S。准确率转移会漏掉这种风险升级。",
+    "panel": "natural",
+    "reference_sha256": "e799bfc6ca6b19b7c6780ad5a756bb88de4958bdfa711210f1e0777203d7182e",
+    "sid": "87344",
+    "source_spans": [
+      {
+        "end": 10529,
+        "sha256": "83ff4b075f1847a2039f863576c7380f648b62c526cb3e03dba467253bfb8569",
+        "start": 10203
+      },
+      {
+        "end": 11632,
+        "sha256": "17c404f849220109e921099bc3d9c95118b574c6853967d112177c33038934a0",
+        "start": 11306
+      },
+      {
+        "end": 14116,
+        "sha256": "40e9135de2185a6876d13e3c01081d054e658f32c3e16b908e4e668ad91123d6",
+        "start": 13790
+      },
+      {
+        "end": 17272,
+        "sha256": "0b1964d5361773dfc9f3d05cf86107b45fbdedd5e1463e6c1658514bc6e612c9",
+        "start": 16946
+      }
+    ]
+  },
+  {
+    "GT": "Not Addressed",
+    "after": "Supported",
+    "base": "moe_direct",
+    "before": "Not Addressed",
+    "candidate": "moe_lora",
+    "id": "bb7e08e1-0306-29cb-57b8-68a830bff8b9",
+    "interpretation": "实体和检测结果归属：NA→S误伤。一般状态、其他主体的信息不等于目标检测已执行及其结果。",
+    "panel": "natural",
+    "reference_sha256": "50441044f1b0787820f077a016abdd550db502ef57f604a5370534f0b8c0dec5",
+    "sid": "59752",
+    "source_spans": [
+      {
+        "end": 1758,
+        "sha256": "3f3779da5e3ae4936f8d13a29e9250d8fa429567c4958e14d7e6bf1e4bd753ab",
+        "start": 1432
+      },
+      {
+        "end": 3230,
+        "sha256": "a40542dcf2ce1dc62aba311f3e909a4baa8f8e5af0ab78bc6bc96aed5f7dddb3",
+        "start": 2904
+      },
+      {
+        "end": 3865,
+        "sha256": "ae043fdd6d72896e707a312930e6747729be5f185396d492668042e7980f1d2f",
+        "start": 3539
+      },
+      {
+        "end": 4301,
+        "sha256": "997a35c7af8d3172207eec5e5d40a8d27164e382bee1b104c9e47203bbaf0211",
+        "start": 3975
+      },
+      {
+        "end": 4802,
+        "sha256": "1aa5ec3fa5f5cc98327a799ef18431632c8a10607391ed350fc4be61e6972ed8",
+        "start": 4474
+      }
+    ]
+  },
+  {
+    "GT": "Not Supported",
+    "after": "Supported",
+    "base": "moe_direct",
+    "before": "Not Supported",
+    "candidate": "moe_lora",
+    "id": "4f09f652-5333-a6b3-e543-5e2e83df67dd",
+    "interpretation": "改善与完全消失：NS→S误伤。原文仍有持续异常，另一个过程的消失不能移用到目标状态。",
+    "panel": "pressure",
+    "reference_sha256": "81af47405672f3e485af2ce263226977094b835e0f151fac558aae8d4b52d97e",
+    "sid": "60130",
+    "source_spans": [
+      {
+        "end": 507,
+        "sha256": "8b8a836a0dd8d26c43428d50dccbc58e6e1ab63fef7e434c4377bb5a87b93c8c",
+        "start": 178
+      },
+      {
+        "end": 2494,
+        "sha256": "d48dc0c07a70caa4353ed73ab40a0aaf7a914bb86c11cf90e9e4aa486eb1613f",
+        "start": 2168
+      },
+      {
+        "end": 3070,
+        "sha256": "e0d85e1e3f2157df6a72cee3ec4752e8f9434109535d52d9de016d5960dd261d",
+        "start": 2744
+      },
+      {
+        "end": 3614,
+        "sha256": "34ba178a2748e933da2e203d9d7b3c93f8656966b9f55baaf492bca80aa0430e",
+        "start": 3288
+      },
+      {
+        "end": 4288,
+        "sha256": "062cd7ed6fd0cb8656d9a8b191fee12ed63bf8b64e439925cc0d2aef3ec7c125",
+        "start": 3959
+      }
+    ]
+  },
+  {
+    "GT": "Not Supported",
+    "after": "Supported",
+    "base": "moe_direct",
+    "before": "Not Supported",
+    "candidate": "moe_lora",
+    "id": "84371107-8b8e-5500-b984-346a37469320",
+    "interpretation": "治疗持续与停止：NS→S误伤。原文仍延续目标治疗，其他治疗停用不能替代目标事件。",
+    "panel": "pressure",
+    "reference_sha256": "6a6911f599407ba0e53198b4ad238904537a6469b592cb690d0503ba9b2390ea",
+    "sid": "22289",
+    "source_spans": [
+      {
+        "end": 2094,
+        "sha256": "a617a7204073a6e25233f6ed341b6005bea3fa3f0da137b57c652f9a1b70c79c",
+        "start": 1767
+      },
+      {
+        "end": 2779,
+        "sha256": "8056eb179618499684670f3d0b2ca4bea49d98c2c67ceb4c3ee5795f663441f8",
+        "start": 2452
+      },
+      {
+        "end": 6325,
+        "sha256": "a1f9f371629abbbe730862e9a4aae802b4f5c75cc92fd8969f054f1c17ddf56c",
+        "start": 5998
+      },
+      {
+        "end": 7215,
+        "sha256": "cde30ddf4c9b6487711426187c3e763095ac7c6b0dcec1607ac55b1f068cf0df",
+        "start": 6881
+      },
+      {
+        "end": 8204,
+        "sha256": "2504ffdccb578950d35f1e8924565bed918716ead0b6f49f3c6b20f7a1722509",
+        "start": 7877
+      }
+    ]
+  },
+  {
+    "GT": "Not Addressed",
+    "after": "Supported",
+    "base": "moe_direct",
+    "before": "Not Addressed",
+    "candidate": "moe_lora",
+    "id": "e3a6ab59-3080-4660-44c9-f470e743a71e",
+    "interpretation": "一般事件与具体内容：NA→S误伤。相关会议或支持信息不完整支持特定场景和内容。",
+    "panel": "pressure",
+    "reference_sha256": "bc98a16fbec72f2b2c451863866d62bca211083527c933217b627176bfdfabd6",
+    "sid": "69023",
+    "source_spans": [
+      {
+        "end": 3486,
+        "sha256": "0c18bd52bd48dd6118ac07a204ced6717af3c6421baa6022a6e7daf5af7d84c7",
+        "start": 3160
+      },
+      {
+        "end": 5866,
+        "sha256": "e0654510ad757acca914f62677939214995fcf8cbb0d26a602dc5d56e8319f98",
+        "start": 5540
+      },
+      {
+        "end": 6824,
+        "sha256": "025fdfd4e056a6a6838f75c771fe84229201f2c724f1c92cc24dadd36ac7e83b",
+        "start": 6498
+      },
+      {
+        "end": 9321,
+        "sha256": "90404eec611cbbfa8ca0b7b86be0c6575ab02aa771be2443903934376de4c858",
+        "start": 8995
+      },
+      {
+        "end": 9655,
+        "sha256": "836de536daeb3d4dce31d1add46959ae04fe95b705b3b59b48750d15e346137c",
+        "start": 9329
+      }
+    ]
+  },
+  {
+    "GT": "Not Addressed",
+    "after": "Supported",
+    "base": "moe_direct",
+    "before": "Not Addressed",
+    "candidate": "moe_lora",
+    "id": "4842a6f5-baa3-1361-5b55-4ebc7db410b1",
+    "interpretation": "实体出现与事件参与：NA→S误伤。人物角色出现在其他上下文，不证明其参与指定事件。",
+    "panel": "pressure",
+    "reference_sha256": "39f7cdd0cf54ab79a57377333a18199a6f4113748accd7bac33db31a4ebb045b",
+    "sid": "69023",
+    "source_spans": [
+      {
+        "end": 2821,
+        "sha256": "ab7ab13c59ed76072771ae651818c6fb20a03912d8e2bbb557ed9d98007b70f6",
+        "start": 2493
+      },
+      {
+        "end": 3726,
+        "sha256": "0c18bd52bd48dd6118ac07a204ced6717af3c6421baa6022a6e7daf5af7d84c7",
+        "start": 3400
+      },
+      {
+        "end": 5103,
+        "sha256": "99e1ff51c5303a3ee7dc62df300098001b6ad969da48ef9f77de42b9e7954b37",
+        "start": 4777
+      },
+      {
+        "end": 5787,
+        "sha256": "723cda4834a724728269bca7f2ad358c8c66214dd1b974195923df347a09c655",
+        "start": 5461
+      },
+      {
+        "end": 7170,
+        "sha256": "7980bbc6b85d512b2a801dadb6cdec9abfa86e24c8d4bdf42f11033eb477deb1",
+        "start": 6844
+      }
+    ]
+  }
+]

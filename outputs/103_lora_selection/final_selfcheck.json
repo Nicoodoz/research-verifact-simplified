@@ -1,0 +1,39 @@
+{
+  "GT_modified": false,
+  "all_prediction_rows": 1080,
+  "analysis_checks": {
+    "all180_complete": true,
+    "cohort_sha256": "491d20e720636dfd3b6c731cc644f91015996f359a83782dac0afeadb3fa4ba6",
+    "confirmation_new_evaluation": false,
+    "independent_review": false,
+    "paired_inputs_and_batches_equal": true,
+    "patient_roles_disjoint": true,
+    "raw_source_sha256": "613bde0df6c6ccf02ae2b3b22df3abfd9c8ea737e279a42667d0dfe50c1bcf90",
+    "train512_GT_counts_unchanged": true
+  },
+  "exact_invoice_unknown": true,
+  "files": {
+    "final_analysis.json": "eaa2897494a9d683bc1ab6fb1fecc7bf8b816a59f445dc2b1d946249fe706c68",
+    "final_case_analysis.md": "8f0b512480ee7e509ae523f1c02e5b2cc99f93f6be1f8e316f5d4c9524020cd9",
+    "final_case_pointers.json": "00412da7b28bdbed9c1ea15f2b99e065d58f699dbce0894e1a5e4903d983b834",
+    "final_engineering_sensitivity.json": "27f966c163dd4b858de7b743a57e85ea3037c1f52fbeee79e82f385b1fc39a7f",
+    "final_metrics.md": "d69e4d8d058cb8e43895c8ff76c80929908c5711db2c4a92ecfd0de3309fc221",
+    "final_patient_transitions.json": "63da010fd790f4b02de277c3b04a90656601696c3301a68e3ef88301282f5532",
+    "final_report.md": "c997a5657aec7e16471617a74e2a782c581741b58e3fa52303f1ed3c280f8c83",
+    "final_resource_cost_analysis.json": "52a9297c8fa0eced68149f1a1547de68bdf01032e2ce96abf10fe7a101eb8719",
+    "final_risk_intervals.json": "45037ba267749aac7e300a733e2a357f5321eb134efa2fd87c0dda5b7e3e96c9",
+    "final_transitions.jsonl": "31a0bb7568aae55327d81d0ce0b53d8b896eaa8df1e75721d5f6265eafe84723",
+    "shutdown_confirmation.json": "7af36fb1190096e7854382227cc25d08e3b72241d4c897d79b6d49ddea194237"
+  },
+  "full_local_label_pairs": 360,
+  "heldout_claim": false,
+  "independent_audit": false,
+  "metric_arithmetic_checks": 14,
+  "new_GPU": 0,
+  "new_paid_API": 0,
+  "reference_truncation": false,
+  "same_Judge_superiority_claim": false,
+  "source_case_review_count": 14,
+  "status": "executor_checks_passed",
+  "user_confirmed_shutdown": true
+}

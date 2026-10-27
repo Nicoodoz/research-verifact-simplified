@@ -1,0 +1,267 @@
+{
+  "method": "Same sorted-patient RandomState seeds0..999 as unified evaluator; ratios computed on whole sampled clusters; undefined denominators omitted and valid count reported. Primary MCC/PA remain unified evaluate/paired_compare.",
+  "natural": {
+    "moe_lora__vs__moe_direct": {
+      "NA_recall": {
+        "ci95": [
+          -0.16715686274509808,
+          0.18764880952380938
+        ],
+        "delta": 0.0,
+        "valid_draws": 999
+      },
+      "NS_recall": {
+        "ci95": [
+          -0.33333333333333337,
+          0.0
+        ],
+        "delta": -0.125,
+        "valid_draws": 995
+      },
+      "false_S_rate": {
+        "ci95": [
+          0.07692307692307693,
+          0.4615384615384615
+        ],
+        "delta": 0.25,
+        "valid_draws": 1000
+      }
+    },
+    "moe_lora__vs__moe_native_api": {
+      "NA_recall": {
+        "ci95": [
+          -0.18181818181818182,
+          0.0
+        ],
+        "delta": -0.0625,
+        "valid_draws": 999
+      },
+      "NS_recall": {
+        "ci95": [
+          -1.0,
+          0.0
+        ],
+        "delta": -0.375,
+        "valid_draws": 995
+      },
+      "false_S_rate": {
+        "ci95": [
+          0.0967357910906298,
+          0.4
+        ],
+        "delta": 0.25,
+        "valid_draws": 1000
+      }
+    },
+    "moe_lora__vs__nine_lora": {
+      "NA_recall": {
+        "ci95": [
+          -0.18181818181818182,
+          0.0
+        ],
+        "delta": -0.0625,
+        "valid_draws": 999
+      },
+      "NS_recall": {
+        "ci95": [
+          -0.33333333333333337,
+          0.0
+        ],
+        "delta": -0.125,
+        "valid_draws": 995
+      },
+      "false_S_rate": {
+        "ci95": [
+          0.0,
+          0.21428571428571427
+        ],
+        "delta": 0.125,
+        "valid_draws": 1000
+      }
+    },
+    "nine_lora__vs__nine_direct": {
+      "NA_recall": {
+        "ci95": [
+          0.2857142857142857,
+          0.8095238095238095
+        ],
+        "delta": 0.625,
+        "valid_draws": 999
+      },
+      "NS_recall": {
+        "ci95": [
+          -1.0,
+          0.0
+        ],
+        "delta": -0.375,
+        "valid_draws": 995
+      },
+      "false_S_rate": {
+        "ci95": [
+          -0.1111111111111111,
+          0.2222222222222222
+        ],
+        "delta": 0.08333333333333334,
+        "valid_draws": 1000
+      }
+    },
+    "nine_lora__vs__nine_native": {
+      "NA_recall": {
+        "ci95": [
+          0.25,
+          0.6363636363636364
+        ],
+        "delta": 0.5,
+        "valid_draws": 999
+      },
+      "NS_recall": {
+        "ci95": [
+          -0.6666666666666667,
+          0.0
+        ],
+        "delta": -0.25,
+        "valid_draws": 995
+      },
+      "false_S_rate": {
+        "ci95": [
+          0.0,
+          0.3333333333333333
+        ],
+        "delta": 0.12500000000000003,
+        "valid_draws": 1000
+      }
+    }
+  },
+  "pressure": {
+    "moe_lora__vs__moe_direct": {
+      "NA_recall": {
+        "ci95": [
+          -0.22730519480519482,
+          0.1613121185701831
+        ],
+        "delta": -0.033333333333333326,
+        "valid_draws": 1000
+      },
+      "NS_recall": {
+        "ci95": [
+          -0.6251157407407407,
+          -0.2630604288499026
+        ],
+        "delta": -0.4333333333333333,
+        "valid_draws": 1000
+      },
+      "false_S_rate": {
+        "ci95": [
+          0.17300531914893613,
+          0.4285714285714286
+        ],
+        "delta": 0.30000000000000004,
+        "valid_draws": 1000
+      }
+    },
+    "moe_lora__vs__moe_native_api": {
+      "NA_recall": {
+        "ci95": [
+          -0.25719576719576726,
+          0.12
+        ],
+        "delta": -0.06666666666666665,
+        "valid_draws": 1000
+      },
+      "NS_recall": {
+        "ci95": [
+          -0.6316228070175438,
+          -0.23076923076923078
+        ],
+        "delta": -0.4333333333333333,
+        "valid_draws": 1000
+      },
+      "false_S_rate": {
+        "ci95": [
+          0.08502790373212414,
+          0.3485690235690235
+        ],
+        "delta": 0.21666666666666667,
+        "valid_draws": 1000
+      }
+    },
+    "moe_lora__vs__nine_lora": {
+      "NA_recall": {
+        "ci95": [
+          -0.17074912891986066,
+          0.07414529914529908
+        ],
+        "delta": -0.06666666666666665,
+        "valid_draws": 1000
+      },
+      "NS_recall": {
+        "ci95": [
+          -0.2333333333333333,
+          0.09527649769585249
+        ],
+        "delta": -0.06666666666666665,
+        "valid_draws": 1000
+      },
+      "false_S_rate": {
+        "ci95": [
+          -0.018867924528301883,
+          0.1341508918820531
+        ],
+        "delta": 0.06666666666666671,
+        "valid_draws": 1000
+      }
+    },
+    "nine_lora__vs__nine_direct": {
+      "NA_recall": {
+        "ci95": [
+          0.6190476190476191,
+          0.8334459459459459
+        ],
+        "delta": 0.7333333333333333,
+        "valid_draws": 1000
+      },
+      "NS_recall": {
+        "ci95": [
+          -0.8276108374384237,
+          -0.3474637681159424
+        ],
+        "delta": -0.6000000000000001,
+        "valid_draws": 1000
+      },
+      "false_S_rate": {
+        "ci95": [
+          0.15785361842105264,
+          0.3538541666666667
+        ],
+        "delta": 0.24999999999999997,
+        "valid_draws": 1000
+      }
+    },
+    "nine_lora__vs__nine_native": {
+      "NA_recall": {
+        "ci95": [
+          0.464217032967033,
+          0.733421052631579
+        ],
+        "delta": 0.6,
+        "valid_draws": 1000
+      },
+      "NS_recall": {
+        "ci95": [
+          -0.7647549019607842,
+          -0.2972178060413355
+        ],
+        "delta": -0.5333333333333334,
+        "valid_draws": 1000
+      },
+      "false_S_rate": {
+        "ci95": [
+          0.15000000000000002,
+          0.36668367346938774
+        ],
+        "delta": 0.24999999999999997,
+        "valid_draws": 1000
+      }
+    }
+  }
+}

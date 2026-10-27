@@ -1,0 +1,98 @@
+{
+  "moe_native_API_projection": {
+    "historical_directory_prices_only": true,
+    "mean_uncached_cny": 0.025055482500000018,
+    "not_future_price_quote": true,
+    "projected3573_uncached_cny": 89.52323897250007
+  },
+  "qwen3.5-9b": {
+    "actual_512_training_wall_seconds": 807.6979056932032,
+    "confirmation_length_not_measured": true,
+    "full3675_compute_cny": 10.981397765156547,
+    "full3675_compute_hours": 1.573266155466554,
+    "full3675_estimated_tokens": 30856396.1875,
+    "full3675_with_observed_startup_and_25pct_margin_cny": 13.795081185272503,
+    "full3675_with_observed_startup_and_25pct_margin_hours": 1.9763726626464904,
+    "full_training_max_input": 15567,
+    "inference": {
+      "label_base": {
+        "N": 180,
+        "aggregate_generated_tokens_per_second": 24.116466166950996,
+        "generation_seconds": 100.92689298465848,
+        "mean_seconds": 0.5607049610258804,
+        "peak_allocated_bytes": 36400862720,
+        "projected3573_compute_cny": 3.8843677232509406,
+        "projected3573_generation_hours": 0.5564996738181863
+      },
+      "lora_label": {
+        "N": 180,
+        "aggregate_generated_tokens_per_second": 12.003227158017527,
+        "generation_seconds": 113.88603931292892,
+        "mean_seconds": 0.6327002184051607,
+        "peak_allocated_bytes": 36573976064,
+        "projected3573_compute_cny": 4.383125668034511,
+        "projected3573_generation_hours": 0.6279549667671219
+      },
+      "native_base": {
+        "N": 180,
+        "aggregate_generated_tokens_per_second": 131.3291337117364,
+        "generation_seconds": 4208.601582746953,
+        "mean_seconds": 23.381119904149738,
+        "peak_allocated_bytes": 43241231872,
+        "projected3573_compute_cny": 161.97621530398294,
+        "projected3573_generation_hours": 23.205761504868615
+      }
+    },
+    "projected_cost_excludes_new_download_storage_and_external_transfer": true,
+    "tested_small_training_max_input": 12698,
+    "training_tokens_per_second": 5448.042680771098
+  },
+  "qwen3.6-35b-a3b": {
+    "actual_512_training_wall_seconds": 1829.3935364969075,
+    "confirmation_length_not_measured": true,
+    "full3675_compute_cny": 24.086388674548676,
+    "full3675_compute_hours": 3.4507720164109847,
+    "full3675_estimated_tokens": 30856396.1875,
+    "full3675_with_observed_startup_and_25pct_margin_cny": 30.385729517284982,
+    "full3675_with_observed_startup_and_25pct_margin_hours": 4.353256377834525,
+    "full_training_max_input": 15567,
+    "inference": {
+      "label_base": {
+        "N": 180,
+        "aggregate_generated_tokens_per_second": 19.635499566608534,
+        "generation_seconds": 105.98151541501284,
+        "mean_seconds": 0.5887861967500713,
+        "peak_allocated_bytes": 88564718080,
+        "projected3573_compute_cny": 4.078904695915631,
+        "projected3573_generation_hours": 0.5843703002744457
+      },
+      "lora_label": {
+        "N": 180,
+        "aggregate_generated_tokens_per_second": 7.402316504428494,
+        "generation_seconds": 183.59117705747485,
+        "mean_seconds": 1.0199509836526381,
+        "peak_allocated_bytes": 100550578688,
+        "projected3573_compute_cny": 7.0658634319011995,
+        "projected3573_generation_hours": 1.0123013512752435
+      }
+    },
+    "projected_cost_excludes_new_download_storage_and_external_transfer": true,
+    "tested_small_training_max_input": 12698,
+    "training_tokens_per_second": 2483.856111743088
+  },
+  "unresolved_27b": {
+    "assumptions": "Same persistent instance/weights/checkpoint40, complete512,180 local direct base and adapter predictions; reuse existing native API reference; excludes local native full180, downloads and storage; not an authorization or guarantee",
+    "completed_samples": 40,
+    "gpu_planning_cny": [
+      8.376,
+      10.47
+    ],
+    "minimal_followup_planning_hours": [
+      1.2,
+      1.5
+    ],
+    "optimizer_steps": 5,
+    "remaining472_training_compute_minutes": 38.605226219612184,
+    "short_run_steady_tokens_per_second": 1708.7872064625699
+  }
+}

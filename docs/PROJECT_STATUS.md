@@ -1,8 +1,8 @@
-# 项目现状（2026-10-27，103 GPU阶段进行中）
+# 项目现状（2026-10-27，103最终离线分析完成）
 
-103：qwen3.6-35b-a3b与qwen3.5-9b均已完成512条LoRA训练；qwen3.8-27b按最新用户指令停止，保存40条恢复检查点。两模型必要推理已完成并通过输入/批次核验，35B原生使用已核对的180条API回执，不冒充本地原生对照；不新增API调用，不计算分类效果指标，不升级默认系统。API累计¥27.518576/30，GPU/存储沿原60元及8小时账本；实时状态及完成记录见[执行报告](../outputs/103_lora_selection/gpu_execution_report.md)和[实时进度](../outputs/103_lora_selection/实时进度.md)。102封存不恢复。
+103最终离线分析完成，用户已确认GPU关机：9B与35B各完成512条训练，27B按用户指令停在40条。自然集提升伴随false-S及NS风险恶化，当前纯标签LoRA配方不支持直接全量训练；9B仅保留为较低成本开发候选，27B仍是未解决近邻。35B原生为API参考，没有同ID DeepSeek verifact_ref，不能宣布同Judge超越。新增分析费用0；API累计¥27.518576，最后GPU快照¥30.530395＋磁盘预留¥4，最终平台结算待核。不启动新实验，不升级默认；102继续封存。 [最终报告](../outputs/103_lora_selection/final_report.md) · [统计附录](../outputs/103_lora_selection/final_metrics.md)。
 
-[103报告](../outputs/103_lora_selection/report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
+[103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
 ## 当前研究目标与运行事实
 
@@ -22,7 +22,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
-|103微调模型选型|35B与9B各512条训练完成；27B依用户指令停止并保存40条；必要推理已完成|患者角色40/20/40；35B原生复用同ID API参考，微调增量须以本地label_base配对；尚未计算分类收益|
+|103微调模型选型|9B与35B训练512及配对分析完成；27B停在40条；用户已关机|自然MCC提升伴随false-S/NS损失，不直接扩大；9B为条件性开发候选，27B未解决；无同Judge verifact_ref确认|
 |102动态关系选例|完整500三臂＋24重复输入已构造，0 API；用户明确封存，不补跑|自动构造检查通过不等于关系语义正确；未产生分类指标，付费前停止|
 |101 NS/NA定向复核|600自然＋100压力、282触发、24双臂重复；同S集合|plain净-2、review净+0；review−plain净+2；详见正式报告，默认不变|
 |097原生Judge/源文门槛|自然160冻结、raw共同158；40例源文离线核查；B无分类调用|C48简洁raw比B raw净+9，但比现行B＋G净−10；B构造/费用门槛未过，默认不变|

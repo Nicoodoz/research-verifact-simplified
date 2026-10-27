@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-103：qwen3.6-35b-a3b与qwen3.5-9b均已完成512条LoRA训练；qwen3.8-27b按最新用户指令停止，保存40条恢复检查点。两模型必要推理已完成并通过输入/批次核验，35B原生使用已核对的180条API回执，不冒充本地原生对照；不新增API调用，不计算分类效果指标，不升级默认系统。API累计¥27.518576/30，GPU/存储沿原60元及8小时账本；实时状态及完成记录见[执行报告](outputs/103_lora_selection/gpu_execution_report.md)和[实时进度](outputs/103_lora_selection/实时进度.md)。102封存不恢复。
+103最终离线分析完成，用户已确认GPU关机：9B与35B各完成512条训练，27B按用户指令停在40条。自然集提升伴随false-S及NS风险恶化，当前纯标签LoRA配方不支持直接全量训练；9B仅保留为较低成本开发候选，27B仍是未解决近邻。35B原生为API参考，没有同ID DeepSeek verifact_ref，不能宣布同Judge超越。新增分析费用0；API累计¥27.518576，最后GPU快照¥30.530395＋磁盘预留¥4，最终平台结算待核。不启动新实验，不升级默认；102继续封存。 [最终报告](outputs/103_lora_selection/final_report.md) · [统计附录](outputs/103_lora_selection/final_metrics.md)。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

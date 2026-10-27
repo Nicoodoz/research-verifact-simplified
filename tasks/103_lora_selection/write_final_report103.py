@@ -1,0 +1,167 @@
+"""Render existing offline results; never invoke models or networking."""
+import json
+from collections import Counter
+from pathlib import Path
+import common103 as c
+
+def write(name,text):
+ (c.OUT/name).write_text(text.rstrip()+'\n',encoding='utf-8')
+
+def main():
+ a=c.read(c.OUT/'final_analysis.json');risk=c.read(c.OUT/'final_risk_intervals.json');cost=c.read(c.OUT/'final_resource_cost_analysis.json');sens=c.read(c.OUT/'final_engineering_sensitivity.json')
+ names={'paper_r1':'paper_r1（历史参照）',**{k:v['model']+' / '+v['arm'] for k,v in a['variants'].items()}}
+ pct=lambda x:f'{100*x:.2f}%' if x is not None else '无定义'
+ ci=lambda d:f"{d['delta']:+.4f} [{d['ci95'][0]:+.4f}, {d['ci95'][1]:+.4f}]"
+ lines=c.lines(c.OUT/'final_transitions.jsonl')
+ tables={};appendix=['# 103最终统计附录\n\n由final_analysis.json自动生成。S/NS/NA依次为Supported、Not Supported、Not Addressed；混淆矩阵行是真实标签，列是预测标签。所有比例沿固定三分类口径，压力集没有真实S，S召回无定义。原始JSON还保留Gwet AC1、逐患者净变化和完整覆盖指纹。']
+ distribution={}
+ for panel,p in a['panels'].items():
+  t=['|配置｜模型|MCC|PA|正确数|错误支持数/non-S|Macro-F1|NS召回|NA召回|','|---|---:|---:|---:|---:|---:|---:|---:|']
+  for k,v in p['metrics'].items():
+   t.append(f"|{names[k]}|{v['mcc']:.4f}|{pct(v['percent_agreement'])}|{v['correct']}/{p['N']}|{v['false_S']}/{v['true_non_S']}|{v['Macro_F1']:.4f}|{pct(v['per_class']['Not Supported']['recall'])}|{pct(v['per_class']['Not Addressed']['recall'])}|")
+  tables[panel]='\n'.join(t)
+  appendix += [f'\n## {panel}：{p["N"]}条，{p["patients"]}名患者\n',tables[panel]]
+  for k,v in p['metrics'].items():
+   appendix += [f'\n### {names[k]}\n',f"MCC 95%CI {v['confidence_intervals']['mcc']}；PA 95%CI {v['confidence_intervals']['percent_agreement']}；预测S假发现率 {pct(v['false_discovery_S'])}。\n",'|类别|P|R|F1|真实数|预测数|','|---|---:|---:|---:|---:|---:|']
+   for label in c.LABELS:
+    q=v['per_class'][label];appendix.append(f"|{label}|{pct(q['precision'])}|{pct(q['recall']) if q['support'] else '无定义'}|{q['f1']:.4f}|{q['support']}|{q['predicted']}|")
+   appendix += ['\n```text\n'+'\n'.join(str(row) for row in v['confusion_matrix'])+'\n```']
+  appendix += ['\n### 配对变化\n','区间是1000次患者cluster bootstrap的95%区间；Δ为候选减参照。\n','|候选−参照|ΔMCC [CI]|ΔPA [CI]（比例）|救回/误伤/净正确|false-S新增/避免|患者胜/负/平|','|---|---|---|---:|---:|---|']
+  for key,v in p['pairs'].items():
+   x=v['paired']['metrics'];appendix.append(f"|{names[v['candidate']]} − {names[v['base']]}|{ci(x['mcc'])}|{ci(x['percent_agreement'])}|{v['rescue']}/{v['harm']}/{v['net']:+}|{v['false_S_added']}/{v['false_S_prevented']}|{v['patient_win_loss_tie']}|")
+   rr=[r for r in lines if r['panel']==panel and r['base']==v['base'] and r['candidate']==v['candidate']]
+   distribution[panel+'/'+key]={flag:dict(Counter(str(r['sid']) for r in rr if r[flag])) for flag in ['rescue','harm','false_S_added','false_S_prevented']}
+  appendix += ['\n|候选−参照|S救回/误伤|NS救回/误伤|NA救回/误伤|','|---|---:|---:|---:|']
+  for v in p['pairs'].values():
+   appendix.append('|'+names[v['candidate']]+' − '+names[v['base']]+'|'+'|'.join(f"{v['by_GT'][g]['rescue']}/{v['by_GT'][g]['harm']}" for g in c.LABELS)+'|')
+  appendix += ['\n|候选−参照|Δfalse-S/non-S [CI]|ΔNS召回 [CI]|ΔNA召回 [CI]|','|---|---|---|---|']
+  for k,v in p['pairs'].items():appendix.append('|'+names[v['candidate']]+' − '+names[v['base']]+'|'+'|'.join(ci(risk[panel][k][q]) for q in ['false_S_rate','NS_recall','NA_recall'])+'|')
+  appendix += ['\n极少数重采样没有相应真实类别，召回区间仅用有定义抽样；有效次数见final_risk_intervals.json，未以0填补。\n','### human/LLM分层\n','|作者|配置|N|MCC|PA|false-S/non-S|NS召回|NA召回|','|---|---|---:|---:|---:|---:|---:|---:|']
+  for author,part in p['by_author'].items():
+   for k,v in part['metrics'].items():appendix.append(f"|{author}|{names[k]}|{part['N']}|{v['mcc']:.4f}|{pct(v['percent_agreement'])}|{v['false_S']}/{v['true_non_S']}|{pct(v['per_class']['Not Supported']['recall'])}|{pct(v['per_class']['Not Addressed']['recall'])}|")
+  appendix += ['\n分层配对区间、逐患者结果在final_analysis.json的by_author中；小类别分母不可据此宣称稳定泛化。']
+ write('final_metrics.md','\n'.join(appendix))
+ c.put(c.OUT/'final_patient_transitions.json',distribution)
+ report='''# 103：微调模型选型与小规模可训练性验证——最终离线报告
+
+**工程可训练性已验证，但本轮512条纯标签LoRA不支持直接扩大训练或替换原生Judge。** 9B和35B均完成训练及固定面板推理。自然集MCC/PA上升伴随false-S增加，压力集显示NS能力显著损失；35B微调后尤其不值得直接采用。在两款已完成模型中，9B训练后的绝对结果与成本较好，可作为下一轮开发的低成本候选，但不是已确认的最佳底座。3.8-27B仍是未解决近邻，依用户要求停在40条，不能评为训练成功或失败。
+
+用户已确认GPU关机。本报告只分析已有回执，新增API/GPU调用均为0；102继续封存，不自动全量训练、启动下一任务或升级默认系统。第一阶段[报告](report.md)及GPU[执行记录](gpu_execution_report.md)保留其当时状态，不回写历史结论。
+
+## 1. 实际范围与公平比较
+
+患者角色预冻为训练40、选型20、后续确认40，互不重叠；100人均有历史研究暴露。本轮没有在后续40人上新增评价。API共同240条为自然160＋压力NS/NA各40；本地共同180条为其预冻子集，自然120（S96/NS8/NA16，19名患者）＋压力60（NS30/NA30，16名患者）。两面板并集20名患者，不合并成自然患病率结果。
+
+两款已完成模型同一512条训练数据、同顺序、S320/NS96/NA96，来自40名训练患者。完整发布reference、原医生标签、原作者式简洁任务；没有截断reference、示例、PriorG、合成病例或教师思维链。BF16基础权重、普通LoRA r16/alpha32、lr1e-4、microbatch1、梯度累积8、梯度检查点、单轮；prompt及padding屏蔽loss，仅监督真实verdict。预跑不作为正式初始权重，正式各64个optimizer steps，256保存、512结束。
+
+- `label_base`：本地未训练权重，直接输出verdict。
+- `lora_label`：本地适配器，严格沿用label_base输入、批次、精度、解码与解析。**只有这对比较代表微调增量。** 两模型各180条token输入SHA和批次逐条相等。
+- `native_base`：9B本地原生思考，verdict/reason；4096思考预算及768最终输出上限。
+- `native_api`：35B复用第一阶段同ID原生API有效回执；实际供应商revision与精度未知，不冒充本地原生对照，跨接口差值只作实际参考。已有6条本地桥接与API标签一致、各5条正确，不足以证明接口等效。
+- `paper_r1`：原作者发布历史预测，同ID列出，仅作历史参照。
+
+**没有同ID、同设置的DeepSeek `verifact_ref`对照，不能声称超过它。** 换Qwen并加入监督也不等同于同Judge前处理收益；本任务是开发选型，不是论文确认。API表和本地表的样本规模不同，不直接相减。
+
+## 2. API选型回顾
+
+统一原生实用预算4096，最终768；Qwen3.8按官方映射使用low，不能据此声称内部计算逐token相等。首次少量正式请求仅核usage及格式，未据准确率调整规模。四模型完整240、48条直接模式、固定24重复均保留；原128容量诊断保留，正式直接模式统一768。总1416个HTTP200请求，通信重试0。
+
+|模型|自然160 MCC / PA / false-S|压力80 MCC / PA / false-S|
+|---|---|---|
+|paper_r1|0.4446 / 80.00% / 8/31|0.2405 / 50.00% / 22/80|
+|qwen3.5-27b|0.4636 / 77.50% / 4/31|0.2215 / 55.00% / 11/80|
+|qwen3.5-35b-a3b|0.5062 / 78.12% / 3/31|0.2474 / 55.00% / 14/80|
+|qwen3.6-35b-a3b|0.5490 / 81.88% / 4/31|0.4459 / 65.00% / 16/80|
+|qwen3.8-27b|0.4553 / 76.25% / 3/31|0.2610 / 56.25% / 12/80|
+
+3.6起点最强，并非为制造增幅选择最差模型。3.8压力NS召回75%高于3.6的57.5%，因此保留风险近邻。直接48条在统一整条纯标签规范化后，3.6为38正确/MCC0.6971/false-S3/32，3.8为36/0.6496/2/32，3.5-27B为34/0.5789/4/32，3.5-MoE为35/0.6049/6/32。原严格JSON口径3.6只有41有效、32正确；后续敏感性不回改原主表。没有足以推翻候选选择的实质模式排名反转，3.8风险优势仍保留。24次重复翻转依次为3.5-27B 4、3.5-MoE 2、3.6 0、3.8 4，不替换首次答案。详见第一阶段报告、analysis.json、label_format_sensitivity.json。
+
+## 3. 自然120条结果
+
+NATURAL_TABLE
+
+相对本地label_base，9B ΔMCC **+0.3015**（95%CI +0.1781～+0.4352），PA **+22.50个百分点**，30救回/3误伤，净+27；但false-S **5→7/24**，NS召回 **75→37.5%**，NA召回 **0→62.5%**。9B原生相比，LoRA ΔMCC +0.2357，PA +16.67个百分点，false-S **4→7**。不能只展示前两项。
+
+35B相对label_base ΔMCC **+0.1038**（+0.0087～+0.2565），PA **+11.67个百分点**，17救回/3误伤，净+14；false-S **4→10/24**，NS召回 **37.5→25%**，NA召回不变56.25%。相对API原生参考，MCC **0.5227→0.5176**、PA **80→85%**、false-S **4→10**；这不是纯训练增量，但说明更高PA没有带来更强整体风险表现。
+
+自然集中9B新增正确主要来自S净+20、NA净+10，NS净−3；35B为S净+15、NA净0、NS净−1。存在“本来就错，但由NS改成S”的风险升级，正确数不变却新增false-S，故救回/误伤不能替代风险转移。
+
+## 4. 压力60条结果
+
+PRESSURE_TABLE
+
+9B相对label_base ΔMCC **+0.3737**（+0.1419～+0.5839），PA +6.67个百分点，22救回/18误伤，净+4；救回全部为NA，误伤全部为NS。NS召回 **86.67→26.67%**，NA **0→73.33%**，false-S **6→21/60**。MCC摆脱原先不预测NA的类别塌缩，但仍发生严重NS损失，不能据MCC单项宣布成功。
+
+35B相对label_base ΔMCC **−0.1508**（−0.3445～−0.0101），PA **−23.33个百分点**，4救回/18误伤，净−14；NS召回 **63.33→20%**，NA **70→66.67%**，false-S **7→25/60**。压力集实质否定“自然集PA上升就值得采用”的解释。
+
+## 5. 患者、作者与误差机制
+
+自然集9B相对直接基线患者净胜/负/平13/0/6，35B为8/0/11；压力集分别8/5/3、2/9/5。净正确不代表每名患者风险不增加。全部救回、误伤和false-S新增/避免的患者分布见[患者转移](final_patient_transitions.json)，完整逐例标签转移见final_transitions.jsonl。
+
+自然human68、LLM52，后者只有2条真实non-S；两款LoRA均错误放行这2条，不能用LLM高PA掩盖。压力human53、LLM7，两款LoRA在LLM7条均为0正确、7个false-S；样本很少，只描述本面板。human压力35B PA71.70→49.06%、false-S2→18，9B PA47.17→56.60%、false-S0→14；风险恶化并非仅由7条LLM造成。
+
+病例源文复核见[逐例解释](final_case_analysis.md)。可见的误伤包括：把改善当成完全消失、把其他治疗停用归给目标治疗、把已执行当成耐受良好、把相关实体在其他场景出现当成参加特定事件。NA救回表明9B学会区分部分未涉及的具体事实，但不能把同主题存在一律解释为已涉及。源文与GT不完全对齐的个例只报告限制，不据局部窗口改医生GT，也不以模型解释推断内部推理过程。
+
+这些是事后解释，不是新规则或第二版本。单次训练不能判定究竟是类别配比、学习率、标签监督还是其他机制导致偏移；训练NS与NA各96，不能未经对照就归因于两者数量失衡。
+
+## 6. 格式、计算边界与敏感性
+
+最终1080条配对回执完整，无invalid或缺失。35B label_base有36条完整裸标签，经GPU前冻结的统一解析器接受；其余144及LoRA180均严格JSON。36条子集原正确24→22、false-S0→7，因此没有把格式修复冒充临床提升。9B三组均严格JSON有效。
+
+9B native_base有80/180达到4096思考边界后强制结束思考，最终输出均有效。结果只代表该实用计算预算，不代表无限思考能力。35B尾部12条显存异常后仅缩短无梯度临时张量存活时间，保持运算、批次、精度及输入不变；成功答案不重发。排除这12条的共同168条敏感性见final_engineering_sensitivity.json，不能用排除后的数字替换正式180。跨接口复用记录的耗时/token字段缺失在final_analysis.json旧汇总显示0，**该0不是实际零开销**；成本取原usage.jsonl，报告不将其当推理测速。
+
+所有主要指标采用统一evaluate/paired_compare；1000次患者bootstrap只反映当前固定预测的抽样不确定性，不涵盖重新训练、历史研究暴露、模型选择或医院迁移。完整三类P/R/F1、混淆矩阵、S假发现率、作者分层及配对区间见[统计附录](final_metrics.md)。
+
+## 7. 训练资源、保存与费用
+
+|模型|完成训练|训练墙钟|稳定训练token/s|训练峰值allocated|可训练参数|
+|---|---:|---:|---:|---:|---:|
+|qwen3.5-9b|512 / 64步|13.46分钟|5448.0|26.87 GB|43,278,336|
+|qwen3.6-35b-a3b|512 / 64步|30.49分钟|2483.9|93.74 GB|943,912,960|
+|qwen3.8-27b|40 / 5步，已停止|非完整训练|约1708.8，短跑估计|以原资源记录为准|不作为完成模型比较|
+
+训练token/s是全输入token吞吐，非仅有loss的标签token；首步编译不计入稳定吞吐但计入墙钟与租金。35B覆盖全部目标专家矩阵；20,480个专家切片中20,160实际非零更新，320未更新，不能声称每个切片都训练到。两款LoRA_B张量均检测到更新。视觉冻结，未默认4bit/CPU卸载。256和512完整恢复检查点每份35B约11.33GB、9B约0.520GB；35B最终保存19.17秒，9B约1秒。最终适配器35B约3.776GB、9B约0.173GB；完整optimizer不等于适配器，不需要用于普通推理。
+
+现有180条生成墙钟：9B原生70.14分钟、直接1.68分钟、LoRA1.90分钟；35B直接1.77分钟、LoRA3.06分钟。批次耗时已均分后求和，没有重复计算batch8。对应生成token/s为9B原生131.33（含思考）、直接24.12、LoRA12.00；35B直接19.64、LoRA7.40。短标签生成开销受prefill/批次影响，不能把这些数字当长文本稳态解码速度。9B原生因此耗时远超训练，完整实验还包含下载、安装、编译、加载、暂停、失败排查和备份，不能把租金等同于44分钟训练计算。
+
+费用严格分账：API按未优惠目录、无缓存假设累计 **¥27.518576/30**（按实际缓存记录¥27.500758）；GPU最后实测账本在2026-10-27 22:37:40为 **¥30.530395**，从18:15:13连续保守计费，约4.374小时，磁盘暂留 **¥4**，合计 **¥34.530395/60**。用户随后确认关机，精确停机时间及平台账单未知，不能将最后快照冒称最终结算。关机后的持久盘费用另计；本次离线分析新增费用0。
+
+### 正式训练与确认成本外推（不是启动授权）
+
+40名训练患者全量3675条已统计输入约30,828,604 tokens；加监督标签平均长度后的计算量近似约30.86M。该长度统计与训练模板存在少量格式token差异，属于有真实输入依据的估算，不是精确账单。全量最大输入15567，高于本次512最大12698；不能从本轮成功直接保证更长尾显存安全。
+
+|模型|全3675单轮计算|含已测启动/保存及25%余量|后续3573条单组LoRA生成外推|
+|---|---|---|---|
+|9B|1.57小时 / ¥10.98|1.98小时 / ¥13.80|0.63小时 / ¥4.38|
+|35B|3.45小时 / ¥24.09|4.35小时 / ¥30.39|1.01小时 / ¥7.07|
+
+若完整保留本地label_base与LoRA两组，另需9B约¥3.88、35B约¥4.08的直接基线生成计算；9B原生3573条按现速外推23.21小时/¥161.98，明显是成本瓶颈。35B原生API按本轮历史目录和240条平均usage外推3573条约¥89.52，不是未来报价。以上均未在后续40人运行，不新测其长度；按选型面板平均速率线性外推，未计新下载、跨网传输、持续存储及重新排障，不保证线性。完整质量确认预算不能只报LoRA便宜的那一组。
+
+### 可恢复与复现
+
+持久根目录 `/root/autodl-tmp/verifact103/`；两款最终适配器均在 `results/<model>/train/checkpoint-512/adapter_model.safetensors`，配套adapter_config、模板、revision和日志保留。27B保留checkpoint-40，基础模型不删除。最终关键文件已经SHA核验回传 `.local_models/103_lora_selection/gpu_results/`；小型原始回执、资源日志在gpu_final_evidence，完整optimizer主要仍在持久盘，不把本地partial文件当成功备份。无需传基础模型即可按revision重新下载；但本次没有删除任何基础权重。
+
+9B revision `c202236235762e1c871ad0ccb60c8ee5ba337b9a`；3.6 revision `995ad96eacd98c81ed38be0c5b274b04031597b0`；3.8 revision `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0`。环境锁定Python3.12、Torch2.8.0+cu128、Transformers5.17.0、Unsloth2026.10.9、PEFT0.21.2，独立于096 vLLM。安装锁见installed_gpu_with_causal.lock，实际工程调整见gpu_runtime_amendment.md；原始启动与恢复命令见任务GPU_RUNBOOK.md和实例TRAIN_ONLY_RESUME.md，恢复前必须接续账本，不能重置预算。当前仅离线复现分析：
+
+```powershell
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/103_lora_selection/analyze_final103.py
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/103_lora_selection/supplement_final103.py
+pwsh -NoProfile -File scripts/run_research.ps1 tasks/103_lora_selection/write_final_report103.py
+```
+
+分析需要本地私有原始证据；GitHub不含临床原文、权重、API回执正文或凭据。公开去正文判定可复核指标，不能声称仅克隆仓库即可复现完整训练。
+
+## 8. 结论与停止边界
+
+推荐 **Qwen3.5-9B作为条件性的低成本开发底座**：依据是训练后的绝对自然MCC0.5738、PA85.83%、false-S7/24均优于已完成35B LoRA的0.5176、85%、10/24；压力结果及成本也较好。不是奖励它的低基线。两款LoRA自然MCC差异区间跨0（35B减9B：−0.0562，CI −0.1465～+0.1053），不能宣布唯一最佳。
+
+**停止将当前512条纯verdict配方直接扩大为正式全量训练；停止将35B自然PA提升当作微调成功；不把9B的NA学习收益掩盖NS和false-S恶化。** 当前数据不足以形成可靠论文确认贡献，但形成了真实长输入可训练性、成本和风险边界证据。未来若继续，需要预先设定防止NS损失与false-S上升的开发检验，而不是在这180条上不断救成绩。
+
+唯一保留的未解决近邻为qwen3.8-27b。已有40条/5步，不能据此评价训练效果；按已有持久权重和checkpoint继续剩余472条约39分钟计算，加本地label_base/LoRA各180及加载余量，规划 **1.2～1.5小时、¥8.38～10.47 GPU**，不含存储、下载和完整本地原生推理，采用现有API原生只作参考。该估计依短跑吞吐，未经完整运行验证，需后续新授权；本轮不补跑。
+
+执行者自检见final_selfcheck.json；不是独立审计。原始数据/协议/旧结果保留，最终解释以本报告及其附录为准。
+'''
+ write('final_report.md',report.replace('NATURAL_TABLE',tables['natural']).replace('PRESSURE_TABLE',tables['pressure']))
+ print('Final report, metric appendix and patient distribution written')
+
+if __name__=='__main__':main()
