@@ -1,0 +1,40 @@
+{
+  "api9b_action": "local_only_without_both_explicit_model_and_price",
+  "endpoint": "https://maas.qianwenaiapi.com/compatible-mode/v1",
+  "inventory": {
+    "candidate_ids": [
+      "qwen3.5-27b",
+      "qwen3.5-35b-a3b",
+      "qwen3.6-35b-a3b",
+      "qwen3.8-27b"
+    ],
+    "http_status": 200
+  },
+  "no_peak_wait": true,
+  "prices": {
+    "qwen3.5-27b": [
+      0.6,
+      4.8,
+      null
+    ],
+    "qwen3.5-35b-a3b": [
+      0.4,
+      3.2,
+      null
+    ],
+    "qwen3.6-35b-a3b": [
+      1.8,
+      10.8,
+      null
+    ],
+    "qwen3.8-27b": [
+      3.0,
+      12.0,
+      0.6
+    ]
+  },
+  "qwen35_9b_price_listed": false,
+  "qwen38_mapped_effort": "low",
+  "thinking_budget": 4096,
+  "utc": "2026-10-27T07:20:37.317702+00:00"
+}

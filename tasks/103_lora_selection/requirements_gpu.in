@@ -1,0 +1,12 @@
+# Independent Linux x86_64 / Python3.12. Torch 2.9.1 defaults to CUDA12.8.
+torch==2.9.1
+torchvision==0.24.1
+xformers==0.0.33.post2
+unsloth==2026.10.9
+unsloth_zoo==2026.10.9
+transformers==5.17.0
+peft==0.21.2
+trl==1.15.0
+flash-linear-attention==0.4.1
+jinja2==3.1.6
+psutil==7.1.3

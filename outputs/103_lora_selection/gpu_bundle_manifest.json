@@ -1,0 +1,15 @@
+{
+  "GPU_started": false,
+  "bytes": 4292905,
+  "files": {
+    "api_bridge.jsonl": "c352bbd3e887fbbac63489e74602750800b935aaf546f6d805fb93a99130e67a",
+    "gpu_plan.json": "d797edf95b82a2a98c9a01ca3c931912eb58b622c458cc34c45fa297f352fddb",
+    "model_metadata.json": "eca91a1ec19beef6a02d06b80d9e9171a508080f202363006cb835bd51745120",
+    "sample240.jsonl": "16e194cffbb9896317e8d18c6f08e2f41f1aa2cec0859dfd023897e4febee61b",
+    "token_lengths.jsonl": "2916c02b3dd3a9c2eb2575a952a26cbc9f0e6c60c75d7ebd4d0aeb33fca528ea",
+    "train512.jsonl": "f90f1bded547a2128843377283276f4c5871513e2bce0e202e6cf0eb36b84c10"
+  },
+  "private_path": ".local_models/103_lora_selection/gpu_bundle.tar.gz",
+  "sha256": "b406ad5b78528e82bd3d322474ae8336b5c227762bef819e0a16157369dc7d33",
+  "uploaded": false
+}

@@ -1,0 +1,42 @@
+{
+  "qwen3.5-27b": {
+    "architecture": [
+      "Qwen3_5ForConditionalGeneration"
+    ],
+    "expert_weight_keys": 0,
+    "revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+    "weight_gib": 51.74695774912834
+  },
+  "qwen3.5-35b-a3b": {
+    "architecture": [
+      "Qwen3_5MoeForConditionalGeneration"
+    ],
+    "expert_weight_keys": 848,
+    "revision": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+    "weight_gib": 66.9654971063137
+  },
+  "qwen3.5-9b": {
+    "architecture": [
+      "Qwen3_5ForConditionalGeneration"
+    ],
+    "expert_weight_keys": 0,
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "weight_gib": 17.980315178632736
+  },
+  "qwen3.6-35b-a3b": {
+    "architecture": [
+      "Qwen3_5MoeForConditionalGeneration"
+    ],
+    "expert_weight_keys": 82,
+    "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+    "weight_gib": 66.96548816561699
+  },
+  "qwen3.8-27b": {
+    "architecture": [
+      "Qwen3_5ForConditionalGeneration"
+    ],
+    "expert_weight_keys": 0,
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "weight_gib": 51.74694201350212
+  }
+}

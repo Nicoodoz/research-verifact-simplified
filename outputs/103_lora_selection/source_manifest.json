@@ -1,0 +1,54 @@
+{
+  "docs": [
+    {
+      "bytes": 950799,
+      "path": ".local_models/103_lora_selection/sources/prices.txt",
+      "sha256": "dbb74190e1e9871d91ce9b9337a1b5bc4e844bc32e3ad99a75ad0114f088215d",
+      "url": "https://platform.qianwenai.com/docs/developer-guides/getting-started/model-prices"
+    },
+    {
+      "bytes": 1379560,
+      "path": ".local_models/103_lora_selection/sources/chat.txt",
+      "sha256": "7a481a41a49e45e7f86f9a92ebb07e963274675e48667cb329915bacbb64e7ac",
+      "url": "https://platform.qianwenai.com/docs/api-reference/chat/openai-chat"
+    },
+    {
+      "bytes": 1320232,
+      "path": ".local_models/103_lora_selection/sources/unsloth_qwen35.txt",
+      "sha256": "18a6bab424a487ebcf4b15612222e3f373d45d9838cf3eb1a5be58803820bcc3",
+      "url": "https://unsloth.ai/docs/models/qwen3.5/fine-tune"
+    },
+    {
+      "bytes": 570379,
+      "path": ".local_models/103_lora_selection/sources/peft_lora.txt",
+      "sha256": "e54d2787d2e95777de1b9b7fdbe3c7c8312b8e91ec2bb42df05f471c4c85a3a7",
+      "url": "https://huggingface.co/docs/peft/en/developer_guides/lora"
+    },
+    {
+      "bytes": 420437,
+      "path": ".local_models/103_lora_selection/sources/transformers_pypi.txt",
+      "sha256": "674e5f0bf667298ad579c2cc4476cea1c7ab3f07d907b80254bf1294ac470b7a",
+      "url": "https://pypi.org/pypi/transformers/json"
+    },
+    {
+      "bytes": 76746,
+      "path": ".local_models/103_lora_selection/sources/peft_pypi.txt",
+      "sha256": "f45f3c5ac09ce8fc1b1605db7db44bc20b28dc8e060db97b62c52cbaccec2046",
+      "url": "https://pypi.org/pypi/peft/json"
+    },
+    {
+      "bytes": 870628,
+      "path": ".local_models/103_lora_selection/sources/torch_pypi.txt",
+      "sha256": "cad63dc8aa6714ea2133a44b64985d87b3e4ebea217657f1e02e35481fa33b61",
+      "url": "https://pypi.org/pypi/torch/json"
+    },
+    {
+      "bytes": 411897,
+      "path": ".local_models/103_lora_selection/sources/unsloth_pypi.txt",
+      "sha256": "c9126f6eeb7bf93b56075eaf35e501a6b66e2b426fa11e272bd8387403e958fc",
+      "url": "https://pypi.org/pypi/unsloth/json"
+    }
+  ],
+  "utc": "2026-10-27T07:19:54.920467+00:00",
+  "weight_downloaded": false
+}

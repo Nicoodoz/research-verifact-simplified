@@ -1,0 +1,27 @@
+{
+  "all_four_models_same48_replayed": true,
+  "before_correctness_analysis": true,
+  "files": {
+    ".local_models/103_lora_selection/jobs_label_capacity.jsonl": "e625c30d72803e146abf13024446335e52455349b045593a5f34172edf714a89",
+    "tasks/103_lora_selection/repair_label_capacity103.py": "b24f3c156355a893694173b89036ccc1a7d46e076aa952cdcdfc8db2d4aef1f4"
+  },
+  "optional_repeats_lower_priority": true,
+  "original_max_tokens": 128,
+  "original_results_preserved": true,
+  "reason": "One direct response emitted prose and was truncated; test sufficient capacity uniformly, no label-driven retry",
+  "remaining_original_forecast_cny": 3.4980071501288865,
+  "repair_all_max_output_forecast_cny": 3.4725502000000015,
+  "revised_max_tokens": 768,
+  "total_forecast_with_margin_cny": 28.05477975012885,
+  "truncated_observed": [
+    {
+      "answer_cap": 128,
+      "completion_tokens": 128,
+      "mode": "label",
+      "model": "qwen3.6-35b-a3b",
+      "request_id": "63432a09c672d44b88a46a02a564"
+    }
+  ],
+  "used_or_reserved_cny": 20.684222399999967,
+  "utc": "2026-10-27T07:46:41.325809+00:00"
+}

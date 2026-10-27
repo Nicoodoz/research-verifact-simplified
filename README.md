@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](outputs/102_demo_relation/closure.md)。
+103第一阶段已完成并暂停在READY_FOR_GPU：API推荐9B＋qwen3.6-35b-a3b作小训练比较，保留qwen3.8-27b近邻；API累计无缓存原价¥27.518576/30，GPU尚未启动，等待用户提供实例。102仍封存，不恢复。 [103报告](outputs/103_lora_selection/report.md)。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

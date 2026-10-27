@@ -1,0 +1,23 @@
+{
+  "API_cost_uncached_cny": 27.518575600000002,
+  "API_done": true,
+  "GPU_cost_cny": 0,
+  "GPU_done": false,
+  "GPU_instance_connection_required": true,
+  "files": {
+    "a800_fallback_manifest.json": "bfe9fd519c08d64f757f372f318c05d7f1103a03b4d3a1514cbcdd05b496a59c",
+    "analysis.json": "8f44fee9be7873a96f411f6e06342ddcf932f5fbd3a98d175f28bccfa72435c2",
+    "api_cost_ledger.json": "a80b7d78c7bc13675d7d7c44e74b429249be6a212739c36b67c8812bceb334c1",
+    "gpu_cost_ledger.json": "3ba56a984d232a175026c234419759a2fbb66d6bd5f75f35ce134c16f97b08d8",
+    "gpu_plan.json": "d797edf95b82a2a98c9a01ca3c931912eb58b622c458cc34c45fa297f352fddb",
+    "label_format_sensitivity.json": "a27ebcb019549e737eef05be92354d44134ef9612e3b68aef88f352d3ef4fe6c",
+    "recommendation.json": "5a9a73c8d12df2ce59b293535b6c7a03d8e5248a9b970ec6f87f03f2a9e09145",
+    "report.md": "b61a5b5bf156ab27b82610a2348448abf99238fe41fd2c7223ef0f80639b73e2",
+    "stage1_check.json": "8cb20c746f3cb21a4e035cdf3801003e5614c137087889c73f2308cd3dc3c60e"
+  },
+  "full_training_authorized": false,
+  "next_task_started": false,
+  "second_stage_not_started": true,
+  "status": "READY_FOR_GPU",
+  "utc": "2026-10-27T08:09:29.051266+00:00"
+}

@@ -1,0 +1,51 @@
+{
+  "GT_natural": {
+    "Not Addressed": 21,
+    "Not Supported": 10,
+    "Supported": 129
+  },
+  "GT_training": {
+    "Not Addressed": 96,
+    "Not Supported": 96,
+    "Supported": 320
+  },
+  "files": {
+    ".local_models/103_lora_selection/jobs_all.jsonl": "ba3ed1a07fd6fec83f0080329cfd1b731ec950c5b57d2550ce1f2bf42ba9cd63",
+    ".local_models/103_lora_selection/sample240.jsonl": "16e194cffbb9896317e8d18c6f08e2f41f1aa2cec0859dfd023897e4febee61b",
+    ".local_models/103_lora_selection/train512.jsonl": "f90f1bded547a2128843377283276f4c5871513e2bce0e202e6cf0eb36b84c10",
+    "outputs/103_lora_selection/cohort240.jsonl": "491d20e720636dfd3b6c731cc644f91015996f359a83782dac0afeadb3fa4ba6",
+    "outputs/103_lora_selection/patient_roles.json": "1e43a0d5c4b83f3b6bb4125c879c9581e3ca47ef59d2184458a232aed20bd537",
+    "outputs/103_lora_selection/train512_ids.jsonl": "79bfb43a0c475f0d67c997c77aafacea2eeb319392579346cd90ecfb9efafbcf",
+    "tasks/103_lora_selection/common103.py": "024aa1dbf459b884d5eb4a572b73b08b58b8a151956eb92c8a31cc306d40dca1",
+    "tasks/103_lora_selection/prepare103.py": "0abb3b31af2ed35639a78410df21b5a3632b85ab4a4a057e139835c42348de28",
+    "tasks/103_lora_selection/protocol.md": "35f3d98d79aecde6ad0ad6f0467daf0817ba1924bdbc7e62e13ee1a2da55d99b"
+  },
+  "no_new_answers": true,
+  "usage_probe_ids": [
+    "0204e3f41639900dd69dea4240f3",
+    "181924a05961c35f41890eb26132",
+    "42f6f3fb898697c7da1a9b89aae8",
+    "919d8fc5f9f53660aa470c5ee6ea",
+    "5df109781f74ca9e2a4f1ff63726",
+    "80119a33ff49dfa06c1262e9e333",
+    "810157bd9153f63bef7d427e8594",
+    "b7f6d04024c680c628279d512a1d",
+    "42dc13d914135bd7b87f2927e7d0",
+    "525cb7abec3974e23be773613422",
+    "78e90a574c40454fb2a34be01c17",
+    "665b91bdbf2cd7b032c0cb965ba2",
+    "1c8b6d4abc8718e17ae25f3a069e",
+    "710ac592c231482e5b418cbaa3a8",
+    "71bf8b20a6e8e6130942e82dea7a",
+    "7dc3867317c09a7ecebedc7f7127",
+    "ef30b4c119f3c536bf9c51d97aa5",
+    "ae9a620374dd34bf4eec352e0279",
+    "eee4707254c852547300cadc702f",
+    "eb67cf894af06c595b27515d289e",
+    "a72917b250a6a01e9e0eb0078104",
+    "5e0e42ba97c87b20d9155aae4e1c",
+    "eda0a8dbabfd7b7597403ef96dc8",
+    "a4cc2c58a5ffcf656ee0ad4efef9"
+  ],
+  "utc": "2026-10-27T07:18:36.757722+00:00"
+}

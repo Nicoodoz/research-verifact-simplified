@@ -1,0 +1,26 @@
+{
+  "chosen": {
+    "by_model": {
+      "qwen3.5-27b": 4.36463592,
+      "qwen3.5-35b-a3b": 3.3115748799999984,
+      "qwen3.6-35b-a3b": 9.724860719999985,
+      "qwen3.8-27b": 9.902110799999997
+    },
+    "main_n": 240,
+    "mean_cny": 25.097276400000005,
+    "repeats24_per_model": false,
+    "requests": 1152,
+    "with_output20pct_and_recovery06_cny": 27.90318231999998
+  },
+  "files": {
+    ".local_models/103_lora_selection/jobs_selected.jsonl": "ab661187552071527466b2d734f5aabf65f0d48d3d441adf91dca0df34cdd96e",
+    "outputs/103_lora_selection/budget_plan.json": "f26797447b8c70f316f4ad9bc1470f918be5b9c0ac78fba373e0e7d1db2c361d",
+    "outputs/103_lora_selection/model_metadata.json": "eca91a1ec19beef6a02d06b80d9e9171a508080f202363006cb835bd51745120",
+    "tasks/103_lora_selection/parse103.py": "ce7d6a64e98a694068b51b4878d97e4af5233d5b87b3aaaee24b6dd487a50f57",
+    "tasks/103_lora_selection/protocol.md": "35f3d98d79aecde6ad0ad6f0467daf0817ba1924bdbc7e62e13ee1a2da55d99b",
+    "tasks/103_lora_selection/runtime103.py": "0438d7f4c03d8bcb7e51bd0fb89275341a401e8b70eadc98be8ca349eafa051c"
+  },
+  "no_correctness_inspected": true,
+  "preflight_answers_reused": true,
+  "utc": "2026-10-27T07:25:10.018483+00:00"
+}

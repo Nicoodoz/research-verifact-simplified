@@ -1,0 +1,20 @@
+{
+  "files": {
+    "outputs/103_lora_selection/gpu_bundle_manifest.json": "7d47f10fd850cedcfde5c65af6d4175e01c57b01c4c85e1c3b4624ea71e2f3f6",
+    "outputs/103_lora_selection/gpu_plan.json": "d797edf95b82a2a98c9a01ca3c931912eb58b622c458cc34c45fa297f352fddb",
+    "tasks/103_lora_selection/gpu_bridge_check103.py": "d622e366a159056cbd99fafa8eb223114db5e9f6a8283fc261a15a23d4108cf5",
+    "tasks/103_lora_selection/gpu_download103.py": "0d2b1c016f9e8d60652277d5722e01818fedb17f0018ebc83e427ca45c366157",
+    "tasks/103_lora_selection/gpu_lifecycle103.py": "43f1a69ba90633be2e9f3e15061c0f03127b92a8cb583ac04c2ca1254d4d8dbd",
+    "tasks/103_lora_selection/gpu_plan_after_probe103.py": "b69b9598cd20fda75de9b15c39a871cbc55e56e3b1c0971a1d523f1fe493c62b",
+    "tasks/103_lora_selection/gpu_worker103.py": "cdabb9c6f8b050b74ba584107ea955322dbfdf7b745f42db545f17ca852ba9b7",
+    "tasks/103_lora_selection/install_gpu.sh": "8871045fb1819f295805745f0b186267c2e164c77a867ddf61ab93da1c0b01bd",
+    "tasks/103_lora_selection/parse103.py": "ce7d6a64e98a694068b51b4878d97e4af5233d5b87b3aaaee24b6dd487a50f57",
+    "tasks/103_lora_selection/parse_label103.py": "ec37c465f6b293fe69acde0304c5bac35e2cf93d0c3884957a431d0a3ee2113c",
+    "tasks/103_lora_selection/prompt103.py": "0664a85750336fb0ec21e781850233c237c723c017713b85d18c2c8129b5abdd",
+    "tasks/103_lora_selection/requirements_gpu.lock": "4d095bd80dc1e9bd21b39cf20c3fba9b081d73a9b0fd581d7c91a94e649ffa63",
+    "tasks/103_lora_selection/run_gpu.sh": "d1bbe8ae58b368ef13e319fac83740efd19cdd5f2e25d9eaf555c7f5fc05142b"
+  },
+  "hardware_validation_pending": true,
+  "status": "READY_FOR_GPU",
+  "utc": "2026-10-27T08:03:51.369662+00:00"
+}

@@ -1,0 +1,9 @@
+# 严格JSON与完整纯标签：评分后敏感性及GPU前冻结
+
+原API协议要求完整JSON，主analysis.json按此原样保留。初次评分后追查3.6直接模式7条invalid，发现全部输出恰好是完整的`Not Addressed`。没有缺少医学标签，也没有附带说明文字；不能把JSON外壳缺失理解为模型没做判断。
+
+新增离线敏感性只接受strip后整条字符串严格等于Supported、Not Supported、Not Addressed之一，或原已有效JSON。禁止从段落搜索、截取、猜测、修复JSON或使用GT纠正。所有模型一致；无新增API、无替换旧主表。label_format_sensitivity.json标明after_primary_analysis，保留7条原文SHA与无歧义标签。
+
+同48条敏感性结果支持3.6作为预备候选，但它与3.8的风险取舍、已暴露选型、小样本和服务差异仍须披露。不得把这项解析收益称为新的模型或临床方法贡献。
+
+GPU尚未发生任何预测；现在事前冻结parse_label103.py，label_base和lora_label使用完全相同的规则，并另记strict_json_valid及exact_label_normalized。训练目标仍是verdict JSON，未生成理由或思维链。后续要分别报告严格格式改善与语义标签改判；临床分类增量不能只来自补上花括号。

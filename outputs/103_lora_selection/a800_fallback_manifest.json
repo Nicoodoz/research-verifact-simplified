@@ -1,0 +1,21 @@
+{
+  "before_GPU": true,
+  "bytes": 4293094,
+  "candidates": [
+    "qwen3.5-9b",
+    "qwen3.8-27b"
+  ],
+  "files": {
+    "api_bridge.jsonl": "c352bbd3e887fbbac63489e74602750800b935aaf546f6d805fb93a99130e67a",
+    "gpu_plan.json": "abb78c6e47624ff312015b9bc10b256bd6e71a823ffe1bf3729f2e50d0109e6c",
+    "model_metadata.json": "eca91a1ec19beef6a02d06b80d9e9171a508080f202363006cb835bd51745120",
+    "sample240.jsonl": "16e194cffbb9896317e8d18c6f08e2f41f1aa2cec0859dfd023897e4febee61b",
+    "token_lengths.jsonl": "2916c02b3dd3a9c2eb2575a952a26cbc9f0e6c60c75d7ebd4d0aeb33fca528ea",
+    "train512.jsonl": "f90f1bded547a2128843377283276f4c5871513e2bce0e202e6cf0eb36b84c10"
+  },
+  "only_if_primary96GB_unavailable": true,
+  "sha256": "26e6246d896dad503d2741c4a917d0187e2ffb3258e756c1736babedf563ad8a",
+  "shared_GPU_cap_cny": 60,
+  "shared_GPU_hours": 8,
+  "utc": "2026-10-27T08:07:28.274565+00:00"
+}

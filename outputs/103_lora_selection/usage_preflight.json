@@ -1,0 +1,321 @@
+{
+  "correctness_not_computed": true,
+  "cost": {
+    "HTTP200": 24,
+    "attempts": 24,
+    "by_model": {
+      "qwen3.5-27b": {
+        "HTTP200": 6,
+        "attempts": 6,
+        "cost_or_reserved_cny": 0.0702414
+      },
+      "qwen3.5-35b-a3b": {
+        "HTTP200": 6,
+        "attempts": 6,
+        "cost_or_reserved_cny": 0.0558164
+      },
+      "qwen3.6-35b-a3b": {
+        "HTTP200": 6,
+        "attempts": 6,
+        "cost_or_reserved_cny": 0.1260126
+      },
+      "qwen3.8-27b": {
+        "HTTP200": 6,
+        "attempts": 6,
+        "cost_or_reserved_cny": 0.18564299999999997
+      }
+    },
+    "hard_cap_cny": 30,
+    "used_or_reserved_cny": 0.4377134
+  },
+  "rows": [
+    {
+      "finish_reason": "stop",
+      "input": 7670,
+      "mode": "native",
+      "model": "qwen3.5-27b",
+      "output": 1592,
+      "panel": "natural",
+      "reason_present": true,
+      "request_id": "0204e3f41639900dd69dea4240f3",
+      "seconds": 28.764999999999418,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7696,
+      "mode": "native",
+      "model": "qwen3.8-27b",
+      "output": 554,
+      "panel": "natural",
+      "reason_present": true,
+      "request_id": "181924a05961c35f41890eb26132",
+      "seconds": 12.797000000005937,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7670,
+      "mode": "native",
+      "model": "qwen3.5-35b-a3b",
+      "output": 1598,
+      "panel": "natural",
+      "reason_present": true,
+      "request_id": "42f6f3fb898697c7da1a9b89aae8",
+      "seconds": 17.781000000002678,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7670,
+      "mode": "native",
+      "model": "qwen3.6-35b-a3b",
+      "output": 693,
+      "panel": "natural",
+      "reason_present": true,
+      "request_id": "919d8fc5f9f53660aa470c5ee6ea",
+      "seconds": 5.235000000000582,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 10694,
+      "mode": "label",
+      "model": "qwen3.5-27b",
+      "output": 14,
+      "panel": "natural",
+      "reason_present": false,
+      "request_id": "ef30b4c119f3c536bf9c51d97aa5",
+      "seconds": 13.703000000008615,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 10694,
+      "mode": "label",
+      "model": "qwen3.8-27b",
+      "output": 14,
+      "panel": "natural",
+      "reason_present": false,
+      "request_id": "ae9a620374dd34bf4eec352e0279",
+      "seconds": 4.5939999999973224,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 10694,
+      "mode": "label",
+      "model": "qwen3.5-35b-a3b",
+      "output": 13,
+      "panel": "natural",
+      "reason_present": false,
+      "request_id": "eee4707254c852547300cadc702f",
+      "seconds": 1.375,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 10694,
+      "mode": "label",
+      "model": "qwen3.6-35b-a3b",
+      "output": 13,
+      "panel": "natural",
+      "reason_present": false,
+      "request_id": "eb67cf894af06c595b27515d289e",
+      "seconds": 2.110000000000582,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 8663,
+      "mode": "native",
+      "model": "qwen3.5-27b",
+      "output": 1012,
+      "panel": "natural",
+      "reason_present": true,
+      "request_id": "5df109781f74ca9e2a4f1ff63726",
+      "seconds": 16.375,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 8689,
+      "mode": "native",
+      "model": "qwen3.8-27b",
+      "output": 407,
+      "panel": "natural",
+      "reason_present": true,
+      "request_id": "80119a33ff49dfa06c1262e9e333",
+      "seconds": 8.921000000002095,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 8663,
+      "mode": "native",
+      "model": "qwen3.5-35b-a3b",
+      "output": 1158,
+      "panel": "natural",
+      "reason_present": true,
+      "request_id": "810157bd9153f63bef7d427e8594",
+      "seconds": 15.952999999994063,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 8663,
+      "mode": "native",
+      "model": "qwen3.6-35b-a3b",
+      "output": 548,
+      "panel": "natural",
+      "reason_present": true,
+      "request_id": "b7f6d04024c680c628279d512a1d",
+      "seconds": 4.734000000011292,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7039,
+      "mode": "label",
+      "model": "qwen3.5-27b",
+      "output": 14,
+      "panel": "natural",
+      "reason_present": false,
+      "request_id": "a72917b250a6a01e9e0eb0078104",
+      "seconds": 3.5,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7039,
+      "mode": "label",
+      "model": "qwen3.8-27b",
+      "output": 14,
+      "panel": "natural",
+      "reason_present": false,
+      "request_id": "5e0e42ba97c87b20d9155aae4e1c",
+      "seconds": 5.921999999991385,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7039,
+      "mode": "label",
+      "model": "qwen3.5-35b-a3b",
+      "output": 12,
+      "panel": "natural",
+      "reason_present": false,
+      "request_id": "eda0a8dbabfd7b7597403ef96dc8",
+      "seconds": 1.7030000000086147,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7039,
+      "mode": "label",
+      "model": "qwen3.6-35b-a3b",
+      "output": 12,
+      "panel": "natural",
+      "reason_present": false,
+      "request_id": "a4cc2c58a5ffcf656ee0ad4efef9",
+      "seconds": 0.8910000000032596,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 8583,
+      "mode": "native",
+      "model": "qwen3.5-27b",
+      "output": 3127,
+      "panel": "pressure",
+      "reason_present": true,
+      "request_id": "42dc13d914135bd7b87f2927e7d0",
+      "seconds": 41.32799999999406,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 8609,
+      "mode": "native",
+      "model": "qwen3.8-27b",
+      "output": 916,
+      "panel": "pressure",
+      "reason_present": true,
+      "request_id": "525cb7abec3974e23be773613422",
+      "seconds": 22.656000000002678,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 8583,
+      "mode": "native",
+      "model": "qwen3.5-35b-a3b",
+      "output": 4177,
+      "panel": "pressure",
+      "reason_present": true,
+      "request_id": "78e90a574c40454fb2a34be01c17",
+      "seconds": 49.76600000000326,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 8583,
+      "mode": "native",
+      "model": "qwen3.6-35b-a3b",
+      "output": 1522,
+      "panel": "pressure",
+      "reason_present": true,
+      "request_id": "665b91bdbf2cd7b032c0cb965ba2",
+      "seconds": 12.139999999999418,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7900,
+      "mode": "native",
+      "model": "qwen3.5-27b",
+      "output": 2556,
+      "panel": "pressure",
+      "reason_present": true,
+      "request_id": "1c8b6d4abc8718e17ae25f3a069e",
+      "seconds": 36.187999999994645,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7926,
+      "mode": "native",
+      "model": "qwen3.8-27b",
+      "output": 902,
+      "panel": "pressure",
+      "reason_present": true,
+      "request_id": "710ac592c231482e5b418cbaa3a8",
+      "seconds": 37.187000000005355,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7900,
+      "mode": "native",
+      "model": "qwen3.5-35b-a3b",
+      "output": 4166,
+      "panel": "pressure",
+      "reason_present": true,
+      "request_id": "71bf8b20a6e8e6130942e82dea7a",
+      "seconds": 41.29700000000594,
+      "valid_format": true
+    },
+    {
+      "finish_reason": "stop",
+      "input": 7900,
+      "mode": "native",
+      "model": "qwen3.6-35b-a3b",
+      "output": 455,
+      "panel": "pressure",
+      "reason_present": true,
+      "request_id": "7dc3867317c09a7ecebedc7f7127",
+      "seconds": 4.297000000005937,
+      "valid_format": true
+    }
+  ]
+}
