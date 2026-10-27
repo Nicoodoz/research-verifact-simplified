@@ -21,6 +21,7 @@ WORK=/root/autodl-tmp/verifact103
 # BILLING_START填写平台本次开机计费开始的Unix秒，不能用训练开始替代。
 python3.12 "$TASK/gpu_lifecycle103.py" init --out "$WORK/results" --billing-start "$BILLING_START" --gpu-hourly 6.98 --storage-hourly 0 --storage-fixed 0
 nohup python3.12 "$TASK/gpu_lifecycle103.py" watch --out "$WORK/results" > "$WORK/watchdog.log" 2>&1 &
+nohup python3.12 "$TASK/gpu_hard_stop103.py" --out "$WORK/results" > "$WORK/hard_deadline.log" 2>&1 &
 bash "$TASK/install_gpu.sh" "$WORK"
 bash "$TASK/run_gpu.sh" "$WORK" probe
 ```
@@ -44,9 +45,12 @@ bash "$TASK/run_gpu.sh" "$WORK" train_eval
 ```bash
 python3.12 "$TASK/gpu_lifecycle103.py" resume --out "$WORK/results" --billing-start "$BILLING_START" --gpu-hourly 6.98 --prior-cny "$TOTAL_CNY" --prior-seconds "$TOTAL_GPU_SECONDS" --storage-fixed "$OFFLINE_STORAGE_CNY"
 nohup python3.12 "$TASK/gpu_lifecycle103.py" watch --out "$WORK/results" > "$WORK/watchdog_resume.log" 2>&1 &
+nohup python3.12 "$TASK/gpu_hard_stop103.py" --out "$WORK/results" > "$WORK/hard_deadline_resume.log" 2>&1 &
 bash "$TASK/run_gpu.sh" "$WORK" train_eval
 # 由执行者先回传结果与adapter并核对SHA；不删除云端未备份数据。
 python3.12 "$TASK/gpu_lifecycle103.py" finish --out "$WORK/results"
 ```
 
 finish写入累计费用估计及关机请求，生成独立tar备份，再调用本实例/usr/bin/shutdown。随后核实控制台已关机和实际账单；不能将发出命令当作计费已停止。指标、bootstrap和报告回本地离线完成；本轮不全量训练、不自动进入下一研究。
+
+独立hard_stop守卫确保额外tar打包缓慢不会拖过费用或8小时硬限：普通守卫先在剩余5分钟请求保存，硬守卫在剩余75秒内再次请求保存，并提前关机。它不删除原始输出或检查点；即使额外归档未完成，已有持久文件仍留在实例磁盘。此工程补充不改变科学输入、训练设置或旧冻结记录。

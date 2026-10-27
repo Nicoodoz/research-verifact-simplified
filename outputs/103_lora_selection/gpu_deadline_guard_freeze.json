@@ -1,0 +1,10 @@
+{
+  "engineering_addendum": true,
+  "files": {
+    "tasks/103_lora_selection/GPU_RUNBOOK.md": "33988cdbcfd1497f59edabced36018b3d8280d4aa051b268840f0af33379a44b",
+    "tasks/103_lora_selection/gpu_hard_stop103.py": "50dd6e7ecac5d3b50b6593bca531f3fccdcae824b61eb00bbe654a305df45ad1"
+  },
+  "no_GPU_run": true,
+  "reason": "Independent deadline prevents slow backup extending GPU budget; no scientific or original freeze changes",
+  "utc": "2026-10-27T08:19:33.542036+00:00"
+}
