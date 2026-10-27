@@ -1,0 +1,475 @@
+{
+  "HTTP200": 24,
+  "N_ids": 12,
+  "by_arm": {
+    "nsna_plain": {
+      "invalid": 0,
+      "valid": 12
+    },
+    "nsna_review": {
+      "invalid": 1,
+      "valid": 11
+    }
+  },
+  "logical_calls": 24,
+  "method_changed": false,
+  "no_response_retries_for_content": true,
+  "rows": [
+    {
+      "arm": "nsna_plain",
+      "id": "42f94d85-464c-f010-5ba0-c31a8c9e872c",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "d97d9cfd5ced1235aad21e267572b655057e3116d346d3b5bff1ca9982bd41e3"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "42f94d85-464c-f010-5ba0-c31a8c9e872c",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [
+          {
+            "end": 11689,
+            "match": "exact",
+            "quote_sha256": "f6a7a6766fafbf7f3e55a83a25aaebaf3becf648576ecd181eecae5c01fe6771",
+            "start": 11618
+          },
+          {
+            "end": 11493,
+            "match": "unique_whitespace",
+            "quote_sha256": "db0576d828ba9cd5735ecf7e9f6d0a5f2b502e10f0d3744486b753075439c351",
+            "start": 11428
+          }
+        ],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "8fbe559beba6622c49d659f980b72344278f92210f53cec67c2c54db47c14c96"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "910c9da0-353b-80eb-6b31-318ad48965be",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "3ab0ed04f117851628425e9032183694c7f72c57db43d68493024cacf74a68d5"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "910c9da0-353b-80eb-6b31-318ad48965be",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [
+          {
+            "end": 1943,
+            "match": "exact",
+            "quote_sha256": "225ec40594260029c8367f26bf998a8f1e90e42a63253326dbfb38e6c6f9f440",
+            "start": 1914
+          },
+          {
+            "end": 7712,
+            "match": "unique_whitespace",
+            "quote_sha256": "a1878a01c39356f8eeb89c2977a3f437dd2950aede0cfa607c5c3b9f483741c7",
+            "start": 7624
+          },
+          {
+            "end": 9761,
+            "match": "exact",
+            "quote_sha256": "f6d7e3c6e09b430e0c2783cae337c482f13aee4aee573cf80bba048936444ef1",
+            "start": 9713
+          }
+        ],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "43189dccdc427b226867d2baf13069f2fb3992aafbde4ea4555ff06d1373251b"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "3eccd6b9-c724-d642-93e2-90a64a8b6b06",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "dbf7d384a5110e2aa2ef3ba2499fdb8b145c882893385a5e83756de75bd848b0"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "3eccd6b9-c724-d642-93e2-90a64a8b6b06",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [
+          {
+            "end": 21453,
+            "match": "unique_whitespace",
+            "quote_sha256": "1ff92addd1e4822713676f6858170e79fc172cdd745c7b6ccc5344c69e16e9bc",
+            "start": 21243
+          },
+          {
+            "end": 20921,
+            "match": "unique_whitespace",
+            "quote_sha256": "09e643616786b628f1f602c4d6f259139537badcea9e994ca855121963edd84b",
+            "start": 20839
+          }
+        ],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "145afe2eb8aeb7c3a726cc54461a950edf3390a68bc2bd2c2417884878a7b375"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "69ecd6de-2cc0-6f06-bceb-95a52e9d6743",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "ef6bbea79c477bf8e2e1d6c0f8ec796d46fd8569e92726465783c287f7d5128d"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "69ecd6de-2cc0-6f06-bceb-95a52e9d6743",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [
+          {
+            "end": 2614,
+            "match": "unique_whitespace",
+            "quote_sha256": "a96c3f77c12970c3f269481dab9c2aaa7dc1196171b8ff8695714be56889e601",
+            "start": 2489
+          },
+          {
+            "end": 8229,
+            "match": "unique_whitespace",
+            "quote_sha256": "253d7d30a1ad34869dd88bcaeb7c4ffc5c9994d4533dbeef31bd0d48b953221e",
+            "start": 8141
+          },
+          {
+            "end": 2809,
+            "match": "unique_whitespace",
+            "quote_sha256": "fb6d51fab3bd2f2d93e6118d8e02c90b1a91a275e6df959c2275a16fd42e38ea",
+            "start": 2739
+          }
+        ],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "d3019031c6c7bf60bc297f286517daee396a36d88b9092a4537b097fb6e016c0"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "11dd7234-1fb4-b7ff-5bdd-2ed5afb1c6b2",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "1f5482addbec0cf14e89453335fe4a8439d7a9f11e2903a39aa35090ae7d16ea"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "11dd7234-1fb4-b7ff-5bdd-2ed5afb1c6b2",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [
+          {
+            "end": 17895,
+            "match": "exact",
+            "quote_sha256": "773fbe53a28caa215838d274b77b2e7a767899dfb5798f61ec403d7a2dcf4369",
+            "start": 17857
+          },
+          {
+            "end": 11292,
+            "match": "unique_whitespace",
+            "quote_sha256": "d5ed8cb82a859003e7f30ec7e4d5d30f8e7fe919aa9878d3c2c95467764c9f22",
+            "start": 11204
+          },
+          {
+            "end": 14975,
+            "match": "exact",
+            "quote_sha256": "2a6dea70519121bbd2134a78213ba889044dfa13055ec6661f5895281da13eb8",
+            "start": 14943
+          }
+        ],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "7c662f78f946a9a12f680b252463256a9bd7e8cc692cc6a4f9e10a58aa26cef1"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "59918682-27c1-d602-9642-68a0eb66d62d",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "0dacd80d61f206e191460991b65ec83e965f6aac8e602aaaed23c44e064c980a"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "59918682-27c1-d602-9642-68a0eb66d62d",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [
+          {
+            "end": 323,
+            "match": "exact",
+            "quote_sha256": "bc96af1d6e705456054e08195e96b92d25ff782e8518f3974c0b84215b206dd5",
+            "start": 270
+          },
+          {
+            "end": 821,
+            "match": "exact",
+            "quote_sha256": "5f4999b179692cb5651fab9e182f702f4bee93bd3d8554bc038326817d464e90",
+            "start": 781
+          },
+          {
+            "end": 9798,
+            "match": "exact",
+            "quote_sha256": "0791fb74bac54e8aca43718d9158c00bb3e431bd2ea9b6a02010d8aed570dcde",
+            "start": 9752
+          }
+        ],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "1a50513fb07fcf1d91391cb8f7c779ba01c10e6fe88f5dafa36536420931aef7"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "b2ae2d8d-381e-0c45-ebf5-3b885f48eaaa",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "b9d2f22bd55374f6319c0edfe97f98c22b634c4920882e4006c4674ec9376c81"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "b2ae2d8d-381e-0c45-ebf5-3b885f48eaaa",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "27ffef78070c01d9815979af8f2ce8105a336d07917be3e43d3798b541df5432"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "7e91d55a-d21d-572f-b5d9-4e349f02fc85",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "163dc0f269752a4b9a9e5febba3ec58ab335e5cfefafa32c74e698274ff393b5"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "7e91d55a-d21d-572f-b5d9-4e349f02fc85",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "047cd47a787400a2083bdd612a0cd08495898abc8218e3ba371e64ce9c92cd19"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "e088751d-057d-52e0-2867-b8b4a8a6ecd0",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Supported",
+        "valid": true,
+        "verdict": "Not Supported"
+      },
+      "receipt_sha256": "5fdf9082df7f38b49da5fd3e92e3cdad1f92adb2bd6d142a684f12c15d4c1dfe"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "e088751d-057d-52e0-2867-b8b4a8a6ecd0",
+      "parsed": {
+        "errors": [
+          "invalid_schema_label_or_finish"
+        ],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": null,
+        "valid": false,
+        "verdict": null
+      },
+      "receipt_sha256": "57a232a280c7bca22cfc1bb30ae994811d4fff7002099081f56e25a75e86fccd"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "319aebee-36b7-6b8e-c1d4-5b6a8fd2ea58",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "7f480933f28d3a58703a834a593d5d3ac68ae0c45ea48e5284e51e4d544e6364"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "319aebee-36b7-6b8e-c1d4-5b6a8fd2ea58",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [
+          {
+            "end": 17386,
+            "match": "exact",
+            "quote_sha256": "f2919f312b8d515ac7fd1fa3338c30386f9449b2c196c1a5385eefd31719510f",
+            "start": 17304
+          },
+          {
+            "end": 3365,
+            "match": "exact",
+            "quote_sha256": "5f0097b00da465ba7ea43d7846f1e87bdb6491e08c60db30523a8989de4da243",
+            "start": 3268
+          },
+          {
+            "end": 3908,
+            "match": "exact",
+            "quote_sha256": "7637cff269e1d66b4f88ea6c8e4dc340d2a2f8d92d9c2768171f8a4d003f0c0d",
+            "start": 3835
+          }
+        ],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "c1e4d49dae7063fa37afe3ae006cab383bb8a5def41e04521a16e1e7f757fe86"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "4720303b-bcad-ef83-823d-466311e6fba3",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "48507f6b199aaa6697350acb21dd9573d1202298ca7fb6eb9d4f5f8f79c06379"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "4720303b-bcad-ef83-823d-466311e6fba3",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "08d192664f2ae642e28b8553a6e4be1b2dcb89dbe78ab1ae87072f5a4b3a347d"
+    },
+    {
+      "arm": "nsna_plain",
+      "id": "9cc9ad5a-ebc6-106d-fbb7-d4536a7db942",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "4700a7875ed635246816a254c8df396a4ce2d3a9c4c0231fa2a55a51e142cdf3"
+    },
+    {
+      "arm": "nsna_review",
+      "id": "9cc9ad5a-ebc6-106d-fbb7-d4536a7db942",
+      "parsed": {
+        "errors": [],
+        "finish_reason": "stop",
+        "quote_locations": [
+          {
+            "end": 6334,
+            "match": "exact",
+            "quote_sha256": "240edd43dd68179aab0f795ebb2cff880f3e235ed3eaa0d4e49ed5fa3747dbc5",
+            "start": 6307
+          },
+          {
+            "end": 6564,
+            "match": "exact",
+            "quote_sha256": "2a8bea000eace5a9e35c4e9188334ef0e38c6522c2a30c9d1908497a36651ef4",
+            "start": 6546
+          },
+          {
+            "end": 14546,
+            "match": "unique_whitespace",
+            "quote_sha256": "18cdfb6438c159deb9c8bbce9fbb8d643bfe48898e6add07c5e7573155b07917",
+            "start": 14439
+          }
+        ],
+        "raw_verdict": "Not Addressed",
+        "valid": true,
+        "verdict": "Not Addressed"
+      },
+      "receipt_sha256": "2a47e11b6946248fc9fd064dad9ba0ed01f71d56dd93432e38966ccd839ec72b"
+    }
+  ],
+  "target_confirm_quality_not_read": true,
+  "utc": "2026-10-27T02:33:39.919397+00:00"
+}

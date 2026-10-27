@@ -1,0 +1,73 @@
+{
+  "HTTP200": 833,
+  "attempts": 833,
+  "deployment": {
+    "natural": {
+      "nsna_plain": {
+        "N": 600,
+        "average_calls": 1.325,
+        "input_tokens": 5815786,
+        "logical_calls": 795,
+        "mean_peak_no_cache_cny": 0.03512824999999997,
+        "mean_pipeline_seconds": 8.142429999999646,
+        "output_tokens": 403288
+      },
+      "nsna_review": {
+        "N": 600,
+        "average_calls": 1.325,
+        "input_tokens": 5861806,
+        "logical_calls": 795,
+        "mean_peak_no_cache_cny": 0.038269849999999966,
+        "mean_pipeline_seconds": 11.380419999999807,
+        "output_tokens": 597388
+      },
+      "verifact_ref": {
+        "N": 600,
+        "average_calls": 1.0,
+        "input_tokens": 4380092,
+        "logical_calls": 600,
+        "mean_peak_no_cache_cny": 0.025981704999999983,
+        "mean_pipeline_seconds": 5.539696666666532,
+        "output_tokens": 272083
+      }
+    },
+    "pressure": {
+      "nsna_plain": {
+        "N": 100,
+        "average_calls": 1.87,
+        "input_tokens": 1397641,
+        "logical_calls": 187,
+        "mean_peak_no_cache_cny": 0.05113110000000001,
+        "mean_pipeline_seconds": 12.550790000001289,
+        "output_tokens": 102243
+      },
+      "nsna_review": {
+        "N": 100,
+        "average_calls": 1.87,
+        "input_tokens": 1418173,
+        "logical_calls": 187,
+        "mean_peak_no_cache_cny": 0.06046122000000005,
+        "mean_pipeline_seconds": 22.48426999999996,
+        "output_tokens": 199067
+      },
+      "verifact_ref": {
+        "N": 100,
+        "average_calls": 1.0,
+        "input_tokens": 748936,
+        "logical_calls": 100,
+        "mean_peak_no_cache_cny": 0.027514560000000007,
+        "mean_pipeline_seconds": 6.8695500000003085,
+        "output_tokens": 56072
+      }
+    }
+  },
+  "hard_cap_cny": 30,
+  "new_cost_by_arm": {
+    "nsna_plain": 8.490466800000007,
+    "nsna_review": 11.569510799999998,
+    "verifact_ref": 5.167253999999999
+  },
+  "retries": 0,
+  "unknown_or_unverified_cny": 0,
+  "used_or_reserved_cny": 25.227231600000014
+}

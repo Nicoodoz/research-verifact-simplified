@@ -1,0 +1,41 @@
+{
+  "all_confirmation_IDs_unchanged": true,
+  "extra_baseline_IDs": [
+    "b3028b92-a263-a784-b7e7-d1d9563c8ac7",
+    "6fa9442d-9cd4-d37f-ba0f-88de4183f527",
+    "f1c340d5-54df-7316-c7f6-b94adc24ee6c",
+    "29b5e758-e25d-6f7b-c97c-3c8a9e867e61",
+    "039226eb-4de0-92a2-f587-89301502c879"
+  ],
+  "files": {
+    ".local_models/101_nsna_review/baseline_extra_jobs.jsonl": "5e0a967af8adf7b9456dff4183698c95d84be721e0a3e0a80a55f39a3077cefb",
+    "outputs/101_nsna_review/cache_inventory_corrected.json": "89c760801a92d04cf501ca0e6fd2af82acb3b05486a43e0f3d046f4ed7a9d4a3",
+    "tasks/101_nsna_review/correct_cache101.py": "316f29a360f5622e8f2985d7c9d50a3144d57ad0d61c34344cc69b46ef129b67"
+  },
+  "historical_confusion_common_panels": 37,
+  "historical_confusion_own_baseline_valid": 38,
+  "historical_patients": 28,
+  "original098_labels_preserved": true,
+  "original_artifacts_preserved": true,
+  "prompts_unchanged": true,
+  "reason": "prepare101 incorrectly defaulted an absent endpoint to current endpoint. Reject every absent endpoint record irrespective of verdict.",
+  "rejected_IDs": [
+    "039226eb-4de0-92a2-f587-89301502c879",
+    "29b5e758-e25d-6f7b-c97c-3c8a9e867e61",
+    "4a4cf7ab-e9e1-7d37-6c7a-a481f52095aa",
+    "4eb39c11-f267-c26c-2154-351b07463af9",
+    "60cc6f46-e261-275d-019a-40c69ea91e9d",
+    "6fa9442d-9cd4-d37f-ba0f-88de4183f527",
+    "7dfdafab-a46d-9144-a6ff-90c6eaadf6ed",
+    "869a8c91-1aff-ee27-8a08-9063f5260e5c",
+    "8e82aba5-9b26-da9f-33a0-931ae3ed4fae",
+    "9ab50bc7-a91b-cf55-9f69-f9694d98fe8c",
+    "b2b39e31-bb88-8076-c46f-49461bf24e08",
+    "b3028b92-a263-a784-b7e7-d1d9563c8ac7",
+    "c410a52e-57c9-26e8-c0cb-d3b757ceb5d4",
+    "c7a516c5-567e-1abe-8072-434ec3f1e2ff",
+    "f1c340d5-54df-7316-c7f6-b94adc24ee6c"
+  ],
+  "review_confirmation_not_started": true,
+  "utc": "2026-10-27T02:39:20.191435+00:00"
+}

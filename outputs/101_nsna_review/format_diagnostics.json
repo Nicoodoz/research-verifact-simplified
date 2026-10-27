@@ -1,0 +1,333 @@
+{
+  "counts": {
+    "empty_content": 3,
+    "outer_markdown_fence": 1,
+    "unlocatable_quote": 22
+  },
+  "finish_reasons": {
+    "length": 3,
+    "stop": 23
+  },
+  "first_review_fallbacks": 26,
+  "natural_changes": {
+    "nsna_plain": [
+      {
+        "GT": "Not Addressed",
+        "base": "Not Supported",
+        "candidate": "Not Addressed",
+        "count": 8,
+        "kind": "rescue"
+      },
+      {
+        "GT": "Not Supported",
+        "base": "Not Supported",
+        "candidate": "Not Addressed",
+        "count": 11,
+        "kind": "harm"
+      },
+      {
+        "GT": "Not Supported",
+        "base": "Not Addressed",
+        "candidate": "Not Supported",
+        "count": 1,
+        "kind": "rescue"
+      },
+      {
+        "GT": "Supported",
+        "base": "Not Addressed",
+        "candidate": "Not Supported",
+        "count": 1,
+        "kind": "wrong_to_wrong"
+      },
+      {
+        "GT": "Supported",
+        "base": "Not Supported",
+        "candidate": "Not Addressed",
+        "count": 8,
+        "kind": "wrong_to_wrong"
+      }
+    ],
+    "nsna_review": [
+      {
+        "GT": "Not Addressed",
+        "base": "Not Addressed",
+        "candidate": "Not Supported",
+        "count": 1,
+        "kind": "harm"
+      },
+      {
+        "GT": "Not Addressed",
+        "base": "Not Supported",
+        "candidate": "Not Addressed",
+        "count": 8,
+        "kind": "rescue"
+      },
+      {
+        "GT": "Not Supported",
+        "base": "Not Supported",
+        "candidate": "Not Addressed",
+        "count": 10,
+        "kind": "harm"
+      },
+      {
+        "GT": "Not Supported",
+        "base": "Not Addressed",
+        "candidate": "Not Supported",
+        "count": 3,
+        "kind": "rescue"
+      },
+      {
+        "GT": "Supported",
+        "base": "Not Addressed",
+        "candidate": "Not Supported",
+        "count": 1,
+        "kind": "wrong_to_wrong"
+      },
+      {
+        "GT": "Supported",
+        "base": "Not Supported",
+        "candidate": "Not Addressed",
+        "count": 3,
+        "kind": "wrong_to_wrong"
+      }
+    ]
+  },
+  "no_parser_or_prediction_changes": true,
+  "records": [
+    {
+      "arm": "nsna_review",
+      "category": "empty_content",
+      "errors": [
+        "invalid_schema_label_or_finish"
+      ],
+      "finish_reason": "length",
+      "id": "bf4b3174-4cc2-f8d0-aca2-b92110091dc8"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "91917388-801d-beb7-706e-b84477e543b5"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "1835d6de-9f80-9200-5839-5842541e88b4"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "b6afe5dc-9c4f-810d-e06e-7418a0c9261a"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "5917b02b-1d84-3e3a-a1e0-6e613269ec4d"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "5bb95f8f-5d58-eab0-6160-928bde94bff8"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "b9f46228-d0e3-e5d8-c095-88fe4ba17d14"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "4464ff2d-57a2-5997-546c-b250803b198b"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "830822be-7cdf-32a5-cd26-93f8e9ea0946"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "ede1d022-4719-7f51-f603-e77385f5f49c"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "6003fa92-c276-14c0-8bf2-6866a58e3129"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "50d5e213-4482-14e7-cb29-8f71bf6f7c3c"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "e75a7333-8e84-4521-ef74-8540c377433a"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "46430844-acc9-2451-f84e-3f73244d069f"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "f5649b73-2632-6e7e-9a52-2537275174b9"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "903add0f-1189-a0a7-5d25-e494eec9dfe5"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "5956dbcc-a1e5-790a-1edc-19a59baf9a28"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "d4c5c074-a071-d4f7-1bee-db2be9ed0b9b"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "4c638d40-e95a-b9d7-8dd8-ac3ba5ea6137"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "d5210d30-28c9-1d78-e768-7295684b16ff"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "dccc626b-9802-a519-8bc0-0a9415958479"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "empty_content",
+      "errors": [
+        "invalid_schema_label_or_finish"
+      ],
+      "finish_reason": "length",
+      "id": "b727b5c4-a3e6-e12b-e629-71aba3fa83e2"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "outer_markdown_fence",
+      "errors": [
+        "invalid_schema_label_or_finish"
+      ],
+      "finish_reason": "stop",
+      "id": "57b5e71a-448d-e2be-298a-b4ba7a32b586"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "empty_content",
+      "errors": [
+        "invalid_schema_label_or_finish"
+      ],
+      "finish_reason": "length",
+      "id": "bcf8dbf0-9a19-1fca-3a18-3e3800f62004"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote",
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "88f4c548-e18a-825c-542a-fc781e4f85d0"
+    },
+    {
+      "arm": "nsna_review",
+      "category": "unlocatable_quote",
+      "errors": [
+        "unlocatable_quote"
+      ],
+      "finish_reason": "stop",
+      "id": "70cf256d-2e04-6ea6-d8c2-67087a36b09b"
+    }
+  ]
+}

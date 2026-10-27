@@ -1,0 +1,24 @@
+{
+  "nsna_plain": {
+    "MCC_CI_positive": false,
+    "additional_direction": false,
+    "practical_target": false,
+    "pressure_guard": false,
+    "repeat_guard": false,
+    "status": "失败停止"
+  },
+  "nsna_review": {
+    "MCC_CI_positive": false,
+    "additional_direction": false,
+    "practical_target": false,
+    "pressure_guard": true,
+    "repeat_guard": true,
+    "status": "失败停止"
+  },
+  "review_increment": {
+    "MCC_CI_positive": false,
+    "beats_class_bias": true,
+    "core_method_supported": false,
+    "practical_extra": false
+  }
+}

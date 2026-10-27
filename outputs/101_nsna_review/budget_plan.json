@@ -1,0 +1,17 @@
+{
+  "baseline_estimate": 5.281085114754099,
+  "expected_additional_trigger_rate": 0.3235294117647059,
+  "expected_cost_cny": 25.234924160800382,
+  "expected_review_triggers": 281.11764705882354,
+  "hard_cap": 30,
+  "historical_mean_input": 7368.5505464480875,
+  "historical_mean_output": 474.90437158469945,
+  "known_confirmation_triggers": 219,
+  "maximum8192_reserved_per_attempt_not_whole_task_forecast": true,
+  "new_baseline_calls": 192,
+  "no_cache_discount_assumed": true,
+  "per_plain": 0.029416860655737707,
+  "per_review": 0.033505651639344255,
+  "recovery_margin": 4.765075839199618,
+  "utc": "2026-10-27T02:30:06.010501+00:00"
+}

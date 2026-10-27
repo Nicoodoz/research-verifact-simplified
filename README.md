@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-临床文本与患者EHR的一致性核验研究。098—100已完整结项；098 demo_protect（保护压缩四例）停止，100最终：**失败停止**。默认系统不变。[今晚一页结论](outputs/100_preregistered_followup/night_summary_display.md) · [100报告](outputs/100_preregistered_followup/report_display.md)。
+临床文本与患者EHR的一致性核验研究。101 NS/NA定向复核已结项，默认不变。[101正式报告](outputs/101_nsna_review/report.md) · [类别及病例分析](outputs/101_nsna_review/case_analysis.md)。
 
 ## 总体目标
 
@@ -12,7 +12,7 @@ MCC 和 false-S 相对更重要：前者反映类别失衡下的整体分类质�
 
 ## 当前证据
 
-最新同模型患者隔离确认见[100一页结论](outputs/100_preregistered_followup/night_summary_display.md)；结论为失败停止。下面097表只保留此前强对照背景，共同158条：
+101 NS/NA定向复核已结项：确认600自然＋100压力、282触发双臂、24条双臂重复。自然共同597条，verifact_ref/nsna_plain/nsna_review正确496/494/496，MCC 0.6376/0.6237/0.6331；false-S均11，Supported集合逐条不变。plain：失败停止；review：失败停止；对应检查实际增量门槛=False。新增费用及预留¥25.227232/30，默认不变。[101完整结果](outputs/101_nsna_review/report.md)。下面097表保留历史强对照背景，共同158条：
 
 | 配置（raw） | MCC | PA | 正确数 | false-S |
 |---|---:|---:|---:|---:|

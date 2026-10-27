@@ -1,0 +1,29 @@
+{
+  "by_panel": {
+    "natural": 195,
+    "pressure": 87
+  },
+  "current_ledger": {
+    "HTTP200": 221,
+    "attempts": 221,
+    "hard_cap_cny": 30,
+    "retries": 0,
+    "used_or_reserved_cny": 5.958231000000001
+  },
+  "expected_remaining_peak_cny": 21.367096124999968,
+  "expected_total": 27.32532712499997,
+  "files": {
+    ".local_models/101_nsna_review/confirmation_jobs.jsonl": "ee0420fa15ff8772dc1944d7e0cf0edd51dfaf30b6b1a5bacf01e3a99310a77b",
+    "outputs/101_nsna_review/baseline_bindings.json": "9f7390f4f391072ecd5a109a0762bd7713a43dd9eb703f5e15c2d52a82aa0f4d",
+    "outputs/101_nsna_review/remaining_forecast.jsonl": "1cf0208591d18a95f71f8b514c6a359203f6827e494c8794ba3723cdc5ecd141",
+    "outputs/101_nsna_review/trigger_panel.jsonl": "14dfc7359224f03809c15513a40db983ddc596978beabd422480aac2a4e6e726",
+    "tasks/101_nsna_review/analyze101.py": "91d62a08850670f73eec6333e5aa9f491f66d0378f8e3c4a26bfcbf02719272f",
+    "tasks/101_nsna_review/stages101.py": "5f21e2fff490372d24feff4bdc40f3fddc38aba317e2aa6ec5b655164025152c"
+  },
+  "logical_calls": 612,
+  "repeat_N": 24,
+  "review_calls_equal": true,
+  "review_labels_not_used_for_selection": true,
+  "triggered": 282,
+  "utc": "2026-10-27T02:40:24.947294+00:00"
+}

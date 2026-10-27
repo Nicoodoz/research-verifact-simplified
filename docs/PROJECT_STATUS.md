@@ -1,6 +1,6 @@
-# 项目现状（2026-10-27，098—100已结项）
+# 项目现状（2026-10-27，研究完成至101）
 
-098已完整收尾：2120目标+2构造，demo_protect（保护压缩四例）未通过对verifact_ref、demo_lenmatch、compact48的继续/实用门槛，停止该版本。100按既定证据分支完成，最终为失败停止；开发48自然+24压力，确认预冻192自然+32压力、重复16，实际执行范围见报告。新API累计及预留¥45.863688/130；旧098成本不重置，其累计仍≤50。默认不变。[今晚一页结论](../outputs/100_preregistered_followup/night_summary_display.md) · [100报告](../outputs/100_preregistered_followup/report_display.md) · [098报告](../outputs/098_p90_native_confirmation/report_display.md)。
+101 NS/NA定向复核已结项：确认600自然＋100压力、282触发双臂、24条双臂重复。自然共同597条，verifact_ref/nsna_plain/nsna_review正确496/494/496，MCC 0.6376/0.6237/0.6331；false-S均11，Supported集合逐条不变。plain：失败停止；review：失败停止；对应检查实际增量门槛=False。新增费用及预留¥25.227232/30，默认不变。[101报告](../outputs/101_nsna_review/report.md) · [病例解释](../outputs/101_nsna_review/case_analysis.md)。098和100均已完成、原版本停止；[098报告](../outputs/098_p90_native_confirmation/report_display.md) · [100报告](../outputs/100_preregistered_followup/report_display.md)。
 
 ## 当前研究目标与运行事实
 
@@ -20,6 +20,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|101 NS/NA定向复核|600自然＋100压力、282触发、24双臂重复；同S集合|plain净-2、review净+0；review−plain净+2；详见正式报告，默认不变|
 |097原生Judge/源文门槛|自然160冻结、raw共同158；40例源文离线核查；B无分类调用|C48简洁raw比B raw净+9，但比现行B＋G净−10；B构造/费用门槛未过，默认不变|
 |096跨Judge/PriorG迁移|自然800、诊断200；143校准中142有效，R1 G到−6下界|R1 raw与重新适配均未形成综合优势；默认V4＋G不变，AutoDL用户已关机|
 |095统一基准/最小差异|B成功覆盖9065/9065、共同core 8997；原作者/B＋G正确7285/7552，MCC0.4983/0.5976|300构造数量通过但语义实施失败，未运行C分类；独立复核范围见报告，默认不变|
