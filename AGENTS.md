@@ -1,6 +1,6 @@
 # 项目工作约定（2026-10-27）
 
-103第一阶段已完成并暂停在READY_FOR_GPU：API推荐9B＋qwen3.6-35b-a3b作小训练比较，保留qwen3.8-27b近邻；API累计无缓存原价¥27.518576/30，GPU尚未启动，等待用户提供实例。102仍封存，不恢复。 [103报告](outputs/103_lora_selection/report.md)。
+103：qwen3.6-35b-a3b与qwen3.5-9b均已完成512条LoRA训练；qwen3.8-27b按最新用户指令停止，保存40条恢复检查点。两模型必要推理已完成并通过输入/批次核验，35B原生使用已核对的180条API回执，不冒充本地原生对照；不新增API调用，不计算分类效果指标，不升级默认系统。API累计¥27.518576/30，GPU/存储沿原60元及8小时账本；实时状态及完成记录见[执行报告](outputs/103_lora_selection/gpu_execution_report.md)和[实时进度](outputs/103_lora_selection/实时进度.md)。102封存不恢复。
 
 本文件只保留持续有效的约定。先读[项目现状](docs/PROJECT_STATUS.md)、[研究原则](docs/RESEARCH_EXECUTION.md)和[环境](docs/RUN_ENVIRONMENT.md)；查看仓库相关事实前检查实际main HEAD。任务、报告和审计的历史索引见[任务索引](docs/TASK_INDEX.md)，旧说明不覆盖较新的用户授权。
 

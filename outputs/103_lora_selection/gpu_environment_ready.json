@@ -1,0 +1,18 @@
+{
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "torchvision": "0.23.0+cu128",
+    "triton": "3.4.0",
+    "xformers": "0.0.32.post2",
+    "unsloth": "2026.10.9",
+    "unsloth_zoo": "2026.10.9",
+    "transformers": "5.17.0",
+    "peft": "0.21.2",
+    "trl": "1.15.0"
+  },
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "BF16": true,
+  "seconds": 15.522939682006836,
+  "clinical_inference_executed": false
+}

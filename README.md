@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-103第一阶段已完成并暂停在READY_FOR_GPU：API推荐9B＋qwen3.6-35b-a3b作小训练比较，保留qwen3.8-27b近邻；API累计无缓存原价¥27.518576/30，GPU尚未启动，等待用户提供实例。102仍封存，不恢复。 [103报告](outputs/103_lora_selection/report.md)。
+103：qwen3.6-35b-a3b与qwen3.5-9b均已完成512条LoRA训练；qwen3.8-27b按最新用户指令停止，保存40条恢复检查点。两模型必要推理已完成并通过输入/批次核验，35B原生使用已核对的180条API回执，不冒充本地原生对照；不新增API调用，不计算分类效果指标，不升级默认系统。API累计¥27.518576/30，GPU/存储沿原60元及8小时账本；实时状态及完成记录见[执行报告](outputs/103_lora_selection/gpu_execution_report.md)和[实时进度](outputs/103_lora_selection/实时进度.md)。102封存不恢复。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

@@ -1,5 +1,9 @@
 # 103 GPU接续说明
 
+2026-10-27实机接续已获用户授权并开始。当前实例使用独立PyTorch2.8.0+cu128环境，实际锁见[installed_gpu_with_causal.lock](../../outputs/103_lora_selection/installed_gpu_with_causal.lock)，调整缘由与算子验证见[GPU工程记录](../../outputs/103_lora_selection/gpu_runtime_amendment.md)。当前已部署实例的单阶段入口为`bash task/run_gpu_live103.sh --model qwen3.5-9b --phase probe`；正式训练加`--phase train --limit 512`或冻结决定的256，恢复另加`--resume`；评价使用`--phase eval --arm native_base`等。不得在当前已部署实例重跑下面历史环境安装或账本init；累计计时从18:15:13开始，守卫持续有效。
+
+以下保留第一阶段交付的原始准备说明；最新实际执行以[实时进度](../../outputs/103_lora_selection/实时进度.md)和上述工程记录为准。
+
 第一阶段完成后暂停READY_FOR_GPU。以下只为用户提供实例后的执行准备，不授权自行租卡；102不恢复。当前依赖已完成Linux/Python3.12解析和hash锁定，GPU算子、速度、峰值显存待实例实测。
 
 ## 实例与镜像

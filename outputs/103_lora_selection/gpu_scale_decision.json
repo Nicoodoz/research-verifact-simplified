@@ -1,0 +1,48 @@
+{
+  "status": "GO",
+  "samples_each": 512,
+  "alternatives": [
+    {
+      "samples_each": 512,
+      "total_reserved_seconds": 20883.278696592315,
+      "by_model": {
+        "qwen3.5-9b": {
+          "training_tokens": 4303262,
+          "observed_train_tokens_per_second": 5447.38935143789,
+          "training_seconds": 789.9677666447899,
+          "native_evaluation_seconds": 2107.6059442582036,
+          "two_label_evaluations_seconds": 100.92689298465847,
+          "already_completed_counts": {
+            "native_base": 104,
+            "label_base": 180,
+            "lora_label": 0
+          },
+          "timing_sources": {
+            "native_base": "completed formal same-runtime batches",
+            "label_base": "completed formal same-runtime batches"
+          },
+          "reserved_seconds": 4048.125754859565
+        },
+        "qwen3.6-35b-a3b": {
+          "training_tokens": 4303262,
+          "observed_train_tokens_per_second": 2842.088873247769,
+          "training_seconds": 1514.1194353582935,
+          "native_evaluation_seconds": 5743.9167908663985,
+          "two_label_evaluations_seconds": 5250.086127161509,
+          "already_completed_counts": {
+            "native_base": 0,
+            "label_base": 0,
+            "lora_label": 0
+          },
+          "timing_sources": {
+            "native_base": "frozen speed panel (conservative including compilation)",
+            "label_base": "frozen speed panel (conservative including compilation)"
+          },
+          "reserved_seconds": 15935.15294173275
+        }
+      }
+    }
+  ],
+  "remaining_seconds": 21338.00532603264,
+  "no_training_effects_inspected": true
+}

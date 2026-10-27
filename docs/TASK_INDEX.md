@@ -1,4 +1,4 @@
-# 全部任务与当前入口（103 READY_FOR_GPU；2026-10-27）
+# 全部任务与当前入口（103 GPU训练与必要推理；2026-10-27）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,7 +6,7 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
-|103_lora_selection|[第一阶段报告](../outputs/103_lora_selection/report.md) · [GPU接续](../tasks/103_lora_selection/GPU_RUNBOOK.md)|[自检](../outputs/103_lora_selection/selfcheck.json) · [交接检查](../outputs/103_lora_selection/stage1_check.json)|API完成、等待用户GPU连接；未训练、不自动下一任务|
+|103_lora_selection|[第一阶段报告](../outputs/103_lora_selection/report.md) · [GPU执行报告](../outputs/103_lora_selection/gpu_execution_report.md) · [实时进度](../outputs/103_lora_selection/实时进度.md)|第一阶段自检保留；GPU执行核验见执行报告|35B与9B训练512完成；27B停止40条；必要推理已完成；未计算分类收益|
 |102_demo_relation|[报告](../outputs/102_demo_relation/report.md) · [关系核查](../outputs/102_demo_relation/method_review.md)|[执行者自检](../outputs/102_demo_relation/selfcheck.json)，独立审计未执行|零API；构造及预算核查后停止，未运行分类，不自动103|
 |101_nsna_review|[正式报告](../outputs/101_nsna_review/report.md) · [病例](../outputs/101_nsna_review/case_analysis.md)|[执行者自检](../outputs/101_nsna_review/selfcheck.json)，独立审计未执行|plain：失败停止；review：失败停止；默认不变，不自动新实验|
 |100_preregistered_followup|[一页结论](../outputs/100_preregistered_followup/night_summary_display.md) · [正式报告](../outputs/100_preregistered_followup/report_display.md)|[执行者自检](../outputs/100_preregistered_followup/selfcheck.json)，独立审计未执行|失败停止；32患者隔离确认，未升级默认，不自动新实验|

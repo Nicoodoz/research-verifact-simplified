@@ -1,0 +1,17 @@
+{
+  "version": "1.7.0",
+  "torch": "2.8.0+cu128",
+  "abi": true,
+  "capability": [
+    12,
+    0
+  ],
+  "forward_max_abs": 0.0625,
+  "gradient_max_abs": [
+    0.0625,
+    0.125,
+    0.125
+  ],
+  "update_max_abs": 0.0,
+  "synthetic_only": true
+}

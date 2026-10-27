@@ -1,0 +1,41 @@
+{
+  "epoch": 1793111545.0728512,
+  "N_each": 180,
+  "coverage": {
+    "qwen3.6-35b-a3b": {
+      "label_base": {
+        "N": 180,
+        "invalid": 0
+      },
+      "lora_label": {
+        "N": 180,
+        "invalid": 0
+      },
+      "native_api": {
+        "N": 180,
+        "invalid": 0
+      }
+    },
+    "qwen3.5-9b": {
+      "label_base": {
+        "N": 180,
+        "invalid": 0
+      },
+      "lora_label": {
+        "N": 180,
+        "invalid": 0
+      },
+      "native_base": {
+        "N": 180,
+        "invalid": 0
+      }
+    }
+  },
+  "model35_native": "verified existing API replies",
+  "model9_native": "local",
+  "new_API_calls": 0,
+  "quality_metrics_computed": false,
+  "local_label_pairs_same_inputs_and_batches": true,
+  "model27_saved_samples": 40,
+  "shutdown": "USER_MANUAL_PENDING"
+}

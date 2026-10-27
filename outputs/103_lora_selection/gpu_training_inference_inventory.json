@@ -1,0 +1,106 @@
+{
+  "qwen3.6-35b-a3b": {
+    "training_done": {
+      "samples": 512,
+      "steps": 64,
+      "phase": "train",
+      "training_wall_seconds": 1829.3935364969075
+    },
+    "checkpoint": "/root/autodl-tmp/verifact103/results/qwen3.6-35b-a3b/train/checkpoint-512",
+    "trainable_parameters": 943912960,
+    "all_lora_B_tensors_updated": true,
+    "expert_slices_checked": 20480,
+    "expert_slices_updated": 20160,
+    "steady_training_tokens_per_second": 2483.856111743088,
+    "peak_training_allocated_bytes": 93739068928,
+    "checkpoint_events": [
+      {
+        "samples": 256,
+        "step": 32,
+        "seconds": 16.794266421347857,
+        "bytes": 11327782689
+      },
+      {
+        "samples": 512,
+        "step": 64,
+        "seconds": 19.168751142919064,
+        "bytes": 11327782689
+      }
+    ],
+    "inference": {
+      "label_base": {
+        "N": 180,
+        "invalid": 0,
+        "generation_seconds": 105.98151541501284,
+        "source": "local"
+      },
+      "lora_label": {
+        "N": 180,
+        "invalid": 0,
+        "generation_seconds": 183.59117705747485,
+        "source": "local"
+      },
+      "native_api": {
+        "N": 180,
+        "invalid": 0,
+        "generation_seconds": 0,
+        "source": "reused API reference; not local native control"
+      }
+    }
+  },
+  "qwen3.5-9b": {
+    "training_done": {
+      "samples": 512,
+      "steps": 64,
+      "phase": "train",
+      "training_wall_seconds": 807.6979056932032
+    },
+    "checkpoint": "/root/autodl-tmp/verifact103/results/qwen3.5-9b/train/checkpoint-512",
+    "trainable_parameters": 43278336,
+    "all_lora_B_tensors_updated": true,
+    "expert_slices_checked": 0,
+    "expert_slices_updated": 0,
+    "steady_training_tokens_per_second": 5448.042680771098,
+    "peak_training_allocated_bytes": 26870846976,
+    "checkpoint_events": [
+      {
+        "samples": 256,
+        "step": 32,
+        "seconds": 0.9974810294806957,
+        "bytes": 519858888
+      },
+      {
+        "samples": 512,
+        "step": 64,
+        "seconds": 0.920868992805481,
+        "bytes": 519858888
+      }
+    ],
+    "inference": {
+      "label_base": {
+        "N": 180,
+        "invalid": 0,
+        "generation_seconds": 100.92689298465848,
+        "source": "local"
+      },
+      "lora_label": {
+        "N": 180,
+        "invalid": 0,
+        "generation_seconds": 113.88603931292892,
+        "source": "local"
+      },
+      "native_base": {
+        "N": 180,
+        "invalid": 0,
+        "generation_seconds": 4208.601582746953,
+        "source": "local"
+      }
+    }
+  },
+  "qwen3.8-27b": {
+    "status": "USER_STOPPED_NOT_COMPLETED",
+    "saved_samples": 40,
+    "checkpoint": "/root/autodl-tmp/verifact103/results/qwen3.8-27b/train/checkpoint-40",
+    "not_in_evaluation": true
+  }
+}

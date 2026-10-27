@@ -13,6 +13,11 @@ def write(p,x):
 def append(p,x):
  with Path(p).open('a',encoding='utf-8') as f:f.write(json.dumps(x,ensure_ascii=False)+'\n');f.flush();os.fsync(f.fileno())
 def digest(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def resource_tail(a):
+ p=a.bundle/'resource_tail8.jsonl';freeze=read(a.bundle/'resource_tail_freeze.json');assert digest(p)==freeze['sha256']
+ selected=rows(p);assert [v['id'] for v in selected]==[v['id'] for v in freeze['rows']]
+ assert len(selected)==8 and len({v['sid'] for v in selected})==8 and all(v['role']=='train' for v in selected)
+ return selected
 STOP=False
 def stop(sig,frame):
  global STOP
@@ -75,11 +80,13 @@ def adapt(model,Fast,torch,a):
  write(a.work/'trainable_parameters.json',dict(total=sum(p.numel() for p in named.values()),names={n:list(p.shape) for n,p in named.items()},expert_shapes=experts,expert_linear_modules=expert_linears,expert_targets=targets,is_moe=is_moe,all_expert_tensor_targets_covered=is_moe,vision_frozen=True))
  return model
 def checkpoint(model,opt,torch,a,step,samples):
+ start=time.perf_counter()
  folder=a.work/f'checkpoint-{samples}';folder.mkdir(parents=True,exist_ok=True)
  model.save_pretrained(folder,safe_serialization=True)
  state=dict(optimizer=opt.state_dict(),step=step,samples=samples,cpu_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all())
  tmp=folder/'training_state.pt.tmp';torch.save(state,tmp);tmp.replace(folder/'training_state.pt')
  write(a.work/'resume.json',dict(checkpoint=str(folder),samples=samples,step=step,phase=a.phase,model=a.model))
+ append(a.work/'checkpoint_events.jsonl',dict(samples=samples,step=step,seconds=time.perf_counter()-start,bytes=sum(p.stat().st_size for p in folder.rglob('*') if p.is_file())))
 def training(model,tok,Fast,torch,a):
  setup_start=time.perf_counter();model=adapt(model,Fast,torch,a);Fast.for_training(model)
  write(a.work/'adapter_setup.json',dict(seconds=time.perf_counter()-setup_start))
@@ -89,6 +96,7 @@ def training(model,tok,Fast,torch,a):
   for q in [.5,.9,.99,1.]:
    i=min(len(ordered)-8,max(0,int(q*(len(ordered)-1))-4));chosen+=ordered[i:i+8]
   train=chosen
+ elif a.phase=='probe_tail':train=resource_tail(a)
  else:train=train[:a.limit]
  params=[p for p in model.parameters() if p.requires_grad]
  opt=torch.optim.AdamW(params,lr=1e-4,weight_decay=0.)
@@ -109,7 +117,7 @@ def training(model,tok,Fast,torch,a):
     torch.cuda.synchronize();forward+=time.perf_counter()-t;t=time.perf_counter();loss.backward();torch.cuda.synchronize();backward+=time.perf_counter()-t;losses.append(float(loss.detach())*8)
    torch.nn.utils.clip_grad_norm_(params,1.);t=time.perf_counter();opt.step();torch.cuda.synchronize();optimizer=time.perf_counter()-t;samples+=8;step+=1
    append(a.work/'steps.jsonl',dict(step=step,samples=samples,ids=[r['id'] for r in train[samples-8:samples]],loss=sum(losses)/8,tokens=tokens,supervised_tokens=supervised,forward_seconds=forward,backward_seconds=backward,optimizer_seconds=optimizer,total_seconds=time.perf_counter()-start,peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved(),first_compile_step=step==1))
-   if a.phase=='train' and (samples%64==0 or samples==len(train)):checkpoint(model,opt,torch,a,step,samples)
+   if a.phase=='train' and (samples%256==0 or samples==len(train)):checkpoint(model,opt,torch,a,step,samples)
   changes={n:float((p.detach().float().cpu()-before[n]).abs().max()) for n,p in model.named_parameters() if n in before}
   assert any(v>0 for v in changes.values()),'No adapter update'
   expert_updates={}
@@ -121,8 +129,8 @@ def training(model,tok,Fast,torch,a):
      delta=layer.weight.detach().float().cpu()-before[name];e=module.num_experts
      if delta.ndim==2 and delta.shape[1]%e==0:
       per=delta.reshape(delta.shape[0],-1,e).abs().amax(dim=(0,1));expert_updates[name]=dict(experts=e,updated=int((per>0).sum()),unchanged=int((per==0).sum()),max_abs_delta_by_expert=per.tolist())
-  write(a.work/'weight_update.json',dict(lora_B_max_abs_delta=changes,any_update=True,nonzero_tensors=sum(v>0 for v in changes.values()),zero_tensors=sum(v==0 for v in changes.values()),expert_updates=expert_updates,probe_discarded=a.phase=='probe'))
-  write(a.work/'training_done.json',dict(samples=samples,steps=step,phase=a.phase))
+  write(a.work/'weight_update.json',dict(lora_B_max_abs_delta=changes,any_update=True,nonzero_tensors=sum(v>0 for v in changes.values()),zero_tensors=sum(v==0 for v in changes.values()),expert_updates=expert_updates,probe_discarded=a.phase!='train'))
+  write(a.work/'training_done.json',dict(samples=samples,steps=step,phase=a.phase,training_wall_seconds=time.perf_counter()-setup_start))
   try:
    from torch._dynamo.utils import compilation_time_metrics
    write(a.work/'compiler_timings.json',dict(torch_dynamo_metrics={k:list(v) for k,v in compilation_time_metrics.items()},first_step_timing_separate=True,not_all_triton_compilations_necessarily_visible=True))
@@ -174,9 +182,9 @@ def inference(model,tok,Fast,torch,a):
   append(path,dict(id=r['id'],model=a.model,arm=a.arm,prompt_sha256=hashlib.sha256(bytes(str(ids),'utf-8')).hexdigest(),input_tokens=len(ids),output_tokens=len(output),thinking_tokens=thought_n,forced_thinking_boundary=forced,seconds=seconds,peak_allocated_bytes=torch.cuda.max_memory_allocated(),content=content,parsed=parsed))
   if finish!='stop':raise RuntimeError('Preserve incomplete inference; inspect engineering/budget')
 def main():
- p=argparse.ArgumentParser();p.add_argument('--bundle',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--model-root',type=Path,required=True);p.add_argument('--model',required=True);p.add_argument('--phase',choices=['probe','train','eval'],required=True);p.add_argument('--arm',choices=['native_base','label_base','lora_label'],default='native_base');p.add_argument('--limit',type=int,choices=[256,512],default=512);p.add_argument('--resume',action='store_true');p.add_argument('--bridge',action='store_true');p.add_argument('--speed',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--bundle',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--model-root',type=Path,required=True);p.add_argument('--model',required=True);p.add_argument('--phase',choices=['probe','probe_tail','train','eval'],required=True);p.add_argument('--arm',choices=['native_base','label_base','lora_label'],default='native_base');p.add_argument('--limit',type=int,choices=[256,512],default=512);p.add_argument('--resume',action='store_true');p.add_argument('--bridge',action='store_true');p.add_argument('--speed',action='store_true');a=p.parse_args()
  a.work=a.out/a.model/a.phase;a.work.mkdir(parents=True,exist_ok=True);signal.signal(signal.SIGTERM,stop);signal.signal(signal.SIGINT,stop);require_time(a,300)
  model,tok,Fast,torch=load(a)
- if a.phase in ['probe','train']:training(model,tok,Fast,torch,a)
+ if a.phase in ['probe','probe_tail','train']:training(model,tok,Fast,torch,a)
  else:inference(model,tok,Fast,torch,a)
 if __name__=='__main__':main()

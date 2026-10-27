@@ -1,0 +1,4 @@
+# Add after requirements_gpu_image28.lock; Linux x86_64 / CPython3.12 / Torch2.8 CUDA12 ABI TRUE.
+# Official release artifact was tested on this task's SM120 GPU.
+causal-conv1d @ https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.7.0/causal_conv1d-1.7.0+cu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64.whl --hash=sha256:a1fcd5d022b67ddfc9e1c291f890004c1c081a03d66b532f6eebe31219168e0e
+ninja==1.13.0 --hash=sha256:fb46acf6b93b8dd0322adc3a4945452a4e774b75b91293bafcc7b7f8e6517dfa

@@ -1,6 +1,6 @@
 # 当前环境与启动方式（2026-10-26核对）
 
-103已准备独立Linux/Python3.12 GPU依赖锁，尚未安装或实测GPU，不替换现行CPU环境及历史训练环境。[103环境与资源](../tasks/103_lora_selection/GPU_RUNBOOK.md)。
+103已实际使用独立Python3.12、PyTorch2.8.0+cu128、Transformers5.17.0、Unsloth2026.10.9及PEFT0.21.2环境；补充causal-conv1d1.7.0/ninja1.13.0，未复用096旧vLLM环境。实际依赖锁及验证见[GPU环境](../outputs/103_lora_selection/installed_gpu_with_causal.lock)与[工程记录](../outputs/103_lora_selection/gpu_runtime_amendment.md)。
 
 092研究已经完成。以下是复查/复现说明，不授权新训练、收费调用、部署或安装。环境实测记录形成于2026-09-27；本次只核对文档与既有记录，未重新探测包版本、安装或升级环境。
 

@@ -1,0 +1,10 @@
+{
+  "API_revision_unknown": true,
+  "N": 180,
+  "inputs_and_settings_checked": true,
+  "model": "qwen3.6-35b-a3b",
+  "new_API_calls": 0,
+  "new_GPU_native_calls": 0,
+  "source": "37d59b0f21392f9e260cd577045ca5578260a51dd06da8c9a59e9f9c7a186747",
+  "training_increment": "local lora_label minus local label_base only"
+}

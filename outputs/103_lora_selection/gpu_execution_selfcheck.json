@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-27T14:33:37.717641+00:00",
+  "checks": {
+    "qwen3.6-35b-a3b": {
+      "exact_train512_order": true,
+      "same180_target_ids": true,
+      "label_pair_input_hashes_equal": true,
+      "label_pair_batches_equal": true,
+      "all_receipts_finish_stop": true
+    },
+    "qwen3.5-9b": {
+      "exact_train512_order": true,
+      "same180_target_ids": true,
+      "label_pair_input_hashes_equal": true,
+      "label_pair_batches_equal": true,
+      "all_receipts_finish_stop": true
+    }
+  },
+  "model27_stopped40_preserved": true,
+  "native35_API_reuse180": true,
+  "API_not_used_as_local_training_increment": true,
+  "quality_metrics_computed": false,
+  "clinical_content_removed_from_public_predictions": true,
+  "independent_review": false,
+  "executor_selfcheck": true,
+  "final_evidence_sha256": "715c6bbb208aba243a0e4395fbbdfe4d1f034ef2dda9edd093153d481966e907"
+}
