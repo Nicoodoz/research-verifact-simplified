@@ -1,4 +1,4 @@
-# 项目工作约定（2026-10-26）
+# 项目工作约定（2026-10-27）
 
 本文件只保留持续有效的约定。先读[项目现状](docs/PROJECT_STATUS.md)、[研究原则](docs/RESEARCH_EXECUTION.md)和[环境](docs/RUN_ENVIRONMENT.md)；查看仓库相关事实前检查实际main HEAD。任务、报告和审计的历史索引见[任务索引](docs/TASK_INDEX.md)，旧说明不覆盖较新的用户授权。
 
@@ -31,6 +31,29 @@ MCC 和 false-S 相对更重要：前者反映类别失衡下的整体分类质�
 - 主表按“配置｜MCC｜PA｜正确数｜错误支持数”，固定含原作者同ID结果，并报告Macro-F1、三类precision/recall/F1、confusion matrix、false-S/non-S及预测S假发现率。缺失/invalid/fallback单列，不能静默补旧答案。
 - label_scores是LLM自报分数，不是真实token probability或已校准概率。区间跨0不等于等效；患者bootstrap不覆盖历史开发选择、重训或新医院泛化。
 - 用户可接受084程度的小幅false-S取舍，不把旧+3个百分点门槛当唯一升级标准；NS类别塌缩与总体风险仍完整披露。
+
+## 实验方案命名与展示
+
+- 今后实验方案使用简短、见名知意的英文名称，优先小写snake_case，通常由1～3个有意义的词组成，体现实际方法或核心操作。避免O、P、Q、A1、B2等需要反复查表的方案代号；有明确含义的预算数字可保留，如chunks24k。
+- 报告首次出现方案时给出中文解释；未来代码中的方案键、配置、图表图例和报告尽量使用同一名称。Judge模型、推理设置、数据面板、重复轮次另列元数据，不靠晦涩编号区分方法。
+- 下表用于098、100及今后复用相同操作的展示。其他历史任务的同字母代号须按其协议解释，不能全仓库机械替换；名称相同也不表示模型、prompt、数据范围或预算完全相同。
+
+|展示名称|适用的历史代号|中文含义与边界|
+|---|---|---|
+|`verifact_ref`|O|原作者发布的reference原样输入当前同Judge，无示例；属于原作者式适配，不代表完整复现论文系统。|
+|`compact48`|C / C48|冻结C48检索证据，无示例；48指候选池上限，不是最终输入48段或48份note。|
+|`demo_protect`|P / P90|verifact_ref加090已冻结的四个保护压缩示例；名称描述构造，不表示保护机制已成立。|
+|`demo_lenmatch`|Q|verifact_ref加相同四例的普通相关性压缩；示例身份、标签、顺序不变，逐例配平保护压缩预算，保留完整源单元。|
+|`chunks24k`|S24|BM25检索完整短块，逐例匹配notes24k实际渲染长度；24k是参考上限，不是固定输入长度或块大小。|
+|`notes24k`|L24|以最高子块BM25分数排序，按24,000 reference tokens上限装入完整原note，不截断note。|
+|`ehr_all`|EHR-all|输入冻结合法范围内全部原notes，不检索、不总结、不截断；不是患者终身EHR。|
+|`demo_full`|F（098诊断臂）|verifact_ref加同四例的完整示例reference；不是当前患者的ehr_all。|
+|`paper_r1`|Original / 作者历史R1发布预测|原作者发布的历史R1预测，只作历史参照；与当前同Judge的verifact_ref明确区分。|
+
+demo_lenmatch在098按字符及090代理token预算配平，不宣称供应商token精确相等；chunks24k/notes24k在100按官方0731 tokenizer计算JSON转义后的reference内部长度，完整短块造成的离散差必须报告。ehr_all沿冻结患者和住院日历范围并排除discharge summary等资料，不能把待核验BHC或其正确原版纳入。名称只描述操作，不预设方法有效或具有创新性。
+
+- 历史冻结实验保留原字段、协议、预测、结果、计算口径和校验清单；名称映射只用于展示，不借改名重算结果或改写结论。原报告受SHA锁定时保留原件，另加带映射的阅读版并更新当前导航，不能修改旧manifest来适配新名称。098的F额外统一显示为demo_full，避免与ehr_all混淆。
+- 当前带映射的阅读入口：[098汇总报告](outputs/098_p90_native_confirmation/report_display.md)、[100汇总报告](outputs/100_preregistered_followup/report_display.md)、[098与100一页结论](outputs/100_preregistered_followup/night_summary_display.md)；各阅读版均链接冻结原报告。
 
 ## 研究执行与交付
 

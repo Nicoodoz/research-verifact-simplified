@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-临床文本与患者EHR的一致性核验研究。098—100已完整结项；098 P90停止，100最终：**失败停止**。默认系统不变。[今晚一页结论](outputs/100_preregistered_followup/night_summary.md) · [100报告](outputs/100_preregistered_followup/report.md)。
+临床文本与患者EHR的一致性核验研究。098—100已完整结项；098 demo_protect（保护压缩四例）停止，100最终：**失败停止**。默认系统不变。[今晚一页结论](outputs/100_preregistered_followup/night_summary_display.md) · [100报告](outputs/100_preregistered_followup/report_display.md)。
 
 ## 总体目标
 
@@ -12,7 +12,7 @@ MCC 和 false-S 相对更重要：前者反映类别失衡下的整体分类质�
 
 ## 当前证据
 
-最新同模型患者隔离确认见[100一页结论](outputs/100_preregistered_followup/night_summary.md)；结论为失败停止。下面097表只保留此前强对照背景，共同158条：
+最新同模型患者隔离确认见[100一页结论](outputs/100_preregistered_followup/night_summary_display.md)；结论为失败停止。下面097表只保留此前强对照背景，共同158条：
 
 | 配置（raw） | MCC | PA | 正确数 | false-S |
 |---|---:|---:|---:|---:|

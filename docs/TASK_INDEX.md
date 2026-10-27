@@ -4,9 +4,9 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
-|100_preregistered_followup|[一页结论](../outputs/100_preregistered_followup/night_summary.md) · [正式报告](../outputs/100_preregistered_followup/report.md)|[执行者自检](../outputs/100_preregistered_followup/selfcheck.json)，独立审计未执行|失败停止；32患者隔离确认，未升级默认，不自动新实验|
+|100_preregistered_followup|[一页结论](../outputs/100_preregistered_followup/night_summary_display.md) · [正式报告](../outputs/100_preregistered_followup/report_display.md)|[执行者自检](../outputs/100_preregistered_followup/selfcheck.json)，独立审计未执行|失败停止；32患者隔离确认，未升级默认，不自动新实验|
 |099_judge_selection|[正式报告](../outputs/099_judge_selection/report.md) · [费用](../outputs/099_judge_selection/cost_ledger.json)|[执行者自检](../outputs/099_judge_selection/selfcheck.json)，独立审计未执行|四模型608 HTTP200；主35B-A3B、备27B，O优先但诊断/C48有代价；默认与098不变|
-|098_p90_native_confirmation|[正式报告](../outputs/098_p90_native_confirmation/report.md) · [主表](../outputs/098_p90_native_confirmation/main_table.csv)|[执行者自检](../outputs/098_p90_native_confirmation/selfcheck.json)，独立审计未执行|全部冻结请求完成；P对O/Q/C均未达门槛，压力/重复亦有失败，停止本版|
+|098_p90_native_confirmation|[正式报告](../outputs/098_p90_native_confirmation/report_display.md) · [主表](../outputs/098_p90_native_confirmation/main_table.csv)|[执行者自检](../outputs/098_p90_native_confirmation/selfcheck.json)，独立审计未执行|全部冻结请求完成；demo_protect对verifact_ref/demo_lenmatch/compact48均未达门槛，压力/重复亦有失败，停止本版|
 |097_native_judge_source_dependence|[正式报告](../outputs/097_native_judge_source_dependence/report.md) · [同ID表](../outputs/097_native_judge_source_dependence/a_same_id.csv)|[执行者自检](../outputs/097_native_judge_source_dependence/selfcheck.json)，独立审计未执行|同V4原生接口raw有信号但未超过B＋G；B构造与费用门槛未过，默认不变|
 |096_r1_native_priorg|[正式报告](../outputs/096_r1_native_priorg/report.md) · [论文更新](../outputs/096_r1_native_priorg/manuscript_implications.md)|[执行者自检](../outputs/096_r1_native_priorg/valdemardi_r1_70b_awq_marlin_vllm0101_fp16_20k/selfcheck.json)，独立审计未执行|AWQ-Marlin1143 HTTP200；自然R1 raw599/800，适配595；停止适配、默认不变，不自动097|
 |095_anchored_minimal_contrast|[总报告](../outputs/095_anchored_minimal_contrast/report.md)|[独立最终复核](../reviews/095_anchored_minimal_contrast/final_review.md)|统一9065母体B补齐与诊断；C构造语义失败，未运行分类，默认不变、不自动096|

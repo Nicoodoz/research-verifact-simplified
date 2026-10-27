@@ -1,6 +1,6 @@
 # 项目现状（2026-10-27，098—100已结项）
 
-098已完整收尾：2120目标+2构造，P未通过对O/Q/C的继续/实用门槛，停止该版本。100按既定证据分支完成，最终为失败停止；开发48自然+24压力，确认预冻192自然+32压力、重复16，实际执行范围见报告。新API累计及预留¥45.863688/130；旧098成本不重置，其累计仍≤50。默认不变。[今晚一页结论](../outputs/100_preregistered_followup/night_summary.md) · [100报告](../outputs/100_preregistered_followup/report.md) · [098报告](../outputs/098_p90_native_confirmation/report.md)。
+098已完整收尾：2120目标+2构造，demo_protect（保护压缩四例）未通过对verifact_ref、demo_lenmatch、compact48的继续/实用门槛，停止该版本。100按既定证据分支完成，最终为失败停止；开发48自然+24压力，确认预冻192自然+32压力、重复16，实际执行范围见报告。新API累计及预留¥45.863688/130；旧098成本不重置，其累计仍≤50。默认不变。[今晚一页结论](../outputs/100_preregistered_followup/night_summary_display.md) · [100报告](../outputs/100_preregistered_followup/report_display.md) · [098报告](../outputs/098_p90_native_confirmation/report_display.md)。
 
 ## 当前研究目标与运行事实
 
