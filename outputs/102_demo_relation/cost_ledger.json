@@ -1,0 +1,42 @@
+{
+  "HTTP200": 0,
+  "actual_catalog_or_reserved_cny": 0,
+  "channel_discount_not_used": true,
+  "forecast": {
+    "busy_prudent_plus_reserve_cny": 68.72825395625006,
+    "full500_not_reduced": true,
+    "hard_cap_cny": 35,
+    "historical_output_means": {
+      "natural": {
+        "demo_relation": 407.1525,
+        "demo_topic": 407.1525,
+        "verifact_ref": 445.0675
+      },
+      "pressure": {
+        "demo_relation": 586.46,
+        "demo_topic": 586.46,
+        "verifact_ref": 560.72
+      }
+    },
+    "idle_mean_no_cache_cny": 32.57610398249996,
+    "idle_prudent_no_cache_cny": 33.36412697812503,
+    "logical_calls": 1572,
+    "mean_input_by_arm": {
+      "demo_relation": 15228.398,
+      "demo_topic": 15256.194,
+      "verifact_ref": 7369.916
+    },
+    "no_cache_hits_assumed": true,
+    "recovery_reserve_cny": 2.0,
+    "required_idle_budget_cny": 35.36412697812503,
+    "same_body_calls_saved": 16,
+    "shortfall_cny": 0.3641269781250287,
+    "unique_physical_calls": 1556
+  },
+  "hard_cap_cny": 35,
+  "paid_attempts": 0,
+  "previous_task_budget_not_carried": true,
+  "retries": 0,
+  "task": "102_demo_relation",
+  "unknown_or_inflight_cny": 0
+}

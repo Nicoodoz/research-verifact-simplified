@@ -1,0 +1,76 @@
+{
+  "by_panel": {
+    "natural": {
+      "N": 400,
+      "different": 387,
+      "reference_ablation_changed": 342
+    },
+    "pressure": {
+      "N": 100,
+      "different": 98,
+      "reference_ablation_changed": 84
+    }
+  },
+  "changed_slots_by_class": {
+    "Not Addressed": 403,
+    "Not Supported": 366,
+    "Supported": 388
+  },
+  "classification_executed": false,
+  "selection_frequencies": {
+    "demo_relation": {
+      "00d8ab48-1125-a896-f97f-df979be9d8ad": 146,
+      "0d286baf-6374-c4f3-15e7-edeb91cfb4e2": 89,
+      "17ae4880-f903-4c36-aad1-5492d5ff120b": 91,
+      "3415aeb0-9dea-755a-5880-e40755e8ad61": 10,
+      "3fda3858-9c5d-92b3-e9a5-6a9faffd169d": 14,
+      "63b58c60-f13e-ecf1-a55f-04f2a9442012": 133,
+      "8533ba06-817a-afa0-4940-d24cc4cf8c96": 109,
+      "949cae52-2eaf-26ed-6782-36be766b7a13": 67,
+      "98fe1d79-bb1a-621e-b48b-a037e43a5a5b": 1,
+      "9fab72fa-a4d6-f480-0319-e88aed615faa": 6,
+      "ac80bcc3-cf51-caba-1a19-9224eaab380c": 103,
+      "af198ed8-f480-cced-85c6-42d42d3d3f12": 16,
+      "b5c37265-8c44-36f1-5473-59c6d819cf6b": 184,
+      "b89074e9-106a-1912-1afc-330b095b91bf": 35,
+      "b90878f5-4cf9-6db4-ce89-0873d65b5bbd": 37,
+      "b9509407-9c92-6126-230c-88795ae33852": 138,
+      "c3d3fd0f-6fe4-06a8-ddc4-e18d875139b7": 31,
+      "c5fac0c8-3961-df9e-ad65-0bf0496a9c98": 101,
+      "c92377ee-5bb5-1192-fda6-85156af779be": 22,
+      "d4858ebb-5a10-29ec-1d31-e9d59ab91437": 34,
+      "df0ef2aa-84ff-16ff-00e1-11d389cc4623": 47,
+      "e307868e-8e29-d0a3-8c3d-ac420f8ea5d4": 38,
+      "fb1334f9-38b3-66b4-1389-1ec68ab53bb3": 48
+    },
+    "demo_topic": {
+      "00d8ab48-1125-a896-f97f-df979be9d8ad": 68,
+      "0d286baf-6374-c4f3-15e7-edeb91cfb4e2": 70,
+      "17ae4880-f903-4c36-aad1-5492d5ff120b": 35,
+      "3415aeb0-9dea-755a-5880-e40755e8ad61": 97,
+      "3fda3858-9c5d-92b3-e9a5-6a9faffd169d": 73,
+      "63b58c60-f13e-ecf1-a55f-04f2a9442012": 73,
+      "8533ba06-817a-afa0-4940-d24cc4cf8c96": 53,
+      "949cae52-2eaf-26ed-6782-36be766b7a13": 84,
+      "98fe1d79-bb1a-621e-b48b-a037e43a5a5b": 15,
+      "9fab72fa-a4d6-f480-0319-e88aed615faa": 69,
+      "ac80bcc3-cf51-caba-1a19-9224eaab380c": 83,
+      "af198ed8-f480-cced-85c6-42d42d3d3f12": 65,
+      "b5c37265-8c44-36f1-5473-59c6d819cf6b": 118,
+      "b89074e9-106a-1912-1afc-330b095b91bf": 29,
+      "b90878f5-4cf9-6db4-ce89-0873d65b5bbd": 34,
+      "b9509407-9c92-6126-230c-88795ae33852": 109,
+      "c3d3fd0f-6fe4-06a8-ddc4-e18d875139b7": 34,
+      "c5fac0c8-3961-df9e-ad65-0bf0496a9c98": 44,
+      "c92377ee-5bb5-1192-fda6-85156af779be": 119,
+      "d4858ebb-5a10-29ec-1d31-e9d59ab91437": 69,
+      "df0ef2aa-84ff-16ff-00e1-11d389cc4623": 90,
+      "e307868e-8e29-d0a3-8c3d-ac420f8ea5d4": 22,
+      "fb1334f9-38b3-66b4-1389-1ec68ab53bb3": 47
+    }
+  },
+  "unique_teachers_selected": {
+    "demo_relation": 23,
+    "demo_topic": 23
+  }
+}

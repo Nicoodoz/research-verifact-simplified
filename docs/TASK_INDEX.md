@@ -1,9 +1,12 @@
-# 全部任务与当前入口（研究完成至101；2026-10-27）
+# 全部任务与当前入口（102付费前停止，正式分类完成至101；2026-10-27）
+
+102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
 当前默认、授权和环境以[PROJECT_STATUS](PROJECT_STATUS.md)、[AGENTS](../AGENTS.md)及[RUN_ENVIRONMENT](RUN_ENVIRONMENT.md)为准。此表只导航真实工件，不把任务结束解释成方法通过；旧协议、输出内README/CURRENT和审计正文保持原阶段语义。最新稿为[095完整论文](../outputs/095_anchored_minimal_contrast/manuscript_zh.md)。
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
+|102_demo_relation|[报告](../outputs/102_demo_relation/report.md) · [关系核查](../outputs/102_demo_relation/method_review.md)|[执行者自检](../outputs/102_demo_relation/selfcheck.json)，独立审计未执行|零API；构造及预算核查后停止，未运行分类，不自动103|
 |101_nsna_review|[正式报告](../outputs/101_nsna_review/report.md) · [病例](../outputs/101_nsna_review/case_analysis.md)|[执行者自检](../outputs/101_nsna_review/selfcheck.json)，独立审计未执行|plain：失败停止；review：失败停止；默认不变，不自动新实验|
 |100_preregistered_followup|[一页结论](../outputs/100_preregistered_followup/night_summary_display.md) · [正式报告](../outputs/100_preregistered_followup/report_display.md)|[执行者自检](../outputs/100_preregistered_followup/selfcheck.json)，独立审计未执行|失败停止；32患者隔离确认，未升级默认，不自动新实验|
 |099_judge_selection|[正式报告](../outputs/099_judge_selection/report.md) · [费用](../outputs/099_judge_selection/cost_ledger.json)|[执行者自检](../outputs/099_judge_selection/selfcheck.json)，独立审计未执行|四模型608 HTTP200；主35B-A3B、备27B，O优先但诊断/C48有代价；默认与098不变|

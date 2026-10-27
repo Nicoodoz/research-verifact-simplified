@@ -1,6 +1,8 @@
 # Research-VeriFact
 
-临床文本与患者EHR的一致性核验研究。101 NS/NA定向复核已结项，默认不变。[101正式报告](outputs/101_nsna_review/report.md) · [类别及病例分析](outputs/101_nsna_review/case_analysis.md)。
+102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](outputs/102_demo_relation/closure.md)。
+
+临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 
 ## 总体目标
 

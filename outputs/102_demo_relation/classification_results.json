@@ -1,0 +1,33 @@
+{
+  "configurations": {
+    "demo_relation": {
+      "MCC": null,
+      "Macro_F1": null,
+      "NA_recall": null,
+      "NS_recall": null,
+      "PA": null,
+      "false_S": null
+    },
+    "demo_topic": {
+      "MCC": null,
+      "Macro_F1": null,
+      "NA_recall": null,
+      "NS_recall": null,
+      "PA": null,
+      "false_S": null
+    },
+    "verifact_ref": {
+      "MCC": null,
+      "Macro_F1": null,
+      "NA_recall": null,
+      "NS_recall": null,
+      "PA": null,
+      "false_S": null
+    }
+  },
+  "not_a_negative_classification_result": true,
+  "paired_rescue_harm": null,
+  "patient_bootstrap": null,
+  "reason": "Frozen full-panel budget gate failed before paid calls; qualitative relation binding concerns also remain",
+  "status": "NOT_EXECUTED"
+}

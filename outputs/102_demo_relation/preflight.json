@@ -1,0 +1,77 @@
+{
+  "budget": {
+    "busy_prudent_plus_reserve_cny": 68.72825395625006,
+    "full500_not_reduced": true,
+    "hard_cap_cny": 35,
+    "historical_output_means": {
+      "natural": {
+        "demo_relation": 407.1525,
+        "demo_topic": 407.1525,
+        "verifact_ref": 445.0675
+      },
+      "pressure": {
+        "demo_relation": 586.46,
+        "demo_topic": 586.46,
+        "verifact_ref": 560.72
+      }
+    },
+    "idle_mean_no_cache_cny": 32.57610398249996,
+    "idle_prudent_no_cache_cny": 33.36412697812503,
+    "logical_calls": 1572,
+    "mean_input_by_arm": {
+      "demo_relation": 15228.398,
+      "demo_topic": 15256.194,
+      "verifact_ref": 7369.916
+    },
+    "no_cache_hits_assumed": true,
+    "recovery_reserve_cny": 2.0,
+    "required_idle_budget_cny": 35.36412697812503,
+    "same_body_calls_saved": 16,
+    "shortfall_cny": 0.3641269781250287,
+    "unique_physical_calls": 1556
+  },
+  "changed_examples": 485,
+  "checks": {
+    "budget": false,
+    "enough_feasible_triples": true,
+    "length_matching": true,
+    "patient_isolation": true,
+    "reference_ablation_changes": true,
+    "selection_difference": true,
+    "source_identity": true,
+    "synthetic_reference_sensitivity": true,
+    "three_classes_min3": true,
+    "window_coverage": true
+  },
+  "common_length_band": 143,
+  "construction_pass": true,
+  "current_endpoint": "https://maas.qianwenaiapi.com/compatible-mode/v1",
+  "current_model": "deepseek-v4-flash-0731",
+  "max_relative_input_gap": 0.02056425427520023,
+  "mean_relative_input_gap": 0.006286134049437495,
+  "median_demo_tokens": 7870.0,
+  "no_confirm_predictions_or_errors_loaded": true,
+  "paid_calls": 0,
+  "paid_execution_allowed": false,
+  "reference_ablation_changed": 426,
+  "replaced_slot_distribution": {
+    "0": 15,
+    "1": 54,
+    "2": 190,
+    "3": 241
+  },
+  "same_example_inputs": 15,
+  "target_natural": 400,
+  "target_patients": 40,
+  "target_pressure": 100,
+  "teacher_labels": {
+    "Not Addressed": 8,
+    "Not Supported": 5,
+    "Supported": 10
+  },
+  "teacher_patients": 13,
+  "teachers": 23,
+  "triples_before_length": 331,
+  "utc": "2026-10-27T04:23:13.999455+00:00",
+  "windows_available": 472
+}
