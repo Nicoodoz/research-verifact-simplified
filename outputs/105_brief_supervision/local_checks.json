@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "CPU_torch_tests": 6,
+  "CPU_torch_environment": "research + .local_models/032/venv; torch2.8.0+cu128; tensors remain CPU",
+  "checks": [
+    "loss_and_gradient_against_dense_CE",
+    "causal_shift_prompt_padding_masks_and_empty_other",
+    "one_backbone_call_bounded_head_rows_actual_backward",
+    "two_epochs_196_tail4_resume_optimizer_scheduler_RNG_and_final_checkpoint",
+    "same_parser_no_reason_label_extraction_or_truncated_fallback",
+    "MCC_falseS_NS_PA_pressure_and_base_guard",
+    "budget_accumulates_nogpu_GPU_restarts_and_refuses_reset"
+  ],
+  "actual_training_answer_maps_verified": 392,
+  "actual_eval_prompts_verified": 500,
+  "duplicate_label_words_in_reason_not_classified": true,
+  "raw_104_answers_read_unchanged": true,
+  "new_GPU": 0,
+  "new_API": 0,
+  "no_9B_weights_loaded": true,
+  "not_independent_audit": true
+}

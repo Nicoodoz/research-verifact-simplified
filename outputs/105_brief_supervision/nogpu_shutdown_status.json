@@ -1,0 +1,16 @@
+{
+  "request_utc": "2026-10-28T02:14:08.078942+00:00",
+  "request_HKT": "2026-10-28T10:14:08.078942+08:00",
+  "supported_entry": "/usr/bin/shutdown -h now",
+  "actual_compatible_invocation": "/bin/bash /usr/bin/shutdown -h now",
+  "first_attempt": "ENOEXEC on platform script without shebang; preserved, not settled",
+  "fix": "Detect ELF/shebang versus plain shell script; persist result; bounded3 attempts. Same fix is in GPU runtime.",
+  "after_fixed_request": "Existing SSH session became inactive; command return/console state could not be retrieved",
+  "platform_stop_confirmed": false,
+  "platform_invoice_confirmed": false,
+  "user_action": "Confirm this original instance is stopped in AutoDL console; record actual stop time and invoice. If still running, use console shutdown.",
+  "must_not_infer_stop_from_SSH": true,
+  "instance_released": false,
+  "disk_deleted": false,
+  "GPU_mode_started": false
+}

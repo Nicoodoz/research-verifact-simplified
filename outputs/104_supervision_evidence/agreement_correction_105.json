@@ -1,0 +1,26 @@
+{
+  "scope": "derived association counts only; raw GT/pairs/receipts unchanged",
+  "cause": "CSV round1_num_raters_agree is str; old code compared directly with int 3",
+  "source_vote_reconstruction": true,
+  "train512_N": 512,
+  "states": {
+    "gt_explained": {
+      "N": 196,
+      "initial_three_agree": 92
+    },
+    "reference_gap": {
+      "N": 14,
+      "initial_three_agree": 0
+    },
+    "unresolved": {
+      "N": 78,
+      "initial_three_agree": 21
+    }
+  },
+  "source_file_sha256": "654ec2594f542ac2fb840202d2fa40923ba8682fd2def2fd5ca611c14a3f6e18",
+  "original_summary_sha256": "eb26041125cb06f5c62b0cccbaabe115d1e9bbc59b45d1f3b0cda5a311d5d34b",
+  "corrected_summary_sha256": "732676c7ea742f12a4271dcc1e283db350ec1f134677daa6880558232fc51bfa",
+  "frozen_label_only_sha256": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+  "frozen_evidence_brief_sha256": "724854a2fe093d629dc50b5f73e86e92397e190043994f9f5749aeaeb39a9187",
+  "GT_modified": false
+}

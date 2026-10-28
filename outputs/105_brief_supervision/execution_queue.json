@@ -1,0 +1,23 @@
+{
+  "task": 105,
+  "stages": [
+    "short_gpu_gate",
+    "train_label_only",
+    "train_evidence_brief",
+    "eval_base_judge",
+    "eval_label_only",
+    "eval_evidence_brief",
+    "save",
+    "shutdown"
+  ],
+  "training_N": 196,
+  "epochs": 2,
+  "optimizer_steps_per_arm": 50,
+  "consumed_per_arm": 392,
+  "evaluation_N_per_arm": 500,
+  "evaluation_GT_uploaded": false,
+  "API_calls": 0,
+  "new_disk": false,
+  "cap_cny": 20,
+  "operating_line_cny": 18
+}

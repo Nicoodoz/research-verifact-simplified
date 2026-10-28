@@ -1,6 +1,6 @@
-# 项目现状（2026-10-28，104监督诊断与数据准备完成）
+# 项目现状（2026-10-28，105无卡准备完成；关机待控制台确认）
 
-104监督诊断与配对数据构建完成：仅103训练40人，完整盘点512条，先盲审全部NS96、NA96及固定S96，共288条；另224 S未作语义审查。最终196条严格同输入配对监督（S83/NS62/NA51），保留原GT与历史结果。64条固定API质量/争议核查，目录价及预留¥3.375030/20，未知¥0.000000；额外子代理盲复核8/16完成，额度中断如实保留。无GPU、无训练、无新分类成绩，默认不变。下一步建议：仅建议一次9B同样本label_only与evidence_brief对照，保留同prompt未微调基线；不自动执行。 [104一页结论](../outputs/104_supervision_evidence/summary.md) · [104报告](../outputs/104_supervision_evidence/report.md)。103完整结论仍见[最终报告](../outputs/103_lora_selection/final_report.md)。
+105无卡准备完成，状态READY_FOR_GPU：原196条配对训练与400自然＋100压力评价、两轮50步/392消费及判据不变；复用103环境与9B原始权重，四分片流式SHA及392/500真实token核验通过。未加载9B/optimizer、训练、产生105预测或调用收费API，无新增磁盘/模式切换。无卡按官方0.1元/小时截至10:14:08关机请求估算¥0.054940；已修复平台无执行头关机脚本调用，随后SSH失效，控制台停机与账单仍待用户确认，账本active不据此结清。计算租金跨无卡/GPU/重启总上限20元、18元运行线及2元异常余量，API0。下一阶段只用原实例唯一GPU入口，需实际报价及已确认前段停机终点；不自动开GPU或升级默认。 [105无卡报告](../outputs/105_brief_supervision/nogpu_report.md) · [唯一GPU交接](../tasks/105_brief_supervision/GPU_HANDOFF.md) · [104更正](../outputs/104_supervision_evidence/agreement_correction_105.md)。
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -22,6 +22,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|105短证据监督对照|196/500冻结不变；无卡权重/环境/token检查、唯一GPU入口与保存关机队列就绪|READY_FOR_GPU；约¥0.054940估算、API0；关机已请求，控制台/账单待确认；无训练/预测|
 |104监督诊断与短理由数据|512清单、288首审、196条双臂配对、64条API核查|数据准备完成，分类提升未检验；原GT与默认保留，不自动训练|
 |103微调模型选型|9B与35B训练512及配对分析完成；27B停在40条；用户已关机|自然MCC提升伴随false-S/NS损失，不直接扩大；9B为条件性开发候选，27B未解决；无同Judge verifact_ref确认|
 |102动态关系选例|完整500三臂＋24重复输入已构造，0 API；用户明确封存，不补跑|自动构造检查通过不等于关系语义正确；未产生分类指标，付费前停止|

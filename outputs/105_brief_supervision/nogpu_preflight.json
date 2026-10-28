@@ -1,0 +1,61 @@
+{
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "weight_shards": 4,
+  "all_weights_SHA_match": true,
+  "no_adapter_in_base_path": true,
+  "all_392_train_answer_maps_and_500_eval_prompt_tokens_verified": true,
+  "torch_or_transformers_imported": false,
+  "bundle_verified": true,
+  "bundle_sha256": "917734c40fe49b59e8a3bebb2330c0fa3b6a107c16d20e9993b7c5af71fe50da",
+  "model_dir": "/root/autodl-tmp/verifact103/models/qwen3.5-9b",
+  "expected_weights_sha256": "e49bfc8f5e17221c4f8a5298858ea8829031ecdf2b3cc33c5860573578a6f0d7",
+  "existing_free_bytes": 161255997440,
+  "versions": {
+    "torch": {
+      "expected": "2.8.0+cu128",
+      "actual": "2.8.0+cu128"
+    },
+    "transformers": {
+      "expected": "5.17.0",
+      "actual": "5.17.0"
+    },
+    "unsloth": {
+      "expected": "2026.10.9",
+      "actual": "2026.10.9"
+    },
+    "unsloth_zoo": {
+      "expected": "2026.10.9",
+      "actual": "2026.10.9"
+    },
+    "peft": {
+      "expected": "0.21.2",
+      "actual": "0.21.2"
+    },
+    "triton": {
+      "expected": "3.4.0",
+      "actual": "3.4.0"
+    },
+    "tokenizers": {
+      "expected": "0.23.3",
+      "actual": "0.23.3"
+    },
+    "causal-conv1d": {
+      "expected": "1.7.0",
+      "actual": "1.7.0"
+    },
+    "numpy": {
+      "expected": "2.5.4",
+      "actual": "2.5.4"
+    },
+    "Jinja2": {
+      "expected": "3.1.6",
+      "actual": "3.1.6"
+    },
+    "safetensors": {
+      "expected": "0.8.0",
+      "actual": "0.8.0"
+    }
+  },
+  "GPU_loaded": false,
+  "new_API_calls": 0
+}

@@ -1,0 +1,12 @@
+{
+  "archive": ".local_models/105_brief_supervision/sync_nogpu105_6f4a711d66ee.tar.gz",
+  "archive_bytes": 5614161,
+  "archive_sha256": "4b4609234a69d24503c10bed1fa58838b9282839b99c8c89a9617006307ceb36",
+  "bundle_manifest_sha256": "917734c40fe49b59e8a3bebb2330c0fa3b6a107c16d20e9993b7c5af71fe50da",
+  "files": 30,
+  "local_bundle": ".local_models/105_brief_supervision/nogpu_6f4a711d66ee/bundle",
+  "contains_private_clinical_data": true,
+  "evaluation_GT_included": false,
+  "model_weights_included": false,
+  "credentials_included": false
+}

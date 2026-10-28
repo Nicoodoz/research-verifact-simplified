@@ -1,0 +1,62 @@
+{
+  "status": "PASS_PREPARATION",
+  "shutdown_platform_confirmation": "PENDING_USER_CONSOLE",
+  "basis": {
+    "status": "READY_FOR_GPU",
+    "utc": "2026-10-28T02:16:44.325144+00:00",
+    "executor_check_not_independent_audit": true,
+    "train_N": 196,
+    "train_GT": {
+      "S": 83,
+      "NS": 62,
+      "NA": 51
+    },
+    "train_patients": 40,
+    "eval_patients": 20,
+    "natural_N": 400,
+    "pressure_NS": 50,
+    "pressure_NA": 50,
+    "original_196_and_500_unchanged": true,
+    "original_v1_all_50_files_snapshot_verified": true,
+    "original_v1_archive_retained_unchanged": true,
+    "current_remote_manifest_sha256": "917734c40fe49b59e8a3bebb2330c0fa3b6a107c16d20e9993b7c5af71fe50da",
+    "remote_weight_shards_SHA_verified": 4,
+    "original_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "remote_environment_and_pip_check": true,
+    "all_train392_and_eval500_token_maps": true,
+    "remote_no_model_stack_import": true,
+    "peak_RSS_KiB": 181620,
+    "cgroup_memory_max_bytes": 2147483648,
+    "existing_free_bytes": 161255997440,
+    "evaluation_GT_cloud": false,
+    "archive_files": 30,
+    "archive_bytes": 5614161,
+    "CPU_core_tests_passed": 6,
+    "shutdown_regression_test_passed": true,
+    "worker_and_supervisor_help_and_syntax": true,
+    "dry_run_and_absent_GPU_refusal_without_ledger_mutation": true,
+    "scientific_configuration_changed": false,
+    "actual_GPU_training_or_prediction_run": false,
+    "paid_API_calls": 0,
+    "new_disk": false,
+    "instance_created_or_released": false,
+    "shutdown_status": "REQUESTED_UNCONFIRMED",
+    "platform_invoice_observed": false,
+    "pending_GPU": [
+      "Unsloth/PEFT/CUDA/BF16 actual imports and operators",
+      "Longest complete training backward and LoRA gradients",
+      "Longest batch KV/memory and actual384 output/average throughput",
+      "Two-arm training and three-arm evaluation"
+    ],
+    "next_entry": "tasks/105_brief_supervision/GPU_HANDOFF.md"
+  },
+  "receipt_files_sha256": {
+    "nogpu_preflight.json": "e94c5461c69b33eb77a1c32cc419b84722f8066d7c23f1e105a80f01740c27e0",
+    "nogpu_process_receipt.json": "91726405e3c6ff433e277c9e070cf40f7d503c1415fda766048dad61ea6955e7",
+    "nogpu_handoff_checks.json": "4ecf3a8c93691e6e8b082494a475d1c0be39ec9e660d7db93ca5e6d7add155df",
+    "sync_nogpu_manifest.json": "30e766ffd598970479c0454b2e30d136bb9f4559b543ebca57fcac3682e34815",
+    "nogpu_engineering_amendment.json": "e8764dde36eca02c4cc2f3640cbb0a9874b2d4548ccb16e0550dbd28e6de9708",
+    "nogpu_cost_summary.json": "bba5f33ffb4cf000e9158ea39d22fb54d08d17e449121a5604bc1cc8788f17bf",
+    "nogpu_shutdown_status.json": "052397ae25c765d366f59d6cdd3813b96aef622cfb79dd8a632953035e69f13a"
+  }
+}

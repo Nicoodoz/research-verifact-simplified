@@ -1,0 +1,54 @@
+{
+  "train": {
+    "N": 196,
+    "GT": {
+      "Not Supported": 62,
+      "Supported": 83,
+      "Not Addressed": 51
+    },
+    "patients": 40
+  },
+  "eval_pool": {
+    "N": 1817,
+    "GT": {
+      "Supported": 1455,
+      "Not Supported": 121,
+      "Not Addressed": 241
+    },
+    "patients": 20
+  },
+  "panels": {
+    "natural": {
+      "N": 400,
+      "GT": {
+        "Supported": 321,
+        "Not Supported": 26,
+        "Not Addressed": 53
+      },
+      "author": {
+        "llm": 174,
+        "human": 226
+      },
+      "patients": 20
+    },
+    "pressure": {
+      "N": 100,
+      "GT": {
+        "Not Supported": 50,
+        "Not Addressed": 50
+      },
+      "author": {
+        "human": 89,
+        "llm": 11
+      },
+      "patients": 18
+    }
+  },
+  "overlaps_103_selection180": 70,
+  "train_eval_patient_overlap": 0,
+  "panel_ID_overlap": 0,
+  "confirmation_clinical_data_read": false,
+  "all_patients_historically_exposed": true,
+  "not_new_holdout": true,
+  "selection_not_by_103_correctness_or_104_explainability": true
+}

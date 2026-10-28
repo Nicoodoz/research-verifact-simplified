@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-104监督诊断与配对数据构建完成：仅103训练40人，完整盘点512条，先盲审全部NS96、NA96及固定S96，共288条；另224 S未作语义审查。最终196条严格同输入配对监督（S83/NS62/NA51），保留原GT与历史结果。64条固定API质量/争议核查，目录价及预留¥3.375030/20，未知¥0.000000；额外子代理盲复核8/16完成，额度中断如实保留。无GPU、无训练、无新分类成绩，默认不变。下一步建议：仅建议一次9B同样本label_only与evidence_brief对照，保留同prompt未微调基线；不自动执行。 [104一页结论](outputs/104_supervision_evidence/summary.md) · [104报告](outputs/104_supervision_evidence/report.md)。103完整结论仍见[最终报告](outputs/103_lora_selection/final_report.md)。
+105无卡准备完成，状态READY_FOR_GPU：原196条配对训练与400自然＋100压力评价、两轮50步/392消费及判据不变；复用103环境与9B原始权重，四分片流式SHA及392/500真实token核验通过。未加载9B/optimizer、训练、产生105预测或调用收费API，无新增磁盘/模式切换。无卡按官方0.1元/小时截至10:14:08关机请求估算¥0.054940；已修复平台无执行头关机脚本调用，随后SSH失效，控制台停机与账单仍待用户确认，账本active不据此结清。计算租金跨无卡/GPU/重启总上限20元、18元运行线及2元异常余量，API0。下一阶段只用原实例唯一GPU入口，需实际报价及已确认前段停机终点；不自动开GPU或升级默认。 [105无卡报告](outputs/105_brief_supervision/nogpu_report.md) · [唯一GPU交接](tasks/105_brief_supervision/GPU_HANDOFF.md) · [104更正](outputs/104_supervision_evidence/agreement_correction_105.md)。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

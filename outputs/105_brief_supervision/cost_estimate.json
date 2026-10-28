@@ -1,0 +1,50 @@
+{
+  "historical_GPU": "RTX PRO 6000 Blackwell Server Edition",
+  "historical_hourly_cny": 6.98,
+  "current_price_not_queried": true,
+  "actual_next_instance_quote_required": true,
+  "train_tokens_two_arms_two_epochs": 6588648,
+  "historical_training_tokens_per_second": 5448.042680771098,
+  "training_raw_seconds": 1209.3605696693007,
+  "training_with_35pct_path_margin_seconds": 1632.636769053556,
+  "label_base_500_seconds": 280.3524805129402,
+  "label_only_500_seconds": 316.3501092025803,
+  "evidence_brief_planned_average_output_tokens": 112.87755102040816,
+  "evidence_brief_p95_training_answer_tokens": 152,
+  "historical_slowest_direct_generated_tokens_per_second": 12.003227158017527,
+  "empirical_batch_fit": {
+    "coefficients": [
+      2.3787604009499628,
+      0.2812288627394652,
+      0.0
+    ],
+    "features": [
+      "intercept",
+      "padded_input_tokens/8000",
+      "max_output_tokens*N/8"
+    ],
+    "RMSE_seconds": 1.1596637129943859,
+    "N": 46,
+    "projected_brief_seconds": 297.03417186537047,
+    "extrapolation_not_GPU_measurement": true,
+    "decode_slope_not_identifiable_from_short_outputs": true,
+    "not_used_to_claim_near_zero_decode_cost": true
+  },
+  "conservative_brief_seconds": 4701.966793364061,
+  "model_load_compile_checkpoint_backup_allowance_seconds": 600.0,
+  "final_margin": 1.15,
+  "planned_GPU_hours": 2.4058339097091967,
+  "planned_GPU_cny_at_historical_price": 16.792720689770196,
+  "nogpu_planning_allowance_cny": 1.0,
+  "planned_total_with_nogpu_1cny": 17.792720689770196,
+  "max_hourly_quote_if_nogpu_cost_1cny_and_operating_line_18": 7.06615694931944,
+  "operating_line_cny": 18,
+  "shutdown_reserve_cny": 2,
+  "hard_total_compute_cap_cny": 20,
+  "API_cap_cny": 0,
+  "new_disk_cny": 0,
+  "existing_weights_and_environment_required": true,
+  "no_use_of_384_as_average_runtime": true,
+  "hardware_transfer_speed_not_assumed_equal": true,
+  "future_slowdown_action": "Stop and preserve fixed500/196 when full plan no longer fits; never reduce N after predictions or silently truncate input"
+}

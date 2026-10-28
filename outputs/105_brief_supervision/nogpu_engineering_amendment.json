@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-28T02:12:26.586477+00:00",
+  "original_freeze_sha256": "8ffa8797e0de89812b7f997b6ae8400eb4e60af7a523c764849d0985cb81f3fa",
+  "original_sync_archive_sha256": "a2babcc3d3e99579af370dcc39d1398a7d5be583b470b3f277e049f6f39a0cac",
+  "original_snapshot_files_verified": 50,
+  "changed_original_files": {
+    "tasks/105_brief_supervision/budget105.py": {
+      "original_sha256": "5c71e51e94dde603f94a0ffd167cfcdd4c9104f7a34a54d0cf9327f5774edc57",
+      "current_sha256": "44fe81ee4d8c87b85ec72faf8cd01b3daae4dc2b43fe431d11d25188a53407f9"
+    },
+    "tasks/105_brief_supervision/common105.py": {
+      "original_sha256": "30cc4631c286d654f4787c7fd05ed91518b35b444c4ac4f4eec6c87eee8e5aa1",
+      "current_sha256": "b1e4b55fa072bd82213be9487780114b7f9f81589a4bc7a94601dda22046e7d0"
+    },
+    "tasks/105_brief_supervision/NOGPU_HANDOFF.md": {
+      "original_sha256": "c36965f08401809256034bfa3cc005eac3af6e062d3fbb4b6f858ff34db4f3d6",
+      "current_sha256": "33f14a94ea3e34db79baeee67ae7222cdeec8f3187489aaf68a2c09c3a5ac866"
+    },
+    "tasks/105_brief_supervision/README.md": {
+      "original_sha256": "98c0c825111dca27fcaa87c5461abb3e503841edce90fab415b4f0bea6e2f6fa",
+      "current_sha256": "de3a3b04ba1e1821e967d8658c1f293038ddffb8d760c10f70a6d30d4127a44f"
+    },
+    "tasks/105_brief_supervision/run_all105.py": {
+      "original_sha256": "62dcfd275054a08c438f4862dda5dc87635f4ccdd66e2bc1ea0de29f8d7d2d32",
+      "current_sha256": "2e55a5fef116450fb6d4bf67f2351175894cf6e81fcde2e8ad3cc98f338ea61d"
+    },
+    "tasks/105_brief_supervision/verify105.py": {
+      "original_sha256": "cf3f81a6119950ddccf7f896d6e99d3ba3f7ced17f54b1de003b06826c08f9ae",
+      "current_sha256": "cd4353b1da5fe83941fc75419b98da3bd50505a4436eacfc17a986c23a814011"
+    }
+  },
+  "scientific_design_changed": false,
+  "train_eval_inputs_answers_changed": false,
+  "evaluation_GT_cloud": false,
+  "reason": [
+    "8MiB streaming SHA",
+    "tokenizer/Jinja verification without Torch/Transformers",
+    "exclude evaluation labels from cloud runtime",
+    "single persistent-budget launch/save/shutdown entry",
+    "AutoDL shebang-less shutdown shell dispatch and persisted process receipt"
+  ],
+  "current_runtime_manifest_sha256": "917734c40fe49b59e8a3bebb2330c0fa3b6a107c16d20e9993b7c5af71fe50da"
+}

@@ -1,0 +1,31 @@
+{
+  "snapshot_utc": "2026-10-28T02:13:03.798254+00:00",
+  "snapshot": {
+    "task": 105,
+    "cap_cny": 20,
+    "operating_line_cny": 18,
+    "API_cap_cny": 0,
+    "new_disk_allowed": false,
+    "closed_sessions": [],
+    "active": {
+      "kind": "nogpu",
+      "hourly_cny": 0.1,
+      "billing_start_epoch": 1793151670.23
+    },
+    "adjustments_cny": 0,
+    "shutdown_reserve_cny": 2,
+    "created_utc": "2026-10-28T01:52:57.117677+00:00",
+    "failed_shutdown_requests": [
+      {
+        "utc": "2026-10-28T02:08:33.759232+00:00",
+        "cost_at_request_cny": 0.04565359065930049,
+        "unknown_latency_reserve_cny": 2,
+        "platform_billing_stop_not_yet_verified": true,
+        "error": "ENOEXEC on platform plain shell script; no billing settlement or release"
+      }
+    ]
+  },
+  "authoritative_path": "/root/autodl-tmp/verifact105/budget/ledger.json",
+  "interval_end_unconfirmed": true,
+  "note": "Same cumulative ledger; do not reset/reinitialize. This is the last pre-request snapshot, not a final platform bill."
+}

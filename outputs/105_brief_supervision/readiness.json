@@ -1,0 +1,73 @@
+{
+  "status": "READY_FOR_NOGPU",
+  "base_main_HEAD": "cf2f27bcc359bfb7bdc751528ad5e311e3b5186c",
+  "executor_check_not_independent_audit": true,
+  "train_N": 196,
+  "training_GT": {
+    "Not Supported": 62,
+    "Supported": 83,
+    "Not Addressed": 51
+  },
+  "same_frozen104_pair_bytes": true,
+  "natural_N": 400,
+  "pressure_NS": 50,
+  "pressure_NA": 50,
+  "eval_patients": 20,
+  "train_eval_patient_overlap": 0,
+  "confirmation_clinical_data_used": false,
+  "epochs": 2,
+  "optimizer_steps_per_arm": 50,
+  "consumed_samples_per_arm": 392,
+  "tail_microbatches_per_epoch": 4,
+  "CPU_checks": {
+    "status": "PASS",
+    "CPU_torch_tests": 6,
+    "CPU_torch_environment": "research + .local_models/032/venv; torch2.8.0+cu128; tensors remain CPU",
+    "checks": [
+      "loss_and_gradient_against_dense_CE",
+      "causal_shift_prompt_padding_masks_and_empty_other",
+      "one_backbone_call_bounded_head_rows_actual_backward",
+      "two_epochs_196_tail4_resume_optimizer_scheduler_RNG_and_final_checkpoint",
+      "same_parser_no_reason_label_extraction_or_truncated_fallback",
+      "MCC_falseS_NS_PA_pressure_and_base_guard",
+      "budget_accumulates_nogpu_GPU_restarts_and_refuses_reset"
+    ],
+    "actual_training_answer_maps_verified": 392,
+    "actual_eval_prompts_verified": 500,
+    "duplicate_label_words_in_reason_not_classified": true,
+    "raw_104_answers_read_unchanged": true,
+    "new_GPU": 0,
+    "new_API": 0,
+    "no_9B_weights_loaded": true,
+    "not_independent_audit": true
+  },
+  "preparation_files_verified": 50,
+  "archive_members_verified": 43,
+  "pinned_tokenizer_maps_verified": true,
+  "actual9B_GPU_training_tested": false,
+  "actual_remote_weight_hashes_rechecked": false,
+  "actual_remote_environment_rechecked": false,
+  "private_archive_uploaded": false,
+  "new_GPU_rental_cny": 0,
+  "new_API_cny": 0,
+  "new_disk_cny": 0,
+  "original104_complete_bound_files_unchanged": true,
+  "agreement_correction": {
+    "retained_three_agree": 92,
+    "unresolved_three_agree": 21
+  },
+  "private_clinical_strings_not_in_new_public_artifacts": true,
+  "private_pair_ignored_by_git": true,
+  "expected_next_entry": "tasks/105_brief_supervision/NOGPU_HANDOFF.md",
+  "no_commit_or_push": true,
+  "synthetic_evaluation_interface": {
+    "status": "PASS",
+    "synthetic_only": true,
+    "model_called": false,
+    "new_GPU": 0,
+    "new_API": 0,
+    "identical_synthetic_answers_correctly_do_not_pass_improvement": true,
+    "worker_batch_schema_parser_join_unified_metrics_and_gate_integrated": true,
+    "no_real105_predictions": true
+  }
+}

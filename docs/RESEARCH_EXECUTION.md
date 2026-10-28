@@ -1,8 +1,8 @@
 # 研究设计与执行原则（2026-10-26）
 
-103最终离线分析完成，用户已确认GPU关机：9B与35B各完成512条训练，27B按用户指令停在40条。自然集提升伴随false-S及NS风险恶化，当前纯标签LoRA配方不支持直接全量训练；9B仅保留为较低成本开发候选，27B仍是未解决近邻。35B原生为API参考，没有同ID DeepSeek verifact_ref，不能宣布同Judge超越。新增分析费用0；API累计¥27.518576，最后GPU快照¥30.530395＋磁盘预留¥4，最终平台结算待核。不启动新实验，不升级默认；102继续封存。 [最终报告](../outputs/103_lora_selection/final_report.md) · [统计附录](../outputs/103_lora_selection/final_metrics.md)。
+105无卡准备完成，状态READY_FOR_GPU：原196条配对训练与400自然＋100压力评价、两轮50步/392消费及判据不变；复用103环境与9B原始权重，四分片流式SHA及392/500真实token核验通过。未加载9B/optimizer、训练、产生105预测或调用收费API，无新增磁盘/模式切换。无卡按官方0.1元/小时截至10:14:08关机请求估算¥0.054940；已修复平台无执行头关机脚本调用，随后SSH失效，控制台停机与账单仍待用户确认，账本active不据此结清。计算租金跨无卡/GPU/重启总上限20元、18元运行线及2元异常余量，API0。下一阶段只用原实例唯一GPU入口，需实际报价及已确认前段停机终点；不自动开GPU或升级默认。 [105无卡报告](../outputs/105_brief_supervision/nogpu_report.md) · [唯一GPU交接](../tasks/105_brief_supervision/GPU_HANDOFF.md) · [104更正](../outputs/104_supervision_evidence/agreement_correction_105.md)。
 
-103已完成关机后的离线分析，最新结论以最终报告为准；102封存，默认无示例B＋Frozen PriorG不变。新研究须用户明确交办，本文件不是自动启动、重复训练、云部署或下一任务的授权。[最新状态](PROJECT_STATUS.md) · [任务索引](TASK_INDEX.md)。
+本次用户仅授权105无卡准备与双仓库发布，未切换或启动GPU。下一阶段沿冻结设计、同一累计计算账本和唯一交接入口；不因准备完成宣称分类收益。102继续封存、默认无示例B＋Frozen PriorG不变；103历史结论以其最终报告为准。新研究仍须用户明确交办。[最新状态](PROJECT_STATUS.md) · [任务索引](TASK_INDEX.md)。
 
 ## 研究目标与判定
 

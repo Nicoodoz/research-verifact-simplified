@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "synthetic_only": true,
+  "model_called": false,
+  "new_GPU": 0,
+  "new_API": 0,
+  "identical_synthetic_answers_correctly_do_not_pass_improvement": true,
+  "worker_batch_schema_parser_join_unified_metrics_and_gate_integrated": true,
+  "no_real105_predictions": true
+}

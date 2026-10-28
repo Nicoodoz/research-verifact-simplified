@@ -60,14 +60,16 @@ def summarize():
     for state in ('gt_explained','reference_gap','unresolved'):
         ids={r['id'] for r in joined if r['final_status']==state}
         subset=[assets[i] for i in ids]
-        quality[state]=dict(N=len(subset),initial_three_agree=sum(r['round1_num_raters_agree']==3 for r in subset),
+        quality[state]=dict(N=len(subset),initial_three_agree=sum(int(r['round1_num_raters_agree'])==3 for r in subset),
                             paper_r1_matches_GT=sum(r['paper_r1_matches_GT'] for r in subset),
                             any_same_reference_correct_reason=sum(r['same_reference_correct_reason_candidates']>0 for r in subset),
-                            by_GT={g:dict(N=sum(r['GT']==g for r in subset),initial_three_agree=sum(r['GT']==g and r['round1_num_raters_agree']==3 for r in subset),
+                            by_GT={g:dict(N=sum(r['GT']==g for r in subset),initial_three_agree=sum(r['GT']==g and int(r['round1_num_raters_agree'])==3 for r in subset),
                                           same_reference_correct_reason=sum(r['GT']==g and r['same_reference_correct_reason_candidates']>0 for r in subset)) for g in c.LABELS})
     result['annotation_and_teacher_association']=quality
     result['annotation_disagreement_does_not_invalidate_original_GT']=True
-    c.put(c.OUT/'supervision_summary.json',result)
+    # 105 correction: preserve the published summary bound by 104 complete.json.
+    target='supervision_summary_corrected.json' if (c.OUT/'complete.json').exists() else 'supervision_summary.json'
+    c.put(c.OUT/target,result)
     c.put(c.OUT/'analysis_inputs.json',dict(files={p.relative_to(c.ROOT).as_posix():c.sha(p) for p in [c.PRIVATE/'paired/label_only.jsonl',c.PRIVATE/'paired/evidence_brief.jsonl',c.PRIVATE/'review_joined.jsonl',c.OUT/'blind_review_freeze.json',c.OUT/'paired_manifest.json']},
                                         no_model_evaluation_or_training=True,no_historical_rewrites=True))
     return result

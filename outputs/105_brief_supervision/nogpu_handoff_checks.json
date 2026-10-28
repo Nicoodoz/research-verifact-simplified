@@ -1,0 +1,59 @@
+{
+  "utc": "2026-10-28T02:13:03.798254+00:00",
+  "status": "READY_FOR_GPU",
+  "no_GPU_mode": true,
+  "model_loaded": false,
+  "API_calls": 0,
+  "package_manifest_sha256": "917734c40fe49b59e8a3bebb2330c0fa3b6a107c16d20e9993b7c5af71fe50da",
+  "evaluation_GT_uploaded": false,
+  "no_eval_GT_files_and_all_500_input_keys_checked": true,
+  "original103_environment_reused": true,
+  "pip_check": "No broken requirements found",
+  "wrapper_bash_syntax": "PASS",
+  "all_runtime_python_syntax": "PASS",
+  "command_help_checks": [
+    {
+      "script": "worker105.py",
+      "exit": 0
+    },
+    {
+      "script": "run_all105.py",
+      "exit": 0
+    },
+    {
+      "script": "budget105.py",
+      "exit": 0
+    },
+    {
+      "script": "start_gpu105.py",
+      "exit": 0
+    }
+  ],
+  "dry_run_historical_quote_only": {
+    "ready_for_GPU": true,
+    "dry_run": true,
+    "estimated_remaining_GPU_hours": 2.4058339097091967,
+    "actual_quote_cny_per_hour": 6.98,
+    "prior_or_current_compute_estimate_cny": 0.05312166078223123,
+    "projected_total_cny": 16.845842350552427,
+    "operating_line_cny": 18,
+    "hard_cap_cny": 20,
+    "current_nvidia_devices": [],
+    "model_imported": false
+  },
+  "actual_GPU_quote_not_observed": true,
+  "real_start_refuses_absent_GPU": true,
+  "ledger_unchanged_by_entry_checks": true,
+  "billing_start_proxy_epoch": 1793151670.23,
+  "no_card_catalog_cny_per_hour": 0.1,
+  "no_card_compute_estimate_cny": 0.053154675470458136,
+  "platform_invoice_observed": false,
+  "future_single_entry": "/root/autodl-tmp/verifact105/start105.sh",
+  "queue": "/root/autodl-tmp/verifact105/execution_queue.json",
+  "weights": "/root/autodl-tmp/verifact103/models/qwen3.5-9b",
+  "python": "/root/autodl-tmp/verifact103/venv103/bin/python",
+  "ledger": "/root/autodl-tmp/verifact105/budget/ledger.json",
+  "results": "/root/autodl-tmp/verifact105/results",
+  "GPU_training_and_predictions_run": false,
+  "shutdown_platform_confirmation_pending": true
+}

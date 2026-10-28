@@ -1,0 +1,135 @@
+{
+  "model": "qwen3.5-9b",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "CPU_only": true,
+  "no_weights_loaded": true,
+  "no_truncation": true,
+  "verdict_mapping": "construction character span -> exact token offsets; mixed JSON/value boundary tokens forbidden",
+  "input_identical_per_training_ID": true,
+  "training": {
+    "label_only": {
+      "input_tokens": {
+        "N": 196,
+        "sum": 1635332,
+        "mean": 8343.530612244898,
+        "min": 6158,
+        "median": 8304.0,
+        "p95": 10051,
+        "max": 12701
+      },
+      "answer_tokens": {
+        "N": 196,
+        "sum": 1536,
+        "mean": 7.836734693877551,
+        "min": 7,
+        "median": 8.0,
+        "p95": 9,
+        "max": 9
+      },
+      "total_tokens": {
+        "N": 196,
+        "sum": 1636868,
+        "mean": 8351.367346938776,
+        "min": 6166,
+        "median": 8312.0,
+        "p95": 10058,
+        "max": 12708
+      },
+      "verdict_tokens": {
+        "N": 196,
+        "sum": 360,
+        "mean": 1.836734693877551,
+        "min": 1,
+        "median": 2.0,
+        "p95": 3,
+        "max": 3
+      },
+      "other_tokens": {
+        "N": 196,
+        "sum": 1176,
+        "mean": 6,
+        "min": 6,
+        "median": 6.0,
+        "p95": 6,
+        "max": 6
+      }
+    },
+    "evidence_brief": {
+      "input_tokens": {
+        "N": 196,
+        "sum": 1635332,
+        "mean": 8343.530612244898,
+        "min": 6158,
+        "median": 8304.0,
+        "p95": 10051,
+        "max": 12701
+      },
+      "answer_tokens": {
+        "N": 196,
+        "sum": 22124,
+        "mean": 112.87755102040816,
+        "min": 34,
+        "median": 116.0,
+        "p95": 152,
+        "max": 179
+      },
+      "total_tokens": {
+        "N": 196,
+        "sum": 1657456,
+        "mean": 8456.408163265307,
+        "min": 6276,
+        "median": 8414.5,
+        "p95": 10208,
+        "max": 12821
+      },
+      "verdict_tokens": {
+        "N": 196,
+        "sum": 360,
+        "mean": 1.836734693877551,
+        "min": 1,
+        "median": 2.0,
+        "p95": 3,
+        "max": 3
+      },
+      "other_tokens": {
+        "N": 196,
+        "sum": 21764,
+        "mean": 111.04081632653062,
+        "min": 32,
+        "median": 113.5,
+        "p95": 151,
+        "max": 177
+      }
+    }
+  },
+  "evaluation": {
+    "natural": {
+      "N": 400,
+      "sum": 3303567,
+      "mean": 8258.9175,
+      "min": 5348,
+      "median": 8100.0,
+      "p95": 10168,
+      "max": 12644
+    },
+    "pressure": {
+      "N": 100,
+      "sum": 860704,
+      "mean": 8607.04,
+      "min": 6290,
+      "median": 8413.5,
+      "p95": 10598,
+      "max": 12681
+    }
+  },
+  "required_context_tokens": 13097,
+  "tokenizer_files": {
+    "config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+    "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+  },
+  "raw_104_pair_bytes_unchanged": true,
+  "answer_maps_count": 392,
+  "eval_batches": 63
+}
