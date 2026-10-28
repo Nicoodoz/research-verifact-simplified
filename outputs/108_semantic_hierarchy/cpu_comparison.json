@@ -1,0 +1,1362 @@
+{
+  "task": 108,
+  "scope": "CPU fixed original pretrained CLS24 feature classification; point estimates only",
+  "all_six_arms_same500_IDs": true,
+  "all_actual_CPU_predictions_valid": true,
+  "unified_metric_recalculation_matches_cpu_summary": true,
+  "confidence_intervals_not_computed_initial_screen": true,
+  "encoder_trained": false,
+  "old_supervised092_checkpoint_loaded": false,
+  "confirmation40_used_for_method_selection": false,
+  "panels": {
+    "natural": {
+      "N": 400,
+      "metrics": {
+        "flat_ce": {
+          "percent_agreement": 0.81,
+          "gwet_ac1": 0.7780163128801654,
+          "mcc": 0.35405456001874686,
+          "n": 400,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              300,
+              1,
+              20
+            ],
+            [
+              17,
+              0,
+              9
+            ],
+            [
+              28,
+              1,
+              24
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 321,
+              "predicted": 345,
+              "tp": 300,
+              "fn": 21,
+              "fp": 45,
+              "tn": 34,
+              "recall": 0.9345794392523364,
+              "precision": 0.8695652173913043,
+              "specificity": 0.43037974683544306,
+              "npv": 0.6181818181818182,
+              "f1": 0.9009009009009009
+            },
+            "Not Supported": {
+              "support": 26,
+              "predicted": 2,
+              "tp": 0,
+              "fn": 26,
+              "fp": 2,
+              "tn": 372,
+              "recall": 0.0,
+              "precision": 0.0,
+              "specificity": 0.9946524064171123,
+              "npv": 0.9346733668341709,
+              "f1": 0.0
+            },
+            "Not Addressed": {
+              "support": 53,
+              "predicted": 53,
+              "tp": 24,
+              "fn": 29,
+              "fp": 29,
+              "tn": 318,
+              "recall": 0.4528301886792453,
+              "precision": 0.4528301886792453,
+              "specificity": 0.9164265129682997,
+              "npv": 0.9164265129682997,
+              "f1": 0.4528301886792453
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 324,
+          "false_S": 45,
+          "non_S": 79,
+          "predicted_S": 345,
+          "false_S_rate": 0.569620253164557,
+          "Macro_F1": 0.4512436965267154
+        },
+        "hier_shared": {
+          "percent_agreement": 0.82,
+          "gwet_ac1": 0.7896996648338407,
+          "mcc": 0.3894732980473823,
+          "n": 400,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              303,
+              0,
+              18
+            ],
+            [
+              12,
+              2,
+              12
+            ],
+            [
+              30,
+              0,
+              23
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 321,
+              "predicted": 345,
+              "tp": 303,
+              "fn": 18,
+              "fp": 42,
+              "tn": 37,
+              "recall": 0.9439252336448598,
+              "precision": 0.8782608695652174,
+              "specificity": 0.46835443037974683,
+              "npv": 0.6727272727272727,
+              "f1": 0.9099099099099099
+            },
+            "Not Supported": {
+              "support": 26,
+              "predicted": 2,
+              "tp": 2,
+              "fn": 24,
+              "fp": 0,
+              "tn": 374,
+              "recall": 0.07692307692307693,
+              "precision": 1.0,
+              "specificity": 1.0,
+              "npv": 0.9396984924623115,
+              "f1": 0.14285714285714285
+            },
+            "Not Addressed": {
+              "support": 53,
+              "predicted": 53,
+              "tp": 23,
+              "fn": 30,
+              "fp": 30,
+              "tn": 317,
+              "recall": 0.4339622641509434,
+              "precision": 0.4339622641509434,
+              "specificity": 0.9135446685878963,
+              "npv": 0.9135446685878963,
+              "f1": 0.4339622641509434
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 328,
+          "false_S": 42,
+          "non_S": 79,
+          "predicted_S": 345,
+          "false_S_rate": 0.5316455696202531,
+          "Macro_F1": 0.4955764389726654
+        },
+        "hier_pool": {
+          "percent_agreement": 0.79,
+          "gwet_ac1": 0.760647960164982,
+          "mcc": 0.18504122709197743,
+          "n": 400,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              308,
+              4,
+              9
+            ],
+            [
+              18,
+              1,
+              7
+            ],
+            [
+              43,
+              3,
+              7
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 321,
+              "predicted": 369,
+              "tp": 308,
+              "fn": 13,
+              "fp": 61,
+              "tn": 18,
+              "recall": 0.9595015576323987,
+              "precision": 0.8346883468834688,
+              "specificity": 0.22784810126582278,
+              "npv": 0.5806451612903226,
+              "f1": 0.8927536231884058
+            },
+            "Not Supported": {
+              "support": 26,
+              "predicted": 8,
+              "tp": 1,
+              "fn": 25,
+              "fp": 7,
+              "tn": 367,
+              "recall": 0.038461538461538464,
+              "precision": 0.125,
+              "specificity": 0.9812834224598931,
+              "npv": 0.9362244897959183,
+              "f1": 0.058823529411764705
+            },
+            "Not Addressed": {
+              "support": 53,
+              "predicted": 23,
+              "tp": 7,
+              "fn": 46,
+              "fp": 16,
+              "tn": 331,
+              "recall": 0.1320754716981132,
+              "precision": 0.30434782608695654,
+              "specificity": 0.9538904899135446,
+              "npv": 0.8779840848806366,
+              "f1": 0.18421052631578946
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 316,
+          "false_S": 61,
+          "non_S": 79,
+          "predicted_S": 369,
+          "false_S_rate": 0.7721518987341772,
+          "Macro_F1": 0.37859589297198665
+        },
+        "092_frozen_OOF": {
+          "percent_agreement": 0.8075,
+          "gwet_ac1": 0.7695180082763989,
+          "mcc": 0.4213946039624817,
+          "n": 400,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              290,
+              3,
+              28
+            ],
+            [
+              10,
+              2,
+              14
+            ],
+            [
+              21,
+              1,
+              31
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 321,
+              "predicted": 321,
+              "tp": 290,
+              "fn": 31,
+              "fp": 31,
+              "tn": 48,
+              "recall": 0.9034267912772586,
+              "precision": 0.9034267912772586,
+              "specificity": 0.6075949367088608,
+              "npv": 0.6075949367088608,
+              "f1": 0.9034267912772586
+            },
+            "Not Supported": {
+              "support": 26,
+              "predicted": 6,
+              "tp": 2,
+              "fn": 24,
+              "fp": 4,
+              "tn": 370,
+              "recall": 0.07692307692307693,
+              "precision": 0.3333333333333333,
+              "specificity": 0.9893048128342246,
+              "npv": 0.9390862944162437,
+              "f1": 0.125
+            },
+            "Not Addressed": {
+              "support": 53,
+              "predicted": 73,
+              "tp": 31,
+              "fn": 22,
+              "fp": 42,
+              "tn": 305,
+              "recall": 0.5849056603773585,
+              "precision": 0.4246575342465753,
+              "specificity": 0.8789625360230547,
+              "npv": 0.9327217125382263,
+              "f1": 0.49206349206349204
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 323,
+          "false_S": 31,
+          "non_S": 79,
+          "predicted_S": 321,
+          "false_S_rate": 0.3924050632911392,
+          "Macro_F1": 0.5068300944469168
+        },
+        "092_finetuned_OOF": {
+          "percent_agreement": 0.825,
+          "gwet_ac1": 0.7932801275756927,
+          "mcc": 0.43551877667715977,
+          "n": 400,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              299,
+              1,
+              21
+            ],
+            [
+              15,
+              3,
+              8
+            ],
+            [
+              21,
+              4,
+              28
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 321,
+              "predicted": 335,
+              "tp": 299,
+              "fn": 22,
+              "fp": 36,
+              "tn": 43,
+              "recall": 0.9314641744548287,
+              "precision": 0.8925373134328358,
+              "specificity": 0.5443037974683544,
+              "npv": 0.6615384615384615,
+              "f1": 0.9115853658536586
+            },
+            "Not Supported": {
+              "support": 26,
+              "predicted": 8,
+              "tp": 3,
+              "fn": 23,
+              "fp": 5,
+              "tn": 369,
+              "recall": 0.11538461538461539,
+              "precision": 0.375,
+              "specificity": 0.9866310160427807,
+              "npv": 0.9413265306122449,
+              "f1": 0.17647058823529413
+            },
+            "Not Addressed": {
+              "support": 53,
+              "predicted": 57,
+              "tp": 28,
+              "fn": 25,
+              "fp": 29,
+              "tn": 318,
+              "recall": 0.5283018867924528,
+              "precision": 0.49122807017543857,
+              "specificity": 0.9164265129682997,
+              "npv": 0.9271137026239067,
+              "f1": 0.509090909090909
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 330,
+          "false_S": 36,
+          "non_S": 79,
+          "predicted_S": 335,
+          "false_S_rate": 0.45569620253164556,
+          "Macro_F1": 0.5323822877266206
+        },
+        "paper_r1": {
+          "percent_agreement": 0.81,
+          "gwet_ac1": 0.7723106536519238,
+          "mcc": 0.4318960935400533,
+          "n": 400,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              296,
+              17,
+              8
+            ],
+            [
+              11,
+              10,
+              5
+            ],
+            [
+              17,
+              18,
+              18
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 321,
+              "predicted": 324,
+              "tp": 296,
+              "fn": 25,
+              "fp": 28,
+              "tn": 51,
+              "recall": 0.9221183800623053,
+              "precision": 0.9135802469135802,
+              "specificity": 0.6455696202531646,
+              "npv": 0.6710526315789473,
+              "f1": 0.9178294573643411
+            },
+            "Not Supported": {
+              "support": 26,
+              "predicted": 45,
+              "tp": 10,
+              "fn": 16,
+              "fp": 35,
+              "tn": 339,
+              "recall": 0.38461538461538464,
+              "precision": 0.2222222222222222,
+              "specificity": 0.9064171122994652,
+              "npv": 0.9549295774647887,
+              "f1": 0.28169014084507044
+            },
+            "Not Addressed": {
+              "support": 53,
+              "predicted": 31,
+              "tp": 18,
+              "fn": 35,
+              "fp": 13,
+              "tn": 334,
+              "recall": 0.33962264150943394,
+              "precision": 0.5806451612903226,
+              "specificity": 0.962536023054755,
+              "npv": 0.9051490514905149,
+              "f1": 0.42857142857142855
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 324,
+          "false_S": 28,
+          "non_S": 79,
+          "predicted_S": 324,
+          "false_S_rate": 0.35443037974683544,
+          "Macro_F1": 0.5426970089269467
+        }
+      },
+      "paired_vs_flat": {
+        "hier_shared": {
+          "by_GT": {
+            "Supported": {
+              "N": 321,
+              "rescued": 12,
+              "harmed": 9
+            },
+            "Not Supported": {
+              "N": 26,
+              "rescued": 2,
+              "harmed": 0
+            },
+            "Not Addressed": {
+              "N": 53,
+              "rescued": 3,
+              "harmed": 4
+            }
+          },
+          "false_S_new": 4,
+          "false_S_avoided": 7,
+          "transitions": {
+            "Supported": {
+              "Supported": {
+                "Supported": 291,
+                "Not Supported": 0,
+                "Not Addressed": 9
+              },
+              "Not Supported": {
+                "Supported": 1,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 11,
+                "Not Supported": 0,
+                "Not Addressed": 9
+              }
+            },
+            "Not Supported": {
+              "Supported": {
+                "Supported": 12,
+                "Not Supported": 2,
+                "Not Addressed": 3
+              },
+              "Not Supported": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 9
+              }
+            },
+            "Not Addressed": {
+              "Supported": {
+                "Supported": 26,
+                "Not Supported": 0,
+                "Not Addressed": 2
+              },
+              "Not Supported": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 1
+              },
+              "Not Addressed": {
+                "Supported": 4,
+                "Not Supported": 0,
+                "Not Addressed": 20
+              }
+            }
+          }
+        },
+        "hier_pool": {
+          "by_GT": {
+            "Supported": {
+              "N": 321,
+              "rescued": 16,
+              "harmed": 8
+            },
+            "Not Supported": {
+              "N": 26,
+              "rescued": 1,
+              "harmed": 0
+            },
+            "Not Addressed": {
+              "N": 53,
+              "rescued": 1,
+              "harmed": 18
+            }
+          },
+          "false_S_new": 21,
+          "false_S_avoided": 5,
+          "transitions": {
+            "Supported": {
+              "Supported": {
+                "Supported": 292,
+                "Not Supported": 4,
+                "Not Addressed": 4
+              },
+              "Not Supported": {
+                "Supported": 1,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 15,
+                "Not Supported": 0,
+                "Not Addressed": 5
+              }
+            },
+            "Not Supported": {
+              "Supported": {
+                "Supported": 14,
+                "Not Supported": 1,
+                "Not Addressed": 2
+              },
+              "Not Supported": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 4,
+                "Not Supported": 0,
+                "Not Addressed": 5
+              }
+            },
+            "Not Addressed": {
+              "Supported": {
+                "Supported": 26,
+                "Not Supported": 1,
+                "Not Addressed": 1
+              },
+              "Not Supported": {
+                "Supported": 0,
+                "Not Supported": 1,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 17,
+                "Not Supported": 1,
+                "Not Addressed": 6
+              }
+            }
+          }
+        }
+      }
+    },
+    "pressure": {
+      "N": 100,
+      "metrics": {
+        "flat_ce": {
+          "percent_agreement": 0.23,
+          "gwet_ac1": -0.14002294851389874,
+          "mcc": 0.049673231473200234,
+          "n": 100,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              33,
+              1,
+              16
+            ],
+            [
+              26,
+              2,
+              22
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 0,
+              "predicted": 59,
+              "tp": 0,
+              "fn": 0,
+              "fp": 59,
+              "tn": 41,
+              "recall": null,
+              "precision": 0.0,
+              "specificity": 0.41,
+              "npv": 1.0,
+              "f1": 0.0
+            },
+            "Not Supported": {
+              "support": 50,
+              "predicted": 3,
+              "tp": 1,
+              "fn": 49,
+              "fp": 2,
+              "tn": 48,
+              "recall": 0.02,
+              "precision": 0.3333333333333333,
+              "specificity": 0.96,
+              "npv": 0.4948453608247423,
+              "f1": 0.03773584905660377
+            },
+            "Not Addressed": {
+              "support": 50,
+              "predicted": 38,
+              "tp": 22,
+              "fn": 28,
+              "fp": 16,
+              "tn": 34,
+              "recall": 0.44,
+              "precision": 0.5789473684210527,
+              "specificity": 0.68,
+              "npv": 0.5483870967741935,
+              "f1": 0.5
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 23,
+          "false_S": 59,
+          "non_S": 100,
+          "predicted_S": 59,
+          "false_S_rate": 0.59,
+          "Macro_F1": 0.1792452830188679
+        },
+        "hier_shared": {
+          "percent_agreement": 0.25,
+          "gwet_ac1": -0.11263583429143645,
+          "mcc": 0.11028712025549539,
+          "n": 100,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              35,
+              2,
+              13
+            ],
+            [
+              26,
+              1,
+              23
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 0,
+              "predicted": 61,
+              "tp": 0,
+              "fn": 0,
+              "fp": 61,
+              "tn": 39,
+              "recall": null,
+              "precision": 0.0,
+              "specificity": 0.39,
+              "npv": 1.0,
+              "f1": 0.0
+            },
+            "Not Supported": {
+              "support": 50,
+              "predicted": 3,
+              "tp": 2,
+              "fn": 48,
+              "fp": 1,
+              "tn": 49,
+              "recall": 0.04,
+              "precision": 0.6666666666666666,
+              "specificity": 0.98,
+              "npv": 0.5051546391752577,
+              "f1": 0.07547169811320754
+            },
+            "Not Addressed": {
+              "support": 50,
+              "predicted": 36,
+              "tp": 23,
+              "fn": 27,
+              "fp": 13,
+              "tn": 37,
+              "recall": 0.46,
+              "precision": 0.6388888888888888,
+              "specificity": 0.74,
+              "npv": 0.578125,
+              "f1": 0.5348837209302325
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 25,
+          "false_S": 61,
+          "non_S": 100,
+          "predicted_S": 61,
+          "false_S_rate": 0.61,
+          "Macro_F1": 0.20345180634781335
+        },
+        "hier_pool": {
+          "percent_agreement": 0.15,
+          "gwet_ac1": -0.27088550816730833,
+          "mcc": 0.010667311465869791,
+          "n": 100,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              36,
+              3,
+              11
+            ],
+            [
+              35,
+              3,
+              12
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 0,
+              "predicted": 71,
+              "tp": 0,
+              "fn": 0,
+              "fp": 71,
+              "tn": 29,
+              "recall": null,
+              "precision": 0.0,
+              "specificity": 0.29,
+              "npv": 1.0,
+              "f1": 0.0
+            },
+            "Not Supported": {
+              "support": 50,
+              "predicted": 6,
+              "tp": 3,
+              "fn": 47,
+              "fp": 3,
+              "tn": 47,
+              "recall": 0.06,
+              "precision": 0.5,
+              "specificity": 0.94,
+              "npv": 0.5,
+              "f1": 0.10714285714285714
+            },
+            "Not Addressed": {
+              "support": 50,
+              "predicted": 23,
+              "tp": 12,
+              "fn": 38,
+              "fp": 11,
+              "tn": 39,
+              "recall": 0.24,
+              "precision": 0.5217391304347826,
+              "specificity": 0.78,
+              "npv": 0.5064935064935064,
+              "f1": 0.3287671232876712
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 15,
+          "false_S": 71,
+          "non_S": 100,
+          "predicted_S": 71,
+          "false_S_rate": 0.71,
+          "Macro_F1": 0.14530332681017613
+        },
+        "092_frozen_OOF": {
+          "percent_agreement": 0.35,
+          "gwet_ac1": 0.0823421452017082,
+          "mcc": 0.06166264159782074,
+          "n": 100,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              22,
+              0,
+              28
+            ],
+            [
+              14,
+              1,
+              35
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 0,
+              "predicted": 36,
+              "tp": 0,
+              "fn": 0,
+              "fp": 36,
+              "tn": 64,
+              "recall": null,
+              "precision": 0.0,
+              "specificity": 0.64,
+              "npv": 1.0,
+              "f1": 0.0
+            },
+            "Not Supported": {
+              "support": 50,
+              "predicted": 1,
+              "tp": 0,
+              "fn": 50,
+              "fp": 1,
+              "tn": 49,
+              "recall": 0.0,
+              "precision": 0.0,
+              "specificity": 0.98,
+              "npv": 0.494949494949495,
+              "f1": 0.0
+            },
+            "Not Addressed": {
+              "support": 50,
+              "predicted": 63,
+              "tp": 35,
+              "fn": 15,
+              "fp": 28,
+              "tn": 22,
+              "recall": 0.7,
+              "precision": 0.5555555555555556,
+              "specificity": 0.44,
+              "npv": 0.5945945945945946,
+              "f1": 0.6194690265486725
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 35,
+          "false_S": 36,
+          "non_S": 100,
+          "predicted_S": 36,
+          "false_S_rate": 0.36,
+          "Macro_F1": 0.20648967551622419
+        },
+        "092_finetuned_OOF": {
+          "percent_agreement": 0.42,
+          "gwet_ac1": 0.17056951842980225,
+          "mcc": 0.18021018474908013,
+          "n": 100,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              24,
+              6,
+              20
+            ],
+            [
+              11,
+              3,
+              36
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 0,
+              "predicted": 35,
+              "tp": 0,
+              "fn": 0,
+              "fp": 35,
+              "tn": 65,
+              "recall": null,
+              "precision": 0.0,
+              "specificity": 0.65,
+              "npv": 1.0,
+              "f1": 0.0
+            },
+            "Not Supported": {
+              "support": 50,
+              "predicted": 9,
+              "tp": 6,
+              "fn": 44,
+              "fp": 3,
+              "tn": 47,
+              "recall": 0.12,
+              "precision": 0.6666666666666666,
+              "specificity": 0.94,
+              "npv": 0.5164835164835165,
+              "f1": 0.2033898305084746
+            },
+            "Not Addressed": {
+              "support": 50,
+              "predicted": 56,
+              "tp": 36,
+              "fn": 14,
+              "fp": 20,
+              "tn": 30,
+              "recall": 0.72,
+              "precision": 0.6428571428571429,
+              "specificity": 0.6,
+              "npv": 0.6818181818181818,
+              "f1": 0.6792452830188679
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 42,
+          "false_S": 35,
+          "non_S": 100,
+          "predicted_S": 35,
+          "false_S_rate": 0.35,
+          "Macro_F1": 0.29421170450911416
+        },
+        "paper_r1": {
+          "percent_agreement": 0.44,
+          "gwet_ac1": 0.19203578127254362,
+          "mcc": 0.15724272550828775,
+          "n": 100,
+          "labels": [
+            "Supported",
+            "Not Supported",
+            "Not Addressed"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              18,
+              24,
+              8
+            ],
+            [
+              12,
+              18,
+              20
+            ]
+          ],
+          "per_class": {
+            "Supported": {
+              "support": 0,
+              "predicted": 30,
+              "tp": 0,
+              "fn": 0,
+              "fp": 30,
+              "tn": 70,
+              "recall": null,
+              "precision": 0.0,
+              "specificity": 0.7,
+              "npv": 1.0,
+              "f1": 0.0
+            },
+            "Not Supported": {
+              "support": 50,
+              "predicted": 42,
+              "tp": 24,
+              "fn": 26,
+              "fp": 18,
+              "tn": 32,
+              "recall": 0.48,
+              "precision": 0.5714285714285714,
+              "specificity": 0.64,
+              "npv": 0.5517241379310345,
+              "f1": 0.5217391304347826
+            },
+            "Not Addressed": {
+              "support": 50,
+              "predicted": 28,
+              "tp": 20,
+              "fn": 30,
+              "fp": 8,
+              "tn": 42,
+              "recall": 0.4,
+              "precision": 0.7142857142857143,
+              "specificity": 0.84,
+              "npv": 0.5833333333333334,
+              "f1": 0.5128205128205128
+            }
+          },
+          "mcc_denominator_zero": false,
+          "correct": 44,
+          "false_S": 30,
+          "non_S": 100,
+          "predicted_S": 30,
+          "false_S_rate": 0.3,
+          "Macro_F1": 0.3448532144184318
+        }
+      },
+      "paired_vs_flat": {
+        "hier_shared": {
+          "by_GT": {
+            "Supported": {
+              "N": 0,
+              "rescued": 0,
+              "harmed": 0
+            },
+            "Not Supported": {
+              "N": 50,
+              "rescued": 2,
+              "harmed": 1
+            },
+            "Not Addressed": {
+              "N": 50,
+              "rescued": 6,
+              "harmed": 5
+            }
+          },
+          "false_S_new": 13,
+          "false_S_avoided": 11,
+          "transitions": {
+            "Supported": {
+              "Supported": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Supported": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              }
+            },
+            "Not Supported": {
+              "Supported": {
+                "Supported": 28,
+                "Not Supported": 1,
+                "Not Addressed": 4
+              },
+              "Not Supported": {
+                "Supported": 1,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 6,
+                "Not Supported": 1,
+                "Not Addressed": 9
+              }
+            },
+            "Not Addressed": {
+              "Supported": {
+                "Supported": 20,
+                "Not Supported": 0,
+                "Not Addressed": 6
+              },
+              "Not Supported": {
+                "Supported": 1,
+                "Not Supported": 1,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 5,
+                "Not Supported": 0,
+                "Not Addressed": 17
+              }
+            }
+          }
+        },
+        "hier_pool": {
+          "by_GT": {
+            "Supported": {
+              "N": 0,
+              "rescued": 0,
+              "harmed": 0
+            },
+            "Not Supported": {
+              "N": 50,
+              "rescued": 3,
+              "harmed": 1
+            },
+            "Not Addressed": {
+              "N": 50,
+              "rescued": 3,
+              "harmed": 13
+            }
+          },
+          "false_S_new": 20,
+          "false_S_avoided": 8,
+          "transitions": {
+            "Supported": {
+              "Supported": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Supported": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 0,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              }
+            },
+            "Not Supported": {
+              "Supported": {
+                "Supported": 29,
+                "Not Supported": 2,
+                "Not Addressed": 2
+              },
+              "Not Supported": {
+                "Supported": 1,
+                "Not Supported": 0,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 6,
+                "Not Supported": 1,
+                "Not Addressed": 9
+              }
+            },
+            "Not Addressed": {
+              "Supported": {
+                "Supported": 22,
+                "Not Supported": 1,
+                "Not Addressed": 3
+              },
+              "Not Supported": {
+                "Supported": 1,
+                "Not Supported": 1,
+                "Not Addressed": 0
+              },
+              "Not Addressed": {
+                "Supported": 12,
+                "Not Supported": 1,
+                "Not Addressed": 9
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "protocol_gate": {
+    "hier_shared": {
+      "protocol_point_signal": true,
+      "point_signals_by_panel": {
+        "natural": true,
+        "pressure": true
+      },
+      "guard_by_panel": {
+        "natural": {
+          "MCC": true,
+          "PA": true,
+          "false_S": true,
+          "NS_recall": true,
+          "NA_recall": true,
+          "S_recall": true
+        },
+        "pressure": {
+          "MCC": true,
+          "PA": true,
+          "false_S": true,
+          "NS_recall": true,
+          "NA_recall": true
+        }
+      },
+      "passes_all_guards": true,
+      "deltas": {
+        "natural": {
+          "MCC": 0.03541873802863543,
+          "PA": 0.009999999999999898,
+          "false_S": -3,
+          "recall": {
+            "Supported": 0.009345794392523366,
+            "Not Supported": 0.07692307692307693,
+            "Not Addressed": -0.018867924528301883
+          }
+        },
+        "pressure": {
+          "MCC": 0.06061388878229516,
+          "PA": 0.01999999999999999,
+          "false_S": 2,
+          "recall": {
+            "Supported": null,
+            "Not Supported": 0.02,
+            "Not Addressed": 0.020000000000000018
+          }
+        }
+      },
+      "eligible_for_followup": true
+    },
+    "hier_pool": {
+      "protocol_point_signal": false,
+      "point_signals_by_panel": {
+        "natural": false,
+        "pressure": false
+      },
+      "guard_by_panel": {
+        "natural": {
+          "MCC": false,
+          "PA": true,
+          "false_S": false,
+          "NS_recall": true,
+          "NA_recall": false,
+          "S_recall": true
+        },
+        "pressure": {
+          "MCC": false,
+          "PA": false,
+          "false_S": false,
+          "NS_recall": true,
+          "NA_recall": false
+        }
+      },
+      "passes_all_guards": false,
+      "deltas": {
+        "natural": {
+          "MCC": -0.16901333292676943,
+          "PA": -0.020000000000000018,
+          "false_S": 16,
+          "recall": {
+            "Supported": 0.024922118380062308,
+            "Not Supported": 0.038461538461538464,
+            "Not Addressed": -0.3207547169811321
+          }
+        },
+        "pressure": {
+          "MCC": -0.03900592000733044,
+          "PA": -0.08000000000000002,
+          "false_S": 12,
+          "recall": {
+            "Supported": null,
+            "Not Supported": 0.039999999999999994,
+            "Not Addressed": -0.2
+          }
+        }
+      },
+      "eligible_for_followup": false
+    }
+  },
+  "historical_sources": {
+    "092_frozen_OOF": [
+      "outputs/092_task_adapted_verifier/frozen_fold0/predictions.jsonl",
+      "outputs/092_task_adapted_verifier/frozen_fold1/predictions.jsonl",
+      "outputs/092_task_adapted_verifier/frozen_fold2/predictions.jsonl",
+      "outputs/092_task_adapted_verifier/frozen_fold3/predictions.jsonl",
+      "outputs/092_task_adapted_verifier/frozen_fold4/predictions.jsonl"
+    ],
+    "092_finetuned_OOF": [
+      "outputs/092_task_adapted_verifier/finetuned_fold0/predictions.jsonl",
+      "outputs/092_task_adapted_verifier/finetuned_fold1/predictions.jsonl",
+      "outputs/092_task_adapted_verifier/finetuned_fold2/predictions.jsonl",
+      "outputs/092_task_adapted_verifier/finetuned_fold3/predictions.jsonl",
+      "outputs/092_task_adapted_verifier/finetuned_fold4/predictions.jsonl"
+    ]
+  },
+  "historical092_supervision": "per fold64gradient16validation20outerprediction;10832gradient8validation20selection",
+  "historical092_is_fair108_ablation": false,
+  "paper_r1_historical_only": true,
+  "elapsed_CPU_training_seconds": {
+    "flat_ce": 2.8744822999999995,
+    "hier_shared": 3.4472293999999994,
+    "hier_pool": 4.6398896
+  },
+  "selected_epochs": {
+    "flat_ce": 4,
+    "hier_shared": 5,
+    "hier_pool": 5
+  }
+}

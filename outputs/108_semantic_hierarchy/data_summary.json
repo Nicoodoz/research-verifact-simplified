@@ -1,0 +1,100 @@
+{
+  "task": 108,
+  "original_pretrained_cls24_reused": true,
+  "supervised092_checkpoint_used": false,
+  "feature_shape": [
+    47219,
+    1024
+  ],
+  "feature_bytes": 193409024,
+  "no_large_cache_hash_or_copy": true,
+  "training_authorized_patients": 40,
+  "gradient_patients": [
+    "15057",
+    "16076",
+    "26858",
+    "27823",
+    "31135",
+    "45979",
+    "47874",
+    "47940",
+    "4954",
+    "50524",
+    "55106",
+    "55204",
+    "55750",
+    "59250",
+    "59840",
+    "65399",
+    "66218",
+    "67117",
+    "71743",
+    "72844",
+    "80084",
+    "80606",
+    "84454",
+    "85689",
+    "87982",
+    "9030",
+    "91315",
+    "93147",
+    "93640",
+    "93788",
+    "97212",
+    "97885"
+  ],
+  "validation_patients": [
+    "21706",
+    "27036",
+    "28399",
+    "29426",
+    "45115",
+    "89909",
+    "97683",
+    "98790"
+  ],
+  "selection_patients": 20,
+  "all100_historically_exposed": true,
+  "confirmation40_used_for_selection": false,
+  "panels": {
+    "train": {
+      "N": 2866,
+      "GT": {
+        "Not Supported": 211,
+        "Not Addressed": 400,
+        "Supported": 2255
+      },
+      "patients": 32,
+      "windows": 15089
+    },
+    "validation": {
+      "N": 809,
+      "GT": {
+        "Supported": 638,
+        "Not Addressed": 85,
+        "Not Supported": 86
+      },
+      "patients": 8,
+      "windows": 4173
+    },
+    "selection": {
+      "N": 500,
+      "GT": {
+        "Supported": 321,
+        "Not Supported": 76,
+        "Not Addressed": 103
+      },
+      "patients": 20,
+      "windows": 2604
+    }
+  },
+  "selection_panel_counts": {
+    "natural": 400,
+    "pressure": 100
+  },
+  "max_windows": 8,
+  "remaining_selection_metadata_N": 1317,
+  "selection500_not_used_for_epoch_choice": true,
+  "GT_and_C48_unchanged": true,
+  "all_windows_retained": true
+}

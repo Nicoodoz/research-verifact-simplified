@@ -1,4 +1,4 @@
-# 全部任务与当前入口（107 GPU完成；2026-10-28）
+# 全部任务与当前入口（108 CPU完成；2026-10-28）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,6 +6,7 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
+|108_semantic_hierarchy|[CPU真实筛查](../outputs/108_semantic_hierarchy/cpu_report.md) · [点指标](../outputs/108_semantic_hierarchy/cpu_comparison.json) · [文献反证](../outputs/108_semantic_hierarchy/literature.md) · [协议](../tasks/108_semantic_hierarchy/protocol.md)|CPU结果复算，非独立审计|shared符合预写规则，条件性GPU已部署；pool停止；GPU效果待测，API0|
 |107_support_aux|[当前报告](../outputs/107_support_aux/final_report.md) · [完整指标](../outputs/107_support_aux/final_metrics.md) · [协议](../tasks/107_support_aux/protocol.md)|[执行者自检](../outputs/107_support_aux/final_selfcheck.json)，非独立审计|两臂fresh各50步/500评价完成；GPU停费且CPU报告完成；API0，不自动下一任务|
 |106_label_preparation|[一页决定](../outputs/106_label_preparation/decision.md) · [报告](../outputs/106_label_preparation/report.md) · [协议](../tasks/106_label_preparation/protocol.md) · [交接](../tasks/106_label_preparation/GPU_HANDOFF.md)|[执行者自检](../outputs/106_label_preparation/final_selfcheck.json)；[子代理反证复核](../outputs/106_label_preparation/adversarial_review.md)，非医生审计|仅研究/数据/CPU准备；推荐同196标签mean/sum诊断，0新增API/GPU，READY_FOR_NEXT_GPU_DECISION|
 |105_brief_supervision|[最终报告](../outputs/105_brief_supervision/final_report.md) · [完整指标](../outputs/105_brief_supervision/final_metrics.md) · [源文案例](../outputs/105_brief_supervision/final_case_analysis.md)|[执行者自检](../outputs/105_brief_supervision/final_selfcheck.json)，非独立医生审计|两组训练、1500回执完成；短理由无增量，NA/false-S恶化；停止扩大，用户已关机|

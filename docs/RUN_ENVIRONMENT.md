@@ -1,5 +1,7 @@
 # 当前环境与启动方式（2026-10-28核对）
 
+108云端采用独立env108：继承Torch2.8.0+cu128，Transformers4.56.1及numpy1.26.4等按requirements108安装，不覆盖已冻结107环境。本次A4000 16GB用于原DeBERTa/C48多窗口顶部单层的条件性验证；GPU分类结果与实际吞吐尚不能由CPU缓存头计时推出。CPU初筛使用现有032本地Torch环境且未初始化CUDA，初筛统计复算使用research-verifact-029。数据/特征缓存与权重留私有目录，不全盘重算缓存SHA。
+
 107已在本次RTX5090 32GB完成BF16、micro1、完整输入的两臂LoRA训练与batch2评价；原Python3.12.3/105关键依赖复用，未重装升级。最长backward、辅助LoRA梯度、完整状态恢复和显存/吞吐实测通过。最终适配器、辅助头、完整optimizer与回执已本地回传核验；CPU统计使用research-verifact-029，无需GPU。GPU停止计费状态以107 cost_status与用户确认为准。
 
 103已实际使用独立Python3.12、PyTorch2.8.0+cu128、Transformers5.17.0、Unsloth2026.10.9及PEFT0.21.2环境；补充causal-conv1d1.7.0/ninja1.13.0，未复用096旧vLLM环境。实际依赖锁及验证见[GPU环境](../outputs/103_lora_selection/installed_gpu_with_causal.lock)与[工程记录](../outputs/103_lora_selection/gpu_runtime_amendment.md)。

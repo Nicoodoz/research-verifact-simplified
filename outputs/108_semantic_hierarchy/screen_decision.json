@@ -1,0 +1,18 @@
+{
+  "task": 108,
+  "gpu_go": true,
+  "candidate": "hier_shared",
+  "cpu_collapse": false,
+  "probe_only": false,
+  "bundle_sha256": "dc31e4a29d96c4df35cd6510bd6bfa02ce47be231418102055df79041637649d",
+  "hourly_cny": 0.92,
+  "billing_start_epoch": 1793200800.0,
+  "deadline_epoch": 1793220900.0,
+  "cap_cny": 5.22,
+  "prior_gpu_cny": 0,
+  "CPU_gate_source": "outputs/108_semantic_hierarchy/cpu_report.md",
+  "fixed_second_seed_if_worthwhile": 92028,
+  "reason": "hier_shared meets prewritten point-signal and class/risk guards; hier_pool fails multiple guards",
+  "GPU_claim_only_cheap_reference_not_a_fair_adapted_control": true,
+  "CPU_confirmation_not_claimed": true
+}

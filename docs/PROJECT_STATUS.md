@@ -1,6 +1,6 @@
-# 项目现状（2026-10-28，107 GPU完成）
+# 项目现状（2026-10-28，108 CPU完成）
 
-107训练、1000条评价、关机后CPU分析完成。107结论：当前support_aux配方没有提供可辩护的整体核验收益，建议停止扩大。 NS识别明显改善，但以NA识别明显下降为代价；自然面板MCC与PA下降，压力面板MCC基本持平、false-S增加1条。自然false-S减少2条不足以抵消总体损失，不在这500条上调权重、采样、阈值或轮数挽救结果。 两臂各196×2轮/50步，推理无辅助头；原GT/reference/105主loss保留。用户确认关机，GPU估算¥4.560、API0，精确账单待核。原始回执与最终完整optimizer/适配器已回传核验，不自动启动108/扩大或升级默认。 [107当前报告](../outputs/107_support_aux/final_report.md) · [实时进度](../outputs/107_support_aux/实时进度.md)。
+108已完成原预训练CLS24的三臂CPU真实筛查：32人2866条梯度、8人809条内部验证，选型自然400/压力100各评价一次。hier_shared较flat自然ΔMCC+0.0354、PA+1个百分点、false-S45→42/79；压力ΔMCC+0.0606、PA+2个百分点、false-S59→61/100，符合预写继续规则。hier_pool多条保护线失败，不推进。原C48与GT保留，不把冻结特征信号当encoder收益。A4000 16GB条件性GPU执行已部署（0.92元/小时，自23:20累计），04:55独立关机保护及平台05:00关机保留；本CPU快照尚无GPU分类结果。API0；用户已授权主要阶段自动双仓库推送，不用确认40选方法，不自动109或升级默认。 [108 CPU报告](../outputs/108_semantic_hierarchy/cpu_report.md) · [108协议](../tasks/108_semantic_hierarchy/protocol.md) · [107最终报告](../outputs/107_support_aux/final_report.md)。
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -22,6 +22,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|108语义分层与证据池化|CPU三臂真实筛查、自然400/压力100，shared通过继续门槛|A4000条件执行已部署，GPU收益待测；pool不推进；不扩确认40或默认|
 |107支持性辅助监督|原196两臂fresh训练各50步/392消费、各500回执、最终完整状态与报告|CPU分析完成，实际结论见107最终报告；不自动扩大/升级|
 |106标签目标准备|3675池、两个512匹配候选、53+16源文审读、同196归一sum入口及CPU验证|READY_FOR_NEXT_GPU_DECISION；推荐先诊断标签目标，0新API/GPU，不自动启动|
 |105短证据监督对照|两组196条×2轮、三臂各500回执、适配器及报告完成；用户已关机|证据短理由相对仅标签自然/压力MCC均下降，NA损失明显；停止当前配方扩大；不升级默认|

@@ -1,0 +1,5 @@
+# A new108 venv inherits existing torch2.8.0+cu128. Do not modify107's venv.
+numpy==1.26.4
+transformers==4.56.1
+tokenizers==0.22.2
+safetensors==0.6.2
