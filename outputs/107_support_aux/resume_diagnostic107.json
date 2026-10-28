@@ -1,0 +1,1084 @@
+{
+  "task": 107,
+  "scope": "disposable_gate_checkpoint_repeated_same_next_step_only",
+  "original_checkpoint_pointer_sha256": "62ca0eee4d2d2fedc85f54d8d68b2352203c59c6407a9e15258185d96f8570d0",
+  "original_checkpoint_cursor": {
+    "step": 1,
+    "consumed": 1
+  },
+  "batch_total_tokens": 6166,
+  "source_training_row_id_sha256": "399a81ad3dd9fb735fbe52b240d3f4b569a202efc6ac97eb05ca591137027d32",
+  "bundle_sha256": "040bad5c5c076a1e646b008327e13ab1992e8264fcde9b7790a4206217c18209",
+  "baseline_hashes": {
+    "parameters": "599312f4e7c7f61d4b6bfbb7a9324378475278a98539a0ab013addbbe5e5280e",
+    "optimizer": "f97a078006e10743c79f2532efb91c72cd8d4f3c463fc030560e357fb3be97b7",
+    "scheduler": "e43402a7e5fdb7f04f1b2de7fd656220ea6a99a721f529e35f43dfc126febd15",
+    "RNG": "9a4b1dd8d265787da92b649f0b882eda0b689eec63fd7934195397c94fec5590",
+    "buffers": "7048917ba2c38ca0797d9e1de6cd0d306464a41f4d826827add27cfba04a581d",
+    "optimizer_layout_device_stride": "107da1d7db4914b48e2c8c8a491f533055055cb05937f41ee6e9f70531a091cf"
+  },
+  "official_gate_modified": false,
+  "formal_training_started": false,
+  "tolerances_relaxed": false,
+  "parameter_identity_optimizer_binding_checked_before_after_every_load": true,
+  "runs": [
+    {
+      "label": "disk_first",
+      "before": {
+        "parameters": "599312f4e7c7f61d4b6bfbb7a9324378475278a98539a0ab013addbbe5e5280e",
+        "optimizer": "f97a078006e10743c79f2532efb91c72cd8d4f3c463fc030560e357fb3be97b7",
+        "scheduler": "e43402a7e5fdb7f04f1b2de7fd656220ea6a99a721f529e35f43dfc126febd15",
+        "RNG": "9a4b1dd8d265787da92b649f0b882eda0b689eec63fd7934195397c94fec5590",
+        "buffers": "7048917ba2c38ca0797d9e1de6cd0d306464a41f4d826827add27cfba04a581d",
+        "optimizer_layout_device_stride": "107da1d7db4914b48e2c8c8a491f533055055cb05937f41ee6e9f70531a091cf"
+      },
+      "after": {
+        "parameters": "08322cd19e8ce5bc5ea8f2c3266e79342dea924e69989f7c25c921aaa915edb9",
+        "optimizer": "d9ddb50cb26fe4b12a5763e81b05c86ff1d661c41f33fedc1997bb6616b023b7",
+        "scheduler": "da2c3bbfbe1389671407701ca2c636d50178196b303c6e423ed39ce806e86bbf",
+        "RNG": "9a4b1dd8d265787da92b649f0b882eda0b689eec63fd7934195397c94fec5590",
+        "buffers": "7048917ba2c38ca0797d9e1de6cd0d306464a41f4d826827add27cfba04a581d",
+        "optimizer_layout_device_stride": "107da1d7db4914b48e2c8c8a491f533055055cb05937f41ee6e9f70531a091cf"
+      },
+      "loss": 0.10267932713031769,
+      "main_loss": 0.07284291088581085,
+      "aux_loss": 0.029836416244506836,
+      "grad_norm": 5.226100444793701,
+      "finite_loss": true,
+      "seconds": 12.992729185993085,
+      "peak_allocated_bytes": 23013216768,
+      "raw_gradient_sha256": "7f85ca8b31e8c16ed027358f0eaf70e074812632c966f1543a1c0cb05bb70819",
+      "clipped_gradient_sha256": "f454341b13b6fbbd875479ae6e151a552410fa9cd69a0f14e2943aa01747671f",
+      "gradients_with_values": 498,
+      "initial_state_exactly_matches_disk_baseline": true
+    },
+    {
+      "label": "disk_repeat",
+      "before": {
+        "parameters": "599312f4e7c7f61d4b6bfbb7a9324378475278a98539a0ab013addbbe5e5280e",
+        "optimizer": "f97a078006e10743c79f2532efb91c72cd8d4f3c463fc030560e357fb3be97b7",
+        "scheduler": "e43402a7e5fdb7f04f1b2de7fd656220ea6a99a721f529e35f43dfc126febd15",
+        "RNG": "9a4b1dd8d265787da92b649f0b882eda0b689eec63fd7934195397c94fec5590",
+        "buffers": "7048917ba2c38ca0797d9e1de6cd0d306464a41f4d826827add27cfba04a581d",
+        "optimizer_layout_device_stride": "107da1d7db4914b48e2c8c8a491f533055055cb05937f41ee6e9f70531a091cf"
+      },
+      "after": {
+        "parameters": "33631862bd92470a29b8b8a40149383dc573796ed1d7abbf5cf96cd0aa062074",
+        "optimizer": "8eb80acf703ab3d6ece61195d5abaa57aa6e7dff06ebcd60cef7acf22d3dfb65",
+        "scheduler": "da2c3bbfbe1389671407701ca2c636d50178196b303c6e423ed39ce806e86bbf",
+        "RNG": "9a4b1dd8d265787da92b649f0b882eda0b689eec63fd7934195397c94fec5590",
+        "buffers": "7048917ba2c38ca0797d9e1de6cd0d306464a41f4d826827add27cfba04a581d",
+        "optimizer_layout_device_stride": "107da1d7db4914b48e2c8c8a491f533055055cb05937f41ee6e9f70531a091cf"
+      },
+      "loss": 0.10267932713031769,
+      "main_loss": 0.07284291088581085,
+      "aux_loss": 0.029836416244506836,
+      "grad_norm": 5.227480888366699,
+      "finite_loss": true,
+      "seconds": 2.244200835004449,
+      "peak_allocated_bytes": 22912553472,
+      "raw_gradient_sha256": "f9dead33eb0feea0dc588f44f0a6e451f0e5b9c3cb96b595260ce7a83b1ad213",
+      "clipped_gradient_sha256": "2b1cb7d1757f4a78f1228ed17692873d9aadcb133558c27475935a7240fc15e3",
+      "gradients_with_values": 498,
+      "initial_state_exactly_matches_disk_baseline": true
+    },
+    {
+      "label": "memory_independent_clone",
+      "before": {
+        "parameters": "599312f4e7c7f61d4b6bfbb7a9324378475278a98539a0ab013addbbe5e5280e",
+        "optimizer": "f97a078006e10743c79f2532efb91c72cd8d4f3c463fc030560e357fb3be97b7",
+        "scheduler": "e43402a7e5fdb7f04f1b2de7fd656220ea6a99a721f529e35f43dfc126febd15",
+        "RNG": "9a4b1dd8d265787da92b649f0b882eda0b689eec63fd7934195397c94fec5590",
+        "buffers": "7048917ba2c38ca0797d9e1de6cd0d306464a41f4d826827add27cfba04a581d",
+        "optimizer_layout_device_stride": "107da1d7db4914b48e2c8c8a491f533055055cb05937f41ee6e9f70531a091cf"
+      },
+      "after": {
+        "parameters": "9bcf41d83397a843e4e21d4c30ff822ead084a567f982882242702943f718391",
+        "optimizer": "12c5cfe7402023352b69e8d00b7416d6b74efac075257ea34c85046e6e06d564",
+        "scheduler": "da2c3bbfbe1389671407701ca2c636d50178196b303c6e423ed39ce806e86bbf",
+        "RNG": "9a4b1dd8d265787da92b649f0b882eda0b689eec63fd7934195397c94fec5590",
+        "buffers": "7048917ba2c38ca0797d9e1de6cd0d306464a41f4d826827add27cfba04a581d",
+        "optimizer_layout_device_stride": "107da1d7db4914b48e2c8c8a491f533055055cb05937f41ee6e9f70531a091cf"
+      },
+      "loss": 0.10267932713031769,
+      "main_loss": 0.07284291088581085,
+      "aux_loss": 0.029836416244506836,
+      "grad_norm": 5.2278594970703125,
+      "finite_loss": true,
+      "seconds": 2.2518246979889227,
+      "peak_allocated_bytes": 22912553472,
+      "raw_gradient_sha256": "af2500239ffcba5b408a425a85714c0755458995d9ecde1956d5a36969f7b60b",
+      "clipped_gradient_sha256": "ff0273e6adc69751d0baae77717c67d4bb5108f474d983da813e6b9a5af0e5a1",
+      "gradients_with_values": 498,
+      "initial_state_exactly_matches_disk_baseline": true
+    }
+  ],
+  "comparisons": [
+    {
+      "reference": "disk_first",
+      "candidate": "disk_repeat",
+      "loss_abs_difference": 0.0,
+      "main_loss_abs_difference": 0.0,
+      "aux_loss_abs_difference": 0.0,
+      "raw_gradients": {
+        "tensor_count": 498,
+        "elements": 43282433,
+        "different_elements": 25990460,
+        "finite": true,
+        "exactly_equal": false,
+        "max_abs": 0.00250244140625,
+        "l2": 0.048460331180102206,
+        "relative_l2": 0.009272751138749539,
+        "largest_tensor_differences": [
+          {
+            "name": "base_model.model.model.language_model.layers.0.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 58767,
+            "elements": 65536,
+            "max_abs": 0.00250244140625,
+            "l2": 0.005556541016798089,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.v_proj.lora_B.default.weight",
+            "different_elements": 14720,
+            "elements": 16384,
+            "max_abs": 0.001953125,
+            "l2": 0.014660347794281886,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.k_proj.lora_B.default.weight",
+            "different_elements": 14798,
+            "elements": 16384,
+            "max_abs": 0.0007476806640625,
+            "l2": 0.003774515753264418,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.2.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 118032,
+            "elements": 131072,
+            "max_abs": 0.000732421875,
+            "l2": 0.010516446118622964,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.q_proj.lora_B.default.weight",
+            "different_elements": 117109,
+            "elements": 131072,
+            "max_abs": 0.000732421875,
+            "l2": 0.00827521952880328,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 118384,
+            "elements": 131072,
+            "max_abs": 0.00067138671875,
+            "l2": 0.009420830022621767,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.5.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 57102,
+            "elements": 65536,
+            "max_abs": 0.00067138671875,
+            "l2": 0.003332083897056639,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.0.linear_attn.out_proj.lora_B.default.weight",
+            "different_elements": 59175,
+            "elements": 65536,
+            "max_abs": 0.000640869140625,
+            "l2": 0.025436291717356965,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 59195,
+            "elements": 65536,
+            "max_abs": 0.0006103515625,
+            "l2": 0.0058405640406483765,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.13.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 53127,
+            "elements": 65536,
+            "max_abs": 0.0006103515625,
+            "l2": 0.001798752820363482,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_b.lora_B.default.weight",
+            "different_elements": 463,
+            "elements": 512,
+            "max_abs": 0.000579833984375,
+            "l2": 0.0013830225860761494,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.4.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 57826,
+            "elements": 65536,
+            "max_abs": 0.00054931640625,
+            "l2": 0.003144885938018077,
+            "finite": true
+          }
+        ]
+      },
+      "clipped_gradients": {
+        "tensor_count": 498,
+        "elements": 43282433,
+        "different_elements": 43282310,
+        "finite": true,
+        "exactly_equal": false,
+        "max_abs": 0.000478289439342916,
+        "l2": 0.0092677633381345,
+        "relative_l2": 0.009267764518797026,
+        "largest_tensor_differences": [
+          {
+            "name": "base_model.model.model.language_model.layers.0.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 0.000478289439342916,
+            "l2": 0.0010618425860394664,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.v_proj.lora_B.default.weight",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 0.0003814231604337692,
+            "l2": 0.0028008124053612725,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.k_proj.lora_B.default.weight",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 0.00014313680003397167,
+            "l2": 0.0007200958849298001,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.q_proj.lora_B.default.weight",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 0.00014125695452094078,
+            "l2": 0.0015798589943606435,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.2.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 0.00014066509902477264,
+            "l2": 0.002006483131948136,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 0.00012816418893635273,
+            "l2": 0.0017980733566143432,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.5.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 0.0001277616247534752,
+            "l2": 0.000636330438698052,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.0.linear_attn.out_proj.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 0.00012237252667546272,
+            "l2": 0.004856944541753455,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.13.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 0.00011791801080107689,
+            "l2": 0.00034608798757533485,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 0.00011596875265240669,
+            "l2": 0.001115756477085477,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_b.lora_B.default.weight",
+            "different_elements": 512,
+            "elements": 512,
+            "max_abs": 0.00011062878184020519,
+            "l2": 0.00026351817324625737,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.4.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 0.00010463525541126728,
+            "l2": 0.0006021565436843923,
+            "finite": true
+          }
+        ]
+      },
+      "parameters": {
+        "LoRA": {
+          "tensor_count": 496,
+          "elements": 43278336,
+          "different_elements": 38296314,
+          "finite": true,
+          "exactly_equal": false,
+          "max_abs": 0.00016279540432151407,
+          "l2": 0.015339957838631084,
+          "relative_l2": 0.0004216970858627128,
+          "largest_tensor_differences": [
+            {
+              "name": "base_model.model.model.language_model.layers.3.mlp.up_proj.lora_B.default.weight",
+              "different_elements": 196587,
+              "elements": 196608,
+              "max_abs": 0.00016279540432151407,
+              "l2": 0.0008241579757704798,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.13.mlp.up_proj.lora_B.default.weight",
+              "different_elements": 196585,
+              "elements": 196608,
+              "max_abs": 0.0001625138847884955,
+              "l2": 0.000690449646559562,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.11.mlp.down_proj.lora_B.default.weight",
+              "different_elements": 65524,
+              "elements": 65536,
+              "max_abs": 0.00016076031897682697,
+              "l2": 0.0004111164990385988,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_z.lora_B.default.weight",
+              "different_elements": 65536,
+              "elements": 65536,
+              "max_abs": 0.000160509593115421,
+              "l2": 0.0004789908946544174,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.2.linear_attn.in_proj_qkv.lora_B.default.weight",
+              "different_elements": 131065,
+              "elements": 131072,
+              "max_abs": 0.0001598491689946968,
+              "l2": 0.0006397488842005345,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.4.mlp.gate_proj.lora_B.default.weight",
+              "different_elements": 196583,
+              "elements": 196608,
+              "max_abs": 0.00015946526218613144,
+              "l2": 0.0007315994401991721,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.7.mlp.gate_proj.lora_B.default.weight",
+              "different_elements": 196592,
+              "elements": 196608,
+              "max_abs": 0.00015912836897769012,
+              "l2": 0.0008529027354268114,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.2.mlp.up_proj.lora_B.default.weight",
+              "different_elements": 196589,
+              "elements": 196608,
+              "max_abs": 0.00015843343499000184,
+              "l2": 0.0007204321329967109,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.12.mlp.down_proj.lora_B.default.weight",
+              "different_elements": 65531,
+              "elements": 65536,
+              "max_abs": 0.00015826548769837245,
+              "l2": 0.0004205925745477409,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.3.self_attn.o_proj.lora_B.default.weight",
+              "different_elements": 65532,
+              "elements": 65536,
+              "max_abs": 0.00015814263679203577,
+              "l2": 0.0003734757750229522,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.1.mlp.gate_proj.lora_B.default.weight",
+              "different_elements": 196584,
+              "elements": 196608,
+              "max_abs": 0.0001565453057992272,
+              "l2": 0.0007606887909622689,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.5.linear_attn.in_proj_qkv.lora_B.default.weight",
+              "different_elements": 131063,
+              "elements": 131072,
+              "max_abs": 0.0001558952972118277,
+              "l2": 0.0005592509056641428,
+              "finite": true
+            }
+          ]
+        },
+        "aux_head": {
+          "tensor_count": 2,
+          "elements": 4097,
+          "different_elements": 3985,
+          "finite": true,
+          "exactly_equal": false,
+          "max_abs": 1.3969838619232178e-08,
+          "l2": 1.990135297612789e-07,
+          "relative_l2": 3.4908053860025767e-07,
+          "largest_tensor_differences": [
+            {
+              "name": "aux.weight",
+              "different_elements": 3984,
+              "elements": 4096,
+              "max_abs": 1.3969838619232178e-08,
+              "l2": 1.9899990959088654e-07,
+              "finite": true
+            },
+            {
+              "name": "aux.bias",
+              "different_elements": 1,
+              "elements": 1,
+              "max_abs": 2.3283064365386963e-09,
+              "l2": 2.3283064365386963e-09,
+              "finite": true
+            }
+          ]
+        }
+      },
+      "optimizer_tensors": {
+        "tensor_count": 1494,
+        "elements": 86565364,
+        "different_elements": 86551442,
+        "finite": true,
+        "exactly_equal": false,
+        "max_abs": 4.782892938237637e-05,
+        "l2": 0.0009267763245829179,
+        "relative_l2": 2.0764817333170975e-05,
+        "largest_tensor_differences": [
+          {
+            "name": "state/state/5/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 4.782892938237637e-05,
+            "l2": 0.00010618424615736015,
+            "finite": true
+          },
+          {
+            "name": "state/state/53/exp_avg",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 3.814250521827489e-05,
+            "l2": 0.00028008121901732744,
+            "finite": true
+          },
+          {
+            "name": "state/state/51/exp_avg",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 1.4313685824163258e-05,
+            "l2": 7.200958732870739e-05,
+            "finite": true
+          },
+          {
+            "name": "state/state/49/exp_avg",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 1.4125718735158443e-05,
+            "l2": 0.0001579858863863619,
+            "finite": true
+          },
+          {
+            "name": "state/state/35/exp_avg",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 1.4066463336348534e-05,
+            "l2": 0.00020064832051535462,
+            "finite": true
+          },
+          {
+            "name": "state/state/19/exp_avg",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 1.2816395610570908e-05,
+            "l2": 0.00017980735157477118,
+            "finite": true
+          },
+          {
+            "name": "state/state/83/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 1.2776174116879702e-05,
+            "l2": 6.363303475755196e-05,
+            "finite": true
+          },
+          {
+            "name": "state/state/1/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 1.223725121235475e-05,
+            "l2": 0.0004856944488666771,
+            "finite": true
+          },
+          {
+            "name": "state/state/207/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 1.1791795259341598e-05,
+            "l2": 3.460878755716853e-05,
+            "finite": true
+          },
+          {
+            "name": "state/state/21/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 1.1596886906772852e-05,
+            "l2": 0.00011157564268052245,
+            "finite": true
+          },
+          {
+            "name": "state/state/23/exp_avg",
+            "different_elements": 512,
+            "elements": 512,
+            "max_abs": 1.1062831617891788e-05,
+            "l2": 2.6351767951056593e-05,
+            "finite": true
+          },
+          {
+            "name": "state/state/67/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 1.0463525541126728e-05,
+            "l2": 6.02156574038151e-05,
+            "finite": true
+          }
+        ]
+      },
+      "exact_after_hashes": {
+        "parameters": false,
+        "optimizer": false,
+        "scheduler": true,
+        "RNG": true,
+        "buffers": true,
+        "optimizer_layout_device_stride": true
+      }
+    },
+    {
+      "reference": "disk_first",
+      "candidate": "memory_independent_clone",
+      "loss_abs_difference": 0.0,
+      "main_loss_abs_difference": 0.0,
+      "aux_loss_abs_difference": 0.0,
+      "raw_gradients": {
+        "tensor_count": 498,
+        "elements": 43282433,
+        "different_elements": 23857175,
+        "finite": true,
+        "exactly_equal": false,
+        "max_abs": 0.00341796875,
+        "l2": 0.04849582759356842,
+        "relative_l2": 0.00927954327987559,
+        "largest_tensor_differences": [
+          {
+            "name": "base_model.model.model.language_model.layers.0.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 58966,
+            "elements": 65536,
+            "max_abs": 0.00341796875,
+            "l2": 0.007378249636941614,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.v_proj.lora_B.default.weight",
+            "different_elements": 14509,
+            "elements": 16384,
+            "max_abs": 0.00203704833984375,
+            "l2": 0.015360677539136707,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.0.linear_attn.out_proj.lora_B.default.weight",
+            "different_elements": 59282,
+            "elements": 65536,
+            "max_abs": 0.000701904296875,
+            "l2": 0.02619425861587019,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.k_proj.lora_B.default.weight",
+            "different_elements": 14870,
+            "elements": 16384,
+            "max_abs": 0.000701904296875,
+            "l2": 0.003873070760469117,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.q_proj.lora_B.default.weight",
+            "different_elements": 117388,
+            "elements": 131072,
+            "max_abs": 0.0006103515625,
+            "l2": 0.008308574926387905,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.2.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 117891,
+            "elements": 131072,
+            "max_abs": 0.0005950927734375,
+            "l2": 0.010704204965008667,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 118726,
+            "elements": 131072,
+            "max_abs": 0.0005035400390625,
+            "l2": 0.00975779129435658,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.4.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 116510,
+            "elements": 131072,
+            "max_abs": 0.00048828125,
+            "l2": 0.004642179138208743,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.5.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 57329,
+            "elements": 65536,
+            "max_abs": 0.00048828125,
+            "l2": 0.003135519010610237,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.6.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 114124,
+            "elements": 131072,
+            "max_abs": 0.00048828125,
+            "l2": 0.004628100798244487,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.7.self_attn.v_proj.lora_B.default.weight",
+            "different_elements": 14004,
+            "elements": 16384,
+            "max_abs": 0.000457763671875,
+            "l2": 0.007982374722154127,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 59124,
+            "elements": 65536,
+            "max_abs": 0.00043487548828125,
+            "l2": 0.0057238192963498195,
+            "finite": true
+          }
+        ]
+      },
+      "clipped_gradients": {
+        "tensor_count": 498,
+        "elements": 43282433,
+        "different_elements": 43282309,
+        "finite": true,
+        "exactly_equal": false,
+        "max_abs": 0.0006532642291858792,
+        "l2": 0.009271877218854306,
+        "relative_l2": 0.00927187840004092,
+        "largest_tensor_differences": [
+          {
+            "name": "base_model.model.model.language_model.layers.0.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 0.0006532642291858792,
+            "l2": 0.0014094484509925497,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.v_proj.lora_B.default.weight",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 0.00038961753307376057,
+            "l2": 0.0029290000900696854,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.0.linear_attn.out_proj.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 0.00013398908777162433,
+            "l2": 0.0050016032965163135,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.k_proj.lora_B.default.weight",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 0.0001337965950369835,
+            "l2": 0.0007393590587823548,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.3.self_attn.q_proj.lora_B.default.weight",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 0.00011821184307336807,
+            "l2": 0.0015842505254042006,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.2.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 0.00011400098446756601,
+            "l2": 0.0020427375573995846,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.6.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 9.764358401298523e-05,
+            "l2": 0.0008886444257770262,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 9.628369298297912e-05,
+            "l2": 0.0018629633929385814,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.4.linear_attn.in_proj_qkv.lora_B.default.weight",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 9.246845729649067e-05,
+            "l2": 0.0008860769335646694,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.5.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 8.937530219554901e-05,
+            "l2": 0.0005970982737889161,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.7.self_attn.v_proj.lora_B.default.weight",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 8.725776569917798e-05,
+            "l2": 0.0015306012470666366,
+            "finite": true
+          },
+          {
+            "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_z.lora_B.default.weight",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 8.323309884872288e-05,
+            "l2": 0.0010935972424572318,
+            "finite": true
+          }
+        ]
+      },
+      "parameters": {
+        "LoRA": {
+          "tensor_count": 496,
+          "elements": 43278336,
+          "different_elements": 38454060,
+          "finite": true,
+          "exactly_equal": false,
+          "max_abs": 0.0001658339606365189,
+          "l2": 0.014560738324052584,
+          "relative_l2": 0.0004002762578525079,
+          "largest_tensor_differences": [
+            {
+              "name": "base_model.model.model.language_model.layers.1.linear_attn.in_proj_qkv.lora_B.default.weight",
+              "different_elements": 131068,
+              "elements": 131072,
+              "max_abs": 0.0001658339606365189,
+              "l2": 0.0006087626745681775,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.1.mlp.up_proj.lora_B.default.weight",
+              "different_elements": 196602,
+              "elements": 196608,
+              "max_abs": 0.00016332450104528107,
+              "l2": 0.0007842502206983026,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.3.self_attn.q_proj.lora_B.default.weight",
+              "different_elements": 131064,
+              "elements": 131072,
+              "max_abs": 0.00016230923938564956,
+              "l2": 0.0006783629201857951,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.13.mlp.up_proj.lora_B.default.weight",
+              "different_elements": 196585,
+              "elements": 196608,
+              "max_abs": 0.0001620817984075984,
+              "l2": 0.0006285936327398362,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.10.mlp.up_proj.lora_B.default.weight",
+              "different_elements": 196583,
+              "elements": 196608,
+              "max_abs": 0.00016117253289849032,
+              "l2": 0.0006862564021388738,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.15.mlp.gate_proj.lora_B.default.weight",
+              "different_elements": 196580,
+              "elements": 196608,
+              "max_abs": 0.00015995516150724143,
+              "l2": 0.0006029434236973562,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.11.self_attn.q_proj.lora_B.default.weight",
+              "different_elements": 131060,
+              "elements": 131072,
+              "max_abs": 0.0001590805477462709,
+              "l2": 0.0004750516406756155,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.7.mlp.down_proj.lora_B.default.weight",
+              "different_elements": 65525,
+              "elements": 65536,
+              "max_abs": 0.00015832119242986664,
+              "l2": 0.0004928032210638911,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.14.mlp.up_proj.lora_B.default.weight",
+              "different_elements": 196572,
+              "elements": 196608,
+              "max_abs": 0.00015695761612732895,
+              "l2": 0.0006053189862218426,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.10.mlp.gate_proj.lora_B.default.weight",
+              "different_elements": 196588,
+              "elements": 196608,
+              "max_abs": 0.0001569110609125346,
+              "l2": 0.0007403739901184394,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.1.mlp.gate_proj.lora_B.default.weight",
+              "different_elements": 196597,
+              "elements": 196608,
+              "max_abs": 0.00015584036009386182,
+              "l2": 0.0007992427797163973,
+              "finite": true
+            },
+            {
+              "name": "base_model.model.model.language_model.layers.5.mlp.gate_proj.lora_B.default.weight",
+              "different_elements": 196586,
+              "elements": 196608,
+              "max_abs": 0.00015566759611829184,
+              "l2": 0.0007512897440819022,
+              "finite": true
+            }
+          ]
+        },
+        "aux_head": {
+          "tensor_count": 2,
+          "elements": 4097,
+          "different_elements": 4014,
+          "finite": true,
+          "exactly_equal": false,
+          "max_abs": 1.7229467630386353e-08,
+          "l2": 2.5312970453638407e-07,
+          "relative_l2": 4.440032479262991e-07,
+          "largest_tensor_differences": [
+            {
+              "name": "aux.weight",
+              "different_elements": 4013,
+              "elements": 4096,
+              "max_abs": 1.7229467630386353e-08,
+              "l2": 2.53114284589067e-07,
+              "finite": true
+            },
+            {
+              "name": "aux.bias",
+              "different_elements": 1,
+              "elements": 1,
+              "max_abs": 2.7939677238464355e-09,
+              "l2": 2.7939677238464355e-09,
+              "finite": true
+            }
+          ]
+        }
+      },
+      "optimizer_tensors": {
+        "tensor_count": 1494,
+        "elements": 86565364,
+        "different_elements": 86552087,
+        "finite": true,
+        "exactly_equal": false,
+        "max_abs": 6.532639963552356e-05,
+        "l2": 0.0009271877161106261,
+        "relative_l2": 2.0774034735146713e-05,
+        "largest_tensor_differences": [
+          {
+            "name": "state/state/5/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 6.532639963552356e-05,
+            "l2": 0.00014094483642862918,
+            "finite": true
+          },
+          {
+            "name": "state/state/53/exp_avg",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 3.896176349371672e-05,
+            "l2": 0.00029289996043288546,
+            "finite": true
+          },
+          {
+            "name": "state/state/1/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 1.3398916053120047e-05,
+            "l2": 0.0005001603511747107,
+            "finite": true
+          },
+          {
+            "name": "state/state/51/exp_avg",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 1.3379642041400075e-05,
+            "l2": 7.393590926389511e-05,
+            "finite": true
+          },
+          {
+            "name": "state/state/49/exp_avg",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 1.1821161024272442e-05,
+            "l2": 0.00015842503706207256,
+            "finite": true
+          },
+          {
+            "name": "state/state/35/exp_avg",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 1.1400086805224419e-05,
+            "l2": 0.00020427375648862233,
+            "finite": true
+          },
+          {
+            "name": "state/state/97/exp_avg",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 9.764335118234158e-06,
+            "l2": 8.886444228115977e-05,
+            "finite": true
+          },
+          {
+            "name": "state/state/19/exp_avg",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 9.628478437662125e-06,
+            "l2": 0.0001862963489298876,
+            "finite": true
+          },
+          {
+            "name": "state/state/65/exp_avg",
+            "different_elements": 131072,
+            "elements": 131072,
+            "max_abs": 9.246869012713432e-06,
+            "l2": 8.86076801536159e-05,
+            "finite": true
+          },
+          {
+            "name": "state/state/83/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 8.937553502619267e-06,
+            "l2": 5.97098370113932e-05,
+            "finite": true
+          },
+          {
+            "name": "state/state/115/exp_avg",
+            "different_elements": 16384,
+            "elements": 16384,
+            "max_abs": 8.72578311827965e-06,
+            "l2": 0.00015306011565759467,
+            "finite": true
+          },
+          {
+            "name": "state/state/21/exp_avg",
+            "different_elements": 65536,
+            "elements": 65536,
+            "max_abs": 8.323317160829902e-06,
+            "l2": 0.00010935973607449703,
+            "finite": true
+          }
+        ]
+      },
+      "exact_after_hashes": {
+        "parameters": false,
+        "optimizer": false,
+        "scheduler": true,
+        "RNG": true,
+        "buffers": true,
+        "optimizer_layout_device_stride": true
+      }
+    }
+  ],
+  "diagnostic_complete": true,
+  "all_initial_states_exact": true,
+  "repeated_disk_next_steps_exact": false,
+  "in_memory_vs_disk_next_step_exact": {
+    "parameters": false,
+    "optimizer": false,
+    "scheduler": true,
+    "RNG": true,
+    "buffers": true,
+    "optimizer_layout_device_stride": true
+  },
+  "interpretation_limit": "Repeated disk differences from exactly identical initial state indicate runtime computation or unrecorded mutable state; an in-memory branch with the same scale of differences does not identify checkpoint serialization as the cause. These measurements do not grant a PASS or authorize formal training."
+}

@@ -1,7 +1,5 @@
 # 107当前入口
 
-当前为阶段一CPU准备，方法为`label_only`对`support_aux`，两臂均从原9B新训同196条×2轮/50步，仅候选增加训练期S/non-S BCE辅助监督（权重1）。105主分段loss、原prompt、JSON/parser、顺序与评价500全部保留。106目标改法不进入107。
+107两臂GPU训练与1000条首次评价完成：label_only/support_aux均在本次5090从原9B新训196×2轮/50步，数据/初始化/顺序/原105主loss不变，候选仅增加训练期S/non-S BCE权重1；batch2两臂同250组，推理不用辅助头。543文件已回传SHA核验，含两臂最终完整optimizer、适配器、辅助头及原始回执。用户已确认关机，待CPU离线统计；API0，GPU费用按2.88元/小时从20:40累计，精确账单待核。尚无107分类结论；不启108/扩大/升级默认。
 
-用户已提供开机RTX5090 32GB、2.88元/小时，2026-10-28北京时间20:40起计费，包含等待。原9B完整SHA、环境和100GiB数据盘已核对通过。CPU必要核验/私有新包及双仓库推送完成后直接做本实例工程检查，不再停在等待租卡。按新授权评价batch2、必要时1，正式前同步冻结两臂同分组；BF16/micro1/完整输入不变。真实技术与20元整轮预算通过即可直接训练，无需再次批准普通步骤。API0。
-
-[协议](protocol.md) · [阶段一报告](../../outputs/107_support_aux/preparation_report.md) · [租卡交接](GPU_HANDOFF.md)。
+[当前报告](../../outputs/107_support_aux/execution_completion.md) · [协议](protocol.md) · [执行与关机](GPU_HANDOFF.md)。

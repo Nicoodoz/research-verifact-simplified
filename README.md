@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-107阶段一CPU准备完成，用户已交接RTX5090 32GB（2.88元/小时，20:40起计费），不再等待租卡。两臂label_only/support_aux从原9B新训同196×2轮/50步，唯一差异为训练期prompt末端S/non-S BCE权重1；保留105主loss、原prompt/JSON/parser与评价500，按新授权检查评价batch2、必要时1，两臂同分组。CPU因果LoRA梯度/恢复、数据/预算/包核验通过；新机原9B全SHA及固定环境通过，100GiB数据盘几乎全空。阶段一推送后直接做5090真实最长backward/内核/显存/吞吐及整轮20元门槛，通过即执行。API0；当前无107分类结果，不启动108/升级默认。 [107准备报告](outputs/107_support_aux/preparation_report.md) · [107接续](tasks/107_support_aux/GPU_HANDOFF.md)。
+107两臂GPU训练与1000条首次评价完成：label_only/support_aux均在本次5090从原9B新训196×2轮/50步，数据/初始化/顺序/原105主loss不变，候选仅增加训练期S/non-S BCE权重1；batch2两臂同250组，推理不用辅助头。543文件已回传SHA核验，含两臂最终完整optimizer、适配器、辅助头及原始回执。用户已确认关机，待CPU离线统计；API0，GPU费用按2.88元/小时从20:40累计，精确账单待核。尚无107分类结论；不启108/扩大/升级默认。 [107当前报告](outputs/107_support_aux/execution_completion.md) · [实时进度](outputs/107_support_aux/实时进度.md)。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

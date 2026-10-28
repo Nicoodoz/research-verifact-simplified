@@ -1,0 +1,20 @@
+{
+  "task": 107,
+  "status": "PASS",
+  "manifest_sha256": "77116c2ee309be81369f69c952000b6c4e43ef2b9c84048c1b4529c7a0da76c4",
+  "archive_sha256": "00d7ee0d572eecf723aac2e1ace0ce5e646171d0f1c3cafae9275a3138b48aee",
+  "manifest_files_verified": 37,
+  "archive_files_verified": 38,
+  "archive_file_bytes": 32567319,
+  "paths_within_bundle": true,
+  "archive_content_SHA_match": true,
+  "empty_cwd_import_and_help_exit0": true,
+  "PYTHONPATH_cleared": true,
+  "torch_transformers_not_imported": true,
+  "contains_weights": false,
+  "contains_clinical_data": true,
+  "publishable": false,
+  "independent_audit": false,
+  "GPU_calls": 0,
+  "API_calls": 0
+}

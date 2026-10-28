@@ -1,0 +1,17 @@
+{
+  "task": 107,
+  "status": "ALL_GPU_STAGES_COMPLETED_AND_BACKED_UP",
+  "executor_checks_only": true,
+  "independent_audit": false,
+  "method_effectiveness_not_yet_scored": true,
+  "formal_steps_each": 50,
+  "consumption_each": 392,
+  "first_evaluation_receipts_each": 500,
+  "unique_IDs_and_all_prompt_tokens_verified": true,
+  "original_training_plan_each_step_verified": true,
+  "fresh_initial_LoRA_and_RNG_equal": true,
+  "auxiliary_head_unused_at_inference": true,
+  "auxiliary_only_LoRA_B_gradient_tensors": 248,
+  "API_cny": 0,
+  "execution_bundle_manifest_sha256": "77116c2ee309be81369f69c952000b6c4e43ef2b9c84048c1b4529c7a0da76c4"
+}

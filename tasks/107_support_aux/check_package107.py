@@ -10,7 +10,7 @@ import tempfile
 import common107 as c
 from run107 import verify_bundle
 
-def check(bundle,archive):
+def check(bundle,archive,output=None):
     bundle=Path(bundle);archive=Path(archive)
     manifest=verify_bundle(bundle)
     wanted=dict(manifest['files'], **{'manifest.json':c.sha(bundle/'manifest.json')})
@@ -46,7 +46,7 @@ def check(bundle,archive):
         paths_within_bundle=True,archive_content_SHA_match=True,empty_cwd_import_and_help_exit0=imported.returncode==0,
         PYTHONPATH_cleared=True,torch_transformers_not_imported=True,contains_weights=False,
         contains_clinical_data=True,publishable=False,independent_audit=False,GPU_calls=0,API_calls=0)
-    c.put(c.OUT/'implementation_package_checks.json',result)
+    c.put(output or c.OUT/'implementation_package_checks.json',result)
     print(c.canonical(result))
     return result
 
@@ -54,4 +54,5 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--bundle',type=Path,required=True)
     parser.add_argument('--archive',type=Path,required=True)
-    a=parser.parse_args();check(a.bundle,a.archive)
+    parser.add_argument('--output',type=Path)
+    a=parser.parse_args();check(a.bundle,a.archive,a.output)

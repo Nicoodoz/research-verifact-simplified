@@ -1,0 +1,17 @@
+{
+  "task": 107,
+  "hourly_cny": 2.88,
+  "billing_start_beijing": "2026-10-28 20:40",
+  "billing_stop_beijing": "2026-10-28T22:15:00+08:00",
+  "billing_start_epoch": 1793191200,
+  "billing_stop_epoch": 1793196900.0,
+  "gpu_cost_estimate_cny": 4.56,
+  "API_cny": 0,
+  "exact_platform_bill_verified": false,
+  "exact_invoice_cny": null,
+  "instance_status": "USER_CONFIRMED_SHUTDOWN",
+  "billing_stopped": true,
+  "instance_released": false,
+  "retained_disk_deleted": false,
+  "basis": "User-provided platform start/stop and quote; no precise invoice obtained; includes waiting/checks/training/evaluation/backup"
+}

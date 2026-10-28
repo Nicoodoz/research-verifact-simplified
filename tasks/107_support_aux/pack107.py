@@ -33,7 +33,7 @@ def validate_config(config):
     if config['budget']['compute_hard_cap_cny'] != 20 or config['budget']['API_cap_cny'] != 0:
         raise ValueError('Budget changed')
 
-def package(output):
+def package(output,receipt=None):
     output = Path(output).resolve()
     if output.exists() and any(output.iterdir()):
         raise FileExistsError('Use a new empty directory, never overwrite a frozen bundle')
@@ -100,11 +100,12 @@ def package(output):
         archive_sha256=c.sha(archive),archive_bytes=archive.stat().st_size,
         contains_clinical_material=True,publishable=False,contains_base_weights=False,contains_adapter_weights=False,
         no_GPU_or_API=True)
-    c.put(c.OUT/'implementation_package.json',report)
+    c.put(receipt or c.OUT/'implementation_package.json',report)
     print(c.canonical(report))
     return report
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
-    package(parser.parse_args().output)
+    parser.add_argument('--receipt',type=Path)
+    a=parser.parse_args();package(a.output,a.receipt)

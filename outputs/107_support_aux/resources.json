@@ -1,0 +1,67 @@
+{
+  "task": 107,
+  "gpu_name": "NVIDIA GeForce RTX 5090",
+  "training": {
+    "label_only": {
+      "steps": 50,
+      "consumed": 392,
+      "training_seconds": 932.3954121560382,
+      "checkpoint_seconds": 44.82827805897978,
+      "peak_allocated_bytes": 26870898688,
+      "trainable_lora_parameters": 43278336,
+      "initial_LoRA_sha256": "bcf51478c5328c46ea246995bb24ed34ab2b375515a8ba05e631dc33c5d58203",
+      "initial_RNG_sha256": "9a4b1dd8d265787da92b649f0b882eda0b689eec63fd7934195397c94fec5590",
+      "updated_lora_B_tensors": 248,
+      "main_and_aux_loss_logged": true,
+      "aux_head_saved": false
+    },
+    "support_aux": {
+      "steps": 50,
+      "consumed": 392,
+      "training_seconds": 934.0736819519225,
+      "checkpoint_seconds": 45.09923002801952,
+      "peak_allocated_bytes": 26870966272,
+      "trainable_lora_parameters": 43278336,
+      "initial_LoRA_sha256": "bcf51478c5328c46ea246995bb24ed34ab2b375515a8ba05e631dc33c5d58203",
+      "initial_RNG_sha256": "9a4b1dd8d265787da92b649f0b882eda0b689eec63fd7934195397c94fec5590",
+      "updated_lora_B_tensors": 248,
+      "main_and_aux_loss_logged": true,
+      "aux_head_saved": true
+    }
+  },
+  "inference": {
+    "label_only": {
+      "N": 500,
+      "batches": 250,
+      "generation_seconds": 487.291568687986,
+      "output_tokens": 3836,
+      "peak_allocated_bytes": 24095741952,
+      "auxiliary_head_used": false,
+      "all_input_tokens_SHA_verified": true,
+      "no_old_predictions_reused": true
+    },
+    "support_aux": {
+      "N": 500,
+      "batches": 250,
+      "generation_seconds": 483.81276045911363,
+      "output_tokens": 3781,
+      "peak_allocated_bytes": 24095741952,
+      "auxiliary_head_used": false,
+      "all_input_tokens_SHA_verified": true,
+      "no_old_predictions_reused": true
+    }
+  },
+  "method_implementation_verified": true,
+  "auxiliary_only_gradient_LoRA_B_tensors": 248,
+  "eval_batch_size": 2,
+  "main_loss_unchanged": true,
+  "both_fresh_base_on_same_5090": true,
+  "head_BCE_weight": 1,
+  "raw_private_outputs_not_published": true,
+  "train_selection_patients_isolated": true,
+  "confirmation40_new_use": false,
+  "exact_checkpoint_load_verified": true,
+  "next_step_bitwise_deterministic": false,
+  "original_105_106_GT_reference_reports_preserved": true,
+  "API_calls": 0
+}

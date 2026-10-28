@@ -1,0 +1,29 @@
+{
+  "task": 107,
+  "all_files_sha_verified": true,
+  "files_verified": 543,
+  "full_optimizer_final_each_arm_local": true,
+  "final_adapter_each_arm_local": true,
+  "aux_head_local": true,
+  "archive_sha256": "c1c3276da74bf6a344cdb8025d3ed4e839a8fee1ad0115352a051bd0b3d85a5a",
+  "archive_bytes": 960727194,
+  "manifest_sha256": "ae0622e3f18aeefbc881a42f7945507e7065058f7feb1f94e3f3bbf6ed14a8b3",
+  "final_checkpoint_fingerprints": {
+    "label_only": {
+      "slot": "checkpoint_a",
+      "adapter_sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+      "optimizer_state_sha256": "a7e3feb63efba30cb3847148b63883162a0c2b446bdbfebd65fe0b1e5b9d4db8",
+      "aux_head_sha256": null
+    },
+    "support_aux": {
+      "slot": "checkpoint_a",
+      "adapter_sha256": "0b5f026c42976ae20498c4f131ed607fb0db727d3b421cb4043a1ca2b55b5995",
+      "optimizer_state_sha256": "c878810207fc58d5408694c7e5a2940cf9184135c277f0008701a37b517716cb",
+      "aux_head_sha256": "904b894e2a9efd0b7dff7fd67fce60f21de905c71c5064e36c61ffdd75a44eaf"
+    }
+  },
+  "base_weights_in_local_backup": false,
+  "credentials_included": false,
+  "clinical_raw_receipts_stay_private": true,
+  "private_archive": ".local_models/107_support_aux/5090/final_backup107.tar.gz"
+}

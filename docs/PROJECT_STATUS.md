@@ -1,6 +1,6 @@
-# 项目现状（2026-10-28，107 CPU准备完成，5090接续已提供）
+# 项目现状（2026-10-28，107 GPU完成）
 
-107阶段一CPU准备完成，用户已交接RTX5090 32GB（2.88元/小时，20:40起计费），不再等待租卡。两臂label_only/support_aux从原9B新训同196×2轮/50步，唯一差异为训练期prompt末端S/non-S BCE权重1；保留105主loss、原prompt/JSON/parser与评价500，按新授权检查评价batch2、必要时1，两臂同分组。CPU因果LoRA梯度/恢复、数据/预算/包核验通过；新机原9B全SHA及固定环境通过，100GiB数据盘几乎全空。阶段一推送后直接做5090真实最长backward/内核/显存/吞吐及整轮20元门槛，通过即执行。API0；当前无107分类结果，不启动108/升级默认。 [107准备报告](../outputs/107_support_aux/preparation_report.md) · [107接续](../tasks/107_support_aux/GPU_HANDOFF.md)。
+107两臂GPU训练与1000条首次评价完成：label_only/support_aux均在本次5090从原9B新训196×2轮/50步，数据/初始化/顺序/原105主loss不变，候选仅增加训练期S/non-S BCE权重1；batch2两臂同250组，推理不用辅助头。543文件已回传SHA核验，含两臂最终完整optimizer、适配器、辅助头及原始回执。用户已确认关机，待CPU离线统计；API0，GPU费用按2.88元/小时从20:40累计，精确账单待核。尚无107分类结论；不启108/扩大/升级默认。 [107当前报告](../outputs/107_support_aux/execution_completion.md) · [实时进度](../outputs/107_support_aux/实时进度.md)。
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -22,7 +22,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
-|107支持性辅助监督|原196两臂fresh、辅助BCE、CPU验证及最小包完成；新5090权重/环境/磁盘通过|已交接32GB5090@2.88/h，20:40计费；推送后直接GPU工程检查，整轮20元/API0门槛通过执行|
+|107支持性辅助监督|原196两臂fresh训练各50步/392消费、各500回执、最终完整状态与报告|GPU结束并本地核验，待停费后分析|
 |106标签目标准备|3675池、两个512匹配候选、53+16源文审读、同196归一sum入口及CPU验证|READY_FOR_NEXT_GPU_DECISION；推荐先诊断标签目标，0新API/GPU，不自动启动|
 |105短证据监督对照|两组196条×2轮、三臂各500回执、适配器及报告完成；用户已关机|证据短理由相对仅标签自然/压力MCC均下降，NA损失明显；停止当前配方扩大；不升级默认|
 |104监督诊断与短理由数据|512清单、288首审、196条双臂配对、64条API核查|数据准备完成，分类提升未检验；原GT与默认保留，不自动训练|

@@ -1,4 +1,4 @@
-# 全部任务与当前入口（107准备完成，5090接续已提供；2026-10-28）
+# 全部任务与当前入口（107 GPU完成；2026-10-28）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,7 +6,7 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
-|107_support_aux|[准备报告](../outputs/107_support_aux/preparation_report.md) · [协议](../tasks/107_support_aux/protocol.md) · [接续](../tasks/107_support_aux/GPU_HANDOFF.md)|[执行者自检](../outputs/107_support_aux/final_selfcheck.json)，非独立审计|CPU准备完成，新5090已交接；推送后技术/整轮20元预算通过即执行；API0|
+|107_support_aux|[当前报告](../outputs/107_support_aux/execution_completion.md) · [协议](../tasks/107_support_aux/protocol.md)|[执行者自检](../outputs/107_support_aux/execution_selfcheck.json)，非独立审计|两臂fresh各50步/500评价完成；待GPU停费后分析；API0，不自动下一任务|
 |106_label_preparation|[一页决定](../outputs/106_label_preparation/decision.md) · [报告](../outputs/106_label_preparation/report.md) · [协议](../tasks/106_label_preparation/protocol.md) · [交接](../tasks/106_label_preparation/GPU_HANDOFF.md)|[执行者自检](../outputs/106_label_preparation/final_selfcheck.json)；[子代理反证复核](../outputs/106_label_preparation/adversarial_review.md)，非医生审计|仅研究/数据/CPU准备；推荐同196标签mean/sum诊断，0新增API/GPU，READY_FOR_NEXT_GPU_DECISION|
 |105_brief_supervision|[最终报告](../outputs/105_brief_supervision/final_report.md) · [完整指标](../outputs/105_brief_supervision/final_metrics.md) · [源文案例](../outputs/105_brief_supervision/final_case_analysis.md)|[执行者自检](../outputs/105_brief_supervision/final_selfcheck.json)，非独立医生审计|两组训练、1500回执完成；短理由无增量，NA/false-S恶化；停止扩大，用户已关机|
 |104_supervision_evidence|[一页结论](../outputs/104_supervision_evidence/summary.md) · [正式报告](../outputs/104_supervision_evidence/report.md) · [配对指纹](../outputs/104_supervision_evidence/paired_manifest.json)|[执行者自检](../outputs/104_supervision_evidence/selfcheck.json)；[有限工程复核](../reviews/104_supervision_evidence/engineering_review.md)，非医生审计|512盘点、288首审、196配对；64 API，额外盲复核8/16；不训练、不升级默认|

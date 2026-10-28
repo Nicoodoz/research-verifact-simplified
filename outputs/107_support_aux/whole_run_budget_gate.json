@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-28T13:13:26.347076+00:00",
+  "bundle_sha256": "77116c2ee309be81369f69c952000b6c4e43ef2b9c84048c1b4529c7a0da76c4",
+  "estimated_remaining_seconds": 14995.34608258119,
+  "components_seconds": {
+    "train/label_only": 1257.198176706688,
+    "eval/label_only": 6090.474864583907,
+    "train/support_aux": 1257.198176706688,
+    "eval/support_aux": 6090.474864583907,
+    "saving_loading_transfer_shutdown": 300.0
+  },
+  "committed_work_discounts_seconds": {},
+  "actual_hourly_cny": 2.88,
+  "runtime_estimate_mode": "actual_gpu_absolute",
+  "measured_training_slowdown": null,
+  "measured_inference_slowdown": null,
+  "already_used_cny": 1.605077653694153,
+  "estimated_total_compute_cny": 13.601354519759104,
+  "operating_line_cny": 18,
+  "shutdown_unknown_reserve_cny": 2,
+  "remaining_budget_gap_cny": 0.0,
+  "fits_complete_frozen_run": true,
+  "formal_optimizer_updates_permitted": true
+}
