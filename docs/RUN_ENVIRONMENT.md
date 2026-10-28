@@ -1,6 +1,6 @@
-# 当前环境与启动方式（2026-10-28核对）
+# 当前环境与启动方式（2026-10-29核对）
 
-108云端采用独立env108：继承Torch2.8.0+cu128，Transformers4.56.1及numpy1.26.4等按requirements108安装，不覆盖已冻结107环境。本次A4000 16GB用于原DeBERTa/C48多窗口顶部单层的条件性验证；GPU分类结果与实际吞吐尚不能由CPU缓存头计时推出。CPU初筛使用现有032本地Torch环境且未初始化CUDA，初筛统计复算使用research-verifact-029。数据/特征缓存与权重留私有目录，不全盘重算缓存SHA。
+108已使用独立env108（Torch2.8.0+cu128、Transformers4.56.1、numpy1.26.4），保留旧9B环境。本次4090 24GB已完成原DeBERTa/C48完整多窗口、冻结底部23层及顶部12,596,224参数的两臂训练/各500评价。AMP窗口归约类型错误修为FP32后真实GPU最长bag和梯度检查通过，原CPU结果不变。模型/完整optimizer/scaler/RNG已回传，00:45:24关机命令接受且SSH断开；平台精确停费待账单。CPU分析不需GPU；本轮阴性未执行原文GPU部署测速，不能将缓存头速度当完整系统吞吐。
 
 107已在本次RTX5090 32GB完成BF16、micro1、完整输入的两臂LoRA训练与batch2评价；原Python3.12.3/105关键依赖复用，未重装升级。最长backward、辅助LoRA梯度、完整状态恢复和显存/吞吐实测通过。最终适配器、辅助头、完整optimizer与回执已本地回传核验；CPU统计使用research-verifact-029，无需GPU。GPU停止计费状态以107 cost_status与用户确认为准。
 

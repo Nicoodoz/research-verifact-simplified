@@ -1,0 +1,36 @@
+{
+  "task": 108,
+  "checks": [
+    {
+      "arm": "flat_ce",
+      "probability_normalized": true,
+      "single_and_grouped_match": true,
+      "finite_nonzero_input_and_attention_gradients": true,
+      "normalized_features_FP32": true,
+      "FP32_score_cast_is_noop_without_AMP": true,
+      "NA_conditional_gradient_zero": false
+    },
+    {
+      "arm": "hier_shared",
+      "probability_normalized": true,
+      "single_and_grouped_match": true,
+      "finite_nonzero_input_and_attention_gradients": true,
+      "normalized_features_FP32": true,
+      "FP32_score_cast_is_noop_without_AMP": true,
+      "NA_conditional_gradient_zero": true
+    },
+    {
+      "arm": "hier_pool",
+      "probability_normalized": true,
+      "single_and_grouped_match": true,
+      "finite_nonzero_input_and_attention_gradients": true,
+      "normalized_features_FP32": true,
+      "FP32_score_cast_is_noop_without_AMP": true,
+      "NA_conditional_gradient_zero": true
+    }
+  ],
+  "CPU_autocast": "bfloat16",
+  "CUDA_initialized": false,
+  "CUDA_FP16_test_still_required": true,
+  "proves_classification_benefit": false
+}

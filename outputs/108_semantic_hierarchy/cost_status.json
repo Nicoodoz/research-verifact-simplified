@@ -1,0 +1,23 @@
+{
+  "task": 108,
+  "GPU_instance": "new_RTX4090_24GB",
+  "hourly_cny": 0.98,
+  "billing_start_beijing": "2026-10-29 00:00:00",
+  "shutdown_command_beijing": "2026-10-29 00:45:24",
+  "estimated_minutes": 45.40744744936625,
+  "estimated_GPU_cny": 0.741654975201024,
+  "estimate_end_basis": "accepted_shutdown_request_not_independent_platform_billing_receipt",
+  "platform_billing_stop_confirmed": false,
+  "paid_API_calls": 0,
+  "paid_API_cny": 0,
+  "old_A4000": {
+    "hourly_cny": 0.92,
+    "billing_start_beijing": "2026-10-28 23:20",
+    "shutdown_time_confirmed": false,
+    "exact_cost_cny": null,
+    "classification_result_recovered": false
+  },
+  "old_and_new_total_exact_cny": null,
+  "new_instance_five_hour_ceiling_cny": 4.9,
+  "agent_purchased_GPU_instance": false
+}

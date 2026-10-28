@@ -1,0 +1,21 @@
+{
+  "arm": "hier_shared",
+  "best": {
+    "epoch": 5,
+    "key": [
+      0.44437755010499946,
+      0.8170580964153276,
+      0.5104423637536911,
+      -77
+    ]
+  },
+  "updates": 1792,
+  "skipped_FP16_updates": 3,
+  "seconds": 385.4959056377411,
+  "selection_N": 500,
+  "encoder_trainable_parameters": 12596224,
+  "complete_original_windows": true,
+  "original_pretrained_initialization": true,
+  "old092_supervised_checkpoint_used": false,
+  "bundle_sha256": "bb3716f3ba2f197e6a00818e8cc74a90de2432de74b728571e29be89176ec852"
+}

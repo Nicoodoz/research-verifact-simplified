@@ -1,0 +1,21 @@
+{
+  "arm": "flat_ce",
+  "best": {
+    "epoch": 4,
+    "key": [
+      0.46587819581146156,
+      0.792336217552534,
+      0.5206405465213787,
+      -47
+    ]
+  },
+  "updates": 1792,
+  "skipped_FP16_updates": 3,
+  "seconds": 370.22829270362854,
+  "selection_N": 500,
+  "encoder_trainable_parameters": 12596224,
+  "complete_original_windows": true,
+  "original_pretrained_initialization": true,
+  "old092_supervised_checkpoint_used": false,
+  "bundle_sha256": "bb3716f3ba2f197e6a00818e8cc74a90de2432de74b728571e29be89176ec852"
+}

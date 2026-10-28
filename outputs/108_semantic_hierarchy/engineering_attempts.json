@@ -1,0 +1,28 @@
+{
+  "task": 108,
+  "attempts": [
+    {
+      "resource": "A4000_16GB",
+      "start_beijing": "2026-10-28 23:48",
+      "last_known": "SSH refused from23:53",
+      "recovered_classification": false,
+      "outcome": "unresolved_engineering_exit_no_method_result",
+      "logs_recovered": false
+    },
+    {
+      "resource": "new4090_24GB",
+      "start_beijing": "2026-10-29 00:23:12",
+      "formal_training_started": false,
+      "outcome": "AMP scatter dtype mismatch before formal training",
+      "fix": "FP32 softmax reductions only"
+    },
+    {
+      "resource": "new4090_24GB",
+      "start_beijing": "2026-10-29 00:24:58",
+      "formal_training_started": true,
+      "outcome": "both fixed arms completed; negative fair contrast; stopped"
+    }
+  ],
+  "old_attempt_manifests_retained_private": true,
+  "CPU_predictions_recomputed_after_fix": false
+}

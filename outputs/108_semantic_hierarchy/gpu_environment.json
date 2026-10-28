@@ -1,0 +1,14 @@
+{
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.56.1",
+    "tokenizers": "0.22.2",
+    "numpy": "1.26.4",
+    "safetensors": "0.6.2"
+  },
+  "Python": "3.12.3 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:46:43) [GCC 11.2.0]",
+  "window_microbatch": 8,
+  "cache_batch": 8,
+  "GPU": "NVIDIA GeForce RTX4090 24GB",
+  "old_9B_environment_overwritten": false
+}

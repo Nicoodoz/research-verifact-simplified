@@ -1,0 +1,84 @@
+{
+  "task": 108,
+  "settings": {
+    "seed": 92027,
+    "epochs": 5,
+    "head_lr": 0.001,
+    "encoder_lr": 2e-05,
+    "weight_decay": 0.01,
+    "dropout": 0.1,
+    "batch_size": 8,
+    "gradient_clip": 1.0,
+    "clip": 1.0
+  },
+  "window_microbatch": 8,
+  "cache_batch": 8,
+  "frozen_bottom_layers": 23,
+  "adapted_top_layers": 1,
+  "encoder_trainable_parameters": 12596224,
+  "original_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+  "original_encoder_weights_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+  "original_pretrained_top_and_encoder": true,
+  "old092_supervised_checkpoint_used": false,
+  "complete_original_windows": true,
+  "windows_encoded": 21866,
+  "training_patients": 32,
+  "validation_patients": 8,
+  "selection_patients": 20,
+  "training_N": 2866,
+  "validation_N": 809,
+  "selection_N": 500,
+  "arms": {
+    "flat_ce": {
+      "arm": "flat_ce",
+      "best": {
+        "epoch": 4,
+        "key": [
+          0.46587819581146156,
+          0.792336217552534,
+          0.5206405465213787,
+          -47
+        ]
+      },
+      "updates": 1792,
+      "skipped_FP16_updates": 3,
+      "seconds": 370.22829270362854,
+      "selection_N": 500,
+      "encoder_trainable_parameters": 12596224,
+      "complete_original_windows": true,
+      "original_pretrained_initialization": true,
+      "old092_supervised_checkpoint_used": false,
+      "bundle_sha256": "bb3716f3ba2f197e6a00818e8cc74a90de2432de74b728571e29be89176ec852"
+    },
+    "hier_shared": {
+      "arm": "hier_shared",
+      "best": {
+        "epoch": 5,
+        "key": [
+          0.44437755010499946,
+          0.8170580964153276,
+          0.5104423637536911,
+          -77
+        ]
+      },
+      "updates": 1792,
+      "skipped_FP16_updates": 3,
+      "seconds": 385.4959056377411,
+      "selection_N": 500,
+      "encoder_trainable_parameters": 12596224,
+      "complete_original_windows": true,
+      "original_pretrained_initialization": true,
+      "old092_supervised_checkpoint_used": false,
+      "bundle_sha256": "bb3716f3ba2f197e6a00818e8cc74a90de2432de74b728571e29be89176ec852"
+    }
+  },
+  "optimizer_attempts_per_arm": 1795,
+  "successful_updates_per_arm": 1792,
+  "FP16_overflow_skips_per_arm": 3,
+  "training_and_validation_and500_inference_are_combined_in_seconds": true,
+  "inference_seconds_separately_measured": false,
+  "full_raw_input_deployment_measured": false,
+  "second_seed_run": false,
+  "remaining1317_evaluated": false,
+  "confirmation40_used": false
+}

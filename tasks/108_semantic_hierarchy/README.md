@@ -1,9 +1,11 @@
 # 108语义分层与证据聚合
 
-[当前状态](CURRENT.md) · [冻结方案和继续规则](protocol.md) · [CPU报告](../../outputs/108_semantic_hierarchy/cpu_report.md) · [文献与反证](../../outputs/108_semantic_hierarchy/literature.md)
+[当前状态](CURRENT.md) · [最终报告](../../outputs/108_semantic_hierarchy/final_report.md) · [完整指标](../../outputs/108_semantic_hierarchy/final_metrics.md) · [预写规则](protocol.md) · [资源接续](resource_amendment.md)。
 
-flat_ce为三类普通CE；hier_shared使用同一个池化向量分别预测已涉及和条件支持；hier_pool使用阶段专用池化。联合概率恢复原S/NS/NA再argmax，NA不训练条件支持分支；监督仍为原claim级医生GT，不赋给每窗。
+flat_ce为普通三分类；hier_shared使用共享池化表示预测已涉及及条件支持，hier_pool使用阶段专用池化。联合概率恢复原S/NS/NA并argmax，NA不监督条件分支，原claim GT不赋给每窗。
 
-prepare108.py准备授权患者索引，cpu108.py对原始预训练CLS24进行真实头训练和固定500评价，model108.py实现三臂；gpu108.py仅在绑定本轮筛查决定与预算/截止时间后更新原DeBERTa顶部一层；lifecycle108.py保留备份宽限和平台停机保护。实际入口参数见各脚本--help，导入不会自动开始训练。
+CPU真实三头已完成，pool退化、shared按预写门槛进入GPU；4090同资料顶部层flat控制补齐后，shared综合退化，停止扩大。其余1317/固定第二种子/原文部署只准备未执行，不使用确认40、不自动109或默认升级。
 
-本次CPU已选择hier_shared进入条件性GPU验证，pool停止；后续若有价值再补本轮同范围flat顶部对照。缓存头推理不代表完整原文系统时延。GPU私有包内有token和权重，不上传GitHub；公开目录仅代码、协议、指标与不含原文的预测元数据。
+prepare108.py准备患者索引；cpu108.py/model108.py运行冻结原CLS24头；gpu108.py执行顶部层及完整窗口，compare108.py复算固定500；extension108.py仅提供条件性后续准备/固定推理，本轮未触发；test_amp108.py覆盖真实遇到的AMP聚合回归。导入不会自动训练。临床原文、token、权重、optimizer和缓存只保存在私有目录。
+
+首次A4000工程退出未收回日志，首次4090在正式训练前发现AMP归约类型错误并修正，均保留记录。新4090依用户指令未绑定额外自动关机任务，最终正常关机但不释放实例/磁盘。旧protocol中的A4000资源约束由本轮新用户授权及resource_amendment接续，研究方案不变。

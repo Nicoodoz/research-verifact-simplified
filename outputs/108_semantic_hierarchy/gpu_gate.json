@@ -1,0 +1,89 @@
+{
+  "cache_windows_per_second": 84.73010771478339,
+  "cache_measured_windows": 32,
+  "cache_batch": 8,
+  "window_microbatch": 8,
+  "training_probes": {
+    "flat_ce": {
+      "seconds_per_window": 0.017286903224885464,
+      "peak_allocated_bytes": 803685888,
+      "measurements": [
+        {
+          "repeat": 0,
+          "warmup": true,
+          "seconds": 0.1578981876373291,
+          "peak_allocated_bytes": 803685888
+        },
+        {
+          "repeat": 1,
+          "warmup": false,
+          "seconds": 0.1382952257990837,
+          "peak_allocated_bytes": 803685888
+        },
+        {
+          "repeat": 2,
+          "warmup": false,
+          "seconds": 0.01138191670179367,
+          "peak_allocated_bytes": 803685888
+        },
+        {
+          "repeat": 3,
+          "warmup": false,
+          "seconds": 0.011326782405376434,
+          "peak_allocated_bytes": 803685888
+        }
+      ],
+      "fixed_warmup": 1,
+      "fixed_steady_repeats": 3,
+      "projection_uses": "maximum_of_three_steady_complete_bag_backwards",
+      "probe_optimizer_updates": 0
+    },
+    "hier_shared": {
+      "seconds_per_window": 0.001730424351990223,
+      "peak_allocated_bytes": 803678720,
+      "measurements": [
+        {
+          "repeat": 0,
+          "warmup": true,
+          "seconds": 0.03494245558977127,
+          "peak_allocated_bytes": 803678720
+        },
+        {
+          "repeat": 1,
+          "warmup": false,
+          "seconds": 0.013843394815921783,
+          "peak_allocated_bytes": 803678720
+        },
+        {
+          "repeat": 2,
+          "warmup": false,
+          "seconds": 0.013625547289848328,
+          "peak_allocated_bytes": 803678720
+        },
+        {
+          "repeat": 3,
+          "warmup": false,
+          "seconds": 0.013561807572841644,
+          "peak_allocated_bytes": 803678720
+        }
+      ],
+      "fixed_warmup": 1,
+      "fixed_steady_repeats": 3,
+      "projection_uses": "maximum_of_three_steady_complete_bag_backwards",
+      "probe_optimizer_updates": 0
+    }
+  },
+  "remaining_cache_seconds": 258.0664723524824,
+  "remaining_two_arm_seconds": 2821.6199099086225,
+  "remaining_total_seconds": 3199.686382261105,
+  "all_original_windows": 21866,
+  "counts": {
+    "train": 15089,
+    "validation": 4173,
+    "selection": 2604
+  },
+  "already_committed_cache_windows": 0,
+  "current_estimated_gpu_cny": 0.40987928148905434,
+  "deadline_epoch": 1793221080.0,
+  "whole_run_fits": true
+}

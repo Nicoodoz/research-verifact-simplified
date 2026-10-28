@@ -16,10 +16,16 @@ import random
 import shutil
 import sys
 import time
+import traceback
 import common108 as c
 
 ORIGINAL_WEIGHTS_SHA='c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b'
 ORIGINAL_REVISION='b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7'
+
+
+def progress(work,stage,**values):
+    record=dict(stage=stage,epoch=time.time(),**values)
+    print(c.canonical(record),flush=True);c.put(Path(work)/'progress.json',record)
 
 
 def resolve(root,value):
@@ -111,6 +117,25 @@ def seed_all(seed,torch,np):
     random.seed(seed);np.random.seed(seed);torch.manual_seed(seed);torch.cuda.manual_seed_all(seed)
 
 
+def cache_cursor(bundle,work,manifest,versions,torch,np):
+    """Only a durable, committed contiguous window prefix may be reused."""
+    shape=[manifest['windows'],512,1024]
+    source=dict(tokens_sha256=manifest['files']['tokens.npy'],model_sha256=ORIGINAL_WEIGHTS_SHA,
+        config_sha256=manifest['files']['base/config.json'],layers=23,dtype='float16',shape=shape,
+        GPU=torch.cuda.get_device_name(),torch=versions['torch'],transformers=versions['transformers'])
+    binding=c.digest(c.canonical(source));record=Path(work)/'lower23_commit.json';path=Path(work)/'lower23.npy'
+    if record.exists():
+        previous=c.read(record);completed=previous['completed_windows']
+        if previous['source_binding_sha256']!=binding or type(completed) is not int or not 0<=completed<=manifest['windows']:raise ValueError('Partial lower23 source/runtime/cursor mismatch')
+        array=np.load(path,mmap_mode='r')
+        if list(array.shape)!=shape or array.dtype!=np.dtype('float16'):raise ValueError('Partial lower23 file header mismatch')
+        del array
+    else:
+        if path.exists():raise ValueError('Uncommitted lower23 file exists: preserve it separately before creating a new cache')
+        completed=0
+    return completed,binding,source
+
+
 def make_adapter(bundle,mode,settings,torch):
     from torch import nn
     from transformers import AutoConfig
@@ -169,6 +194,7 @@ def train(data,bundle,work,mode,settings,decision,torch,np):
     optimizer=torch.optim.AdamW([dict(params=net.layer.parameters(),lr=settings['encoder_lr']),dict(params=net.head.parameters(),lr=settings['head_lr'])],weight_decay=settings['weight_decay'])
     scaler=torch.amp.GradScaler('cuda');order_rng=np.random.default_rng(settings['seed']);history=[];best=None;updates=skipped=0;begin=time.time()
     train_ids=data.splits['train'];valid_ids=data.splits['validation'];folder=work/mode;folder.mkdir(parents=True,exist_ok=True)
+    progress(work,'training_start',arm=mode,training_N=len(train_ids),validation_N=len(valid_ids),epochs=settings['epochs'])
     for epoch in range(1,settings['epochs']+1):
         order=order_rng.permutation(len(train_ids));net.train()
         for start in range(0,len(order),settings['batch_size']):
@@ -199,6 +225,7 @@ def train(data,bundle,work,mode,settings,decision,torch,np):
     c.put(folder/'complete.json',dict(arm=mode,best=best,updates=updates,skipped_FP16_updates=skipped,seconds=time.time()-begin,selection_N=len(selected),
         encoder_trainable_parameters=sum(p.numel() for p in net.layer.parameters()),complete_original_windows=True,
         original_pretrained_initialization=True,old092_supervised_checkpoint_used=False,bundle_sha256=c.sha(bundle/'manifest.json')))
+    progress(work,'training_and_selection_complete',arm=mode,best_epoch=best['epoch'],updates=updates,selection_N=len(selected))
     del net,optimizer,scaler;gc.collect();torch.cuda.empty_cache()
 
 
@@ -228,8 +255,12 @@ def candidate_screen(bundle,work,candidate):
 
 
 def run(bundle,work,decision_path,window_microbatch=8,cache_batch=8):
-    bundle=Path(bundle);work=Path(work);manifest=verify(bundle);decision=load_decision(decision_path,bundle);work.mkdir(parents=True,exist_ok=True)
+    bundle=Path(bundle);work=Path(work);work.mkdir(parents=True,exist_ok=True)
+    progress(work,'verify_start');manifest=verify(bundle);progress(work,'verify_complete',files=len(manifest['files']))
+    progress(work,'load_decision_start');decision=load_decision(decision_path,bundle)
+    progress(work,'load_decision_complete',candidate=decision['candidate'],deadline_epoch=decision['deadline_epoch'])
     os.environ['HF_HUB_OFFLINE']='1';os.environ['TRANSFORMERS_OFFLINE']='1';os.environ['TOKENIZERS_PARALLELISM']='false'
+    progress(work,'environment_import_start')
     import numpy as np
     import torch
     import importlib.metadata as metadata
@@ -237,15 +268,23 @@ def run(bundle,work,decision_path,window_microbatch=8,cache_batch=8):
     versions={name:metadata.version(name) for name in ('torch','transformers','tokenizers','numpy','safetensors')}
     if versions['transformers']!='4.56.1':raise RuntimeError('Use isolated108 transformers4.56.1; do not overwrite107 environment')
     c.put(work/'environment.json',dict(versions=versions,Python=sys.version,instance=platform.node(),window_microbatch=window_microbatch,cache_batch=cache_batch))
+    progress(work,'environment_ready',versions=versions)
     if not torch.cuda.is_available():raise RuntimeError('This entry requires the bound108 GPU')
-    if shutil.disk_usage(work).free<manifest['lower23_subset_bytes']+2*1024**3:raise RuntimeError('Insufficient existing disk for complete lower23 subset; no automatic expansion')
+    committed,cache_binding,cache_source=cache_cursor(bundle,work,manifest,versions,torch,np)
+    remaining_cache_bytes=(manifest['windows']-committed)*512*1024*2
+    if shutil.disk_usage(work).free<remaining_cache_bytes+2*1024**3:raise RuntimeError('Insufficient existing disk for remaining complete lower23 subset; no automatic expansion')
+    progress(work,'cache_resume_checked',committed_windows=committed,total_windows=manifest['windows'])
     settings=c.read(bundle/'settings.json');seed_all(settings['seed'],torch,np);tokens=np.load(bundle/'tokens.npy',mmap_mode='r')
+    progress(work,'original_encoder_load_start')
     encoder=AutoModel.from_pretrained(bundle/'base',local_files_only=True,torch_dtype=torch.float16).cuda().eval()
+    progress(work,'original_encoder_loaded',GPU=torch.cuda.get_device_name(),free_bytes=torch.cuda.mem_get_info()[0])
     for p in encoder.parameters():p.requires_grad_(False)
     # Original first23 layers only. The untouched24th layer is trained separately.
     encoder.encoder.layer=torch.nn.ModuleList(list(encoder.encoder.layer)[:23])
     warm=min(cache_batch,len(tokens));batch=torch.from_numpy(np.array(tokens[:warm],dtype=np.int64)).cuda();mask=torch.ones_like(batch)
+    progress(work,'encoder_warm_start',batch=warm,sequence_length=512)
     with torch.inference_mode():encoder(input_ids=batch,attention_mask=mask)
+    torch.cuda.synchronize();progress(work,'encoder_warm_complete')
     torch.cuda.synchronize();begin=time.perf_counter()
     measured_windows=0
     with torch.inference_mode():
@@ -253,10 +292,12 @@ def run(bundle,work,decision_path,window_microbatch=8,cache_batch=8):
             ids=torch.from_numpy(np.array(tokens[start:start+cache_batch],dtype=np.int64)).cuda()
             encoder(input_ids=ids,attention_mask=torch.ones_like(ids));measured_windows+=len(ids)
     torch.cuda.synchronize();cache_speed=measured_windows/(time.perf_counter()-begin)
+    progress(work,'encoder_throughput_complete',measured_windows=measured_windows,windows_per_second=cache_speed)
     # Before full encoding, benchmark one complete largest training bag using
     # original lower states. These disposable models never seed formal training.
     bags={r['id']:r['windows'] for r in c.rows(bundle/'bags.jsonl')};splits=c.read(bundle/'splits.json')
     longest=max(splits['train'],key=lambda i:len(bags[i]));indices=bags[longest]
+    progress(work,'top_probe_inputs_start',windows=len(indices))
     with torch.inference_mode():
         probe=[]
         for index in indices:
@@ -264,47 +305,78 @@ def run(bundle,work,decision_path,window_microbatch=8,cache_batch=8):
     del encoder,batch,mask,inp;gc.collect();torch.cuda.empty_cache();timings={}
     rows={r['id']:r for r in c.rows(bundle/'rows.jsonl')}
     for mode in ('flat_ce',decision['candidate']):
-        seed_all(settings['seed'],torch,np);net=make_adapter(bundle,mode,settings,torch);net.train();begin=time.perf_counter();torch.cuda.reset_peak_memory_stats()
-        with torch.autocast('cuda',dtype=torch.float16):
-            z=torch.cat([net.encode(torch.cat(probe[start:start+window_microbatch]).float(),
-                torch.ones((len(probe[start:start+window_microbatch]),512),device='cuda',dtype=torch.long)) for start in range(0,len(probe),window_microbatch)])
-            logp=net.head(z.float())
-            loss=torch.nn.functional.nll_loss(logp[None],torch.tensor([c.LABELS.index(rows[longest]['GT'])],device='cuda'))
-        loss.backward();torch.cuda.synchronize()
-        if not torch.isfinite(loss) or not any(p.grad is not None and p.grad.abs().sum()>0 for p in net.layer.parameters()):raise RuntimeError('Top layer failed real gradient check')
-        timings[mode]=dict(seconds_per_window=(time.perf_counter()-begin)/len(probe),peak_allocated_bytes=torch.cuda.max_memory_allocated())
-        del net,loss,z,logp;gc.collect();torch.cuda.empty_cache()
+        progress(work,'top_forward_backward_probe_start',arm=mode,window_microbatch=window_microbatch)
+        seed_all(settings['seed'],torch,np);net=make_adapter(bundle,mode,settings,torch);net.train();measurements=[]
+        # Fixed warmup1 + steady3; no optimizer update, no probe state reused.
+        # A cold first backward must not be multiplied into every formal bag.
+        for repeat in range(4):
+            check_deadline(decision);net.zero_grad(set_to_none=True);torch.cuda.synchronize();torch.cuda.reset_peak_memory_stats();begin=time.perf_counter()
+            with torch.autocast('cuda',dtype=torch.float16):
+                z=torch.cat([net.encode(torch.cat(probe[start:start+window_microbatch]).float(),
+                    torch.ones((len(probe[start:start+window_microbatch]),512),device='cuda',dtype=torch.long)) for start in range(0,len(probe),window_microbatch)])
+                logp=net.head(z.float())
+                loss=torch.nn.functional.nll_loss(logp[None],torch.tensor([c.LABELS.index(rows[longest]['GT'])],device='cuda'))
+            loss.backward();torch.cuda.synchronize();elapsed=time.perf_counter()-begin
+            if not torch.isfinite(loss) or not any(p.grad is not None and p.grad.abs().sum()>0 for p in net.layer.parameters()):raise RuntimeError('Top layer failed real gradient check')
+            measurements.append(dict(repeat=repeat,warmup=repeat==0,seconds=elapsed,peak_allocated_bytes=torch.cuda.max_memory_allocated()))
+            del loss,z,logp
+        timings[mode]=dict(seconds_per_window=max(item['seconds'] for item in measurements[1:])/len(probe),
+            peak_allocated_bytes=max(item['peak_allocated_bytes'] for item in measurements),measurements=measurements,
+            fixed_warmup=1,fixed_steady_repeats=3,projection_uses='maximum_of_three_steady_complete_bag_backwards',probe_optimizer_updates=0)
+        progress(work,'top_forward_backward_probe_complete',arm=mode,**timings[mode])
+        del net;gc.collect();torch.cuda.empty_cache()
     del probe
     counts={key:sum(len(bags[i]) for i in ids) for key,ids in splits.items()}
     # Backward time bounds validation/prediction too;1.5 margin includes Python,
     # optimizer and100MB checkpoints. Measured upload/setup already consumed time.
-    cache_seconds=len(tokens)/cache_speed
+    cache_seconds=(len(tokens)-committed)/cache_speed
     train_seconds=sum(t['seconds_per_window']*(settings['epochs']*(counts['train']+counts['validation'])+counts['selection'])*1.5 for t in timings.values())
     projected=cache_seconds+train_seconds+120
     receipt=dict(cache_windows_per_second=cache_speed,cache_measured_windows=measured_windows,cache_batch=cache_batch,window_microbatch=window_microbatch,
         training_probes=timings,remaining_cache_seconds=cache_seconds,
         remaining_two_arm_seconds=train_seconds,remaining_total_seconds=projected,all_original_windows=len(tokens),counts=counts,
+        already_committed_cache_windows=committed,
         current_estimated_gpu_cny=check_deadline(decision),deadline_epoch=decision['deadline_epoch'],whole_run_fits=False)
     try:check_deadline(decision,projected)
     except TimeoutError:c.put(work/'gpu_gate.json',receipt);raise
     receipt['whole_run_fits']=True;c.put(work/'gpu_gate.json',receipt)
+    progress(work,'whole_run_budget_passed',remaining_seconds=projected,remaining_cache_seconds=cache_seconds,remaining_two_arm_seconds=train_seconds)
     # Reload original frozen encoder after discarding every disposable top probe.
-    encoder=AutoModel.from_pretrained(bundle/'base',local_files_only=True,torch_dtype=torch.float16).cuda().eval()
-    for p in encoder.parameters():p.requires_grad_(False)
-    encoder.encoder.layer=torch.nn.ModuleList(list(encoder.encoder.layer)[:23])
-    lower=np.lib.format.open_memmap(work/'lower23.npy',mode='w+',dtype='float16',shape=(len(tokens),512,1024))
-    with torch.inference_mode():
-        for start in range(0,len(tokens),cache_batch):
-            check_deadline(decision);ids=torch.from_numpy(np.array(tokens[start:start+cache_batch],dtype=np.int64)).cuda()
-            output=encoder(input_ids=ids,attention_mask=torch.ones_like(ids)).last_hidden_state
-            lower[start:start+len(ids)]=output.cpu().numpy()
-    lower.flush();del encoder,ids,output;gc.collect();torch.cuda.empty_cache();data=Data(bundle,lower,torch,np,window_microbatch=window_microbatch)
+    cache_path=work/'lower23.npy';lower=np.lib.format.open_memmap(cache_path,mode='r+' if cache_path.exists() else 'w+',dtype='float16',shape=(len(tokens),512,1024))
+    if committed<len(tokens):
+        progress(work,'complete_lower23_encoder_reload_start')
+        encoder=AutoModel.from_pretrained(bundle/'base',local_files_only=True,torch_dtype=torch.float16).cuda().eval()
+        for p in encoder.parameters():p.requires_grad_(False)
+        encoder.encoder.layer=torch.nn.ModuleList(list(encoder.encoder.layer)[:23])
+        cache_begin=time.perf_counter();progress(work,'complete_lower23_cache_start',completed=committed,total=len(tokens))
+        with cache_path.open('r+b') as durable,torch.inference_mode():
+            lower.flush();os.fsync(durable.fileno())
+            # This initial commit also makes an empty preallocated cache safely resumable.
+            c.put(work/'lower23_commit.json',dict(source_binding_sha256=cache_binding,source=cache_source,
+                completed_windows=committed,total_windows=len(tokens),bundle_sha256=c.sha(bundle/'manifest.json')))
+            for start in range(committed,len(tokens),cache_batch):
+                check_deadline(decision);ids=torch.from_numpy(np.array(tokens[start:start+cache_batch],dtype=np.int64)).cuda()
+                output=encoder(input_ids=ids,attention_mask=torch.ones_like(ids)).last_hidden_state
+                lower[start:start+len(ids)]=output.cpu().numpy();completed=start+len(ids)
+                # Commit only after the complete batch is flushed to durable disk.
+                lower.flush();os.fsync(durable.fileno())
+                c.put(work/'lower23_commit.json',dict(source_binding_sha256=cache_binding,source=cache_source,
+                    completed_windows=completed,total_windows=len(tokens),bundle_sha256=c.sha(bundle/'manifest.json')))
+                if completed%256<cache_batch or completed==len(tokens):
+                    elapsed=time.perf_counter()-cache_begin
+                    progress(work,'lower23_cache_progress',completed=completed,total=len(tokens),elapsed_seconds=elapsed,
+                        ETA_seconds=(len(tokens)-completed)*elapsed/(completed-committed))
+        del encoder,ids,output;gc.collect();torch.cuda.empty_cache()
+    else:progress(work,'complete_lower23_cache_reused',completed=committed,total=len(tokens))
+    data=Data(bundle,lower,torch,np,window_microbatch=window_microbatch)
     candidate=decision['candidate'];train(data,bundle,work,candidate,settings,decision,torch,np)
     screen=candidate_screen(bundle,work,candidate);actual_arms=[candidate]
+    progress(work,'candidate_continuation_screen',continue_to_flat=screen['continue_to_fair_flat_top_control'])
     if screen['continue_to_fair_flat_top_control']:
         check_deadline(decision);train(data,bundle,work,'flat_ce',settings,decision,torch,np);actual_arms.append('flat_ce')
     c.put(work/'complete.json',dict(task=108,arms=actual_arms,fair_control_run='flat_ce' in actual_arms,GPU_model=torch.cuda.get_device_name(),
         paid_API_calls=0,full_input_and_all_windows=True,bundle_sha256=c.sha(bundle/'manifest.json'),time=time.time()))
+    progress(work,'complete',arms=actual_arms)
 
 
 def main():
@@ -318,6 +390,9 @@ def main():
     else:
         if args.work is None or args.decision is None:parser.error('Bound CPU decision and work path required')
         try:run(args.bundle,args.work,args.decision,window_microbatch=args.window_microbatch,cache_batch=args.cache_batch)
+        except BaseException as exc:
+            error=dict(epoch=time.time(),error_type=type(exc).__name__,message=str(exc),traceback=traceback.format_exc())
+            c.put(args.work/'error.json',error);print(c.canonical(error),flush=True);raise
         finally:
             # The separately bound lifecycle108 watcher owns platform shutdown.
             c.put(args.work/'finish_requested.json',dict(reason='gpu108_entry_finished_or_failed',epoch=time.time()))

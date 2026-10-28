@@ -1,0 +1,21 @@
+{
+  "task": 108,
+  "gpu_go": true,
+  "candidate": "hier_shared",
+  "cpu_collapse": false,
+  "probe_only": false,
+  "bundle_sha256": "bb3716f3ba2f197e6a00818e8cc74a90de2432de74b728571e29be89176ec852",
+  "hourly_cny": 0.98,
+  "billing_start_epoch": 1793203200.0,
+  "deadline_epoch": 1793221080.0,
+  "cap_cny": 4.9,
+  "prior_gpu_cny": 0,
+  "CPU_gate_source": "outputs/108_semantic_hierarchy/cpu_report.md",
+  "fixed_second_seed_if_worthwhile": 92028,
+  "platform_auto_shutdown_beijing": "2026-10-29 05:00",
+  "agent_scheduled_shutdown": false,
+  "scope": "new4090_instance_only_old_A4000_cost_unconfirmed",
+  "original_A4000_bundle_sha256": "dc31e4a29d96c4df35cd6510bd6bfa02ce47be231418102055df79041637649d",
+  "resource_amendment": "tasks/108_semantic_hierarchy/resource_amendment.md",
+  "AMP_pooling_reduction": "float32"
+}

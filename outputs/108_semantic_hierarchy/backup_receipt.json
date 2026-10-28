@@ -1,0 +1,29 @@
+{
+  "task": 108,
+  "epoch": 1793205921.7683613,
+  "local_directory": ".local_models/108_semantic_hierarchy/4090/evidence/control4090_r2",
+  "all_four_checkpoints_returned": true,
+  "files": [
+    {
+      "path": "hier_shared/best.pt",
+      "bytes": 52511512
+    },
+    {
+      "path": "hier_shared/last.pt",
+      "bytes": 153357242
+    },
+    {
+      "path": "flat_ce/best.pt",
+      "bytes": 52514974
+    },
+    {
+      "path": "flat_ce/last.pt",
+      "bytes": 153367186
+    }
+  ],
+  "predictions_per_arm": 500,
+  "best_weights_and_final_optimizer_scaler_RNG_saved": true,
+  "remote_disk_retained": true,
+  "transfer_check": "completed_SFTP_transfers_and_matching_recorded_remote_sizes",
+  "GPU_resume_replay_executed": false
+}

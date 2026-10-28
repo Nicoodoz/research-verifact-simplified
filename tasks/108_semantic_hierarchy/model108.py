@@ -19,7 +19,8 @@ def grouped_pool(features, groups, attention):
     if groups.dtype != torch.long or bool((groups < 0).any()):
         raise ValueError('Bag IDs must be nonnegative int64')
     count = int(groups.max()) + 1
-    scores = attention(features).squeeze(-1)
+    # AMP may promote exp to FP32; keep every softmax reduction in FP32.
+    scores = attention(features).squeeze(-1).float()
     maxima = scores.new_full((count,), -torch.inf)
     maxima.scatter_reduce_(0, groups, scores, reduce='amax', include_self=True)
     if not bool(torch.isfinite(maxima).all()):
