@@ -1,0 +1,23 @@
+{
+  "status": "PASS_STORAGE_AND_FREEZE_CHECKS",
+  "experiment_status": "EXECUTION_INCOMPLETE",
+  "storage9B4_sha": true,
+  "only2_authorized_new_clone_paths_removed": true,
+  "frozen50_with_declared_nogpu_engineering_amendments_unchanged": true,
+  "uploaded_bundle30_file_SHA": true,
+  "train196_pair_eval500_unchanged": true,
+  "evaluation_GT_not_uploaded": true,
+  "no_new_classification_or_relabel": true,
+  "APICalls": 0,
+  "original_instance_changes": 0,
+  "environment_ready": false,
+  "GPU_training_tested": false,
+  "platform_shutdown_confirmation_pending": true,
+  "inputs": {
+    "gpu_clone_storage.json": "c525bba6a425cc04cecdc4251bff7c7661072be315e4c35dc8c89c5f679969dc",
+    "gpu_clone_environment.json": "ea602bc6867f1ac864068534376a8a4b78948f3925356f5c62cbcef3fea77a84",
+    "gpu_clone_input_check.json": "60aea1614f5ef6a2c42f54cd81ace4995d0ef837ad869ec30d039e33764b08ab",
+    "gpu_clone_cost.json": "05a336133913ab306522d5c34a3eec4944079be3186a8d440473df49a522e1a6",
+    "gpu_execution_status.json": "ae93ce700e59cf4ecba6cfc144211ea0340a7131d7ebcb0b6e48dbc36793d6b1"
+  }
+}

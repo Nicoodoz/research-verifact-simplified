@@ -1,0 +1,69 @@
+{
+  "status": "EXECUTION_INCOMPLETE",
+  "reason": "Cloned disk lacked the103 verified venv; whole environment rebuild forbidden",
+  "current_clone_ready": false,
+  "storage_problem_resolved": true,
+  "training_completed": false,
+  "evaluation_completed": false,
+  "optimizer_steps": {
+    "label_only": 0,
+    "evidence_brief": 0
+  },
+  "consumed_samples": {
+    "label_only": 0,
+    "evidence_brief": 0
+  },
+  "expected_steps_per_arm": 50,
+  "expected_consumed_per_arm": 392,
+  "expected_training196_unchanged": true,
+  "prediction_coverage": {
+    "base_judge": {
+      "frozen_N": 500,
+      "received": 0,
+      "valid": 0,
+      "invalid": 0,
+      "missing": 500
+    },
+    "label_only": {
+      "frozen_N": 500,
+      "received": 0,
+      "valid": 0,
+      "invalid": 0,
+      "missing": 500
+    },
+    "evidence_brief": {
+      "frozen_N": 500,
+      "received": 0,
+      "valid": 0,
+      "invalid": 0,
+      "missing": 500
+    }
+  },
+  "MCC_PA_falseS_recall_bootstrap": null,
+  "promotion_gate": "NOT_EVALUABLE_NO_105_PREDICTIONS",
+  "paper_r1_and_103_predictions_not_substituted": true,
+  "model_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "original_instance_file_changes": 0,
+  "models_loaded": 0,
+  "paid_API_calls": 0,
+  "shutdown": {
+    "request_HKT": "2026-10-28T12:07:57.266696+08:00",
+    "command": "platform /usr/bin/shutdown -h now; /bin/bash fallback for plain shell script",
+    "triggered_by": "new-instance bound independent guard after saved manifest/os.sync",
+    "after_request": "SSH port37122 became unreachable; no successful login after request",
+    "console_stop_confirmed": false,
+    "invoice_confirmed": false,
+    "must_confirm_in_console": true,
+    "instance_or_disk_released": false
+  },
+  "cloud_files_pending_nogpu_retrieval": [
+    "results/clone_preparation/saved_manifest.json",
+    "results/clone_preparation/shutdown_intent.json",
+    "budget/ledger.json after shutdown request",
+    "/root/105_control/shutdown_result.json if shutdown returned before container stop"
+  ],
+  "no_adapter_or_optimizer_exists": true,
+  "next_action": "WhileGPUoff, selectively copy only source verifact103/venv103 to same path on clone via AutoDL console",
+  "runtime_input_manifest_SHA": "917734c40fe49b59e8a3bebb2330c0fa3b6a107c16d20e9993b7c5af71fe50da",
+  "executor_selfcheck_not_independent_audit": true
+}

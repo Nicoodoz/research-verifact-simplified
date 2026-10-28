@@ -1,0 +1,23 @@
+{
+  "source_live_inventory_available": false,
+  "reason": "sourceSSHunreachable; old instance not started or modified",
+  "source9B_frozen_weight_bytes": 19306310880,
+  "source9B_full_weight_already_verified_on_target": true,
+  "source_model_manifest_expected_bytes": {
+    "qwen3.5-9b": 19306310880,
+    "qwen3.6-35b-a3b": 71903776776
+  },
+  "frozen105_compressed_bytes": 5614161,
+  "frozen105_uncompressed_bytes": 32644417,
+  "all105_inputs_code_already_staged": true,
+  "remaining_required_source_dir": "/root/autodl-tmp/verifact103/venv103",
+  "remaining_venv_live_size_bytes": null,
+  "target_free_after_cleanup_bytes": 107855798272,
+  "do_not_copy": [
+    "35B",
+    "27B",
+    "old checkpoints",
+    "wholedata disk"
+  ],
+  "note": "Expected model sizes come from103 frozen manifests, not a fresh inventory of the offline source. Environment size must be read by platform copy preview; not invented."
+}

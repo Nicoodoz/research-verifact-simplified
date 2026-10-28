@@ -1,0 +1,57 @@
+{
+  "epoch": 1793160318.7210972,
+  "python": "3.12.3 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:46:43) [GCC 11.2.0]",
+  "base_executable": "/root/miniconda3/bin/python",
+  "original_venv_python_exists": false,
+  "original_venv_cfg_exists": false,
+  "metadata_only": true,
+  "torch_imported": false,
+  "model_loaded": false,
+  "base_environment_versions": {
+    "torch": {
+      "expected": "2.8.0+cu128",
+      "actual": "2.8.0+cu128"
+    },
+    "transformers": {
+      "expected": "5.17.0",
+      "actual": null
+    },
+    "unsloth": {
+      "expected": "2026.10.9",
+      "actual": null
+    },
+    "unsloth_zoo": {
+      "expected": "2026.10.9",
+      "actual": null
+    },
+    "peft": {
+      "expected": "0.21.2",
+      "actual": null
+    },
+    "triton": {
+      "expected": "3.4.0",
+      "actual": "3.4.0"
+    },
+    "tokenizers": {
+      "expected": "0.23.3",
+      "actual": null
+    },
+    "causal-conv1d": {
+      "expected": "1.7.0",
+      "actual": null
+    },
+    "numpy": {
+      "expected": "2.5.4",
+      "actual": "2.3.2"
+    },
+    "Jinja2": {
+      "expected": "3.1.6",
+      "actual": "3.1.6"
+    },
+    "safetensors": {
+      "expected": "0.8.0",
+      "actual": null
+    }
+  },
+  "ready_for_training": false
+}

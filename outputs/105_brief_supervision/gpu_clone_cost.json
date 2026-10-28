@@ -1,0 +1,42 @@
+{
+  "epoch": 1793160477.266696,
+  "status": "EXECUTION_INCOMPLETE_ENV_MISSING",
+  "GPU_billing_start_epoch": 1793158200.0,
+  "GPU_elapsed_seconds": 2277.2666959762573,
+  "GPU_rate_cny_per_hour": 6.98,
+  "GPU_estimated_cost_cny": 4.415367093865077,
+  "known_prior_min_cny": 0.05494024872117573,
+  "cumulative_known_compute_estimate_cny": 4.470307342586253,
+  "unknown_shared_shutdown_reserve_cny": 2,
+  "compute_hard_cap_cny": 20,
+  "GPU_hard_limit_seconds": 9000,
+  "original_instance_untouched": true,
+  "storage_repaired": true,
+  "model_and_environment_redownloaded": false,
+  "models_loaded": 0,
+  "optimizer_steps": {
+    "label_only": 0,
+    "evidence_brief": 0
+  },
+  "evaluation_received": {
+    "base_judge": 0,
+    "label_only": 0,
+    "evidence_brief": 0
+  },
+  "frozen_train_N": 196,
+  "frozen_eval_N": 500,
+  "paid_API_calls": 0,
+  "platform_stop_confirmed": false,
+  "reason": "venv103 absent after partial clone; no logged-in console/copy access; user forbids rebuilding environment; stop to avoid GPU idle",
+  "request_HKT": "2026-10-28T12:07:57.266696+08:00",
+  "start_HKT": "2026-10-28T11:30:00+08:00",
+  "price_and_start_source": "User: same6.98CNY/h; start11:30HKT. Container PID1 later than billing start is not used to reduce cost.",
+  "platform_invoice_observed": false,
+  "actual_GPU_billing_end_unconfirmed": true,
+  "prior_nogpu_stop_unconfirmed": true,
+  "prior_unknown_reserve_not_released": true,
+  "new_disk_purchase": false,
+  "known_compute_estimate_plus_shared_unknown_reserve_cny": 6.470307342586253,
+  "authoritative_remote_ledger": "/root/autodl-tmp/verifact105/budget/ledger.json",
+  "new_instance_budget_reset": false
+}
