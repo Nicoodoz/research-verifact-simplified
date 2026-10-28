@@ -1,0 +1,438 @@
+{
+  "created_utc": "2026-10-28T00:32:26.267586+00:00",
+  "files": [
+    {
+      "bytes": 773,
+      "path": "outputs/104_supervision_evidence/analysis_inputs.json",
+      "sha256": "33db83e1d62b85a14cccf83c0a20a91d75201a7c0c7b98e6c40e9d195ed5bd30"
+    },
+    {
+      "bytes": 237279,
+      "path": "outputs/104_supervision_evidence/annotation_inventory512.jsonl",
+      "sha256": "50deaad227829eac0f5ac31751e20f861186dad0b0d4271d86d9560e0ce899ad"
+    },
+    {
+      "bytes": 1479,
+      "path": "outputs/104_supervision_evidence/annotation_summary.json",
+      "sha256": "307f24e8ee451da2919ad00677379bb85392a6f9db704e75fb75f6e57a7fd6ff"
+    },
+    {
+      "bytes": 2586,
+      "path": "outputs/104_supervision_evidence/api_audit_freeze.json",
+      "sha256": "4aa882fe46727d1acd55e0994e9b79d1d37836d6ee685ce20eb96c10ffdb8c9f"
+    },
+    {
+      "bytes": 13432,
+      "path": "outputs/104_supervision_evidence/api_audit_samples.jsonl",
+      "sha256": "541af3e325ad230dfe44564a058cd049710b91d5f192d02f60ced7ceec4b6a21"
+    },
+    {
+      "bytes": 651,
+      "path": "outputs/104_supervision_evidence/api_budget_plan.json",
+      "sha256": "1709d8b7941583027f72430232b301780d32d519ec93887fccc3b7630a2aa756"
+    },
+    {
+      "bytes": 20578,
+      "path": "outputs/104_supervision_evidence/api_cost_ledger.json",
+      "sha256": "724cb3582307516cd58f4ae075a77ee9b0a295f27850b09969382615e6587f5a"
+    },
+    {
+      "bytes": 19039,
+      "path": "outputs/104_supervision_evidence/api_quality_checks.jsonl",
+      "sha256": "3cf0bf578a8a63965127122a1251d597d979bfc31a5e3702700db8265664e93b"
+    },
+    {
+      "bytes": 17787,
+      "path": "outputs/104_supervision_evidence/api_usage.jsonl",
+      "sha256": "0a480b6f3dc8a4c9dfe943d186f13dbe0421b84b96ad8ce224eb941f19698d05"
+    },
+    {
+      "bytes": 636829,
+      "path": "outputs/104_supervision_evidence/asset_inventory512.jsonl",
+      "sha256": "54cf495ff112e2bff727454f285cb019ec8bbe92db2ecae6af7f6f0ca6cf45f6"
+    },
+    {
+      "bytes": 1685,
+      "path": "outputs/104_supervision_evidence/asset_inventory_notes.md",
+      "sha256": "1e167db3c59d438246ac23783cd44db41bc565f2944dfb7f4e397534ed5ff957"
+    },
+    {
+      "bytes": 2328,
+      "path": "outputs/104_supervision_evidence/asset_summary.json",
+      "sha256": "33be8b9edfd7c5c14fc6612c22c44908cac59d8678f4be3dfc3444d1075eaa12"
+    },
+    {
+      "bytes": 1551,
+      "path": "outputs/104_supervision_evidence/blind_review_freeze.json",
+      "sha256": "fa5373cc6a0c83cba28ded7b8ac58cea789927a7b17210e6ce56052fcbee2fe4"
+    },
+    {
+      "bytes": 10136,
+      "path": "outputs/104_supervision_evidence/candidate_paired_manifest.json",
+      "sha256": "3d4fa79d85439091ed6d847e449416d7601077781375797cf181f51dca2eb50c"
+    },
+    {
+      "bytes": 10747,
+      "path": "outputs/104_supervision_evidence/candidate_teacher_checked_manifest.json",
+      "sha256": "786c666ff8a7b540d10920b6f62086a3e22e1bde9efaff0561bbdb15e73bf0bc"
+    },
+    {
+      "bytes": 3405,
+      "path": "outputs/104_supervision_evidence/case_findings.md",
+      "sha256": "8cbf78daf22df00636db7b07e2a06fa31b98b086769a8b2ff500020ca2120abd"
+    },
+    {
+      "bytes": 8389,
+      "path": "outputs/104_supervision_evidence/case_pointers.jsonl",
+      "sha256": "2c398d90a533b6a0733e14e6f6016d5b2bf552d97fb77c93444a9fff9a3c53c0"
+    },
+    {
+      "bytes": 1769,
+      "path": "outputs/104_supervision_evidence/complete.json",
+      "sha256": "806ddf5632eaedfa22e4e4e9af3d5bf5dbe99e9fd83ab9a0cc8b1e615c1c43cf"
+    },
+    {
+      "bytes": 1381,
+      "path": "outputs/104_supervision_evidence/cost_summary.json",
+      "sha256": "a0b002a4215d9999f608dfce267a8abccd711346d011c38c362d018f14a306b5"
+    },
+    {
+      "bytes": 389,
+      "path": "outputs/104_supervision_evidence/duplicate_summary.json",
+      "sha256": "113f64f07c608ac140e23fc9eead2cbf11ad3a8e81cb9eb2540583f39355aa3f"
+    },
+    {
+      "bytes": 29345,
+      "path": "outputs/104_supervision_evidence/final_quality_status.jsonl",
+      "sha256": "4fc7fa6a566a0176a2dbc99de415ea65ca01e957a8d2b57c39db87a224878414"
+    },
+    {
+      "bytes": 730,
+      "path": "outputs/104_supervision_evidence/finalization.json",
+      "sha256": "d463d1e51f8a4eb3ece9f669af6d961e103cabac86b144c840404be39ed72b9f"
+    },
+    {
+      "bytes": 1298,
+      "path": "outputs/104_supervision_evidence/independent_dispute_checks.jsonl",
+      "sha256": "b2bc7c6fdea6a2b87cb059052c0eddfb3d704f1c537fd829fe990485fbaf99ac"
+    },
+    {
+      "bytes": 477,
+      "path": "outputs/104_supervision_evidence/independent_dispute_summary.json",
+      "sha256": "2ccf1428c9f91ecf3baaa2c14ac0e680aa24e1051c4df59435de6b8b09761648"
+    },
+    {
+      "bytes": 1655,
+      "path": "outputs/104_supervision_evidence/interface_cpu_selfcheck.json",
+      "sha256": "1a573baec61302506f62e44fe8644584e990f00e600fb4a05a9f0b030d7d1c81"
+    },
+    {
+      "bytes": 13982,
+      "path": "outputs/104_supervision_evidence/inventory_freeze.json",
+      "sha256": "48efd70f00cf0f29fd8e09b83b03b38110d167015ecfed7bf05b50f132426d1b"
+    },
+    {
+      "bytes": 113130,
+      "path": "outputs/104_supervision_evidence/inventory_token_lengths512.jsonl",
+      "sha256": "a83ffb7fcfe77df6c266d9abe8c378db608d681fe6ef62c06fdb08fc4bce879f"
+    },
+    {
+      "bytes": 2021,
+      "path": "outputs/104_supervision_evidence/inventory_token_summary.json",
+      "sha256": "a381b0aac77253e7cd0062c827fd6f7880fe86181d23f1aee97e2e0e70d33a11"
+    },
+    {
+      "bytes": 353,
+      "path": "outputs/104_supervision_evidence/near_duplicate_candidates.json",
+      "sha256": "97ccd5bf9e5e8829a9e7cc83f4ea95438c201016bc5d84d31778b3a817f95d49"
+    },
+    {
+      "bytes": 1124,
+      "path": "outputs/104_supervision_evidence/next_action.json",
+      "sha256": "776792cd334f980e30049daf8f31a6f106feee07f591adf7d7d92f08b34d705a"
+    },
+    {
+      "bytes": 10053,
+      "path": "outputs/104_supervision_evidence/paired_manifest.json",
+      "sha256": "a935a8fc0cc2f458c4ec1d4a2624117e1ccc6c657a30fb0603633d886c79a07c"
+    },
+    {
+      "bytes": 40450,
+      "path": "outputs/104_supervision_evidence/quarantine.jsonl",
+      "sha256": "5cf8b6da9731732f5b7278b9205ec2eb608bee2427b90d9b2d8242c65de1b88e"
+    },
+    {
+      "bytes": 11737,
+      "path": "outputs/104_supervision_evidence/report.md",
+      "sha256": "14d8b7ffbe9a436831e228a4cc45277815fbdc89c95201072c3fee5d8e2135c2"
+    },
+    {
+      "bytes": 128559,
+      "path": "outputs/104_supervision_evidence/review_status288.jsonl",
+      "sha256": "fb5f3ba4d3eebbda7dce716c69f4e1357c72b8689fedc88a8a8dde9c2bff8bc9"
+    },
+    {
+      "bytes": 2296,
+      "path": "outputs/104_supervision_evidence/selfcheck.json",
+      "sha256": "eed074b25e095aead93641ac81f07f36cb64d29a231506212e957dce349e8371"
+    },
+    {
+      "bytes": 1934,
+      "path": "outputs/104_supervision_evidence/source_schema.json",
+      "sha256": "11233dfb64a3964463385e926ce8434a11c98f1e0b1ffc91c4223bbfa1a7df8e"
+    },
+    {
+      "bytes": 3468,
+      "path": "outputs/104_supervision_evidence/summary.md",
+      "sha256": "67e00665f0399de9b39580c218c837cf71169d18b05ae7d6cf8ab564af295c9f"
+    },
+    {
+      "bytes": 11645,
+      "path": "outputs/104_supervision_evidence/supervision_summary.json",
+      "sha256": "eb26041125cb06f5c62b0cccbaabe115d1e9bbc59b45d1f3b0cda5a311d5d34b"
+    },
+    {
+      "bytes": 108613,
+      "path": "outputs/104_supervision_evidence/teacher_provenance.jsonl",
+      "sha256": "faa6711d0a86082978d4981cf1e09dddf7d8f0f5a6aa15fbc2d600ae56140a85"
+    },
+    {
+      "bytes": 8842,
+      "path": "outputs/104_supervision_evidence/teacher_queue_manifest.json",
+      "sha256": "6a75511bab92e048ae2c49f4ce8d51e3a5bcf6f725a9f461b7df855571bcc81f"
+    },
+    {
+      "bytes": 673786,
+      "path": "outputs/104_supervision_evidence/teacher_quote_mechanical.jsonl",
+      "sha256": "af3322a748f344c7543a51b79d67a03af4c98f4255885dacb675fcd67ef96471"
+    },
+    {
+      "bytes": 1393,
+      "path": "outputs/104_supervision_evidence/teacher_quote_summary.json",
+      "sha256": "7961f62b39365a2c0ca446c412095df5080b3d3e1d71c94dcb5e917e8e1266f9"
+    },
+    {
+      "bytes": 325,
+      "path": "outputs/104_supervision_evidence/test_results.json",
+      "sha256": "834e4b5a5053bb1eadc6ea674c49fb33c46933a6b60b57b60690510544d8afcd"
+    },
+    {
+      "bytes": 2873,
+      "path": "outputs/104_supervision_evidence/token_summary.json",
+      "sha256": "636601c17c81d52374dc4ba0bd40c428c29a9c589c60b1c43f6337e8aed90e31"
+    },
+    {
+      "bytes": 1228,
+      "path": "outputs/104_supervision_evidence/training_interface_check.json",
+      "sha256": "bbf869c96768e8e93a2dfa202da40e21917ea793fc7317e3ec6b0babf4e5bfa8"
+    },
+    {
+      "bytes": 6336,
+      "path": "tasks/104_supervision_evidence/analyze104.py",
+      "sha256": "ce0b3a87ff7fb6dd702bb14c8cae0bb89428a7075333fa6916c4f48dff502b60"
+    },
+    {
+      "bytes": 12883,
+      "path": "tasks/104_supervision_evidence/api104.py",
+      "sha256": "736b790ab44f4c14fa0f7a38ad869f8f1bfc117c58b5aba11270374d54fd6086"
+    },
+    {
+      "bytes": 23931,
+      "path": "tasks/104_supervision_evidence/build104.py",
+      "sha256": "e225ac5e445a10c2646c14311f20e131cf95979cb04b51ed3d7ab66567c6e3c8"
+    },
+    {
+      "bytes": 5871,
+      "path": "tasks/104_supervision_evidence/BUILD_RUNBOOK.md",
+      "sha256": "cdab68d0919b024d40bb67edd076dfa3fdd7f75a1321ed0c438b72b55b99ecfc"
+    },
+    {
+      "bytes": 4281,
+      "path": "tasks/104_supervision_evidence/case_findings104.py",
+      "sha256": "be1cdfae6f20cef95a009d089c02b0f519b3bceb018fb083de608a3aceb016df"
+    },
+    {
+      "bytes": 4429,
+      "path": "tasks/104_supervision_evidence/check_interface_cpu104.py",
+      "sha256": "5b7198aa7090af1465c8c2edacfbc52fc798d70495f49c89b907cc775468266f"
+    },
+    {
+      "bytes": 1383,
+      "path": "tasks/104_supervision_evidence/common104.py",
+      "sha256": "c473db2aca8d236123125a95f3784f878f601f1f56511826dfcd8c2bfd019137"
+    },
+    {
+      "bytes": 2679,
+      "path": "tasks/104_supervision_evidence/cost_stats104.py",
+      "sha256": "0c6907f74566e3cb49232c2b92abc1353e2c8afd4ccc9ad31cf26a2391a8b1cb"
+    },
+    {
+      "bytes": 6000,
+      "path": "tasks/104_supervision_evidence/finalize104.py",
+      "sha256": "05043387191e41dc73485833b8469c267eb1fdf79cd7a1d7cccab9ee0ff9cb1c"
+    },
+    {
+      "bytes": 4913,
+      "path": "tasks/104_supervision_evidence/freeze_api104.py",
+      "sha256": "253d1900235449d423c8a1c682328b13898a36c26bd9a639423756cbf6bc5344"
+    },
+    {
+      "bytes": 12096,
+      "path": "tasks/104_supervision_evidence/inventory104.py",
+      "sha256": "7084367d7264419330e22326f85836cea5a386204b6d454fccbf0f08e45cc8e1"
+    },
+    {
+      "bytes": 2428,
+      "path": "tasks/104_supervision_evidence/inventory_tokens104.py",
+      "sha256": "ea7fad0c19fd1cd5c923087e5152daab6d6d4ba264eab96564b337df534d5b3f"
+    },
+    {
+      "bytes": 1339,
+      "path": "tasks/104_supervision_evidence/pricing_verification.md",
+      "sha256": "cb1487825149791e37e2665acc20ea6a562e8bbac3a0d920e258e03793f8eabd"
+    },
+    {
+      "bytes": 6828,
+      "path": "tasks/104_supervision_evidence/protocol.md",
+      "sha256": "fcd38b1d523055c92f341ecaad0799ecbf90d38d3b806fa5aade7f074322b49d"
+    },
+    {
+      "bytes": 4426,
+      "path": "tasks/104_supervision_evidence/public_scan104.py",
+      "sha256": "d770878c8f12a6492549c2ef2f5a0c2539cce02d9732c038e7c1b9ccbb6db707"
+    },
+    {
+      "bytes": 7999,
+      "path": "tasks/104_supervision_evidence/README.md",
+      "sha256": "d85eca327ec9522253593621fe63f4d3c96c822c3b4412aab34e2e64eb17c47b"
+    },
+    {
+      "bytes": 10258,
+      "path": "tasks/104_supervision_evidence/review_guidance.md",
+      "sha256": "98c6681a3d0c3d80d1a266271499863408b515d2700d603e12bf1fd84a7d4a07"
+    },
+    {
+      "bytes": 2762,
+      "path": "tasks/104_supervision_evidence/review_io104.py",
+      "sha256": "1a56327ca16e0bc91877bb1bc0a00a27cdf67acc5c8d42522184b6e103606e49"
+    },
+    {
+      "bytes": 4837,
+      "path": "tasks/104_supervision_evidence/selfcheck104.py",
+      "sha256": "2e900422381f9987ca2078b2b76fb39296af7731a05fb25358adc468cf0fe992"
+    },
+    {
+      "bytes": 3039,
+      "path": "tasks/104_supervision_evidence/semantic_review_schema.md",
+      "sha256": "6e40f116030dfc231cc92fe109f21c960f4d5c45b379c1aa4399898382033cbb"
+    },
+    {
+      "bytes": 9021,
+      "path": "tasks/104_supervision_evidence/supplement_assets104.py",
+      "sha256": "e2b41936905f453253270983e7145b4d00248561bb5070b445d863acd99620f9"
+    },
+    {
+      "bytes": 15738,
+      "path": "tasks/104_supervision_evidence/teacher_queue104.py",
+      "sha256": "2c43b08d91199f445ee9002668fb2950ad8cebb0658816a86966400796b41f8d"
+    },
+    {
+      "bytes": 4420,
+      "path": "tasks/104_supervision_evidence/test_api104.py",
+      "sha256": "43059b8436409cee41f113a1eb90d0b89d5402efcd27b465f7878dc4b93e8f9d"
+    },
+    {
+      "bytes": 10101,
+      "path": "tasks/104_supervision_evidence/test_build104.py",
+      "sha256": "59956414239890db1e66dc05e7f9b397ee09158b88263f31b76a5e6a6b3d1f65"
+    },
+    {
+      "bytes": 3345,
+      "path": "tasks/104_supervision_evidence/test_finalize104.py",
+      "sha256": "95298c22b4cf7a39f380415fb6133161594da0ec14a59ef0c509f68f05c81920"
+    },
+    {
+      "bytes": 1690,
+      "path": "tasks/104_supervision_evidence/test_public_scan104.py",
+      "sha256": "f6f22dfdb3be44e79a07829d4c8fcd5d0f51f62aac2f9c2795d1d1cc0f921b88"
+    },
+    {
+      "bytes": 7791,
+      "path": "tasks/104_supervision_evidence/test_teacher_queue104.py",
+      "sha256": "04d40b54677e57fcb101e99163a2de97fa6f4b289271fffda1d76b9b2d5d80f6"
+    },
+    {
+      "bytes": 7324,
+      "path": "tasks/104_supervision_evidence/test_training104.py",
+      "sha256": "2c6a29e6c3229dd71eb84c7ceda1dc9868aa5222ec758afb29e33de938507019"
+    },
+    {
+      "bytes": 7238,
+      "path": "tasks/104_supervision_evidence/tokenize104.py",
+      "sha256": "ef321f0836cc944a6f020ae844eec1ab52f31c8c5641daad006898381b0f598b"
+    },
+    {
+      "bytes": 13844,
+      "path": "tasks/104_supervision_evidence/training104.py",
+      "sha256": "7964b507e6b075bda51b215f622b09d58afb7895005f02856d32954362bc9140"
+    },
+    {
+      "bytes": 12810,
+      "path": "tasks/104_supervision_evidence/write_report104.py",
+      "sha256": "7d4cbe2f273a5c6d41ea2589b45b287a0c33228f308a263adc1814e6df696b68"
+    }
+  ],
+  "files_checked": 76,
+  "forbidden_free_text_keys": [
+    "adjudicated_comment",
+    "answer",
+    "answer_text",
+    "assessment",
+    "blind_evidence_quotes",
+    "blind_relation",
+    "claim",
+    "claim_slots",
+    "clinical_text",
+    "comment1",
+    "comment2",
+    "comment3",
+    "comment4",
+    "comment5",
+    "evidence_quotes",
+    "evidence_text",
+    "explanation",
+    "final_relation",
+    "grounding_assessment",
+    "messages",
+    "original_teacher",
+    "patient_text",
+    "prompt",
+    "quotation",
+    "quote",
+    "rationale",
+    "raw_response",
+    "reason",
+    "reasoning_chain",
+    "reasoning_final_answer",
+    "reference",
+    "relation",
+    "request_body",
+    "response_body",
+    "retained_teacher_facts",
+    "revision_notes",
+    "revision_reason",
+    "teacher_reason",
+    "text"
+  ],
+  "independent_clinical_privacy_certification": false,
+  "issues": [],
+  "new_API_calls": 0,
+  "no_Git_mutation": true,
+  "private_clinical_files_read": false,
+  "raw_review_ledgers_read": false,
+  "scope": "104 public outputs and task code only; static pattern/schema check",
+  "skipped_nontext": [],
+  "snapshot_only_rerun_after_new_public_artifacts": true,
+  "source_paths_outside_104_read": false,
+  "status": "PASS"
+}

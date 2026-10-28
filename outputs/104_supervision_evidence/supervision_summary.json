@@ -1,0 +1,460 @@
+{
+  "accepted_no_anchor_na": 6,
+  "annotation_and_teacher_association": {
+    "gt_explained": {
+      "N": 196,
+      "any_same_reference_correct_reason": 177,
+      "by_GT": {
+        "Not Addressed": {
+          "N": 51,
+          "initial_three_agree": 0,
+          "same_reference_correct_reason": 43
+        },
+        "Not Supported": {
+          "N": 62,
+          "initial_three_agree": 0,
+          "same_reference_correct_reason": 52
+        },
+        "Supported": {
+          "N": 83,
+          "initial_three_agree": 0,
+          "same_reference_correct_reason": 82
+        }
+      },
+      "initial_three_agree": 0,
+      "paper_r1_matches_GT": 143
+    },
+    "reference_gap": {
+      "N": 14,
+      "any_same_reference_correct_reason": 13,
+      "by_GT": {
+        "Not Addressed": {
+          "N": 0,
+          "initial_three_agree": 0,
+          "same_reference_correct_reason": 0
+        },
+        "Not Supported": {
+          "N": 13,
+          "initial_three_agree": 0,
+          "same_reference_correct_reason": 12
+        },
+        "Supported": {
+          "N": 1,
+          "initial_three_agree": 0,
+          "same_reference_correct_reason": 1
+        }
+      },
+      "initial_three_agree": 0,
+      "paper_r1_matches_GT": 7
+    },
+    "unresolved": {
+      "N": 78,
+      "any_same_reference_correct_reason": 42,
+      "by_GT": {
+        "Not Addressed": {
+          "N": 45,
+          "initial_three_agree": 0,
+          "same_reference_correct_reason": 16
+        },
+        "Not Supported": {
+          "N": 21,
+          "initial_three_agree": 0,
+          "same_reference_correct_reason": 14
+        },
+        "Supported": {
+          "N": 12,
+          "initial_three_agree": 0,
+          "same_reference_correct_reason": 12
+        }
+      },
+      "initial_three_agree": 0,
+      "paper_r1_matches_GT": 22
+    }
+  },
+  "annotation_disagreement_does_not_invalidate_original_GT": true,
+  "asset_scope": {
+    "GT": {
+      "Not Addressed": 96,
+      "Not Supported": 96,
+      "Supported": 320
+    },
+    "N": 512,
+    "author": {
+      "human": 338,
+      "llm": 174
+    },
+    "patients": 40
+  },
+  "blind_confusion": {
+    "Not Addressed": {
+      "Not Addressed": 51,
+      "Not Supported": 32,
+      "Supported": 6,
+      "Unclear": 7
+    },
+    "Not Supported": {
+      "Not Addressed": 12,
+      "Not Supported": 64,
+      "Supported": 10,
+      "Unclear": 10
+    },
+    "Supported": {
+      "Not Addressed": 1,
+      "Not Supported": 9,
+      "Supported": 83,
+      "Unclear": 3
+    }
+  },
+  "blind_reviewers": {
+    "root": 24,
+    "semantic_b": 132,
+    "semantic_c": 132
+  },
+  "independent_API": {
+    "by_phase": {
+      "dispute": {
+        "N": 16,
+        "recommendations": {
+          "invalid": 9,
+          "retain": 6,
+          "revise": 1
+        },
+        "valid_N": 7
+      },
+      "quality": {
+        "N": 48,
+        "recommendations": {
+          "invalid": 2,
+          "retain": 45,
+          "revise": 1
+        },
+        "valid_N": 46
+      }
+    },
+    "total": 64
+  },
+  "initial_state_by_GT": {
+    "Not Addressed": {
+      "candidate_gt_explained": 51,
+      "unresolved": 45
+    },
+    "Not Supported": {
+      "candidate_gt_explained": 64,
+      "reference_gap": 12,
+      "unresolved": 20
+    },
+    "Supported": {
+      "candidate_gt_explained": 83,
+      "reference_gap": 1,
+      "unresolved": 12
+    }
+  },
+  "issue_tags_by_status": {
+    "gt_explained": {
+      "adherence_gap": 1,
+      "admission_binding": 1,
+      "ambiguous_abbreviation": 1,
+      "ambiguous_reference": 1,
+      "ambiguous_terminology": 2,
+      "anatomic_binding": 2,
+      "anatomical_binding": 1,
+      "assessment_role_binding": 1,
+      "causal_binding": 1,
+      "causal_limit": 1,
+      "causal_mechanism_gap": 1,
+      "causal_reversal": 1,
+      "causality": 8,
+      "clearance_target": 1,
+      "code_status_vs_event": 1,
+      "communication_support": 1,
+      "consultation_binding": 1,
+      "contradictory_reference": 1,
+      "cross_sentence_causality": 1,
+      "cross_sentence_event_binding": 1,
+      "cross_time_resolution": 2,
+      "cross_time_sequence": 1,
+      "cumulative_count": 2,
+      "degree_limit": 1,
+      "degree_qualifier": 4,
+      "deidentification_ambiguity": 1,
+      "deidentified_identity": 1,
+      "destination_binding": 1,
+      "destination_qualifier_gap": 1,
+      "device_binding": 1,
+      "device_identity": 1,
+      "device_specificity": 1,
+      "diagnostic_specificity": 1,
+      "diagnostic_uncertainty": 1,
+      "diet_texture": 1,
+      "discharge_day_gap": 1,
+      "discharge_state_gap": 1,
+      "disposition_binding": 1,
+      "disposition_gap": 5,
+      "dose_gap": 1,
+      "dose_qualifier": 1,
+      "dose_titration_gap": 1,
+      "duplicate_evidence": 1,
+      "event_binding": 24,
+      "event_completion": 1,
+      "explicit_contradiction": 1,
+      "explicit_exception": 1,
+      "explicit_separate_therapy": 1,
+      "functional_indication_gap": 2,
+      "habitual_scope": 1,
+      "historical_event_gap": 1,
+      "hospital_day_binding": 1,
+      "implicit_clinical_correspondence": 1,
+      "indication_binding": 3,
+      "malformed_claim": 1,
+      "mechanism_attribution": 1,
+      "mechanism_qualifier": 1,
+      "medication_plan_gap": 1,
+      "medication_target": 1,
+      "multifactorial_causality": 1,
+      "numeric_mismatch": 3,
+      "numeric_qualifier": 7,
+      "object_binding": 3,
+      "partial_support": 34,
+      "person_binding": 1,
+      "plan_vs_completed": 2,
+      "plan_vs_execution": 1,
+      "preference_attribution": 1,
+      "procedure_indication": 1,
+      "procedure_specific_gap": 1,
+      "provider_identity": 1,
+      "qualified_evidence": 1,
+      "quantity_binding": 1,
+      "range_qualifier": 1,
+      "reference_insufficient": 28,
+      "related_topic_only": 15,
+      "removal_event_gap": 1,
+      "result_specificity": 1,
+      "resuscitation_gap": 1,
+      "route_scope": 1,
+      "safety_plan_gap": 1,
+      "scope_limit": 1,
+      "scope_qualifier": 2,
+      "service_identity": 1,
+      "setting_binding": 2,
+      "source_attribution": 1,
+      "specialist_attribution": 1,
+      "stage_binding": 1,
+      "subject_binding": 4,
+      "subtype_binding": 1,
+      "support_capacity_gap": 1,
+      "symptom_vs_finding": 1,
+      "test_identity": 1,
+      "test_polarity": 1,
+      "time_binding": 38,
+      "time_order": 1,
+      "time_specific_response": 1,
+      "transfer_purpose_gap": 1,
+      "treatment_identity": 7,
+      "treatment_indication": 2,
+      "treatment_response": 1,
+      "treatment_response_binding": 1,
+      "treatment_state": 1,
+      "treatment_status": 1,
+      "treatment_target": 2,
+      "treatment_time_course": 1,
+      "uncertainty_preserved": 1,
+      "universal_qualifier": 1
+    },
+    "reference_gap": {
+      "causality": 1,
+      "degree_qualifier": 1,
+      "endpoint_binding": 1,
+      "event_binding": 4,
+      "event_completion": 1,
+      "followup_destination_gap": 1,
+      "longitudinal_gap": 1,
+      "medication_absence": 1,
+      "partial_support": 1,
+      "recovery_degree": 1,
+      "reference_insufficient": 8,
+      "related_topic_only": 3,
+      "service_identity": 1,
+      "speaker_binding": 1,
+      "specialist_opinion_gap": 1,
+      "subject_binding": 1,
+      "time_binding": 4,
+      "treatment_order": 1
+    },
+    "unresolved": {
+      "admission_reason": 1,
+      "age_discrepancy": 1,
+      "ambiguous_attribution": 1,
+      "ambiguous_specificity": 1,
+      "ambiguous_terminology": 5,
+      "causal_binding": 2,
+      "causal_limit": 1,
+      "causal_uncertainty": 3,
+      "causality": 3,
+      "certainty_binding": 1,
+      "claim_object_gap": 1,
+      "claim_relation_gap": 1,
+      "clinical_context_required": 1,
+      "clinical_inference": 1,
+      "conditional_to_actual": 1,
+      "contradictory_reference": 3,
+      "cross_sentence_binding": 2,
+      "cross_sentence_time_binding": 1,
+      "degree_qualifier": 3,
+      "deidentification_ambiguity": 2,
+      "deidentification_artifact": 2,
+      "destination_specificity": 1,
+      "discharge_medication_gap": 1,
+      "discharge_time_gap": 1,
+      "dose_frequency_duration": 4,
+      "dose_gap": 1,
+      "duration_qualifier": 2,
+      "event_binding": 6,
+      "event_specificity": 1,
+      "explicit_exception": 1,
+      "final_regimen_gap": 1,
+      "indication_binding": 1,
+      "laterality_binding": 1,
+      "location_identity": 1,
+      "mental_state_specificity": 1,
+      "missing_medication_identity": 1,
+      "normality_vs_stability": 1,
+      "numeric_gap": 1,
+      "numeric_mismatch": 1,
+      "numeric_qualifier": 6,
+      "partial_support": 27,
+      "plan_vs_completed": 3,
+      "plan_vs_completion": 1,
+      "plan_vs_execution": 2,
+      "procedure_time_binding": 1,
+      "procedure_tolerance": 1,
+      "provider_identity": 1,
+      "reference_ambiguity": 1,
+      "reference_insufficient": 8,
+      "result_status": 1,
+      "route_binding": 1,
+      "scope_qualifier": 2,
+      "scope_qualifier_gap": 1,
+      "service_unit_alias": 1,
+      "source_attribution": 1,
+      "source_fragment_gap": 1,
+      "specimen_binding": 1,
+      "subject_binding": 4,
+      "symptom_treatment_binding": 1,
+      "temporal_recovery": 1,
+      "temporal_scope": 2,
+      "test_result_gap": 1,
+      "time_binding": 23,
+      "time_conflict": 1,
+      "time_scope": 1,
+      "time_specific_state": 1,
+      "treatment_identity": 3,
+      "treatment_response": 1,
+      "treatment_status": 1,
+      "ventilation_modality": 1
+    }
+  },
+  "new_GPU": 0,
+  "new_classification_predictions": 0,
+  "original_GT_modified": false,
+  "patient_scope": "103 train40 only; no selection/confirmation clinical data used",
+  "purpose": "supervision diagnosis and paired data preparation, NOT model classification",
+  "quarantined": {
+    "GT": {
+      "Not Addressed": 45,
+      "Not Supported": 34,
+      "Supported": 13
+    },
+    "N": 92,
+    "author": {
+      "human": 82,
+      "llm": 10
+    },
+    "patients": 38
+  },
+  "relation_words": {
+    "N": 196,
+    "max": 64,
+    "mean": 52.13775510204081,
+    "min": 10
+  },
+  "result_scope": "machine-assisted supervision, not new physician gold or proof of full chain-of-thought learning",
+  "retained": {
+    "GT": {
+      "Not Addressed": 51,
+      "Not Supported": 62,
+      "Supported": 83
+    },
+    "N": 196,
+    "author": {
+      "human": 138,
+      "llm": 58
+    },
+    "patients": 40
+  },
+  "retained_teacher_actions": {
+    "new_draft": 19,
+    "reject_teacher_keep_blind": 5,
+    "reuse": 25,
+    "revise": 147
+  },
+  "retained_teacher_actions_by_GT": {
+    "Not Addressed": {
+      "new_draft": 8,
+      "reuse": 2,
+      "revise": 41
+    },
+    "Not Supported": {
+      "new_draft": 10,
+      "reject_teacher_keep_blind": 3,
+      "reuse": 3,
+      "revise": 46
+    },
+    "Supported": {
+      "new_draft": 1,
+      "reject_teacher_keep_blind": 2,
+      "reuse": 20,
+      "revise": 60
+    }
+  },
+  "reviewed": {
+    "GT": {
+      "Not Addressed": 96,
+      "Not Supported": 96,
+      "Supported": 96
+    },
+    "N": 288,
+    "author": {
+      "human": 220,
+      "llm": 68
+    },
+    "patients": 40
+  },
+  "state_by_GT": {
+    "Not Addressed": {
+      "gt_explained": 51,
+      "unresolved": 45
+    },
+    "Not Supported": {
+      "gt_explained": 62,
+      "reference_gap": 13,
+      "unresolved": 21
+    },
+    "Supported": {
+      "gt_explained": 83,
+      "reference_gap": 1,
+      "unresolved": 12
+    }
+  },
+  "task": 104,
+  "unreviewed": {
+    "GT": {
+      "Supported": 224
+    },
+    "N": 224,
+    "author": {
+      "human": 118,
+      "llm": 106
+    },
+    "patients": 40
+  }
+}

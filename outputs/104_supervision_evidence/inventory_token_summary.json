@@ -1,0 +1,95 @@
+{
+  "N": 512,
+  "by_GT": {
+    "Not Addressed": {
+      "N": 96,
+      "input_tokens": {
+        "N": 96,
+        "max": 12100,
+        "mean": 8446.333333333334,
+        "median": 8381.0,
+        "min": 6386,
+        "p95": 10604,
+        "sum": 810848
+      }
+    },
+    "Not Supported": {
+      "N": 96,
+      "input_tokens": {
+        "N": 96,
+        "max": 10389,
+        "mean": 8510.46875,
+        "median": 8557.0,
+        "min": 6158,
+        "p95": 10013,
+        "sum": 817005
+      }
+    },
+    "Supported": {
+      "N": 320,
+      "input_tokens": {
+        "N": 320,
+        "max": 12701,
+        "mean": 8339.853125,
+        "median": 8222.0,
+        "min": 5592,
+        "p95": 10218,
+        "sum": 2668753
+      }
+    }
+  },
+  "fields": {
+    "label_answer_tokens": {
+      "N": 512,
+      "max": 9,
+      "mean": 7.5625,
+      "median": 7.0,
+      "min": 7,
+      "p95": 9,
+      "sum": 3872
+    },
+    "reference_chars": {
+      "N": 512,
+      "max": 33153,
+      "mean": 22889.43359375,
+      "median": 22917.0,
+      "min": 14551,
+      "p95": 28488,
+      "sum": 11719390
+    },
+    "reference_tokens": {
+      "N": 512,
+      "max": 12253,
+      "mean": 7908.6640625,
+      "median": 7814.0,
+      "min": 5161,
+      "p95": 9735,
+      "sum": 4049236
+    },
+    "shared_prompt_tokens": {
+      "N": 512,
+      "max": 12701,
+      "mean": 8391.80859375,
+      "median": 8302.5,
+      "min": 5592,
+      "p95": 10218,
+      "sum": 4296606
+    },
+    "total_label_tokens": {
+      "N": 512,
+      "max": 12708,
+      "mean": 8399.37109375,
+      "median": 8309.5,
+      "min": 5599,
+      "p95": 10225,
+      "sum": 4300478
+    }
+  },
+  "model": "qwen3.5-9b",
+  "new_GPU": 0,
+  "new_paid_API": 0,
+  "note": "104 shared prompt; same original claim/reference; not identical instructions to historical103 label prompt.",
+  "reference_truncated": false,
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+}

@@ -1,0 +1,11 @@
+{
+  "files": {
+    ".local_models/104_supervision_evidence/paired/evidence_brief.jsonl": "724854a2fe093d629dc50b5f73e86e92397e190043994f9f5749aeaeb39a9187",
+    ".local_models/104_supervision_evidence/paired/label_only.jsonl": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+    ".local_models/104_supervision_evidence/review_joined.jsonl": "1abf9962c2cb010db026b1e6b2a1a94b623e7d29c259d8ae80222c9ff29ee11d",
+    "outputs/104_supervision_evidence/blind_review_freeze.json": "fa5373cc6a0c83cba28ded7b8ac58cea789927a7b17210e6ce56052fcbee2fe4",
+    "outputs/104_supervision_evidence/paired_manifest.json": "a935a8fc0cc2f458c4ec1d4a2624117e1ccc6c657a30fb0603633d886c79a07c"
+  },
+  "no_historical_rewrites": true,
+  "no_model_evaluation_or_training": true
+}

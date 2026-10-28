@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-103最终离线分析完成，用户已确认GPU关机：9B与35B各完成512条训练，27B按用户指令停在40条。自然集提升伴随false-S及NS风险恶化，当前纯标签LoRA配方不支持直接全量训练；9B仅保留为较低成本开发候选，27B仍是未解决近邻。35B原生为API参考，没有同ID DeepSeek verifact_ref，不能宣布同Judge超越。新增分析费用0；API累计¥27.518576，最后GPU快照¥30.530395＋磁盘预留¥4，最终平台结算待核。不启动新实验，不升级默认；102继续封存。 [最终报告](outputs/103_lora_selection/final_report.md) · [统计附录](outputs/103_lora_selection/final_metrics.md)。
+104监督诊断与配对数据构建完成：仅103训练40人，完整盘点512条，先盲审全部NS96、NA96及固定S96，共288条；另224 S未作语义审查。最终196条严格同输入配对监督（S83/NS62/NA51），保留原GT与历史结果。64条固定API质量/争议核查，目录价及预留¥3.375030/20，未知¥0.000000；额外子代理盲复核8/16完成，额度中断如实保留。无GPU、无训练、无新分类成绩，默认不变。下一步建议：仅建议一次9B同样本label_only与evidence_brief对照，保留同prompt未微调基线；不自动执行。 [104一页结论](outputs/104_supervision_evidence/summary.md) · [104报告](outputs/104_supervision_evidence/report.md)。103完整结论仍见[最终报告](outputs/103_lora_selection/final_report.md)。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

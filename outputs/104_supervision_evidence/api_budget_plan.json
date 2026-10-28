@@ -1,0 +1,25 @@
+{
+  "GT_only_for_sampling_and_quality_context": true,
+  "anomaly_reserve_cny": 2,
+  "dispute_N": 16,
+  "dispute_by_GT": {
+    "Not Addressed": 7,
+    "Not Supported": 7,
+    "Supported": 2
+  },
+  "dispute_seed": "104_dispute_audit_v1",
+  "disputes_not_training_candidates": true,
+  "first_attempt_all_busy_byte_bound_cny": 10.130352,
+  "hard_cap_cny": 20,
+  "no_cache_or_channel_discount_assumed": true,
+  "operating_line_cny": 18,
+  "quality_N": 48,
+  "quality_by_GT": {
+    "Not Addressed": 16,
+    "Not Supported": 16,
+    "Supported": 16
+  },
+  "quality_seed": "104_quality_audit_v1",
+  "selection_not_based_on_API_answers": true,
+  "total": 64
+}

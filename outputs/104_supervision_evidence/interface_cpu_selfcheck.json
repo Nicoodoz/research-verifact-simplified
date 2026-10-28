@@ -1,0 +1,50 @@
+{
+  "GPU_used": false,
+  "GT_join_on_real_data": false,
+  "actual_9B_tokenizer": true,
+  "all_occurrences_quote_metadata": true,
+  "answer_string_and_answer_text_equal": true,
+  "checks": {
+    "N": 2,
+    "original_GT_preserved": true,
+    "patients": 1,
+    "quotes_exact_current_reference_slices": true,
+    "reference_truncation": false,
+    "same_input_and_order": true,
+    "same_prompt_both_arms": true
+  },
+  "files": {
+    "build104.py": "e225ac5e445a10c2646c14311f20e131cf95979cb04b51ed3d7ab66567c6e3c8",
+    "check_interface_cpu104.py": "5b7198aa7090af1465c8c2edacfbc52fc798d70495f49c89b907cc775468266f",
+    "tokenize104.py": "ef321f0836cc944a6f020ae844eec1ab52f31c8c5641daad006898381b0f598b",
+    "training104.py": "7964b507e6b075bda51b215f622b09d58afb7895005f02856d32954362bc9140"
+  },
+  "model_weights_loaded": false,
+  "new_API_calls": 0,
+  "pairs": 2,
+  "prompt_and_padding_loss_masked": true,
+  "real_blind_reviews_read": false,
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "scope": "Synthetic builder-to-loader-to-actual-pinned-tokenizer engineering check only",
+  "shared_prompt_contains_only_claim_reference_payload": true,
+  "status": "PASS",
+  "synthetic_lengths": [
+    {
+      "brief_supervised_tokens": 40,
+      "input_tokens": 375,
+      "label_supervised_tokens": 7
+    },
+    {
+      "brief_supervised_tokens": 42,
+      "input_tokens": 359,
+      "label_supervised_tokens": 9
+    }
+  ],
+  "tokenizer_environment": {
+    "existing_environment": "tokenizer-only; no install or upgrade",
+    "jinja2": "3.1.6",
+    "python": "3.10.11",
+    "tokenizers": "0.22.2"
+  },
+  "whole_answer_and_EOS_supervised": true
+}

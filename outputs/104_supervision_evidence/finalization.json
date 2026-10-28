@@ -1,0 +1,23 @@
+{
+  "API_quality_N": 48,
+  "GT": {
+    "Not Addressed": 51,
+    "Not Supported": 62,
+    "Supported": 83
+  },
+  "N": 196,
+  "blind_disagreement_rescued": 0,
+  "curated_candidates": 198,
+  "final_decisions_sha256": "69a45a298647b99318d74d869b04af10bd2b2110fb4fcf23caffe2fe118a04e0",
+  "flagged_API": 3,
+  "manual_actions": {
+    "quarantine": 2,
+    "revise": 1
+  },
+  "manual_post_audit_N": 3,
+  "no_claim_all_candidates_independently_API_audited": true,
+  "original_GT_modified": false,
+  "original_blind_candidates": 198,
+  "post_audit_decisions_sha256": "5fcff23dbbbd0d130cc61cf4ad86bd8eb3ef0323dce1ea7cb4ed702e4eb16ce0",
+  "source_checked_manifest_sha256": "786c666ff8a7b540d10920b6f62086a3e22e1bde9efaff0561bbdb15e73bf0bc"
+}

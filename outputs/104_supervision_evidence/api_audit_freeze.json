@@ -1,0 +1,46 @@
+{
+  "HTTP200_unfavorable_or_invalid_never_retried": true,
+  "endpoint": "https://maas.qianwenaiapi.com/compatible-mode/v1",
+  "files": {
+    ".local_models/104_supervision_evidence/api_jobs.jsonl": "648a5bb4bee8cb4615f12a30d98d92d28545e1ea3e0d51337711161fc6db4b71",
+    ".local_models/104_supervision_evidence/candidate_teacher_checked/evidence_brief.jsonl": "dde67ddd5f2b7a9b362b8b027efca03dec38caa201c09a4353b1eb0c43ec9333",
+    ".local_models/104_supervision_evidence/candidate_teacher_checked/label_only.jsonl": "27b54fcf0fc4ab9d0eb7f1d99e324a44d366b281d4bb01b2893ba17339f10264",
+    ".local_models/104_supervision_evidence/review_joined_initial.jsonl": "3376a60b594f0ab825b4fcea5e8056cf95e47e4f027ac6a4e10263e3621ecce9",
+    "outputs/104_supervision_evidence/api_audit_samples.jsonl": "541af3e325ad230dfe44564a058cd049710b91d5f192d02f60ced7ceec4b6a21",
+    "outputs/104_supervision_evidence/api_budget_plan.json": "1709d8b7941583027f72430232b301780d32d519ec93887fccc3b7630a2aa756",
+    "outputs/104_supervision_evidence/blind_review_freeze.json": "fa5373cc6a0c83cba28ded7b8ac58cea789927a7b17210e6ce56052fcbee2fe4",
+    "outputs/104_supervision_evidence/candidate_teacher_checked_manifest.json": "786c666ff8a7b540d10920b6f62086a3e22e1bde9efaff0561bbdb15e73bf0bc",
+    "tasks/104_supervision_evidence/api104.py": "736b790ab44f4c14fa0f7a38ad869f8f1bfc117c58b5aba11270374d54fd6086",
+    "tasks/104_supervision_evidence/freeze_api104.py": "253d1900235449d423c8a1c682328b13898a36c26bd9a639423756cbf6bc5344",
+    "tasks/104_supervision_evidence/pricing_verification.md": "cb1487825149791e37e2665acc20ea6a562e8bbac3a0d920e258e03793f8eabd",
+    "tasks/104_supervision_evidence/protocol.md": "fcd38b1d523055c92f341ecaad0799ecbf90d38d3b806fa5aade7f074322b49d"
+  },
+  "model": "deepseek-v4-flash-0731",
+  "plan": {
+    "GT_only_for_sampling_and_quality_context": true,
+    "anomaly_reserve_cny": 2,
+    "dispute_N": 16,
+    "dispute_by_GT": {
+      "Not Addressed": 7,
+      "Not Supported": 7,
+      "Supported": 2
+    },
+    "dispute_seed": "104_dispute_audit_v1",
+    "disputes_not_training_candidates": true,
+    "first_attempt_all_busy_byte_bound_cny": 10.130352,
+    "hard_cap_cny": 20,
+    "no_cache_or_channel_discount_assumed": true,
+    "operating_line_cny": 18,
+    "quality_N": 48,
+    "quality_by_GT": {
+      "Not Addressed": 16,
+      "Not Supported": 16,
+      "Supported": 16
+    },
+    "quality_seed": "104_quality_audit_v1",
+    "selection_not_based_on_API_answers": true,
+    "total": 64
+  },
+  "utc": "2026-10-28T00:13:28.607253+00:00",
+  "verdict_not_relabelled": true
+}

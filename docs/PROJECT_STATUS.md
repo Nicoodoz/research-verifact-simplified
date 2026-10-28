@@ -1,6 +1,6 @@
-# 项目现状（2026-10-27，103最终离线分析完成）
+# 项目现状（2026-10-28，104监督诊断与数据准备完成）
 
-103最终离线分析完成，用户已确认GPU关机：9B与35B各完成512条训练，27B按用户指令停在40条。自然集提升伴随false-S及NS风险恶化，当前纯标签LoRA配方不支持直接全量训练；9B仅保留为较低成本开发候选，27B仍是未解决近邻。35B原生为API参考，没有同ID DeepSeek verifact_ref，不能宣布同Judge超越。新增分析费用0；API累计¥27.518576，最后GPU快照¥30.530395＋磁盘预留¥4，最终平台结算待核。不启动新实验，不升级默认；102继续封存。 [最终报告](../outputs/103_lora_selection/final_report.md) · [统计附录](../outputs/103_lora_selection/final_metrics.md)。
+104监督诊断与配对数据构建完成：仅103训练40人，完整盘点512条，先盲审全部NS96、NA96及固定S96，共288条；另224 S未作语义审查。最终196条严格同输入配对监督（S83/NS62/NA51），保留原GT与历史结果。64条固定API质量/争议核查，目录价及预留¥3.375030/20，未知¥0.000000；额外子代理盲复核8/16完成，额度中断如实保留。无GPU、无训练、无新分类成绩，默认不变。下一步建议：仅建议一次9B同样本label_only与evidence_brief对照，保留同prompt未微调基线；不自动执行。 [104一页结论](../outputs/104_supervision_evidence/summary.md) · [104报告](../outputs/104_supervision_evidence/report.md)。103完整结论仍见[最终报告](../outputs/103_lora_selection/final_report.md)。
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -22,6 +22,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|104监督诊断与短理由数据|512清单、288首审、196条双臂配对、64条API核查|数据准备完成，分类提升未检验；原GT与默认保留，不自动训练|
 |103微调模型选型|9B与35B训练512及配对分析完成；27B停在40条；用户已关机|自然MCC提升伴随false-S/NS损失，不直接扩大；9B为条件性开发候选，27B未解决；无同Judge verifact_ref确认|
 |102动态关系选例|完整500三臂＋24重复输入已构造，0 API；用户明确封存，不补跑|自动构造检查通过不等于关系语义正确；未产生分类指标，付费前停止|
 |101 NS/NA定向复核|600自然＋100压力、282触发、24双臂重复；同S集合|plain净-2、review净+0；review−plain净+2；详见正式报告，默认不变|

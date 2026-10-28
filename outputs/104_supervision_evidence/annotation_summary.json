@@ -1,0 +1,65 @@
+{
+  "N": 512,
+  "adjudication_absence_is_expected_when_initial_majority_exists": true,
+  "by_GT": {
+    "Not Addressed": {
+      "N": 96,
+      "final_GT_source": {
+        "adjudicated_verdict": 9,
+        "round1_majority_vote": 87
+      },
+      "initial_agreement": {
+        "0": 9,
+        "2": 63,
+        "3": 24
+      },
+      "missing_final_GT": 0,
+      "missing_initial_votes": 0
+    },
+    "Not Supported": {
+      "N": 96,
+      "final_GT_source": {
+        "adjudicated_verdict": 18,
+        "round1_majority_vote": 78
+      },
+      "initial_agreement": {
+        "0": 18,
+        "2": 68,
+        "3": 10
+      },
+      "missing_final_GT": 0,
+      "missing_initial_votes": 0
+    },
+    "Supported": {
+      "N": 320,
+      "final_GT_source": {
+        "adjudicated_verdict": 5,
+        "round1_majority_vote": 315
+      },
+      "initial_agreement": {
+        "0": 5,
+        "2": 52,
+        "3": 263
+      },
+      "missing_final_GT": 0,
+      "missing_initial_votes": 0
+    }
+  },
+  "final_human_gt_missing": 0,
+  "initial_vote_missing": 0,
+  "interpretation": {
+    "0": "All three initial labels differ; not zero raters and not missing data.",
+    "2": "Two of the three initial labels agree.",
+    "3": "All three initial labels agree."
+  },
+  "raw_doctor_labels_preserved": true,
+  "total_final_GT_source": {
+    "adjudicated_verdict": 32,
+    "round1_majority_vote": 480
+  },
+  "total_initial_agreement": {
+    "0": 32,
+    "2": 183,
+    "3": 297
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "by_phase": {
+    "dispute": {
+      "HTTP200": 16,
+      "attempts": 16,
+      "busy_price_attempts": 16,
+      "completion_tokens": 119487,
+      "cost_or_reserve_cny": 1.4587560000000004,
+      "idle_price_attempts": 0,
+      "mean_per_attempt_cny": 0.09117225,
+      "official_cache_price_estimate_cny": 1.4587560000000004,
+      "prompt_tokens": 127791,
+      "reasoning_tokens": 118278
+    },
+    "quality": {
+      "HTTP200": 48,
+      "attempts": 48,
+      "busy_price_attempts": 48,
+      "completion_tokens": 96408,
+      "cost_or_reserve_cny": 1.9162740000000003,
+      "idle_price_attempts": 0,
+      "mean_per_attempt_cny": 0.039922375,
+      "official_cache_price_estimate_cny": 1.9162740000000003,
+      "prompt_tokens": 349534,
+      "reasoning_tokens": 89932
+    }
+  },
+  "cache_savings_not_used_for_budget": true,
+  "hard_cap_cny": 20,
+  "no_GPU_cost": true,
+  "not_final_platform_invoice": true,
+  "official_directory_not_channel_discount": true,
+  "retries": 0,
+  "total": {
+    "HTTP200": 64,
+    "attempts": 64,
+    "busy_price_attempts": 64,
+    "completion_tokens": 215895,
+    "cost_or_reserve_cny": 3.375029999999999,
+    "idle_price_attempts": 0,
+    "mean_per_attempt_cny": 0.05273484375,
+    "official_cache_price_estimate_cny": 3.375029999999999,
+    "prompt_tokens": 477325,
+    "reasoning_tokens": 208210
+  },
+  "unknown_or_inflight_cny": 0.0
+}

@@ -1,0 +1,32 @@
+{
+  "API_cny": 3.37503,
+  "API_requests_completed": 64,
+  "API_valid_dispute": 7,
+  "API_valid_quality": 46,
+  "created_utc": "2026-10-28T00:32:23.693172+00:00",
+  "default_unchanged": true,
+  "extra_subagent_blind_review_completed": 8,
+  "extra_subagent_blind_review_planned": 16,
+  "files": {
+    "outputs/104_supervision_evidence/api_cost_ledger.json": "724cb3582307516cd58f4ae075a77ee9b0a295f27850b09969382615e6587f5a",
+    "outputs/104_supervision_evidence/cost_summary.json": "a0b002a4215d9999f608dfce267a8abccd711346d011c38c362d018f14a306b5",
+    "outputs/104_supervision_evidence/next_action.json": "776792cd334f980e30049daf8f31a6f106feee07f591adf7d7d92f08b34d705a",
+    "outputs/104_supervision_evidence/paired_manifest.json": "a935a8fc0cc2f458c4ec1d4a2624117e1ccc6c657a30fb0603633d886c79a07c",
+    "outputs/104_supervision_evidence/report.md": "14d8b7ffbe9a436831e228a4cc45277815fbdc89c95201072c3fee5d8e2135c2",
+    "outputs/104_supervision_evidence/selfcheck.json": "eed074b25e095aead93641ac81f07f36cb64d29a231506212e957dce349e8371",
+    "outputs/104_supervision_evidence/summary.md": "67e00665f0399de9b39580c218c837cf71169d18b05ae7d6cf8ab564af295c9f",
+    "outputs/104_supervision_evidence/supervision_summary.json": "eb26041125cb06f5c62b0cccbaabe115d1e9bbc59b45d1f3b0cda5a311d5d34b",
+    "outputs/104_supervision_evidence/token_summary.json": "636601c17c81d52374dc4ba0bd40c428c29a9c589c60b1c43f6337e8aed90e31"
+  },
+  "inventory_N": 512,
+  "limitations_explicit": true,
+  "new_GPU": 0,
+  "new_classification_evaluation": 0,
+  "new_training": 0,
+  "next_training_requires_authorization": true,
+  "original_GT_preserved": true,
+  "paired_N": 196,
+  "primary_semantic_review_N": 288,
+  "status": "data_preparation_complete",
+  "unknown_or_inflight_cny": 0.0
+}

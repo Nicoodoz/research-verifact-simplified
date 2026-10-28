@@ -1,0 +1,108 @@
+{
+  "CPU_only": true,
+  "GT": {
+    "Not Addressed": 51,
+    "Not Supported": 62,
+    "Supported": 83
+  },
+  "GT_is_metadata_not_a_prompt_field": true,
+  "answer_and_end_message_supervised": true,
+  "author": {
+    "human": 138,
+    "llm": 58
+  },
+  "candidate_only": false,
+  "checks": {
+    "N": 196,
+    "original_GT_preserved": true,
+    "patients": 40,
+    "quotes_exact_current_reference_slices": true,
+    "reference_truncation": false,
+    "same_input_and_order": true,
+    "same_prompt_both_arms": true
+  },
+  "input_pair_folder": "paired",
+  "input_unchanged_across_arms": true,
+  "lengths": {
+    "added_answer_tokens": {
+      "N": 196,
+      "max": 171,
+      "mean": 105.04081632653062,
+      "median": 107.5,
+      "min": 26,
+      "p95": 145,
+      "sum": 20588
+    },
+    "brief_answer_tokens": {
+      "N": 196,
+      "max": 179,
+      "mean": 112.87755102040816,
+      "median": 116.0,
+      "min": 34,
+      "p95": 152,
+      "sum": 22124
+    },
+    "brief_total_tokens": {
+      "N": 196,
+      "max": 12821,
+      "mean": 8456.408163265307,
+      "median": 8414.5,
+      "min": 6276,
+      "p95": 10208,
+      "sum": 1657456
+    },
+    "input_tokens": {
+      "N": 196,
+      "max": 12701,
+      "mean": 8343.530612244898,
+      "median": 8304.0,
+      "min": 6158,
+      "p95": 10051,
+      "sum": 1635332
+    },
+    "label_answer_tokens": {
+      "N": 196,
+      "max": 9,
+      "mean": 7.836734693877551,
+      "median": 8.0,
+      "min": 7,
+      "p95": 9,
+      "sum": 1536
+    },
+    "label_total_tokens": {
+      "N": 196,
+      "max": 12708,
+      "mean": 8351.367346938776,
+      "median": 8312.0,
+      "min": 6166,
+      "p95": 10058,
+      "sum": 1636868
+    },
+    "relation_words": {
+      "N": 196,
+      "max": 64,
+      "mean": 52.13775510204081,
+      "median": 57.5,
+      "min": 10,
+      "p95": 63,
+      "sum": 10219
+    }
+  },
+  "loss_mask_prompt_and_padding": "-100",
+  "model": "qwen3.5-9b",
+  "model_weights_loaded": false,
+  "new_API_calls": 0,
+  "relation_target_50_to_100_words": 159,
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "source_files": {
+    "evidence_brief_sha256": "724854a2fe093d629dc50b5f73e86e92397e190043994f9f5749aeaeb39a9187",
+    "label_only_sha256": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+    "private_lengths_sha256": "c57a7f291cc40e35676f2399f994b471e2cbf65f3c64552b1ca83516f5e6aea0"
+  },
+  "target_is_guidance_not_forced_padding": true,
+  "tokenizer_files": {
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+    "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+  }
+}

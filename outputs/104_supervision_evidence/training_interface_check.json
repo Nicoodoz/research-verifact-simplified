@@ -1,0 +1,26 @@
+{
+  "scope": "Synthetic interface test only; no training or evaluation clinical records read",
+  "CPU_only": true,
+  "new_API_calls": 0,
+  "model_weights_loaded": false,
+  "tests_passed": 7,
+  "unit_test_command": "pwsh -NoProfile -File scripts/run_research.ps1 tasks/104_supervision_evidence/test_training104.py",
+  "main_CPU_environment_tokenizers_installed": false,
+  "tokenizer_interpreter": ".local_models/085a_tokenizer_venv/Scripts/python.exe",
+  "tokenizers_version": "0.22.2",
+  "jinja2_version": "3.1.6",
+  "tokenizer_model": "qwen3.5-9b",
+  "tokenizer_source": ".local_models/103_lora_selection/models/qwen3.5-9b",
+  "synthetic_actual_tokenizer_check": {
+    "label_total_tokens": 370,
+    "brief_total_tokens": 397,
+    "label_supervised_tokens": 8,
+    "brief_supervised_tokens": 35,
+    "identical_prompt_token_ids": true,
+    "end_message_token_id": 248046,
+    "prompt_labels": -100,
+    "padding_labels": -100,
+    "full_answer_and_end_message_supervised": true
+  },
+  "note": "No dependency was installed, upgraded, or switched for historical experiments. The existing tokenizer-only virtual environment was used for the CPU tokenization check. Final package lengths must be measured after semantic review."
+}

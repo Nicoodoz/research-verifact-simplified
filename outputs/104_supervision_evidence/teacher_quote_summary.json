@@ -1,0 +1,38 @@
+{
+  "by_GT": {
+    "Not Addressed": {
+      "candidate_case_coverage": 59,
+      "correct_label_reason_records": 164,
+      "records_with_double_quoted_strings": 0,
+      "strings_exactly_locatable": 0,
+      "strings_multiple_locations": 0,
+      "strings_total": 0,
+      "strings_with_rendered_source_units": 0
+    },
+    "Not Supported": {
+      "candidate_case_coverage": 78,
+      "correct_label_reason_records": 193,
+      "records_with_double_quoted_strings": 0,
+      "strings_exactly_locatable": 0,
+      "strings_multiple_locations": 0,
+      "strings_total": 0,
+      "strings_with_rendered_source_units": 0
+    },
+    "Supported": {
+      "candidate_case_coverage": 318,
+      "correct_label_reason_records": 1507,
+      "records_with_double_quoted_strings": 28,
+      "strings_exactly_locatable": 13,
+      "strings_multiple_locations": 1,
+      "strings_total": 36,
+      "strings_with_rendered_source_units": 13
+    }
+  },
+  "label_agreement_not_semantic_validation": true,
+  "location_policy": "Every exact occurrence retained; no fuzzy quote or arbitrary first source selection.",
+  "new_API_calls": 0,
+  "quote_detection": "Only explicit double-quoted spans of 8..1000 characters; these may be terminology, not claimed citations.",
+  "semantic_approval_count": 0,
+  "source_display_number_not_original_note_ID": true,
+  "unquoted_paraphrase_not_automatically_wrong": true
+}

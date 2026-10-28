@@ -1,0 +1,11 @@
+{
+  "N": 512,
+  "automatic_removals": 0,
+  "candidate_rule": "Same patient only; claim token-set Jaccard>=0.8. Not semantic duplicate certification.",
+  "exact_claim_duplicate_groups": 0,
+  "exact_same_claim_different_GT": [],
+  "near_duplicate_candidate_pairs": 1,
+  "near_duplicate_different_GT": 0,
+  "normalized_claim_duplicate_groups": 0,
+  "normalized_same_claim_different_GT": []
+}

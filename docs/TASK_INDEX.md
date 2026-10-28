@@ -1,4 +1,4 @@
-# 全部任务与当前入口（103最终分析完成；2026-10-27）
+# 全部任务与当前入口（104数据准备完成；2026-10-28）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,6 +6,7 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
+|104_supervision_evidence|[一页结论](../outputs/104_supervision_evidence/summary.md) · [正式报告](../outputs/104_supervision_evidence/report.md) · [配对指纹](../outputs/104_supervision_evidence/paired_manifest.json)|[执行者自检](../outputs/104_supervision_evidence/selfcheck.json)；[有限工程复核](../reviews/104_supervision_evidence/engineering_review.md)，非医生审计|512盘点、288首审、196配对；64 API，额外盲复核8/16；不训练、不升级默认|
 |103_lora_selection|[最终报告](../outputs/103_lora_selection/final_report.md) · [完整指标](../outputs/103_lora_selection/final_metrics.md) · [第一阶段](../outputs/103_lora_selection/report.md)|[执行者自检](../outputs/103_lora_selection/final_selfcheck.json)，非独立审计|9B/35B完成；27B停40条；自然提升伴随风险恶化，不直接全量训练；用户已关机|
 |102_demo_relation|[报告](../outputs/102_demo_relation/report.md) · [关系核查](../outputs/102_demo_relation/method_review.md)|[执行者自检](../outputs/102_demo_relation/selfcheck.json)，独立审计未执行|零API；构造及预算核查后停止，未运行分类，不自动103|
 |101_nsna_review|[正式报告](../outputs/101_nsna_review/report.md) · [病例](../outputs/101_nsna_review/case_analysis.md)|[执行者自检](../outputs/101_nsna_review/selfcheck.json)，独立审计未执行|plain：失败停止；review：失败停止；默认不变，不自动新实验|

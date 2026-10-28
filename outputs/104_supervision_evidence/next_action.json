@@ -1,0 +1,20 @@
+{
+  "action": "nineb_paired_supervision_trial",
+  "classification_improvement_tested": false,
+  "comparison_arms": [
+    "base_judge",
+    "label_only",
+    "evidence_brief"
+  ],
+  "data_viability_quantity_met": true,
+  "dominant_cause_identified": false,
+  "fixed_train_N": 196,
+  "known_unresolved_critical_error_in_retained_set": false,
+  "new_training_started": false,
+  "no_search_on_selection180": true,
+  "not_physician_certification": true,
+  "preserve_MCC_falseS_NS_PA_constraints": true,
+  "reason_zh": "196条配对数据达到事前总数与三类覆盖条件；已知关键时点歧义已从两臂隔离，固定质量核查发现的引用问题已有具体修订。值得下一笔小额、受控GPU试验，但不值得直接扩大全512训练。当前证据同时包含输入解释缺口和NS/NA关系边界分歧，尚不能确定103风险恶化的主因；该对照只检验在同一筛选子集上短理由监督是否有额外收益。",
+  "recommendation_zh": "仅建议一次9B同样本label_only与evidence_brief对照，保留同prompt未微调基线",
+  "requires_new_training_authorization": true
+}

@@ -1,0 +1,65 @@
+{
+  "API_hard_cap_cny": 20,
+  "API_used_or_reserved_cny": 3.37503,
+  "HTTP200": 64,
+  "actual_pair_check": {
+    "N": 196,
+    "original_GT_preserved": true,
+    "patients": 40,
+    "quotes_exact_current_reference_slices": true,
+    "reference_truncation": false,
+    "same_input_and_order": true,
+    "same_prompt_both_arms": true
+  },
+  "actual_tokenizer_and_loss_masks_checked": true,
+  "auxiliary_blind_review": {
+    "GT_agreement": 2,
+    "GT_join_after_independent_record": true,
+    "completed_N": 8,
+    "frozen_copy_sha256": "f9d8d1ea03efc549796356bac97466c967dc6bebd6844a393e7cfcc328cdd3f9",
+    "no_training_rescue": true,
+    "not_physician_audit": true,
+    "planned_N": 16,
+    "primary_agreement": 5,
+    "remaining_API_dispute_panel_frozen_N": 16,
+    "source_sha256": "f9d8d1ea03efc549796356bac97466c967dc6bebd6844a393e7cfcc328cdd3f9",
+    "status": "partial_auxiliary_review_agent_usage_limit"
+  },
+  "base_main_HEAD": "42e357f314a928253ed64c54dc45801e6307c1b7",
+  "default_unchanged": true,
+  "duplicate_HTTP200_not_resent": true,
+  "executor_selfcheck_not_independent_audit": true,
+  "final_GT": {
+    "Not Addressed": 51,
+    "Not Supported": 62,
+    "Supported": 83
+  },
+  "final_paired_N": 196,
+  "frozen_API_requests": 64,
+  "full_inventory_N": 512,
+  "historical_tracked_files_unchanged": true,
+  "limitations": [
+    "No physician adjudication",
+    "No training or classification gain tested",
+    "Extra blind subagent review completed 8/16 before usage-limit interruption",
+    "Independent engineering review covers its recorded earlier versions; later checks are executor regression tests"
+  ],
+  "new_GPU": 0,
+  "new_classification_evaluation": 0,
+  "new_training": 0,
+  "no_initial_disagreement_rescued": true,
+  "original_GT_and_input_exact": true,
+  "private_training_package_ignored": true,
+  "semantic_primary_N": 288,
+  "status": "PASS",
+  "tests": {
+    "environment": "research-verifact-029",
+    "independent_audit": false,
+    "new_API_calls": 0,
+    "passed": true,
+    "scope": "synthetic API budget/recovery, real builder-to-loader, paired answer loss masks, teacher integration, final quality gate, public schema checks; no model training or paid test calls",
+    "tests": 35
+  },
+  "unknown_or_inflight_cny": 0.0,
+  "unreviewed_supported_N": 224
+}

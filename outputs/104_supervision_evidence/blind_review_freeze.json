@@ -1,0 +1,39 @@
+{
+  "GT_join_before_freeze": false,
+  "N": 288,
+  "assignment_sha256": "d954749611253068259120c8ee2dba4914db598fd9a55d2d2cacaa7330f2b6c6",
+  "blind_cases_sha256": "03b5d2362994bbb0854035661acb7244c39ee29755390cfe8d2f2a05601eda5a",
+  "builder_sha256": "e225ac5e445a10c2646c14311f20e131cf95979cb04b51ed3d7ab66567c6e3c8",
+  "created_utc": "2026-10-27T16:08:36.827918+00:00",
+  "files": {
+    "review_b.jsonl": {
+      "snapshot_sha256": "d1aa7bb03ac5ff85f263906322216f5f77f35a3c296bc85c3be5df3ee2def839",
+      "source_sha256": "d1aa7bb03ac5ff85f263906322216f5f77f35a3c296bc85c3be5df3ee2def839"
+    },
+    "review_c.jsonl": {
+      "snapshot_sha256": "c591d79b426564a3008e30ab17a935dcea6dd7d9e906d469d7bf4b58a1e58801",
+      "source_sha256": "c591d79b426564a3008e30ab17a935dcea6dd7d9e906d469d7bf4b58a1e58801"
+    },
+    "review_root.jsonl": {
+      "snapshot_sha256": "57da9f19c82fc32b82975c5b86a0e5eafde56f3af01e5a88074f46265ab17a7a",
+      "source_sha256": "57da9f19c82fc32b82975c5b86a0e5eafde56f3af01e5a88074f46265ab17a7a"
+    }
+  },
+  "merged_sha256": "3a7080b626733788fd21ebe3c9280b509ead02c53efc64023ce0e2c2623ee3e4",
+  "statement": "Immutable copies precede GT join; source review files remain unchanged.",
+  "validation": {
+    "GT_read": false,
+    "N": 288,
+    "assignment_checked": true,
+    "complete": true,
+    "expected": 288,
+    "mechanically_flagged_rows": 1,
+    "repeated_quote_strings": 93,
+    "reviewers": {
+      "root": 24,
+      "semantic_b": 132,
+      "semantic_c": 132
+    },
+    "semantic_approval_not_implied": true
+  }
+}
