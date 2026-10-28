@@ -1,0 +1,248 @@
+{
+  "task": 107,
+  "scope": "107 rented RTX5090 handoff: current read-only remote metadata plus historical A800 evidence; real9B gate pending",
+  "observed_utc": "2026-10-28T12:43:18.928Z",
+  "base_main_head": "bd4cc3e3a35ed3e1a98b115c1e14c02759da895d",
+  "remote_connected_this_stage": true,
+  "GPU_initialized_this_stage": false,
+  "API_calls_this_stage": 0,
+  "historical_GPU_recommendation": {
+    "model": "NVIDIA A800-SXM4-80GB",
+    "count": 1,
+    "VRAM_GiB": 80,
+    "basis": "105 completed original9B BF16 training and batch8 greedy evaluation on this model; recommend capacity and proven backend, not current catalog availability",
+    "105_peak_training_allocated_bytes": 26870898688,
+    "105_peak_evaluation_allocated_bytes": 38548893184,
+    "other_GPU_feasibility_verified": false,
+    "applies_to_current_rented5090_as_a_measurement": false
+  },
+  "current_rented_GPU": {
+    "model": "NVIDIA GeForce RTX 5090",
+    "count": 1,
+    "marketed_VRAM_GB": 32,
+    "reported_total_MiB": 32607,
+    "reported_free_MiB_at_inspection": 32110,
+    "driver": "595.71.05",
+    "user_authorized": true,
+    "hourly_cny": 2.88,
+    "billing_start_beijing": "2026-10-28T20:40:00+08:00",
+    "billing_is_running": true,
+    "real9B_BF16_training_fit_and_aux_gradient_verified": false,
+    "real9B_operators_and_throughput_verified": false,
+    "evaluation_batch_policy": "User authorized checking2 then1 if necessary; freeze same actual batch for both arms before formal evaluation.",
+    "A800_training_or_batch8_peak_is_not5090_memory_proof": true
+  },
+  "model": {
+    "name": "Qwen/Qwen3.5-9B",
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "required_weight_shards": 4,
+    "weight_shard_bytes": 19306310880,
+    "image_model_component_bytes": 19329305039,
+    "last_verified_remote_path": "/root/verifact_image/models/qwen3.5-9b",
+    "standard_path": "/root/autodl-tmp/verifact103/models/qwen3.5-9b",
+    "last105_A800_preflight_all_weight_SHA_match": true,
+    "current_remote_four_shards_exist_and_sizes_match": true,
+    "current_remote_SHA_verification": "Pending separate root-agent verification; size metadata alone is insufficient.",
+    "local_directory": ".local_models/103_lora_selection/models/qwen3.5-9b",
+    "local_four_weight_shards_present": false,
+    "local_available": "tokenizer, chat template, config, index and metadata; no complete base weights",
+    "local105_label_adapter_bytes": 173188512,
+    "local105_adapter_used_for107_initialization": false
+  },
+  "image": {
+    "platform_image_ID_recorded": null,
+    "suggested_image_name_only": "verifact_qwen35_9b_105_20261028",
+    "image_creation_receipt_present": false,
+    "material_state_at_capture": "READY_TO_SAVE_PRIVATE_IMAGE",
+    "material_root": "/root/verifact_image",
+    "environment_path": "/root/verifact_image/envs/venv103",
+    "environment_component_bytes": 8480008186,
+    "105_bundle_bytes": 32644417,
+    "source_destination_SHA_match_at_capture": true,
+    "A800105_later_used_image_paths_and_exact_versions": true,
+    "usable_for107_condition": "Current rented instance has image model/env paths and four shards with expected sizes; complete weight SHA and actual9B GPU execution still require verification. Image contains105 not107.",
+    "missing107_material": "Upload new107 private runtime bundle and frozen107 code/config; do not launch old105 or106 worker.",
+    "missing_platform_fact": "Actual platform image identifier is not recorded, but current model/environment paths and disk availability were directly observed; no further image-ID question is needed to proceed."
+  },
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "unsloth": "2026.10.9",
+    "unsloth_zoo": "2026.10.9",
+    "peft": "0.21.2",
+    "triton": "3.4.0",
+    "tokenizers": "0.23.3",
+    "causal-conv1d": "1.7.0",
+    "numpy": "2.5.4",
+    "Jinja2": "3.1.6",
+    "safetensors": "0.8.0",
+    "107_new_dependency_required": false,
+    "current_remote_metadata_verified_versions": [
+      "python3.12.3",
+      "torch2.8.0+cu128",
+      "transformers5.17.0",
+      "unsloth2026.10.9",
+      "peft0.21.2",
+      "triton3.4.0",
+      "causal-conv1d1.7.0"
+    ],
+    "current_need_reinstall_or_download": false,
+    "107_real9B_aux_gradient_and_restore_checked": false,
+    "new_plain_PyTorch_image_equivalent": false
+  },
+  "local_inputs_observed": {
+    "train": {
+      "path": ".local_models/104_supervision_evidence/paired/label_only.jsonl",
+      "bytes": 10122931,
+      "sha256": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc"
+    },
+    "evaluation": {
+      "path": ".local_models/105_brief_supervision/eval_inputs.jsonl",
+      "bytes": 11777266,
+      "sha256": "c35ef6e408de00f5e860b84a65d079d768f52fdfb7af1b5d07923c14050174ce"
+    },
+    "clinical_text_published_here": false,
+    "107_bundle_receipt": "outputs/107_support_aux/implementation_package.json"
+  },
+  "storage": {
+    "units": "GiB=2^30 bytes; decimal bytes retained",
+    "local_D_observed": {
+      "total_bytes": 217206849536,
+      "free_bytes": 76247302144,
+      "total_GiB": 202.28964233398438,
+      "free_GiB": 71.01083374023438,
+      "expansion_required_for107": false
+    },
+    "remote_system_disk_historical": {
+      "total_bytes": 32212254720,
+      "used_bytes": 28452814848,
+      "free_bytes": 3759439872,
+      "when": "105 image-material capture on2026-10-28 before later A800 execution",
+      "use_for_new_results": false
+    },
+    "remote_data_disk_historical": {
+      "last_A800_preflight_free_bytes": 53687066624,
+      "last_A800_preflight_free_GiB": 49.999977111816406,
+      "last_A800_total_bytes_recorded_in_that_receipt": null,
+      "older_different_clone_total_bytes": 127775277056,
+      "older_different_clone_free_after_cleanup_bytes": 107855798272,
+      "older_clone_is_current_instance": false,
+      "is_current5090_measurement": false
+    },
+    "current5090_system_disk": {
+      "total_bytes": 32212254720,
+      "used_bytes": 28452343808,
+      "free_bytes": 3759910912,
+      "free_GiB": 3.501689910888672,
+      "use_for_new_results": false
+    },
+    "current5090_data_disk": {
+      "total_bytes": 107374182400,
+      "used_bytes": 24576,
+      "free_bytes": 107374157824,
+      "total_GiB": 100,
+      "free_GiB": 99.9999771118164,
+      "capacity_and_free_directly_observed": true,
+      "expansion_required_for107": false
+    },
+    "107_planning": {
+      "minimum_recommended_data_disk_free_GiB": 20,
+      "four_rolling_checkpoint_slots_estimate_GiB": 2.0,
+      "checkpoint_estimate_basis": "43,278,336 trainable LoRA parameters: approximately173MB FP32 adapter plus346MB Adam moments per slot; two slots per arm;107 aux head is small",
+      "remainder": "Compiler caches, private bundle and unpacking, probe/recovery files, logs, predictions, final backups, I/O headroom",
+      "keep_base_model_in_image_without_copy": true,
+      "if_base_and_environment_must_be_copied_to_data_disk_additional_GiB": 26,
+      "copy_route_recommended_total_free_GiB": 46,
+      "expansion_policy": "No expansion if measured data free>=20GiB with image-linked assets; otherwise report shortage ceil(20-freeGiB)GiB and platform available increments. Do not purchase or delete retained assets automatically.",
+      "cloud_expansion_required_now": false
+    }
+  },
+  "time_and_cost_plan": {
+    "historical_quote_cny_per_hour": 7.98,
+    "current_quote_user_supplied_cny_per_hour": 2.88,
+    "current_billing_start_beijing": "2026-10-28T20:40:00+08:00",
+    "two_fresh_arms": true,
+    "training_steps_per_arm": 50,
+    "training_consumptions_per_arm": 392,
+    "evaluation_inputs_per_arm": 500,
+    "API_cap_cny": 0,
+    "GPU_hard_cap_cny": 20,
+    "105_label_training_seconds_per_arm": 922.7394276075065,
+    "105_checkpoint_seconds_per_arm": 52.19349758699536,
+    "105_checkpoint_seconds_included_in_training_seconds": true,
+    "105_label500_generation_seconds": 416.2778604105115,
+    "historical_two_arm_train_save_and_eval_minutes": 44.6339096006006,
+    "historical_A800_estimated_total_GPU_minutes_range": [
+      75,
+      110
+    ],
+    "historical_A800_extra_cautious_total_GPU_minutes": 120,
+    "historical_quote_cost_range_cny": [
+      9.975,
+      14.63
+    ],
+    "historical_quote_cautious_compute_cny": 15.96,
+    "new107_shutdown_unknown_reserve_cny": 2,
+    "cautious_compute_plus_reserve_cny": 17.96,
+    "executable_budget_plan_receipt": "outputs/107_support_aux/cost_estimate.json",
+    "historical_A800_short_output_minutes": 76.09578796514327,
+    "historical_A800_short_output_compute_plus_reserve_cny": 12.120739799364054,
+    "historical_A800_cautious_output_minutes": 109.32007737350668,
+    "historical_A800_cautious_output_compute_plus_reserve_cny": 16.539570290676387,
+    "current5090_speed_estimate_available": false,
+    "current5090_price_arithmetic_only": {
+      "same76_10minutes_compute_plus2reserve_cny": 5.652597822326877,
+      "same109_32minutes_compute_plus2reserve_cny": 7.24736371392832,
+      "same120minutes_compute_plus2reserve_cny": 7.76,
+      "these_durations_are_not_measured_or_promised_on5090": true,
+      "18cny_operating_line_minutes_from_billing_start": 375,
+      "20cny_hard_cap_minutes_from_billing_start": 416.6666666666667
+    },
+    "planning_estimate_not_guarantee": true,
+    "risk": [
+      "First compilation, exact107 auxiliary gradient/causality/restore checks and model loads are billable.",
+      "Auxiliary-head compiler behavior and support_aux generated answer length have not been measured on9B.",
+      "5090 32GB fit, operators, batch2-or1 evaluation and throughput are unverified; A800 time cannot be treated as5090 speed.",
+      "Process exit or stopped training does not stop GPU billing; timely user shutdown is required.",
+      "Disk rental/expansion price is not an observed GPU quote; any needed extra charge must be disclosed before purchase."
+    ],
+    "gate_before_formal_training": "Use actual quote, platform billing-start time, all already elapsed charge and measured throughput to budget both fresh trainings, both500 evaluations, necessary save and shutdown reserve. Stop and report gap if projected total>20; never drop a control or tune design.",
+    "old105_cost_or_budget_carried_into107": false
+  },
+  "user_handoff_status": "Rented5090, current-session access, quote and billing start received; no waiting-for-rental or repeated SSH question.",
+  "next_actions": [
+    "Finish necessary stage1 verification and both-repository publication, upload107 private bundle, then directly run the authorized5090 technical gate.",
+    "Verify full model SHA and exact runtime/token mapping; do not reinstall, download or expand a disk without an observed need.",
+    "Check full BF16 micro1 training, auxiliary causality/gradient/recovery and batch2 evaluation; use1 only if necessary under the user's new batch authorization.",
+    "Count all current billing from20:40 Beijing, then establish full remaining train/evaluation/save feasibility within20CNY before formal training.",
+    "Keep private image and retained disks; do not release/reset/delete. Timely actual platform shutdown is required after completion."
+  ],
+  "implementation_risks_to_verify": [
+    "Prompt-end state must precede every teacher-forced answer token, including tokenizer boundary conventions and padding.",
+    "9B causal model must show unchanged prompt representation when answer suffix changes; auxiliary backward must produce nonzero LoRA gradients.",
+    "Auxiliary head initialization must preserve identical original LoRA initialization and training RNG across arms.",
+    "Optimizer and checkpoint must include auxiliary parameters, moments and RNG while main105 loss and tail-batch normalization remain exact.",
+    "No auxiliary prediction participates in greedy JSON inference/parser or evaluation."
+  ],
+  "public_evidence": [
+    "outputs/105_brief_supervision/system_image_summary.json",
+    "outputs/105_brief_supervision/system_image_report.md",
+    "outputs/105_brief_supervision/gpu_clone_storage.json",
+    "outputs/105_brief_supervision/environment_versions.json",
+    "outputs/105_brief_supervision/a800_resources.json",
+    "outputs/105_brief_supervision/a800_gpu_gate.json",
+    "outputs/105_brief_supervision/a800_cost_status.json",
+    "outputs/106_label_preparation/cost_estimate.json",
+    "outputs/107_support_aux/cost_estimate.json"
+  ],
+  "private_metadata_evidence": [
+    ".local_models/105_brief_supervision/a800/evidence/results/nogpu_preflight.json",
+    ".local_models/105_brief_supervision/a800/latest_snapshot.json",
+    ".local_models/107_support_aux/remote_initial_inspection.json",
+    ".local_models/107_support_aux/remote_environment_initial.json"
+  ],
+  "current_5090_assets_verification": "outputs/107_support_aux/5090_assets_verification.json",
+  "current_5090_all_model_SHA_match": true,
+  "current_5090_all_pinned_environment_versions_match": true
+}

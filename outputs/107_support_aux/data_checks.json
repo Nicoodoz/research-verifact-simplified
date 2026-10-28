@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "train_N": 196,
+  "train_patients": 40,
+  "classes": {
+    "Not Supported": 62,
+    "Supported": 83,
+    "Not Addressed": 51
+  },
+  "auxiliary_classes": {
+    "0": 113,
+    "1": 83
+  },
+  "evaluation": {
+    "natural": {
+      "N": 400,
+      "GT": {
+        "Supported": 321,
+        "Not Supported": 26,
+        "Not Addressed": 53
+      }
+    },
+    "pressure": {
+      "N": 100,
+      "GT": {
+        "Not Supported": 50,
+        "Not Addressed": 50
+      }
+    }
+  },
+  "selection_patients": 20,
+  "train_selection_patient_overlap": 0,
+  "training_sha256": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+  "eval_inputs_sha256": "c35ef6e408de00f5e860b84a65d079d768f52fdfb7af1b5d07923c14050174ce",
+  "patient_roles_sha256": "1e43a0d5c4b83f3b6bb4125c879c9581e3ca47ef59d2184458a232aed20bd537",
+  "both_train_files_byte_identical": true,
+  "original_claim_GT_reference_unchanged": true,
+  "optimizer_steps_each": 50,
+  "consumed_each": 392,
+  "epoch_tail_divisors": [
+    4,
+    4
+  ],
+  "confirmation_content_read": false,
+  "all100_historically_exposed": true,
+  "new_holdout": false,
+  "GPU_started": false,
+  "API_calls": 0
+}

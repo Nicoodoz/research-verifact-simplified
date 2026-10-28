@@ -1,0 +1,89 @@
+{
+  "task": 107,
+  "planning_only": true,
+  "this_script_GPU_started": false,
+  "actual_GPU_measurements_available": false,
+  "fees_this_script": {
+    "API_cny": 0,
+    "GPU_cny": 0
+  },
+  "actual_session_cost_requires_cumulative_billing_ledger": true,
+  "quote_scenario_cny_per_hour": 2.88,
+  "quote_source": "user current RTX5090 rental handoff",
+  "quote_is_historical105_not_current_offer": false,
+  "target_gpu": "RTX5090_32GB",
+  "evaluation_batch_size": 2,
+  "runtime_estimate_mode": "actual_gpu_absolute",
+  "source": "105 A800-SXM4-80GB actual training/evaluation resource receipts",
+  "train_rows": 196,
+  "epochs": 2,
+  "optimizer_steps_each": 50,
+  "row_consumptions_each": 392,
+  "train_tokens_each": 3273736,
+  "measured_training_tokens_per_second105": 3588.1294421718294,
+  "measured_train_compute_seconds105": 912.3795706819504,
+  "measured_label500_seconds105": 416.2778604105115,
+  "measured_base500_seconds105": 1182.9922313727438,
+  "matched_inference_benchmark105": {
+    "batch_size": 8,
+    "forced_tokens_per_sequence": 128,
+    "seconds": 20.34523418545723,
+    "input_tokens": 12681,
+    "source": "105 a800_benchmark decode128 after decode4 kernel warmup"
+  },
+  "per_arm_train_remaining_seconds": 1291.7124204206332,
+  "per_arm_eval_cautious_seconds": 1537.889900784567,
+  "remaining_overhead_seconds": 300,
+  "resource_gate_seconds_allowance": 600,
+  "allowances": {
+    "training_factor": 1.35,
+    "eval_factor": 1.3,
+    "checkpoint_each_arm_seconds": 60,
+    "gate_seconds": 600,
+    "loading_saving_transfer_shutdown_seconds": 300,
+    "shutdown_unknown_reserve_cny": 2
+  },
+  "absolute_runtime_allowances": {
+    "training_factor": 1.35,
+    "evaluation_factor": 1.2,
+    "checkpoint_count_each": 51,
+    "optimizer_steps_each": 50,
+    "minimum_optimizer_overhead_each_seconds": 30,
+    "remaining_overhead_seconds": 300,
+    "evaluation_output_tokens_each": 384,
+    "minimum_peak_headroom_bytes": 268435456
+  },
+  "scenarios": {
+    "historical_A800_work_at_current_quote_short": {
+      "seconds": 4565.7472779085965,
+      "minutes": 76.09578796514327,
+      "compute_cny": 3.652597822326877,
+      "total_with_2cny_reserve": 5.652597822326877,
+      "not_a_5090_throughput_forecast": true
+    },
+    "historical_A800_work_at_current_quote_cautious": {
+      "seconds": 6559.204642410401,
+      "minutes": 109.32007737350668,
+      "compute_cny": 5.247363713928321,
+      "total_with_2cny_reserve": 7.247363713928321,
+      "not_a_5090_throughput_forecast": true
+    }
+  },
+  "hard_cap_cny": 20,
+  "operating_line_cny": 18,
+  "API_cap_cny": 0,
+  "new_original_base_trainings": 2,
+  "new_evaluations_each500": 2,
+  "runtime_price_elapsed_and_measured_throughput_required_before_formal_optimizer": true,
+  "excludes": [
+    "new full model download",
+    "new package installation",
+    "disk charges requiring new authorization"
+  ],
+  "uncertainty": [
+    "auxiliary compute overhead unmeasured until real GPU gate",
+    "new adapters can produce longer/invalid outputs",
+    "kernel compilation, restoration, network backup, platform shutdown delay",
+    "5090 throughput must be measured; A800 batch8 timing is not transferable"
+  ]
+}

@@ -1,6 +1,6 @@
 # 项目工作约定（2026-10-28）
 
-106研究、数据与CPU实现准备完成，停在READY_FOR_NEXT_GPU_DECISION。推荐同104原196条的label_mean对全局归一label_sum最小目标诊断；只规划新训sum，原105标签适配器作控制，本轮没有GPU/AutoDL或目标模型训练。3675训练池及两个512匹配候选已备，53条选型诊断、16条筛选分歧和3对训练邻居已审读；新输入缺口对称隔离，原GT/reference与105结果保留。API新增0/10元，默认不变，不自动启动或推送。 [106一页决定](outputs/106_label_preparation/decision.md) · [106报告](outputs/106_label_preparation/report.md) · [105最终报告](outputs/105_brief_supervision/final_report.md)。
+107阶段一CPU准备完成，用户已交接RTX5090 32GB（2.88元/小时，20:40起计费），不再等待租卡。两臂label_only/support_aux从原9B新训同196×2轮/50步，唯一差异为训练期prompt末端S/non-S BCE权重1；保留105主loss、原prompt/JSON/parser与评价500，按新授权检查评价batch2、必要时1，两臂同分组。CPU因果LoRA梯度/恢复、数据/预算/包核验通过；新机原9B全SHA及固定环境通过，100GiB数据盘几乎全空。阶段一推送后直接做5090真实最长backward/内核/显存/吞吐及整轮20元门槛，通过即执行。API0；当前无107分类结果，不启动108/升级默认。 [107准备报告](outputs/107_support_aux/preparation_report.md) · [107接续](tasks/107_support_aux/GPU_HANDOFF.md)。
 
 本文件只保留持续有效的约定。先读[项目现状](docs/PROJECT_STATUS.md)、[研究原则](docs/RESEARCH_EXECUTION.md)和[环境](docs/RUN_ENVIRONMENT.md)；查看仓库相关事实前检查实际main HEAD。任务、报告和审计的历史索引见[任务索引](docs/TASK_INDEX.md)，旧说明不覆盖较新的用户授权。
 
@@ -20,6 +20,7 @@ MCC 和 false-S 相对更重要：前者反映类别失衡下的整体分类质�
 
 ## 当前状态与数据授权
 
+- 107用户已交接5090 32GB、2.88元/小时、本次20:40起计费；阶段一推送后直接工程检查，技术和整轮20元/API0门槛通过即执行两臂fresh训练/各500评价。允许评价batch2必要1、正式前冻结两臂同分组，不改BF16/micro1/完整输入；不使用确认40人。
 - 106仅研究/数据/CPU准备完成，最终推荐同196标签目标最小诊断；API专项10元实际0。训练40人可准备全3675池，选型20人仅解释已有结果，确认40人本轮不读取选方法；GPU与下一任务须新决定。
 - 105完整训练/评价/离线分析完成，用户确认关机；当前evidence_brief未提供增量，停止扩大。103/104历史结论、GT与默认系统保留。后续训练/研究必须新授权。
 - 102完成零费用可行性核查，初步构造存在关系绑定局限，现依用户指令在付费分类前封存；不是分类阴性结果。101及098—100原结论保留，原始GT、默认系统和099选型未变；新研究仍须明确授权。

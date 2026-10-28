@@ -1,0 +1,27 @@
+{
+  "task": 107,
+  "scope": "tiny_causal_attention_LoRA_CPU_implementation_only",
+  "tests_run": 7,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "cuda_initialized": false,
+  "torch_version": "2.8.0+cu128",
+  "clinical_text_in_report": false,
+  "target_model_loaded": false,
+  "head_seed": 103028,
+  "main_loss": "unchanged_import_of_loss105.segmented_hidden_loss",
+  "checks": [
+    "identical_fresh_LoRA_and_no_global_RNG_consumption",
+    "main_105_value_gradient_exact",
+    "one_shared_backbone_forward",
+    "causal_prompt_last_answer_independence",
+    "aux_only_gradient_reaches_LoRA_A_after_update_and_LoRA_B_from_start",
+    "head_optimized_FP32_BCE_weight_one_including_outer_BF16_autocast",
+    "both_arms_196x2_tail4_exact_resume",
+    "adapter_head_optimizer_scheduler_python_numpy_torch_RNG_restore",
+    "interrupted_inactive_write_preserves_pointer",
+    "corrupt_head_rejected"
+  ],
+  "limitation": "CPU implementation tests do not prove 9B GPU behavior or classification improvement"
+}

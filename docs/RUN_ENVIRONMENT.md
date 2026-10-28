@@ -1,6 +1,6 @@
-# 当前环境与启动方式（2026-10-26核对）
+# 当前环境与启动方式（2026-10-28核对）
 
-106未启动GPU。CPU统计/评价继续使用research-verifact-029；该环境缺torch与tokenizers，未安装或升级。仅tokenizer/Jinja编码及小CPU张量验证使用既有research激活加032 venv，未加载9B或初始化CUDA；本地tokenizers0.22.0与未来105冻结环境0.23.3不同，开卡前必须逐条重新核token SHA。当前交接只含9B必要代码、受限输入与mean控制适配器，不包含基础权重、凭据或27B/35B材料。
+107 CPU数据/统计/评价/包核验继续用research-verifact-029；tokenizer及tiny因果LoRA CPU复用research激活加032 venv，未加载9B/初始化CUDA，无安装升级。用户已交接5090 32GB，新机/root/verifact_image原9B全部SHA与11关键依赖通过，数据盘100GiB几乎全空。阶段一推送后直接实测5090内核/最长backward/显存及吞吐，不能以105峰值代替；评价batch2必要1，正式前同分组冻结。[107交接](../tasks/107_support_aux/GPU_HANDOFF.md)。
 
 103已实际使用独立Python3.12、PyTorch2.8.0+cu128、Transformers5.17.0、Unsloth2026.10.9及PEFT0.21.2环境；补充causal-conv1d1.7.0/ninja1.13.0，未复用096旧vLLM环境。实际依赖锁及验证见[GPU环境](../outputs/103_lora_selection/installed_gpu_with_causal.lock)与[工程记录](../outputs/103_lora_selection/gpu_runtime_amendment.md)。
 
