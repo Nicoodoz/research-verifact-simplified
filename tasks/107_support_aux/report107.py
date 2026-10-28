@@ -71,10 +71,12 @@ def panel_details(name, panel):
     primary = (paired.get('primary') or {}).get('metrics', {})
     for field, label, pct in [('mcc', 'MCC', False), ('percent_agreement', 'PA', True), ('gwet_ac1', 'Gwet AC1', False)]:
         item = primary.get(field, {})
-        lines.append(f"|{label}|{number(item.get('delta'), 2 if pct else 4, pct, True)}|{interval(item.get('ci95'), pct)}|")
+        delta=number(item.get('delta'), 2 if pct else 4, pct, True).replace('%','') if pct else number(item.get('delta'),signed=True)
+        bounds=interval(item.get('ci95'),pct).replace('%','') if pct else interval(item.get('ci95'))
+        lines.append(f"|{label+'（百分点）' if pct else label}|{delta}|{bounds}|")
     for field, label in [('false_S_rate', 'false-S/non-S'), ('S_recall', 'S召回'), ('NS_recall', 'NS召回'), ('NA_recall', 'NA召回')]:
         item = paired['risk'].get(field, {})
-        lines.append(f"|{label}|{number(item.get('delta'), 2, True, True)}|{interval(item.get('ci95'), True)}|")
+        lines.append(f"|{label}（百分点）|{number(item.get('delta'), 2, True, True).replace('%','')}|{interval(item.get('ci95'), True).replace('%','')}|")
     lines += ['', '|配置|Macro-F1|AC1|false-S/non-S|预测S假发现率|', '|---|---:|---:|---:|---:|']
     for arm in (*c.ARMS, 'paper_r1'):
         m = panel['metrics'].get(arm)
@@ -154,7 +156,7 @@ def generate(evaluation, output, *, resources=None, cost=None, backup=None, deci
         report += [f'## {title}结果', '', f"本次两臂共同有效{p['common_valid_N']}/{p['frozen_N']}条。", ''] + main_table(p)
         pair = p['paired']; primary = (pair.get('primary') or {}).get('metrics', {})
         mcc, pa = primary.get('mcc', {}), primary.get('percent_agreement', {})
-        report += ['', f"相对label_only：ΔMCC {number(mcc.get('delta'), signed=True)}，ΔPA {number(pa.get('delta'), 2, True, True)}；false-S新增{pair['false_S_new']}、减少{pair['false_S_avoided']}。", '']
+        report += ['', f"相对label_only：ΔMCC {number(mcc.get('delta'), signed=True)}，ΔPA {number(pa.get('delta'), 2, True, True).replace('%','')}个百分点；false-S新增{pair['false_S_new']}、减少{pair['false_S_avoided']}。", '']
         report += ['|原GT|救回|误伤|', '|---|---:|---:|'] + [f"|{SHORT[g]}|{pair['by_true_class'][g]['rescued']}|{pair['by_true_class'][g]['harmed']}|" for g in c.LABELS]
         report += ['', f"预测S {pair['predicted_S']['label_only']}→{pair['predicted_S']['support_aux']}；须同时看正确S误伤及NS/NA分类损失。", '']
     r, fee, b = inputs.get('resources', {}), inputs.get('cost', {}), inputs.get('backup', {})

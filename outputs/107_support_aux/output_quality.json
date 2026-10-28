@@ -1,0 +1,20 @@
+{
+  "label_only": {
+    "received": 500,
+    "valid": 500,
+    "strict_JSON": 500,
+    "exact_label_normalized": 0,
+    "truncated": 0,
+    "content_retry": false,
+    "old_prediction_fallback": false
+  },
+  "support_aux": {
+    "received": 500,
+    "valid": 500,
+    "strict_JSON": 500,
+    "exact_label_normalized": 0,
+    "truncated": 0,
+    "content_retry": false,
+    "old_prediction_fallback": false
+  }
+}

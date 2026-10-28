@@ -1,26 +1,64 @@
 {
   "task": 107,
-  "status": "CPU_PREPARATION_COMPLETE_5090_HANDOFF_RECEIVED",
+  "status": "COMPLETED_CURRENT_RECIPE_NO_OVERALL_BENEFIT_STOP_EXPANSION",
   "executor_checks_only": true,
   "independent_audit": false,
-  "implementation_preparation_pass": true,
-  "method_effectiveness_proven": false,
-  "CPU_tests": 11,
-  "tiny_tests": 7,
-  "original196_and105_main_loss_preserved": true,
-  "both_fresh_arms": true,
+  "all_frozen_first_requests_received": true,
+  "both50step392_consumption_recorded": true,
+  "primary_common_ids_recomputed_for107": true,
+  "natural_and_pressure_never_pooled": true,
+  "no_fallback_recorded": true,
+  "auxiliary_head_unused_inference_recorded": true,
+  "evidence_insufficient": false,
+  "decision_text_supplied": true,
+  "method_effectiveness_automatic_judgment": null,
+  "method_implementation_verified": true,
+  "GPU_billing_stop_attested_by_invoker": true,
+  "billing_stop_metadata_confirmation": true,
+  "exact_invoice_cny": null,
+  "backup_SHA_confirmation": true,
+  "unchecked_metadata": [
+    "精确平台账单（元）"
+  ],
+  "training_cost_log_complete": {
+    "label_only": true,
+    "support_aux": true
+  },
+  "automatic_upgrade": false,
   "confirmation40_new_use": false,
-  "current_instance_assets_SHA_environment_verified": true,
-  "current_5090_GPU_model_checks_executed": false,
-  "user_rented_instance_handoff_received": true,
-  "waiting_user_rental": false,
-  "actual_GPU_billing_active": true,
-  "billing_start_beijing": "2026-10-28 20:40",
-  "hourly_cny": 2.88,
-  "GPU_cap_cny": 20,
+  "API_new_cny": 0,
+  "sources": {
+    "evaluation": {
+      "name": "evaluation.json",
+      "sha256": "0220ee742f88b3a220f179d29d033aebea4e41db67927384c4990af9d59f8e25"
+    },
+    "resources": {
+      "name": "resources.json",
+      "sha256": "76e5fbbd21dcedcac68d1bb7edfbe7c92a7118f0133716b89eb6e4acc2af282d"
+    },
+    "cost": {
+      "name": "cost_status.json",
+      "sha256": "704ab270bc3f511551d4a4317b06a2989c123e9a1683b6b6e5e8c5842e9e1c0d"
+    },
+    "backup": {
+      "name": "backup_receipt.json",
+      "sha256": "8a9afcd35c11082121da234939d28dd70e58fbaa62bc9eb6cd9952a26e9f817d"
+    }
+  },
+  "report_files": {
+    "final_report.md": "b905b0f356cae536d76825b570af5b868d1fb8e1f3b3f97660acc9e39dc1433c",
+    "final_metrics.md": "0c7af9d9df7c578d4b9df1564d297573421c46b0d696de43d80601b451e1ecfc"
+  },
+  "research_conclusion": "NS gains accompanied by substantial NA losses; no defensible overall benefit for fixed support_aux recipe",
+  "all1000_first_receipts_valid_strict_JSON": true,
+  "natural_common_valid_N": 400,
+  "pressure_common_valid_N": 100,
+  "prediction_metrics_arithmetic_crosscheck": true,
+  "GPU_shutdown_user_confirmed": true,
+  "shutdown_beijing": "2026-10-28 22:15",
+  "GPU_estimate_cny": 4.56,
   "API_cny": 0,
-  "package_manifest_sha256": "040bad5c5c076a1e646b008327e13ab1992e8264fcde9b7790a4206217c18209",
-  "publication_authorized": true,
-  "publication_status_at_formation": "PENDING_DUAL_REPOSITORY_COMMIT_PUSH",
-  "source_main_head": "bd4cc3e3a35ed3e1a98b115c1e14c02759da895d"
+  "current_recipe_expansion_stopped": true,
+  "no_tuning_on_selection500": true,
+  "next_task_not_started": true
 }
