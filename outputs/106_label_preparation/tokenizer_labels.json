@@ -1,0 +1,191 @@
+{
+  "labels": {
+    "Supported": {
+      "answer": "{\"verdict\":\"Supported\"}",
+      "ids": [
+        4754,
+        415,
+        8217,
+        3147,
+        33490,
+        8934
+      ],
+      "decoded_tokens": [
+        "{\"",
+        "ver",
+        "dict",
+        "\":\"",
+        "Supported",
+        "\"}"
+      ],
+      "offsets": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          12,
+          21
+        ],
+        [
+          21,
+          23
+        ]
+      ],
+      "verdict_indices": [
+        4
+      ],
+      "verdict_ids": [
+        33490
+      ],
+      "eos_id": 248046
+    },
+    "Not Supported": {
+      "answer": "{\"verdict\":\"Not Supported\"}",
+      "ids": [
+        4754,
+        415,
+        8217,
+        3147,
+        2536,
+        47338,
+        8934
+      ],
+      "decoded_tokens": [
+        "{\"",
+        "ver",
+        "dict",
+        "\":\"",
+        "Not",
+        " Supported",
+        "\"}"
+      ],
+      "offsets": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          25
+        ],
+        [
+          25,
+          27
+        ]
+      ],
+      "verdict_indices": [
+        4,
+        5
+      ],
+      "verdict_ids": [
+        2536,
+        47338
+      ],
+      "eos_id": 248046
+    },
+    "Not Addressed": {
+      "answer": "{\"verdict\":\"Not Addressed\"}",
+      "ids": [
+        4754,
+        415,
+        8217,
+        3147,
+        2536,
+        8904,
+        290,
+        8934
+      ],
+      "decoded_tokens": [
+        "{\"",
+        "ver",
+        "dict",
+        "\":\"",
+        "Not",
+        " Address",
+        "ed",
+        "\"}"
+      ],
+      "offsets": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          23
+        ],
+        [
+          23,
+          25
+        ],
+        [
+          25,
+          27
+        ]
+      ],
+      "verdict_indices": [
+        4,
+        5,
+        6
+      ],
+      "verdict_ids": [
+        2536,
+        8904,
+        290
+      ],
+      "eos_id": 248046
+    }
+  },
+  "NS_NA_shared_value_prefix_ids": [
+    2536
+  ],
+  "sequence_probability_requires": "all conditional answer tokens plus EOS, normalized over three complete legal paths",
+  "no_substring_Supported_penalty": true,
+  "control_loss": "105_verdict_mean_CE_plus_other_answer_mean_CE",
+  "candidate_loss": "verdict_sum_CE_div_fixed_global360over196_plus_other_answer_mean_CE"
+}

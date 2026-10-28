@@ -1,0 +1,91 @@
+{
+  "GPU_calls": 0,
+  "GT": "Not Supported",
+  "admission_id": "188960",
+  "attribution_of_recommendation_not_independently_resolved": true,
+  "calendar_end": "2129-08-19",
+  "calendar_start": "2129-08-17",
+  "current_reference_changed": false,
+  "current_reference_sha256": "0dbb4058ca37ccff4112ac24e68d72878615870ac2883e6067a5c01e8995a341",
+  "decisive_extra_EHR_location": {
+    "end": 8155,
+    "note_id": "637737",
+    "note_sha256": "60ddaea4447f42ad950e88ef4900b1050ad300563f1ba6bfbefa20ae8c03b670",
+    "quote_sha256": "16399285ef5eb96bf78ff92f000e63889f2a0a94afbc32f17c31d01970f76520",
+    "start": 8122
+  },
+  "evidence_only_in_additional_legal_EHR": true,
+  "existing_scope_rule": "100/evidence100.py calendar-inclusive target admission; discharge summaries excluded; training patient only",
+  "full_matching_notes_read": 3,
+  "id": "e5f545ac-9a01-bebf-b501-68692c57fc0c",
+  "independent_physician_adjudication": false,
+  "legal_notes_N": 12,
+  "matched_note_metadata": [
+    {
+      "CATEGORY": "Physician",
+      "CHARTDATE": "2129-08-18",
+      "CHARTTIME": "2129-08-18 01:09:00",
+      "DESCRIPTION": "Physician Resident Admission Note",
+      "HADM_ID": "188960.0",
+      "ROW_ID": "637617",
+      "note_sha256": "137213c29d9e70384bcd955fe5054983b6da904fa28ba359222cfa3873e9bc79",
+      "occurrences": [
+        {
+          "end": 1780,
+          "start": 1773,
+          "term_sha256": "594d4dbfca74c88a6d8335027f1fd2c9d77e9acb78f22457fc04c7c047cb19f7"
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Physician",
+      "CHARTDATE": "2129-08-18",
+      "CHARTTIME": "2129-08-18 01:40:00",
+      "DESCRIPTION": "Physician Attending Admission Note - MICU",
+      "HADM_ID": "188960.0",
+      "ROW_ID": "637615",
+      "note_sha256": "cabd038e9d4b7ed4a1aa350ee3d3bbbabd4b9e875feda58235f8dbaef4202b38",
+      "occurrences": [
+        {
+          "end": 1125,
+          "start": 1118,
+          "term_sha256": "1439df9671220aa3068c77f0f06de872ae9336d591e0342bb25db1787969928e"
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Physician",
+      "CHARTDATE": "2129-08-18",
+      "CHARTTIME": "2129-08-18 08:06:00",
+      "DESCRIPTION": "Physician Resident Admission Note",
+      "HADM_ID": "188960.0",
+      "ROW_ID": "637737",
+      "note_sha256": "60ddaea4447f42ad950e88ef4900b1050ad300563f1ba6bfbefa20ae8c03b670",
+      "occurrences": [
+        {
+          "end": 1779,
+          "start": 1772,
+          "term_sha256": "594d4dbfca74c88a6d8335027f1fd2c9d77e9acb78f22457fc04c7c047cb19f7"
+        },
+        {
+          "end": 8155,
+          "start": 8148,
+          "term_sha256": "1439df9671220aa3068c77f0f06de872ae9336d591e0342bb25db1787969928e"
+        }
+      ]
+    }
+  ],
+  "matched_notes_N": 3,
+  "new_API_calls": 0,
+  "no_material_added_to_training_reference": true,
+  "original_GT_modified": false,
+  "raw_source_files": {
+    "data\\00_raw\\verifact-bhc\\1.1.0\\reference_ehr\\admissions.csv.gz": "a3a8c119f19526d9a1108f84371d433f05fea3960643a48106d8f5d2c974c620",
+    "data\\00_raw\\verifact-bhc\\1.1.0\\reference_ehr\\ehr_noteevents.csv.gz": "f415863ce5584ba3a4b6e0b5a65fd6baae88ff2374c403a7be5e6bdb5fb62c4f"
+  },
+  "semantic_legal_EHR_check_pending": false,
+  "semantic_result": "Additional lawful EHR explicitly records continuing the target home medication; the current actual reference omits that action. This explains an input-evidence gap, not an erroneous doctor GT.",
+  "sid": "59840",
+  "target_medication_continuation_found": true,
+  "target_reference_not_augmented": true
+}

@@ -1,0 +1,113 @@
+{
+  "scope": "106 literature/source-B agent independent candidate-integrity checks; not executor selfcheck or clinical-validity certification",
+  "checks": {
+    "patient_roles_disjoint": true,
+    "full_pool_N3675": true,
+    "ordinary_sample_N512_unique": true,
+    "ordinary_sample_only_train40": true,
+    "ordinary_sample_no_known_gap": true,
+    "ordinary_sample_quotas": true,
+    "ordinary_sample_own_original_claim_reference_GT": true,
+    "boundary_cover_N512_unique": true,
+    "boundary_cover_only_train40": true,
+    "boundary_cover_no_known_gap": true,
+    "boundary_cover_quotas": true,
+    "boundary_cover_own_original_claim_reference_GT": true,
+    "actual_5way_strata_exact": true,
+    "B16_membership_same_both_arms": true,
+    "active196_byte_identical_to104_and_each_other": true,
+    "active196_same_original_order": true,
+    "label_mean_196_unique_original_quotas": true,
+    "label_mean_train_patients_only": true,
+    "label_sum_196_unique_original_quotas": true,
+    "label_sum_train_patients_only": true,
+    "active196_global_verdict_length_sum360": true,
+    "global_sum_segment_average_weight_preserved": true
+  },
+  "all_listed_integrity_checks_pass": true,
+  "summary": {
+    "ordinary_sample": {
+      "N": 512,
+      "patients": 40,
+      "GT": {
+        "Supported": 320,
+        "Not Supported": 96,
+        "Not Addressed": 96
+      },
+      "author": {
+        "llm": 133,
+        "human": 379
+      },
+      "semantic104_status": {
+        "not_reviewed104": 441,
+        "unresolved": 37,
+        "gt_explained": 34
+      },
+      "B16_included_ids": [
+        "9f1073c2-b02d-e1c3-640f-a553beb1b635",
+        "26836659-a8ef-bd4d-fccc-57e034591c54",
+        "00377a94-722c-5ccb-4d01-786b6753a39c",
+        "7d4e428a-99fb-38d3-e3d4-454e7db89b57",
+        "8c796115-585d-1468-3148-8eab49aa9c13",
+        "0f1ec35a-848f-f673-7bee-bd39a1c22af9",
+        "eba8fd84-5786-7a21-86c3-cf5e84e6d6fd",
+        "dca29554-c33b-eea2-f4bc-f1b27744132d",
+        "884efe7c-39f0-0003-77bd-a67eb82f84bf",
+        "e5dc621e-75f7-9e56-8fc3-7c7f7b302fff",
+        "231601f8-8ae5-f7bf-b2c3-251f85db51ea",
+        "5344147b-c9ec-6360-c6ef-f39f69dcc7dc"
+      ]
+    },
+    "boundary_cover": {
+      "N": 512,
+      "patients": 40,
+      "GT": {
+        "Supported": 320,
+        "Not Supported": 96,
+        "Not Addressed": 96
+      },
+      "author": {
+        "llm": 133,
+        "human": 379
+      },
+      "semantic104_status": {
+        "not_reviewed104": 441,
+        "unresolved": 37,
+        "gt_explained": 34
+      },
+      "B16_included_ids": [
+        "9f1073c2-b02d-e1c3-640f-a553beb1b635",
+        "26836659-a8ef-bd4d-fccc-57e034591c54",
+        "00377a94-722c-5ccb-4d01-786b6753a39c",
+        "7d4e428a-99fb-38d3-e3d4-454e7db89b57",
+        "8c796115-585d-1468-3148-8eab49aa9c13",
+        "0f1ec35a-848f-f673-7bee-bd39a1c22af9",
+        "eba8fd84-5786-7a21-86c3-cf5e84e6d6fd",
+        "dca29554-c33b-eea2-f4bc-f1b27744132d",
+        "884efe7c-39f0-0003-77bd-a67eb82f84bf",
+        "e5dc621e-75f7-9e56-8fc3-7c7f7b302fff",
+        "231601f8-8ae5-f7bf-b2c3-251f85db51ea",
+        "5344147b-c9ec-6360-c6ef-f39f69dcc7dc"
+      ]
+    }
+  },
+  "active196_verdict_length_sum": 360,
+  "active196_global_normalizer": 1.836734693877551,
+  "actual_isolated_N": 15,
+  "source_sha256": {
+    "outputs/103_lora_selection/patient_roles.json": "1e43a0d5c4b83f3b6bb4125c879c9581e3ca47ef59d2184458a232aed20bd537",
+    ".local_models/106_label_preparation/training_pool.jsonl": "eabd9b3d975affe03158e679b6952728b3419fa9a80c713dd7b2dd303255f7f5",
+    "outputs/106_label_preparation/data_pool_index.jsonl": "04b7b45b74ed350e266b41455e3bb143c1e25a76cf7bafe39cfaee10ec8d183b",
+    "outputs/106_label_preparation/data_isolation.jsonl": "ad7397bad18eacea9c2bd3e016aa2fd2e613c1fbe04006f590013efd842c591d",
+    "outputs/106_label_preparation/semantic_B.jsonl": "106321c24ee28ede577d96730a8dc66111067ae25787174c93ec19309abd873f",
+    ".local_models/104_supervision_evidence/paired/label_only.jsonl": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+    "tasks/106_label_preparation/adversarial_checks106.py": "1323b5c6e460231c40607bffc9a68ca7a2c00923b5584f11c7b8e81d06b9e967",
+    ".local_models/106_label_preparation/ordinary_sample.jsonl": "d0f817b38085f8b3c36f1d38fbf1f2ef5a505096d8353238d0910d460d7ae5c8",
+    ".local_models/106_label_preparation/boundary_cover.jsonl": "7469641eba9cdc44421a75d26f774ffdc2ac09a631f8b843ae286e95d80cb4de",
+    ".local_models/106_label_preparation/label_mean.jsonl": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+    ".local_models/106_label_preparation/label_sum.jsonl": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc"
+  },
+  "clinical_text_printed": false,
+  "paid_API_new": 0,
+  "GPU_calls": 0
+}

@@ -1,0 +1,67 @@
+{
+  "task": 106,
+  "status": "selected196_objective_CPU_checks_passed_GPU_not_executed",
+  "active_contrast": "label_mean_frozen105_vs_label_sum_div_fixed_global360over196",
+  "newly_trained_arms": [
+    "label_sum"
+  ],
+  "training_unique_N": 196,
+  "training_steps": 50,
+  "training_committed_consumption": 392,
+  "research_verifact_029": {
+    "command": "pwsh -NoProfile -File scripts/run_research.ps1 tasks/106_label_preparation/test_cpu106.py",
+    "tests": 14,
+    "passed": 14,
+    "coverage": [
+      "class/sequence mathematics; no substring mask",
+      "196x2/four-row tail and resume cursor",
+      "authorization/tamper, persistent manual budget and whole-run feasibility",
+      "raw eval no fallback; arm/batch/input SHA",
+      "training-only fixed diagnoses",
+      "quality-risk/collapse counterexamples",
+      "q NaN/range/logP/MAP validation",
+      "missing diagnostic paths prevent completion",
+      "import without torch/transformers"
+    ]
+  },
+  "existing_032_environment": {
+    "command": "E:/miniconda3/Scripts/conda.exe run --no-capture-output -n research D:/Research-VeriFact/.local_models/032/venv/Scripts/python.exe -B tasks/106_label_preparation/test_torch106.py",
+    "torch_version": "2.8.0+cu128",
+    "tests": 7,
+    "passed": 7,
+    "tiny_CPU_tensors_only": true,
+    "CUDA_initialized": false,
+    "coverage": [
+      "legacy mean causal mask/gradient",
+      "single backbone bounded head",
+      "atomic optimizer scheduler RNG resume",
+      "selected sum196x2 step25 to50 exact resume",
+      "normalized-sum loss/gradient/global weight1",
+      "complete paths/raw branch versus full tiny reference",
+      "resume missing paths never regenerates saved greedy"
+    ]
+  },
+  "tokenizer": {
+    "tokenizers_version": "0.22.0",
+    "train_rows_checked": 392,
+    "unique_train_cases": 196,
+    "development_prompts_checked": 500,
+    "diagnostic_union_prompts_checked": 12,
+    "verdict_value_tokens_per196": 360,
+    "fixed_global_normalizer": 1.836734693877551,
+    "required_context_kept_at105": 13097,
+    "minimum_context_with_diagnostics": 13085,
+    "no_truncation": true,
+    "future_pinned_GPU_tokenizers_version": "0.23.3",
+    "cross_version_bridge_must_be_rechecked_before_GPU": true
+  },
+  "limits": [
+    "research-verifact-029 lacks torch/tokenizers; reused032 without installing",
+    "CPU mathematics/tests do not predict clinical MCC",
+    "original9B/controladapter not loaded",
+    "GPU checks unexecuted; not independent medical audit",
+    "prior512 data-route checks remain separate drafts"
+  ],
+  "new_paid_API_calls": 0,
+  "new_GPU_calls": 0
+}

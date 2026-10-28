@@ -1,0 +1,62 @@
+{
+  "checked_date_HKT": "2026-10-28",
+  "scope": "Literature search used public primary papers and author implementations only; no clinical text in web searches or paid API calls. Later authorized Codex source review is recorded separately in semantic_B artifacts.",
+  "papers": [
+    {
+      "title": "Just Train Twice: Improving Group Robustness without Training Group Information",
+      "venue": "ICML 2021",
+      "paper": "https://proceedings.mlr.press/v139/liu21f.html",
+      "full_text_version": "https://arxiv.org/html/2107.09044v2",
+      "checked_sections": ["4", "5.3", "5.4", "5.5", "Appendix A"],
+      "official_code": "https://github.com/anniesch/jtt",
+      "checked_code": ["README.md", "generate_downstream.py"],
+      "decision": "Static training-side difficulty coverage is worth a matched control; teacher disagreement is not the identification model training-error set and must not be called JTT."
+    },
+    {
+      "title": "MedNLI Is Not Immune: Natural Language Inference Artifacts in the Clinical Domain",
+      "venue": "ACL-IJCNLP 2021",
+      "paper": "https://aclanthology.org/2021.acl-short.129/",
+      "full_text_version": "https://aclanthology.org/2021.acl-short.129.pdf",
+      "checked_sections": ["2", "3", "4", "6", "7"],
+      "official_code": "https://github.com/crherlihy/clinical_nli_artifacts",
+      "checked_code": ["repository description and partition availability"],
+      "decision": "Use a fixed patient-grouped claim-only diagnostic and majority baseline, never a surrogate for 9B effectiveness or evidence understanding."
+    },
+    {
+      "title": "The Foundations of Cost-Sensitive Learning",
+      "venue": "IJCAI 2001",
+      "paper": "https://cseweb.ucsd.edu/~elkan/rescale.pdf",
+      "checked_sections": ["1", "2", "3", "4"],
+      "official_code": null,
+      "decision": "Class weights, asymmetric false-S costs and NS/NA discrimination are distinct; weight updates do not prove representation improvement."
+    },
+    {
+      "title": "Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes",
+      "venue": "Findings ACL 2023",
+      "paper": "https://aclanthology.org/2023.findings-acl.507/",
+      "full_text_version": "https://arxiv.org/html/2305.02301v2",
+      "checked_sections": ["3.1", "3.2", "4.4", "Appendix A"],
+      "official_code": "https://github.com/google-research/distilling-step-by-step",
+      "checked_code": ["README.md", "model_utils.py", "train_utils.py"],
+      "decision": "Its two task-prefixed forward passes are not task 105 single-sequence segmented loss; do not treat either result as direct replication or refutation."
+    },
+    {
+      "title_v1": "Supervised Fine-tuning with Synthetic Rationale Data Hurts Real-World Disease Prediction",
+      "title_v2": "Rethinking Synthetic Rationale Supervision for Disease Prediction",
+      "arxiv": "2606.10279",
+      "v1_date": "2026-06-09",
+      "v2_date": "2026-10-20",
+      "v1": "https://arxiv.org/abs/2606.10279v1",
+      "full_text_version": "https://arxiv.org/html/2606.10279v2",
+      "checked_sections": ["2", "3.1", "3.2 Label First target design", "4.1", "4.3", "5", "Appendix C"],
+      "official_code": null,
+      "official_code_status": "No independently verifiable author training repository linked on checked official arXiv pages.",
+      "decision": "Label-first recovery refutes universal rationale-harm claims; future disease prediction differs from three-way evidence verification. Do not add a rationale-rescue arm to task 106."
+    }
+  ],
+  "limitations": [
+    "No new clinical gold or 9B effectiveness estimate is supplied by these papers.",
+    "Web material was inspected at method and experiment sections; no external repositories were installed or executed.",
+    "The weighted-CE and three-class cost derivations in literature.md are explicit local derivations, not empirical guarantees."
+  ]
+}

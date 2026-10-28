@@ -1,0 +1,30 @@
+{
+  "A_total": 53,
+  "A_all_new_false_S": 14,
+  "A_all_prevented_false_S": 1,
+  "B_total": 16,
+  "A_by_panel": {
+    "natural": 31,
+    "pressure": 22
+  },
+  "B_by_category": {
+    "genuine_ambiguity": 12,
+    "current_reference_discriminable": 4
+  },
+  "all_A_source_hashes_and_spans_verified": true,
+  "all_A_current_references_completely_read_by_designated_reviewer": true,
+  "reviewer_assertions_are_not_independent_doctor_gold": true,
+  "current_service_permission_confirmed_by_user": true,
+  "clinical_originals_sent_to_web_or_separate_API": false,
+  "all_clinical_quotes_private": true,
+  "A_no_training_examples_or_rules": true,
+  "fixed_training_pairs": 3,
+  "not_all192_pairs_semantically_validated": true,
+  "files": {
+    "semantic_A_natural.jsonl": "53ab70914c184f7c623c36c61922ead937133f348c49446122b5d3ea1cfbe77f",
+    "semantic_A_kept.jsonl": "acfe21e005ba12f3851a2b8cab127c13be400ded233f4f873e23cf117bc92f9e",
+    "semantic_A_pressure.jsonl": "739b9b06f7ee4b3302157969fa03c9bda49fb2c1ea4bf7b3795bf634b864a06f",
+    "semantic_B.jsonl": "106321c24ee28ede577d96730a8dc66111067ae25787174c93ec19309abd873f",
+    "semantic_training_pairs.jsonl": "f368bbbc0443f3835bb77d70ded1c26a82863c9d5ed90852281b4a4596d16cd6"
+  }
+}

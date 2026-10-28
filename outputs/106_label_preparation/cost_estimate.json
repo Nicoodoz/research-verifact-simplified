@@ -1,0 +1,79 @@
+{
+  "task": 106,
+  "planning_only": true,
+  "GPU_authorized": false,
+  "quote_scenario_cny_per_hour": 7.98,
+  "measured_source": "105 actual A800-SXM4 timings, original196 label data",
+  "train_tokens": 3273736,
+  "train_examples": 196,
+  "epochs": 2,
+  "optimizer_steps": 50,
+  "consumption": 392,
+  "measured_train_tokens_per_second": 3588.1294421718294,
+  "raw_train_compute_seconds": 912.3795706819504,
+  "measured_label500_generation_seconds": 416.2778604105115,
+  "measured_base500_generation_seconds": 1182.9922313727438,
+  "diagnostic_N": 12,
+  "full_legal_paths_per_model": 36,
+  "probability_diagnostic_seconds_allowance_per_model": 120,
+  "probability_diagnostic_allowance_is_unmeasured": true,
+  "control_retraining_seconds": 0,
+  "remaining_components_seconds": {
+    "train/label_sum": 1286.7124204206332,
+    "development/label_sum": 1537.889900784567,
+    "diagnostic/base_judge": 156.9093576188296,
+    "diagnostic/label_mean": 132.98786924480797,
+    "diagnostic/label_sum": 156.9093576188296,
+    "overhead": 235
+  },
+  "remaining_after_gate_seconds": 3506.408905687668,
+  "before_and_including_gate_seconds_allowance": 431,
+  "baseline_rerun_extra_seconds": 2101.051119318232,
+  "cross_hardware_rerun_scope": "inference-aligned diagnostic only; control training hardware remains105 A800; strict new-hardware retraining requires another decision",
+  "scenarios": {
+    "cached_control_short_output": {
+      "seconds": 2940.6802234367656,
+      "compute_cny": 6.518507828618164,
+      "reserve_cny": 2,
+      "total_planning_cny": 8.518507828618164
+    },
+    "cached_control_cautious_output": {
+      "seconds": 3937.408905687668,
+      "compute_cny": 8.727923074274331,
+      "reserve_cny": 2,
+      "total_planning_cny": 10.727923074274331
+    },
+    "rerun_base_and_mean_cautious_output": {
+      "seconds": 6038.460025005899,
+      "compute_cny": 13.385253055429745,
+      "reserve_cny": 2,
+      "total_planning_cny": 15.385253055429745
+    }
+  },
+  "pure_compute": {
+    "train_seconds": 912.3795706819504,
+    "label500_seconds": 416.2778604105115,
+    "probability_diagnostic_allowance_seconds": 360
+  },
+  "allowances": {
+    "training_factor": 1.35,
+    "generation_factor": 1.3,
+    "each_model_load_seconds": 11,
+    "checkpoint_save_seconds": 55,
+    "platform_preflight_seconds": 180,
+    "compile_resource_gate_seconds": 240,
+    "manual_shutdown_and_unknown_cny": 2
+  },
+  "excludes": [
+    "new weights download",
+    "new package installation",
+    "disk rental invoice",
+    "CPU phase reports and bulk transfer after manual shutdown"
+  ],
+  "actual_price_and_elapsed_platform_billing_required_before_optimizer": true,
+  "no_budget_or_billing_carried_from105": true,
+  "fees_this_preparation": {
+    "API_cny": 0,
+    "GPU_cny": 0
+  }
+}

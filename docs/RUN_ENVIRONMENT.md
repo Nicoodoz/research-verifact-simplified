@@ -1,5 +1,7 @@
 # 当前环境与启动方式（2026-10-26核对）
 
+106未启动GPU。CPU统计/评价继续使用research-verifact-029；该环境缺torch与tokenizers，未安装或升级。仅tokenizer/Jinja编码及小CPU张量验证使用既有research激活加032 venv，未加载9B或初始化CUDA；本地tokenizers0.22.0与未来105冻结环境0.23.3不同，开卡前必须逐条重新核token SHA。当前交接只含9B必要代码、受限输入与mean控制适配器，不包含基础权重、凭据或27B/35B材料。
+
 103已实际使用独立Python3.12、PyTorch2.8.0+cu128、Transformers5.17.0、Unsloth2026.10.9及PEFT0.21.2环境；补充causal-conv1d1.7.0/ninja1.13.0，未复用096旧vLLM环境。实际依赖锁及验证见[GPU环境](../outputs/103_lora_selection/installed_gpu_with_causal.lock)与[工程记录](../outputs/103_lora_selection/gpu_runtime_amendment.md)。
 
 092研究已经完成。以下是复查/复现说明，不授权新训练、收费调用、部署或安装。环境实测记录形成于2026-09-27；本次只核对文档与既有记录，未重新探测包版本、安装或升级环境。

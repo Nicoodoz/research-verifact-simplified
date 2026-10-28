@@ -1,0 +1,56 @@
+{
+  "median_similarity": 0.3829156160354614,
+  "not_192_semantically_validated_pairs": true,
+  "pair_population": 192,
+  "rule": "Minimum, closest to numeric median, maximum similarity; ties by nonS ID then S ID; fixed before source reading",
+  "selection_uses_development_performance": false,
+  "selections": {
+    "maximum": {
+      "claim_only_lexical_pair_not_certified_clinical_minimal_pair": true,
+      "kind": "S_nonS",
+      "nonS_GT": "Not Addressed",
+      "nonS_id": "ffa0693e-921d-2a07-da2a-44326d3b9b9f",
+      "nonS_reference_sha256": "95491aa90b3a791b0cc2ed2714da66f5e10339be6acab5eba8dedc9f06d31eb6",
+      "peer_GT": "Supported",
+      "peer_id": "b4a5153b-5f64-2b77-9ab3-05a9ed94d380",
+      "peer_in_same_dataset": true,
+      "peer_reference_sha256": "ada632249a0b894d2f63f1ec91fa79ae0ade92d46d2d0a79e34f50024863bc3f",
+      "same_patient": true,
+      "same_reference": false,
+      "sid": "98790",
+      "similarity": 0.9754133820533752
+    },
+    "median": {
+      "claim_only_lexical_pair_not_certified_clinical_minimal_pair": true,
+      "kind": "S_nonS",
+      "nonS_GT": "Not Supported",
+      "nonS_id": "e5f545ac-9a01-bebf-b501-68692c57fc0c",
+      "nonS_reference_sha256": "0dbb4058ca37ccff4112ac24e68d72878615870ac2883e6067a5c01e8995a341",
+      "peer_GT": "Supported",
+      "peer_id": "45337ba3-8ab2-1d2e-795a-786e559da7a4",
+      "peer_in_same_dataset": true,
+      "peer_reference_sha256": "bbfc79d45fc4a76431b9b88f886ea1530eb683b44e7aa782dd76c9bbee7d3fca",
+      "same_patient": true,
+      "same_reference": false,
+      "sid": "59840",
+      "similarity": 0.383014053106308
+    },
+    "minimum": {
+      "claim_only_lexical_pair_not_certified_clinical_minimal_pair": true,
+      "kind": "S_nonS",
+      "nonS_GT": "Not Supported",
+      "nonS_id": "3c2a3c92-567c-ba08-7d8c-5ac085ae28c2",
+      "nonS_reference_sha256": "8eecd897b7652a469bf5247740fb93c221667bff99b2f45c0b62a4786c0008a4",
+      "peer_GT": "Supported",
+      "peer_id": "b7072e36-f7d9-ec19-72fc-5dc8b5b779e3",
+      "peer_in_same_dataset": true,
+      "peer_reference_sha256": "d27ee2fa939e8214875fdb852174215f1131317d1b09d3d096c4d2688256309d",
+      "same_patient": true,
+      "same_reference": false,
+      "sid": "27823",
+      "similarity": 0.03793322667479515
+    }
+  },
+  "source_pairs_path": "outputs\\106_label_preparation\\data_pair_audit_source_v1.jsonl",
+  "source_pairs_sha256": "8b02f15936656b9dfdb443ce10ede8aa024e8fefa36c0941a891e69332423e43"
+}

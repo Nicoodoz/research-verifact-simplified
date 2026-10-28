@@ -1,0 +1,46 @@
+{
+  "N": 22,
+  "all_actual_references_read": true,
+  "all_new_false_S": 7,
+  "assessments": {
+    "current_reference_discriminative": 16,
+    "input_gap": 2,
+    "semantic_ambiguity": 4
+  },
+  "boundary_counts": {
+    "admission_end_metadata_vs_explicit_discharge_event": 1,
+    "admission_medication_not_established": 1,
+    "conditional_prophylaxis_vs_existing_infection_treatment": 1,
+    "diet_advancement_event_not_established": 1,
+    "discharge_bundle_vs_hospital_end_and_early_transfer": 1,
+    "duration_and_transfer_anchor": 1,
+    "event_route_vs_related_operation": 1,
+    "family_concern_vs_clinician_causal_assessment": 1,
+    "feeding_route_and_borrowed_comfort_qualification": 1,
+    "held_home_medication_vs_conditional_followup_instruction": 1,
+    "imaging_or_prior_pathology_vs_specific_operative_finding": 1,
+    "medication_stop_date": 1,
+    "missing_medication_antecedent_and_dose_change": 1,
+    "numeric_peak_and_marker_identity": 1,
+    "numeric_trajectory_endpoint": 1,
+    "planned_transfer_vs_completed_recovery": 1,
+    "retrospective_24h_event_vs_exact_start_day": 1,
+    "single_acute_dose_vs_ongoing_start": 1,
+    "specific_future_followup_vs_unrelated_prior_visit": 1,
+    "specific_recommendation_event_date": 1,
+    "temporal_scope_overgeneralization": 1,
+    "therapy_consult_vs_completed_specific_training": 1
+  },
+  "files": {
+    ".local_models\\106_label_preparation\\A_source_review_dossiers.jsonl": "74b65cbd7c6e8f1ac3ad9d20be4538a7975aa6d4a876521337527b34e6b1acc2",
+    ".local_models\\106_label_preparation\\pressure_reading\\review_notes.json": "653a36feed509f95b6e1650eafb549143b46d1883d702a17b82a488ec18d62bb",
+    ".local_models\\106_label_preparation\\pressure_reading\\source_map.json": "902d3bb2c6c2420e77cab8927def10128b6b4b8cebed10d15b6ef83152855095"
+  },
+  "missing_target_event_does_not_prove_absence_from_full_EHR": true,
+  "new_false_S_assessments": {
+    "current_reference_discriminative": 5,
+    "semantic_ambiguity": 2
+  },
+  "new_physician_gold": false,
+  "source_citation_membership_checked": true
+}

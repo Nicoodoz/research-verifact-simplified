@@ -1,0 +1,124 @@
+{
+  "GPU_calls": 0,
+  "N": 512,
+  "additional106_current_input_gaps_excluded": 1,
+  "both_train_patients": 40,
+  "boundary_selection": "Each nonS class:64 existing paper-R1 S predictions+32 existing paper-R1 NS/NA swaps; round-robin patients and fixed teacher/lexical ranking within bucket; include nearest real S of each actually selected nonS, fill S320 by dispersed lexical ranking",
+  "current_reference_semantic_validation": false,
+  "dev_outcomes_used_for_sampling": false,
+  "exact_patient_class_author_length_quartile_existing104_status_matching": true,
+  "exact_patient_class_author_length_quartile_matching": true,
+  "excluded_confirmation_clinical_text_read": false,
+  "fixed_nonS_buckets_per_class": {
+    "teacher_NS_NA_swap": 32,
+    "teacher_S": 64
+  },
+  "fixed_pair_audit_does_not_certify_all_neighbors": true,
+  "known_reference_gaps_excluded": 14,
+  "length_quartile_boundaries": {
+    "Not Addressed": [
+      7680.0,
+      8315.0,
+      8955.0
+    ],
+    "Not Supported": [
+      7901.5,
+      8551.0,
+      9164.5
+    ],
+    "Supported": [
+      7682.0,
+      8257.0,
+      8923.0
+    ]
+  },
+  "new_API_calls": 0,
+  "next_GPU_decision": "Main decision: isolate fixed target-length objective factor first; 512 candidates retained for future data research, not the next actual GPU training arms",
+  "ordinary_selection": "Within exact patient x GT x author x length-quartile x existing104-status quota, independent fixed SHA256 ranking; overlap allowed and disclosed",
+  "original104_supported_disagreements_GT": {
+    "Not Addressed": 6,
+    "Not Supported": 10
+  },
+  "original104_supported_disagreements_N": 16,
+  "original_GT_modified": false,
+  "overlap_N": 217,
+  "own_original_reference_each_row": true,
+  "pair_coverage": {
+    "boundary_cover": {
+      "NS_NA": {
+        "both_ends_selected": 67,
+        "neighbor_links": 187,
+        "selected_same_reference": 0,
+        "selected_similarity": {
+          "N": 67,
+          "max": 0.6811404824256897,
+          "mean": 0.10073209240504388,
+          "median": 0.034438204020261765,
+          "min": 0.001335221342742443,
+          "p95": 0.35625735819339727,
+          "sum": 6.74905019113794
+        }
+      },
+      "S_nonS": {
+        "both_ends_selected": 192,
+        "neighbor_links": 192,
+        "selected_same_reference": 0,
+        "selected_similarity": {
+          "N": 192,
+          "max": 0.9754133820533752,
+          "mean": 0.400930063216947,
+          "median": 0.38187211751937866,
+          "min": 0.03793322667479515,
+          "p95": 0.8124668687582015,
+          "sum": 76.97857213765383
+        }
+      }
+    },
+    "ordinary_sample": {
+      "NS_NA": {
+        "both_ends_selected": 69,
+        "neighbor_links": 187,
+        "selected_same_reference": 0,
+        "selected_similarity": {
+          "N": 69,
+          "max": 0.6957549452781677,
+          "mean": 0.12329304685978137,
+          "median": 0.048554856330156326,
+          "min": 0.001335221342742443,
+          "p95": 0.4206789433956146,
+          "sum": 8.507220233324915
+        }
+      },
+      "S_nonS": {
+        "both_ends_selected": 40,
+        "neighbor_links": 192,
+        "selected_same_reference": 0,
+        "selected_similarity": {
+          "N": 40,
+          "max": 0.8321787714958191,
+          "mean": 0.3922030550427735,
+          "median": 0.4210362136363983,
+          "min": 0.03793322667479515,
+          "p95": 0.7717585563659668,
+          "sum": 15.68812220171094
+        }
+      }
+    }
+  },
+  "prepared_candidate_only": true,
+  "quotas": {
+    "Not Addressed": 96,
+    "Not Supported": 96,
+    "Supported": 320
+  },
+  "selected_buckets": {
+    "nearest_real_S_for_selected_nonS": 176,
+    "remaining_S_lexical_neighbor": 144,
+    "teacher_NS_NA_swap": 64,
+    "teacher_S": 128
+  },
+  "selected_for_next_GPU": false,
+  "synthetic_examples": 0,
+  "teacher_agreement_required": false,
+  "teacher_errors_are_difficulty_proxies": true
+}

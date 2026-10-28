@@ -1,6 +1,6 @@
-# 项目现状（2026-10-28，105完整执行与负结果分析完成）
+# 项目现状（2026-10-28，106准备完成，待GPU决策）
 
-105完整执行与离线分析完成，用户已确认关机：两臂各196条×2轮、50步，三臂各500回执及适配器已回传。evidence_brief相对label_only自然共同390条ΔMCC−0.1209、PA−6.67个百分点、false-S17→19/78；压力共同94条ΔMCC−0.2166、false-S16→23/94，停止当前配方扩大。两臂覆盖敏感性仍为负；基线15条截断、理由组1条JSON错误保留，压力共同覆盖94%未达95%。新增API0，最后已知计算估算¥16.572010＋2元未知余量，精确账单待核。默认不变，不自动下一任务。 [最终报告](../outputs/105_brief_supervision/final_report.md) · [完整指标](../outputs/105_brief_supervision/final_metrics.md)。
+106研究、数据与CPU实现准备完成，停在READY_FOR_NEXT_GPU_DECISION。推荐同104原196条的label_mean对全局归一label_sum最小目标诊断；只规划新训sum，原105标签适配器作控制，本轮没有GPU/AutoDL或目标模型训练。3675训练池及两个512匹配候选已备，53条选型诊断、16条筛选分歧和3对训练邻居已审读；新输入缺口对称隔离，原GT/reference与105结果保留。API新增0/10元，默认不变，不自动启动或推送。 [106一页决定](../outputs/106_label_preparation/decision.md) · [106报告](../outputs/106_label_preparation/report.md) · [105最终报告](../outputs/105_brief_supervision/final_report.md)。
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -22,6 +22,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|106标签目标准备|3675池、两个512匹配候选、53+16源文审读、同196归一sum入口及CPU验证|READY_FOR_NEXT_GPU_DECISION；推荐先诊断标签目标，0新API/GPU，不自动启动|
 |105短证据监督对照|两组196条×2轮、三臂各500回执、适配器及报告完成；用户已关机|证据短理由相对仅标签自然/压力MCC均下降，NA损失明显；停止当前配方扩大；不升级默认|
 |104监督诊断与短理由数据|512清单、288首审、196条双臂配对、64条API核查|数据准备完成，分类提升未检验；原GT与默认保留，不自动训练|
 |103微调模型选型|9B与35B训练512及配对分析完成；27B停在40条；用户已关机|自然MCC提升伴随false-S/NS损失，不直接扩大；9B为条件性开发候选，27B未解决；无同Judge verifact_ref确认|

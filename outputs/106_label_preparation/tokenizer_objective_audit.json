@@ -1,0 +1,86 @@
+{
+  "task": 106,
+  "actual_verdict_value_lengths": {
+    "Supported": 1,
+    "Not Supported": 2,
+    "Not Addressed": 3
+  },
+  "other_answer_tokens": {
+    "Supported": 6,
+    "Not Supported": 6,
+    "Not Addressed": 6
+  },
+  "current_mean_value_objective": "per example (1/L_y)*sum value-token CE + mean other-answer CE",
+  "reports": {
+    "105_label196": {
+      "N": 196,
+      "counts": {
+        "Supported": 83,
+        "Not Supported": 62,
+        "Not Addressed": 51
+      },
+      "direct_first_value_token_per_example": {
+        "Supported": 1.0,
+        "Not Supported": 0.5,
+        "Not Addressed": 0.3333333333333333
+      },
+      "direct_first_value_token_coefficient_totals": {
+        "Supported": 83.0,
+        "Not Supported": 31.0,
+        "Not Addressed": 17.0
+      },
+      "S_total": 83.0,
+      "Not_total": 48.0,
+      "full_value_sequence_NLL_first_branch_S_total": 83,
+      "full_value_sequence_NLL_first_branch_Not_total": 113,
+      "prior_only_illustration_not_9b_posterior": {
+        "Supported": 0.6335877862595419,
+        "Not Supported": 0.2366412213740458,
+        "Not Addressed": 0.1297709923664122
+      }
+    },
+    "inactive_data_candidate512": {
+      "N": 512,
+      "counts": {
+        "Supported": 320,
+        "Not Supported": 96,
+        "Not Addressed": 96
+      },
+      "direct_first_value_token_per_example": {
+        "Supported": 1.0,
+        "Not Supported": 0.5,
+        "Not Addressed": 0.3333333333333333
+      },
+      "direct_first_value_token_coefficient_totals": {
+        "Supported": 320.0,
+        "Not Supported": 48.0,
+        "Not Addressed": 32.0
+      },
+      "S_total": 320.0,
+      "Not_total": 80.0,
+      "full_value_sequence_NLL_first_branch_S_total": 320,
+      "full_value_sequence_NLL_first_branch_Not_total": 192,
+      "prior_only_illustration_not_9b_posterior": {
+        "Supported": 0.8,
+        "Not Supported": 0.12,
+        "Not Addressed": 0.08
+      }
+    }
+  },
+  "idealized_effect": "If full legal value paths are independently optimizable, suffixes deterministic, and p(y|x) is nondegenerate, the value objective alone has q_y proportional to p_y/L_y.",
+  "strongest_counterexample": "For perfectly separable one-hot conditional labels, all positive weights have the same zero-classification-error optimum. Coefficient totals pool different input contexts and do not reconstruct actual9B posteriors.",
+  "not_implementation_deviation": "105 explicitly specified token mean and implementation matches it; this is an objective choice with a possible class-dependent bias, not a proven execution bug.",
+  "no_recovered_logits": true,
+  "no_GPU_or_model_probe": true,
+  "new_global_normalized_sum_prepared_not_GPU_executed": true,
+  "selected_candidate": {
+    "data": "exact_original196",
+    "value_sum_divisor": 1.836734693877551,
+    "per_value_token_coefficient": 0.5444444444444444,
+    "dataset_average_verdict_segment_total_weight": 1,
+    "other_answer_mean_CE_coefficient": 1,
+    "first_branch_S_total": 45.18888888888889,
+    "first_branch_Not_total": 61.522222222222226
+  },
+  "decision": "One minimal same196 objective diagnosis: frozen105 label_mean control versus fresh-original-base label_sum divided by fixed global360/196. Candidate512 data assets remain inactive. This is not a proven implementation bug or evidence-understanding improvement."
+}

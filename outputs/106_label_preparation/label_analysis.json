@@ -1,0 +1,424 @@
+{
+  "comparison": "105 label_only versus base_judge; pair-valid set, not evidence_brief intersection",
+  "panels": {
+    "natural": {
+      "N": 391,
+      "patients": 20,
+      "rescued": 45,
+      "harmed": 8,
+      "false_S_added": 7,
+      "false_S_prevented": 1,
+      "transitions": [
+        {
+          "GT": "Not Addressed",
+          "before": "Not Addressed",
+          "after": "Not Addressed",
+          "N": 15
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Not Addressed",
+          "after": "Supported",
+          "N": 2
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Not Supported",
+          "after": "Not Addressed",
+          "N": 13
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Not Supported",
+          "after": "Not Supported",
+          "N": 16
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Not Supported",
+          "after": "Supported",
+          "N": 4
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Supported",
+          "after": "Supported",
+          "N": 3
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Not Addressed",
+          "after": "Not Addressed",
+          "N": 5
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Not Supported",
+          "after": "Not Addressed",
+          "N": 3
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Not Supported",
+          "after": "Not Supported",
+          "N": 9
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Not Supported",
+          "after": "Supported",
+          "N": 1
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Supported",
+          "after": "Not Supported",
+          "N": 1
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Supported",
+          "after": "Supported",
+          "N": 7
+        },
+        {
+          "GT": "Supported",
+          "before": "Not Addressed",
+          "after": "Not Addressed",
+          "N": 2
+        },
+        {
+          "GT": "Supported",
+          "before": "Not Addressed",
+          "after": "Not Supported",
+          "N": 3
+        },
+        {
+          "GT": "Supported",
+          "before": "Not Supported",
+          "after": "Not Addressed",
+          "N": 6
+        },
+        {
+          "GT": "Supported",
+          "before": "Not Supported",
+          "after": "Not Supported",
+          "N": 23
+        },
+        {
+          "GT": "Supported",
+          "before": "Not Supported",
+          "after": "Supported",
+          "N": 31
+        },
+        {
+          "GT": "Supported",
+          "before": "Supported",
+          "after": "Not Supported",
+          "N": 2
+        },
+        {
+          "GT": "Supported",
+          "before": "Supported",
+          "after": "Supported",
+          "N": 245
+        }
+      ],
+      "by_GT": {
+        "Supported": {
+          "N": 312,
+          "before_correct": 247,
+          "after_correct": 276,
+          "before_S": 247,
+          "after_S": 276,
+          "rescued": 31,
+          "harmed": 2
+        },
+        "Not Supported": {
+          "N": 26,
+          "before_correct": 13,
+          "after_correct": 10,
+          "before_S": 8,
+          "after_S": 8,
+          "rescued": 1,
+          "harmed": 4
+        },
+        "Not Addressed": {
+          "N": 53,
+          "before_correct": 17,
+          "after_correct": 28,
+          "before_S": 3,
+          "after_S": 9,
+          "rescued": 13,
+          "harmed": 2
+        }
+      },
+      "before_predicted_S": 258,
+      "after_predicted_S": 293,
+      "paired": {
+        "direction": "candidate minus baseline",
+        "coverage": {
+          "expected_n": 391,
+          "evaluated_n": 391,
+          "missing_n": 0,
+          "coverage": 1.0,
+          "missing_ids": [],
+          "missing_policy": "error",
+          "expected_cohort_sha256": "6720a2fd9c0cfe79e1fa2def83075d04c532d059f35edcdb8259f71acdc404b2",
+          "evaluated_cohort_sha256": "6720a2fd9c0cfe79e1fa2def83075d04c532d059f35edcdb8259f71acdc404b2",
+          "expected_patients": 20,
+          "evaluated_patients": 20
+        },
+        "bootstrap_iterations": 1000,
+        "resampling": "paired patients, seeds 0..iterations-1",
+        "metrics": {
+          "percent_agreement": {
+            "delta": 0.09462915601023025,
+            "ci95": [
+              0.05596107055961075,
+              0.13477088948787064
+            ]
+          },
+          "gwet_ac1": {
+            "delta": 0.12888760462384696,
+            "ci95": [
+              0.08003161513905602,
+              0.18191748429933846
+            ]
+          },
+          "mcc": {
+            "delta": 0.10578259796219891,
+            "ci95": [
+              0.02974171680965578,
+              0.1839588697431345
+            ]
+          }
+        }
+      },
+      "risk": {
+        "false_S_rate": {
+          "delta": 0.07594936708860761,
+          "ci95": [
+            -0.012679609989736582,
+            0.1515151515151515
+          ],
+          "valid_draws": 1000
+        },
+        "NS_recall": {
+          "delta": -0.11538461538461536,
+          "ci95": [
+            -0.25,
+            0.08333333333333331
+          ],
+          "valid_draws": 1000
+        },
+        "NA_recall": {
+          "delta": 0.20754716981132076,
+          "ci95": [
+            0.06974739374498792,
+            0.33333333333333337
+          ],
+          "valid_draws": 1000
+        }
+      }
+    },
+    "pressure": {
+      "N": 94,
+      "patients": 18,
+      "rescued": 18,
+      "harmed": 10,
+      "false_S_added": 7,
+      "false_S_prevented": 0,
+      "transitions": [
+        {
+          "GT": "Not Addressed",
+          "before": "Not Addressed",
+          "after": "Not Addressed",
+          "N": 16
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Not Addressed",
+          "after": "Not Supported",
+          "N": 2
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Not Supported",
+          "after": "Not Addressed",
+          "N": 18
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Not Supported",
+          "after": "Not Supported",
+          "N": 6
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Not Supported",
+          "after": "Supported",
+          "N": 2
+        },
+        {
+          "GT": "Not Addressed",
+          "before": "Supported",
+          "after": "Supported",
+          "N": 4
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Not Addressed",
+          "after": "Not Addressed",
+          "N": 6
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Not Supported",
+          "after": "Not Addressed",
+          "N": 3
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Not Supported",
+          "after": "Not Supported",
+          "N": 27
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Not Supported",
+          "after": "Supported",
+          "N": 5
+        },
+        {
+          "GT": "Not Supported",
+          "before": "Supported",
+          "after": "Supported",
+          "N": 5
+        }
+      ],
+      "by_GT": {
+        "Supported": {
+          "N": 0,
+          "before_correct": 0,
+          "after_correct": 0,
+          "before_S": 0,
+          "after_S": 0,
+          "rescued": 0,
+          "harmed": 0
+        },
+        "Not Supported": {
+          "N": 46,
+          "before_correct": 35,
+          "after_correct": 27,
+          "before_S": 5,
+          "after_S": 10,
+          "rescued": 0,
+          "harmed": 8
+        },
+        "Not Addressed": {
+          "N": 48,
+          "before_correct": 18,
+          "after_correct": 34,
+          "before_S": 4,
+          "after_S": 6,
+          "rescued": 18,
+          "harmed": 2
+        }
+      },
+      "before_predicted_S": 9,
+      "after_predicted_S": 16,
+      "paired": {
+        "direction": "candidate minus baseline",
+        "coverage": {
+          "expected_n": 94,
+          "evaluated_n": 94,
+          "missing_n": 0,
+          "coverage": 1.0,
+          "missing_ids": [],
+          "missing_policy": "error",
+          "expected_cohort_sha256": "6cb8746e2ce28ec48ee29173fa22f703bfca62c832e9caa7994957226762c4e5",
+          "evaluated_cohort_sha256": "6cb8746e2ce28ec48ee29173fa22f703bfca62c832e9caa7994957226762c4e5",
+          "expected_patients": 18,
+          "evaluated_patients": 18
+        },
+        "bootstrap_iterations": 1000,
+        "resampling": "paired patients, seeds 0..iterations-1",
+        "metrics": {
+          "percent_agreement": {
+            "delta": 0.08510638297872342,
+            "ci95": [
+              -0.01640027322404373,
+              0.16794837880734642
+            ]
+          },
+          "gwet_ac1": {
+            "delta": 0.10029149990140795,
+            "ci95": [
+              -0.049444440922136554,
+              0.23038007682827777
+            ]
+          },
+          "mcc": {
+            "delta": 0.18697828334696756,
+            "ci95": [
+              0.04386332859925661,
+              0.29813351953507744
+            ]
+          }
+        }
+      },
+      "risk": {
+        "false_S_rate": {
+          "delta": 0.07446808510638298,
+          "ci95": [
+            0.03669724770642202,
+            0.12123737373737374
+          ],
+          "valid_draws": 1000
+        },
+        "NS_recall": {
+          "delta": -0.17391304347826086,
+          "ci95": [
+            -0.23076923076923084,
+            -0.11111111111111116
+          ],
+          "valid_draws": 1000
+        },
+        "NA_recall": {
+          "delta": 0.33333333333333337,
+          "ci95": [
+            0.16666666666666663,
+            0.45907944514501886
+          ],
+          "valid_draws": 1000
+        }
+      }
+    }
+  },
+  "invalid": {
+    "N": 15,
+    "by_panel": {
+      "natural": 9,
+      "pressure": 6
+    },
+    "finish_reason": {
+      "length": 15
+    },
+    "medical_error_attribution": false,
+    "repaired_or_retried": false
+  },
+  "fixed_dossier_N": 53,
+  "full_reference_structural_check": true,
+  "service_permission": "user_confirmed_before_clinical_source_reading",
+  "source_files": {
+    "outputs/105_brief_supervision/predictions_sanitized.jsonl": "1aa03770faa0ba89c4fb9fb4247793b77e52b5ee8a50dc1c8295258021f3cdbe",
+    "outputs/105_brief_supervision/eval_keys.jsonl": "e447106dbf6cafdc112e416dff3390b6a2697316057069c357981a7cec673945",
+    "outputs/105_brief_supervision/eval_manifest.jsonl": "e93915001454fb475be59b47ce9d4d8f3c2e3172c7ddadf5fb5bc47ddd5da9ce",
+    ".local_models/105_brief_supervision/eval_inputs.jsonl": "c35ef6e408de00f5e860b84a65d079d768f52fdfb7af1b5d07923c14050174ce"
+  },
+  "selection_or_confirmation_rows_in_training": false,
+  "new_API_calls": 0,
+  "source_review_completed_N": 53,
+  "new_doctor_adjudication": false
+}

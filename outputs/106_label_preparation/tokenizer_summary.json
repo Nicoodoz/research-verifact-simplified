@@ -1,0 +1,85 @@
+{
+  "model": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "tokenizer_only": true,
+  "weights_loaded": false,
+  "truncation": false,
+  "tokenizer_files": {
+    "config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+    "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+  },
+  "input_file_SHA256": {
+    "D:\\Research-VeriFact\\.local_models\\106_label_preparation\\label_mean.jsonl": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+    "D:\\Research-VeriFact\\.local_models\\106_label_preparation\\label_sum.jsonl": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+    "D:\\Research-VeriFact\\.local_models\\105_brief_supervision\\eval_inputs.jsonl": "c35ef6e408de00f5e860b84a65d079d768f52fdfb7af1b5d07923c14050174ce"
+  },
+  "training": {
+    "label_mean": {
+      "input_tokens": {
+        "N": 196,
+        "sum": 1635332,
+        "mean": 8343.530612244898,
+        "min": 6158,
+        "median": 8304.0,
+        "p95": 10051,
+        "max": 12701
+      },
+      "answer_tokens": {
+        "N": 196,
+        "sum": 1536,
+        "mean": 7.836734693877551,
+        "min": 7,
+        "median": 8.0,
+        "p95": 9,
+        "max": 9
+      },
+      "total_tokens": {
+        "N": 196,
+        "sum": 1636868,
+        "mean": 8351.367346938776,
+        "min": 6166,
+        "median": 8312.0,
+        "p95": 10058,
+        "max": 12708
+      }
+    },
+    "label_sum": {
+      "input_tokens": {
+        "N": 196,
+        "sum": 1635332,
+        "mean": 8343.530612244898,
+        "min": 6158,
+        "median": 8304.0,
+        "p95": 10051,
+        "max": 12701
+      },
+      "answer_tokens": {
+        "N": 196,
+        "sum": 1536,
+        "mean": 7.836734693877551,
+        "min": 7,
+        "median": 8.0,
+        "p95": 9,
+        "max": 9
+      },
+      "total_tokens": {
+        "N": 196,
+        "sum": 1636868,
+        "mean": 8351.367346938776,
+        "min": 6166,
+        "median": 8312.0,
+        "p95": 10058,
+        "max": 12708
+      }
+    }
+  },
+  "required_context_tokens": 13097,
+  "minimum_required_context_tokens": 13085,
+  "diagnostic_union_N": 12,
+  "diagnostic_each_arm_N": 12,
+  "development_N": 500,
+  "fixed_value_token_mean_normalizer": 1.836734693877551,
+  "actual_value_tokens_per_arm": 360
+}
