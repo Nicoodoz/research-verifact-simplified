@@ -1,0 +1,22 @@
+{
+  "status": "PASS_training_path",
+  "bundle_sha256": "917734c40fe49b59e8a3bebb2330c0fa3b6a107c16d20e9993b7c5af71fe50da",
+  "longest_train_tokens": 12821,
+  "seconds": 193.16977317631245,
+  "finite_loss_and_gradients": true,
+  "training_seconds": 164.1338246613741,
+  "training_peak_allocated_bytes": 26446063104,
+  "nonzero_adapter_gradient_tensors": 248,
+  "inference_batch_size": 8,
+  "inference_max_input": 12115,
+  "inference_peak_allocated_bytes": 38435990528,
+  "head_projection": {
+    "verdict_tokens": 1,
+    "other_tokens": 119,
+    "projected_positions": 120,
+    "max_head_rows": 16
+  },
+  "optimizer_updates": 0,
+  "probe_not_reused_for_training": true,
+  "full_384_decode_memory_and_average_formal_throughput_not_yet_verified": true
+}

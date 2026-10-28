@@ -1,0 +1,30 @@
+{
+  "status": "executor_checks_passed",
+  "method_pass": false,
+  "independent_audit": false,
+  "all_fixed_requests_received": true,
+  "all1500_input_SHA_checked": true,
+  "same_original196_training_order_twice": true,
+  "both50step392_consumption_verified": true,
+  "all248_LoRA_B_updated_each_arm": true,
+  "originalGT_and_reference_unchanged": true,
+  "invalid_not_retried_or_fallback": true,
+  "all_frozen50_files_unchanged_beyond_recorded_amendment": true,
+  "adapter_and_evidence_backup_SHA_verified": true,
+  "auto_shutdown": false,
+  "paid_API_new": 0,
+  "limits": "Original local CPU suite could not import torch in research-verifact-029; did not install packages. Previous CPU checks, actual GPU path and current offline checks are separate evidence.",
+  "files": {
+    "final_report.md": "952ac3c2dbd9a2b6ab30ce8d353ffc414caac56af78a1e0e74a5970f6d997c4e",
+    "final_metrics.md": "2ea1384b4a35037490778ea99229ea7e98486787aa01ccf1810558cea58a60d2",
+    "final_case_analysis.md": "be32288d65ebdb233794b2443afb39ac240ccfcdc8ab1e7a72066efd58a370b8",
+    "final_case_pointers.json": "90eab0de353d392e782b404d24c6b5412b52f2d0cfc44b46e68d56cdadcbe33d",
+    "evaluation.json": "739f7ae31dcf6ca9762dc1d63474aad322ceda48935b3f471b4541df26d5bd8a",
+    "pair_only_sensitivity.json": "4a7eb65d94bbb0f8512bc07ee665a7dd44b19f309cdcae0492fc6089f7b2d460",
+    "predictions_sanitized.jsonl": "1aa03770faa0ba89c4fb9fb4247793b77e52b5ee8a50dc1c8295258021f3cdbe",
+    "paired_transitions.jsonl": "db83b30cc1d28601878195f5f7d8fab5e302b4835894783de7c0c18ed0eb2596",
+    "output_quality.json": "5622652123069533fe13fa9925f0d9786a091d83072a76577dc74d0905731102",
+    "a800_resources.json": "7efc5700c932e0ef53f1bbd9caaea1dcc88ef4efdabbaefe98954fd6a28be396",
+    "a800_cost_status.json": "caf9386b58249224a38a20647fcfb9edd27a5501f894ac45f6152d6e3320f49c"
+  }
+}

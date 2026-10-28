@@ -1,0 +1,40 @@
+{
+  "mechanical_only_not_semantic_validation": true,
+  "arms": {
+    "base_judge": {
+      "N": 500,
+      "valid": 485,
+      "strict_json": 485,
+      "length_finish": 15,
+      "exact_label_normalized": 0,
+      "nonempty_relation": 464,
+      "nonempty_reason": 0,
+      "evidence_list": 433,
+      "empty_evidence_list": 0,
+      "quotes": 1387,
+      "literal_in_same_reference": 584
+    },
+    "label_only": {
+      "N": 500,
+      "valid": 500,
+      "strict_json": 500,
+      "length_finish": 0,
+      "exact_label_normalized": 0,
+      "nonempty_relation": 0,
+      "nonempty_reason": 0
+    },
+    "evidence_brief": {
+      "N": 500,
+      "valid": 499,
+      "strict_json": 499,
+      "length_finish": 0,
+      "exact_label_normalized": 0,
+      "nonempty_relation": 499,
+      "nonempty_reason": 0,
+      "evidence_list": 499,
+      "empty_evidence_list": 1,
+      "quotes": 985,
+      "literal_in_same_reference": 938
+    }
+  }
+}

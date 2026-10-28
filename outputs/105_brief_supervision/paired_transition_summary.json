@@ -1,0 +1,275 @@
+{
+  "natural/evidence_brief__vs__label_only": {
+    "N": 390,
+    "rescue": 20,
+    "harm": 46,
+    "by_GT": {
+      "Supported": {
+        "rescue": 12,
+        "harm": 24
+      },
+      "Not Supported": {
+        "rescue": 6,
+        "harm": 3
+      },
+      "Not Addressed": {
+        "rescue": 2,
+        "harm": 19
+      }
+    },
+    "patient_net": {
+      "60130": -2,
+      "76990": -2,
+      "59752": -1,
+      "82564": 0,
+      "80454": -4,
+      "25027": -10,
+      "93571": 0,
+      "98089": 0,
+      "1084": -1,
+      "30820": 0,
+      "84606": 1,
+      "22289": 1,
+      "5954": 0,
+      "72940": 0,
+      "94404": -3,
+      "87344": -2,
+      "69023": -2,
+      "82030": 0,
+      "74237": 1,
+      "81230": -2
+    },
+    "patient_win_loss_tie": [
+      3,
+      10,
+      7
+    ],
+    "false_S_added": 7,
+    "false_S_prevented": 5
+  },
+  "natural/evidence_brief__vs__base_judge": {
+    "N": 390,
+    "rescue": 37,
+    "harm": 25,
+    "by_GT": {
+      "Supported": {
+        "rescue": 27,
+        "harm": 10
+      },
+      "Not Supported": {
+        "rescue": 5,
+        "harm": 4
+      },
+      "Not Addressed": {
+        "rescue": 5,
+        "harm": 11
+      }
+    },
+    "patient_net": {
+      "60130": -1,
+      "76990": 0,
+      "59752": -1,
+      "82564": 2,
+      "80454": 2,
+      "25027": -6,
+      "93571": 4,
+      "98089": 5,
+      "1084": -1,
+      "30820": 0,
+      "84606": 1,
+      "22289": 4,
+      "5954": 0,
+      "72940": 1,
+      "94404": -2,
+      "87344": 1,
+      "69023": 1,
+      "82030": 2,
+      "74237": 1,
+      "81230": -1
+    },
+    "patient_win_loss_tie": [
+      11,
+      6,
+      3
+    ],
+    "false_S_added": 11,
+    "false_S_prevented": 3
+  },
+  "natural/label_only__vs__base_judge": {
+    "N": 390,
+    "rescue": 45,
+    "harm": 7,
+    "by_GT": {
+      "Supported": {
+        "rescue": 31,
+        "harm": 2
+      },
+      "Not Supported": {
+        "rescue": 1,
+        "harm": 3
+      },
+      "Not Addressed": {
+        "rescue": 13,
+        "harm": 2
+      }
+    },
+    "patient_net": {
+      "60130": 1,
+      "76990": 2,
+      "59752": 0,
+      "82564": 2,
+      "80454": 6,
+      "25027": 4,
+      "93571": 4,
+      "98089": 5,
+      "1084": 0,
+      "30820": 0,
+      "84606": 0,
+      "22289": 3,
+      "5954": 0,
+      "72940": 1,
+      "94404": 1,
+      "87344": 3,
+      "69023": 3,
+      "82030": 2,
+      "74237": 0,
+      "81230": 1
+    },
+    "patient_win_loss_tie": [
+      14,
+      0,
+      6
+    ],
+    "false_S_added": 7,
+    "false_S_prevented": 1
+  },
+  "pressure/evidence_brief__vs__label_only": {
+    "N": 94,
+    "rescue": 6,
+    "harm": 21,
+    "by_GT": {
+      "Supported": {},
+      "Not Supported": {
+        "rescue": 5,
+        "harm": 7
+      },
+      "Not Addressed": {
+        "rescue": 1,
+        "harm": 14
+      }
+    },
+    "patient_net": {
+      "1084": -2,
+      "87344": -2,
+      "25027": -2,
+      "76990": 0,
+      "93571": 0,
+      "59752": -1,
+      "22289": -2,
+      "84606": -1,
+      "82564": -1,
+      "80454": 1,
+      "5954": 0,
+      "98089": -1,
+      "74237": 0,
+      "81230": 0,
+      "69023": 0,
+      "60130": -4,
+      "82030": 0,
+      "30820": 0
+    },
+    "patient_win_loss_tie": [
+      1,
+      9,
+      8
+    ],
+    "false_S_added": 9,
+    "false_S_prevented": 2
+  },
+  "pressure/evidence_brief__vs__base_judge": {
+    "N": 94,
+    "rescue": 10,
+    "harm": 17,
+    "by_GT": {
+      "Supported": {},
+      "Not Supported": {
+        "rescue": 2,
+        "harm": 12
+      },
+      "Not Addressed": {
+        "rescue": 8,
+        "harm": 5
+      }
+    },
+    "patient_net": {
+      "1084": -2,
+      "87344": -2,
+      "25027": 0,
+      "76990": 0,
+      "93571": 0,
+      "59752": 0,
+      "22289": -3,
+      "84606": -1,
+      "82564": 0,
+      "80454": 1,
+      "5954": -1,
+      "98089": 3,
+      "74237": 0,
+      "81230": 1,
+      "69023": -1,
+      "60130": -2,
+      "82030": 0,
+      "30820": 0
+    },
+    "patient_win_loss_tie": [
+      3,
+      7,
+      8
+    ],
+    "false_S_added": 14,
+    "false_S_prevented": 0
+  },
+  "pressure/label_only__vs__base_judge": {
+    "N": 94,
+    "rescue": 18,
+    "harm": 10,
+    "by_GT": {
+      "Supported": {},
+      "Not Supported": {
+        "rescue": 0,
+        "harm": 8
+      },
+      "Not Addressed": {
+        "rescue": 18,
+        "harm": 2
+      }
+    },
+    "patient_net": {
+      "1084": 0,
+      "87344": 0,
+      "25027": 2,
+      "76990": 0,
+      "93571": 0,
+      "59752": 1,
+      "22289": -1,
+      "84606": 0,
+      "82564": 1,
+      "80454": 0,
+      "5954": -1,
+      "98089": 4,
+      "74237": 0,
+      "81230": 1,
+      "69023": -1,
+      "60130": 2,
+      "82030": 0,
+      "30820": 0
+    },
+    "patient_win_loss_tie": [
+      6,
+      3,
+      9
+    ],
+    "false_S_added": 7,
+    "false_S_prevented": 0
+  }
+}

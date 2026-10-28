@@ -1,0 +1,28 @@
+{
+  "API_new_cny": 0,
+  "prior_known_minimum_cny": 4.503952316301399,
+  "current_rate_cny_per_hour": 7.98,
+  "current_billing_start_HKT": "2026-10-28T15:06:00+08:00",
+  "GPU_execution_finish_UTC": "2026-10-28T08:33:52.159982+00:00",
+  "last_remote_observed_HKT": "2026-10-28T16:36:44+08:00",
+  "last_known_total_compute_cny": 16.572010494368605,
+  "shared_unknown_reserve_cny": 2,
+  "last_known_plus_unknown_reserve_cny": 18.572010494368605,
+  "compute_cap_cny": 20,
+  "cumulative_GPU_known_minutes": 128.69172446727754,
+  "GPU_cap_minutes": 150,
+  "automatic_shutdown_executed": false,
+  "manual_shutdown_notice_given": true,
+  "SSH_later_unreachable": true,
+  "user_platform_confirmation_received": true,
+  "exact_invoice_pending": true,
+  "old_billing_interval_ends_unconfirmed": true,
+  "analysis_new_GPU_API_calls": 0,
+  "user_confirmation": {
+    "confirmed_by_user": true,
+    "confirmation_recorded_HKT": "2026-10-28T16:48:54+08:00",
+    "exact_platform_shutdown_time_supplied": false,
+    "assistant_shutdown_executed": false,
+    "no_new_GPU_calls": true
+  }
+}

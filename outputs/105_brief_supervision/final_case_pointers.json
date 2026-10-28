@@ -1,0 +1,196 @@
+[
+  {
+    "id": "ef22d89c-9e29-50da-a0ea-c575ddab94e7",
+    "sid": "98089",
+    "panel": "natural",
+    "GT": "Not Addressed",
+    "before": "Not Addressed",
+    "after": "Not Supported",
+    "group": "NA_to_NS",
+    "reference_sha256": "cfb4c64e603f6786a621fd53bca2327935f659415d18cbaf1960e7ba5951224a",
+    "interpretation": "目标事件未建立，却仍判NS：理由明确承认缺少目标管理事件，仅引用相关对象的既有清单。符合本轮NA→NS错误模式；不能以对象被提及直接替代具体事件被涉及。理由还含引用本身未提供的类别归属，未据此重标GT。",
+    "spans": [
+      {
+        "occurrences": [
+          {
+            "start": 5965,
+            "end": 5991
+          }
+        ],
+        "quote_sha256": "e1ead7edc96f99ea320d84bddb978ea982f91bcfc344313bfcae46dd351a854b"
+      }
+    ]
+  },
+  {
+    "id": "5b053e8a-0621-c567-11db-4d5726a4b602",
+    "sid": "72940",
+    "panel": "natural",
+    "GT": "Supported",
+    "before": "Supported",
+    "after": "Not Supported",
+    "group": "S_to_NS",
+    "reference_sha256": "56a7d6c0cd56dcf9959c67afadb3bc0d34e25dfe8d0eae4d17d914b56dbce970",
+    "interpretation": "额外要求显式前后轨迹：引用了操作及后续状态，却以未写明此前状态和完整转变过程拒绝原GT。按冻结标签构成S误伤；这里只审查选中引句及理由，不能独立裁定完整EHR的医学结论。",
+    "spans": [
+      {
+        "occurrences": [
+          {
+            "start": 5735,
+            "end": 5777
+          },
+          {
+            "start": 16693,
+            "end": 16735
+          }
+        ],
+        "quote_sha256": "1743ea892522d40105d54e48933c7ab3dd315f05ce5c241a94709d26ab6d2be2"
+      },
+      {
+        "occurrences": [
+          {
+            "start": 6311,
+            "end": 6379
+          },
+          {
+            "start": 13745,
+            "end": 13813
+          }
+        ],
+        "quote_sha256": "8cf0118abfcab80204b169c952879c1f768764f841d77b475130f3a8cb857dd7"
+      },
+      {
+        "occurrences": [
+          {
+            "start": 20994,
+            "end": 21062
+          }
+        ],
+        "quote_sha256": "e54a510047b7446fec9ee8412da7c401bab0b6014ab11059461fdd280657e497"
+      }
+    ]
+  },
+  {
+    "id": "b793439d-2081-e2d7-9300-7f0c490ab42b",
+    "sid": "87344",
+    "panel": "pressure",
+    "GT": "Not Supported",
+    "before": "Not Supported",
+    "after": "Supported",
+    "group": "NS_to_S",
+    "reference_sha256": "bc2d1f97ad9686b37d867569745645711158c719805c2498eecd27a2effb4af8",
+    "interpretation": "发生时点与到达时状态：原文描述事件在此前发生、到达时已处于该状态；理由将其解释为到达时发生。命题语言也有状态/事件歧义，保留原GT，不把该例当作无争议医学重标依据。",
+    "spans": [
+      {
+        "occurrences": [
+          {
+            "start": 15624,
+            "end": 15674
+          }
+        ],
+        "quote_sha256": "37e568216efdb15f4d0a6533cb19027f25c6adc1341dc654994c79ad98edbd20"
+      },
+      {
+        "occurrences": [
+          {
+            "start": 268,
+            "end": 278
+          }
+        ],
+        "quote_sha256": "cda5e3781f984b5879a1cee148eac6a01fd6339fe1bd1dcd38619763783d6341"
+      },
+      {
+        "occurrences": [
+          {
+            "start": 3710,
+            "end": 3753
+          }
+        ],
+        "quote_sha256": "410880be0594edd1891eddb28bc09675d7f7cd2f314ae37c5e70a2d1439a9c7b"
+      }
+    ]
+  },
+  {
+    "id": "a6b256ba-736c-bf2c-2eec-f1715b8dd7e6",
+    "sid": "25027",
+    "panel": "pressure",
+    "GT": "Not Addressed",
+    "before": "Not Addressed",
+    "after": "Supported",
+    "group": "NA_to_S",
+    "reference_sha256": "a79aacefaf20ce15be0327ee1baf8ff6b406478ed8dd30b80e4668d4d1d00b02",
+    "interpretation": "从reference头部元数据推断具体事件：理由使用输入中确实存在的住院终点字段，再将其等同于目标事件。字段真实不证明事件类型和对应关系充分。按固定GT是NA→S风险增加，但不能称为凭空编造引句；也不能据此认定医生标签错误。本轮不改GT、不删例。",
+    "spans": [
+      {
+        "occurrences": [
+          {
+            "start": 46,
+            "end": 89
+          }
+        ],
+        "quote_sha256": "41cb4fde24393e55315d3f3d22e980d865282cb7e3508b17dc172b20e598ebcf"
+      }
+    ]
+  },
+  {
+    "id": "f59aa50a-969b-93d4-9330-b69383947ba7",
+    "sid": "30820",
+    "panel": "natural",
+    "GT": "Not Supported",
+    "before": "Supported",
+    "after": "Not Supported",
+    "group": "NS_rescue",
+    "reference_sha256": "66ed1c540e7fd946bf4be6e0b1d37e2bdfdfb04b78887893fae4f69584865b9d",
+    "interpretation": "区分不同评估对象：理由同时引用对原因及另一结局的不同评估，避免把后一否定直接替代前者，按GT由S救回NS。只是单例可解释收益，不抵消总体损失。",
+    "spans": [
+      {
+        "occurrences": [
+          {
+            "start": 12665,
+            "end": 12760
+          }
+        ],
+        "quote_sha256": "d4ac349a7a4746c73992917dd2b237976319fd459cb970b18055fc65d46a4bfa"
+      },
+      {
+        "occurrences": [
+          {
+            "start": 23616,
+            "end": 23709
+          }
+        ],
+        "quote_sha256": "6949438e73aedbc7aa3ad6fc8df86dc5a17ab96835725afffc0810f6875dff58"
+      }
+    ]
+  },
+  {
+    "id": "15d5ead5-6d53-ef51-dd5d-84ae14fa50b0",
+    "sid": "98089",
+    "panel": "natural",
+    "GT": "Supported",
+    "before": "Not Addressed",
+    "after": "Supported",
+    "group": "S_rescue",
+    "reference_sha256": "5538d85441ac4ee6c493fa3bfaccd558f52ef98c212289ce02994676fd970d6b",
+    "interpretation": "从直接状态记录救回S：引用当前未见活动性问题及状态稳定的原文，与原GT一致。理由中关于材料不完整的附带语句不能作为额外支持依据；正确标签并不保证整段解释每句话都有必要。",
+    "spans": [
+      {
+        "occurrences": [
+          {
+            "start": 6645,
+            "end": 6770
+          }
+        ],
+        "quote_sha256": "1f3364fad9c722501e9c60d4f531538296932c9bfee92eeed612c2559ca2cde8"
+      },
+      {
+        "occurrences": [
+          {
+            "start": 18960,
+            "end": 19001
+          }
+        ],
+        "quote_sha256": "014c0485d55b93b0a8f1c4a774e13dd9632b8156ac41340ea6fd972889a22e9b"
+      }
+    ]
+  }
+]

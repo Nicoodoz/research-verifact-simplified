@@ -1,0 +1,35 @@
+{
+  "training": [
+    {
+      "id": "414cb15a-f79a-2c12-9985-f328db59e4b6",
+      "tokens": 8437,
+      "seconds": 13.008065585047007,
+      "peak_bytes": 23904132096
+    },
+    {
+      "id": "2f30407b-6a80-37f2-16d6-0b086646d9da",
+      "tokens": 12821,
+      "seconds": 3.3997778967022896,
+      "peak_bytes": 26404118528
+    }
+  ],
+  "decode": [
+    {
+      "batch_size": 8,
+      "forced_tokens_per_sequence": 4,
+      "seconds": 57.90965422615409,
+      "peak_bytes": 38435988992
+    },
+    {
+      "batch_size": 8,
+      "forced_tokens_per_sequence": 128,
+      "seconds": 20.34523418545723,
+      "peak_bytes": 38464431616
+    }
+  ],
+  "optimizer_steps": 0,
+  "scored_predictions": 0,
+  "answers_decoded_or_inspected": false,
+  "formal_data_settings_changed": false,
+  "full384_not_run": true
+}

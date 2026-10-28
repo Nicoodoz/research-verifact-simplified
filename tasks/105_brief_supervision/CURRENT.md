@@ -1,13 +1,11 @@
-# 105当前入口：新克隆尚不能训练
+# 105当前入口：完整执行与最终分析完成
 
-2026-10-28 GPU接续结果为**执行未完成**。存储已修复，9B原权重和105冻结输入完整；目标缺少已验证的venv103。两臂0/50步、三臂0/500预测，分类指标/继续门槛未评价。
+用户已确认GPU关机。两臂各196条×2轮、50步/392次消费；base_judge、label_only、evidence_brief各500条首次回执均完成。最终适配器和原始结果已回传核验，无自动关机、无新增API。
 
-先读[本轮报告](../../outputs/105_brief_supervision/gpu_clone_report.md)、[克隆交接](GPU_CLONE_HANDOFF.md)和[实时进度](../../outputs/105_brief_supervision/gpu_live_progress.md)。科学方案继续使用原[protocol](protocol.md)/[config](config.json)，196/500及所有监督答案不变。
+**停止当前evidence_brief配方扩大。** 相对同样本label_only，自然共同390条MCC−0.1209、PA−6.67个百分点、false-S17→19/78；压力94条MCC−0.2166、false-S16→23/94。NA损失明显；仅两臂的399/100条敏感性结论仍为负。压力共同有效覆盖94%另未达95%线，不把基线截断变成方法失败的唯一解释。
 
-唯一下一动作：在GPU关闭时，通过AutoDL控制台仅把旧实例已验证的`verifact103/venv103`选择性拷贝至新实例同路径。不要整盘复制、重新下载9B或重装环境。源实例只读，保持原件；本轮没有启动旧实例。
+正式入口：[最终报告](../../outputs/105_brief_supervision/final_report.md)、[指标附录](../../outputs/105_brief_supervision/final_metrics.md)、[源文案例](../../outputs/105_brief_supervision/final_case_analysis.md)、[执行者自检](../../outputs/105_brief_supervision/final_selfcheck.json)。历史[镜像准备](../../outputs/105_brief_supervision/system_image_report.md)、[克隆阻塞](../../outputs/105_brief_supervision/gpu_clone_report.md)与[协议](protocol.md)保留，不代表当前仍未执行。
 
-本轮GPU按用户11:30、6.98元/小时起计，截至12:07:57关机请求约37.95分钟；加旧无卡最低估算累计约4.470307元，另保留2元共享未知/关机余量。20元与150分钟累计约束不重置，实际结束时间/账单待控制台确认。新账本位于`/root/autodl-tmp/verifact105/budget/ledger.json`，保留了前段未确认区间；后续不得重新init。
+本地私有结果`.local_models/105_brief_supervision/a800/evidence/`；最终适配器在同级`backup/<arm>/checkpoint_a/`。实例持久路径`/root/autodl-tmp/verifact105/results/train/<arm>/checkpoint_a/`，完整optimizer留在实例，不是本地完整恢复备份。原基础模型与源盘数据未在本次执行删除。
 
-旧[GPU_HANDOFF](GPU_HANDOFF.md)、[README](README.md)及[无卡报告](../../outputs/105_brief_supervision/nogpu_report.md)记录原实例无卡准备的READY_FOR_GPU；该历史状态不能替代新克隆环境检查。当前克隆不能直接使用旧命令开训。迁移后先在无卡阶段检查精确版本/token/文件，再按实际剩余时间/费用及短GPU吞吐核算接续，不换样本、不缩减必要对照。
-
-已通过绑定新主机的守卫请求平台关机，随后SSH不可达；**仍需控制台确认“已关机”与最终费用**。若仍运行，请关机并保留实例/磁盘。本轮没有适配器或optimizer，少量最终保存/关机回执留实例待无卡取回。
+最后可见累计费用¥16.572010＋2元共享未知余量；用户确认已关机，精确平台停机时间/旧区间账单未提供，不能冒称结算。原20元/150分钟账本保留，后续另需明确授权，不自动启动下一任务或重训。

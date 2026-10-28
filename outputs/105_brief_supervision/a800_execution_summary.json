@@ -1,0 +1,13 @@
+{
+  "status": "GPU_execution_complete",
+  "training_steps_per_arm": 50,
+  "consumed_per_arm": 392,
+  "first_replies_per_arm": 500,
+  "adapters_backed_up_and_SHA_verified": true,
+  "evidence_archive_SHA256": "a64590ad3eb9f3095f9f34ee462c089f1eef7a3135fcf39a7ad924859ec53c32",
+  "manual_shutdown_notice_given": true,
+  "automatic_shutdown": false,
+  "clinical_performance_gate_pass": false,
+  "coverage_gate_pass": false,
+  "API_calls": 0
+}
