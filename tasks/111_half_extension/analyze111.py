@@ -8,10 +8,21 @@ sys.path.insert(0,str(ROOT/'tasks/110_update_interpolation'));from analyze110 im
 sys.path.insert(0,str(ROOT/'tasks/107_support_aux'));from evaluate107 import risk_deltas
 sys.path.insert(0,str(ROOT/'src'));from verifact_research.evaluation import paired_compare
 sys.path.insert(0,str(ROOT/'tasks/105_brief_supervision'));from parse105 import parse
+from sklearn.metrics import matthews_corrcoef,accuracy_score
 def verdict(record):return record.get('parsed',{}).get('verdict') if record.get('parsed',{}).get('valid') else None
+def coverage_one(keys,records):
+    invalid=[r for r in keys if r['id'] in records and verdict(records[r['id']]) is None];missing=[r for r in keys if r['id'] not in records]
+    valid=[r for r in keys if r['id'] in records and verdict(records[r['id']]) is not None];nonS=sum(r['GT']!='Supported' for r in keys)
+    falseS=sum(r['GT']!='Supported' and verdict(records[r['id']])=='Supported' for r in valid);unknown_nonS=sum(r['GT']!='Supported' for r in invalid+missing)
+    return dict(expected=len(keys),received=len(keys)-len(missing),valid=len(valid),invalid=len(invalid),missing=len(missing),
+        invalid_GT=dict(Counter(r['GT'] for r in invalid)),missing_GT=dict(Counter(r['GT'] for r in missing)),true_nonS_total=nonS,
+        observed_false_S=falseS,nonS_unknown=unknown_nonS,false_S_full_cohort_bounds=[falseS/nonS,(falseS+unknown_nonS)/nonS] if nonS else None)
 def section(keys,data,baselines,bootstrap):
     arms=list(data);expected={r['id'] for r in keys};rows=[dict(r,pred={a:verdict(data[a][r['id']]) for a in arms}) for r in keys if all(r['id'] in data[a] and verdict(data[a][r['id']]) is not None for a in arms)]
     scores={a:metrics(rows,{r['id']:r['pred'][a] for r in rows}) for a in arms} if rows else {};pairs={}
+    for a,m in scores.items():
+        truth=[r['GT'] for r in rows];pred=[r['pred'][a] for r in rows]
+        if abs(matthews_corrcoef(truth,pred)-m['mcc'])>1e-12 or abs(accuracy_score(truth,pred)-m['percent_agreement'])>1e-12:raise ValueError('Independent sklearn metric mismatch')
     for base in baselines:
         pair=[dict(r,pred={base:verdict(data[base][r['id']]),'update_half':verdict(data['update_half'][r['id']])}) for r in keys if all(r['id'] in data[a] and verdict(data[a][r['id']]) is not None for a in [base,'update_half'])]
         if not pair:continue
@@ -28,8 +39,8 @@ def section(keys,data,baselines,bootstrap):
             cohort=[dict(proposition_id=r['id'],subject_id=str(r['sid']),human_gt=r['GT']) for r in pair];a=[dict(proposition_id=r['id'],verdict=r['pred'][base]) for r in pair];b=[dict(proposition_id=r['id'],verdict=r['pred']['update_half']) for r in pair]
             result.update(patient_paired=paired_compare(cohort,a,b,iterations=1000),risk_CI=risk_deltas(pair,base,'update_half'))
         pairs[base]=result
-    coverage={a:dict(expected=len(keys),received=sum(i in data[a] for i in expected),valid=sum(i in data[a] and verdict(data[a][i]) is not None for i in expected),invalid=sum(i in data[a] and verdict(data[a][i]) is None for i in expected),missing=sum(i not in data[a] for i in expected)) for a in arms}
-    return dict(expected_N=len(keys),GT=dict(Counter(r['GT'] for r in keys)),non_S=sum(r['GT']!='Supported' for r in keys),patient_N=len({r['sid'] for r in keys}),common_valid_N=len(rows),coverage=coverage,scores=scores,half_vs=pairs,
+    coverage={a:coverage_one(keys,data[a]) for a in arms}
+    return dict(expected_N=len(keys),GT=dict(Counter(r['GT'] for r in keys)),non_S=sum(r['GT']!='Supported' for r in keys),patient_N=len({r['sid'] for r in keys}),common_valid_N=len(rows),coverage=coverage,scores=scores,half_vs=pairs,independent_sklearn_metrics_match=True,
         author={author:{a:metrics([r for r in rows if r['author']==author],{r['id']:r['pred'][a] for r in rows if r['author']==author}) for a in arms} for author in sorted({r['author'] for r in rows})})
 def analyze(private,work,full,bootstrap):
     keys=c.rows(private/'cohort_keys.jsonl');key={r['id']:r for r in keys};old={a:{r['id']:r for r in c.rows(private/(a+'_old500.jsonl'))} for a in ['label_only105','label_only107','update_half','update_quarter']}
@@ -59,7 +70,10 @@ def analyze(private,work,full,bootstrap):
         sections['full1817']=section(keys,merged,['label_only105','label_only107'],bootstrap)
         for panel in ['natural','pressure']:
             hkeys=[key[r['id']] for r in history if r['panel']==panel];hdata=dict(merged,lora103_9b512=old['lora103_9b512']);sections['history103_full_'+panel]=section(hkeys,hdata,['lora103_9b512','label_only105','label_only107'],bootstrap)
-        sanitized=[dict(id=r['id'],sid=r['sid'],GT=r['GT'],author=r['author'],subset=r['subset'],arm=a,valid=verdict(merged[a][r['id']]) is not None,verdict=verdict(merged[a][r['id']]),source='old500_reused' if r['subset']=='old500' else 'new111_first_receipt') for r in keys for a in ['label_only105','label_only107','update_half']]
+        sanitized=[dict(id=r['id'],sid=r['sid'],GT=r['GT'],author=r['author'],subset=r['subset'],arm=a,valid=verdict(merged[a][r['id']]) is not None,verdict=verdict(merged[a][r['id']]),
+            finish_reason=merged[a][r['id']].get('finish_reason'),input_tokens=merged[a][r['id']].get('input_tokens'),output_tokens=merged[a][r['id']].get('output_tokens'),
+            prompt_token_sha256=merged[a][r['id']].get('prompt_token_sha256'),checkpoint_adapter_sha256=cfg['source_adapters'][a]['sha256'],
+            source='old500_reused' if r['subset']=='old500' else 'new111_first_receipt') for r in keys for a in ['label_only105','label_only107','update_half']]
         c.putl(ROOT/'outputs/111_half_extension/predictions_sanitized.jsonl',sanitized);result['complete1817_ID_receipts_verified']=True
     return result
 if __name__=='__main__':

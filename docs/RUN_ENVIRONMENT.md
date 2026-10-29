@@ -1,6 +1,6 @@
 # 当前环境与启动方式（2026-10-29核对）
 
-111复用同实例RTX4080 SUPER 32GB、原Qwen3.5-9B/env103，107/half已在实例，105仅从本地最终备份补传173MB，无重训或底座下载。新增1317采用原完整作者reference/104 prompt/105 parser及原BF16解码；最长13399 prompt tokens已实际batch1正式通过，context13783用于容纳完整输入，无截断。三臂同分组，常规batch2、超12701者batch1，正式代表输入计入回执不丢弃。预算代码排除稳态率中的一次性编译重复摊算，但全墙钟已发生费用照计；6元不扩大。只设本轮计算停止期限，没有shutdown或释放；用户保留开机政策继续。CPU比较复用项目统计，用research-verifact-029的scripts/run_research.ps1激活。
+111完成：复用同实例RTX4080 SUPER 32GB、原Qwen3.5-9B/env103，仅补传本地105最终适配器173MB；无底座下载、重训或环境重装。新增1317×三臂使用原完整作者reference/104 prompt/105 parser及原BF16解码，同分组常规batch2、超12701 tokens者batch1；最长13399 prompt tokens实际通过，context13783容纳完整输入，无截断。全部原始预测与运行记录已回传.local_models/111_half_extension/evidence/。初预算估计剔除一次性编译重复外推，发生的等待、加载、编译与回传仍全计墙钟；没有shutdown或释放。离线统计使用research-verifact-029/scripts/run_research.ps1。
 
 107已在本次RTX5090 32GB完成BF16、micro1、完整输入的两臂LoRA训练与batch2评价；原Python3.12.3/105关键依赖复用，未重装升级。最长backward、辅助LoRA梯度、完整状态恢复和显存/吞吐实测通过。最终适配器、辅助头、完整optimizer与回执已本地回传核验；CPU统计使用research-verifact-029，无需GPU。GPU停止计费状态以107 cost_status与用户确认为准。
 

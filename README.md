@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-111 half_extension已按新授权启动：核定20选型患者1817唯一有效ID，旧500全复用、新1317仅补105 label_only/107 label_only/110 update_half。105小适配器已补传，原9B/环境复用；最长13399 tokens正式batch1通过，完整输入不截断，实测预算在6元内，后端推理进行。103原180已确认70旧交集、110新增交集，已有原自然35/压力35已CPU同ID比较，未冒充完整180。当前无完整新增分类结论；不训练、不搜系数、API0，不用确认40或自动112。111费用从13:15单列，历史账本保留；用户政策不自动关机，到预算只停本轮计算并回传通知，留机待机另列。 [111准备报告](outputs/111_half_extension/preparation_report.md) · [当前状态](tasks/111_half_extension/CURRENT.md) · [110最终报告](outputs/110_update_interpolation/final_report.md)。
+111 half_extension完成：旧500全复用、新1317三臂各补齐，原20人1817有效唯一ID与103原120/60同ID比较完成。half完整队列MCC0.5215、PA78.54%、false-S44/362。111未支持保留update_half：新增1317相对105、107均降低MCC与PA，完整1817的错误放行减少不足以抵消正确S与NA损失。结束109续训＋插值衍生路线。 本轮无训练/新系数/API；任务租金估算¥3.7497/6，关键结果已回传，历史账本保留。按用户要求没有关机或释放实例，之后人工留机仍计费；不自动112或升级默认。 [111最终报告](outputs/111_half_extension/final_report.md) · [指标](outputs/111_half_extension/final_metrics.md) · [当前状态](tasks/111_half_extension/CURRENT.md)。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

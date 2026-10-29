@@ -1,0 +1,31 @@
+{
+  "task": 111,
+  "task_start_beijing": "2026-10-29 13:15:00",
+  "compute_stopped_beijing": "2026-10-29 15:37:09",
+  "critical_results_returned_beijing": "2026-10-29 15:37:23",
+  "task_wall_seconds_including_all_wait_upload_load_compile_engineering_save_return": 8543.704417467117,
+  "quoted_hourly_CNY": 1.58,
+  "task_GPU_cap_CNY": 6,
+  "task_GPU_CNY_estimate": 3.749736938777235,
+  "new_paid_API_CNY": 0,
+  "exact_platform_bill_verified": false,
+  "no_shutdown_command_sent": true,
+  "instance_and_disk_retained": true,
+  "post_task_user_kept_on_idle_excluded_from_task_budget": true,
+  "prior109_GPU_CNY_estimate": 1.8960000000000001,
+  "prior109_user_reported_shutdown": "2026-10-29 11:35:00",
+  "prior110_GPU_CNY_through_key_return": 1.2720864494866795,
+  "prior110_reported_estimate": 1.3193627761297757,
+  "prior110_reported_asof": "2026-10-29 12:41:06",
+  "historical_unverified_idle_fees_not_erased_or_guessed": true,
+  "prior_fee_ledgers_not_overwritten": true,
+  "last_instance_observation_beijing": "2026-10-29 15:38:39",
+  "worker_exited_at_last_observation": true,
+  "no_GPU_compute_apps_at_last_observation": true,
+  "platform_stop_billing_confirmed": false,
+  "generation_seconds": {
+    "label_only105": 2503.191507862881,
+    "label_only107": 2472.489017606713,
+    "update_half": 2498.526598967612
+  }
+}
