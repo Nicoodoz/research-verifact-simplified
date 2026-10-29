@@ -22,6 +22,7 @@ def main():
     write(O/'cost_status.json',dict(start_beijing=state['start_beijing'],snapshot_epoch=time.time(),elapsed_seconds=elapsed,GPU_estimate_CNY=cost,GPU_cap_CNY=state['GPU_cap_CNY'],API_CNY=state['paid_API_CNY'],API_cap_CNY=state['API_cap_CNY'],estimate_not_platform_invoice=True,no_shutdown=True,cycle_status=state['status']))
     lines=['# 自主研究周期1：阶段结果','',
            '107 label_only仍是主基线。以下均为原20名患者的开发筛查，原医生GT保留；后40人尚未用于选型或确认。各候选首次回执保留，未按结果重发。','',
+           state.get('current_takeaway','当前仍在筛查，尚未达到周期主要目标。'),'',
            '|候选/面板|配置|MCC|PA|正确数/有效数|false-S/有效非S|有效/计划|',
            '|---|---|---:|---:|---:|---:|---:|']
     for row in rows:

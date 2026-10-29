@@ -2,6 +2,8 @@
 
 107 label_only仍是主基线。以下均为原20名患者的开发筛查，原医生GT保留；后40人尚未用于选型或确认。各候选首次回执保留，未按结果重发。
 
+结论进度：claim_repeat完整1817只有小幅、未确认稳定的开发信号；single_token短训练在500条MCC与false-S均退化，停止该配方。当前复用冻结107，仅检验三代码读出，不做新训练。
+
 |候选/面板|配置|MCC|PA|正确数/有效数|false-S/有效非S|有效/计划|
 |---|---|---:|---:|---:|---:|---:|
 |joint_path_pilot/natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
@@ -46,6 +48,12 @@
 |single_token_short_pilot/pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
 |single_token_short_pilot/pressure|single_token_short|0.2501|55.00%|33/60|9/60|60/60|
 |single_token_short_pilot/pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
+|single_token_short_500_missing/natural|107 label_only|0.5032|79.75%|319/400|12/79|400/400|
+|single_token_short_500_missing/natural|single_token_short|0.4600|79.50%|318/400|21/79|400/400|
+|single_token_short_500_missing/natural|作者历史R1|0.4319|81.00%|324/400|28/79|400/400|
+|single_token_short_500_missing/pressure|107 label_only|0.3123|58.00%|58/100|16/100|100/100|
+|single_token_short_500_missing/pressure|single_token_short|0.2668|53.00%|53/100|22/100|100/100|
+|single_token_short_500_missing/pressure|作者历史R1|0.1572|44.00%|44/100|30/100|100/100|
 
 ## 去留与解释
 
@@ -68,6 +76,9 @@
 - `single_token_short_pilot`：自然120：MCC+0.09497、正确+9、false-S-1；压力60：正确-2、false-S+2。冻结24步检查点，先补齐500观察得失，不追加训练。。
   - natural：Supported救回10、误伤1；Not Supported救回1、误伤1；Not Addressed救回1、误伤1；新增false-S 1、避免2。
   - pressure：Supported救回0、误伤0；Not Supported救回4、误伤3；Not Addressed救回0、误伤3；新增false-S 5、避免3。
+- `single_token_short_500_missing`：自然MCC-0.04324、false-S+9；压力MCC-0.04552、false-S+6。明确停止当前短训练配方，不追加训练或扩1817。。
+  - natural：Supported救回15、误伤12；Not Supported救回4、误伤2；Not Addressed救回3、误伤9；新增false-S 11、避免2。
+  - pressure：Supported救回0、误伤0；Not Supported救回3、误伤7；Not Addressed救回0、误伤1；新增false-S 7、避免1。
 
 claim_repeat完整1817的MCC差值患者分组95%区间为[-0.0126, +0.0244]（1000次bootstrap）；正确数增加7名患者、减少9名患者。区间跨0不表示等效，也不足以支持稳定增益。相对107只是较小点估计收益，不占用唯一的确认40人机会。
 
@@ -89,8 +100,8 @@ claim_repeat完整1817的MCC差值患者分组95%区间为[-0.0126, +0.0244]（1
 
 三类完整指标、混淆矩阵、逐例配对变化与患者方向保存在各候选JSON。当前粗筛不例行bootstrap；有值得保留的较大开发收益后再补必要稳定性分析。作者R1只作历史同ID参照。
 
-周期起点2026-10-29 19:47:16（北京时间），截止2026-10-30 07:47:16；本报告生成时GPU墙钟估算¥3.000/20、API ¥0/20。估算包含等待和回传，不是平台精确账单。
+周期起点2026-10-29 19:47:16（北京时间），截止2026-10-30 07:47:16；本报告生成时GPU墙钟估算¥3.381/20、API ¥0/20。估算包含等待和回传，不是平台精确账单。
 
-状态：ACTIVE；当前任务`single_token_short_500_missing`；最佳`107_label_only`。不自动关机，实例继续开机会继续计费。
+状态：ACTIVE；当前任务`single_token_107_pilot`；最佳`107_label_only`。不自动关机，实例继续开机会继续计费。
 
 依据：[周期备忘](../../tasks/116_research_cycle/memo.md)、[预写粗筛规则](../../tasks/116_research_cycle/screen_rules.json)、[单token配置](../../tasks/116_research_cycle/single_token_config.json)。
