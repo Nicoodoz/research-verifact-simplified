@@ -1,0 +1,12 @@
+{
+  "candidate": "balanced_mlp",
+  "selection_epoch": 16,
+  "head_sha256": "ddd067ddb8fe137c74339cbc2b09cc93d6047f49cfb08f5fcf27fc3c311ebd42",
+  "base_adapter_sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+  "new_N": 1317,
+  "old_N": 500,
+  "total": 1817,
+  "new_training": false,
+  "new_hyperparameter_search": false,
+  "reason": "Both500 panels MCC up, netcorrect+3, falseS-2; small signal requires larger development coverage"
+}

@@ -9,9 +9,17 @@ screen_ids select from a GT-free input file; otherwise every input row is used.
 training requires epochs and learning_rate; it accepts total_steps (a ceiling),
 gradient_accumulation, head_learning_rate, betas, eps, weight_decay and
 gradient_clip.  microbatch must remain1.  Input order is preserved each epoch.
+Optional initial_validation_cache and initial_screen_cache paths reuse only
+step0 predictions.  Each JSON contains source_adapter_sha256, head_sha256 and
+records with id, class_index, verdict, valid and probabilities; validation
+records additionally contain GT.  Validation must cover the exact validation
+set; a screen cache may cover a subset of requested screen IDs.  These are
+FP32-head predictions over existing BF16 features, not inferred probabilities
+from text receipts.  Other checkpoints always receive a new forward pass.
+head_sha256 identifies the job's selected_head_npz file, before FP32 loading.
 
-The sole objective is the selected head's (possibly class-weighted) three-class
-CE.  The source107 LoRA is trainable, using a fresh AdamW, with BF16 backbone
+The objective is the selected head's (possibly class-weighted) three-class
+CE, optionally retaining that same probe's L2 regularization. The source107 LoRA is trainable, using a fresh AdamW, with BF16 backbone
 execution and its original adapter parameter precision.  The learned head and
 its fixed StandardScaler buffers remain FP32.  checkpoint107's aux_head.pt and
 has_aux_head fields are reused ONLY for serialization of this sole classifier;
@@ -89,6 +97,54 @@ def point(truth, prediction):
                     denominator if denominator else 0.0,
                 false_S=matrix[1][0] + matrix[2][0], confusion=matrix,
                 recall=[matrix[i][i]/actual[i] if actual[i] else None for i in range(3)])
+
+
+def load_initial_cache(path, source_sha, head_sha, labels, expected_ids,
+                       expected_gt=None, allow_subset=False):
+    """Validate source and row association without replaying the backbone."""
+    payload = common.read(path)
+    if (payload.get('source_adapter_sha256') != source_sha or
+            payload.get('head_sha256') != head_sha):
+        raise ValueError('Initial cache differs from the source107 adapter or FP32 head')
+    rows = payload.get('records')
+    if not isinstance(rows, list):
+        raise ValueError('Initial cache requires a records list')
+    result = {}
+    wanted = set(expected_ids)
+    for row in rows:
+        identifier = row['id']
+        if identifier in result or identifier not in wanted:
+            raise ValueError('Duplicate or unexpected initial-cache ID: ' + identifier)
+        index = row.get('class_index')
+        if type(index) is not int or not 0 <= index < len(labels):
+            raise ValueError('Initial cache requires a valid original class index')
+        if row.get('valid') is not True or row.get('verdict') != labels[index]:
+            raise ValueError('Initial-cache label/index association differs')
+        if expected_gt is not None:
+            if row.get('GT') != expected_gt[identifier]:
+                raise ValueError('Initial-validation cache GT mismatch: ' + identifier)
+        elif 'GT' in row:
+            raise ValueError('Initial screen cache must be GT-free')
+        probabilities = row.get('probabilities')
+        if probabilities is not None:
+            if (not isinstance(probabilities, dict) or set(probabilities) != set(labels) or
+                    not all(isinstance(p, (int, float)) and math.isfinite(p) and 0 <= p <= 1
+                            for p in probabilities.values()) or
+                    abs(sum(probabilities.values())-1) > 1e-4):
+                raise ValueError('Invalid initial-cache class probabilities')
+            if probabilities[labels[index]] < max(probabilities.values()):
+                raise ValueError('Initial-cache probabilities and class index differ')
+        record = dict(id=identifier, class_index=index, verdict=labels[index], valid=True,
+                      content=common.canonical({'verdict': labels[index]}),
+                      probabilities=probabilities, probabilities_calibrated=False,
+                      probability_scope='learned_three_class_head',
+                      prediction_origin='initial_feature_cache')
+        if expected_gt is not None:
+            record['GT'] = expected_gt[identifier]
+        result[identifier] = record
+    if not allow_subset and set(result) != wanted:
+        raise ValueError('Initial-validation cache must cover the exact validation IDs')
+    return result
 
 
 def run(job, job_path, out):
@@ -223,6 +279,10 @@ def run(job, job_path, out):
         class_weights = torch.tensor(weight_values, dtype=torch.float32, device='cuda')
         if not bool(torch.isfinite(class_weights).all() and (class_weights > 0).all()):
             raise ValueError('Selected class weights must be positive and finite')
+        # Preserve the probe's own L2 objective when requested; sklearn's
+        # sum-loss + ||W||²/(2C) becomes this coefficient for mean CE.
+        head_l2 = (1.0 / (float(selected['C']) * sum(counts[g] * w for g, w in zip(labels, weight_values)))
+                   if job.get('retain_probe_l2', False) else 0.0)
 
         fingerprint = dict(job=common.digest(common.canonical(job)),
                            train=common.sha(train_path), validation=common.sha(validation_path),
@@ -230,6 +290,9 @@ def run(job, job_path, out):
                            selected_head=common.sha(head_path), selection=common.sha(selection_path),
                            worker=common.sha(Path(__file__)),
                            helper=common.sha(Path(method.__file__)), class_weights=weight_values)
+        for key in ('initial_validation_cache', 'initial_screen_cache'):
+            if job.get(key):
+                fingerprint[key] = common.sha(path_at_root(job[key]))
         model_dir = path_at_root(job['model_dir'])
         if (model_dir / 'adapter_config.json').exists():
             raise ValueError('model_dir must contain the common original9B base')
@@ -300,7 +363,8 @@ def run(job, job_path, out):
             presentations=plan[-1]['consumed'], validation_steps=sorted(validation_steps),
             class_weight_policy=policy, class_weights=dict(zip(labels, weight_values)),
             class_weight_counts=dict(counts), source_LoRA_dtypes=dict(Counter(str(p.dtype) for p in lora_params)),
-            fresh_Adam=True, sole_objective='weighted_three_class_CE',
+            fresh_Adam=True, sole_objective='weighted_three_class_CE_with_same_head_L2' if head_l2 else 'weighted_three_class_CE',
+            retained_head_L2_coefficient=head_l2,
             head_FP32=True, scaler_buffers_fixed=True,
             aux_head_pt_is_only_serialization_of_the_sole_classifier=True,
             auxiliary_loss=False, language_model_loss=False, no_shutdown=True))
@@ -350,6 +414,8 @@ def run(job, job_path, out):
             with torch.autocast('cuda', dtype=torch.bfloat16):
                 loss, scores = method.classification_loss(
                     model, head, batch, [rows_by_id[identifier]['GT']], class_weights=class_weights)
+                if head_l2:
+                    loss = loss + 0.5 * head_l2 * head.linear.weight.square().sum()
             loss.backward()
             norm = torch.nn.utils.clip_grad_norm_(all_params, clip)
             torch.cuda.synchronize()
@@ -400,6 +466,18 @@ def run(job, job_path, out):
                 result = common.read(path)
                 if result['fingerprint'] != fingerprint or result['step'] != step:
                     raise ValueError('Validation cache differs from this checkpoint')
+            elif step == 0 and job.get('initial_validation_cache'):
+                cached = load_initial_cache(
+                    path_at_root(job['initial_validation_cache']), source_sha,
+                    fingerprint['selected_head'], labels, [r['id'] for r in validation],
+                    expected_gt={r['id']: r['GT'] for r in validation})
+                records = [cached[r['id']] for r in validation]
+                stats = point([labels.index(r['GT']) for r in records],
+                              [r['class_index'] for r in records])
+                result = dict(step=0, fingerprint=fingerprint, stats=stats, records=records,
+                              initial_cache_used=True, source_adapter_sha256=source_sha,
+                              head_sha256=fingerprint['selected_head'])
+                common.put(path, result)
             else:
                 records = []
                 order = sorted(validation, key=lambda r: (len(encoded[r['id']]), r['id']))
@@ -457,6 +535,8 @@ def run(job, job_path, out):
                 with torch.autocast('cuda', dtype=torch.bfloat16):
                     loss, scores = method.classification_loss(
                         model, head, batch, [rows_by_id[identifier]['GT']], class_weights=class_weights)
+                    if head_l2:
+                        loss = loss + 0.5 * head_l2 * head.linear.weight.square().sum()
                 if not bool(torch.isfinite(loss)):
                     raise FloatingPointError('Nonfinite training loss')
                 (loss / entry['divisor']).backward()
@@ -524,6 +604,22 @@ def run(job, job_path, out):
                         value['id'] != identifier):
                     raise ValueError('Existing first screen prediction belongs to another checkpoint')
                 received[identifier] = value
+        if best['step'] == 0 and job.get('initial_screen_cache'):
+            cached = load_initial_cache(
+                path_at_root(job['initial_screen_cache']), source_sha,
+                fingerprint['selected_head'], labels, screen_ids, allow_subset=True)
+            for identifier, value in cached.items():
+                if identifier in received:
+                    continue
+                record = dict(value, fingerprint=fingerprint, selected_step=0,
+                              input_tokens=len(encoded[identifier]),
+                              internal_prompt_sha256=common.digest(common.canonical(encoded[identifier])),
+                              source_prompt_sha256_104=screen_by_id[identifier].get('expected_prompt_sha256'),
+                              source_adapter_sha256=source_sha,
+                              head_sha256=fingerprint['selected_head'],
+                              no_ground_truth_in_model_input=True)
+                common.put(predictions_dir / f'{identifier}.json', record)
+                received[identifier] = record
         progress('development_screen', len(received), len(order))
         for start in range(0, len(order), batch_size):
             ids = [i for i in order[start:start+batch_size] if i not in received]
@@ -540,8 +636,11 @@ def run(job, job_path, out):
                 received[identifier] = record
             progress('development_screen', len(received), len(order))
         common.putl(out / 'screen_predictions.jsonl', [received[i] for i in screen_ids])
+        initial_screen_reused = sum(p.get('prediction_origin') == 'initial_feature_cache'
+                                    for p in received.values())
         common.put(out / 'complete.json', dict(N=len(received), valid=sum(p['valid'] for p in received.values()),
                    steps=step, consumed=consumed, selected_step=best['step'],
+                   initial_screen_reused=initial_screen_reused,
                    checkpoint=str(chosen), fingerprint=fingerprint, no_shutdown=True, epoch=time.time()))
         progress('complete', len(received), len(order), 0)
     except BaseException as error:

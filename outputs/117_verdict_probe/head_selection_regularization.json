@@ -1,0 +1,1386 @@
+{
+  "task": 117,
+  "primary": "verdict_prefix",
+  "selection_uses_screen": false,
+  "selection_rule": "validation MCC, then PA, then fewer false-S; fixed-order tie",
+  "representations": {
+    "verdict_prefix": {
+      "selected_config_index": 0,
+      "C": 0.0001,
+      "class_weight": null,
+      "training_metrics": {
+        "percent_agreement": 0.837890625,
+        "gwet_ac1": 0.8016151795011844,
+        "mcc": 0.5696005087084178,
+        "n": 1024,
+        "labels": [
+          "Supported",
+          "Not Supported",
+          "Not Addressed"
+        ],
+        "confusion_matrix": [
+          [
+            738,
+            12,
+            18
+          ],
+          [
+            60,
+            36,
+            32
+          ],
+          [
+            33,
+            11,
+            84
+          ]
+        ],
+        "per_class": {
+          "Supported": {
+            "support": 768,
+            "predicted": 831,
+            "tp": 738,
+            "fn": 30,
+            "fp": 93,
+            "tn": 163,
+            "recall": 0.9609375,
+            "precision": 0.8880866425992779,
+            "specificity": 0.63671875,
+            "npv": 0.844559585492228,
+            "f1": 0.9230769230769231
+          },
+          "Not Supported": {
+            "support": 128,
+            "predicted": 59,
+            "tp": 36,
+            "fn": 92,
+            "fp": 23,
+            "tn": 873,
+            "recall": 0.28125,
+            "precision": 0.6101694915254238,
+            "specificity": 0.9743303571428571,
+            "npv": 0.9046632124352332,
+            "f1": 0.3850267379679144
+          },
+          "Not Addressed": {
+            "support": 128,
+            "predicted": 134,
+            "tp": 84,
+            "fn": 44,
+            "fp": 50,
+            "tn": 846,
+            "recall": 0.65625,
+            "precision": 0.6268656716417911,
+            "specificity": 0.9441964285714286,
+            "npv": 0.950561797752809,
+            "f1": 0.6412213740458015
+          }
+        },
+        "mcc_denominator_zero": false,
+        "percent_agreement_full_cohort_bounds": [
+          0.837890625,
+          0.837890625
+        ],
+        "coverage": {
+          "expected_n": 1024,
+          "evaluated_n": 1024,
+          "missing_n": 0,
+          "coverage": 1.0,
+          "missing_ids": [],
+          "missing_policy": "error",
+          "expected_cohort_sha256": "27285a4842acdbb9866728b8d3e775744e1253032e97faca0f1913fb3bcff715",
+          "evaluated_cohort_sha256": "27285a4842acdbb9866728b8d3e775744e1253032e97faca0f1913fb3bcff715",
+          "expected_patients": 32,
+          "evaluated_patients": 32
+        },
+        "profile": "none",
+        "bootstrap_iterations": 0,
+        "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+        "confidence_level": 0.95,
+        "weighting": "micro (each proposition equal)",
+        "label_space": "nominal fixed 3 categories",
+        "correct": 858,
+        "false_S": 93,
+        "non_S": 256,
+        "false_S_rate": 0.36328125,
+        "predicted_S": 831,
+        "predicted_S_FDR": 0.11191335740072202,
+        "macro_F1": 0.6497750116968797
+      },
+      "validation_metrics": {
+        "percent_agreement": 0.8493150684931506,
+        "gwet_ac1": 0.8070709807004909,
+        "mcc": 0.6569621594781481,
+        "n": 730,
+        "labels": [
+          "Supported",
+          "Not Supported",
+          "Not Addressed"
+        ],
+        "confusion_matrix": [
+          [
+            477,
+            11,
+            26
+          ],
+          [
+            20,
+            18,
+            16
+          ],
+          [
+            29,
+            8,
+            125
+          ]
+        ],
+        "per_class": {
+          "Supported": {
+            "support": 514,
+            "predicted": 526,
+            "tp": 477,
+            "fn": 37,
+            "fp": 49,
+            "tn": 167,
+            "recall": 0.9280155642023347,
+            "precision": 0.9068441064638784,
+            "specificity": 0.7731481481481481,
+            "npv": 0.8186274509803921,
+            "f1": 0.9173076923076923
+          },
+          "Not Supported": {
+            "support": 54,
+            "predicted": 37,
+            "tp": 18,
+            "fn": 36,
+            "fp": 19,
+            "tn": 657,
+            "recall": 0.3333333333333333,
+            "precision": 0.4864864864864865,
+            "specificity": 0.9718934911242604,
+            "npv": 0.948051948051948,
+            "f1": 0.3956043956043956
+          },
+          "Not Addressed": {
+            "support": 162,
+            "predicted": 167,
+            "tp": 125,
+            "fn": 37,
+            "fp": 42,
+            "tn": 526,
+            "recall": 0.7716049382716049,
+            "precision": 0.7485029940119761,
+            "specificity": 0.926056338028169,
+            "npv": 0.9342806394316163,
+            "f1": 0.7598784194528876
+          }
+        },
+        "mcc_denominator_zero": false,
+        "percent_agreement_full_cohort_bounds": [
+          0.8493150684931506,
+          0.8493150684931506
+        ],
+        "coverage": {
+          "expected_n": 730,
+          "evaluated_n": 730,
+          "missing_n": 0,
+          "coverage": 1.0,
+          "missing_ids": [],
+          "missing_policy": "error",
+          "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+          "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+          "expected_patients": 8,
+          "evaluated_patients": 8
+        },
+        "profile": "none",
+        "bootstrap_iterations": 0,
+        "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+        "confidence_level": 0.95,
+        "weighting": "micro (each proposition equal)",
+        "label_space": "nominal fixed 3 categories",
+        "correct": 620,
+        "false_S": 49,
+        "non_S": 216,
+        "false_S_rate": 0.22685185185185186,
+        "predicted_S": 526,
+        "predicted_S_FDR": 0.09315589353612168,
+        "macro_F1": 0.6909301691216584
+      },
+      "configurations": [
+        {
+          "index": 0,
+          "C": 0.0001,
+          "class_weight": null,
+          "convergence": {
+            "attempts": [
+              {
+                "max_iter": 1000,
+                "iterations": [
+                  75
+                ],
+                "converged": true
+              }
+            ],
+            "converged": true
+          },
+          "validation_metrics": {
+            "percent_agreement": 0.8493150684931506,
+            "gwet_ac1": 0.8070709807004909,
+            "mcc": 0.6569621594781481,
+            "n": 730,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                477,
+                11,
+                26
+              ],
+              [
+                20,
+                18,
+                16
+              ],
+              [
+                29,
+                8,
+                125
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 514,
+                "predicted": 526,
+                "tp": 477,
+                "fn": 37,
+                "fp": 49,
+                "tn": 167,
+                "recall": 0.9280155642023347,
+                "precision": 0.9068441064638784,
+                "specificity": 0.7731481481481481,
+                "npv": 0.8186274509803921,
+                "f1": 0.9173076923076923
+              },
+              "Not Supported": {
+                "support": 54,
+                "predicted": 37,
+                "tp": 18,
+                "fn": 36,
+                "fp": 19,
+                "tn": 657,
+                "recall": 0.3333333333333333,
+                "precision": 0.4864864864864865,
+                "specificity": 0.9718934911242604,
+                "npv": 0.948051948051948,
+                "f1": 0.3956043956043956
+              },
+              "Not Addressed": {
+                "support": 162,
+                "predicted": 167,
+                "tp": 125,
+                "fn": 37,
+                "fp": 42,
+                "tn": 526,
+                "recall": 0.7716049382716049,
+                "precision": 0.7485029940119761,
+                "specificity": 0.926056338028169,
+                "npv": 0.9342806394316163,
+                "f1": 0.7598784194528876
+              }
+            },
+            "mcc_denominator_zero": false,
+            "percent_agreement_full_cohort_bounds": [
+              0.8493150684931506,
+              0.8493150684931506
+            ],
+            "coverage": {
+              "expected_n": 730,
+              "evaluated_n": 730,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "expected_patients": 8,
+              "evaluated_patients": 8
+            },
+            "profile": "none",
+            "bootstrap_iterations": 0,
+            "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+            "confidence_level": 0.95,
+            "weighting": "micro (each proposition equal)",
+            "label_space": "nominal fixed 3 categories",
+            "correct": 620,
+            "false_S": 49,
+            "non_S": 216,
+            "false_S_rate": 0.22685185185185186,
+            "predicted_S": 526,
+            "predicted_S_FDR": 0.09315589353612168,
+            "macro_F1": 0.6909301691216584
+          }
+        },
+        {
+          "index": 1,
+          "C": 0.0001,
+          "class_weight": "balanced",
+          "convergence": {
+            "attempts": [
+              {
+                "max_iter": 1000,
+                "iterations": [
+                  76
+                ],
+                "converged": true
+              }
+            ],
+            "converged": true
+          },
+          "validation_metrics": {
+            "percent_agreement": 0.7616438356164383,
+            "gwet_ac1": 0.6760154646373634,
+            "mcc": 0.580996696825485,
+            "n": 730,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                394,
+                81,
+                39
+              ],
+              [
+                7,
+                28,
+                19
+              ],
+              [
+                4,
+                24,
+                134
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 514,
+                "predicted": 405,
+                "tp": 394,
+                "fn": 120,
+                "fp": 11,
+                "tn": 205,
+                "recall": 0.7665369649805448,
+                "precision": 0.9728395061728395,
+                "specificity": 0.9490740740740741,
+                "npv": 0.6307692307692307,
+                "f1": 0.8574537540805223
+              },
+              "Not Supported": {
+                "support": 54,
+                "predicted": 133,
+                "tp": 28,
+                "fn": 26,
+                "fp": 105,
+                "tn": 571,
+                "recall": 0.5185185185185185,
+                "precision": 0.21052631578947367,
+                "specificity": 0.8446745562130178,
+                "npv": 0.9564489112227805,
+                "f1": 0.2994652406417112
+              },
+              "Not Addressed": {
+                "support": 162,
+                "predicted": 192,
+                "tp": 134,
+                "fn": 28,
+                "fp": 58,
+                "tn": 510,
+                "recall": 0.8271604938271605,
+                "precision": 0.6979166666666666,
+                "specificity": 0.897887323943662,
+                "npv": 0.9479553903345725,
+                "f1": 0.7570621468926554
+              }
+            },
+            "mcc_denominator_zero": false,
+            "percent_agreement_full_cohort_bounds": [
+              0.7616438356164383,
+              0.7616438356164383
+            ],
+            "coverage": {
+              "expected_n": 730,
+              "evaluated_n": 730,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "expected_patients": 8,
+              "evaluated_patients": 8
+            },
+            "profile": "none",
+            "bootstrap_iterations": 0,
+            "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+            "confidence_level": 0.95,
+            "weighting": "micro (each proposition equal)",
+            "label_space": "nominal fixed 3 categories",
+            "correct": 556,
+            "false_S": 11,
+            "non_S": 216,
+            "false_S_rate": 0.05092592592592592,
+            "predicted_S": 405,
+            "predicted_S_FDR": 0.027160493827160494,
+            "macro_F1": 0.6379937138716296
+          }
+        },
+        {
+          "index": 2,
+          "C": 0.001,
+          "class_weight": null,
+          "convergence": {
+            "attempts": [
+              {
+                "max_iter": 1000,
+                "iterations": [
+                  309
+                ],
+                "converged": true
+              }
+            ],
+            "converged": true
+          },
+          "validation_metrics": {
+            "percent_agreement": 0.8356164383561644,
+            "gwet_ac1": 0.7871994130979247,
+            "mcc": 0.6389761371635839,
+            "n": 730,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                468,
+                22,
+                24
+              ],
+              [
+                18,
+                21,
+                15
+              ],
+              [
+                22,
+                19,
+                121
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 514,
+                "predicted": 508,
+                "tp": 468,
+                "fn": 46,
+                "fp": 40,
+                "tn": 176,
+                "recall": 0.9105058365758755,
+                "precision": 0.9212598425196851,
+                "specificity": 0.8148148148148148,
+                "npv": 0.7927927927927928,
+                "f1": 0.9158512720156555
+              },
+              "Not Supported": {
+                "support": 54,
+                "predicted": 62,
+                "tp": 21,
+                "fn": 33,
+                "fp": 41,
+                "tn": 635,
+                "recall": 0.3888888888888889,
+                "precision": 0.3387096774193548,
+                "specificity": 0.9393491124260355,
+                "npv": 0.9505988023952096,
+                "f1": 0.3620689655172414
+              },
+              "Not Addressed": {
+                "support": 162,
+                "predicted": 160,
+                "tp": 121,
+                "fn": 41,
+                "fp": 39,
+                "tn": 529,
+                "recall": 0.7469135802469136,
+                "precision": 0.75625,
+                "specificity": 0.9313380281690141,
+                "npv": 0.9280701754385965,
+                "f1": 0.7515527950310559
+              }
+            },
+            "mcc_denominator_zero": false,
+            "percent_agreement_full_cohort_bounds": [
+              0.8356164383561644,
+              0.8356164383561644
+            ],
+            "coverage": {
+              "expected_n": 730,
+              "evaluated_n": 730,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "expected_patients": 8,
+              "evaluated_patients": 8
+            },
+            "profile": "none",
+            "bootstrap_iterations": 0,
+            "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+            "confidence_level": 0.95,
+            "weighting": "micro (each proposition equal)",
+            "label_space": "nominal fixed 3 categories",
+            "correct": 610,
+            "false_S": 40,
+            "non_S": 216,
+            "false_S_rate": 0.18518518518518517,
+            "predicted_S": 508,
+            "predicted_S_FDR": 0.07874015748031496,
+            "macro_F1": 0.6764910108546509
+          }
+        },
+        {
+          "index": 3,
+          "C": 0.001,
+          "class_weight": "balanced",
+          "convergence": {
+            "attempts": [
+              {
+                "max_iter": 1000,
+                "iterations": [
+                  248
+                ],
+                "converged": true
+              }
+            ],
+            "converged": true
+          },
+          "validation_metrics": {
+            "percent_agreement": 0.7465753424657534,
+            "gwet_ac1": 0.6550365493948452,
+            "mcc": 0.5556409234915917,
+            "n": 730,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                390,
+                82,
+                42
+              ],
+              [
+                8,
+                28,
+                18
+              ],
+              [
+                5,
+                30,
+                127
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 514,
+                "predicted": 403,
+                "tp": 390,
+                "fn": 124,
+                "fp": 13,
+                "tn": 203,
+                "recall": 0.7587548638132295,
+                "precision": 0.967741935483871,
+                "specificity": 0.9398148148148148,
+                "npv": 0.6207951070336392,
+                "f1": 0.8505997818974919
+              },
+              "Not Supported": {
+                "support": 54,
+                "predicted": 140,
+                "tp": 28,
+                "fn": 26,
+                "fp": 112,
+                "tn": 564,
+                "recall": 0.5185185185185185,
+                "precision": 0.2,
+                "specificity": 0.834319526627219,
+                "npv": 0.9559322033898305,
+                "f1": 0.28865979381443296
+              },
+              "Not Addressed": {
+                "support": 162,
+                "predicted": 187,
+                "tp": 127,
+                "fn": 35,
+                "fp": 60,
+                "tn": 508,
+                "recall": 0.7839506172839507,
+                "precision": 0.679144385026738,
+                "specificity": 0.8943661971830986,
+                "npv": 0.9355432780847146,
+                "f1": 0.7277936962750716
+              }
+            },
+            "mcc_denominator_zero": false,
+            "percent_agreement_full_cohort_bounds": [
+              0.7465753424657534,
+              0.7465753424657534
+            ],
+            "coverage": {
+              "expected_n": 730,
+              "evaluated_n": 730,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "expected_patients": 8,
+              "evaluated_patients": 8
+            },
+            "profile": "none",
+            "bootstrap_iterations": 0,
+            "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+            "confidence_level": 0.95,
+            "weighting": "micro (each proposition equal)",
+            "label_space": "nominal fixed 3 categories",
+            "correct": 545,
+            "false_S": 13,
+            "non_S": 216,
+            "false_S_rate": 0.06018518518518518,
+            "predicted_S": 403,
+            "predicted_S_FDR": 0.03225806451612903,
+            "macro_F1": 0.6223510906623321
+          }
+        }
+      ],
+      "head_file": "verdict_prefix_head.npz"
+    },
+    "prompt_end": {
+      "selected_config_index": 0,
+      "C": 0.0001,
+      "class_weight": null,
+      "training_metrics": {
+        "percent_agreement": 0.8544921875,
+        "gwet_ac1": 0.8211064827150365,
+        "mcc": 0.6182614366074328,
+        "n": 1024,
+        "labels": [
+          "Supported",
+          "Not Supported",
+          "Not Addressed"
+        ],
+        "confusion_matrix": [
+          [
+            738,
+            15,
+            15
+          ],
+          [
+            53,
+            50,
+            25
+          ],
+          [
+            29,
+            12,
+            87
+          ]
+        ],
+        "per_class": {
+          "Supported": {
+            "support": 768,
+            "predicted": 820,
+            "tp": 738,
+            "fn": 30,
+            "fp": 82,
+            "tn": 174,
+            "recall": 0.9609375,
+            "precision": 0.9,
+            "specificity": 0.6796875,
+            "npv": 0.8529411764705882,
+            "f1": 0.929471032745592
+          },
+          "Not Supported": {
+            "support": 128,
+            "predicted": 77,
+            "tp": 50,
+            "fn": 78,
+            "fp": 27,
+            "tn": 869,
+            "recall": 0.390625,
+            "precision": 0.6493506493506493,
+            "specificity": 0.9698660714285714,
+            "npv": 0.9176346356916578,
+            "f1": 0.4878048780487805
+          },
+          "Not Addressed": {
+            "support": 128,
+            "predicted": 127,
+            "tp": 87,
+            "fn": 41,
+            "fp": 40,
+            "tn": 856,
+            "recall": 0.6796875,
+            "precision": 0.6850393700787402,
+            "specificity": 0.9553571428571429,
+            "npv": 0.9542920847268673,
+            "f1": 0.6823529411764706
+          }
+        },
+        "mcc_denominator_zero": false,
+        "percent_agreement_full_cohort_bounds": [
+          0.8544921875,
+          0.8544921875
+        ],
+        "coverage": {
+          "expected_n": 1024,
+          "evaluated_n": 1024,
+          "missing_n": 0,
+          "coverage": 1.0,
+          "missing_ids": [],
+          "missing_policy": "error",
+          "expected_cohort_sha256": "27285a4842acdbb9866728b8d3e775744e1253032e97faca0f1913fb3bcff715",
+          "evaluated_cohort_sha256": "27285a4842acdbb9866728b8d3e775744e1253032e97faca0f1913fb3bcff715",
+          "expected_patients": 32,
+          "evaluated_patients": 32
+        },
+        "profile": "none",
+        "bootstrap_iterations": 0,
+        "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+        "confidence_level": 0.95,
+        "weighting": "micro (each proposition equal)",
+        "label_space": "nominal fixed 3 categories",
+        "correct": 875,
+        "false_S": 82,
+        "non_S": 256,
+        "false_S_rate": 0.3203125,
+        "predicted_S": 820,
+        "predicted_S_FDR": 0.1,
+        "macro_F1": 0.6998762839902811
+      },
+      "validation_metrics": {
+        "percent_agreement": 0.8315068493150685,
+        "gwet_ac1": 0.7828719351880344,
+        "mcc": 0.6238993501093985,
+        "n": 730,
+        "labels": [
+          "Supported",
+          "Not Supported",
+          "Not Addressed"
+        ],
+        "confusion_matrix": [
+          [
+            469,
+            18,
+            27
+          ],
+          [
+            22,
+            18,
+            14
+          ],
+          [
+            25,
+            17,
+            120
+          ]
+        ],
+        "per_class": {
+          "Supported": {
+            "support": 514,
+            "predicted": 516,
+            "tp": 469,
+            "fn": 45,
+            "fp": 47,
+            "tn": 169,
+            "recall": 0.9124513618677043,
+            "precision": 0.9089147286821705,
+            "specificity": 0.7824074074074074,
+            "npv": 0.7897196261682243,
+            "f1": 0.9106796116504854
+          },
+          "Not Supported": {
+            "support": 54,
+            "predicted": 53,
+            "tp": 18,
+            "fn": 36,
+            "fp": 35,
+            "tn": 641,
+            "recall": 0.3333333333333333,
+            "precision": 0.33962264150943394,
+            "specificity": 0.9482248520710059,
+            "npv": 0.946824224519941,
+            "f1": 0.3364485981308411
+          },
+          "Not Addressed": {
+            "support": 162,
+            "predicted": 161,
+            "tp": 120,
+            "fn": 42,
+            "fp": 41,
+            "tn": 527,
+            "recall": 0.7407407407407407,
+            "precision": 0.7453416149068323,
+            "specificity": 0.9278169014084507,
+            "npv": 0.9261862917398945,
+            "f1": 0.7430340557275542
+          }
+        },
+        "mcc_denominator_zero": false,
+        "percent_agreement_full_cohort_bounds": [
+          0.8315068493150685,
+          0.8315068493150685
+        ],
+        "coverage": {
+          "expected_n": 730,
+          "evaluated_n": 730,
+          "missing_n": 0,
+          "coverage": 1.0,
+          "missing_ids": [],
+          "missing_policy": "error",
+          "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+          "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+          "expected_patients": 8,
+          "evaluated_patients": 8
+        },
+        "profile": "none",
+        "bootstrap_iterations": 0,
+        "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+        "confidence_level": 0.95,
+        "weighting": "micro (each proposition equal)",
+        "label_space": "nominal fixed 3 categories",
+        "correct": 607,
+        "false_S": 47,
+        "non_S": 216,
+        "false_S_rate": 0.2175925925925926,
+        "predicted_S": 516,
+        "predicted_S_FDR": 0.09108527131782945,
+        "macro_F1": 0.6633874218362936
+      },
+      "configurations": [
+        {
+          "index": 0,
+          "C": 0.0001,
+          "class_weight": null,
+          "convergence": {
+            "attempts": [
+              {
+                "max_iter": 1000,
+                "iterations": [
+                  66
+                ],
+                "converged": true
+              }
+            ],
+            "converged": true
+          },
+          "validation_metrics": {
+            "percent_agreement": 0.8315068493150685,
+            "gwet_ac1": 0.7828719351880344,
+            "mcc": 0.6238993501093985,
+            "n": 730,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                469,
+                18,
+                27
+              ],
+              [
+                22,
+                18,
+                14
+              ],
+              [
+                25,
+                17,
+                120
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 514,
+                "predicted": 516,
+                "tp": 469,
+                "fn": 45,
+                "fp": 47,
+                "tn": 169,
+                "recall": 0.9124513618677043,
+                "precision": 0.9089147286821705,
+                "specificity": 0.7824074074074074,
+                "npv": 0.7897196261682243,
+                "f1": 0.9106796116504854
+              },
+              "Not Supported": {
+                "support": 54,
+                "predicted": 53,
+                "tp": 18,
+                "fn": 36,
+                "fp": 35,
+                "tn": 641,
+                "recall": 0.3333333333333333,
+                "precision": 0.33962264150943394,
+                "specificity": 0.9482248520710059,
+                "npv": 0.946824224519941,
+                "f1": 0.3364485981308411
+              },
+              "Not Addressed": {
+                "support": 162,
+                "predicted": 161,
+                "tp": 120,
+                "fn": 42,
+                "fp": 41,
+                "tn": 527,
+                "recall": 0.7407407407407407,
+                "precision": 0.7453416149068323,
+                "specificity": 0.9278169014084507,
+                "npv": 0.9261862917398945,
+                "f1": 0.7430340557275542
+              }
+            },
+            "mcc_denominator_zero": false,
+            "percent_agreement_full_cohort_bounds": [
+              0.8315068493150685,
+              0.8315068493150685
+            ],
+            "coverage": {
+              "expected_n": 730,
+              "evaluated_n": 730,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "expected_patients": 8,
+              "evaluated_patients": 8
+            },
+            "profile": "none",
+            "bootstrap_iterations": 0,
+            "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+            "confidence_level": 0.95,
+            "weighting": "micro (each proposition equal)",
+            "label_space": "nominal fixed 3 categories",
+            "correct": 607,
+            "false_S": 47,
+            "non_S": 216,
+            "false_S_rate": 0.2175925925925926,
+            "predicted_S": 516,
+            "predicted_S_FDR": 0.09108527131782945,
+            "macro_F1": 0.6633874218362936
+          }
+        },
+        {
+          "index": 1,
+          "C": 0.0001,
+          "class_weight": "balanced",
+          "convergence": {
+            "attempts": [
+              {
+                "max_iter": 1000,
+                "iterations": [
+                  62
+                ],
+                "converged": true
+              }
+            ],
+            "converged": true
+          },
+          "validation_metrics": {
+            "percent_agreement": 0.7780821917808219,
+            "gwet_ac1": 0.7012110351814784,
+            "mcc": 0.5906218340653592,
+            "n": 730,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                409,
+                66,
+                39
+              ],
+              [
+                11,
+                29,
+                14
+              ],
+              [
+                7,
+                25,
+                130
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 514,
+                "predicted": 427,
+                "tp": 409,
+                "fn": 105,
+                "fp": 18,
+                "tn": 198,
+                "recall": 0.7957198443579766,
+                "precision": 0.9578454332552693,
+                "specificity": 0.9166666666666666,
+                "npv": 0.6534653465346535,
+                "f1": 0.869287991498406
+              },
+              "Not Supported": {
+                "support": 54,
+                "predicted": 120,
+                "tp": 29,
+                "fn": 25,
+                "fp": 91,
+                "tn": 585,
+                "recall": 0.5370370370370371,
+                "precision": 0.24166666666666667,
+                "specificity": 0.8653846153846154,
+                "npv": 0.9590163934426229,
+                "f1": 0.3333333333333333
+              },
+              "Not Addressed": {
+                "support": 162,
+                "predicted": 183,
+                "tp": 130,
+                "fn": 32,
+                "fp": 53,
+                "tn": 515,
+                "recall": 0.8024691358024691,
+                "precision": 0.7103825136612022,
+                "specificity": 0.9066901408450704,
+                "npv": 0.9414990859232175,
+                "f1": 0.7536231884057971
+              }
+            },
+            "mcc_denominator_zero": false,
+            "percent_agreement_full_cohort_bounds": [
+              0.7780821917808219,
+              0.7780821917808219
+            ],
+            "coverage": {
+              "expected_n": 730,
+              "evaluated_n": 730,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "expected_patients": 8,
+              "evaluated_patients": 8
+            },
+            "profile": "none",
+            "bootstrap_iterations": 0,
+            "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+            "confidence_level": 0.95,
+            "weighting": "micro (each proposition equal)",
+            "label_space": "nominal fixed 3 categories",
+            "correct": 568,
+            "false_S": 18,
+            "non_S": 216,
+            "false_S_rate": 0.08333333333333333,
+            "predicted_S": 427,
+            "predicted_S_FDR": 0.04215456674473068,
+            "macro_F1": 0.6520815044125121
+          }
+        },
+        {
+          "index": 2,
+          "C": 0.001,
+          "class_weight": null,
+          "convergence": {
+            "attempts": [
+              {
+                "max_iter": 1000,
+                "iterations": [
+                  178
+                ],
+                "converged": true
+              }
+            ],
+            "converged": true
+          },
+          "validation_metrics": {
+            "percent_agreement": 0.815068493150685,
+            "gwet_ac1": 0.7594923348096103,
+            "mcc": 0.6007745016051579,
+            "n": 730,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                453,
+                25,
+                36
+              ],
+              [
+                21,
+                20,
+                13
+              ],
+              [
+                23,
+                17,
+                122
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 514,
+                "predicted": 497,
+                "tp": 453,
+                "fn": 61,
+                "fp": 44,
+                "tn": 172,
+                "recall": 0.8813229571984436,
+                "precision": 0.9114688128772636,
+                "specificity": 0.7962962962962963,
+                "npv": 0.7381974248927039,
+                "f1": 0.8961424332344213
+              },
+              "Not Supported": {
+                "support": 54,
+                "predicted": 62,
+                "tp": 20,
+                "fn": 34,
+                "fp": 42,
+                "tn": 634,
+                "recall": 0.37037037037037035,
+                "precision": 0.3225806451612903,
+                "specificity": 0.9378698224852071,
+                "npv": 0.9491017964071856,
+                "f1": 0.3448275862068966
+              },
+              "Not Addressed": {
+                "support": 162,
+                "predicted": 171,
+                "tp": 122,
+                "fn": 40,
+                "fp": 49,
+                "tn": 519,
+                "recall": 0.7530864197530864,
+                "precision": 0.7134502923976608,
+                "specificity": 0.9137323943661971,
+                "npv": 0.9284436493738819,
+                "f1": 0.7327327327327328
+              }
+            },
+            "mcc_denominator_zero": false,
+            "percent_agreement_full_cohort_bounds": [
+              0.815068493150685,
+              0.815068493150685
+            ],
+            "coverage": {
+              "expected_n": 730,
+              "evaluated_n": 730,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "expected_patients": 8,
+              "evaluated_patients": 8
+            },
+            "profile": "none",
+            "bootstrap_iterations": 0,
+            "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+            "confidence_level": 0.95,
+            "weighting": "micro (each proposition equal)",
+            "label_space": "nominal fixed 3 categories",
+            "correct": 595,
+            "false_S": 44,
+            "non_S": 216,
+            "false_S_rate": 0.2037037037037037,
+            "predicted_S": 497,
+            "predicted_S_FDR": 0.08853118712273642,
+            "macro_F1": 0.6579009173913501
+          }
+        },
+        {
+          "index": 3,
+          "C": 0.001,
+          "class_weight": "balanced",
+          "convergence": {
+            "attempts": [
+              {
+                "max_iter": 1000,
+                "iterations": [
+                  121
+                ],
+                "converged": true
+              }
+            ],
+            "converged": true
+          },
+          "validation_metrics": {
+            "percent_agreement": 0.7753424657534247,
+            "gwet_ac1": 0.698350147650195,
+            "mcc": 0.5790724861646798,
+            "n": 730,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                412,
+                51,
+                51
+              ],
+              [
+                11,
+                27,
+                16
+              ],
+              [
+                7,
+                28,
+                127
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 514,
+                "predicted": 430,
+                "tp": 412,
+                "fn": 102,
+                "fp": 18,
+                "tn": 198,
+                "recall": 0.8015564202334631,
+                "precision": 0.958139534883721,
+                "specificity": 0.9166666666666666,
+                "npv": 0.66,
+                "f1": 0.8728813559322034
+              },
+              "Not Supported": {
+                "support": 54,
+                "predicted": 106,
+                "tp": 27,
+                "fn": 27,
+                "fp": 79,
+                "tn": 597,
+                "recall": 0.5,
+                "precision": 0.25471698113207547,
+                "specificity": 0.8831360946745562,
+                "npv": 0.9567307692307693,
+                "f1": 0.3375
+              },
+              "Not Addressed": {
+                "support": 162,
+                "predicted": 194,
+                "tp": 127,
+                "fn": 35,
+                "fp": 67,
+                "tn": 501,
+                "recall": 0.7839506172839507,
+                "precision": 0.654639175257732,
+                "specificity": 0.8820422535211268,
+                "npv": 0.9347014925373134,
+                "f1": 0.7134831460674157
+              }
+            },
+            "mcc_denominator_zero": false,
+            "percent_agreement_full_cohort_bounds": [
+              0.7753424657534247,
+              0.7753424657534247
+            ],
+            "coverage": {
+              "expected_n": 730,
+              "evaluated_n": 730,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+              "expected_patients": 8,
+              "evaluated_patients": 8
+            },
+            "profile": "none",
+            "bootstrap_iterations": 0,
+            "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+            "confidence_level": 0.95,
+            "weighting": "micro (each proposition equal)",
+            "label_space": "nominal fixed 3 categories",
+            "correct": 566,
+            "false_S": 18,
+            "non_S": 216,
+            "false_S_rate": 0.08333333333333333,
+            "predicted_S": 430,
+            "predicted_S_FDR": 0.04186046511627907,
+            "macro_F1": 0.6412881673332064
+          }
+        }
+      ],
+      "head_file": "prompt_end_head.npz"
+    }
+  },
+  "feature_info": {
+    "batch_files": 479,
+    "requested_N": 1914,
+    "unused_feature_IDs": 0,
+    "dimensions": {
+      "verdict_prefix": 4096,
+      "prompt_end": 4096
+    }
+  },
+  "split": {
+    "train": {
+      "N": 1024,
+      "patients": 32,
+      "GT": {
+        "Supported": 768,
+        "Not Addressed": 128,
+        "Not Supported": 128
+      }
+    },
+    "validation": {
+      "N": 730,
+      "patients": 8,
+      "GT": {
+        "Not Addressed": 162,
+        "Supported": 514,
+        "Not Supported": 54
+      }
+    },
+    "screen": {
+      "N": 160,
+      "patients": 20,
+      "GT": {
+        "Supported": 103,
+        "Not Addressed": 33,
+        "Not Supported": 24
+      }
+    }
+  }
+}

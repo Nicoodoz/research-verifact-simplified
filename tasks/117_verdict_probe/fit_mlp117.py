@@ -65,7 +65,8 @@ def validation_key(value):
 
 def load_head(path: str | Path):
     saved = torch.load(path, map_location='cpu', weights_only=True)
-    if tuple(saved['labels']) != tuple(LABELS) or saved['config'] != CONFIG:
+    if (tuple(saved['labels']) != tuple(LABELS) or
+            any(saved['config'].get(k) != CONFIG[k] for k in ('feature','hidden','activation','dropout'))):
         raise ValueError('Saved MLP has a different label order or fixed configuration')
     state = saved['state_dict']
     model = MLPHead(state['mean'].numpy(), state['scale'].numpy())
@@ -104,6 +105,10 @@ def fit_mlp(features_dir: Path, metadata: Path, out: Path, threads: int = 4):
                        for role, ids in index.items()}
             train_y = torch.tensor([LABELS.index(row['GT']) for row in split_rows['train']],
                                    dtype=torch.long)
+            class_weights = None
+            if CONFIG.get('class_weight') == 'balanced':
+                counts = torch.bincount(train_y, minlength=3).float()
+                class_weights = len(train_y) / (3 * counts)
             best = None
             best_state = None
             patience = 0
@@ -113,7 +118,8 @@ def fit_mlp(features_dir: Path, metadata: Path, out: Path, threads: int = 4):
                 total_loss = 0.
                 for indices in torch.randperm(len(train_y), generator=order_rng).split(CONFIG['batch_size']):
                     optimizer.zero_grad(set_to_none=True)
-                    loss = F.cross_entropy(model(tensors['train'][indices]), train_y[indices])
+                    loss = F.cross_entropy(model(tensors['train'][indices]), train_y[indices],
+                                           weight=class_weights, reduction='none').mean()
                     if not bool(torch.isfinite(loss)):
                         raise FloatingPointError('Nonfinite MLP training loss')
                     loss.backward()
@@ -138,7 +144,7 @@ def fit_mlp(features_dir: Path, metadata: Path, out: Path, threads: int = 4):
                 raise AssertionError('No validation-selected model state')
             model.load_state_dict(best_state, strict=True)
             model.eval()
-            selection = dict(task=117, candidate='verdict_mlp', config=CONFIG,
+            selection = dict(task=117, candidate='balanced_mlp' if CONFIG.get('class_weight')=='balanced' else 'verdict_mlp', config=CONFIG,
                              feature_info=feature_info, selected_epoch=best['epoch'],
                              completed_epochs=len(curves), validation_metrics=best['validation_metrics'],
                              selection_uses_screen=False,
@@ -234,8 +240,11 @@ def main():
     parser.add_argument('--metadata', type=Path)
     parser.add_argument('--out', type=Path)
     parser.add_argument('--threads', type=int, default=4)
+    parser.add_argument('--balanced', action='store_true')
     parser.add_argument('--self-test', action='store_true')
     args = parser.parse_args()
+    if args.balanced:
+        CONFIG.update(class_weight='balanced', loss='class-balanced three-class CE, ordinary sample mean')
     if args.self_test:
         print(json.dumps(self_test(), ensure_ascii=False))
         return

@@ -1,0 +1,146 @@
+{
+  "task": 117,
+  "candidate": "balanced_mlp",
+  "config": {
+    "feature": "verdict_prefix",
+    "hidden": 128,
+    "activation": "ReLU",
+    "dropout": 0.1,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "batch_size": 64,
+    "max_epochs": 40,
+    "early_stopping_patience": 8,
+    "seed": 117,
+    "loss": "class-balanced three-class CE, ordinary sample mean",
+    "epoch_selection": "validation MCC, then PA, then fewer false-S; earliest tie",
+    "class_weight": "balanced"
+  },
+  "feature_info": {
+    "batch_files": 479,
+    "requested_N": 1914,
+    "unused_feature_IDs": 0,
+    "dimensions": {
+      "verdict_prefix": 4096,
+      "prompt_end": 4096
+    }
+  },
+  "selected_epoch": 16,
+  "completed_epochs": 24,
+  "validation_metrics": {
+    "percent_agreement": 0.7863013698630137,
+    "gwet_ac1": 0.712897671264304,
+    "mcc": 0.6037197627870796,
+    "n": 730,
+    "labels": [
+      "Supported",
+      "Not Supported",
+      "Not Addressed"
+    ],
+    "confusion_matrix": [
+      [
+        408,
+        57,
+        49
+      ],
+      [
+        9,
+        24,
+        21
+      ],
+      [
+        7,
+        13,
+        142
+      ]
+    ],
+    "per_class": {
+      "Supported": {
+        "support": 514,
+        "predicted": 424,
+        "tp": 408,
+        "fn": 106,
+        "fp": 16,
+        "tn": 200,
+        "recall": 0.7937743190661478,
+        "precision": 0.9622641509433962,
+        "specificity": 0.9259259259259259,
+        "npv": 0.6535947712418301,
+        "f1": 0.8699360341151386
+      },
+      "Not Supported": {
+        "support": 54,
+        "predicted": 94,
+        "tp": 24,
+        "fn": 30,
+        "fp": 70,
+        "tn": 606,
+        "recall": 0.4444444444444444,
+        "precision": 0.2553191489361702,
+        "specificity": 0.8964497041420119,
+        "npv": 0.9528301886792453,
+        "f1": 0.32432432432432434
+      },
+      "Not Addressed": {
+        "support": 162,
+        "predicted": 212,
+        "tp": 142,
+        "fn": 20,
+        "fp": 70,
+        "tn": 498,
+        "recall": 0.8765432098765432,
+        "precision": 0.6698113207547169,
+        "specificity": 0.8767605633802817,
+        "npv": 0.9613899613899614,
+        "f1": 0.7593582887700535
+      }
+    },
+    "mcc_denominator_zero": false,
+    "percent_agreement_full_cohort_bounds": [
+      0.7863013698630137,
+      0.7863013698630137
+    ],
+    "coverage": {
+      "expected_n": 730,
+      "evaluated_n": 730,
+      "missing_n": 0,
+      "coverage": 1.0,
+      "missing_ids": [],
+      "missing_policy": "error",
+      "expected_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+      "evaluated_cohort_sha256": "7ad94b06ea54278765dc32e23d270452422714a6de524069f0de9d98238181dd",
+      "expected_patients": 8,
+      "evaluated_patients": 8
+    },
+    "profile": "none",
+    "bootstrap_iterations": 0,
+    "bootstrap_seeds": "0..iterations-1; numpy RandomState",
+    "confidence_level": 0.95,
+    "weighting": "micro (each proposition equal)",
+    "label_space": "nominal fixed 3 categories",
+    "correct": 574,
+    "false_S": 16,
+    "non_S": 216,
+    "false_S_rate": 0.07407407407407407,
+    "predicted_S": 424,
+    "predicted_S_FDR": 0.03773584905660377,
+    "macro_F1": 0.6512062157365054
+  },
+  "selection_uses_screen": false,
+  "stop_reason": "validation_patience",
+  "split": {
+    "train": {
+      "N": 1024,
+      "patients": 32
+    },
+    "validation": {
+      "N": 730,
+      "patients": 8
+    },
+    "screen": {
+      "N": 160,
+      "patients": 20
+    }
+  }
+}
