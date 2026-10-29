@@ -1,0 +1,11 @@
+{
+  "reason": "User explicitly prioritizes real-world time; first test actual classification before paying for the original96-step ceiling.",
+  "scope": "single_token_768 initial phase; amended before step24 validation",
+  "current_stage_target_optimizer_steps": 24,
+  "original_maximum_steps": 96,
+  "action": "Request a graceful stop after internal validation at24 has started; let that validation finish; preserve the original best-checkpoint rule over completed validation points.",
+  "selection": "Internal validation MCC, then PA, then fewer false-S; no development labels select checkpoint.",
+  "next": "Evaluate the selected checkpoint on the fixed180 real development examples. Continue or expand only for practical classification benefit; no automatic run to96.",
+  "actual_steps": "Record committed optimizer cursor; a step already in flight may finish.",
+  "data_and_loss_unchanged": true
+}

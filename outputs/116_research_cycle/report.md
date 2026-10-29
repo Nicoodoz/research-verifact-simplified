@@ -40,6 +40,12 @@
 |claim_repeat_1817_missing/history103_pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
 |claim_repeat_1817_missing/history103_pressure|claim_repeat|0.2945|58.33%|35/60|7/60|60/60|
 |claim_repeat_1817_missing/history103_pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
+|single_token_short_pilot/natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
+|single_token_short_pilot/natural|single_token_short|0.5027|79.17%|95/120|3/24|120/120|
+|single_token_short_pilot/natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
+|single_token_short_pilot/pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
+|single_token_short_pilot/pressure|single_token_short|0.2501|55.00%|33/60|9/60|60/60|
+|single_token_short_pilot/pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
 
 ## 去留与解释
 
@@ -59,6 +65,11 @@
   - selection1817：Supported救回32、误伤29；Not Supported救回6、误伤6；Not Addressed救回9、误伤5；新增false-S 6、避免5。
   - history103_natural：Supported救回6、误伤1；Not Supported救回0、误伤0；Not Addressed救回1、误伤0；新增false-S 0、避免0。
   - history103_pressure：Supported救回0、误伤0；Not Supported救回2、误伤1；Not Addressed救回0、误伤1；新增false-S 1、避免1。
+- `single_token_short_pilot`：自然120：MCC+0.09497、正确+9、false-S-1；压力60：正确-2、false-S+2。冻结24步检查点，先补齐500观察得失，不追加训练。。
+  - natural：Supported救回10、误伤1；Not Supported救回1、误伤1；Not Addressed救回1、误伤1；新增false-S 1、避免2。
+  - pressure：Supported救回0、误伤0；Not Supported救回4、误伤3；Not Addressed救回0、误伤3；新增false-S 5、避免3。
+
+claim_repeat完整1817的MCC差值患者分组95%区间为[-0.0126, +0.0244]（1000次bootstrap）；正确数增加7名患者、减少9名患者。区间跨0不表示等效，也不足以支持稳定增益。相对107只是较小点估计收益，不占用唯一的确认40人机会。
 
 ## 方法与代价
 
@@ -72,12 +83,14 @@
 
 对其自然面板6条S救回及1条S误伤做了定向原文检查：5条救回有较明确可见依据，1条缺关键时间段，误伤例也有可见支持。3条有依据救回来自同一患者。这不是随机病例审查，不能证明模型使用了对应证据，或排除更偏S；缺证例仍保留医生原GT。临床正文与逐例笔记仅在私有目录。
 
-`single_token_768`是待验证的完整判别配方：原9B、768条真实训练命题、32名梯度患者，另8名患者128条只用于选checkpoint。原临床定义与完整输入保留，A/B/C三行固定词表投影作唯一三类CE，96步；不把它当作纯组件消融或新的原创算法。
+`single_token_768`是待验证的完整判别配方：原9B、准备768条真实训练命题、32名梯度患者，另8名患者128条只用于选checkpoint。原临床定义与完整输入保留，A/B/C三行固定词表投影作唯一三类CE。原上限96步；按用户时间优先补充，先在24步内部验证后暂停并评价固定180，实际用量另报。不把它当作纯组件消融或新的原创算法。
+
+短训练实际完成24步、192条不同命题（S96/NS48/NA48），涉及31名梯度患者；内部验证仍为独立8人128条。按原内部选点规则选择第24步，未再更新权重。内部MCC0.5323→0.5989、false-S23→13，同时正确S60→56；这是训练侧信号，不能代替20名选型患者上的真实分类收益。
 
 三类完整指标、混淆矩阵、逐例配对变化与患者方向保存在各候选JSON。当前粗筛不例行bootstrap；有值得保留的较大开发收益后再补必要稳定性分析。作者R1只作历史同ID参照。
 
-周期起点2026-10-29 19:47:16（北京时间），截止2026-10-30 07:47:16；本报告生成时GPU墙钟估算¥2.132/20、API ¥0/20。估算包含等待和回传，不是平台精确账单。
+周期起点2026-10-29 19:47:16（北京时间），截止2026-10-30 07:47:16；本报告生成时GPU墙钟估算¥3.000/20、API ¥0/20。估算包含等待和回传，不是平台精确账单。
 
-状态：ACTIVE；当前任务`single_token_768`；最佳`claim_repeat`。不自动关机，实例继续开机会继续计费。
+状态：ACTIVE；当前任务`single_token_short_500_missing`；最佳`107_label_only`。不自动关机，实例继续开机会继续计费。
 
 依据：[周期备忘](../../tasks/116_research_cycle/memo.md)、[预写粗筛规则](../../tasks/116_research_cycle/screen_rules.json)、[单token配置](../../tasks/116_research_cycle/single_token_config.json)。

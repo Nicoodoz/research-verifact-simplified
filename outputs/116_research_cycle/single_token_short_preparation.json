@@ -1,0 +1,18 @@
+{
+  "original_planned_N": 768,
+  "original_step_ceiling": 96,
+  "early_stage_steps": 24,
+  "gradient_N": 192,
+  "unique_gradient_N": 192,
+  "gradient_patients": 31,
+  "gradient_GT": {
+    "Supported": 96,
+    "Not Supported": 48,
+    "Not Addressed": 48
+  },
+  "internal_validation_N": 128,
+  "internal_validation_patients": 8,
+  "stop_reason": "user_prioritizes_real_world_time; first real180 screen before any continuation",
+  "best_checkpoint_selection": "unchanged internal MCC then PA then lower false-S",
+  "development_result_not_yet_seen": true
+}

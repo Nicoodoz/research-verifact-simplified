@@ -36,6 +36,12 @@ def main():
         for panel,part in result['panels'].items():
             cl=part['changes']['by_class'];changes='；'.join(f"{g}救回{z['rescued']}、误伤{z['harmed']}" for g,z in cl.items())
             lines.append(f"  - {panel}：{changes}；新增false-S {part['changes']['false_S_new']}、避免{part['changes']['false_S_avoided']}。")
+    strata=O/'claim_repeat_1817_missing_strata.json'
+    if strata.exists():
+        v=read(strata)['sections']['selection1817'];ci=v['patient_paired']['metrics']['mcc']['ci95']
+        better=sum(p['scores']['candidate']['correct']>p['scores']['base']['correct'] for p in v['patients'])
+        worse=sum(p['scores']['candidate']['correct']<p['scores']['base']['correct'] for p in v['patients'])
+        lines+=['',f"claim_repeat完整1817的MCC差值患者分组95%区间为[{ci[0]:+.4f}, {ci[1]:+.4f}]（1000次bootstrap）；正确数增加{better}名患者、减少{worse}名患者。区间跨0不表示等效，也不足以支持稳定增益。相对107只是较小点估计收益，不占用唯一的确认40人机会。"]
     lines+=['','## 方法与代价','',
             '`joint_path`复用115最终适配器，枚举三个完整JSON+EOS路径并按总条件logP决策；每例三次完整前向。它联合验证115目标与路径决策，不能用仅比115原greedy好来宣布超过107。',
             '',
@@ -47,7 +53,9 @@ def main():
             '',
             '对其自然面板6条S救回及1条S误伤做了定向原文检查：5条救回有较明确可见依据，1条缺关键时间段，误伤例也有可见支持。3条有依据救回来自同一患者。这不是随机病例审查，不能证明模型使用了对应证据，或排除更偏S；缺证例仍保留医生原GT。临床正文与逐例笔记仅在私有目录。',
             '',
-            '`single_token_768`是待验证的完整判别配方：原9B、768条真实训练命题、32名梯度患者，另8名患者128条只用于选checkpoint。原临床定义与完整输入保留，A/B/C三行固定词表投影作唯一三类CE，96步；不把它当作纯组件消融或新的原创算法。',
+            '`single_token_768`是待验证的完整判别配方：原9B、准备768条真实训练命题、32名梯度患者，另8名患者128条只用于选checkpoint。原临床定义与完整输入保留，A/B/C三行固定词表投影作唯一三类CE。原上限96步；按用户时间优先补充，先在24步内部验证后暂停并评价固定180，实际用量另报。不把它当作纯组件消融或新的原创算法。',
+            '',
+            '短训练实际完成24步、192条不同命题（S96/NS48/NA48），涉及31名梯度患者；内部验证仍为独立8人128条。按原内部选点规则选择第24步，未再更新权重。内部MCC0.5323→0.5989、false-S23→13，同时正确S60→56；这是训练侧信号，不能代替20名选型患者上的真实分类收益。',
             '',
             '三类完整指标、混淆矩阵、逐例配对变化与患者方向保存在各候选JSON。当前粗筛不例行bootstrap；有值得保留的较大开发收益后再补必要稳定性分析。作者R1只作历史同ID参照。',
             '',
