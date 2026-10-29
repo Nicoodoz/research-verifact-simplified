@@ -1,0 +1,43 @@
+{
+  "task": 111,
+  "arms": [
+    "label_only107",
+    "update_half",
+    "label_only105"
+  ],
+  "source_adapters": {
+    "label_only105": {
+      "path": "/root/autodl-tmp/verifact111/adapters/label_only105",
+      "sha256": "04166658922a6474718bf1af15cb607d5f9c5855d65d2ebf7b725ccb42c710b4"
+    },
+    "label_only107": {
+      "path": "/root/autodl-tmp/verifact109/bundle/source107/checkpoint_a",
+      "sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8"
+    },
+    "update_half": {
+      "path": "/root/autodl-tmp/verifact110/results/adapters/update_half",
+      "sha256": "f9c563951f7deb8b39da2f137db7ad51bda249f4d78a33931ecbba2d959adfdf"
+    }
+  },
+  "new_IDs": 1317,
+  "full_IDs": 1817,
+  "new_training": false,
+  "new_paid_API_CNY": 0,
+  "hourly_CNY": 1.58,
+  "task_GPU_cap_CNY": 6,
+  "task_billing_start_beijing": "2026-10-29 13:15:00",
+  "no_shutdown": true,
+  "no_release": true,
+  "initial_representative_cases": "shortest, median, longest full prompt; each a formal first prediction",
+  "batching": "same for all arms: representatives batch1; remaining <=12701 prompt tokens batch2, longer batch1; no truncation",
+  "decoding": {
+    "max_new_tokens": 384,
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "thinking": false,
+    "parser": "parse105"
+  },
+  "historical103_arm": "nine_lora",
+  "historical103_comparison": "complete_recipe_comparison_not_single_component_ablation"
+}

@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-110 update_interpolation完成，无新增训练/API。109实际192条诊断证实训练NA也丢失（0/64，32正确NA保留全误伤，真标签CE .005282→.485546）。两固定有效BA插值各500全有效：quarter自然MCC.4738/PA77.75%/false-S13，压力.4303/66%/14；half自然.4636/76.50%/11，压力.4456/68%/13。相对107有真实压力增量，但自然质量下降，尚无整体优势，未通过预写综合保留参考；保留107，不自动扩大/111或升级默认。关键结果和两个rank32适配器已回传。用户执行中撤销自动关机，保护已停、未发关机命令，实例保留开机；租金继续累计，费用见110记录。 [110最终报告](outputs/110_update_interpolation/final_report.md) · [指标](outputs/110_update_interpolation/final_metrics.md) · [当前状态](tasks/110_update_interpolation/CURRENT.md)。
+111 half_extension已按新授权启动：核定20选型患者1817唯一有效ID，旧500全复用、新1317仅补105 label_only/107 label_only/110 update_half。105小适配器已补传，原9B/环境复用；最长13399 tokens正式batch1通过，完整输入不截断，实测预算在6元内，后端推理进行。103原180已确认70旧交集、110新增交集，已有原自然35/压力35已CPU同ID比较，未冒充完整180。当前无完整新增分类结论；不训练、不搜系数、API0，不用确认40或自动112。111费用从13:15单列，历史账本保留；用户政策不自动关机，到预算只停本轮计算并回传通知，留机待机另列。 [111准备报告](outputs/111_half_extension/preparation_report.md) · [当前状态](tasks/111_half_extension/CURRENT.md) · [110最终报告](outputs/110_update_interpolation/final_report.md)。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

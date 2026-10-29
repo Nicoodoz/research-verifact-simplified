@@ -1,0 +1,35 @@
+{
+  "task": 111,
+  "selection_patients": 20,
+  "cohort_source": "092 public valid atomic cohort restricted to original103 selection20",
+  "complete_cohort_N": 1817,
+  "complete_GT": {
+    "Supported": 1455,
+    "Not Supported": 121,
+    "Not Addressed": 241
+  },
+  "old500_N": 500,
+  "new_N": 1317,
+  "new_GT": {
+    "Not Addressed": 138,
+    "Supported": 1134,
+    "Not Supported": 45
+  },
+  "author_full": {
+    "llm": 793,
+    "human": 1024
+  },
+  "no_duplicate_IDs": true,
+  "no_missing_author_reference": true,
+  "old500_subset_of_complete": true,
+  "old500_disjoint_new": true,
+  "confirmation_patients_used": false,
+  "history103_N": 180,
+  "history103_old500_intersection": 70,
+  "history103_new_intersection": 110,
+  "cached_reused_each_arm": 500,
+  "existing_matching_new_receipts_found": 0,
+  "full_reference_not_C48": true,
+  "GT_unchanged": true,
+  "full_cohort_natural_composition_must_not_equal_artificial_old500": true
+}

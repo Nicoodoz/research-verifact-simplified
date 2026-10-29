@@ -1,6 +1,6 @@
 # 当前环境与启动方式（2026-10-29核对）
 
-110复用109同实例RTX4080 SUPER 32GB、原Qwen3.5-9B及env103（Torch2.8.0+cu128/PEFT0.21.2/Transformers5.17.0/Unsloth2026.10.9），未重装环境或重新下载底座。原BF16完整输入、诊断batch1、500评价batch2及原分组不变；单底座挂载107/109源LoRA，以有效BA/scaling准确cat为rank32，保留FP32源因子，不SVD或叠加原adapter。248层、保存头部完整性及少量真实端点检查通过；两个组合适配器及全部回执已回传。没有optimizer/训练，旧模型和完整状态保留。用户撤销自动关机，关机保护已停止并核验、未发关机命令；后续开机租金继续。本地CPU统计仍用research-verifact-029，需scripts/run_research.ps1激活DLL路径。
+111复用同实例RTX4080 SUPER 32GB、原Qwen3.5-9B/env103，107/half已在实例，105仅从本地最终备份补传173MB，无重训或底座下载。新增1317采用原完整作者reference/104 prompt/105 parser及原BF16解码；最长13399 prompt tokens已实际batch1正式通过，context13783用于容纳完整输入，无截断。三臂同分组，常规batch2、超12701者batch1，正式代表输入计入回执不丢弃。预算代码排除稳态率中的一次性编译重复摊算，但全墙钟已发生费用照计；6元不扩大。只设本轮计算停止期限，没有shutdown或释放；用户保留开机政策继续。CPU比较复用项目统计，用research-verifact-029的scripts/run_research.ps1激活。
 
 107已在本次RTX5090 32GB完成BF16、micro1、完整输入的两臂LoRA训练与batch2评价；原Python3.12.3/105关键依赖复用，未重装升级。最长backward、辅助LoRA梯度、完整状态恢复和显存/吞吐实测通过。最终适配器、辅助头、完整optimizer与回执已本地回传核验；CPU统计使用research-verifact-029，无需GPU。GPU停止计费状态以107 cost_status与用户确认为准。
 
