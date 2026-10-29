@@ -1,0 +1,30 @@
+{
+  "task": 112,
+  "cohort_N": 1817,
+  "agreement_N": 1651,
+  "trigger_N": 166,
+  "trigger_fraction": 0.09135938359933957,
+  "cached_trigger_N": 28,
+  "missing103_N": 138,
+  "truth_table_cases": 27,
+  "historical180_check": {
+    "natural": {
+      "MCC": 0.4246258355670927,
+      "PA": 0.7333333333333333,
+      "correct": 88,
+      "false_S": 4,
+      "non_S": 24
+    },
+    "pressure": {
+      "MCC": 0.3674842076295835,
+      "PA": 0.6166666666666667,
+      "correct": 37,
+      "false_S": 8,
+      "non_S": 60
+    }
+  },
+  "GT_not_in_rule_or_GPU_inputs": true,
+  "new105_work": false,
+  "invalid_third_cases": 9,
+  "disagreement_invalid_fallback_cases": 6
+}

@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-111 half_extension完成：旧500全复用、新1317三臂各补齐，原20人1817有效唯一ID与103原120/60同ID比较完成。half完整队列MCC0.5215、PA78.54%、false-S44/362。111未支持保留update_half：新增1317相对105、107均降低MCC与PA，完整1817的错误放行减少不足以抵消正确S与NA损失。结束109续训＋插值衍生路线。 本轮无训练/新系数/API；任务租金估算¥3.7497/6，关键结果已回传，历史账本保留。按用户要求没有关机或释放实例，之后人工留机仍计费；不自动112或升级默认。 [111最终报告](outputs/111_half_extension/final_report.md) · [指标](outputs/111_half_extension/final_metrics.md) · [当前状态](tasks/111_half_extension/CURRENT.md)。
+112 disagreement_vote完成：166/1817分歧，复用28个触发103缓存，仅补138个原103预测；完整1817与原500/新增1317/103原180同ID比较完成。组合MCC0.5520、PA81.40%、false-S54/362。112未通过保留判断：固定投票有小幅MCC和PA点估计收益，但错误放行增加，且部署调用超过单107的两倍。保留107 label_only，停止disagreement_vote，不追加规则。 107 label_only是今后唯一维护的普通微调基线，105只保留历史。任务GPU估算¥0.3179/1、API0；原始结果已回传，未关机或释放实例，不自动113或升级默认。 [112报告](outputs/112_disagreement_vote/final_report.md) · [完整比较](outputs/112_disagreement_vote/comparison.json)。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

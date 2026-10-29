@@ -1,4 +1,4 @@
-# 全部任务与当前入口（111完成；2026-10-29）
+# 全部任务与当前入口（112完成；2026-10-29）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,6 +6,7 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
+|112_disagreement_vote|[报告](../outputs/112_disagreement_vote/final_report.md) · [比较](../outputs/112_disagreement_vote/comparison.json) · [去正文预测](../outputs/112_disagreement_vote/predictions_sanitized.jsonl) · [协议](../tasks/112_disagreement_vote/protocol.md)|固定规则真值表、原180预期核对、138首回执及患者配对；执行者自检非独立审计|112未通过保留判断：固定投票有小幅MCC和PA点估计收益，但错误放行增加，且部署调用超过单107的两倍。保留107 label_only，停止disagreement_vote，不追加规则。；无训练/105新增/API/自动关机，不自动113|
 |111_half_extension|[最终报告](../outputs/111_half_extension/final_report.md) · [指标](../outputs/111_half_extension/final_metrics.md) · [去正文预测](../outputs/111_half_extension/predictions_sanitized.jsonl) · [协议](../tasks/111_half_extension/protocol.md)|完整1817/103原180同ID比较、1000次患者配对、执行者自检非独立审计|111未支持保留update_half：新增1317相对105、107均降低MCC与PA，完整1817的错误放行减少不足以抵消正确S与NA损失。结束109续训＋插值衍生路线。；API0，材料回传；按用户要求未关机，不自动112|
 |110_update_interpolation|[最终报告](../outputs/110_update_interpolation/final_report.md) · [指标](../outputs/110_update_interpolation/final_metrics.md) · [诊断](../outputs/110_update_interpolation/diagnostic192.json) · [实现检查](../outputs/110_update_interpolation/implementation_checks.json)|192预测/32NA真实标签CE、有效BA cat两点各500、执行者自检|有压力收益与自然代价；无新训练/API，未升级默认；用户撤销自动关机|
 |109_boundary_replay|[最终报告](../outputs/109_boundary_replay/final_report.md) · [完整指标](../outputs/109_boundary_replay/comparison.json) · [真实选样](../outputs/109_boundary_replay/mining_summary.json) · [执行自检](../outputs/109_boundary_replay/execution_selfcheck.json)|527真实预测、192条/24步续训、完整500；执行者自检非外部审计|当前配方无效，NA→NS塌缩；模型/完整状态回传，用户关机，不自动下一任务|

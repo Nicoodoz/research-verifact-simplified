@@ -1,5 +1,6 @@
 # 当前环境与启动方式（2026-10-29核对）
 
+112复用同一32GB实例、原9B/env103，只有原103最终适配器约173MB需要补传。BF16原103 label prompt、768输出上限、贪心解码及parse_label103不变，batch2/正式代表batch1，只补138条；无原9B下载、训练、环境重装或105运行。关键回执及日志在.local_models/112_disagreement_vote/evidence/，计算结束仍遵守不自动关机政策，GPU费用按任务单列。
 111完成：复用同实例RTX4080 SUPER 32GB、原Qwen3.5-9B/env103，仅补传本地105最终适配器173MB；无底座下载、重训或环境重装。新增1317×三臂使用原完整作者reference/104 prompt/105 parser及原BF16解码，同分组常规batch2、超12701 tokens者batch1；最长13399 prompt tokens实际通过，context13783容纳完整输入，无截断。全部原始预测与运行记录已回传.local_models/111_half_extension/evidence/。初预算估计剔除一次性编译重复外推，发生的等待、加载、编译与回传仍全计墙钟；没有shutdown或释放。离线统计使用research-verifact-029/scripts/run_research.ps1。
 
 107已在本次RTX5090 32GB完成BF16、micro1、完整输入的两臂LoRA训练与batch2评价；原Python3.12.3/105关键依赖复用，未重装升级。最长backward、辅助LoRA梯度、完整状态恢复和显存/吞吐实测通过。最终适配器、辅助头、完整optimizer与回执已本地回传核验；CPU统计使用research-verifact-029，无需GPU。GPU停止计费状态以107 cost_status与用户确认为准。

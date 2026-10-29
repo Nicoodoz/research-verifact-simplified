@@ -1,0 +1,28 @@
+{
+  "task": 112,
+  "rule": "disagreement_vote",
+  "baseline": "label_only107",
+  "third": "original103_nine_lora",
+  "trigger_N": 166,
+  "missing103_N": 138,
+  "cached_trigger_N": 28,
+  "cohort_N": 1817,
+  "hourly_CNY": 1.58,
+  "cap_CNY": 1,
+  "task_start_beijing": "2026-10-29 16:17:24",
+  "adapter_sha256": "ade4ca498f9df44411bbe02bcd85467483f1e78aa1de08a232526655f11d53cd",
+  "adapter_path": "/root/autodl-tmp/verifact112/adapter103",
+  "decoding": {
+    "max_new_tokens": 768,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "use_cache": true,
+    "thinking": false,
+    "reasoning_effort": "low",
+    "parser": "parse_label103.parse_label"
+  },
+  "batch_size": 2,
+  "no_shutdown": true,
+  "no_new_training": true,
+  "no_new_paid_API": true
+}

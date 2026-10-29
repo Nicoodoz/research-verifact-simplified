@@ -1,0 +1,22 @@
+{
+  "task": 112,
+  "start_beijing": "2026-10-29 16:17:24",
+  "compute_stopped_beijing": "2026-10-29 16:29:17",
+  "returned_beijing": "2026-10-29 16:29:28",
+  "wall_seconds": 724.2522354125977,
+  "hourly_CNY": 1.58,
+  "GPU_CNY": 0.317866258875529,
+  "cap_CNY": 1,
+  "API_CNY": 0,
+  "exact_platform_bill_verified": false,
+  "no_shutdown": true,
+  "instance_retained": true,
+  "post_task_idle_excluded": true,
+  "previous111_CNY": 3.749736938777235,
+  "historical_ledgers_unchanged": true,
+  "inter_task_user_kept_on_idle_not_reset_or_assumed_free": true,
+  "last_instance_observation_beijing": "2026-10-29 16:29:51",
+  "instance_running_at_last_observation": true,
+  "GPU_compute_processes_at_observation": 0,
+  "platform_shutdown_confirmed": false
+}
