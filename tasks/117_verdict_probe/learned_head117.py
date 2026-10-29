@@ -18,11 +18,10 @@ from torch import nn
 from torch.nn import functional as F
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / 'src'))
-from verifact_research.evaluation import LABELS
-
 sys.path.insert(0, str(ROOT / 'tasks/104_supervision_evidence'))
 import training104 as original
+
+LABELS = tuple(original.LABELS)
 
 PREFIX_TEXT = '{"verdict":"'
 PREFIX_IDS = (4754, 415, 8217, 3147)

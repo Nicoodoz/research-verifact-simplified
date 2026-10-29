@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+import time
 import warnings
 
 import numpy as np
@@ -188,6 +189,7 @@ def fit_probes(features_dir: Path, metadata: Path, out: Path, threads: int = 4) 
             models = []
             for c in CS:
                 for weight in CLASS_WEIGHTS:
+                    started_fit = time.perf_counter()
                     model, convergence = fit_model(train_x, y_train, c, weight)
                     value = dict(index=len(configs), C=c, class_weight=weight,
                                  convergence=convergence,
@@ -195,6 +197,11 @@ def fit_probes(features_dir: Path, metadata: Path, out: Path, threads: int = 4) 
                                                             model.predict(val_x)))
                     configs.append(value)
                     models.append(model)
+                    print(json.dumps(dict(stage='validation_fit', representation=name,
+                                          C=c, class_weight=weight,
+                                          seconds=time.perf_counter()-started_fit,
+                                          validation_MCC=value['validation_metrics']['mcc']),
+                                     ensure_ascii=False), flush=True)
             best = max(configs, key=selection_key)
             model = models[best['index']]
             arrays = head_arrays(model, scaler, name)
@@ -210,6 +217,7 @@ def fit_probes(features_dir: Path, metadata: Path, out: Path, threads: int = 4) 
                     raise AssertionError('Saved head changes validation probabilities')
             selected[name] = dict(selected_config_index=best['index'], C=best['C'],
                                   class_weight=best['class_weight'],
+                                  training_metrics=metrics(split_rows['train'], model.predict(train_x)),
                                   validation_metrics=best['validation_metrics'],
                                   configurations=configs, head_file=saved.name)
         selection = dict(task=117, primary=PRIMARY, selection_uses_screen=False,

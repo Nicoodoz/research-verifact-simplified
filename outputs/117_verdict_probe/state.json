@@ -8,14 +8,22 @@
   "API_cap_CNY": 80,
   "hourly_CNY": 1.58,
   "no_shutdown": true,
-  "status": "EXTRACTING",
-  "active_job": "features_initial",
+  "status": "SCREENED_EXPANDING",
+  "active_job": "features500_missing",
   "best_candidate": "107_label_only",
   "paid_API_CNY": 0,
   "confirmation40_used": false,
   "train_N": 1024,
   "validation_N": 730,
   "screen_N": 160,
-  "active_remote_pid": 32427,
-  "feature_N": 1914
+  "active_remote_pid": 34135,
+  "feature_N": 1914,
+  "completed_analyses": [
+    "probe_initial",
+    "regularized_probe",
+    "balanced_probe",
+    "mlp_initial"
+  ],
+  "next_action": "Frozen heads on complete500, then decide larger data or backbone adaptation",
+  "current_result": "Balanced prefix160 MCC+.0203, correct+1, falseS unchanged; expand to500. Other frozen heads raise falseS."
 }
