@@ -4,6 +4,8 @@
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
+[116工作流程复盘](116_WORKFLOW_REVIEW.md)：本周期如何执行、实际产出、费用及筛查顺序的问题。
+
 ## 当前研究目标与运行事实
 
 目标是在VeriFact数据集上以相同推理模型、同ID和统一评价形成有实际价值的优势；重点是前处理与Judge raw，不以更强模型或PriorG的收益替代。MCC与false-S相对优先，允许其他指标有合理代价，但须披露误报、三类损失与PA。这里减少false-S指少漏掉真实不一致；不是疾病漏诊率，也不允许靠全判NS/NA制造安全假象。目标不等于已经达成，默认配置未自动升级。
