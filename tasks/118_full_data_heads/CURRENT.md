@@ -8,4 +8,6 @@
 
 固定平衡MLP结构与第16轮预算；固定平衡线性头C=0.0001作参考。重新初始化头与scaler并用全40人拟合；原8人现在属于训练，不能再称独立验证。没有重新选择参数或epoch。先用117同一旧500内160条粗筛，有真实收益再利用现成特征扩至500/1817；不改GT，不使用确认40选型。
 
-代码复用[refit_full117.py](../117_verdict_probe/refit_full117.py)，模型/特征私有存放.local_models/117_verdict_probe，运行状态仍以[夜间总状态](../../outputs/117_verdict_probe/state.json)为准。118完成后继续按实证决定后续路线，不自动升级默认系统。
+结果：固定160条中，MLP净少6条正确、少1次false-S；线性头净少1条正确、false-S不变，压力收益伴随自然损失。没有支持500/1817扩展的综合信号，两头均停止扩大。见[报告](../../outputs/118_full_data_heads/report.md)。
+
+代码复用[refit_full117.py](../117_verdict_probe/refit_full117.py)，模型/特征私有存放.local_models/117_verdict_probe，运行状态仍以[夜间总状态](../../outputs/117_verdict_probe/state.json)为准。已继续119 warm_head_ft，不自动升级默认系统。

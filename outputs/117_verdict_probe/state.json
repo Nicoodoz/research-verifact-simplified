@@ -9,15 +9,15 @@
   "hourly_CNY": 1.58,
   "no_shutdown": true,
   "status": "NIGHT_ACTIVE",
-  "active_job": "features_pool_missing",
+  "active_job": "lpft_full32",
   "best_candidate": "107_label_only",
   "paid_API_CNY": 0,
   "confirmation40_used": false,
-  "train_N": 1024,
+  "train_N": 2945,
   "validation_N": 730,
   "screen_N": 160,
-  "active_remote_pid": 35944,
-  "feature_N": 1914,
+  "active_remote_pid": 37604,
+  "feature_N": 5492,
   "completed_analyses": [
     "probe_initial",
     "regularized_probe",
@@ -30,10 +30,13 @@
     "mlp_500",
     "balanced_mlp_500"
   ],
-  "next_action": "118: fixed-recipe refit on full3675 after only1921 missing training features",
-  "current_result": "117 full1817: MCC-.01046,correct-12,FS-3; do not retain1024 head",
+  "next_action": "119: one full epoch learned-head and source107 LoRA adaptation; select only on original8-patient internal validation",
+  "current_result": "118 fixed160: full MLP correct-6/FS-1; full linear correct-1/FS unchanged; no expansion",
   "development_candidate": null,
   "maintained_baseline": "107_label_only",
-  "active_task": 118,
-  "task117_status": "COMPLETED_NEGATIVE"
+  "active_task": 119,
+  "task117_status": "COMPLETED_NEGATIVE",
+  "initial_train_N": 1024,
+  "task118_status": "COMPLETED_NEGATIVE",
+  "task119_status": "RUNNING"
 }

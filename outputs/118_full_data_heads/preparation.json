@@ -1,0 +1,34 @@
+{
+  "task": 118,
+  "train_N": 3675,
+  "train_patients": 40,
+  "train_GT": {
+    "Not Supported": 297,
+    "Not Addressed": 485,
+    "Supported": 2893
+  },
+  "screen_N": 160,
+  "screen_is_same_frozen117": true,
+  "full_evaluation_available_N": 1817,
+  "head_recipes": {
+    "full_mlp": {
+      "epochs": 16,
+      "class_weight": "balanced",
+      "hidden": 128,
+      "dropout": 0.1,
+      "seed": 117
+    },
+    "full_linear": {
+      "C": 0.0001,
+      "class_weight": "balanced"
+    }
+  },
+  "hyperparameters_selected_again": false,
+  "old_validation_now_training": true,
+  "unreviewed_excluded": false,
+  "doctor_GT_changed": false,
+  "base": "same frozen107 Qwen3.5-9B",
+  "source_mlp_sha256": "ddd067ddb8fe137c74339cbc2b09cc93d6047f49cfb08f5fcf27fc3c311ebd42",
+  "training_manifest_source": "outputs/106_label_preparation/data_pool_index.jsonl (all3675 rows, original40 patients)",
+  "screen_manifest_source": "outputs/117_verdict_probe/selection_manifest.jsonl where role=screen"
+}

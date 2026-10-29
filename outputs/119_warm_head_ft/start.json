@@ -1,0 +1,46 @@
+{
+  "task": 119,
+  "name": "warm_head_ft",
+  "remote_job": "lpft_full32",
+  "training_N": 2945,
+  "validation_N": 730,
+  "screen_N": 160,
+  "train_patients": 32,
+  "validation_patients": 8,
+  "training": {
+    "epochs": 1,
+    "total_steps": 369,
+    "learning_rate": 1e-05,
+    "head_learning_rate": 0.0001,
+    "gradient_accumulation": 8,
+    "microbatch": 1,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "gradient_clip": 1.0
+  },
+  "validation_steps": [
+    0,
+    128,
+    256,
+    369
+  ],
+  "initial_validation_cache_reused": true,
+  "ancestor107_saw_some_validation": true,
+  "original_night_start_epoch": 1793287154,
+  "GPU_cap_CNY": 15.8,
+  "API_cap_CNY": 80,
+  "paid_API_CNY": 0,
+  "no_shutdown": true,
+  "screen_rule": {
+    "purpose": "Practical signal, not significance or final acceptance",
+    "quality_signal": "pooled160 MCC +0.01 or correct +3, with no increase in false-S",
+    "risk_signal": "false-S -2 with pooled correct no worse than -2",
+    "protection": "Review natural/pressure and all three class rescues/harms; a material natural loss or class collapse blocks expansion",
+    "branch": "No useful signal: stop this fixed recipe. Useful signal: evaluate missing340 before any1817 extension.",
+    "no_screen_parameter_tuning": true
+  }
+}
