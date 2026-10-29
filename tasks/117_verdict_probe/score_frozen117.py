@@ -6,17 +6,17 @@ R=Path(__file__).resolve().parents[2];sys.path.insert(0,str(Path(__file__).paren
 from fit_probe117 import predict_head,write_json,metrics
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--features',type=Path,nargs='+',required=True);p.add_argument('--metadata',type=Path,required=True);p.add_argument('--head-dir',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--features',type=Path,nargs='+',required=True);p.add_argument('--metadata',type=Path,required=True);p.add_argument('--head-dir',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--representations',nargs='+',choices=['verdict_prefix','prompt_end'],default=['verdict_prefix','prompt_end']);a=p.parse_args()
  rows=[json.loads(l) for l in a.metadata.read_text(encoding='utf-8').splitlines() if l.strip()];rows=[r for r in rows if r['role']=='screen'];wanted={r['id'] for r in rows};assert len(rows)==len(wanted)
- found={m:{} for m in ['verdict_prefix','prompt_end']}
+ found={m:{} for m in a.representations};first=a.representations[0]
  for folder in a.features:
   for path in sorted((folder/'batches').glob('*.npz')):
    with np.load(path,allow_pickle=False) as z:
     for k,i in enumerate(z['ids'].astype(str)):
      if i not in wanted:continue
-     assert i not in found['verdict_prefix'],'Duplicate extraction would change first-pass provenance'
+     assert i not in found[first],'Duplicate extraction would change first-pass provenance'
      for m in found:found[m][i]=z[m][k].copy()
- assert set(found['verdict_prefix'])==wanted,'Additional predictions require every intended feature'
+ assert set(found[first])==wanted,'Additional predictions require every intended feature'
  a.out.mkdir(parents=True,exist_ok=True)
  for m,features in found.items():
   with np.load(a.head_dir/(m+'_head.npz'),allow_pickle=False) as head:

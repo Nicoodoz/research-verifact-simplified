@@ -8,15 +8,15 @@
   "API_cap_CNY": 80,
   "hourly_CNY": 1.58,
   "no_shutdown": true,
-  "status": "VALIDATING1817",
-  "active_job": "features1817_missing",
+  "status": "NIGHT_ACTIVE",
+  "active_job": "features_pool_missing",
   "best_candidate": "107_label_only",
   "paid_API_CNY": 0,
   "confirmation40_used": false,
   "train_N": 1024,
   "validation_N": 730,
   "screen_N": 160,
-  "active_remote_pid": 34729,
+  "active_remote_pid": 35944,
   "feature_N": 1914,
   "completed_analyses": [
     "probe_initial",
@@ -30,8 +30,10 @@
     "mlp_500",
     "balanced_mlp_500"
   ],
-  "next_action": "Frozen balanced MLP on complete1817; then decide further data or LPFT",
-  "current_result": "Balanced MLP500: natural MCC+.00445/correct-1/FS-2; pressure MCC+.06014/correct+4/FSsame. Small positive signal, not a confirmed method improvement.",
-  "development_candidate": "balanced_mlp",
-  "maintained_baseline": "107_label_only"
+  "next_action": "118: fixed-recipe refit on full3675 after only1921 missing training features",
+  "current_result": "117 full1817: MCC-.01046,correct-12,FS-3; do not retain1024 head",
+  "development_candidate": null,
+  "maintained_baseline": "107_label_only",
+  "active_task": 118,
+  "task117_status": "COMPLETED_NEGATIVE"
 }

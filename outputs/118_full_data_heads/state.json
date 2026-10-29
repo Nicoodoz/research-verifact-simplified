@@ -1,0 +1,14 @@
+{
+  "status": "EXTRACTING_TRAINING_FEATURES",
+  "night_session": "../117_verdict_probe/state.json",
+  "train_N": 3675,
+  "train_patients": 40,
+  "old_features_reused_N": 1754,
+  "new_features_N": 1921,
+  "initial_screen_N": 160,
+  "validation_reused_for_selection": false,
+  "refit_epoch_fixed": 16,
+  "linear_C_fixed": 0.0001,
+  "unreviewed_excluded": false,
+  "paid_API_CNY": 0
+}
