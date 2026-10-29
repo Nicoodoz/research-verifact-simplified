@@ -1,0 +1,24 @@
+{
+  "task": 109,
+  "CPU_only": true,
+  "synthetic_fixture_not9B_predictions": true,
+  "new_real_predictions": 0,
+  "selector192_unique_counts_and_real_GT_mapping": true,
+  "deterministic_without_teacher_ranking": true,
+  "genuine_error_S_and_retention_guards": true,
+  "old_prompt_constructor_reused": true,
+  "train_eval_IDs_disjoint": true,
+  "NA_loss_cannot_hide_behind_falseS_gain": true,
+  "shared_evaluation_matches_saved107_reference": true,
+  "rejected_cases": [
+    "no_genuine_current_errors",
+    "no_current_correct_S",
+    "one_nonS_class_insufficient_no_recipe_change",
+    "teacher_or_other_checkpoint",
+    "wrong_actual_reference_prompt",
+    "CPU_stage_cannot_authorize_GPU"
+  ],
+  "model_imported": false,
+  "CUDA_initialized": false,
+  "clinical_effect_demonstrated": false
+}

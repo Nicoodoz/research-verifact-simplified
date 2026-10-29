@@ -1,0 +1,55 @@
+{
+  "task": 109,
+  "preparation_only": true,
+  "original_training_pool_N": 3675,
+  "training_patients": 40,
+  "original_pool_GT": {
+    "Not Supported": 297,
+    "Not Addressed": 485,
+    "Supported": 2893
+  },
+  "union106_candidate_N": 807,
+  "eligible_after_marks_dedup_N": 3574,
+  "excluded_N": 101,
+  "exclusion_reasons": {
+    "unresolved104_not_promoted_by_current_error": 78,
+    "known_actual_input_gap_104_106": 15,
+    "known_ambiguity_tags": 17,
+    "106_actual_training_pair_review_uncertain": 4
+  },
+  "stage_a_N": 294,
+  "stage_a_GT": {
+    "Not Supported": 139,
+    "Not Addressed": 155
+  },
+  "stage_a_prompt_tokens": 2486357,
+  "stage_b_max_N": 274,
+  "packed_N": 908,
+  "packed_GT": {
+    "Supported": 614,
+    "Not Supported": 139,
+    "Not Addressed": 155
+  },
+  "source107_eligible_GT": {
+    "Not Supported": 58,
+    "Supported": 82,
+    "Not Addressed": 50
+  },
+  "possible_max_prompt_tokens": 12701,
+  "required_context_tokens": 13097,
+  "possible_max_training_tokens": 12710,
+  "stage_a_without_lexical_neighbors": 29,
+  "direct_tokenization_smoke_N": 4,
+  "reused106_full_pool_token_cache": true,
+  "actual_current_checkpoint_training_predictions_available": false,
+  "hard_examples_selected": false,
+  "selected_train_file_created": false,
+  "training_size_if_gates_pass": 192,
+  "candidate_is_certified_clinical_pair": false,
+  "confirmation40_used": false,
+  "new_GPU_calls": 0,
+  "new_paid_API_cny": 0,
+  "original_GT_and_reference_changed": false,
+  "packed_patients": 40,
+  "stage_a_patients": 39
+}

@@ -1,0 +1,24 @@
+{
+  "source_task": 107,
+  "source_arm": "label_only",
+  "step": 50,
+  "consumed": 392,
+  "final_slot": "checkpoint_a",
+  "adapter_sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+  "adapter_bytes": 173188512,
+  "full_optimizer_state_bytes": 346671925,
+  "full_optimizer_local": true,
+  "source_fingerprint": {
+    "arm": "label_only",
+    "config_sha256": "2fb4cf5b79dd76bc7d2e82ecceb97944ba5c6bc56443d18f02acd22a8d82c38f",
+    "training_file_sha256": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+    "bundle_manifest_sha256": "77116c2ee309be81369f69c952000b6c4e43ef2b9c84048c1b4529c7a0da76c4"
+  },
+  "source_adapter_hash_checked_once": true,
+  "original_backup_receipt_reused": "outputs/107_support_aux/backup_receipt.json",
+  "base_weights_local": false,
+  "baseline500_cache_N": 500,
+  "current_checkpoint_train_pool_predictions_N": 0,
+  "training_intersection_with_baseline500": 0,
+  "R1_TFIDF_105_108_not_accepted_as_current_predictions": true
+}

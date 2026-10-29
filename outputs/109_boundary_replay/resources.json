@@ -1,0 +1,78 @@
+{
+  "task": 109,
+  "scope": "CPU_PREPARATION_ONLY",
+  "GPU_used": false,
+  "paid_API_cny": 0,
+  "recommended_GPU": "RTX5090_32GB",
+  "minimum_planned_VRAM_GiB": 32,
+  "recommended_VRAM_GiB": 32,
+  "minimum_not_new_card_guarantee": true,
+  "VRAM24_training_recommended": false,
+  "historical107_training_peak_bytes": 26870898688,
+  "historical107_eval_batch2_peak_bytes": 24095741952,
+  "candidate_max_prompt_tokens": 12701,
+  "required_context_tokens": 13097,
+  "input_length_filtered_or_truncated": false,
+  "mining_batch_size": 1,
+  "final500_batch_size": 2,
+  "old_private_image_ID": null,
+  "new_instance_image_availability_confirmed": false,
+  "image_history": "original9B/env103 present and verified in107; also observed in1089B-image instances",
+  "expected_model_path": "/root/verifact_image/models/qwen3.5-9b",
+  "expected_python": "/root/verifact_image/envs/venv103/bin/python",
+  "local_base_weight_shards_available": false,
+  "source107_full_checkpoint_local": true,
+  "local_disk": {
+    "total_bytes": 217206849536,
+    "free_bytes": 70557466624
+  },
+  "remote_disk_current": null,
+  "recommended_remote_free_data_GiB": 20,
+  "recommended_remote_free_system_GiB": 2,
+  "paid_disk_expansion_authorized": false,
+  "archive_upload_bytes": 491888895,
+  "unpacked_package_bytes": 578511597,
+  "historical_seconds": {
+    "train392_and_checkpoints": 932.3954121560382,
+    "checkpoint_part_already_included": 44.82827805897978,
+    "eval500_batch2": 487.291568687986
+  },
+  "estimated_minutes": {
+    "upload_and_preflight": [
+      5,
+      12
+    ],
+    "new_training_predictions_batch1": [
+      12,
+      25
+    ],
+    "train192_including_checkpoints": [
+      8,
+      15
+    ],
+    "eval500": [
+      8,
+      12
+    ],
+    "technical_load_save_return": [
+      5,
+      15
+    ],
+    "usual_total": [
+      45,
+      75
+    ],
+    "cautious_total": 90
+  },
+  "new_card_speed_and_new_output_lengths_unverified": true,
+  "historical5090_hourly_cny": 2.88,
+  "current_rental_quote_cny": null,
+  "illustrative45_to90minute_rent_cny": [
+    2.16,
+    4.32
+  ],
+  "recommended_future_GPU_cap_cny": 8,
+  "budget_recommendation_is_not_GPU_authorization": true,
+  "API_cap_cny": 0,
+  "weight_and_environment_missing_case": "do_not_open_empty_instance_to_wait; first confirm image or re-estimate28GB+material_transfer"
+}

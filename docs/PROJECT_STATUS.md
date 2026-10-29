@@ -1,6 +1,6 @@
-# 项目现状（2026-10-29，108完成）
+# 项目现状（2026-10-29，109无卡准备完成）
 
-108已完成CPU三臂和本次4090两臂顶部层训练/各500评价，公平比较阴性，停止当前分层配方扩大。hier_shared较flat自然ΔMCC−0.0832、PA−0.75个百分点、false-S29→42/79；压力ΔMCC−0.0439、PA−6个百分点、false-S32→40/100。主要损失是更多non-S→S放行，CPU初筛信号未在同期GPU对照保留。两臂模型、完整末轮状态与回执已回传；00:45:24关机命令被接受，随后SSH拒绝，实例/磁盘保留；新卡估算¥0.741655、API0，旧A4000及平台精确账单待核。未跑其余1317/第二种子/原文GPU部署，不用确认40选型，不自动109或升级默认。用户已授权108阶段及最终双仓库推送。 [108最终报告](../outputs/108_semantic_hierarchy/final_report.md) · [完整指标](../outputs/108_semantic_hierarchy/final_metrics.md)。
+109 boundary_replay无卡准备完成，停在READY_FOR_GPU_RENTAL，等待用户租卡并另行授权GPU。接续107 label_only最终模型及完整optimizer，不重训旧基线；复用106训练40人3675池/两512候选，首批294非S、随后至多274S预测请求及固定192条/1轮/24步回放程序就绪。当前没有训练池真实9B预测，因此没有实际64困难/192清单，CPU测试不代表有效。已知缺证/歧义暂不回放，GT/reference/原主loss和接口不变。新增GPU/API0，未接触AutoDL；首选5090 32GB、旧镜像ID/可用性待核。标签微调既有收益保留，105/107/108增量失败路线不重启，不自动GPU/110或升级默认。 [109准备报告](../outputs/109_boundary_replay/preparation_report.md) · [租卡交接](../tasks/109_boundary_replay/GPU_HANDOFF.md) · [108最终报告](../outputs/108_semantic_hierarchy/final_report.md)。
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -22,6 +22,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|109真实困难边界回放|107最终label_only/完整状态齐；294+至多274预测计划、192/24步单候选和CPU接续测试完成|READY_FOR_GPU_RENTAL；没有真实难例清单/方法成绩，GPU/API0，等待租卡及新授权|
 |108语义分层与证据池化|CPU三头；4090同资料两臂各5轮和500评价完整完成|shared公平ΔMCC−.0832/−.0439、false-S+13/+8，停止扩大；模型回传，关机命令接受；不升级默认|
 |107支持性辅助监督|原196两臂fresh训练各50步/392消费、各500回执、最终完整状态与报告|CPU分析完成，实际结论见107最终报告；不自动扩大/升级|
 |106标签目标准备|3675池、两个512匹配候选、53+16源文审读、同196归一sum入口及CPU验证|READY_FOR_NEXT_GPU_DECISION；推荐先诊断标签目标，0新API/GPU，不自动启动|

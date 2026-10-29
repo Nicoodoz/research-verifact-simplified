@@ -1,0 +1,16 @@
+{
+  "task": 109,
+  "bundle_manifest_sha256": "aa34867a49f2573a6e79d0f9a9609862b5404d1cb194f9267def36b69a663bb8",
+  "bundle_verified": true,
+  "source107_step": 50,
+  "source107_label_only": true,
+  "main_loss_and_training_settings_unchanged": true,
+  "fixed500_interface_and_batch2_unchanged": true,
+  "standalone_bundle_preflight_exit_code": 0,
+  "standalone_worker_and_analysis_help_exit_code": 0,
+  "original9B_weights_loaded": false,
+  "CUDA_initialized": false,
+  "model_directory_checked": false,
+  "newGPU_authorization_granted_by_preflight": false,
+  "test_basis": "actual successful standalone package preflight/help calls during CPU preparation"
+}
