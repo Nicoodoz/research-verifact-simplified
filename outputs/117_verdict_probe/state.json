@@ -1,0 +1,21 @@
+{
+  "cycle": 2,
+  "start_epoch": 1793287154,
+  "start_beijing": "2026-10-29 23:19:14",
+  "duration_seconds": 36000,
+  "deadline_beijing": "2026-10-30 09:19:14",
+  "GPU_cap_CNY": 15.8,
+  "API_cap_CNY": 80,
+  "hourly_CNY": 1.58,
+  "no_shutdown": true,
+  "status": "EXTRACTING",
+  "active_job": "features_initial",
+  "best_candidate": "107_label_only",
+  "paid_API_CNY": 0,
+  "confirmation40_used": false,
+  "train_N": 1024,
+  "validation_N": 730,
+  "screen_N": 160,
+  "active_remote_pid": 32427,
+  "feature_N": 1914
+}

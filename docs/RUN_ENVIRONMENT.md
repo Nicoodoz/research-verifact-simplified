@@ -1,5 +1,7 @@
 # 当前环境与启动方式（2026-10-29核对）
 
+117夜间追加窗口已复用同一32GB实例和env103：原9B及107适配器存在、磁盘剩余约96GB、接续时无计算进程。新窗口23:19:14起10小时、GPU15.80元/API80元累计，禁止自动关机。特征缓存仅在私有目录；固定公共标签前缀不含GT。实时显存/吞吐以117运行记录为准，不改116历史。
+
 116周期1已收束：原32GB实例/9B/env103复用，无重装或底座下载。gentle_refresh从107权重及Adam状态固定续训25步，完整输入BF16；最长12220 tokens backward峰值约24.63GiB、余量约6.53GiB。最终模型与完整optimizer/RNG及全部预测已回传.local_models/116_research_cycle/。GPU进程已退出，未发送shutdown；用户保留开机仍计费。周期费用快照与时间见116报告，API0。
 115复用同实例、原9B/env103，fresh LoRA与同196/50步；仅导入106的backbone_sum_loss，固定归一360/196，其余沿114已实跑训练/评价循环及107原子checkpoint。最长完整12708 tokens backward、LoRA梯度及显存余量通过；训练日志1893.2秒、500评价971.5秒。最终checkpoint与评价并行回传，私有结果在.local_models/115_label_sum/evidence/。用卡从2026-10-29 18:27:44至2026-10-29 19:26:25，估算¥1.5455/3，API0；没有shutdown或磁盘释放。CPU损失数值核验用032解释器＋research激活，评价用research-verifact-029，无安装或升级。
 114复用同一32GB实例、原9B/env103及105分段loss/107滚动checkpoint；从原底座fresh LoRA训练50步，非107/109续训。BF16完整输入、micro1/累积8（两短尾各4）、batch2旧500分组保持。最长12708 tokens backward实测约24.9GiB峰值，LoRA梯度正常；50步训练1885.6秒、500评价963.1秒。最终完整checkpoint与评价并行回传，全部私有结果在.local_models/114_matched_refresh/evidence/。GPU工作18:12:24结束，关键回传18:12:43，任务估算¥1.4252；18:13核实GPU无计算进程，未发送shutdown。CPU token准备使用既有032解释器（主029无tokenizers），统计使用research-verifact-029；无重装、量化或截断。

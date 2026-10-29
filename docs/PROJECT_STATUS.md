@@ -1,6 +1,6 @@
 # 项目现状（2026-10-29，自主周期1已收束）
 
-自主研究周期1已收束，未达到主要提升目标，保留107 label_only。六项候选及全部失败结果已留存：claim_repeat在1817条仅MCC+0.00730、正确+7、false-S+1；最后gentle_refresh固定25步在180条也出现NA损失及false-S增加，停止扩大。未使用确认40人，未改变默认系统。GPU计算及关键回传完成，实例按用户政策未关机、留机仍计费。 [周期备忘](../tasks/116_research_cycle/memo.md) · [周期进度](../outputs/116_research_cycle/实时进度.md)。
+夜间追加窗口117+正在执行：2026-10-29 23:19:14至2026-10-30 09:19:14，现有32GB GPU按1.58元/小时，新增GPU上限15.80元、API上限80元，跨子任务累计；不自动关机。先做verdict_probe：冻结107原输入表示，在原标签预测位置学习三类判别头；旧500内固定嵌套160筛查，有信号再扩大。允许有依据的充分训练，未审样本不自动排除；不重复116已完成候选，不使用确认数据调参。116结果和预算保持历史记录。 [117接续](../tasks/117_verdict_probe/CURRENT.md)
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 

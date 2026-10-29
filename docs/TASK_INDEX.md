@@ -6,6 +6,7 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
+|117_verdict_probe|[接续与方案](../tasks/117_verdict_probe/CURRENT.md) · [准备](../outputs/117_verdict_probe/preparation.json) · [进度](../outputs/117_verdict_probe/实时进度.md)|夜间10小时授权；固定嵌套160、1024训练/730内部验证|正在冻结107表示并学习三类头；未宣称有效，确认数据不参与选型|
 |116_research_cycle|[报告](../outputs/116_research_cycle/report.md) · [比较](../outputs/116_research_cycle/comparison.jsonl) · [流程复盘](116_WORKFLOW_REVIEW.md) · [状态](../outputs/116_research_cycle/cycle_state.json)|六候选真实评价；两次训练及完整状态回传；确认40未用|未达到主要目标，保留107；API0，GPU空闲但未关机|
 |115_label_sum|[报告](../outputs/115_label_sum/final_report.md) · [分析](../outputs/115_label_sum/analysis.md) · [比较](../outputs/115_label_sum/comparison.json) · [协议](../tasks/115_label_sum/protocol.md)|同196、数值/梯度CPU检查、50步、500首次及患者配对；执行者自检|115未形成通过保护条件的综合增量，停止当前label_sum配方，保留107主基线。；完整状态回传，新授权双仓库发布，未关机，不自动116|
 |114_matched_refresh|[报告](../outputs/114_matched_refresh/final_report.md) · [比较](../outputs/114_matched_refresh/comparison.json) · [去正文预测](../outputs/114_matched_refresh/predictions_sanitized.jsonl) · [协议](../tasks/114_matched_refresh/protocol.md)|固定匹配清单、50步/392次、500同ID、患者配对及完整状态回传；执行者自检|自然风险改善伴随NA损失，未过事前保护条件，停止当前配方；107保留，未关机，不自动115|

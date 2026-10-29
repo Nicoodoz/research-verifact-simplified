@@ -1,0 +1,43 @@
+{
+  "task": 117,
+  "method": "verdict_probe",
+  "N": 1914,
+  "roles": {
+    "train": {
+      "N": 1024,
+      "GT": {
+        "Supported": 768,
+        "Not Addressed": 128,
+        "Not Supported": 128
+      },
+      "patients": 32
+    },
+    "validation": {
+      "N": 730,
+      "GT": {
+        "Not Addressed": 162,
+        "Supported": 514,
+        "Not Supported": 54
+      },
+      "patients": 8
+    },
+    "screen": {
+      "N": 160,
+      "GT": {
+        "Supported": 103,
+        "Not Addressed": 33,
+        "Not Supported": 24
+      },
+      "patients": 20
+    }
+  },
+  "prefix": "{\"verdict\":\"",
+  "labels_in_model_input": false,
+  "ancestor107_saw_some_internal_validation": true,
+  "unchanged_doctor_GT": true,
+  "all_raw_reference": true,
+  "unreviewed_excluded": false,
+  "head_hyperparameters_selected_on_validation_only": true,
+  "ancestor107_direct_training_examples_in_validation": 43,
+  "full_validation_before_results": true
+}
