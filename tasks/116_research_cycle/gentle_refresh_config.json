@@ -1,0 +1,77 @@
+{
+  "task": 116,
+  "model": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "seed": 103027,
+  "training": {
+    "epochs": 1,
+    "microbatch": 1,
+    "gradient_accumulation": 8,
+    "learning_rate": 2e-05,
+    "optimizer": "AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "scheduler": "constant new stage, source Adam moments retained",
+    "gradient_clip": 1.0,
+    "bf16": true,
+    "quantization": false,
+    "CPU_offload": false,
+    "gradient_checkpointing": true,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "bias": "none",
+    "use_rslora": false,
+    "vision_frozen": true,
+    "expected_trainable_parameters": 43278336,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj",
+      "out_proj",
+      "in_proj_qkv",
+      "in_proj_z",
+      "in_proj_b",
+      "in_proj_a"
+    ],
+    "loss": "unchanged loss105.backbone_loss",
+    "head_chunk_tokens": 16,
+    "head_checkpoint_recompute": true,
+    "order": "frozen104_original_order_each_epoch",
+    "checkpoint": "atomic_two_rolling_slots_every_optimizer_step",
+    "total_steps": 25
+  },
+  "evaluation": {
+    "mode": "original107_greedy_JSON",
+    "full_reference": true,
+    "GT_in_inputs": false,
+    "first_screen_N": 180,
+    "parser": "parse105"
+  },
+  "training_N": 196,
+  "trainable_arms": [
+    "gentle_refresh"
+  ],
+  "design": {
+    "start": "107 final adapter and Adam moments",
+    "selection": "fixed final25, never by development score",
+    "data": "Exact114 second196, same order, no resampling",
+    "new_head": false,
+    "JSON_interface_unchanged": true,
+    "GT_unchanged": true
+  },
+  "candidate": "gentle_refresh",
+  "model_dir": "/root/verifact_image/models/qwen3.5-9b",
+  "max_seq_length": 13783,
+  "source_root": "/root/autodl-tmp/verifact109/bundle/source107",
+  "source_adapter_sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+  "budget_source": "One116 cycle session; no new budget or elapsed-time origin"
+}

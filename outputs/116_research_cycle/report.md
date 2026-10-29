@@ -2,7 +2,7 @@
 
 107 label_only仍是主基线。以下均为原20名患者的开发筛查，原医生GT保留；后40人尚未用于选型或确认。各候选首次回执保留，未按结果重发。
 
-结论进度：claim_repeat完整1817只有小幅、未确认稳定的开发信号；single_token短训练在500条MCC与false-S均退化，停止该配方。当前复用冻结107，仅检验三代码读出，不做新训练。
+要素核对500无综合增量，三代码方案已停止。当前执行原107原接口/原loss的小步数据更新gentle_refresh，固定25步后直接筛查；不使用确认40。
 
 |候选/面板|配置|MCC|PA|正确数/有效数|false-S/有效非S|有效/计划|
 |---|---|---:|---:|---:|---:|---:|
@@ -54,6 +54,24 @@
 |single_token_short_500_missing/pressure|107 label_only|0.3123|58.00%|58/100|16/100|100/100|
 |single_token_short_500_missing/pressure|single_token_short|0.2668|53.00%|53/100|22/100|100/100|
 |single_token_short_500_missing/pressure|作者历史R1|0.1572|44.00%|44/100|30/100|100/100|
+|single_token_107_pilot/natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
+|single_token_107_pilot/natural|single_token_107|0.4939|79.17%|95/120|5/24|120/120|
+|single_token_107_pilot/natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
+|single_token_107_pilot/pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
+|single_token_107_pilot/pressure|single_token_107|0.1500|46.67%|28/60|12/60|60/60|
+|single_token_107_pilot/pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
+|support_check_pilot/natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
+|support_check_pilot/natural|support_check|0.4347|72.50%|87/120|4/24|120/120|
+|support_check_pilot/natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
+|support_check_pilot/pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
+|support_check_pilot/pressure|support_check|0.3638|61.67%|37/60|7/60|60/60|
+|support_check_pilot/pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
+|support_check_500_missing/natural|107 label_only|0.5032|79.75%|319/400|12/79|400/400|
+|support_check_500_missing/natural|support_check|0.4918|78.50%|314/400|11/79|400/400|
+|support_check_500_missing/natural|作者历史R1|0.4319|81.00%|324/400|28/79|400/400|
+|support_check_500_missing/pressure|107 label_only|0.3123|58.00%|58/100|16/100|100/100|
+|support_check_500_missing/pressure|support_check|0.3224|59.00%|59/100|15/100|100/100|
+|support_check_500_missing/pressure|作者历史R1|0.1572|44.00%|44/100|30/100|100/100|
 
 ## 去留与解释
 
@@ -79,8 +97,19 @@
 - `single_token_short_500_missing`：自然MCC-0.04324、false-S+9；压力MCC-0.04552、false-S+6。明确停止当前短训练配方，不追加训练或扩1817。。
   - natural：Supported救回15、误伤12；Not Supported救回4、误伤2；Not Addressed救回3、误伤9；新增false-S 11、避免2。
   - pressure：Supported救回0、误伤0；Not Supported救回3、误伤7；Not Addressed救回0、误伤1；新增false-S 7、避免1。
+- `single_token_107_pilot`：冻结107三代码读出：自然正确+9但压力正确-7、false-S+5，停止；新训练不是唯一退化原因。。
+  - natural：Supported救回8、误伤0；Not Supported救回0、误伤1；Not Addressed救回2、误伤0；新增false-S 1、避免0。
+  - pressure：Supported救回0、误伤0；Not Supported救回0、误伤5；Not Addressed救回0、误伤2；新增false-S 5、避免0。
+- `support_check_pilot`：边界信号：总净正确+3，未达原+4粗筛线，但自然/压力MCC均正、false-S不变，无类别损坏；按用户时间优先与宽松筛查授权，先做一次低成本500补评，不声明阳性。。
+  - natural：Supported救回1、误伤2；Not Supported救回0、误伤0；Not Addressed救回2、误伤0；新增false-S 0、避免0。
+  - pressure：Supported救回0、误伤0；Not Supported救回2、误伤0；Not Addressed救回0、误伤0；新增false-S 0、避免0。
+- `support_check_500_missing`：自然MCC-0.01136、正确-5、false-S-1；压力正确+1、false-S-1。不达综合目标，停止扩大。。
+  - natural：Supported救回0、误伤6；Not Supported救回0、误伤0；Not Addressed救回1、误伤0；新增false-S 0、避免1。
+  - pressure：Supported救回0、误伤0；Not Supported救回2、误伤1；Not Addressed救回0、误伤0；新增false-S 0、避免1。
 
 claim_repeat完整1817的MCC差值患者分组95%区间为[-0.0126, +0.0244]（1000次bootstrap）；正确数增加7名患者、减少9名患者。区间跨0不表示等效，也不足以支持稳定增益。相对107只是较小点估计收益，不占用唯一的确认40人机会。
+
+短训练的范围诊断：180与500重合的70条净正确+1；500中其余430条净正确-7、false-S+14。这是不同覆盖范围暴露的泛化损失；评价期间模型权重未再更新，不能将内部训练前后改善当作超过107的证据。
 
 ## 方法与代价
 
@@ -90,7 +119,7 @@ claim_repeat完整1817的MCC差值患者分组95%区间为[-0.0126, +0.0244]（1
 
 `claim_repeat`复用107，在完整reference之外的消息末端重述同一待核验命题；未增添EHR事实、GT、其他模型答案或逐例规则。
 
-范围：原103的180条与旧500仅重合70条（自然35、压力35）。因此补齐旧500实际新增430次，再补完整1817需要1207次；已有110条“旧500之外”的原180预测继续复用。180与500不是严格包含关系，不能把两张表的差值直接解释成新增320条的表现。
+范围：原103的180条与旧500仅重合70条。按原103面板计为自然35、压力35；按旧500面板计为自然48、压力22，两个面板定义不同。因此补齐旧500实际新增430次，再补完整1817需要1207次；已有110条“旧500之外”的原180预测继续复用。180与500不是严格包含关系，不能把两张表的差值直接解释成新增320条的表现。
 
 对其自然面板6条S救回及1条S误伤做了定向原文检查：5条救回有较明确可见依据，1条缺关键时间段，误伤例也有可见支持。3条有依据救回来自同一患者。这不是随机病例审查，不能证明模型使用了对应证据，或排除更偏S；缺证例仍保留医生原GT。临床正文与逐例笔记仅在私有目录。
 
@@ -100,8 +129,8 @@ claim_repeat完整1817的MCC差值患者分组95%区间为[-0.0126, +0.0244]（1
 
 三类完整指标、混淆矩阵、逐例配对变化与患者方向保存在各候选JSON。当前粗筛不例行bootstrap；有值得保留的较大开发收益后再补必要稳定性分析。作者R1只作历史同ID参照。
 
-周期起点2026-10-29 19:47:16（北京时间），截止2026-10-30 07:47:16；本报告生成时GPU墙钟估算¥3.381/20、API ¥0/20。估算包含等待和回传，不是平台精确账单。
+周期起点2026-10-29 19:47:16（北京时间），截止2026-10-30 07:47:16；本报告生成时GPU墙钟估算¥4.230/20、API ¥0/20。估算包含等待和回传，不是平台精确账单。
 
-状态：ACTIVE；当前任务`single_token_107_pilot`；最佳`107_label_only`。不自动关机，实例继续开机会继续计费。
+状态：ACTIVE；当前任务`gentle_refresh`；最佳`107_label_only`。不自动关机，实例继续开机会继续计费。
 
 依据：[周期备忘](../../tasks/116_research_cycle/memo.md)、[预写粗筛规则](../../tasks/116_research_cycle/screen_rules.json)、[单token配置](../../tasks/116_research_cycle/single_token_config.json)。

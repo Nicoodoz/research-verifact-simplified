@@ -11,7 +11,9 @@ def put(p,v):
  p.parent.mkdir(parents=True,exist_ok=True);q=p.with_suffix('.tmp');q.write_bytes((json.dumps(v,ensure_ascii=False,indent=2)+'\n').encode());q.replace(p)
 def messages(row,kind):
  result=original.messages(row['claim'],row['reference'])
- if kind=='claim_repeat':result[-1]['content']+='\n\n## Text being verified (repeated; not reference evidence):\n'+json.dumps(row['claim'],ensure_ascii=False)+'\nApply the same three verdict definitions to this text, using only the reference above.'
+ if kind=='original':return result
+ elif kind=='claim_repeat':result[-1]['content']+='\n\n## Text being verified (repeated; not reference evidence):\n'+json.dumps(row['claim'],ensure_ascii=False)+'\nApply the same three verdict definitions to this text, using only the reference above.'
+ elif kind=='support_check':result[-1]['content']+='\n\nBefore choosing Supported, verify the complete assertion against the reference: who or what is involved, the asserted action or relation, and any explicitly stated test type, route, quantity, time or order, completion status, and scope. Evidence for separate parts is not evidence for their link; evidence for one component is not evidence for the whole assertion. Require only qualifiers actually stated in the text, and allow faithful paraphrases. If the specific assertion is addressed but not fully supported, choose Not Supported; if that assertion is not addressed, choose Not Addressed. Return only the original verdict JSON.'
  else:raise ValueError('Unfrozen input organization')
  return result
 def main():

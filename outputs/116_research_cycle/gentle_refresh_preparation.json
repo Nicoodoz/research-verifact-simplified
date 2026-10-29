@@ -1,0 +1,22 @@
+{
+  "N": 196,
+  "patients": 40,
+  "GT": {
+    "Not Supported": 62,
+    "Supported": 83,
+    "Not Addressed": 51
+  },
+  "source114_second196": true,
+  "old107": 41,
+  "new107": 155,
+  "max_train_tokens": 12220,
+  "steps": 25,
+  "tail_divisor": 4,
+  "learning_rate": 2e-05,
+  "source_Adam_moments_retained": true,
+  "old_lr_explicitly_overridden": true,
+  "reviewed_gt_explained": 41,
+  "not_reviewed": 150,
+  "unresolved": 5,
+  "not_efficacy_evidence": true
+}

@@ -1,0 +1,23 @@
+{
+  "groups": {
+    "shared70": {
+      "expected_N": 70,
+      "valid_N": 70,
+      "correct_delta": 3,
+      "false_S_delta": 0
+    },
+    "old500_only430": {
+      "expected_N": 430,
+      "valid_N": 430,
+      "correct_delta": -7,
+      "false_S_delta": -2
+    },
+    "pilot_only110": {
+      "expected_N": 110,
+      "valid_N": 110,
+      "correct_delta": 0,
+      "false_S_delta": 0
+    }
+  },
+  "note": "Diagnostic count differences only; original180 and old500 are not nested, and neither pooled count is a natural-distribution metric."
+}

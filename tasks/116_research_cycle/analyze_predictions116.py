@@ -17,7 +17,7 @@ def screening(panels):
  return dict(guards=guards,quality_signal=quality,risk_signal=risk,continue_=all(guards.values()) and (quality or risk))
 def load_predictions(name):
  job=c.read(P/(name+'.json'));new={};folder=P/'evidence'/name
- if job.get('worker')=='generate116.py':
+ if job.get('worker')=='generate116.py' or job.get('output_mode')=='generative':
   for f in sorted((folder/'batches').glob('*.json')):
    for r in c.read(f)['records']:
     assert r['parsed']==parse(r['content'],r['finish_reason']);new[r['id']]=dict(r,verdict=r['parsed']['verdict'],valid=r['parsed']['valid'])
@@ -33,7 +33,7 @@ def main(name):
  for source in job.get('aggregate_jobs',[name]):
   source_job=c.read(P/(source+'.json'));assert source_job['candidate']==job['candidate']
   if 'adapter_sha256' in source_job and 'adapter_sha256' in job:assert source_job['adapter_sha256']==job['adapter_sha256']
-  if 'input_transform' in source_job or 'input_transform' in job:assert source_job.get('input_transform')==job.get('input_transform')
+  if 'input_transform' in source_job or 'input_transform' in job:assert source_job.get('input_transform','original')==job.get('input_transform','original')
   received=load_predictions(source);assert not set(new)&set(received),'Duplicate first receipts across jobs';new.update(received)
  wanted=list(new)
  for i,r in new.items():assert r['source_prompt_sha256_104']==base[i]['prompt_token_sha256']
@@ -52,6 +52,15 @@ def main(name):
  result=dict(job=name,candidate=job['candidate'],panels=panels,bootstrap_performed=False)
  if not expanded:result['screen']=screening(panels)
  c.put(O/(name+'.json'),result);c.putl(O/(name+'_predictions.jsonl'),[dict(id=i,sid=keys[i]['sid'],GT=keys[i]['GT'],author=keys[i]['author'],old_panel=keys[i].get('old_panel'),subset=keys[i].get('subset'),pilot_panel=keys[i]['pilot_panel'],baseline107=base[i]['verdict'],verdict=new[i]['verdict'],valid=new[i]['valid'],input_tokens=new[i].get('input_tokens'),source_input_tokens=base[i].get('input_tokens'),probabilities=new[i].get('probabilities')) for i in wanted])
+ if job.get('analysis_scope')=='old500':
+  sets={'shared70':[i for i in wanted if keys[i]['old_panel'] and keys[i]['pilot_panel']],
+        'old500_only430':[i for i in wanted if keys[i]['old_panel'] and not keys[i]['pilot_panel']],
+        'pilot_only110':[i for i in wanted if not keys[i]['old_panel'] and keys[i]['pilot_panel']]}
+  diagnostic={}
+  for group,ids in sets.items():
+   valid=[i for i in ids if new[i]['valid']]
+   diagnostic[group]=dict(expected_N=len(ids),valid_N=len(valid),correct_delta=sum(int(new[i]['verdict']==keys[i]['GT'])-int(base[i]['verdict']==keys[i]['GT']) for i in valid),false_S_delta=sum(int(keys[i]['GT']!='Supported' and new[i]['verdict']=='Supported')-int(keys[i]['GT']!='Supported' and base[i]['verdict']=='Supported') for i in valid))
+  c.put(O/(name+'_overlap.json'),dict(groups=diagnostic,note='Diagnostic count differences only; original180 and old500 are not nested, and neither pooled count is a natural-distribution metric.'))
  print(c.canonical(dict(job=name,screen=result.get('screen'),panels={p:dict(delta_MCC=v['delta_MCC'],delta_correct=v['delta_correct'],delta_false_S=v['delta_false_S'],scores={a:{k:m[k] for k in ['mcc','percent_agreement','correct','false_S','non_S']} for a,m in v['scores'].items()}) for p,v in panels.items()})))
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('job');main(p.parse_args().job)
