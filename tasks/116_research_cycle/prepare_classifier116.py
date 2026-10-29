@@ -6,6 +6,14 @@ R=Path(__file__).resolve().parents[2];sys.path.insert(0,str(R/'tasks/105_brief_s
 from tokenizer_cpu105 import CPUPinnedTokenizer
 sys.path.insert(0,str(Path(__file__).parent));import classifier116 as interface
 P=R/'.local_models/116_research_cycle';O=R/'outputs/116_research_cycle'
+def export_manifest():
+ B=P/'classifier_bundle';lengths={r['id']:r for r in c.rows(B/'data/cls/lengths.jsonl')};result=[]
+ for role,filename in [('gradient','train.jsonl'),('internal_validation','validation.jsonl')]:
+  for n,r in enumerate(c.rows(B/'data/cls'/filename),1):
+   z=lengths[r['id']]
+   result.append(dict(position=n,role=role,id=r['id'],sid=r['sid'],GT=r['GT'],author=r['author'],claim_sha256=r['claim_sha256'],reference_sha256=r['reference_sha256'],input_tokens=z['tokens'],prompt_sha256=z['prompt_sha256'],class_code=dict(zip(c.LABELS,['A','B','C']))[r['GT']]))
+ c.putl(O/'single_token_manifest.jsonl',result)
+
 def main():
  train=c.rows(P/'data_train768.jsonl');val=c.rows(P/'data_validation128.jsonl');summary=c.read(P/'data_summary.json');assert summary['algorithm_version']=='116/data_v2_gap_only'
  assert len(train)==768 and len(val)==128 and not {str(r['sid']) for r in train}&{str(r['sid']) for r in val}
@@ -30,6 +38,7 @@ def main():
  c.put(B/'data/cls/config.json',cfg);c.put(R/'tasks/116_research_cycle/single_token_config.json',cfg)
  for name,rows in [('train.jsonl',ordered),('validation.jsonl',val),('lengths.jsonl',lengths)]:c.putl(B/'data/cls'/name,rows)
  c.put(B/'data/cls/plan.json',batches)
+ export_manifest()
  job=dict(name='single_token_768',candidate='single_token',worker='train_classifier116.py',mode='train',backup_best=True,config='data/cls/config.json',eval_ids=c.read(R/'tasks/113_label_path/config.json')['pilot_ids'],phase_limit_seconds=7200,model_dir=cfg['model_dir'])
  c.put(P/'single_token_768.json',job)
  for name in ['tasks/116_research_cycle/train_classifier116.py','tasks/116_research_cycle/classifier116.py','tasks/104_supervision_evidence/training104.py','tasks/105_brief_supervision/common105.py','tasks/107_support_aux/checkpoint107.py']:

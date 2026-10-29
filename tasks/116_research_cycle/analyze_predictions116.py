@@ -32,6 +32,8 @@ def main(name):
  keys={r['id']:r for r in c.rows(P/('keys_selection1817.jsonl' if expanded else 'keys.jsonl'))};base={r['id']:r for r in c.rows(P/('baseline107_selection1817.jsonl' if expanded else 'baseline107.jsonl'))};new={}
  for source in job.get('aggregate_jobs',[name]):
   source_job=c.read(P/(source+'.json'));assert source_job['candidate']==job['candidate']
+  if 'adapter_sha256' in source_job and 'adapter_sha256' in job:assert source_job['adapter_sha256']==job['adapter_sha256']
+  if 'input_transform' in source_job or 'input_transform' in job:assert source_job.get('input_transform')==job.get('input_transform')
   received=load_predictions(source);assert not set(new)&set(received),'Duplicate first receipts across jobs';new.update(received)
  wanted=list(new)
  for i,r in new.items():assert r['source_prompt_sha256_104']==base[i]['prompt_token_sha256']

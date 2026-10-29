@@ -7,10 +7,14 @@ from analyze109 import metrics
 sys.path.insert(0,str(R/'tasks/110_update_interpolation'));from analyze110 import changes
 sys.path.insert(0,str(R/'tasks/107_support_aux'));from evaluate107 import risk_deltas
 sys.path.insert(0,str(R/'src'));from verifact_research.evaluation import paired_compare
+from sklearn.metrics import matthews_corrcoef,accuracy_score
 P=R/'.local_models/116_research_cycle';O=R/'outputs/116_research_cycle'
 
 def compact(rows):
     scores={arm:metrics(rows,{r['id']:r['pred'][arm] for r in rows}) for arm in ['base','candidate']}
+    for arm,score in scores.items():
+        truth=[r['GT'] for r in rows];pred=[r['pred'][arm] for r in rows]
+        assert abs(matthews_corrcoef(truth,pred)-score['mcc'])<1e-10 and abs(accuracy_score(truth,pred)-score['percent_agreement'])<1e-10
     delta=changes(rows,'base','candidate')
     avoided=[r for r in rows if r['GT']!='Supported' and r['pred']['base']=='Supported' and r['pred']['candidate']!='Supported']
     delta.update(false_S_avoided_but_still_wrong=sum(r['pred']['candidate']!=r['GT'] for r in avoided),NA_S_to_NS=sum(r['GT']=='Not Addressed' and r['pred']['candidate']=='Not Supported' for r in avoided))
@@ -32,7 +36,7 @@ def main(name):
         pred=lambda arm:[dict(proposition_id=r['id'],verdict=r['pred'][arm]) for r in part]
         s['patient_paired']=paired_compare(cohort,pred('base'),pred('candidate'),iterations=1000)
         s['risk_CI']=risk_deltas(part,'base','candidate');sections[label]=s
-    c.put(O/(name+'_strata.json'),dict(job=name,sections=sections,bootstrap_iterations=1000,length_bins='within-panel token-rank quartiles; no outcome-dependent boundaries',no_confirmatory_claim_from_development=True))
+    c.put(O/(name+'_strata.json'),dict(job=name,sections=sections,bootstrap_iterations=1000,length_bins='within-panel token-rank quartiles; no outcome-dependent boundaries',no_confirmatory_claim_from_development=True,independent_sklearn_metrics_match=True))
     print(c.canonical(dict(job=name,panels=list(sections),bootstrap_iterations=1000)))
 
 if __name__=='__main__':

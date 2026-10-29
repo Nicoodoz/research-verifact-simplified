@@ -22,6 +22,24 @@
 |claim_repeat_500_missing/pressure|107 label_only|0.3123|58.00%|58/100|16/100|100/100|
 |claim_repeat_500_missing/pressure|claim_repeat|0.3219|58.00%|58/100|17/100|100/100|
 |claim_repeat_500_missing/pressure|作者历史R1|0.1572|44.00%|44/100|30/100|100/100|
+|claim_repeat_1817_missing/natural|107 label_only|0.5032|79.75%|319/400|12/79|400/400|
+|claim_repeat_1817_missing/natural|claim_repeat|0.5232|80.25%|321/400|12/79|400/400|
+|claim_repeat_1817_missing/natural|作者历史R1|0.4319|81.00%|324/400|28/79|400/400|
+|claim_repeat_1817_missing/pressure|107 label_only|0.3123|58.00%|58/100|16/100|100/100|
+|claim_repeat_1817_missing/pressure|claim_repeat|0.3219|58.00%|58/100|17/100|100/100|
+|claim_repeat_1817_missing/pressure|作者历史R1|0.1572|44.00%|44/100|30/100|100/100|
+|claim_repeat_1817_missing/new1317|107 label_only|0.5398|82.76%|1090/1317|22/183|1317/1317|
+|claim_repeat_1817_missing/new1317|claim_repeat|0.5445|83.14%|1095/1317|22/183|1317/1317|
+|claim_repeat_1817_missing/new1317|作者历史R1|0.4764|85.35%|1124/1317|47/183|1317/1317|
+|claim_repeat_1817_missing/selection1817|107 label_only|0.5445|80.74%|1467/1817|50/362|1817/1817|
+|claim_repeat_1817_missing/selection1817|claim_repeat|0.5518|81.12%|1474/1817|51/362|1817/1817|
+|claim_repeat_1817_missing/selection1817|作者历史R1|0.4842|82.11%|1492/1817|105/362|1817/1817|
+|claim_repeat_1817_missing/history103_natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
+|claim_repeat_1817_missing/history103_natural|claim_repeat|0.4735|76.67%|92/120|4/24|120/120|
+|claim_repeat_1817_missing/history103_natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
+|claim_repeat_1817_missing/history103_pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
+|claim_repeat_1817_missing/history103_pressure|claim_repeat|0.2945|58.33%|35/60|7/60|60/60|
+|claim_repeat_1817_missing/history103_pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
 
 ## 去留与解释
 
@@ -34,6 +52,13 @@
 - `claim_repeat_500_missing`：自然400 MCC+0.01997、正确+2、false-S不变，S净-2/NS+2/NA+2；压力正确不变、false-S+1。有限信号，继续补齐1817，不宣称已成功。
   - natural：Supported救回6、误伤8；Not Supported救回2、误伤0；Not Addressed救回4、误伤2；新增false-S 1、避免1。
   - pressure：Supported救回0、误伤0；Not Supported救回2、误伤3；Not Addressed救回1、误伤0；新增false-S 2、避免1。
+- `claim_repeat_1817_missing`：完整1817 MCC+0.00730、正确+7、false-S+1；仅低成本辅助信号，未达到周期主要目标，不动确认40；继续已准备的single_token_768。
+  - natural：Supported救回6、误伤8；Not Supported救回2、误伤0；Not Addressed救回4、误伤2；新增false-S 1、避免1。
+  - pressure：Supported救回0、误伤0；Not Supported救回2、误伤3；Not Addressed救回1、误伤0；新增false-S 2、避免1。
+  - new1317：Supported救回26、误伤21；Not Supported救回2、误伤3；Not Addressed救回4、误伤3；新增false-S 3、避免3。
+  - selection1817：Supported救回32、误伤29；Not Supported救回6、误伤6；Not Addressed救回9、误伤5；新增false-S 6、避免5。
+  - history103_natural：Supported救回6、误伤1；Not Supported救回0、误伤0；Not Addressed救回1、误伤0；新增false-S 0、避免0。
+  - history103_pressure：Supported救回0、误伤0；Not Supported救回2、误伤1；Not Addressed救回0、误伤1；新增false-S 1、避免1。
 
 ## 方法与代价
 
@@ -43,14 +68,16 @@
 
 `claim_repeat`复用107，在完整reference之外的消息末端重述同一待核验命题；未增添EHR事实、GT、其他模型答案或逐例规则。
 
+范围：原103的180条与旧500仅重合70条（自然35、压力35）。因此补齐旧500实际新增430次，再补完整1817需要1207次；已有110条“旧500之外”的原180预测继续复用。180与500不是严格包含关系，不能把两张表的差值直接解释成新增320条的表现。
+
 对其自然面板6条S救回及1条S误伤做了定向原文检查：5条救回有较明确可见依据，1条缺关键时间段，误伤例也有可见支持。3条有依据救回来自同一患者。这不是随机病例审查，不能证明模型使用了对应证据，或排除更偏S；缺证例仍保留医生原GT。临床正文与逐例笔记仅在私有目录。
 
 `single_token_768`是待验证的完整判别配方：原9B、768条真实训练命题、32名梯度患者，另8名患者128条只用于选checkpoint。原临床定义与完整输入保留，A/B/C三行固定词表投影作唯一三类CE，96步；不把它当作纯组件消融或新的原创算法。
 
 三类完整指标、混淆矩阵、逐例配对变化与患者方向保存在各候选JSON。当前粗筛不例行bootstrap；有值得保留的较大开发收益后再补必要稳定性分析。作者R1只作历史同ID参照。
 
-周期起点2026-10-29 19:47:16（北京时间），截止2026-10-30 07:47:16；本报告生成时GPU墙钟估算¥1.074/20、API ¥0/20。估算包含等待和回传，不是平台精确账单。
+周期起点2026-10-29 19:47:16（北京时间），截止2026-10-30 07:47:16；本报告生成时GPU墙钟估算¥2.132/20、API ¥0/20。估算包含等待和回传，不是平台精确账单。
 
-状态：ACTIVE；当前任务`claim_repeat_1817_missing`；最佳`107_label_only`。不自动关机，实例继续开机会继续计费。
+状态：ACTIVE；当前任务`single_token_768`；最佳`claim_repeat`。不自动关机，实例继续开机会继续计费。
 
 依据：[周期备忘](../../tasks/116_research_cycle/memo.md)、[预写粗筛规则](../../tasks/116_research_cycle/screen_rules.json)、[单token配置](../../tasks/116_research_cycle/single_token_config.json)。

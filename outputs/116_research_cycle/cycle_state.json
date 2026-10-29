@@ -9,24 +9,25 @@
   "hourly_CNY": 1.58,
   "no_shutdown": true,
   "status": "ACTIVE",
-  "active_job": "claim_repeat_1817_missing",
+  "active_job": "single_token_768",
   "completed_jobs": [
     "joint_path_pilot",
     "claim_repeat_pilot",
-    "claim_repeat_500_missing"
+    "claim_repeat_500_missing",
+    "claim_repeat_1817_missing"
   ],
-  "best_candidate": "107_label_only",
+  "best_candidate": "claim_repeat",
   "paid_API_CNY": 0,
   "confirmation40_used": false,
   "runtime_state": ".local_models/116_research_cycle/live_state.json",
-  "active_remote_pid": null,
-  "next_if_no_strong_signal": [
-    "claim_repeat_pilot",
-    "single_token_768"
-  ],
+  "active_remote_pid": 26810,
   "decisions": {
     "joint_path_pilot": "停止扩大；降低8次错误放行，但自然集误伤14条原正确S，净少12条正确",
     "claim_repeat_pilot": "自然120净多6条正确、MCC+0.0658，false-S不变；压力净正确及false-S不变，继续补齐旧500",
-    "claim_repeat_500_missing": "自然400 MCC+0.01997、正确+2、false-S不变，S净-2/NS+2/NA+2；压力正确不变、false-S+1。有限信号，继续补齐1817，不宣称已成功"
-  }
+    "claim_repeat_500_missing": "自然400 MCC+0.01997、正确+2、false-S不变，S净-2/NS+2/NA+2；压力正确不变、false-S+1。有限信号，继续补齐1817，不宣称已成功",
+    "claim_repeat_1817_missing": "完整1817 MCC+0.00730、正确+7、false-S+1；仅低成本辅助信号，未达到周期主要目标，不动确认40；继续已准备的single_token_768"
+  },
+  "best_status": "small development-only auxiliary gain; primary target not reached; no confirmation",
+  "maintained_baseline": "107_label_only",
+  "next_action": "Observe real GPU gradient and internal-validation learning curve; evaluate fixed180 after selecting checkpoint"
 }

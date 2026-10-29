@@ -17,3 +17,7 @@
 在较贵的判别训练前，固定107做一次`claim_repeat`：保留前置claim及完整reference，在reference之外的消息末端明确重述同一待核验命题。仍为一次原JSON生成，不给新事实或GT。Lost in the Middle的query前后同时放置仅在合成检索上收益明确，多文档QA改善很小；这是廉价待验证假设而非有效性证明。[TACL原论文§4.2](https://aclanthology.org/2024.tacl-1.9.pdf)。[距离偏差原论文§5.3](https://aclanthology.org/2025.findings-acl.28.pdf)也显示query仅放尾部可能更差，因此本轮优先保留头部再重复，不同时搜索位置/次数/措辞。
 
 固定字母三类投影借鉴官方最后位置类别token判别结构：[Qwen官方reranker实现](https://huggingface.co/Qwen/Qwen3-Reranker-0.6B#using-transformers)。本轮的restricted三类CE是明确的任务适配选择；该示例不证明原reranker采用同一训练CE，也不保证本任务有效。
+
+## 不优先追加时间重排
+
+只读检查3名训练患者的reference及010既有源文说明：作者已按完整CHARTDATE_TS、CHARTTIME_TS、STORETIME_TS排序，界面显示的Date/Time不总是来自同一完整时间键。直接按显示文本重新排序可能破坏原来正确的顺序；恢复可靠原note时间还需要有歧义的匹配。保留原输入，不为此做新的排序试验。[既有010说明](../010_verifact_baseline_alignment/source_notes.md)。这是可行性判断，不是新的分类阴性结果。
