@@ -1,0 +1,30 @@
+{
+  "cycle": 1,
+  "start_epoch": 1793274436,
+  "start_beijing": "2026-10-29 19:47:16",
+  "duration_seconds": 43200,
+  "deadline_beijing": "2026-10-30 07:47:16",
+  "GPU_cap_CNY": 20,
+  "API_cap_CNY": 20,
+  "hourly_CNY": 1.58,
+  "no_shutdown": true,
+  "status": "ACTIVE",
+  "active_job": "claim_repeat_500_missing",
+  "completed_jobs": [
+    "joint_path_pilot",
+    "claim_repeat_pilot"
+  ],
+  "best_candidate": "107_label_only",
+  "paid_API_CNY": 0,
+  "confirmation40_used": false,
+  "runtime_state": ".local_models/116_research_cycle/live_state.json",
+  "active_remote_pid": null,
+  "next_if_no_strong_signal": [
+    "claim_repeat_pilot",
+    "single_token_768"
+  ],
+  "decisions": {
+    "joint_path_pilot": "停止扩大；降低8次错误放行，但自然集误伤14条原正确S，净少12条正确",
+    "claim_repeat_pilot": "自然120净多6条正确、MCC+0.0658，false-S不变；压力净正确及false-S不变，继续补齐旧500"
+  }
+}

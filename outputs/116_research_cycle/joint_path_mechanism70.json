@@ -1,0 +1,22 @@
+{
+  "N": 70,
+  "scope": "Only original180 intersect115 existing500; descriptive, no new inference",
+  "panels": {
+    "natural": {
+      "N": 35,
+      "greedy_correct": 24,
+      "MAP_correct": 22,
+      "changed": 2,
+      "S_rescued": 0,
+      "S_harmed": 1
+    },
+    "pressure": {
+      "N": 35,
+      "greedy_correct": 21,
+      "MAP_correct": 22,
+      "changed": 1,
+      "S_rescued": 0,
+      "S_harmed": 0
+    }
+  }
+}

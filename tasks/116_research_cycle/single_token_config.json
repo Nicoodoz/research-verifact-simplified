@@ -1,0 +1,98 @@
+{
+  "task": 116,
+  "model": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "seed": 103027,
+  "training": {
+    "epochs": 1,
+    "microbatch": 1,
+    "gradient_accumulation": 8,
+    "learning_rate": 5e-05,
+    "optimizer": "AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "scheduler": "four_step_warmup_cosine_to_0.1",
+    "gradient_clip": 1.0,
+    "bf16": true,
+    "quantization": false,
+    "CPU_offload": false,
+    "gradient_checkpointing": true,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "bias": "none",
+    "use_rslora": false,
+    "vision_frozen": true,
+    "expected_trainable_parameters": 43278336,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj",
+      "out_proj",
+      "in_proj_qkv",
+      "in_proj_z",
+      "in_proj_b",
+      "in_proj_a"
+    ],
+    "loss": "restricted_three_class_CE",
+    "order": "fixed_stratified_4S_2NS_2NA_batches",
+    "checkpoint": "atomic_two_rolling_slots_every_optimizer_step",
+    "total_steps": 96
+  },
+  "evaluation": {
+    "mode": "single_prompt_forward_three_logits_argmax",
+    "input_interface": "classifier116.messages",
+    "full_reference": true,
+    "GT_in_inputs": false,
+    "batch_size": 2,
+    "free_greedy_JSON": false,
+    "output_map": "A/B/C_to_original_verdict_JSON",
+    "probabilities_calibrated": false
+  },
+  "training_N": 768,
+  "trainable_arms": [
+    "single_token_768"
+  ],
+  "design": {
+    "whole_recipe": true,
+    "not_single_component_causal_ablation": true,
+    "fresh_base": true,
+    "no_auxiliary_loss": true,
+    "no_class_weights": true,
+    "no_label_smoothing": true,
+    "all_uncertain_original_GT_retained": true
+  },
+  "candidate": "single_token_768",
+  "model_dir": "/root/verifact_image/models/qwen3.5-9b",
+  "max_seq_length": 13783,
+  "codes": {
+    "Supported": "A",
+    "Not Supported": "B",
+    "Not Addressed": "C"
+  },
+  "code_token_ids": [
+    32,
+    33,
+    34
+  ],
+  "gradient_patients": 32,
+  "internal_validation_patients": 8,
+  "validation_N": 128,
+  "validation_steps": [
+    0,
+    24,
+    48,
+    72,
+    96
+  ],
+  "selection_rule": "max internal validation MCC, then PA, then fewer false-S; no development result",
+  "confirmation40_used": false
+}

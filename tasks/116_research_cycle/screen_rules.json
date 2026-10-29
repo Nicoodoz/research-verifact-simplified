@@ -1,0 +1,19 @@
+{
+  "scope": "Fixed original113 natural120 and pressure60; reused unchanged for joint_path, claim_repeat, and single_token pilot screens",
+  "written_before_new_scores_were_read": true,
+  "guards": {
+    "complete_coverage": true,
+    "natural_correct_delta_min": -2,
+    "natural_MCC_delta_min": -0.02,
+    "natural_S_net_delta_min": -3,
+    "natural_NS_NA_net_delta_each_min": -2,
+    "pressure_NS_NA_net_delta_each_min": -4,
+    "pressure_correct_delta_min": -2,
+    "present_class_recall_positive": true
+  },
+  "quality_signal": "total correct gain >=4, natural MCC gain >=0.015",
+  "risk_signal": "total false-S reduction >=2, total correct delta >=-2, natural MCC delta >=-0.01",
+  "borderline": "Record weak directions honestly; near-baseline changes without risk gain do not justify three full forwards per case",
+  "larger_development_goal": "about +0.02 MCC without material PA/risk harm, or about20% false-S reduction with limited MCC/PA cost; no obvious class failure",
+  "no_tuning_on_pilot": true
+}
