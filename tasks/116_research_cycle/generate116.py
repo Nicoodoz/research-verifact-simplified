@@ -24,7 +24,7 @@ def main():
  import torch
  from transformers import AutoTokenizer
  from peft import PeftModel
- data={r['id']:r for r in map(json.loads,(R/'data/inputs.jsonl').read_text().splitlines())};tok=AutoTokenizer.from_pretrained(job['model_dir'],local_files_only=True);ids={}
+ data={r['id']:r for r in map(json.loads,(R/job.get('inputs','data/inputs.jsonl')).read_text().splitlines())};tok=AutoTokenizer.from_pretrained(job['model_dir'],local_files_only=True);ids={}
  for i in job['ids']:
   assert not {'GT','sid','panel'}&set(data[i]);plain=original.prompt_ids(tok,data[i]);assert hashlib.sha256(original.canonical(plain).encode()).hexdigest()==data[i]['expected_prompt_sha256']
   ids[i]=tok.apply_chat_template(messages(data[i],job['input_transform']),tokenize=True,add_generation_prompt=True,enable_thinking=False,reasoning_effort='low');assert len(ids[i])+384<=16384

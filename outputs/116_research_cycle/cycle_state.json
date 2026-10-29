@@ -9,10 +9,11 @@
   "hourly_CNY": 1.58,
   "no_shutdown": true,
   "status": "ACTIVE",
-  "active_job": "claim_repeat_500_missing",
+  "active_job": "claim_repeat_1817_missing",
   "completed_jobs": [
     "joint_path_pilot",
-    "claim_repeat_pilot"
+    "claim_repeat_pilot",
+    "claim_repeat_500_missing"
   ],
   "best_candidate": "107_label_only",
   "paid_API_CNY": 0,
@@ -25,6 +26,7 @@
   ],
   "decisions": {
     "joint_path_pilot": "停止扩大；降低8次错误放行，但自然集误伤14条原正确S，净少12条正确",
-    "claim_repeat_pilot": "自然120净多6条正确、MCC+0.0658，false-S不变；压力净正确及false-S不变，继续补齐旧500"
+    "claim_repeat_pilot": "自然120净多6条正确、MCC+0.0658，false-S不变；压力净正确及false-S不变，继续补齐旧500",
+    "claim_repeat_500_missing": "自然400 MCC+0.01997、正确+2、false-S不变，S净-2/NS+2/NA+2；压力正确不变、false-S+1。有限信号，继续补齐1817，不宣称已成功"
   }
 }

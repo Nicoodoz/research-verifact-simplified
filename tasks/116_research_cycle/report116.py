@@ -22,11 +22,11 @@ def main():
     write(O/'cost_status.json',dict(start_beijing=state['start_beijing'],snapshot_epoch=time.time(),elapsed_seconds=elapsed,GPU_estimate_CNY=cost,GPU_cap_CNY=state['GPU_cap_CNY'],API_CNY=state['paid_API_CNY'],API_cap_CNY=state['API_cap_CNY'],estimate_not_platform_invoice=True,no_shutdown=True,cycle_status=state['status']))
     lines=['# 自主研究周期1：阶段结果','',
            '107 label_only仍是主基线。以下均为原20名患者的开发筛查，原医生GT保留；后40人尚未用于选型或确认。各候选首次回执保留，未按结果重发。','',
-           '|候选/面板|配置|MCC|PA|正确数|false-S/真实非S|',
-           '|---|---|---:|---:|---:|---:|']
+           '|候选/面板|配置|MCC|PA|正确数/有效数|false-S/有效非S|有效/计划|',
+           '|---|---|---:|---:|---:|---:|---:|']
     for row in rows:
         arm={'candidate':next(a['candidate'] for a in analyses if a['job']==row['job']),'label_only107':'107 label_only','paper_r1':'作者历史R1'}[row['arm']]
-        lines.append(f"|{row['job']}/{row['panel']}|{arm}|{row['MCC']:.4f}|{row['PA']:.2%}|{row['correct']}/{row['N']}|{row['false_S']}/{row['non_S']}|")
+        lines.append(f"|{row['job']}/{row['panel']}|{arm}|{row['MCC']:.4f}|{row['PA']:.2%}|{row['correct']}/{row['N']}|{row['false_S']}/{row['non_S']}|{row['N']}/{row['expected_N']}|")
     lines+=['','## 去留与解释','']
     for result in analyses:
         name=result['job'];screen=result.get('screen',{})
@@ -42,6 +42,8 @@ def main():
             '与115原greedy有回执交集的70条中，自然35条正确24→22，压力35条21→22，正确S救回0、额外误伤1。该描述性交集没有支持“改用完整路径即可挽救115”的解释，也不能外推为全部样本的机制证明。',
             '',
             '`claim_repeat`复用107，在完整reference之外的消息末端重述同一待核验命题；未增添EHR事实、GT、其他模型答案或逐例规则。',
+            '',
+            '对其自然面板6条S救回及1条S误伤做了定向原文检查：5条救回有较明确可见依据，1条缺关键时间段，误伤例也有可见支持。3条有依据救回来自同一患者。这不是随机病例审查，不能证明模型使用了对应证据，或排除更偏S；缺证例仍保留医生原GT。临床正文与逐例笔记仅在私有目录。',
             '',
             '`single_token_768`是待验证的完整判别配方：原9B、768条真实训练命题、32名梯度患者，另8名患者128条只用于选checkpoint。原临床定义与完整输入保留，A/B/C三行固定词表投影作唯一三类CE，96步；不把它当作纯组件消融或新的原创算法。',
             '',

@@ -1,5 +1,6 @@
 """Paired first-pass screening for generative and three-code candidates."""
 from pathlib import Path
+from collections import Counter
 import sys,argparse
 R=Path(__file__).resolve().parents[2];sys.path.insert(0,str(R/'tasks/109_boundary_replay'));import common109 as c
 sys.path.insert(0,str(R/'tasks/105_brief_supervision'));from parse105 import parse
@@ -44,10 +45,11 @@ def main(name):
  panels={}
  for p,allrows in groups.items():
   rows=[r for r in allrows if new[r['id']]['valid']];part=section(rows,base,new)
-  part.update(expected_N=len(allrows),valid_fraction=len(rows)/len(allrows),invalid=len(allrows)-len(rows));panels[p]=part
+  invalid=[r for r in allrows if not new[r['id']]['valid']];non_s=sum(r['GT']!='Supported' for r in allrows);unknown_non_s=sum(r['GT']!='Supported' for r in invalid);fs=part['scores']['candidate']['false_S']
+  part.update(expected_N=len(allrows),valid_fraction=len(rows)/len(allrows),invalid=len(invalid),invalid_GT=dict(Counter(r['GT'] for r in invalid)),expected_non_S=non_s,unknown_non_S=unknown_non_s,false_S_full_cohort_bounds=[fs/non_s,(fs+unknown_non_s)/non_s] if non_s else None);panels[p]=part
  result=dict(job=name,candidate=job['candidate'],panels=panels,bootstrap_performed=False)
  if not expanded:result['screen']=screening(panels)
- c.put(O/(name+'.json'),result);c.putl(O/(name+'_predictions.jsonl'),[dict(id=i,sid=keys[i]['sid'],GT=keys[i]['GT'],pilot_panel=keys[i]['pilot_panel'],baseline107=base[i]['verdict'],verdict=new[i]['verdict'],valid=new[i]['valid'],probabilities=new[i].get('probabilities')) for i in wanted])
+ c.put(O/(name+'.json'),result);c.putl(O/(name+'_predictions.jsonl'),[dict(id=i,sid=keys[i]['sid'],GT=keys[i]['GT'],author=keys[i]['author'],old_panel=keys[i].get('old_panel'),subset=keys[i].get('subset'),pilot_panel=keys[i]['pilot_panel'],baseline107=base[i]['verdict'],verdict=new[i]['verdict'],valid=new[i]['valid'],input_tokens=new[i].get('input_tokens'),source_input_tokens=base[i].get('input_tokens'),probabilities=new[i].get('probabilities')) for i in wanted])
  print(c.canonical(dict(job=name,screen=result.get('screen'),panels={p:dict(delta_MCC=v['delta_MCC'],delta_correct=v['delta_correct'],delta_false_S=v['delta_false_S'],scores={a:{k:m[k] for k in ['mcc','percent_agreement','correct','false_S','non_S']} for a,m in v['scores'].items()}) for p,v in panels.items()})))
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('job');main(p.parse_args().job)
