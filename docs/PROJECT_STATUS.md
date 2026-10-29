@@ -1,6 +1,6 @@
-# 项目现状（2026-10-29，109完成，停止当前配方）
+# 项目现状（2026-10-29，110完成：压力收益与自然代价）
 
-109 boundary_replay已按新租卡授权完成：107 label_only完整状态续训，527条真实预测后固定选出192条/24步，500条评价全有效。相对107自然MCC0.5032→0.3733、PA79.75%→72%、false-S12→11/79；压力MCC0.3123→−0.1091、PA58%→38%、false-S16→16/100。主要是NA→NS严重交换（候选仅预测1条NA），停止当前配方，不补普通回放或启动110。完整模型/optimizer与原始结果已回传；由用户关机，停费已确认，API0。标签微调既有收益及默认系统保留。 [109最终报告](../outputs/109_boundary_replay/final_report.md) · [完整指标](../outputs/109_boundary_replay/comparison.json) · [109当前状态](../tasks/109_boundary_replay/CURRENT.md)。
+110 update_interpolation完成，无新增训练/API。109实际192条诊断证实训练NA也丢失（0/64，32正确NA保留全误伤，真标签CE .005282→.485546）。两固定有效BA插值各500全有效：quarter自然MCC.4738/PA77.75%/false-S13，压力.4303/66%/14；half自然.4636/76.50%/11，压力.4456/68%/13。相对107有真实压力增量，但自然质量下降，尚无整体优势，未通过预写综合保留参考；保留107，不自动扩大/111或升级默认。关键结果和两个rank32适配器已回传。用户执行中撤销自动关机，保护已停、未发关机命令，实例保留开机；租金继续累计，费用见110记录。 [110最终报告](../outputs/110_update_interpolation/final_report.md) · [指标](../outputs/110_update_interpolation/final_metrics.md) · [当前状态](../tasks/110_update_interpolation/CURRENT.md)。
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -22,6 +22,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|110有效更新插值|109训练NA0/64；两个固定cat点各500全有效，无新训练|压力MCC/PA/false-S改善，自然MCC/PA下降；存在取舍，保留107，当前不扩大|
 |109真实困难边界回放|527真实训练池预测、192条/24步续训、完整500评价与完整状态回传|自然/压力ΔMCC−.1299/−.4215，NA几乎塌缩；停止扩大，不补第二臂|
 |108语义分层与证据池化|CPU三头；4090同资料两臂各5轮和500评价完整完成|shared公平ΔMCC−.0832/−.0439、false-S+13/+8，停止扩大；模型回传，关机命令接受；不升级默认|
 |107支持性辅助监督|原196两臂fresh训练各50步/392消费、各500回执、最终完整状态与报告|CPU分析完成，实际结论见107最终报告；不自动扩大/升级|

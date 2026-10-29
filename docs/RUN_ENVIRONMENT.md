@@ -1,6 +1,6 @@
 # 当前环境与启动方式（2026-10-29核对）
 
-109实际复用用户新租RTX4080 SUPER 32GB实例上的原9B与envs/venv103（Python3.12.3、Torch2.8.0+cu128、Transformers5.17.0、Unsloth2026.10.9、PEFT0.21.2），没有重装/下载大权重或覆盖旧环境。BF16、micro1、完整输入不变；最长12017-token输入带继承optimizer的backward通过，峰值allocated24.56GiB；原batch2/分组完成500评价。原9B完整底座不在本地，镜像ID未确认，但本实例模型/环境已实际可用。107起点及109最终完整optimizer状态本地齐；结果已回传，由用户关机，平台停费状态见109费用记录。CPU统计仍用research-verifact-029，不使用GPU或收费API。
+110复用109同实例RTX4080 SUPER 32GB、原Qwen3.5-9B及env103（Torch2.8.0+cu128/PEFT0.21.2/Transformers5.17.0/Unsloth2026.10.9），未重装环境或重新下载底座。原BF16完整输入、诊断batch1、500评价batch2及原分组不变；单底座挂载107/109源LoRA，以有效BA/scaling准确cat为rank32，保留FP32源因子，不SVD或叠加原adapter。248层、保存头部完整性及少量真实端点检查通过；两个组合适配器及全部回执已回传。没有optimizer/训练，旧模型和完整状态保留。用户撤销自动关机，关机保护已停止并核验、未发关机命令；后续开机租金继续。本地CPU统计仍用research-verifact-029，需scripts/run_research.ps1激活DLL路径。
 
 107已在本次RTX5090 32GB完成BF16、micro1、完整输入的两臂LoRA训练与batch2评价；原Python3.12.3/105关键依赖复用，未重装升级。最长backward、辅助LoRA梯度、完整状态恢复和显存/吞吐实测通过。最终适配器、辅助头、完整optimizer与回执已本地回传核验；CPU统计使用research-verifact-029，无需GPU。GPU停止计费状态以107 cost_status与用户确认为准。
 

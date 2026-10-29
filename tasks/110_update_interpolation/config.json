@@ -1,0 +1,34 @@
+{
+  "task": 110,
+  "candidates": {
+    "update_quarter": 0.25,
+    "update_half": 0.5
+  },
+  "formula": "W0+(1-alpha)*s107*B107*A107+alpha*s109*B109*A109",
+  "combination_type": "cat",
+  "rank": 32,
+  "factor_dtype": "float32_preserved_from_sources",
+  "base_dtype": "bfloat16",
+  "microbatch_diagnostic": 1,
+  "evaluation_batch_size": 2,
+  "source107_step": 50,
+  "source109_global_step": 74,
+  "source107_adapter_sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+  "source109_adapter_sha256": "e3c83143648a2f64ccd60f5b68e1b94bec5e0279c75a3be43c2872ba6ee0b9e8",
+  "no_new_training": true,
+  "paid_API_CNY": 0,
+  "billing_start_beijing": "2026-10-29 11:51:00",
+  "hourly_CNY": 1.58,
+  "GPU_cap_CNY": 5,
+  "endpoint_selection": "one training192 ID per original GT, minimum SHA256(110/endpoints/ID), fixed before new diagnosis or candidate results",
+  "effect_rule": {
+    "valid_coverage_min": 0.99,
+    "signal_MCC_gain": 0.015,
+    "signal_false_S_reduction": 2,
+    "guard_MCC_drop": 0.02,
+    "guard_PA_drop": 0.02,
+    "guard_false_S_increase": 1,
+    "guard_NS_NA_recall_drop": 0.05,
+    "guard_natural_S_recall_drop": 0.02
+  }
+}

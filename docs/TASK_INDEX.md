@@ -1,4 +1,4 @@
-# 全部任务与当前入口（109完成；2026-10-29）
+# 全部任务与当前入口（110完成；2026-10-29）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,6 +6,7 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
+|110_update_interpolation|[最终报告](../outputs/110_update_interpolation/final_report.md) · [指标](../outputs/110_update_interpolation/final_metrics.md) · [诊断](../outputs/110_update_interpolation/diagnostic192.json) · [实现检查](../outputs/110_update_interpolation/implementation_checks.json)|192预测/32NA真实标签CE、有效BA cat两点各500、执行者自检|有压力收益与自然代价；无新训练/API，未升级默认；用户撤销自动关机|
 |109_boundary_replay|[最终报告](../outputs/109_boundary_replay/final_report.md) · [完整指标](../outputs/109_boundary_replay/comparison.json) · [真实选样](../outputs/109_boundary_replay/mining_summary.json) · [执行自检](../outputs/109_boundary_replay/execution_selfcheck.json)|527真实预测、192条/24步续训、完整500；执行者自检非外部审计|当前配方无效，NA→NS塌缩；模型/完整状态回传，用户关机，不自动下一任务|
 |108_semantic_hierarchy|[最终报告](../outputs/108_semantic_hierarchy/final_report.md) · [指标](../outputs/108_semantic_hierarchy/final_metrics.md) · [配对与病例](../outputs/108_semantic_hierarchy/gpu_analysis.md) · [自检](../outputs/108_semantic_hierarchy/final_selfcheck.json)|固定预测复算及1000患者配对，非外部独立审计|同资料GPU比较阴性，停止分层扩大；模型/完整状态回传，关机命令接受，账单待核；API0|
 |107_support_aux|[当前报告](../outputs/107_support_aux/final_report.md) · [完整指标](../outputs/107_support_aux/final_metrics.md) · [协议](../tasks/107_support_aux/protocol.md)|[执行者自检](../outputs/107_support_aux/final_selfcheck.json)，非独立审计|两臂fresh各50步/500评价完成；GPU停费且CPU报告完成；API0，不自动下一任务|

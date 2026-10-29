@@ -1,0 +1,28 @@
+{
+  "task": 110,
+  "billing_start_beijing": "2026-10-29 11:51:00",
+  "hourly_CNY": 1.58,
+  "GPU_cap_CNY": 5,
+  "paid_API_CNY": 0,
+  "critical_results_returned_beijing": "2026-10-29 12:39:18",
+  "shutdown_attempt_beijing": null,
+  "shutdown_command_record_received": false,
+  "shutdown_command_returncode": null,
+  "automatic_shutdown_revoked_by_user": true,
+  "shutdown_command_sent": false,
+  "SSH_port_unreachable": null,
+  "platform_billing_independently_confirmed": false,
+  "estimated_GPU_CNY_through_results_return": 1.2720864494866795,
+  "estimate_asof_beijing": "2026-10-29 12:41:06",
+  "estimated_wall_seconds_through_observation": 3006.143034219742,
+  "estimated_GPU_CNY_asof_observation": 1.3193627761297757,
+  "estimate_not_exact_platform_bill": true,
+  "includes_wait_loading_compilation_save_and_return": true,
+  "new_training": false,
+  "instance_or_disk_released": false,
+  "diagnostic_generation_seconds": 414.55031482875347,
+  "candidate_generation_seconds": {
+    "update_quarter": 943.697755347006,
+    "update_half": 975.0436144927517
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "task": 110,
+  "CPU_tiny_cat_algebra_passed": true,
+  "CPU_test_max_abs_error": 1.7763568394002505e-15,
+  "factorwise_average_counterexample_rejected": true,
+  "tensor_header_checks": {
+    "update_quarter": {
+      "saved_source_key_set_identical": true,
+      "all248_modules_present": true,
+      "source_rank16_combined_rank32": true,
+      "all_factors_original_FP32": true,
+      "exact_runtime_cat_checks": {
+        "alpha": 0.25,
+        "combination_type": "cat",
+        "new_rank": 32,
+        "source_ranks": [
+          16,
+          16
+        ],
+        "exact_factor_concatenation": true,
+        "double_activation": false,
+        "modules_checked": 248,
+        "max_effective_probe_error": 4.656612873077393e-10
+      },
+      "adapter_backup_hash_verified": true
+    },
+    "update_half": {
+      "saved_source_key_set_identical": true,
+      "all248_modules_present": true,
+      "source_rank16_combined_rank32": true,
+      "all_factors_original_FP32": true,
+      "exact_runtime_cat_checks": {
+        "alpha": 0.5,
+        "combination_type": "cat",
+        "new_rank": 32,
+        "source_ranks": [
+          16,
+          16
+        ],
+        "exact_factor_concatenation": true,
+        "double_activation": false,
+        "modules_checked": 248,
+        "max_effective_probe_error": 4.656612873077393e-10
+      },
+      "adapter_backup_hash_verified": true
+    }
+  },
+  "real_endpoint_checks": {
+    "algebra": {
+      "endpoint_zero": {
+        "alpha": 0.0,
+        "combination_type": "cat",
+        "new_rank": 32,
+        "source_ranks": [
+          16,
+          16
+        ],
+        "exact_factor_concatenation": true,
+        "double_activation": false,
+        "modules_checked": 248,
+        "max_effective_probe_error": 5.238689482212067e-10
+      },
+      "endpoint_one": {
+        "alpha": 1.0,
+        "combination_type": "cat",
+        "new_rank": 32,
+        "source_ranks": [
+          16,
+          16
+        ],
+        "exact_factor_concatenation": true,
+        "double_activation": false,
+        "modules_checked": 248,
+        "max_effective_probe_error": 5.820766091346741e-10
+      }
+    },
+    "real": {
+      "endpoint_zero": {
+        "N": 3,
+        "exact_first_output_agreement": 3,
+        "verdict_agreement": 3
+      },
+      "endpoint_one": {
+        "N": 3,
+        "exact_first_output_agreement": 3,
+        "verdict_agreement": 3
+      }
+    },
+    "no_full_old500_replayed": true
+  },
+  "scientific_effect_established_by_these_checks": false
+}

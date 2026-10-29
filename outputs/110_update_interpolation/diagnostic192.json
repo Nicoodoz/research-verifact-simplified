@@ -1,0 +1,235 @@
+{
+  "task": 110,
+  "kind": "training_fit_diagnostic_not_method_success",
+  "actual_train_N": 192,
+  "GT": {
+    "Supported": 80,
+    "Not Addressed": 64,
+    "Not Supported": 48
+  },
+  "full": {
+    "N": 192,
+    "invalid": 0,
+    "before_correct": 128,
+    "after_correct": 117,
+    "rescued": 23,
+    "harmed": 34,
+    "after_predictions": {
+      "Supported": 96,
+      "Not Supported": 96
+    }
+  },
+  "hard64": {
+    "N": 64,
+    "invalid": 0,
+    "before_correct": 0,
+    "after_correct": 23,
+    "rescued": 23,
+    "harmed": 0,
+    "after_predictions": {
+      "Not Supported": 50,
+      "Supported": 14
+    }
+  },
+  "original_false_S35": {
+    "N": 35,
+    "fixed_to_GT": 11,
+    "changed_to_another_error": 10,
+    "still_false_S": 14,
+    "invalid": 0,
+    "by_GT": {
+      "Not Supported": {
+        "N": 20,
+        "fixed_to_GT": 11,
+        "changed_to_another_error": 0,
+        "still_false_S": 9
+      },
+      "Not Addressed": {
+        "N": 15,
+        "fixed_to_GT": 0,
+        "changed_to_another_error": 10,
+        "still_false_S": 5
+      }
+    }
+  },
+  "retained_NA32": {
+    "N": 32,
+    "invalid": 0,
+    "before_correct": 32,
+    "after_correct": 0,
+    "rescued": 0,
+    "harmed": 32,
+    "after_predictions": {
+      "Not Supported": 32
+    }
+  },
+  "all_training_NA64": {
+    "N": 64,
+    "invalid": 0,
+    "before_correct": 32,
+    "after_correct": 0,
+    "rescued": 0,
+    "harmed": 32,
+    "after_predictions": {
+      "Not Supported": 59,
+      "Supported": 5
+    }
+  },
+  "by_role": {
+    "hard_error": {
+      "N": 64,
+      "invalid": 0,
+      "before_correct": 0,
+      "after_correct": 23,
+      "rescued": 23,
+      "harmed": 0,
+      "after_predictions": {
+        "Not Supported": 50,
+        "Supported": 14
+      }
+    },
+    "protect_S": {
+      "N": 64,
+      "invalid": 0,
+      "before_correct": 64,
+      "after_correct": 64,
+      "rescued": 0,
+      "harmed": 0,
+      "after_predictions": {
+        "Supported": 64
+      }
+    },
+    "retention": {
+      "N": 64,
+      "invalid": 0,
+      "before_correct": 64,
+      "after_correct": 30,
+      "rescued": 0,
+      "harmed": 34,
+      "after_predictions": {
+        "Supported": 18,
+        "Not Supported": 46
+      }
+    }
+  },
+  "by_role_GT": {
+    "hard_error": {
+      "Supported": {
+        "N": 0,
+        "invalid": 0,
+        "before_correct": 0,
+        "after_correct": 0,
+        "rescued": 0,
+        "harmed": 0,
+        "after_predictions": {}
+      },
+      "Not Supported": {
+        "N": 32,
+        "invalid": 0,
+        "before_correct": 0,
+        "after_correct": 23,
+        "rescued": 23,
+        "harmed": 0,
+        "after_predictions": {
+          "Not Supported": 23,
+          "Supported": 9
+        }
+      },
+      "Not Addressed": {
+        "N": 32,
+        "invalid": 0,
+        "before_correct": 0,
+        "after_correct": 0,
+        "rescued": 0,
+        "harmed": 0,
+        "after_predictions": {
+          "Not Supported": 27,
+          "Supported": 5
+        }
+      }
+    },
+    "protect_S": {
+      "Supported": {
+        "N": 64,
+        "invalid": 0,
+        "before_correct": 64,
+        "after_correct": 64,
+        "rescued": 0,
+        "harmed": 0,
+        "after_predictions": {
+          "Supported": 64
+        }
+      },
+      "Not Supported": {
+        "N": 0,
+        "invalid": 0,
+        "before_correct": 0,
+        "after_correct": 0,
+        "rescued": 0,
+        "harmed": 0,
+        "after_predictions": {}
+      },
+      "Not Addressed": {
+        "N": 0,
+        "invalid": 0,
+        "before_correct": 0,
+        "after_correct": 0,
+        "rescued": 0,
+        "harmed": 0,
+        "after_predictions": {}
+      }
+    },
+    "retention": {
+      "Supported": {
+        "N": 16,
+        "invalid": 0,
+        "before_correct": 16,
+        "after_correct": 16,
+        "rescued": 0,
+        "harmed": 0,
+        "after_predictions": {
+          "Supported": 16
+        }
+      },
+      "Not Supported": {
+        "N": 16,
+        "invalid": 0,
+        "before_correct": 16,
+        "after_correct": 14,
+        "rescued": 0,
+        "harmed": 2,
+        "after_predictions": {
+          "Not Supported": 14,
+          "Supported": 2
+        }
+      },
+      "Not Addressed": {
+        "N": 32,
+        "invalid": 0,
+        "before_correct": 32,
+        "after_correct": 0,
+        "rescued": 0,
+        "harmed": 32,
+        "after_predictions": {
+          "Not Supported": 32
+        }
+      }
+    }
+  },
+  "historical_GT_answers_checkpoint_and_prompt_mapping_checks_passed": true,
+  "paid_API_CNY": 0,
+  "new_training": false,
+  "paired_NA32_true_label_loss": {
+    "N": 32,
+    "source": "actual_teacher_forced_GT_token_CE",
+    "not_calibrated_class_probability": true,
+    "mean107": 0.0052819413671159055,
+    "mean109": 0.4855458438396454,
+    "mean_delta": 0.4802639024725295,
+    "median_delta": 0.47140382337238407,
+    "increased": 32,
+    "decreased": 0,
+    "original_segmented_loss_mean107": 0.005308651924678998,
+    "original_segmented_loss_mean109": 0.48573700059205294
+  }
+}

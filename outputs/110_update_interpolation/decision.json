@@ -1,0 +1,12 @@
+{
+  "task": 110,
+  "classification": "real_pressure_benefit_with_natural_quality_cost_no_automatic_continuation",
+  "conclusion": "出现相对107的真实压力集增量，但尚未形成整体优势。update_quarter是代价较小的取舍点；update_half自然损失更大。两个点均未通过预写综合保留参考，107 label_only继续作为主基线；本轮不追加系数或自动扩大。",
+  "tradeoff_analysis": "update_quarter在压力集新增8条正确NS、没有误伤原正确NS/NA，false-S减少2；18名压力患者中7人正确数增加、无人减少，ΔMCC的患者95%CI为[+0.0479,+0.2232]，因此不只是修复109。但自然集净少7条正确S、3条正确NA，仅净增2条正确NS，PA下降2个百分点、MCC下降0.0294且false-S增加1。update_half压力净增16条正确NS却净损失6条NA；自然净损失9条S和10条NA，只有6条NS净收益。不能因压力面板没有真实S而忽略自然集误伤。quarter自然ΔMCC区间[-0.0606,+0.0062]跨0，不证明等效或无损失；half压力ΔMCC区间[-0.0234,+0.3256]也不抹去其点估计收益与类别代价。",
+  "recommendation": "当前不建议扩大109权重衍生路线或升级默认系统，保留107以及quarter的取舍证据。当前更新具有有限、明确的NS/压力研究价值，不能概括成完全没有学到可迁移增量；但这尚不足以宣布通用核验质量—风险优于107。若用户愿接受quarter自然PA−2个百分点、MCC−0.0294、false-S+1的代价，下一项最小必要确认是固定quarter，只补一次同GPU同期107对照核实差值；需新决定，不在本轮执行。否则结束该衍生路线，不继续搜系数、种子、loss或训练配方。",
+  "prewritten_screening_reference_changed": false,
+  "both_reference_passes": false,
+  "new_validation_automatically_authorized": false,
+  "default_upgrade": false,
+  "next_task_started": false
+}
