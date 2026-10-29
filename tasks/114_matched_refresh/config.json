@@ -1,0 +1,103 @@
+{
+  "task": 114,
+  "model": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "seed": 103027,
+  "training": {
+    "epochs": 2,
+    "microbatch": 1,
+    "gradient_accumulation": 8,
+    "learning_rate": 0.0001,
+    "optimizer": "AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "scheduler": "constant_no_warmup",
+    "gradient_clip": 1.0,
+    "bf16": true,
+    "quantization": false,
+    "CPU_offload": false,
+    "gradient_checkpointing": true,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "bias": "none",
+    "use_rslora": false,
+    "vision_frozen": true,
+    "expected_trainable_parameters": 43278336,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj",
+      "out_proj",
+      "in_proj_qkv",
+      "in_proj_z",
+      "in_proj_b",
+      "in_proj_a"
+    ],
+    "loss": "verdict_value_mean_CE_plus_other_answer_mean_CE",
+    "head_chunk_tokens": 16,
+    "head_checkpoint_recompute": true,
+    "order": "original196_then_fixed_matched196",
+    "checkpoint": "atomic_two_rolling_slots_every_optimizer_step"
+  },
+  "evaluation": {
+    "arms": [
+      "matched_refresh"
+    ],
+    "natural_N": 400,
+    "pressure_NS": 50,
+    "pressure_NA": 50,
+    "enable_thinking": false,
+    "do_sample": false,
+    "num_beams": 1,
+    "num_return_sequences": 1,
+    "max_new_tokens": 384,
+    "repetition_penalty": 1.0,
+    "batch_size": 2,
+    "input_template": "104_training104.messages",
+    "parser": "parse105.parse",
+    "truncation": false,
+    "old_predictions_reused": true
+  },
+  "budget": {
+    "compute_hard_cap_cny": 3,
+    "API_cap_cny": 0,
+    "billing_start_beijing": "2026-10-29T17:18:36+08:00",
+    "hourly_cny": 1.58,
+    "no_shutdown": true
+  },
+  "training_N": 196,
+  "trainable_arms": [
+    "label_only",
+    "support_aux"
+  ],
+  "design": {
+    "sole_change": "replace_second_pass_examples_with_matched_distinct_real_examples",
+    "fresh_original_base": true,
+    "confirmation40_used": false,
+    "epoch_selection": "fixed_final_step50",
+    "baseline": "reuse107_label_only",
+    "no_error_driven_selection": true
+  },
+  "method": "matched_refresh",
+  "model_dir": "/root/verifact_image/models/qwen3.5-9b",
+  "context_tokens": 13097,
+  "estimated_train_seconds": 2100,
+  "estimated_eval_seconds": 1100,
+  "return_reserve_seconds": 720,
+  "continuation": {
+    "min_common_valid_fraction": 0.95,
+    "quality_route": "natural MCC gain >=0.02 and false-S increase <=2",
+    "risk_route": "natural false-S reduction >=3 and MCC drop <=0.01",
+    "protections": "natural PA drop <=1 point; S correct net loss <=4; NA recall drop <=5 points; pressure MCC drop <=0.03 and false-S increase <=2",
+    "no_automatic_expansion": true
+  }
+}

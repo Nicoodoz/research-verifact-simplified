@@ -1,0 +1,22 @@
+{
+  "guards": {
+    "natural_false_S": true,
+    "natural_correct": true,
+    "natural_MCC": true,
+    "natural_Supported": true,
+    "natural_Not Supported": true,
+    "natural_Not Addressed": true,
+    "pressure_false_S": true,
+    "pressure_correct": true,
+    "pressure_MCC": true,
+    "pressure_Not Supported": true,
+    "pressure_Not Addressed": true
+  },
+  "quality_signal": false,
+  "risk_signal": false,
+  "budget_fits_confirm": false,
+  "estimate_confirm_seconds": 2498.1960678480727,
+  "available_seconds": 1176.3092544078827,
+  "confirm_new_N": 430,
+  "continue": false
+}

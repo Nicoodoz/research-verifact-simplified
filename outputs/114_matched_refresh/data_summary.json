@@ -1,0 +1,34 @@
+{
+  "task": 114,
+  "original_unique": 196,
+  "second_replaced": 155,
+  "second_repeated": 41,
+  "total_unique": 351,
+  "presentations": 392,
+  "updates": 50,
+  "per_pass_GT": {
+    "Not Supported": 62,
+    "Supported": 83,
+    "Not Addressed": 51
+  },
+  "same_patient_GT_author_length_quartile_per_slot": true,
+  "same_GT_each_optimizer_batch": true,
+  "original_input_tokens": 3270664,
+  "new_input_tokens": 3270682,
+  "input_tokens_relative_change": 5.503469631854571e-06,
+  "max_prompt_tokens": 12701,
+  "restored_for_token_budget": 0,
+  "exclusions": {
+    "original196": 196,
+    "known_input_gap": 15,
+    "above_original_max_length": 2
+  },
+  "new_semantic_status": {
+    "not_reviewed104": 150,
+    "unresolved": 5
+  },
+  "review_N": 3,
+  "source": "original40_train_patients_only",
+  "no_evaluation_outcomes_for_selection": true,
+  "not_independently_clinically_validated": true
+}

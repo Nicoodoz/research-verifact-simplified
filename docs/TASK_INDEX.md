@@ -1,4 +1,4 @@
-# 全部任务与当前入口（112完成；2026-10-29）
+# 全部任务与当前入口（115完成；2026-10-29）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,6 +6,9 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
+|115_label_sum|[报告](../outputs/115_label_sum/final_report.md) · [分析](../outputs/115_label_sum/analysis.md) · [比较](../outputs/115_label_sum/comparison.json) · [协议](../tasks/115_label_sum/protocol.md)|同196、数值/梯度CPU检查、50步、500首次及患者配对；执行者自检|115未形成通过保护条件的综合增量，停止当前label_sum配方，保留107主基线。；完整状态回传，新授权双仓库发布，未关机，不自动116|
+|114_matched_refresh|[报告](../outputs/114_matched_refresh/final_report.md) · [比较](../outputs/114_matched_refresh/comparison.json) · [去正文预测](../outputs/114_matched_refresh/predictions_sanitized.jsonl) · [协议](../tasks/114_matched_refresh/protocol.md)|固定匹配清单、50步/392次、500同ID、患者配对及完整状态回传；执行者自检|自然风险改善伴随NA损失，未过事前保护条件，停止当前配方；107保留，未关机，不自动115|
+|113_label_path|[报告](../outputs/113_label_path/final_report.md) · [初筛](../outputs/113_label_path/pilot_comparison.json) · [门槛](../outputs/113_label_path/pilot_gate.json) · [协议](../tasks/113_label_path/protocol.md)|固定真路径评分及患者配对，执行者自检非独立审计|113有小幅正向点估计，但未达到预先固定的继续门槛：180条仅改变5条、净多3条正确，未减少false-S。停止本次label_path扩展，不补500，不宣称评分机制普遍无效。；不自动114或关机|
 |112_disagreement_vote|[报告](../outputs/112_disagreement_vote/final_report.md) · [比较](../outputs/112_disagreement_vote/comparison.json) · [去正文预测](../outputs/112_disagreement_vote/predictions_sanitized.jsonl) · [协议](../tasks/112_disagreement_vote/protocol.md)|固定规则真值表、原180预期核对、138首回执及患者配对；执行者自检非独立审计|112未通过保留判断：固定投票有小幅MCC和PA点估计收益，但错误放行增加，且部署调用超过单107的两倍。保留107 label_only，停止disagreement_vote，不追加规则。；无训练/105新增/API/自动关机，不自动113|
 |111_half_extension|[最终报告](../outputs/111_half_extension/final_report.md) · [指标](../outputs/111_half_extension/final_metrics.md) · [去正文预测](../outputs/111_half_extension/predictions_sanitized.jsonl) · [协议](../tasks/111_half_extension/protocol.md)|完整1817/103原180同ID比较、1000次患者配对、执行者自检非独立审计|111未支持保留update_half：新增1317相对105、107均降低MCC与PA，完整1817的错误放行减少不足以抵消正确S与NA损失。结束109续训＋插值衍生路线。；API0，材料回传；按用户要求未关机，不自动112|
 |110_update_interpolation|[最终报告](../outputs/110_update_interpolation/final_report.md) · [指标](../outputs/110_update_interpolation/final_metrics.md) · [诊断](../outputs/110_update_interpolation/diagnostic192.json) · [实现检查](../outputs/110_update_interpolation/implementation_checks.json)|192预测/32NA真实标签CE、有效BA cat两点各500、执行者自检|有压力收益与自然代价；无新训练/API，未升级默认；用户撤销自动关机|

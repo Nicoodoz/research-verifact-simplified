@@ -1,0 +1,17 @@
+{
+  "pilot_N": 180,
+  "pilot_panels": {
+    "natural": 120,
+    "pressure": 60
+  },
+  "pilot_overlap_old500": 70,
+  "cached_greedy_N": 610,
+  "conditional_new_N": 430,
+  "total_unique_if_extended": 610,
+  "unchanged_GT_reference_prompt": true,
+  "full_JSON_EOS_scoring": true,
+  "sum_not_mean_check": true,
+  "new_training": false,
+  "new_API": 0,
+  "no_new_greedy_inference": true
+}

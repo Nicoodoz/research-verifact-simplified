@@ -1,0 +1,28 @@
+{
+  "steps": 50,
+  "presentations": 392,
+  "short_tails": [
+    4,
+    4
+  ],
+  "first196_exact107": true,
+  "second_GT_patient_author_length_quartile_matched": true,
+  "fixed_selection_without_predictions": true,
+  "full_input_token_SHA_checked": true,
+  "eval_N": 500,
+  "eval_GT_removed": true,
+  "syntax_checked": [
+    "tasks/114_matched_refresh/worker114.py",
+    "tasks/104_supervision_evidence/training104.py",
+    "tasks/105_brief_supervision/common105.py",
+    "tasks/105_brief_supervision/data105.py",
+    "tasks/105_brief_supervision/loss105.py",
+    "tasks/105_brief_supervision/parse105.py",
+    "tasks/107_support_aux/checkpoint107.py"
+  ],
+  "small_raw_review_N": 3,
+  "known_input_gap_excluded_N": 15,
+  "unresolved_included_with_original_GT": 5,
+  "clinical_relabeling": false,
+  "not_efficacy_evidence": true
+}

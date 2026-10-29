@@ -1,0 +1,47 @@
+{
+  "PASS": true,
+  "numerical": [
+    {
+      "label_tokens": 1,
+      "loss_equal": true,
+      "gradient_equal": true,
+      "causal_shift": true,
+      "head_frozen": true
+    },
+    {
+      "label_tokens": 2,
+      "loss_equal": true,
+      "gradient_equal": true,
+      "causal_shift": true,
+      "head_frozen": true
+    },
+    {
+      "label_tokens": 3,
+      "loss_equal": true,
+      "gradient_equal": true,
+      "causal_shift": true,
+      "head_frozen": true
+    }
+  ],
+  "weights_per_label_token": 0.5444444444444444,
+  "average_segment_weight": 1.0,
+  "toy_identical_input_ground_truth_distribution": [
+    0.42346938775510207,
+    0.3163265306122449,
+    0.2602040816326531
+  ],
+  "toy_mean_optimum_class_distribution": [
+    0.6335877862595419,
+    0.23664122137404578,
+    0.12977099236641218
+  ],
+  "toy_sum_optimum_class_distribution": [
+    0.42346938775510207,
+    0.3163265306122449,
+    0.2602040816326531
+  ],
+  "toy_requires_indistinguishable_input": true,
+  "not_claim_of_learned_9B_prior": true,
+  "not_real_classification_benefit": true,
+  "no_GPU_initialized": true
+}

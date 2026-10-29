@@ -1,0 +1,17 @@
+{
+  "training50steps392": true,
+  "short_tails_normalized4": true,
+  "complete500first_receipts": true,
+  "unchanged_original_parser": true,
+  "paired_baseline107_cached": true,
+  "final_checkpoint_files_checked": {
+    "README.md": true,
+    "adapter_model.safetensors": true,
+    "adapter_config.json": true,
+    "training_state.pt": true
+  },
+  "full_optimizer_returned": true,
+  "no_paid_API": true,
+  "no_shutdown_sent": true,
+  "not_independent_audit": true
+}

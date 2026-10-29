@@ -1,0 +1,19 @@
+{
+  "headline": "114未达到事前保留参考条件，停止当前matched_refresh配方扩大，继续保留107 label_only。",
+  "gate": {
+    "guards": {
+      "coverage": true,
+      "natural_PA": true,
+      "natural_S": true,
+      "natural_NA": false,
+      "pressure_MCC": true,
+      "pressure_false_S": true
+    },
+    "quality_signal": false,
+    "risk_signal": true,
+    "passed": false,
+    "automatic_expansion": false
+  },
+  "decision": "stop_current_matched_refresh_recipe",
+  "no_automatic_next_task": true
+}

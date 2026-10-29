@@ -1,0 +1,37 @@
+{
+  "single_fresh_candidate": true,
+  "original196_unchanged": true,
+  "training50steps392": true,
+  "tail4_normalization": true,
+  "objective_is_reused106_normalized_sum": true,
+  "normalizer": 1.836734693877551,
+  "auxiliary_head": false,
+  "prompt_reference_parser_unchanged": true,
+  "model_setup": {
+    "initial_LoRA_sha256": "ab8657184c8c3d45ed37bff5d23a47aac63a25eba45fc1d09126f5fb151fb43c",
+    "trainable_parameters": 43278336,
+    "fresh_base": true,
+    "zero_initial_B": true,
+    "auxiliary_head": false,
+    "value_sum_divisor": 1.836734693877551,
+    "objective": "label_sum",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "load_seconds": 26.624979357235134,
+    "torch": "2.8.0+cu128",
+    "context_tokens": 13097
+  },
+  "complete500_first_receipts": true,
+  "baseline107_cached": true,
+  "published_worker_and_config_match_execution_fingerprint": true,
+  "final_checkpoint_hashes": {
+    "README.md": true,
+    "adapter_model.safetensors": true,
+    "adapter_config.json": true,
+    "training_state.pt": true
+  },
+  "full_optimizer_RNG_returned": true,
+  "independent_sklearn_metrics_match": true,
+  "no_paid_API": true,
+  "no_shutdown_sent": true,
+  "not_independent_audit": true
+}

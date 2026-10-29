@@ -1,6 +1,6 @@
 # Research-VeriFact
 
-112 disagreement_vote完成：166/1817分歧，复用28个触发103缓存，仅补138个原103预测；完整1817与原500/新增1317/103原180同ID比较完成。组合MCC0.5520、PA81.40%、false-S54/362。112未通过保留判断：固定投票有小幅MCC和PA点估计收益，但错误放行增加，且部署调用超过单107的两倍。保留107 label_only，停止disagreement_vote，不追加规则。 107 label_only是今后唯一维护的普通微调基线，105只保留历史。任务GPU估算¥0.3179/1、API0；原始结果已回传，未关机或释放实例，不自动113或升级默认。 [112报告](outputs/112_disagreement_vote/final_report.md) · [完整比较](outputs/112_disagreement_vote/comparison.json)。
+115 label_sum已完成原底座单候选50步/392次呈现和500条首次评价，原196数据、prompt/reference/接口不变，仅值段CE改为sum/(360/196)，107旧500全部复用。自然MCC 0.5032→0.3912、PA79.75%→59.50%、false-S12→1/79；压力MCC 0.3123→0.3205、PA58.00%→64.00%、false-S16→4/100。115未形成通过保护条件的综合增量，停止当前label_sum配方，保留107主基线。 GPU估算¥1.5455/3，API0，完整状态和原始回执回传。用户新授权本轮双仓库推送并补归档113/114；未自动关机，不启动116或默认升级。 [115报告](outputs/115_label_sum/final_report.md) · [分析](outputs/115_label_sum/analysis.md) · [协议](tasks/115_label_sum/protocol.md)。
 
 临床文本与患者EHR的一致性核验研究。102已完成零费用可行性核查并在付费分类前停止；不是分类效果阴性。[102报告](outputs/102_demo_relation/report.md) · [101正式分类报告](outputs/101_nsna_review/report.md)。默认不变。
 

@@ -1,0 +1,40 @@
+{
+  "task": 115,
+  "original_training_file_SHA256": "6abf6abb7949e5eca1e316f117c5269ccc87984452822920847cddb37e4008dc",
+  "original196_unchanged": true,
+  "GT": {
+    "Not Supported": 62,
+    "Supported": 83,
+    "Not Addressed": 51
+  },
+  "train_patients": 40,
+  "presentations": 392,
+  "steps": 50,
+  "short_tail_divisors": [
+    4,
+    4
+  ],
+  "label_token_lengths": {
+    "Supported": 1,
+    "Not Supported": 2,
+    "Not Addressed": 3
+  },
+  "label_token_sum": 360,
+  "global_fixed_normalizer": 1.836734693877551,
+  "average_label_segment_weight_preserved": 1.0000000000000036,
+  "relative_to_mean_label_scales": {
+    "Supported": 0.5444444444444444,
+    "Not Supported": 1.0888888888888888,
+    "Not Addressed": 1.6333333333333333
+  },
+  "evaluation_N": 500,
+  "evaluation_GT_removed": true,
+  "baseline107_reused": true,
+  "fresh_base": true,
+  "not_continuation107_or109_or114": true,
+  "full_original_input_tokens": 3270664,
+  "no_105_execution": true,
+  "no_new_clinical_reviews_needed": true,
+  "old106_full_protocol_not_claimed": true,
+  "bundle_bytes": 8714064
+}

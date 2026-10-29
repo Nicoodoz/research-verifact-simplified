@@ -1,0 +1,28 @@
+{
+  "headline": "115未形成通过保护条件的综合增量，停止当前label_sum配方，保留107主基线。",
+  "gate": {
+    "guards": {
+      "natural_coverage": true,
+      "pressure_coverage": true,
+      "natural_PA": false,
+      "natural_S": false,
+      "pressure_MCC": true,
+      "pressure_false_S": true,
+      "natural_Not Supported": true,
+      "natural_Not Addressed": true,
+      "natural_Supported_positive": true,
+      "natural_Not Supported_positive": true,
+      "natural_Not Addressed_positive": true,
+      "pressure_Not Supported": true,
+      "pressure_Not Addressed": true,
+      "pressure_Not Supported_positive": true,
+      "pressure_Not Addressed_positive": true
+    },
+    "quality_signal": false,
+    "risk_signal": false,
+    "passed": false,
+    "automatic_expansion": false
+  },
+  "decision": "stop_current_label_sum_recipe",
+  "no_automatic_next_task": true
+}

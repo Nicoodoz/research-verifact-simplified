@@ -1,0 +1,21 @@
+{
+  "task": 114,
+  "start_beijing": "2026-10-29 17:18:36",
+  "task_end_beijing": "2026-10-29 18:12:43",
+  "GPU_done_beijing": "2026-10-29 18:12:24",
+  "key_return_beijing": "2026-10-29 18:12:43",
+  "final_checkpoint_return_beijing": "2026-10-29 18:03:07",
+  "task_wall_minutes": 54.12047107219696,
+  "hourly_CNY": 1.58,
+  "estimated_GPU_CNY": 1.4251724049011867,
+  "cap_CNY": 3,
+  "API_CNY": 0,
+  "platform_exact_bill_confirmed": false,
+  "no_shutdown": true,
+  "instance_power_state": "left_running_per_user_policy",
+  "post_task_user_idle_excluded": true,
+  "historical_ledgers_unchanged": true,
+  "train_logged_seconds": 1885.5596498502418,
+  "eval_seconds": 963.1268948065117,
+  "checkpoint_return_parallel_with_evaluation": true
+}
