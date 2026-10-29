@@ -1,0 +1,23 @@
+{
+  "task": 109,
+  "hourly_CNY": 1.58,
+  "billing_start_beijing": "2026-10-29 10:23:00",
+  "GPU_tasks_and_remote_archive_complete_beijing": "2026-10-29 11:28:32",
+  "all_critical_results_returned_beijing": "2026-10-29 11:28:53",
+  "estimate_asof_beijing": "2026-10-29 11:35:00",
+  "estimated_rental_CNY": 1.8960000000000001,
+  "shutdown_requested_beijing": "2026-10-29 11:29（约）",
+  "shutdown_by": "user",
+  "platform_shutdown_confirmed": true,
+  "exact_platform_bill_verified": false,
+  "paid_API_CNY": 0,
+  "ceiling_used_CNY": 8,
+  "budget_basis": "prepared conservative8 ceiling; no replacement cap supplied",
+  "formal_training_updates": 24,
+  "formal_training_seconds_including_checkpoint": 934.4182774061337,
+  "mining_generation_seconds": 1157.8290702234954,
+  "evaluation_generation_seconds": 985.3770993575454,
+  "fees_include_wait_upload_loading_compile_save_and_return": true,
+  "user_reported_shutdown_beijing": "2026-10-29 11:35:00",
+  "rental_seconds": 4320.0
+}

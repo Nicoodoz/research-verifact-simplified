@@ -1,0 +1,60 @@
+{
+  "task": 109,
+  "source": "actual107_label_only_GPU_first_receipts",
+  "source_adapter_sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+  "mining_N": 527,
+  "stage_a_N": 294,
+  "stage_s_N": 233,
+  "invalid": 0,
+  "stage_a_GT": {
+    "Not Supported": 139,
+    "Not Addressed": 155
+  },
+  "stage_a_errors_by_GT": {
+    "Not Addressed": 36,
+    "Not Supported": 71
+  },
+  "stage_a_false_S_by_GT": {
+    "Not Supported": 20,
+    "Not Addressed": 15
+  },
+  "S_current_correct": 205,
+  "selection": {
+    "N": 192,
+    "optimizer_updates": 24,
+    "role_counts": {
+      "hard_error": 64,
+      "protect_S": 64,
+      "retention": 64
+    },
+    "GT": {
+      "Supported": 80,
+      "Not Addressed": 64,
+      "Not Supported": 48
+    },
+    "patients": 40,
+    "genuine_hard_by_GT": {
+      "Not Supported": 32,
+      "Not Addressed": 32
+    },
+    "hard_false_S": 35,
+    "all_retention_current_correct": true,
+    "S_predictions_requested": 233,
+    "S_neighbors_clinically_certified": false,
+    "all100_historically_exposed": true
+  },
+  "training_patients": 40,
+  "evaluation_patients": 20,
+  "patient_overlap": 0,
+  "training_GT_unchanged": true,
+  "source107_retained_N": 77,
+  "hard_semantic104_status": {
+    "not_reviewed104": 51,
+    "gt_explained": 13
+  },
+  "training_input_tokens": 1617135,
+  "training_max_input_tokens": 12017,
+  "clinical_relationship_pairs_certified": false,
+  "selection500_not_used_for_sampling": true,
+  "classification_gain_established_by_mining": false
+}

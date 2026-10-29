@@ -1,13 +1,15 @@
 # 109当前状态
 
-READY_FOR_GPU_RENTAL
+COMPLETE_NEGATIVE_STOP_CURRENT_RECIPE
 
-本轮无卡准备和必要CPU自检完成，等待用户租卡并另行授权GPU。没有连接/启动/唤醒AutoDL，没有运行9B推理或训练，新增GPU/API费用均0；不自动进入GPU阶段或110。
+109 boundary_replay已按新租卡授权完成：107 label_only完整状态续训，527条真实预测后固定选出192条/24步，500条评价全有效。相对107自然MCC0.5032→0.3733、PA79.75%→72%、false-S12→11/79；压力MCC0.3123→−0.1091、PA58%→38%、false-S16→16/100。主要是NA→NS严重交换（候选仅预测1条NA），停止当前配方，不补普通回放或启动110。完整模型/optimizer与原始结果已回传；由用户关机，停费已确认，API0。标签微调既有收益及默认系统保留。
 
-起点为107 label_only最终step50/392，适配器和完整optimizer/scheduler/RNG本地齐全。复用106训练40人3675池与两512候选，已知缺证/歧义等101个ID暂不回放；首批294非S真实预测请求、第二批至多274S、64真错+64正确近S+64正确保留的固定192/1轮/24步程序及最小包就绪。
+实际训练192条S80/NS48/NA64，来自原训练40人，与评价20人隔离。三组各64条：真实错误、当前正确近S、当前正确保留；64真错含35个false-S。续训global step50→74，原loss、BF16、完整输入不变，最终500条均有效。当前结果是真实分类阴性，不是CPU测试、数据配额不足或格式失败。
 
-当前没有本检查点的训练池真实预测，因而没有实际64困难/192训练清单；样本不足按预写规则停止，不以R1、TF-IDF、105/108或选型病例填补。未审输入不被认证为临床关系对。
+NA自然正确40→1、压力41→0；NS召回改善不能抵消NA塌缩。普通回放对照、追加epoch/种子/阈值/池扩展均未运行，不启动110，不升级默认。仍不能把失败唯一归因于困难选样或单纯追加训练。
 
-首选5090 32GB/BF16完整输入，所需context13097与107相同；新卡真实显存/内核/吞吐仍须检查。镜像ID/实际可用性未接触平台核实，原底座不在本地完整保存，需租前确认旧9B镜像。GPU真实效果、错误配额和保护是否够数仍未知；这些是已固定流程的GPU首阶段门槛，不是CPU方法成绩。
+最终适配器和完整optimizer/scheduler/RNG在.local_models/109_boundary_replay/gpu_evidence/results/train/checkpoint_a/，519867504 bytes且回传核验通过；全部原始预测/训练清单/日志在同级results。约11:29通知用户关机；平台停费已由用户确认，GPU租金当前估算¥1.8960，API0。
 
-[准备报告](../../outputs/109_boundary_replay/preparation_report.md) · [GPU_HANDOFF](GPU_HANDOFF.md) · [协议](protocol.md) · [数据](../../outputs/109_boundary_replay/data_summary.json) · [自检](../../outputs/109_boundary_replay/final_selfcheck.json)。本阶段双仓库提交/推送已获授权，实际以最终发布回执及交付为准。保留107/108历史结果、医生GT与默认系统，不自动新路线或归因第二臂。
+无卡准备双仓库已推送：完整c944c304、精简88cf24af。用户现已明确要求推送本次GPU正式结果与分析，最终双仓库提交及远端核验以本次交付为准。原无卡准备报告和自检保留其形成时范围。
+
+[最终报告](../../outputs/109_boundary_replay/final_report.md) · [完整指标](../../outputs/109_boundary_replay/comparison.json) · [执行自检](../../outputs/109_boundary_replay/execution_selfcheck.json) · [费用](../../outputs/109_boundary_replay/execution_cost.json)

@@ -1,6 +1,6 @@
 # 当前环境与启动方式（2026-10-29核对）
 
-109无卡准备完成：普通CPU统计用research-verifact-029，tokenizer/TF-IDF与tiny Torch接续检查复用原032 venv＋research激活（tokenizers0.22.0、Torch2.8.0），没有安装/升级环境或初始化CUDA。未来9B仍复用107的envs/venv103（Python3.12.3、Torch2.8.0+cu128、Transformers5.17.0、Unsloth2026.10.9、PEFT0.21.2等），不能换成108 DeBERTa的env108。107完整label_only状态本地齐，原9B完整底座不在本地；旧私有镜像曾多次复用，但当前镜像ID/实际可选性与新卡内核未连接核查。当前上下文13097及完整输入不变，首选已有107真实记录的5090 32GB；不为24GB改量化/截断。GPU必须新租卡授权。
+109实际复用用户新租RTX4080 SUPER 32GB实例上的原9B与envs/venv103（Python3.12.3、Torch2.8.0+cu128、Transformers5.17.0、Unsloth2026.10.9、PEFT0.21.2），没有重装/下载大权重或覆盖旧环境。BF16、micro1、完整输入不变；最长12017-token输入带继承optimizer的backward通过，峰值allocated24.56GiB；原batch2/分组完成500评价。原9B完整底座不在本地，镜像ID未确认，但本实例模型/环境已实际可用。107起点及109最终完整optimizer状态本地齐；结果已回传，由用户关机，平台停费状态见109费用记录。CPU统计仍用research-verifact-029，不使用GPU或收费API。
 
 107已在本次RTX5090 32GB完成BF16、micro1、完整输入的两臂LoRA训练与batch2评价；原Python3.12.3/105关键依赖复用，未重装升级。最长backward、辅助LoRA梯度、完整状态恢复和显存/吞吐实测通过。最终适配器、辅助头、完整optimizer与回执已本地回传核验；CPU统计使用research-verifact-029，无需GPU。GPU停止计费状态以107 cost_status与用户确认为准。
 

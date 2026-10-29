@@ -1,8 +1,8 @@
 # 研究设计与执行原则（2026-10-28）
 
-109 boundary_replay无卡准备完成，停在READY_FOR_GPU_RENTAL，等待用户租卡并另行授权GPU。接续107 label_only最终模型及完整optimizer，不重训旧基线；复用106训练40人3675池/两512候选，首批294非S、随后至多274S预测请求及固定192条/1轮/24步回放程序就绪。当前没有训练池真实9B预测，因此没有实际64困难/192清单，CPU测试不代表有效。已知缺证/歧义暂不回放，GT/reference/原主loss和接口不变。新增GPU/API0，未接触AutoDL；首选5090 32GB、旧镜像ID/可用性待核。标签微调既有收益保留，105/107/108增量失败路线不重启，不自动GPU/110或升级默认。 [109准备报告](../outputs/109_boundary_replay/preparation_report.md) · [租卡交接](../tasks/109_boundary_replay/GPU_HANDOFF.md) · [108最终报告](../outputs/108_semantic_hierarchy/final_report.md)。
+109 boundary_replay已按新租卡授权完成：107 label_only完整状态续训，527条真实预测后固定选出192条/24步，500条评价全有效。相对107自然MCC0.5032→0.3733、PA79.75%→72%、false-S12→11/79；压力MCC0.3123→−0.1091、PA58%→38%、false-S16→16/100。主要是NA→NS严重交换（候选仅预测1条NA），停止当前配方，不补普通回放或启动110。完整模型/optimizer与原始结果已回传；由用户关机，停费已确认，API0。标签微调既有收益及默认系统保留。 [109最终报告](../outputs/109_boundary_replay/final_report.md) · [完整指标](../outputs/109_boundary_replay/comparison.json) · [109当前状态](../tasks/109_boundary_replay/CURRENT.md)。
 
-105/107/108按各自原报告解释，既有标签微调真实收益保留；理由、辅助任务和当前分层配方没有值得扩大的增量。用户已明确交办109，但当前授权仅无卡准备、必要CPU检查和双仓库发布；固定错误驱动/保护回放只从原40训练患者，原GT、reference、主loss和接口不变。当前没有109分类成绩，不将教师分歧/词法邻近当真实当前错题或认证关系对，不重训旧label_only。准备结束停在READY_FOR_GPU_RENTAL，等待用户租卡和新GPU授权，不自动访问/启动实例、110或默认升级。
+105/107/108按各自原报告解释，既有标签微调收益保留。109已获新租卡GPU执行授权并完成固定一候选；当前配方无效，不据NS召回掩盖NA损失，不重启失败路线或自动运行110。原GT/reference/主loss与接口保留，500未回填、确认40人未使用；完成后由用户关机，不自动唤醒或释放实例。
 
 ## 研究目标与判定
 

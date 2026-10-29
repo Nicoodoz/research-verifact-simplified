@@ -1,0 +1,19 @@
+{
+  "task": 109,
+  "GPU_execution_authorized": true,
+  "user_supplied_rented_instance": true,
+  "hourly_cny": 1.58,
+  "billing_start_epoch": 1793240580.0,
+  "cap_cny": 8,
+  "shutdown_reserve_cny": 1,
+  "prior_GPU_cny": 0,
+  "fixed_bundle_sha256": "aa34867a49f2573a6e79d0f9a9609862b5404d1cb194f9267def36b69a663bb8",
+  "API_cap_cny": 0,
+  "platform_deadline_epoch": null,
+  "shutdown_permission": false,
+  "shutdown_policy": "USER_WILL_SHUT_DOWN_NOTIFY_PROMPTLY",
+  "budget_basis": "prepared8yuan conservative ceiling; user has supplied no replacement cap",
+  "actual_GPU": "NVIDIA GeForce RTX 4080 SUPER, 32760 MiB, 32230 MiB, 595.71.05",
+  "stage": "GPU_EXECUTION_AUTHORIZED_CURRENT_RENTED_INSTANCE",
+  "base_weights_and_original_environment_found": true
+}
