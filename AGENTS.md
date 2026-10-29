@@ -1,6 +1,6 @@
 # 项目工作约定（2026-10-29）
 
-自主研究周期1已按新授权启动：2026-10-29 19:47:16至2026-10-30 07:47:16，最长12小时；现有32GB GPU按1.58元/小时、周期GPU总上限20元、付费API总上限20元，跨候选不重置。107仍为主基线。首先验证115训练目标与完整路径决策的joint_path组合，随后按证据测试查询位置或更广训练的single_token判别配方；有信号自动扩大，不以一个编号/首次阴性停止。开发最佳冻结后可一次确认后40人，之前不读其结果。周期结束保存并通知，不自动关机。 [周期备忘](tasks/116_research_cycle/memo.md) · [周期进度](outputs/116_research_cycle/实时进度.md)。
+自主研究周期1已收束，未达到主要提升目标，保留107 label_only。六项候选及全部失败结果已留存：claim_repeat在1817条仅MCC+0.00730、正确+7、false-S+1；最后gentle_refresh固定25步在180条也出现NA损失及false-S增加，停止扩大。未使用确认40人，未改变默认系统。GPU计算及关键回传完成，实例按用户政策未关机、留机仍计费。 [周期备忘](tasks/116_research_cycle/memo.md) · [周期进度](outputs/116_research_cycle/实时进度.md)。
 
 本文件只保留持续有效的约定。先读[项目现状](docs/PROJECT_STATUS.md)、[研究原则](docs/RESEARCH_EXECUTION.md)和[环境](docs/RUN_ENVIRONMENT.md)；查看仓库相关事实前检查实际main HEAD。任务、报告和审计的历史索引见[任务索引](docs/TASK_INDEX.md)，旧说明不覆盖较新的用户授权。
 

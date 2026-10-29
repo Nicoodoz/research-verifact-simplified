@@ -34,7 +34,10 @@ def main(name):
   source_job=c.read(P/(source+'.json'));assert source_job['candidate']==job['candidate']
   if 'adapter_sha256' in source_job and 'adapter_sha256' in job:assert source_job['adapter_sha256']==job['adapter_sha256']
   if 'input_transform' in source_job or 'input_transform' in job:assert source_job.get('input_transform','original')==job.get('input_transform','original')
-  received=load_predictions(source);assert not set(new)&set(received),'Duplicate first receipts across jobs';new.update(received)
+  received=load_predictions(source);assert not set(new)&set(received),'Duplicate first receipts across jobs'
+  if job.get('adapter_sha256'):
+   assert all(r.get('adapter_sha256',job['adapter_sha256'])==job['adapter_sha256'] for r in received.values())
+  new.update(received)
  wanted=list(new)
  for i,r in new.items():assert r['source_prompt_sha256_104']==base[i]['prompt_token_sha256']
  if not expanded:groups={p:[keys[i] for i in wanted if keys[i]['pilot_panel']==p] for p in ['natural','pressure']}

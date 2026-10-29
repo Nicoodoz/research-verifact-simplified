@@ -1,0 +1,20 @@
+{
+  "steps": 25,
+  "unique_training_N": 196,
+  "gradient_patients": 40,
+  "training_GT": {
+    "Supported": 83,
+    "Not Supported": 62,
+    "Not Addressed": 51
+  },
+  "source107_step": 50,
+  "source107_presentations": 392,
+  "optimizer_moments_retained": true,
+  "learning_rate": 2e-05,
+  "training_step_seconds": 942.8584290686995,
+  "source_adapter_sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+  "final_adapter_sha256": "098cbc98f1ea35549dae4347e76e05499916897219a38b2f44ab24c6e85b9fb3",
+  "local_complete_optimizer_backup": true,
+  "head_or_loss_changed": false,
+  "efficacy_claimed": false
+}

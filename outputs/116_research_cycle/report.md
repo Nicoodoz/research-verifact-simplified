@@ -1,136 +1,102 @@
-# 自主研究周期1：阶段结果
+# 自主研究周期1：决策结果
 
-107 label_only仍是主基线。以下均为原20名患者的开发筛查，原医生GT保留；后40人尚未用于选型或确认。各候选首次回执保留，未按结果重发。
+本周期未找到达到主要目标的改进，保留107。gentle_refresh也在180条出现NA损失及false-S增加，停止扩大；claim_repeat仅保留小幅开发信号，不升级默认、不使用确认40。
 
-要素核对500无综合增量，三代码方案已停止。当前执行原107原接口/原loss的小步数据更新gentle_refresh，固定25步后直接筛查；不使用确认40。
+107 label_only仍是主基线。全部为原20名患者的开发评价，所有患者均有历史暴露；不称独立盲测，原医生GT及首次回执保留。确认40人使用状态以本周期状态记录为准。
 
-|候选/面板|配置|MCC|PA|正确数/有效数|false-S/有效非S|有效/计划|
-|---|---|---:|---:|---:|---:|---:|
-|joint_path_pilot/natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
-|joint_path_pilot/natural|joint_path|0.3962|61.67%|74/120|0/24|120/120|
-|joint_path_pilot/natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
-|joint_path_pilot/pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
-|joint_path_pilot/pressure|joint_path|0.3710|65.00%|39/60|3/60|60/60|
-|joint_path_pilot/pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
-|claim_repeat_pilot/natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
-|claim_repeat_pilot/natural|claim_repeat|0.4735|76.67%|92/120|4/24|120/120|
-|claim_repeat_pilot/natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
-|claim_repeat_pilot/pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
-|claim_repeat_pilot/pressure|claim_repeat|0.2945|58.33%|35/60|7/60|60/60|
-|claim_repeat_pilot/pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
-|claim_repeat_500_missing/natural|107 label_only|0.5032|79.75%|319/400|12/79|400/400|
-|claim_repeat_500_missing/natural|claim_repeat|0.5232|80.25%|321/400|12/79|400/400|
-|claim_repeat_500_missing/natural|作者历史R1|0.4319|81.00%|324/400|28/79|400/400|
-|claim_repeat_500_missing/pressure|107 label_only|0.3123|58.00%|58/100|16/100|100/100|
-|claim_repeat_500_missing/pressure|claim_repeat|0.3219|58.00%|58/100|17/100|100/100|
-|claim_repeat_500_missing/pressure|作者历史R1|0.1572|44.00%|44/100|30/100|100/100|
-|claim_repeat_1817_missing/natural|107 label_only|0.5032|79.75%|319/400|12/79|400/400|
-|claim_repeat_1817_missing/natural|claim_repeat|0.5232|80.25%|321/400|12/79|400/400|
-|claim_repeat_1817_missing/natural|作者历史R1|0.4319|81.00%|324/400|28/79|400/400|
-|claim_repeat_1817_missing/pressure|107 label_only|0.3123|58.00%|58/100|16/100|100/100|
-|claim_repeat_1817_missing/pressure|claim_repeat|0.3219|58.00%|58/100|17/100|100/100|
-|claim_repeat_1817_missing/pressure|作者历史R1|0.1572|44.00%|44/100|30/100|100/100|
-|claim_repeat_1817_missing/new1317|107 label_only|0.5398|82.76%|1090/1317|22/183|1317/1317|
-|claim_repeat_1817_missing/new1317|claim_repeat|0.5445|83.14%|1095/1317|22/183|1317/1317|
-|claim_repeat_1817_missing/new1317|作者历史R1|0.4764|85.35%|1124/1317|47/183|1317/1317|
-|claim_repeat_1817_missing/selection1817|107 label_only|0.5445|80.74%|1467/1817|50/362|1817/1817|
-|claim_repeat_1817_missing/selection1817|claim_repeat|0.5518|81.12%|1474/1817|51/362|1817/1817|
-|claim_repeat_1817_missing/selection1817|作者历史R1|0.4842|82.11%|1492/1817|105/362|1817/1817|
-|claim_repeat_1817_missing/history103_natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
-|claim_repeat_1817_missing/history103_natural|claim_repeat|0.4735|76.67%|92/120|4/24|120/120|
-|claim_repeat_1817_missing/history103_natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
-|claim_repeat_1817_missing/history103_pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
-|claim_repeat_1817_missing/history103_pressure|claim_repeat|0.2945|58.33%|35/60|7/60|60/60|
-|claim_repeat_1817_missing/history103_pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
-|single_token_short_pilot/natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
-|single_token_short_pilot/natural|single_token_short|0.5027|79.17%|95/120|3/24|120/120|
-|single_token_short_pilot/natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
-|single_token_short_pilot/pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
-|single_token_short_pilot/pressure|single_token_short|0.2501|55.00%|33/60|9/60|60/60|
-|single_token_short_pilot/pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
-|single_token_short_500_missing/natural|107 label_only|0.5032|79.75%|319/400|12/79|400/400|
-|single_token_short_500_missing/natural|single_token_short|0.4600|79.50%|318/400|21/79|400/400|
-|single_token_short_500_missing/natural|作者历史R1|0.4319|81.00%|324/400|28/79|400/400|
-|single_token_short_500_missing/pressure|107 label_only|0.3123|58.00%|58/100|16/100|100/100|
-|single_token_short_500_missing/pressure|single_token_short|0.2668|53.00%|53/100|22/100|100/100|
-|single_token_short_500_missing/pressure|作者历史R1|0.1572|44.00%|44/100|30/100|100/100|
-|single_token_107_pilot/natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
-|single_token_107_pilot/natural|single_token_107|0.4939|79.17%|95/120|5/24|120/120|
-|single_token_107_pilot/natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
-|single_token_107_pilot/pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
-|single_token_107_pilot/pressure|single_token_107|0.1500|46.67%|28/60|12/60|60/60|
-|single_token_107_pilot/pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
-|support_check_pilot/natural|107 label_only|0.4078|71.67%|86/120|4/24|120/120|
-|support_check_pilot/natural|support_check|0.4347|72.50%|87/120|4/24|120/120|
-|support_check_pilot/natural|作者历史R1|0.4190|77.50%|93/120|6/24|120/120|
-|support_check_pilot/pressure|107 label_only|0.3069|58.33%|35/60|7/60|60/60|
-|support_check_pilot/pressure|support_check|0.3638|61.67%|37/60|7/60|60/60|
-|support_check_pilot/pressure|作者历史R1|0.2669|53.33%|32/60|14/60|60/60|
-|support_check_500_missing/natural|107 label_only|0.5032|79.75%|319/400|12/79|400/400|
-|support_check_500_missing/natural|support_check|0.4918|78.50%|314/400|11/79|400/400|
-|support_check_500_missing/natural|作者历史R1|0.4319|81.00%|324/400|28/79|400/400|
-|support_check_500_missing/pressure|107 label_only|0.3123|58.00%|58/100|16/100|100/100|
-|support_check_500_missing/pressure|support_check|0.3224|59.00%|59/100|15/100|100/100|
-|support_check_500_missing/pressure|作者历史R1|0.1572|44.00%|44/100|30/100|100/100|
+各候选按最大已完成范围展示，不按最好成绩挑阶段。已有1817结果者另列其旧500同ID分面；180表只列尚未扩大者。类别净正确=救回−误伤，顺序S/NS/NA；false-S分母为共同有效ID中的真实非S数，缺失/无效不补旧答案。
 
-## 去留与解释
+## 1817条完整队列
 
-- `joint_path_pilot`：停止扩大；降低8次错误放行，但自然集误伤14条原正确S，净少12条正确。
-  - natural：Supported救回0、误伤14；Not Supported救回2、误伤0；Not Addressed救回0、误伤0；新增false-S 0、避免4。
-  - pressure：Supported救回0、误伤0；Not Supported救回7、误伤2；Not Addressed救回0、误伤1；新增false-S 0、避免4。
-- `claim_repeat_pilot`：自然120净多6条正确、MCC+0.0658，false-S不变；压力净正确及false-S不变，继续补齐旧500。
-  - natural：Supported救回6、误伤1；Not Supported救回0、误伤0；Not Addressed救回1、误伤0；新增false-S 0、避免0。
-  - pressure：Supported救回0、误伤0；Not Supported救回2、误伤1；Not Addressed救回0、误伤1；新增false-S 1、避免1。
-- `claim_repeat_500_missing`：自然400 MCC+0.01997、正确+2、false-S不变，S净-2/NS+2/NA+2；压力正确不变、false-S+1。有限信号，继续补齐1817，不宣称已成功。
-  - natural：Supported救回6、误伤8；Not Supported救回2、误伤0；Not Addressed救回4、误伤2；新增false-S 1、避免1。
-  - pressure：Supported救回0、误伤0；Not Supported救回2、误伤3；Not Addressed救回1、误伤0；新增false-S 2、避免1。
-- `claim_repeat_1817_missing`：完整1817 MCC+0.00730、正确+7、false-S+1；仅低成本辅助信号，未达到周期主要目标，不动确认40；继续已准备的single_token_768。
-  - natural：Supported救回6、误伤8；Not Supported救回2、误伤0；Not Addressed救回4、误伤2；新增false-S 1、避免1。
-  - pressure：Supported救回0、误伤0；Not Supported救回2、误伤3；Not Addressed救回1、误伤0；新增false-S 2、避免1。
-  - new1317：Supported救回26、误伤21；Not Supported救回2、误伤3；Not Addressed救回4、误伤3；新增false-S 3、避免3。
-  - selection1817：Supported救回32、误伤29；Not Supported救回6、误伤6；Not Addressed救回9、误伤5；新增false-S 6、避免5。
-  - history103_natural：Supported救回6、误伤1；Not Supported救回0、误伤0；Not Addressed救回1、误伤0；新增false-S 0、避免0。
-  - history103_pressure：Supported救回0、误伤0；Not Supported救回2、误伤1；Not Addressed救回0、误伤1；新增false-S 1、避免1。
-- `single_token_short_pilot`：自然120：MCC+0.09497、正确+9、false-S-1；压力60：正确-2、false-S+2。冻结24步检查点，先补齐500观察得失，不追加训练。。
-  - natural：Supported救回10、误伤1；Not Supported救回1、误伤1；Not Addressed救回1、误伤1；新增false-S 1、避免2。
-  - pressure：Supported救回0、误伤0；Not Supported救回4、误伤3；Not Addressed救回0、误伤3；新增false-S 5、避免3。
-- `single_token_short_500_missing`：自然MCC-0.04324、false-S+9；压力MCC-0.04552、false-S+6。明确停止当前短训练配方，不追加训练或扩1817。。
-  - natural：Supported救回15、误伤12；Not Supported救回4、误伤2；Not Addressed救回3、误伤9；新增false-S 11、避免2。
-  - pressure：Supported救回0、误伤0；Not Supported救回3、误伤7；Not Addressed救回0、误伤1；新增false-S 7、避免1。
-- `single_token_107_pilot`：冻结107三代码读出：自然正确+9但压力正确-7、false-S+5，停止；新训练不是唯一退化原因。。
-  - natural：Supported救回8、误伤0；Not Supported救回0、误伤1；Not Addressed救回2、误伤0；新增false-S 1、避免0。
-  - pressure：Supported救回0、误伤0；Not Supported救回0、误伤5；Not Addressed救回0、误伤2；新增false-S 5、避免0。
-- `support_check_pilot`：边界信号：总净正确+3，未达原+4粗筛线，但自然/压力MCC均正、false-S不变，无类别损坏；按用户时间优先与宽松筛查授权，先做一次低成本500补评，不声明阳性。。
-  - natural：Supported救回1、误伤2；Not Supported救回0、误伤0；Not Addressed救回2、误伤0；新增false-S 0、避免0。
-  - pressure：Supported救回0、误伤0；Not Supported救回2、误伤0；Not Addressed救回0、误伤0；新增false-S 0、避免0。
-- `support_check_500_missing`：自然MCC-0.01136、正确-5、false-S-1；压力正确+1、false-S-1。不达综合目标，停止扩大。。
-  - natural：Supported救回0、误伤6；Not Supported救回0、误伤0；Not Addressed救回1、误伤0；新增false-S 0、避免1。
-  - pressure：Supported救回0、误伤0；Not Supported救回2、误伤1；Not Addressed救回0、误伤0；新增false-S 0、避免1。
+按队列实际构成评价；覆盖不足1817时只能称该共同有效子集。
 
-claim_repeat完整1817的MCC差值患者分组95%区间为[-0.0126, +0.0244]（1000次bootstrap）；正确数增加7名患者、减少9名患者。区间跨0不表示等效，也不足以支持稳定增益。相对107只是较小点估计收益，不占用唯一的确认40人机会。
+### 完整队列
 
-短训练的范围诊断：180与500重合的70条净正确+1；500中其余430条净正确-7、false-S+14。这是不同覆盖范围暴露的泛化损失；评价期间模型权重未再更新，不能将内部训练前后改善当作超过107的证据。
+|方案|MCC|PA|正确/有效|false-S/非S|有效/计划|S/NS/NA净正确|false-S新增/避免|
+|---|---:|---:|---:|---:|---:|---:|---:|
+|107 label_only|0.5445|80.74%|1467/1817|50/362|1817/1817|—|—|
+|paper_r1（历史）|0.4842|82.11%|1492/1817|105/362|1817/1817|—|—|
+|`claim_repeat`|0.5518|81.12%|1474/1817|51/362|1817/1817|+3/+0/+4|6/5|
 
-## 方法与代价
+## 旧500条分面
 
-`joint_path`复用115最终适配器，枚举三个完整JSON+EOS路径并按总条件logP决策；每例三次完整前向。它联合验证115目标与路径决策，不能用仅比115原greedy好来宣布超过107。
+自然400与人为压力100分别解释，不合并冒充自然分布。
 
-与115原greedy有回执交集的70条中，自然35条正确24→22，压力35条21→22，正确S救回0、额外误伤1。该描述性交集没有支持“改用完整路径即可挽救115”的解释，也不能外推为全部样本的机制证明。
+### 自然400
 
-`claim_repeat`复用107，在完整reference之外的消息末端重述同一待核验命题；未增添EHR事实、GT、其他模型答案或逐例规则。
+|方案|MCC|PA|正确/有效|false-S/非S|有效/计划|S/NS/NA净正确|false-S新增/避免|
+|---|---:|---:|---:|---:|---:|---:|---:|
+|107 label_only|0.5032|79.75%|319/400|12/79|400/400|—|—|
+|paper_r1（历史）|0.4319|81.00%|324/400|28/79|400/400|—|—|
+|`claim_repeat`|0.5232|80.25%|321/400|12/79|400/400|-2/+2/+2|1/1|
+|`single_token_short`|0.4600|79.50%|318/400|21/79|400/400|+3/+2/-6|11/2|
+|`support_check`|0.4918|78.50%|314/400|11/79|400/400|-6/+0/+1|0/1|
 
-范围：原103的180条与旧500仅重合70条。按原103面板计为自然35、压力35；按旧500面板计为自然48、压力22，两个面板定义不同。因此补齐旧500实际新增430次，再补完整1817需要1207次；已有110条“旧500之外”的原180预测继续复用。180与500不是严格包含关系，不能把两张表的差值直接解释成新增320条的表现。
+### 压力100
 
-对其自然面板6条S救回及1条S误伤做了定向原文检查：5条救回有较明确可见依据，1条缺关键时间段，误伤例也有可见支持。3条有依据救回来自同一患者。这不是随机病例审查，不能证明模型使用了对应证据，或排除更偏S；缺证例仍保留医生原GT。临床正文与逐例笔记仅在私有目录。
+|方案|MCC|PA|正确/有效|false-S/非S|有效/计划|S/NS/NA净正确|false-S新增/避免|
+|---|---:|---:|---:|---:|---:|---:|---:|
+|107 label_only|0.3123|58.00%|58/100|16/100|100/100|—|—|
+|paper_r1（历史）|0.1572|44.00%|44/100|30/100|100/100|—|—|
+|`claim_repeat`|0.3219|58.00%|58/100|17/100|100/100|+0/-1/+1|2/1|
+|`single_token_short`|0.2668|53.00%|53/100|22/100|100/100|+0/-4/-1|7/1|
+|`support_check`|0.3224|59.00%|59/100|15/100|100/100|+0/+1/+0|0/1|
 
-`single_token_768`是待验证的完整判别配方：原9B、准备768条真实训练命题、32名梯度患者，另8名患者128条只用于选checkpoint。原临床定义与完整输入保留，A/B/C三行固定词表投影作唯一三类CE。原上限96步；按用户时间优先补充，先在24步内部验证后暂停并评价固定180，实际用量另报。不把它当作纯组件消融或新的原创算法。
+## 仅完成180条粗筛
 
-短训练实际完成24步、192条不同命题（S96/NS48/NA48），涉及31名梯度患者；内部验证仍为独立8人128条。按原内部选点规则选择第24步，未再更新权重。内部MCC0.5323→0.5989、false-S23→13，同时正确S60→56；这是训练侧信号，不能代替20名选型患者上的真实分类收益。
+这些候选未补齐500；小面板成绩不能代替扩大验证。
 
-三类完整指标、混淆矩阵、逐例配对变化与患者方向保存在各候选JSON。当前粗筛不例行bootstrap；有值得保留的较大开发收益后再补必要稳定性分析。作者R1只作历史同ID参照。
+### 自然120
 
-周期起点2026-10-29 19:47:16（北京时间），截止2026-10-30 07:47:16；本报告生成时GPU墙钟估算¥4.230/20、API ¥0/20。估算包含等待和回传，不是平台精确账单。
+|方案|MCC|PA|正确/有效|false-S/非S|有效/计划|S/NS/NA净正确|false-S新增/避免|
+|---|---:|---:|---:|---:|---:|---:|---:|
+|107 label_only|0.4078|71.67%|86/120|4/24|120/120|—|—|
+|paper_r1（历史）|0.4190|77.50%|93/120|6/24|120/120|—|—|
+|未微调9B（103原接口）|0.2723|63.33%|76/120|5/24|120/120|—|—|
+|103微调（历史整套方案）|0.5738|85.83%|103/120|7/24|120/120|—|—|
+|`joint_path`|0.3962|61.67%|74/120|0/24|120/120|-14/+2/+0|0/4|
+|`single_token_107`|0.4939|79.17%|95/120|5/24|120/120|+8/-1/+2|1/0|
+|`gentle_refresh`|0.3711|74.17%|89/120|6/24|120/120|+9/+2/-8|2/0|
 
-状态：ACTIVE；当前任务`gentle_refresh`；最佳`107_label_only`。不自动关机，实例继续开机会继续计费。
+### 压力60
 
-依据：[周期备忘](../../tasks/116_research_cycle/memo.md)、[预写粗筛规则](../../tasks/116_research_cycle/screen_rules.json)、[单token配置](../../tasks/116_research_cycle/single_token_config.json)。
+|方案|MCC|PA|正确/有效|false-S/非S|有效/计划|S/NS/NA净正确|false-S新增/避免|
+|---|---:|---:|---:|---:|---:|---:|---:|
+|107 label_only|0.3069|58.33%|35/60|7/60|60/60|—|—|
+|paper_r1（历史）|0.2669|53.33%|32/60|14/60|60/60|—|—|
+|未微调9B（103原接口）|-0.0556|43.33%|26/60|6/60|60/60|—|—|
+|103微调（历史整套方案）|0.3182|50.00%|30/60|21/60|60/60|—|—|
+|`joint_path`|0.3710|65.00%|39/60|3/60|60/60|+0/+5/-1|0/4|
+|`single_token_107`|0.1500|46.67%|28/60|12/60|60/60|+0/-5/-2|5/0|
+|`gentle_refresh`|0.2933|56.67%|34/60|11/60|60/60|+0/+13/-14|4/0|
+
+103及其未微调9B只在原180条上有此处可复用的同ID结果；103与107的监督规模、提示与损失不同，是整套历史方案比较，不能当单组件消融或1817条成绩。
+
+## 去留与限制
+
+- `joint_path`：停止扩大；降低8次错误放行，但自然集误伤14条原正确S，净少12条正确。 [最大范围结果](joint_path_pilot.json)
+- `claim_repeat`：完整1817 MCC+0.00730、正确+7、false-S+1；只是小幅开发信号，未达主要目标且稳定性不足，不升级默认，不消耗确认40。 [最大范围结果](claim_repeat_1817_missing.json)
+- `single_token_short`：自然MCC-0.04324、false-S+9；压力MCC-0.04552、false-S+6。明确停止当前短训练配方，不追加训练或扩1817。 [最大范围结果](single_token_short_500_missing.json)
+- `single_token_107`：冻结107三代码读出：自然正确+9但压力正确-7、false-S+5，停止；新训练不是唯一退化原因。 [最大范围结果](single_token_107_pilot.json)
+- `support_check`：自然MCC-0.01136、正确-5、false-S-1；压力正确+1、false-S-1。不达综合目标，停止扩大。 [最大范围结果](support_check_500_missing.json)
+- `gentle_refresh`：固定25步已完成。自然MCC-0.03662、正确+3、false-S+2、NA净-8；压力MCC-0.01360、正确-1、false-S+4、NA净-14。停止，不补500或再调学习率。 [最大范围结果](gentle_refresh.json)
+
+claim_repeat的1817条ΔMCC患者95%区间为[-0.0126, +0.0244]（1000次bootstrap）；患者正确数改善/下降7/9。点估计增益很小，区间跨0不等于等效，也未证明稳定优势；不据此消耗确认40人。
+
+single_token_short在180与500重合的70条净正确+1；500其余430条净正确-7、false-S+14。扩大时权重未再训练，小面板阳性不能替代整体收益。
+
+## 配方、覆盖与成本
+
+- joint_path：115适配器＋完整JSON/EOS路径评分，每例三次完整前向。其他已评配方每例一次模型预测；输出概率不是校准风险概率。
+- claim_repeat只在reference外重述命题；support_check只补通用要素核对，均保留107权重和原JSON接口，没有增添临床事实。
+- single_token_short实际24步/192条、31名梯度患者，另8人128条选checkpoint；原768条/96步方案未跑完。single_token_107仅换同一三代码读出，不训练。两者均不能外推为所有判别学习方案无效。
+- gentle_refresh设计固定：107最终权重及Adam状态，114第二轮196条，学习率2e-5、25步，原JSON、完整reference与原分段loss不变。只取固定最后一步；是否已完成及效果以上表和当前状态为准。
+- 原180与旧500仅重合70条，面板定义也有差别；不能把两表之差当新增320条。逐例、三类召回、混淆矩阵、患者/来源分层及所有失败阶段保留在 [comparison.jsonl](comparison.jsonl) 和各原始分析JSON，不因主表压缩删除。
+
+授权窗口：2026-10-29 19:47:16至2026-10-30 07:47:16（北京时间）；本次记录的墙钟GPU估算¥4.829/20，API ¥0/20。含等待、加载和回传，非平台精确账单。
+
+状态：`CLOSED_NO_QUALIFYING_GAIN`；当前任务 `None`；当前保留方案 `107_label_only`。未自动关机，实例留机仍计费。
+
+依据：[周期备忘](../../tasks/116_research_cycle/memo.md) · [粗筛规则](../../tasks/116_research_cycle/screen_rules.json) · [状态](cycle_state.json)。
+
+实际收束：2026-10-29 22:50:38；GPU计算结束与关键回传时间见状态JSON。收束后的留机和发布等待仍会产生租金，本记录不是关机账单。

@@ -1,4 +1,4 @@
-# 全部任务与当前入口（自主周期1进行中；2026-10-29）
+# 全部任务与当前入口（自主周期1已收束；2026-10-29）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,7 +6,7 @@
 
 |任务|结果来源|独立审计来源|当前适用范围|
 |---|---|---|---|
-|116_research_cycle|[备忘](../tasks/116_research_cycle/memo.md) · [进度](../outputs/116_research_cycle/实时进度.md) · [状态](../outputs/116_research_cycle/cycle_state.json)|预算内多候选、有限探索及一次冻结后确认已授权|进行中，尚不宣称新方法有效；107主基线、历史GT不变|
+|116_research_cycle|[报告](../outputs/116_research_cycle/report.md) · [比较](../outputs/116_research_cycle/comparison.jsonl) · [状态](../outputs/116_research_cycle/cycle_state.json)|六候选真实评价；两次训练及完整状态回传；确认40未用|未达到主要目标，保留107；API0，GPU空闲但未关机|
 |115_label_sum|[报告](../outputs/115_label_sum/final_report.md) · [分析](../outputs/115_label_sum/analysis.md) · [比较](../outputs/115_label_sum/comparison.json) · [协议](../tasks/115_label_sum/protocol.md)|同196、数值/梯度CPU检查、50步、500首次及患者配对；执行者自检|115未形成通过保护条件的综合增量，停止当前label_sum配方，保留107主基线。；完整状态回传，新授权双仓库发布，未关机，不自动116|
 |114_matched_refresh|[报告](../outputs/114_matched_refresh/final_report.md) · [比较](../outputs/114_matched_refresh/comparison.json) · [去正文预测](../outputs/114_matched_refresh/predictions_sanitized.jsonl) · [协议](../tasks/114_matched_refresh/protocol.md)|固定匹配清单、50步/392次、500同ID、患者配对及完整状态回传；执行者自检|自然风险改善伴随NA损失，未过事前保护条件，停止当前配方；107保留，未关机，不自动115|
 |113_label_path|[报告](../outputs/113_label_path/final_report.md) · [初筛](../outputs/113_label_path/pilot_comparison.json) · [门槛](../outputs/113_label_path/pilot_gate.json) · [协议](../tasks/113_label_path/protocol.md)|固定真路径评分及患者配对，执行者自检非独立审计|113有小幅正向点估计，但未达到预先固定的继续门槛：180条仅改变5条、净多3条正确，未减少false-S。停止本次label_path扩展，不补500，不宣称评分机制普遍无效。；不自动114或关机|

@@ -1,75 +1,216 @@
-"""Update one compact cycle report from completed, published-safe analyses."""
+"""Build a compact decision report; preserve every analysis in comparison.jsonl."""
 from pathlib import Path
-import json,time
+import json
+import time
 
-R=Path(__file__).resolve().parents[2]
-O=R/'outputs/116_research_cycle'
+R = Path(__file__).resolve().parents[2]
+O = R / 'outputs/116_research_cycle'
+LABELS = ('Supported', 'Not Supported', 'Not Addressed')
 
-def read(p):return json.loads(p.read_text(encoding='utf-8'))
-def write(p,value):p.write_bytes((json.dumps(value,ensure_ascii=False,indent=2)+'\n').encode())
+
+def read(path):
+    return json.loads(path.read_text(encoding='utf-8'))
+
+
+def write(path, value):
+    path.write_bytes((json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode())
+
+
+def expected(part):
+    return part.get('expected_N') or part['N']
+
+
+def has_old500(result):
+    panels = result['panels']
+    return all(name in panels and expected(panels[name]) == size
+               for name, size in (('natural', 400), ('pressure', 100)))
+
+
+def scope_rank(result):
+    """Choose coverage, never the most favourable metric or checkpoint."""
+    panels = result['panels']
+    if 'selection1817' in panels:
+        return 3, panels['selection1817']['N']
+    if has_old500(result):
+        return 2, sum(panels[name]['N'] for name in ('natural', 'pressure'))
+    return 1, sum(part['N'] for part in panels.values())
+
+
+def score_row(label, part, arm, changes=None):
+    score = part['scores'][arm]
+    net = added_avoided = '—'
+    if changes:
+        net = '/'.join(f"{changes['by_class'][name]['rescued'] - changes['by_class'][name]['harmed']:+d}"
+                       for name in LABELS)
+        added_avoided = f"{changes['false_S_new']}/{changes['false_S_avoided']}"
+    return (f"|{label}|{score['mcc']:.4f}|{score['percent_agreement']:.2%}|"
+            f"{score['correct']}/{part['N']}|{score['false_S']}/{score['non_S']}|"
+            f"{part['N']}/{expected(part)}|{net}|{added_avoided}|")
+
+
+def add_table(lines, title, results, panel, historical=False):
+    available = [result for result in results if panel in result['panels']]
+    if not available:
+        return
+    lines += ['', f'### {title}', '',
+              '|方案|MCC|PA|正确/有效|false-S/非S|有效/计划|S/NS/NA净正确|false-S新增/避免|',
+              '|---|---:|---:|---:|---:|---:|---:|---:|']
+    # Complete fixed cohorts share one baseline. Incomplete common-ID subsets
+    # retain their own reference rows, rather than silently mixing denominators.
+    reference_rows = []
+    seen = {}
+    for result in available:
+        part = result['panels'][panel]
+        subset = result['candidate'] if part['N'] != expected(part) else None
+        for arm, label in (('label_only107', '107 label_only'), ('paper_r1', 'paper_r1（历史）')):
+            if arm not in part['scores']:
+                continue
+            key = (subset, part['N'], expected(part), arm)
+            metric = part['scores'][arm]
+            essential = (metric['confusion_matrix'], metric['correct'], metric['false_S'], metric['non_S'])
+            if key in seen:
+                assert seen[key] == essential, 'Same fixed cohort has inconsistent reference counts'
+                continue
+            seen[key] = essential
+            suffix = f"〔与{result['candidate']}共同有效〕" if subset else ''
+            reference_rows.append(score_row(label + suffix, part, arm))
+    lines.extend(reference_rows)
+    history_path = O / 'historical180.json'
+    if historical and history_path.exists():
+        history = read(history_path)['panels'][panel]
+        for key, label in (('103_base9b', '未微调9B（103原接口）'),
+                           ('103_lora9b', '103微调（历史整套方案）')):
+            entry = history[key]
+            part = dict(N=entry['valid_N'], expected_N=entry['expected_N'],
+                        scores={'history': entry['metrics']})
+            lines.append(score_row(label, part, 'history'))
+    for result in available:
+        part = result['panels'][panel]
+        lines.append(score_row(f"\x60{result['candidate']}\x60", part, 'candidate', part.get('changes')))
+
 
 def main():
-    state=read(O/'cycle_state.json');rows=[];analyses=[]
+    state = read(O / 'cycle_state.json')
+    analyses = []
+    rows = []
     for name in state['completed_jobs']:
-        path=O/(name+'.json')
-        if not path.exists():continue
-        result=read(path);analyses.append(result)
-        for panel,part in result['panels'].items():
-            for arm,score in part['scores'].items():
-                rows.append(dict(job=name,panel=panel,arm=arm,N=part['N'],expected_N=part.get('expected_N',part['N']),MCC=score['mcc'],PA=score['percent_agreement'],correct=score['correct'],false_S=score['false_S'],non_S=score['non_S'],recall={g:v['recall'] for g,v in score['per_class'].items()}))
-    (O/'comparison.jsonl').write_bytes(('\n'.join(json.dumps(r,ensure_ascii=False) for r in rows)+'\n').encode())
-    elapsed=time.time()-state['start_epoch'];cost=elapsed*state['hourly_CNY']/3600
-    write(O/'cost_status.json',dict(start_beijing=state['start_beijing'],snapshot_epoch=time.time(),elapsed_seconds=elapsed,GPU_estimate_CNY=cost,GPU_cap_CNY=state['GPU_cap_CNY'],API_CNY=state['paid_API_CNY'],API_cap_CNY=state['API_cap_CNY'],estimate_not_platform_invoice=True,no_shutdown=True,cycle_status=state['status']))
-    lines=['# 自主研究周期1：阶段结果','',
-           '107 label_only仍是主基线。以下均为原20名患者的开发筛查，原医生GT保留；后40人尚未用于选型或确认。各候选首次回执保留，未按结果重发。','',
-           state.get('current_takeaway','当前仍在筛查，尚未达到周期主要目标。'),'',
-           '|候选/面板|配置|MCC|PA|正确数/有效数|false-S/有效非S|有效/计划|',
-           '|---|---|---:|---:|---:|---:|---:|']
-    for row in rows:
-        arm={'candidate':next(a['candidate'] for a in analyses if a['job']==row['job']),'label_only107':'107 label_only','paper_r1':'作者历史R1'}[row['arm']]
-        lines.append(f"|{row['job']}/{row['panel']}|{arm}|{row['MCC']:.4f}|{row['PA']:.2%}|{row['correct']}/{row['N']}|{row['false_S']}/{row['non_S']}|{row['N']}/{row['expected_N']}|")
-    lines+=['','## 去留与解释','']
+        path = O / (name + '.json')
+        if not path.exists():
+            continue
+        result = read(path)
+        if 'panels' not in result:
+            continue
+        analyses.append(result)
+        for panel, part in result['panels'].items():
+            for arm, score in part['scores'].items():
+                rows.append(dict(job=name, panel=panel, arm=arm, N=part['N'],
+                                 expected_N=expected(part), MCC=score['mcc'],
+                                 PA=score['percent_agreement'], correct=score['correct'],
+                                 false_S=score['false_S'], non_S=score['non_S'],
+                                 recall={label: value['recall'] for label, value in score['per_class'].items()}))
+    # Keep all attempted stages, including negative pilots and later expansions.
+    (O / 'comparison.jsonl').write_bytes(
+        ('\n'.join(json.dumps(row, ensure_ascii=False) for row in rows) + '\n').encode())
+    largest = {}
     for result in analyses:
-        name=result['job'];screen=result.get('screen',{})
-        decision=state.get('decisions',{}).get(name)
-        if not decision:decision='达到预写粗筛信号，继续扩大' if screen.get('continue_') else ('未达到预写粗筛信号，不据局部改善宣称成功' if screen else '已完成扩展，按较大开发结果判断')
-        lines.append(f"- `{name}`：{decision}。")
-        for panel,part in result['panels'].items():
-            cl=part['changes']['by_class'];changes='；'.join(f"{g}救回{z['rescued']}、误伤{z['harmed']}" for g,z in cl.items())
-            lines.append(f"  - {panel}：{changes}；新增false-S {part['changes']['false_S_new']}、避免{part['changes']['false_S_avoided']}。")
-    strata=O/'claim_repeat_1817_missing_strata.json'
-    if strata.exists():
-        v=read(strata)['sections']['selection1817'];ci=v['patient_paired']['metrics']['mcc']['ci95']
-        better=sum(p['scores']['candidate']['correct']>p['scores']['base']['correct'] for p in v['patients'])
-        worse=sum(p['scores']['candidate']['correct']<p['scores']['base']['correct'] for p in v['patients'])
-        lines+=['',f"claim_repeat完整1817的MCC差值患者分组95%区间为[{ci[0]:+.4f}, {ci[1]:+.4f}]（1000次bootstrap）；正确数增加{better}名患者、减少{worse}名患者。区间跨0不表示等效，也不足以支持稳定增益。相对107只是较小点估计收益，不占用唯一的确认40人机会。"]
-    overlap=O/'single_token_short_500_missing_overlap.json'
-    if overlap.exists():
-        d=read(overlap)['groups']
-        lines+=['',f"短训练的范围诊断：180与500重合的70条净正确{d['shared70']['correct_delta']:+d}；500中其余430条净正确{d['old500_only430']['correct_delta']:+d}、false-S{d['old500_only430']['false_S_delta']:+d}。这是不同覆盖范围暴露的泛化损失；评价期间模型权重未再更新，不能将内部训练前后改善当作超过107的证据。"]
-    lines+=['','## 方法与代价','',
-            '`joint_path`复用115最终适配器，枚举三个完整JSON+EOS路径并按总条件logP决策；每例三次完整前向。它联合验证115目标与路径决策，不能用仅比115原greedy好来宣布超过107。',
-            '',
-            '与115原greedy有回执交集的70条中，自然35条正确24→22，压力35条21→22，正确S救回0、额外误伤1。该描述性交集没有支持“改用完整路径即可挽救115”的解释，也不能外推为全部样本的机制证明。',
-            '',
-            '`claim_repeat`复用107，在完整reference之外的消息末端重述同一待核验命题；未增添EHR事实、GT、其他模型答案或逐例规则。',
-            '',
-            '范围：原103的180条与旧500仅重合70条。按原103面板计为自然35、压力35；按旧500面板计为自然48、压力22，两个面板定义不同。因此补齐旧500实际新增430次，再补完整1817需要1207次；已有110条“旧500之外”的原180预测继续复用。180与500不是严格包含关系，不能把两张表的差值直接解释成新增320条的表现。',
-            '',
-            '对其自然面板6条S救回及1条S误伤做了定向原文检查：5条救回有较明确可见依据，1条缺关键时间段，误伤例也有可见支持。3条有依据救回来自同一患者。这不是随机病例审查，不能证明模型使用了对应证据，或排除更偏S；缺证例仍保留医生原GT。临床正文与逐例笔记仅在私有目录。',
-            '',
-            '`single_token_768`是待验证的完整判别配方：原9B、准备768条真实训练命题、32名梯度患者，另8名患者128条只用于选checkpoint。原临床定义与完整输入保留，A/B/C三行固定词表投影作唯一三类CE。原上限96步；按用户时间优先补充，先在24步内部验证后暂停并评价固定180，实际用量另报。不把它当作纯组件消融或新的原创算法。',
-            '',
-            '短训练实际完成24步、192条不同命题（S96/NS48/NA48），涉及31名梯度患者；内部验证仍为独立8人128条。按原内部选点规则选择第24步，未再更新权重。内部MCC0.5323→0.5989、false-S23→13，同时正确S60→56；这是训练侧信号，不能代替20名选型患者上的真实分类收益。',
-            '',
-            '三类完整指标、混淆矩阵、逐例配对变化与患者方向保存在各候选JSON。当前粗筛不例行bootstrap；有值得保留的较大开发收益后再补必要稳定性分析。作者R1只作历史同ID参照。',
-            '',
-            f"周期起点{state['start_beijing']}（北京时间），截止{state['deadline_beijing']}；本报告生成时GPU墙钟估算¥{cost:.3f}/20、API ¥{state['paid_API_CNY']}/20。估算包含等待和回传，不是平台精确账单。",
-            '',
-            f"状态：{state['status']}；当前任务`{state.get('active_job')}`；最佳`{state['best_candidate']}`。不自动关机，实例继续开机会继续计费。",
-            '',
-            '依据：[周期备忘](../../tasks/116_research_cycle/memo.md)、[预写粗筛规则](../../tasks/116_research_cycle/screen_rules.json)、[单token配置](../../tasks/116_research_cycle/single_token_config.json)。']
-    (O/'report.md').write_bytes(('\n'.join(lines)+'\n').encode())
-    print(json.dumps(dict(rows=len(rows),completed=state['completed_jobs'],GPU_estimate_CNY=cost),ensure_ascii=False))
+        candidate = result['candidate']
+        if candidate not in largest or scope_rank(result) >= scope_rank(largest[candidate]):
+            largest[candidate] = result
+    selected = list(largest.values())
+    full = [result for result in selected if 'selection1817' in result['panels']]
+    old500 = [result for result in selected if has_old500(result)]
+    pilot_only = [result for result in selected if result not in full and result not in old500]
 
-if __name__=='__main__':main()
+    snapshot = state.get('closed_epoch', time.time())
+    elapsed = snapshot - state['start_epoch']
+    cost = elapsed * state['hourly_CNY'] / 3600
+    write(O / 'cost_status.json',
+          dict(start_beijing=state['start_beijing'], snapshot_epoch=snapshot,
+               elapsed_seconds=elapsed, GPU_estimate_CNY=cost, GPU_cap_CNY=state['GPU_cap_CNY'],
+               API_CNY=state['paid_API_CNY'], API_cap_CNY=state['API_cap_CNY'],
+               estimate_not_platform_invoice=True, no_shutdown=True, cycle_status=state['status']))
+    lines = ['# 自主研究周期1：决策结果', '',
+             state.get('current_takeaway', '仍在筛查，尚未达到周期主要目标。'), '',
+             '107 label_only仍是主基线。全部为原20名患者的开发评价，所有患者均有历史暴露；'
+             '不称独立盲测，原医生GT及首次回执保留。确认40人使用状态以本周期状态记录为准。', '',
+             '各候选按最大已完成范围展示，不按最好成绩挑阶段。已有1817结果者另列其旧500同ID分面；'
+             '180表只列尚未扩大者。类别净正确=救回−误伤，顺序S/NS/NA；'
+             'false-S分母为共同有效ID中的真实非S数，缺失/无效不补旧答案。']
+    if full:
+        lines += ['', '## 1817条完整队列', '',
+                  '按队列实际构成评价；覆盖不足1817时只能称该共同有效子集。']
+        add_table(lines, '完整队列', full, 'selection1817')
+    if old500:
+        lines += ['', '## 旧500条分面', '', '自然400与人为压力100分别解释，不合并冒充自然分布。']
+        add_table(lines, '自然400', old500, 'natural')
+        add_table(lines, '压力100', old500, 'pressure')
+    if pilot_only:
+        lines += ['', '## 仅完成180条粗筛', '', '这些候选未补齐500；小面板成绩不能代替扩大验证。']
+        add_table(lines, '自然120', pilot_only, 'natural', historical=True)
+        add_table(lines, '压力60', pilot_only, 'pressure', historical=True)
+        lines += ['', '103及其未微调9B只在原180条上有此处可复用的同ID结果；'
+                  '103与107的监督规模、提示与损失不同，是整套历史方案比较，不能当单组件消融或1817条成绩。']
+
+    lines += ['', '## 去留与限制', '']
+    for result in selected:
+        decision = state.get('decisions', {}).get(result['job'], '按该范围结果判断，未自动扩大。')
+        lines.append(f"- \x60{result['candidate']}\x60：{decision.rstrip('。')}。"
+                     f" [最大范围结果]({result['job']}.json)")
+    if state.get('prepared_next_candidate') and state['prepared_next_candidate'] not in largest:
+        lines.append(f"- \x60{state['prepared_next_candidate']}\x60：尚无已完成分类结果；"
+                     f"当前执行状态为 \x60{state.get('active_job')}\x60，不预写成败。")
+    strata = O / 'claim_repeat_1817_missing_strata.json'
+    if strata.exists():
+        section = read(strata)['sections']['selection1817']
+        ci = section['patient_paired']['metrics']['mcc']['ci95']
+        better = sum(p['scores']['candidate']['correct'] > p['scores']['base']['correct']
+                     for p in section['patients'])
+        worse = sum(p['scores']['candidate']['correct'] < p['scores']['base']['correct']
+                    for p in section['patients'])
+        lines += ['', f"claim_repeat的1817条ΔMCC患者95%区间为[{ci[0]:+.4f}, {ci[1]:+.4f}]"
+                  f"（1000次bootstrap）；患者正确数改善/下降{better}/{worse}。"
+                  '点估计增益很小，区间跨0不等于等效，也未证明稳定优势；不据此消耗确认40人。']
+    overlap = O / 'single_token_short_500_missing_overlap.json'
+    if overlap.exists():
+        groups = read(overlap)['groups']
+        lines += ['', f"single_token_short在180与500重合的70条净正确"
+                  f"{groups['shared70']['correct_delta']:+d}；500其余430条净正确"
+                  f"{groups['old500_only430']['correct_delta']:+d}、false-S"
+                  f"{groups['old500_only430']['false_S_delta']:+d}。"
+                  '扩大时权重未再训练，小面板阳性不能替代整体收益。']
+    lines += ['', '## 配方、覆盖与成本', '',
+              '- joint_path：115适配器＋完整JSON/EOS路径评分，每例三次完整前向。'
+              '其他已评配方每例一次模型预测；输出概率不是校准风险概率。',
+              '- claim_repeat只在reference外重述命题；support_check只补通用要素核对，'
+              '均保留107权重和原JSON接口，没有增添临床事实。',
+              '- single_token_short实际24步/192条、31名梯度患者，另8人128条选checkpoint；'
+              '原768条/96步方案未跑完。single_token_107仅换同一三代码读出，不训练。'
+              '两者均不能外推为所有判别学习方案无效。',
+              '- gentle_refresh设计固定：107最终权重及Adam状态，114第二轮196条，'
+              '学习率2e-5、25步，原JSON、完整reference与原分段loss不变。'
+              '只取固定最后一步；是否已完成及效果以上表和当前状态为准。',
+              '- 原180与旧500仅重合70条，面板定义也有差别；不能把两表之差当新增320条。'
+              '逐例、三类召回、混淆矩阵、患者/来源分层及所有失败阶段保留在'
+              ' [comparison.jsonl](comparison.jsonl) 和各原始分析JSON，不因主表压缩删除。',
+              '',
+              f"授权窗口：{state['start_beijing']}至{state['deadline_beijing']}（北京时间）；"
+              f"本次记录的墙钟GPU估算¥{cost:.3f}/{state['GPU_cap_CNY']}，"
+              f"API ¥{state['paid_API_CNY']}/{state['API_cap_CNY']}。含等待、加载和回传，非平台精确账单。",
+              '',
+              f"状态：\x60{state['status']}\x60；当前任务 \x60{state.get('active_job')}\x60；"
+              f"当前保留方案 \x60{state['best_candidate']}\x60。未自动关机，实例留机仍计费。",
+              '',
+              '依据：[周期备忘](../../tasks/116_research_cycle/memo.md) · '
+              '[粗筛规则](../../tasks/116_research_cycle/screen_rules.json) · '
+              '[状态](cycle_state.json)。']
+    if state.get('closed_epoch'):
+        lines += ['', f"实际收束：{state['closed_beijing']}；GPU计算结束与关键回传时间见状态JSON。"
+                  '收束后的留机和发布等待仍会产生租金，本记录不是关机账单。']
+    (O / 'report.md').write_bytes(('\n'.join(lines) + '\n').encode())
+    print(json.dumps(dict(rows=len(rows), displayed_candidates=len(selected),
+                          completed=state['completed_jobs'], GPU_estimate_CNY=cost),
+                     ensure_ascii=False))
+
+
+if __name__ == '__main__':
+    main()
