@@ -160,7 +160,8 @@ def worker(job_path):
         adapter = resolve(job['final_adapter'])
         if common.sha(adapter/'adapter_model.safetensors') != job['adapter_sha256']:
             raise ValueError('Final128 adapter differs')
-        fingerprint = dict(task=128, name=job['name'], adapter_sha256=job['adapter_sha256'],
+        # The identical evaluator is reused by the explicit129 input diagnostic.
+        fingerprint = dict(task=job['task'], name=job['name'], adapter_sha256=job['adapter_sha256'],
                            job_sha256=common.sha(job_path), session_sha256=job['session_sha256'])
         identity = out/'identity.json'
         if identity.exists() and common.read(identity) != fingerprint:

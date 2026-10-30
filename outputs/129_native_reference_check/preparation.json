@@ -1,0 +1,14 @@
+{
+  "status": "CPU_PREPARED_NO_GPU",
+  "N": 160,
+  "patient_N": 20,
+  "full_reference_predictions": "reuse already saved107 and selected native candidate",
+  "intervention": "same original claim and prompt, reference empty",
+  "original_GT_unchanged": true,
+  "training": false,
+  "selection_on_diagnostic_outputs": false,
+  "maximum_arms": 2,
+  "max_input_tokens": 377,
+  "API": 0,
+  "GPU_started": false
+}

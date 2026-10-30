@@ -6,6 +6,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|129_native_reference_check|[固定诊断](../tasks/129_native_reference_check/PROTOCOL.md) · [准备](../tasks/129_native_reference_check/CURRENT.md)|原160，保持claim与GT，显式清空reference；仅CPU准备|候选尚未绑定、GPU未运行；不作为新的改善方法|
 |128_sqrt_weight_refresh|[固定方案](../tasks/128_sqrt_weight_refresh/PROTOCOL.md) · [状态](../tasks/128_sqrt_weight_refresh/CURRENT.md)|原220状态接续149步，仅改逐例固定平方根权重；CPU检查完成|已启动同220起点149步，尚无分类成绩|
 |127_native_reason_data|[数据准备](../outputs/127_native_reason_data/report.md) · [入口](../tasks/127_native_reason_data/CURRENT.md)|仅CPU，累计41条审读、26条配对及全部3675原标签保留|医生备注有限补充11条，其中6条针对107真实错误；无分类收益证明，不新训|
 |126_conditional_state_readout|[准备与取消](../tasks/126_conditional_state_readout/CURRENT.md)|仅准备，未GPU提取、未真实拟合|按研究方向取消，无效果成绩|

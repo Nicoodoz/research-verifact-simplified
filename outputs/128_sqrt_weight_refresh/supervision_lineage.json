@@ -1,0 +1,22 @@
+{
+  "source107_N": 196,
+  "source107_patients": 40,
+  "source107_GT": {
+    "Not Supported": 62,
+    "Supported": 83,
+    "Not Addressed": 51
+  },
+  "source107_manifest_ID_GT_verified": true,
+  "additional120_N": 2945,
+  "additional_gradient_patients": 32,
+  "additional_validation_patients": 8,
+  "old_and_additional_ID_overlap": 153,
+  "total_unique_supervised_IDs": 2988,
+  "history_only_N": 43,
+  "history_only_patients": 8,
+  "history_only_all_in_current_validation": true,
+  "inherited_supervision_on_current_validation": true,
+  "note": "The8 patients are excluded from the new2945 gradients, not unseen by the inherited107 model.128 and120 share this identical parent exposure.",
+  "no_GPU": true,
+  "no_new_API": true
+}
