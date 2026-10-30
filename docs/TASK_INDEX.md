@@ -6,7 +6,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|130_header_blocks|[固定方案](../tasks/130_header_blocks/PROTOCOL.md) · [CPU准备](../outputs/130_header_blocks/screen160_preparation.json)|160条原正文与顺序全保留，输入tokens减少28.14%；排队接续687复核|尚无分类结果；无训练，只有固定格式初筛|
+|130_header_blocks|[固定方案](../tasks/130_header_blocks/PROTOCOL.md) · [CPU准备](../outputs/130_header_blocks/screen160_preparation.json)|160条原正文与顺序全保留，输入tokens减少28.14%；GPU初筛运行中|尚无分类结果；无训练，只有固定格式初筛|
 |129_native_reference_check|[最终报告](../outputs/129_native_reference_check/final_report.md) · [固定诊断](../tasks/129_native_reference_check/PROTOCOL.md)|107/120各160，清空reference后全部判NA，回执已回传|会响应证据缺失；不证明非空证据关系判断正确|
 |128_sqrt_weight_refresh|[最终报告](../outputs/128_sqrt_weight_refresh/final_report.md) · [固定方案](../tasks/128_sqrt_weight_refresh/PROTOCOL.md)|同220起点149步和完整500完成，模型/完整状态回传|相对120正确−3、FS−3，MCC均下降；停止当前配方，不扩1317|
 |127_native_reason_data|[数据准备](../outputs/127_native_reason_data/report.md) · [入口](../tasks/127_native_reason_data/CURRENT.md)|仅CPU，累计47条审读、31条配对及全部3675原标签保留|有限补充S/NA保护理由；其中6条针对107真实错误；无分类收益证明，不新训|
