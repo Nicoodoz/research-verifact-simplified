@@ -1,0 +1,16 @@
+{
+  "source_step": 369,
+  "source_consumed": 2945,
+  "source_fingerprint": {
+    "task": 120,
+    "candidate": "full_pool_sft",
+    "train": "31319065f999b62e2c8ec90b217d00ee930a627ab3124cea9c827ba468852745",
+    "job": "170bb1594bab9fd45543f76e4094d902f895d701a42033fa90364a4b51306f05",
+    "source107": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+    "code": "6bf4fd5ea091452cc861b5d5e4633ace2b713e8e639624015c65017c65e9caa8"
+  },
+  "optimizer_scheduler_rng_restored": true,
+  "source_checkpoint_unchanged": true,
+  "additional_steps": 149,
+  "target_step": 518
+}

@@ -1,6 +1,6 @@
 # 当前环境与启动方式（2026-10-31核对）
 
-137继续复用同一32GB实例、9B底座和env103。120原远端续训目录已不存在，现从本地完整checkpoint恢复Adam/scheduler/RNG，模型权重复用134已上传副本；独立verifact137_extra_steps目录。无环境重装、无底座下载，不改变原120/136文件。
+137已启动，复用同一32GB实例、9B底座和env103。120原远端续训目录已不存在，现从本地完整checkpoint恢复Adam/scheduler/RNG，模型权重复用134已上传副本；独立verifact137_extra_steps目录。无环境重装、无底座下载，不改变原120/136文件。
 
 134两臂1817已完成并回传，135已结束回传，136已完整结束并回传，接续研究可复用32GB RTX4080 SUPER、原9B底座、120 final369和env103，136保存在独立目录verifact136_claim_repeat_full1817；其计算进程已退出。无新权重下载或环境安装。输入token准备使用既有032解释器配合research激活，统计与SSH使用research-verifact-029；135/136复用134编译缓存。原窗口GPU费用持续累计。
 
