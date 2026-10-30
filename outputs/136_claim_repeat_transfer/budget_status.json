@@ -1,0 +1,23 @@
+{
+  "as_of": "2026-10-31T05:57:33+08:00",
+  "window_start": "2026-10-30T23:40:00+08:00",
+  "GPU_cap_CNY": 16,
+  "GPU_estimate_CNY": 9.942202527864774,
+  "hourly_CNY": 1.58,
+  "API_cap_CNY": 80,
+  "API_used_CNY": 0,
+  "price_basis": "Existing instance documented hourly rate; exact provider invoice not checked",
+  "includes": [
+    "handoff",
+    "CPU preparation",
+    "loading",
+    "compilation",
+    "waiting",
+    "inference",
+    "return"
+  ],
+  "instance_running": true,
+  "automatic_shutdown": false,
+  "automatic_release": false,
+  "task136_compute_complete": true
+}

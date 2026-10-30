@@ -1,7 +1,7 @@
-# 136 claim_repeat_transfer：500条确认信号，补至1817
+# 136 claim_repeat_transfer：1817完整评价完成
 
-原500全部有效：MCC+.0246、正确+5、false-S−7；S/NS/NA净−2/0/+7。自然400 MCC+.0551、正确+5；压力100正确不变、MCC−.0059、false-S−1，保留该取舍。
+全1817有效、0缺失：MCC .6350、PA87.67%、正确1593、false-S88/362；相对120正确−6、false-S−21。S/NS/NA净正确−30/+6/+18。
 
-继续只补原20名选型患者的1317条，不重跑500、不新增患者、不训练。完整1817结果尚未产生，不升级默认。
+错误支持率下降的患者区间不含0，MCC提升区间跨0。保留为实际风险／质量取舍，未升级默认；人工与LLM来源、自然/压力及新增范围均分报。全部首次回执已回传，GPU计算退出，未关机。
 
-[500报告](../../outputs/136_claim_repeat_transfer/report.md) · [方案](PROTOCOL.md) · [进度](../../outputs/136_claim_repeat_transfer/progress.md)
+[完整报告](../../outputs/136_claim_repeat_transfer/report.md) · [完整统计](../../outputs/136_claim_repeat_transfer/full1817.json) · [质量风险图](../../outputs/136_claim_repeat_transfer/quality_risk.png)
