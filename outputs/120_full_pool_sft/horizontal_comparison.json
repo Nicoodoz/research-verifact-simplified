@@ -1,0 +1,3845 @@
+{
+  "task": 120,
+  "name": "horizontal_comparison",
+  "source_mode": "existing saved metrics; only120 original103 subset aggregated from existing receipts",
+  "updated_at": "2026-10-30T14:15:09.233498+08:00",
+  "new_model_inference": 0,
+  "new_training": 0,
+  "new_API_CNY": 0,
+  "main_cohort": {
+    "N": 1817,
+    "patients": 20,
+    "GT": {
+      "Supported": 1455,
+      "Not Supported": 121,
+      "Not Addressed": 241
+    },
+    "development_selection_not_independent_test": true
+  },
+  "complete1817": [
+    {
+      "key": "paper_r1",
+      "method": "paper_r1",
+      "N": 1817,
+      "MCC": 0.48417076427796296,
+      "PA": 0.8211337369290038,
+      "PA_percent": 82.11337369290038,
+      "recalls": {
+        "Supported": 0.9230240549828179,
+        "Not Supported": 0.4380165289256198,
+        "Not Addressed": 0.3983402489626556
+      },
+      "recalls_percent": {
+        "Supported": 92.30240549828179,
+        "Not Supported": 43.80165289256198,
+        "Not Addressed": 39.83402489626556
+      },
+      "false_S": 105,
+      "non_S": 362,
+      "correct": 1492,
+      "confusion_matrix": [
+        [
+          1343,
+          88,
+          24
+        ],
+        [
+          52,
+          53,
+          16
+        ],
+        [
+          53,
+          92,
+          96
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "111_half_extension/comparison.json",
+      "source_node": "sections.full1817.scores.paper_r1"
+    },
+    {
+      "key": "nine_native103",
+      "method": "原作者式prompt＋未微调9B / 103 nine_native",
+      "N": null,
+      "MCC": null,
+      "PA": null,
+      "PA_percent": null,
+      "recalls": {
+        "Supported": null,
+        "Not Supported": null,
+        "Not Addressed": null
+      },
+      "recalls_percent": {
+        "Supported": null,
+        "Not Supported": null,
+        "Not Addressed": null
+      },
+      "false_S": null,
+      "non_S": null,
+      "correct": null,
+      "coverage_status": "only_original180_evaluated_not_complete1817",
+      "coverage": {
+        "expected": 1817,
+        "available_valid": 180,
+        "not_evaluated": 1637
+      },
+      "source": "103_lora_selection/final_analysis.json",
+      "note": "仅原自然120/压力60覆盖；未完成1817，见原180同ID表；空白不是0。"
+    },
+    {
+      "key": "label_only105",
+      "method": "105 label_only",
+      "N": 1817,
+      "MCC": 0.547339874136167,
+      "PA": 0.8233351678591084,
+      "PA_percent": 82.33351678591085,
+      "recalls": {
+        "Supported": 0.8790378006872852,
+        "Not Supported": 0.5289256198347108,
+        "Not Addressed": 0.6348547717842323
+      },
+      "recalls_percent": {
+        "Supported": 87.90378006872852,
+        "Not Supported": 52.892561983471076,
+        "Not Addressed": 63.48547717842323
+      },
+      "false_S": 69,
+      "non_S": 362,
+      "correct": 1496,
+      "confusion_matrix": [
+        [
+          1279,
+          150,
+          26
+        ],
+        [
+          35,
+          64,
+          22
+        ],
+        [
+          34,
+          54,
+          153
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "111_half_extension/comparison.json",
+      "source_node": "sections.full1817.scores.label_only105"
+    },
+    {
+      "key": "label_only107",
+      "method": "107 label_only",
+      "N": 1817,
+      "MCC": 0.5445375237854052,
+      "PA": 0.8073747936158503,
+      "PA_percent": 80.73747936158503,
+      "recalls": {
+        "Supported": 0.8405498281786942,
+        "Not Supported": 0.39669421487603307,
+        "Not Addressed": 0.8132780082987552
+      },
+      "recalls_percent": {
+        "Supported": 84.05498281786942,
+        "Not Supported": 39.66942148760331,
+        "Not Addressed": 81.32780082987551
+      },
+      "false_S": 50,
+      "non_S": 362,
+      "correct": 1467,
+      "confusion_matrix": [
+        [
+          1223,
+          162,
+          70
+        ],
+        [
+          28,
+          48,
+          45
+        ],
+        [
+          22,
+          23,
+          196
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "111_half_extension/comparison.json",
+      "source_node": "sections.full1817.scores.label_only107"
+    },
+    {
+      "key": "update_half110",
+      "method": "110 update_half",
+      "N": 1817,
+      "MCC": 0.5215231130797108,
+      "PA": 0.7853604843148047,
+      "PA_percent": 78.53604843148047,
+      "recalls": {
+        "Supported": 0.822680412371134,
+        "Not Supported": 0.6198347107438017,
+        "Not Addressed": 0.6431535269709544
+      },
+      "recalls_percent": {
+        "Supported": 82.2680412371134,
+        "Not Supported": 61.98347107438017,
+        "Not Addressed": 64.31535269709543
+      },
+      "false_S": 44,
+      "non_S": 362,
+      "correct": 1427,
+      "confusion_matrix": [
+        [
+          1197,
+          221,
+          37
+        ],
+        [
+          26,
+          75,
+          20
+        ],
+        [
+          18,
+          68,
+          155
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "111_half_extension/comparison.json",
+      "source_node": "sections.full1817.scores.update_half"
+    },
+    {
+      "key": "disagreement_vote112",
+      "method": "112 disagreement_vote",
+      "N": 1817,
+      "MCC": 0.5519679452183661,
+      "PA": 0.813979086406164,
+      "PA_percent": 81.39790864061641,
+      "recalls": {
+        "Supported": 0.8487972508591065,
+        "Not Supported": 0.4380165289256198,
+        "Not Addressed": 0.7925311203319502
+      },
+      "recalls_percent": {
+        "Supported": 84.87972508591065,
+        "Not Supported": 43.80165289256198,
+        "Not Addressed": 79.25311203319502
+      },
+      "false_S": 54,
+      "non_S": 362,
+      "correct": 1479,
+      "confusion_matrix": [
+        [
+          1235,
+          154,
+          66
+        ],
+        [
+          29,
+          53,
+          39
+        ],
+        [
+          25,
+          25,
+          191
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "112_disagreement_vote/comparison.json",
+      "source_node": "sections.full1817.scores.disagreement_vote"
+    },
+    {
+      "key": "claim_repeat116",
+      "method": "116 claim_repeat",
+      "N": 1817,
+      "MCC": 0.5518329590843195,
+      "PA": 0.8112272977435333,
+      "PA_percent": 81.12272977435333,
+      "recalls": {
+        "Supported": 0.8426116838487973,
+        "Not Supported": 0.39669421487603307,
+        "Not Addressed": 0.8298755186721992
+      },
+      "recalls_percent": {
+        "Supported": 84.26116838487972,
+        "Not Supported": 39.66942148760331,
+        "Not Addressed": 82.98755186721992
+      },
+      "false_S": 51,
+      "non_S": 362,
+      "correct": 1474,
+      "confusion_matrix": [
+        [
+          1226,
+          162,
+          67
+        ],
+        [
+          31,
+          48,
+          42
+        ],
+        [
+          20,
+          21,
+          200
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "116_research_cycle/claim_repeat_1817_missing.json",
+      "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.116 claim_repeat.panels.selection1817.scores"
+    },
+    {
+      "key": "mlp117_seed117",
+      "method": "117 MLP / seed117",
+      "N": 1817,
+      "MCC": 0.6108517772406853,
+      "PA": 0.868464501926252,
+      "PA_percent": 86.8464501926252,
+      "recalls": {
+        "Supported": 0.9333333333333333,
+        "Not Supported": 0.256198347107438,
+        "Not Addressed": 0.7842323651452282
+      },
+      "recalls_percent": {
+        "Supported": 93.33333333333333,
+        "Not Supported": 25.6198347107438,
+        "Not Addressed": 78.42323651452283
+      },
+      "false_S": 92,
+      "non_S": 362,
+      "correct": 1578,
+      "confusion_matrix": [
+        [
+          1358,
+          36,
+          61
+        ],
+        [
+          51,
+          31,
+          39
+        ],
+        [
+          41,
+          11,
+          189
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "117_verdict_probe/reconsidered_extension.json",
+      "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.117 verdict_mlp（补充扩展）.panels.selection1817.scores"
+    },
+    {
+      "key": "mlp117_seed118",
+      "method": "117 MLP / seed118 原选轮流程",
+      "N": 1817,
+      "MCC": 0.5883890477052398,
+      "PA": 0.8596587782058338,
+      "PA_percent": 85.96587782058339,
+      "recalls": {
+        "Supported": 0.9237113402061856,
+        "Not Supported": 0.3305785123966942,
+        "Not Addressed": 0.7385892116182573
+      },
+      "recalls_percent": {
+        "Supported": 92.37113402061856,
+        "Not Supported": 33.057851239669425,
+        "Not Addressed": 73.85892116182573
+      },
+      "false_S": 99,
+      "non_S": 362,
+      "correct": 1562,
+      "confusion_matrix": [
+        [
+          1344,
+          54,
+          57
+        ],
+        [
+          52,
+          40,
+          29
+        ],
+        [
+          47,
+          16,
+          178
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "118_full_data_heads/unweighted_workflow_seed118.json",
+      "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.117 MLP / seed118原选轮流程.panels.selection1817.scores"
+    },
+    {
+      "key": "sqrt_mlp117",
+      "method": "117 sqrt_weight_mlp",
+      "N": 1817,
+      "MCC": 0.5783553252212151,
+      "PA": 0.8376444689047882,
+      "PA_percent": 83.76444689047882,
+      "recalls": {
+        "Supported": 0.8831615120274914,
+        "Not Supported": 0.3884297520661157,
+        "Not Addressed": 0.7883817427385892
+      },
+      "recalls_percent": {
+        "Supported": 88.31615120274914,
+        "Not Supported": 38.84297520661157,
+        "Not Addressed": 78.83817427385893
+      },
+      "false_S": 62,
+      "non_S": 362,
+      "correct": 1522,
+      "confusion_matrix": [
+        [
+          1285,
+          109,
+          61
+        ],
+        [
+          35,
+          47,
+          39
+        ],
+        [
+          27,
+          24,
+          190
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "117_verdict_probe/sqrt_weight_mlp.json",
+      "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.117 sqrt_weight_mlp.panels.selection1817.scores"
+    },
+    {
+      "key": "sqrt_full118_seed117",
+      "method": "118 full sqrt / seed117",
+      "N": 1817,
+      "MCC": 0.5703694683270857,
+      "PA": 0.8277380297193175,
+      "PA_percent": 82.77380297193176,
+      "recalls": {
+        "Supported": 0.8639175257731959,
+        "Not Supported": 0.35537190082644626,
+        "Not Addressed": 0.8464730290456431
+      },
+      "recalls_percent": {
+        "Supported": 86.3917525773196,
+        "Not Supported": 35.53719008264463,
+        "Not Addressed": 84.64730290456431
+      },
+      "false_S": 56,
+      "non_S": 362,
+      "correct": 1504,
+      "confusion_matrix": [
+        [
+          1257,
+          102,
+          96
+        ],
+        [
+          33,
+          43,
+          45
+        ],
+        [
+          23,
+          14,
+          204
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "118_full_data_heads/reconsidered_refit.json",
+      "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.118 sqrt_weight_full.panels.selection1817.scores"
+    },
+    {
+      "key": "sqrt_full118_seed118",
+      "method": "118 full sqrt / seed118",
+      "N": 1817,
+      "MCC": 0.5727157080394542,
+      "PA": 0.8387451843698404,
+      "PA_percent": 83.87451843698403,
+      "recalls": {
+        "Supported": 0.8845360824742268,
+        "Not Supported": 0.34710743801652894,
+        "Not Addressed": 0.8091286307053942
+      },
+      "recalls_percent": {
+        "Supported": 88.45360824742268,
+        "Not Supported": 34.710743801652896,
+        "Not Addressed": 80.91286307053942
+      },
+      "false_S": 74,
+      "non_S": 362,
+      "correct": 1524,
+      "confusion_matrix": [
+        [
+          1287,
+          100,
+          68
+        ],
+        [
+          42,
+          42,
+          37
+        ],
+        [
+          32,
+          14,
+          195
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "118_full_data_heads/seed_stability.json",
+      "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.118 sqrt_weight_full / seed118.panels.selection1817.scores"
+    },
+    {
+      "key": "full_pool_sft120_step220",
+      "method": "120 full_pool_sft / step220",
+      "N": 1817,
+      "MCC": 0.5970726816547887,
+      "PA": 0.8701155751238305,
+      "PA_percent": 87.01155751238305,
+      "recalls": {
+        "Supported": 0.954639175257732,
+        "Not Supported": 0.4297520661157025,
+        "Not Addressed": 0.5809128630705395
+      },
+      "recalls_percent": {
+        "Supported": 95.4639175257732,
+        "Not Supported": 42.97520661157025,
+        "Not Addressed": 58.09128630705395
+      },
+      "false_S": 113,
+      "non_S": 362,
+      "correct": 1581,
+      "confusion_matrix": [
+        [
+          1389,
+          47,
+          19
+        ],
+        [
+          52,
+          52,
+          17
+        ],
+        [
+          61,
+          40,
+          140
+        ]
+      ],
+      "coverage": {
+        "expected": 1817,
+        "valid": 1817,
+        "invalid": 0,
+        "missing": 0
+      },
+      "source": "120_full_pool_sft/midpoint220_1817.json",
+      "source_node": "models.full_pool_sft.panels.selection1817.scores.candidate"
+    }
+  ],
+  "old500": {
+    "natural": {
+      "N": 400,
+      "rows": [
+        {
+          "key": "paper_r1",
+          "method": "paper_r1",
+          "N": 400,
+          "MCC": 0.4318960935400533,
+          "PA": 0.81,
+          "PA_percent": 81.0,
+          "recalls": {
+            "Supported": 0.9221183800623053,
+            "Not Supported": 0.38461538461538464,
+            "Not Addressed": 0.33962264150943394
+          },
+          "recalls_percent": {
+            "Supported": 92.21183800623052,
+            "Not Supported": 38.46153846153847,
+            "Not Addressed": 33.9622641509434
+          },
+          "false_S": 28,
+          "non_S": 79,
+          "correct": 324,
+          "confusion_matrix": [
+            [
+              296,
+              17,
+              8
+            ],
+            [
+              11,
+              10,
+              5
+            ],
+            [
+              17,
+              18,
+              18
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.old_natural.scores.paper_r1"
+        },
+        {
+          "key": "label_only105",
+          "method": "105 label_only",
+          "N": 400,
+          "MCC": 0.48410087226831,
+          "PA": 0.805,
+          "PA_percent": 80.5,
+          "recalls": {
+            "Supported": 0.8847352024922118,
+            "Not Supported": 0.38461538461538464,
+            "Not Addressed": 0.5283018867924528
+          },
+          "recalls_percent": {
+            "Supported": 88.47352024922118,
+            "Not Supported": 38.46153846153847,
+            "Not Addressed": 52.83018867924528
+          },
+          "false_S": 17,
+          "non_S": 79,
+          "correct": 322,
+          "confusion_matrix": [
+            [
+              284,
+              29,
+              8
+            ],
+            [
+              8,
+              10,
+              8
+            ],
+            [
+              9,
+              16,
+              28
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.old_natural.scores.label_only105"
+        },
+        {
+          "key": "label_only107",
+          "method": "107 label_only",
+          "N": 400,
+          "MCC": 0.5031962809810817,
+          "PA": 0.7975,
+          "PA_percent": 79.75,
+          "recalls": {
+            "Supported": 0.8504672897196262,
+            "Not Supported": 0.23076923076923078,
+            "Not Addressed": 0.7547169811320755
+          },
+          "recalls_percent": {
+            "Supported": 85.04672897196261,
+            "Not Supported": 23.076923076923077,
+            "Not Addressed": 75.47169811320755
+          },
+          "false_S": 12,
+          "non_S": 79,
+          "correct": 319,
+          "confusion_matrix": [
+            [
+              273,
+              28,
+              20
+            ],
+            [
+              7,
+              6,
+              13
+            ],
+            [
+              5,
+              8,
+              40
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.old_natural.scores.label_only107"
+        },
+        {
+          "key": "update_half110",
+          "method": "110 update_half",
+          "N": 400,
+          "MCC": 0.4635536568562153,
+          "PA": 0.765,
+          "PA_percent": 76.5,
+          "recalls": {
+            "Supported": 0.822429906542056,
+            "Not Supported": 0.46153846153846156,
+            "Not Addressed": 0.5660377358490566
+          },
+          "recalls_percent": {
+            "Supported": 82.2429906542056,
+            "Not Supported": 46.15384615384615,
+            "Not Addressed": 56.60377358490566
+          },
+          "false_S": 11,
+          "non_S": 79,
+          "correct": 306,
+          "confusion_matrix": [
+            [
+              264,
+              46,
+              11
+            ],
+            [
+              7,
+              12,
+              7
+            ],
+            [
+              4,
+              19,
+              30
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.old_natural.scores.update_half"
+        },
+        {
+          "key": "disagreement_vote112",
+          "method": "112 disagreement_vote",
+          "N": 400,
+          "MCC": 0.508225785339318,
+          "PA": 0.8025,
+          "PA_percent": 80.25,
+          "recalls": {
+            "Supported": 0.8566978193146417,
+            "Not Supported": 0.3076923076923077,
+            "Not Addressed": 0.7169811320754716
+          },
+          "recalls_percent": {
+            "Supported": 85.66978193146417,
+            "Not Supported": 30.76923076923077,
+            "Not Addressed": 71.69811320754717
+          },
+          "false_S": 13,
+          "non_S": 79,
+          "correct": 321,
+          "confusion_matrix": [
+            [
+              275,
+              27,
+              19
+            ],
+            [
+              7,
+              8,
+              11
+            ],
+            [
+              6,
+              9,
+              38
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "112_disagreement_vote/comparison.json",
+          "source_node": "sections.old_natural.scores.disagreement_vote"
+        },
+        {
+          "key": "claim_repeat116",
+          "method": "116 claim_repeat",
+          "N": 400,
+          "MCC": 0.5231612842663419,
+          "PA": 0.8025,
+          "PA_percent": 80.25,
+          "recalls": {
+            "Supported": 0.8442367601246106,
+            "Not Supported": 0.3076923076923077,
+            "Not Addressed": 0.7924528301886793
+          },
+          "recalls_percent": {
+            "Supported": 84.42367601246106,
+            "Not Supported": 30.76923076923077,
+            "Not Addressed": 79.24528301886792
+          },
+          "false_S": 12,
+          "non_S": 79,
+          "correct": 321,
+          "confusion_matrix": [
+            [
+              271,
+              34,
+              16
+            ],
+            [
+              7,
+              8,
+              11
+            ],
+            [
+              5,
+              6,
+              42
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "116_research_cycle/claim_repeat_1817_missing.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.116 claim_repeat.panels.natural.scores"
+        },
+        {
+          "key": "mlp117_seed117",
+          "method": "117 MLP / seed117",
+          "N": 400,
+          "MCC": 0.5673615149368967,
+          "PA": 0.855,
+          "PA_percent": 85.5,
+          "recalls": {
+            "Supported": 0.9314641744548287,
+            "Not Supported": 0.19230769230769232,
+            "Not Addressed": 0.7169811320754716
+          },
+          "recalls_percent": {
+            "Supported": 93.14641744548287,
+            "Not Supported": 19.230769230769234,
+            "Not Addressed": 71.69811320754717
+          },
+          "false_S": 21,
+          "non_S": 79,
+          "correct": 342,
+          "confusion_matrix": [
+            [
+              299,
+              6,
+              16
+            ],
+            [
+              9,
+              5,
+              12
+            ],
+            [
+              12,
+              3,
+              38
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/reconsidered_extension.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.117 verdict_mlp（补充扩展）.panels.natural.scores"
+        },
+        {
+          "key": "mlp117_seed118",
+          "method": "117 MLP / seed118 原选轮流程",
+          "N": 400,
+          "MCC": 0.5414810408787013,
+          "PA": 0.8525,
+          "PA_percent": 85.25,
+          "recalls": {
+            "Supported": 0.9376947040498442,
+            "Not Supported": 0.19230769230769232,
+            "Not Addressed": 0.660377358490566
+          },
+          "recalls_percent": {
+            "Supported": 93.76947040498442,
+            "Not Supported": 19.230769230769234,
+            "Not Addressed": 66.0377358490566
+          },
+          "false_S": 27,
+          "non_S": 79,
+          "correct": 341,
+          "confusion_matrix": [
+            [
+              301,
+              7,
+              13
+            ],
+            [
+              12,
+              5,
+              9
+            ],
+            [
+              15,
+              3,
+              35
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "118_full_data_heads/unweighted_workflow_seed118.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.117 MLP / seed118原选轮流程.panels.natural.scores"
+        },
+        {
+          "key": "sqrt_mlp117",
+          "method": "117 sqrt_weight_mlp",
+          "N": 400,
+          "MCC": 0.5172339592108659,
+          "PA": 0.82,
+          "PA_percent": 82.0,
+          "recalls": {
+            "Supported": 0.8878504672897196,
+            "Not Supported": 0.23076923076923078,
+            "Not Addressed": 0.6981132075471698
+          },
+          "recalls_percent": {
+            "Supported": 88.78504672897196,
+            "Not Supported": 23.076923076923077,
+            "Not Addressed": 69.81132075471697
+          },
+          "false_S": 16,
+          "non_S": 79,
+          "correct": 328,
+          "confusion_matrix": [
+            [
+              285,
+              21,
+              15
+            ],
+            [
+              8,
+              6,
+              12
+            ],
+            [
+              8,
+              8,
+              37
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/sqrt_weight_mlp.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.117 sqrt_weight_mlp.panels.natural.scores"
+        },
+        {
+          "key": "sqrt_full118_seed117",
+          "method": "118 full sqrt / seed117",
+          "N": 400,
+          "MCC": 0.5373373310253587,
+          "PA": 0.8175,
+          "PA_percent": 81.75,
+          "recalls": {
+            "Supported": 0.8660436137071651,
+            "Not Supported": 0.3076923076923077,
+            "Not Addressed": 0.7735849056603774
+          },
+          "recalls_percent": {
+            "Supported": 86.6043613707165,
+            "Not Supported": 30.76923076923077,
+            "Not Addressed": 77.35849056603774
+          },
+          "false_S": 13,
+          "non_S": 79,
+          "correct": 327,
+          "confusion_matrix": [
+            [
+              278,
+              21,
+              22
+            ],
+            [
+              6,
+              8,
+              12
+            ],
+            [
+              7,
+              5,
+              41
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "118_full_data_heads/reconsidered_refit.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.118 sqrt_weight_full.panels.natural.scores"
+        },
+        {
+          "key": "sqrt_full118_seed118",
+          "method": "118 full sqrt / seed118",
+          "N": 400,
+          "MCC": 0.5267093499584784,
+          "PA": 0.8225,
+          "PA_percent": 82.25,
+          "recalls": {
+            "Supported": 0.881619937694704,
+            "Not Supported": 0.2692307692307692,
+            "Not Addressed": 0.7358490566037735
+          },
+          "recalls_percent": {
+            "Supported": 88.1619937694704,
+            "Not Supported": 26.923076923076923,
+            "Not Addressed": 73.58490566037736
+          },
+          "false_S": 17,
+          "non_S": 79,
+          "correct": 329,
+          "confusion_matrix": [
+            [
+              283,
+              23,
+              15
+            ],
+            [
+              8,
+              7,
+              11
+            ],
+            [
+              9,
+              5,
+              39
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "118_full_data_heads/seed_stability.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.118 sqrt_weight_full / seed118.panels.natural.scores"
+        },
+        {
+          "key": "full_pool_sft120_step220",
+          "method": "120 full_pool_sft / step220",
+          "N": 400,
+          "MCC": 0.5547067783241383,
+          "PA": 0.86,
+          "PA_percent": 86.0,
+          "recalls": {
+            "Supported": 0.956386292834891,
+            "Not Supported": 0.4230769230769231,
+            "Not Addressed": 0.49056603773584906
+          },
+          "recalls_percent": {
+            "Supported": 95.6386292834891,
+            "Not Supported": 42.30769230769231,
+            "Not Addressed": 49.056603773584904
+          },
+          "false_S": 28,
+          "non_S": 79,
+          "correct": 344,
+          "confusion_matrix": [
+            [
+              307,
+              9,
+              5
+            ],
+            [
+              10,
+              11,
+              5
+            ],
+            [
+              18,
+              9,
+              26
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "120_full_pool_sft/midpoint220_1817.json",
+          "source_node": "models.full_pool_sft.panels.natural.scores.candidate"
+        },
+        {
+          "key": "candidate109",
+          "method": "109 boundary_replay",
+          "N": 400,
+          "MCC": 0.3732611502694124,
+          "PA": 0.72,
+          "PA_percent": 72.0,
+          "recalls": {
+            "Supported": 0.8348909657320872,
+            "Not Supported": 0.7307692307692307,
+            "Not Addressed": 0.018867924528301886
+          },
+          "recalls_percent": {
+            "Supported": 83.48909657320873,
+            "Not Supported": 73.07692307692307,
+            "Not Addressed": 1.8867924528301887
+          },
+          "false_S": 11,
+          "non_S": 79,
+          "correct": 288,
+          "confusion_matrix": [
+            [
+              268,
+              53,
+              0
+            ],
+            [
+              7,
+              19,
+              0
+            ],
+            [
+              4,
+              48,
+              1
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "109_boundary_replay/comparison.json",
+          "source_node": "panels.natural.candidate_common"
+        },
+        {
+          "key": "candidate114",
+          "method": "114 matched_refresh",
+          "N": 400,
+          "MCC": 0.5028824629382451,
+          "PA": 0.79,
+          "PA_percent": 79.0,
+          "recalls": {
+            "Supported": 0.8535825545171339,
+            "Not Supported": 0.46153846153846156,
+            "Not Addressed": 0.5660377358490566
+          },
+          "recalls_percent": {
+            "Supported": 85.35825545171339,
+            "Not Supported": 46.15384615384615,
+            "Not Addressed": 56.60377358490566
+          },
+          "false_S": 8,
+          "non_S": 79,
+          "correct": 316,
+          "confusion_matrix": [
+            [
+              274,
+              37,
+              10
+            ],
+            [
+              5,
+              12,
+              9
+            ],
+            [
+              3,
+              20,
+              30
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "114_matched_refresh/comparison.json",
+          "source_node": "panels.natural.scores.matched_refresh"
+        },
+        {
+          "key": "candidate115",
+          "method": "115 label_sum",
+          "N": 400,
+          "MCC": 0.39119103313606013,
+          "PA": 0.595,
+          "PA_percent": 59.5,
+          "recalls": {
+            "Supported": 0.573208722741433,
+            "Not Supported": 0.5769230769230769,
+            "Not Addressed": 0.7358490566037735
+          },
+          "recalls_percent": {
+            "Supported": 57.3208722741433,
+            "Not Supported": 57.692307692307686,
+            "Not Addressed": 73.58490566037736
+          },
+          "false_S": 1,
+          "non_S": 79,
+          "correct": 238,
+          "confusion_matrix": [
+            [
+              184,
+              122,
+              15
+            ],
+            [
+              0,
+              15,
+              11
+            ],
+            [
+              1,
+              13,
+              39
+            ]
+          ],
+          "coverage": {
+            "expected": 400,
+            "valid": 400,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "115_label_sum/comparison.json",
+          "source_node": "panels.natural.scores.label_sum"
+        }
+      ]
+    },
+    "pressure": {
+      "N": 100,
+      "rows": [
+        {
+          "key": "paper_r1",
+          "method": "paper_r1",
+          "N": 100,
+          "MCC": 0.15724272550828775,
+          "PA": 0.44,
+          "PA_percent": 44.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.48,
+            "Not Addressed": 0.4
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 48.0,
+            "Not Addressed": 40.0
+          },
+          "false_S": 30,
+          "non_S": 100,
+          "correct": 44,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              18,
+              24,
+              8
+            ],
+            [
+              12,
+              18,
+              20
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.old_pressure.scores.paper_r1"
+        },
+        {
+          "key": "label_only105",
+          "method": "105 label_only",
+          "N": 100,
+          "MCC": 0.4282301820577514,
+          "PA": 0.65,
+          "PA_percent": 65.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.58,
+            "Not Addressed": 0.72
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 57.99999999999999,
+            "Not Addressed": 72.0
+          },
+          "false_S": 18,
+          "non_S": 100,
+          "correct": 65,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              29,
+              9
+            ],
+            [
+              6,
+              8,
+              36
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.old_pressure.scores.label_only105"
+        },
+        {
+          "key": "label_only107",
+          "method": "107 label_only",
+          "N": 100,
+          "MCC": 0.31234752377721214,
+          "PA": 0.58,
+          "PA_percent": 57.99999999999999,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.34,
+            "Not Addressed": 0.82
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 34.0,
+            "Not Addressed": 82.0
+          },
+          "false_S": 16,
+          "non_S": 100,
+          "correct": 58,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              17,
+              23
+            ],
+            [
+              6,
+              3,
+              41
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.old_pressure.scores.label_only107"
+        },
+        {
+          "key": "update_half110",
+          "method": "110 update_half",
+          "N": 100,
+          "MCC": 0.4456018762161246,
+          "PA": 0.68,
+          "PA_percent": 68.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.66,
+            "Not Addressed": 0.7
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 66.0,
+            "Not Addressed": 70.0
+          },
+          "false_S": 13,
+          "non_S": 100,
+          "correct": 68,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              9,
+              33,
+              8
+            ],
+            [
+              4,
+              11,
+              35
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.old_pressure.scores.update_half"
+        },
+        {
+          "key": "disagreement_vote112",
+          "method": "112 disagreement_vote",
+          "N": 100,
+          "MCC": 0.3525888892312107,
+          "PA": 0.6,
+          "PA_percent": 60.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.38,
+            "Not Addressed": 0.82
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 38.0,
+            "Not Addressed": 82.0
+          },
+          "false_S": 17,
+          "non_S": 100,
+          "correct": 60,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              11,
+              19,
+              20
+            ],
+            [
+              6,
+              3,
+              41
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "112_disagreement_vote/comparison.json",
+          "source_node": "sections.old_pressure.scores.disagreement_vote"
+        },
+        {
+          "key": "claim_repeat116",
+          "method": "116 claim_repeat",
+          "N": 100,
+          "MCC": 0.32192440955340956,
+          "PA": 0.58,
+          "PA_percent": 57.99999999999999,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.32,
+            "Not Addressed": 0.84
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 32.0,
+            "Not Addressed": 84.0
+          },
+          "false_S": 17,
+          "non_S": 100,
+          "correct": 58,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              16,
+              22
+            ],
+            [
+              5,
+              3,
+              42
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "116_research_cycle/claim_repeat_1817_missing.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.116 claim_repeat.panels.pressure.scores"
+        },
+        {
+          "key": "mlp117_seed117",
+          "method": "117 MLP / seed117",
+          "N": 100,
+          "MCC": 0.34708521290795347,
+          "PA": 0.55,
+          "PA_percent": 55.00000000000001,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.28,
+            "Not Addressed": 0.82
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 28.000000000000004,
+            "Not Addressed": 82.0
+          },
+          "false_S": 27,
+          "non_S": 100,
+          "correct": 55,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              19,
+              14,
+              17
+            ],
+            [
+              8,
+              1,
+              41
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/reconsidered_extension.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.117 verdict_mlp（补充扩展）.panels.pressure.scores"
+        },
+        {
+          "key": "mlp117_seed118",
+          "method": "117 MLP / seed118 原选轮流程",
+          "N": 100,
+          "MCC": 0.40307645394816266,
+          "PA": 0.6,
+          "PA_percent": 60.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.38,
+            "Not Addressed": 0.82
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 38.0,
+            "Not Addressed": 82.0
+          },
+          "false_S": 24,
+          "non_S": 100,
+          "correct": 60,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              17,
+              19,
+              14
+            ],
+            [
+              7,
+              2,
+              41
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "118_full_data_heads/unweighted_workflow_seed118.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.117 MLP / seed118原选轮流程.panels.pressure.scores"
+        },
+        {
+          "key": "sqrt_mlp117",
+          "method": "117 sqrt_weight_mlp",
+          "N": 100,
+          "MCC": 0.3565914326035748,
+          "PA": 0.59,
+          "PA_percent": 59.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.36,
+            "Not Addressed": 0.82
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 36.0,
+            "Not Addressed": 82.0
+          },
+          "false_S": 20,
+          "non_S": 100,
+          "correct": 59,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              14,
+              18,
+              18
+            ],
+            [
+              6,
+              3,
+              41
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/sqrt_weight_mlp.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.117 sqrt_weight_mlp.panels.pressure.scores"
+        },
+        {
+          "key": "sqrt_full118_seed117",
+          "method": "118 full sqrt / seed117",
+          "N": 100,
+          "MCC": 0.3195011578637321,
+          "PA": 0.56,
+          "PA_percent": 56.00000000000001,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.28,
+            "Not Addressed": 0.84
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 28.000000000000004,
+            "Not Addressed": 84.0
+          },
+          "false_S": 21,
+          "non_S": 100,
+          "correct": 56,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              15,
+              14,
+              21
+            ],
+            [
+              6,
+              2,
+              42
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "118_full_data_heads/reconsidered_refit.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.118 sqrt_weight_full.panels.pressure.scores"
+        },
+        {
+          "key": "sqrt_full118_seed118",
+          "method": "118 full sqrt / seed118",
+          "N": 100,
+          "MCC": 0.3729370703141008,
+          "PA": 0.59,
+          "PA_percent": 59.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.36,
+            "Not Addressed": 0.82
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 36.0,
+            "Not Addressed": 82.0
+          },
+          "false_S": 22,
+          "non_S": 100,
+          "correct": 59,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              15,
+              18,
+              17
+            ],
+            [
+              7,
+              2,
+              41
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "118_full_data_heads/seed_stability.json",
+          "source_node": "via recent_fair_comparison.scopes.selection1817.candidates.118 sqrt_weight_full / seed118.panels.pressure.scores"
+        },
+        {
+          "key": "full_pool_sft120_step220",
+          "method": "120 full_pool_sft / step220",
+          "N": 100,
+          "MCC": 0.3748923023620588,
+          "PA": 0.57,
+          "PA_percent": 56.99999999999999,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.48,
+            "Not Addressed": 0.66
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 48.0,
+            "Not Addressed": 66.0
+          },
+          "false_S": 29,
+          "non_S": 100,
+          "correct": 57,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              18,
+              24,
+              8
+            ],
+            [
+              11,
+              6,
+              33
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "120_full_pool_sft/midpoint220_1817.json",
+          "source_node": "models.full_pool_sft.panels.pressure.scores.candidate"
+        },
+        {
+          "key": "candidate109",
+          "method": "109 boundary_replay",
+          "N": 100,
+          "MCC": -0.1091089451179962,
+          "PA": 0.38,
+          "PA_percent": 38.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.76,
+            "Not Addressed": 0.0
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 76.0,
+            "Not Addressed": 0.0
+          },
+          "false_S": 16,
+          "non_S": 100,
+          "correct": 38,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              38,
+              0
+            ],
+            [
+              4,
+              46,
+              0
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "109_boundary_replay/comparison.json",
+          "source_node": "panels.pressure.candidate_common"
+        },
+        {
+          "key": "candidate114",
+          "method": "114 matched_refresh",
+          "N": 100,
+          "MCC": 0.3410301253434256,
+          "PA": 0.61,
+          "PA_percent": 61.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.58,
+            "Not Addressed": 0.64
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 57.99999999999999,
+            "Not Addressed": 64.0
+          },
+          "false_S": 16,
+          "non_S": 100,
+          "correct": 61,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              9,
+              29,
+              12
+            ],
+            [
+              7,
+              11,
+              32
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "114_matched_refresh/comparison.json",
+          "source_node": "panels.pressure.scores.matched_refresh"
+        },
+        {
+          "key": "candidate115",
+          "method": "115 label_sum",
+          "N": 100,
+          "MCC": 0.3205132320860015,
+          "PA": 0.64,
+          "PA_percent": 64.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.5,
+            "Not Addressed": 0.78
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 50.0,
+            "Not Addressed": 78.0
+          },
+          "false_S": 4,
+          "non_S": 100,
+          "correct": 64,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              25,
+              23
+            ],
+            [
+              2,
+              9,
+              39
+            ]
+          ],
+          "coverage": {
+            "expected": 100,
+            "valid": 100,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "115_label_sum/comparison.json",
+          "source_node": "panels.pressure.scores.label_sum"
+        }
+      ]
+    }
+  },
+  "limited_cohorts": {
+    "history103_natural": {
+      "N": 120,
+      "description": "Original103 same-ID cohort; separate from main1817 table",
+      "rows": [
+        {
+          "key": "paper_r1",
+          "method": "paper_r1",
+          "N": 120,
+          "MCC": 0.4189512921554735,
+          "PA": 0.775,
+          "PA_percent": 77.5,
+          "recalls": {
+            "Supported": 0.875,
+            "Not Supported": 0.5,
+            "Not Addressed": 0.3125
+          },
+          "recalls_percent": {
+            "Supported": 87.5,
+            "Not Supported": 50.0,
+            "Not Addressed": 31.25
+          },
+          "false_S": 6,
+          "non_S": 24,
+          "correct": 93,
+          "confusion_matrix": [
+            [
+              84,
+              10,
+              2
+            ],
+            [
+              3,
+              4,
+              1
+            ],
+            [
+              3,
+              8,
+              5
+            ]
+          ],
+          "coverage": {
+            "expected": 120,
+            "valid": 120,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.history103_full_natural.scores.paper_r1"
+        },
+        {
+          "key": "nine_native103",
+          "method": "原作者式prompt＋未微调9B / 103 nine_native",
+          "N": 120,
+          "MCC": 0.3380353463269876,
+          "PA": 0.6916666666666667,
+          "PA_percent": 69.16666666666667,
+          "recalls": {
+            "Supported": 0.7916666666666666,
+            "Not Supported": 0.625,
+            "Not Addressed": 0.125
+          },
+          "recalls_percent": {
+            "Supported": 79.16666666666666,
+            "Not Supported": 62.5,
+            "Not Addressed": 12.5
+          },
+          "false_S": 4,
+          "non_S": 24,
+          "correct": 83,
+          "confusion_matrix": [
+            [
+              76,
+              19,
+              1
+            ],
+            [
+              2,
+              5,
+              1
+            ],
+            [
+              2,
+              12,
+              2
+            ]
+          ],
+          "coverage": {
+            "expected": 120,
+            "valid": 120,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "103_lora_selection/final_analysis.json",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "label_only107",
+          "method": "107 label_only",
+          "N": 120,
+          "MCC": 0.40776445357642943,
+          "PA": 0.7166666666666667,
+          "PA_percent": 71.66666666666667,
+          "recalls": {
+            "Supported": 0.75,
+            "Not Supported": 0.375,
+            "Not Addressed": 0.6875
+          },
+          "recalls_percent": {
+            "Supported": 75.0,
+            "Not Supported": 37.5,
+            "Not Addressed": 68.75
+          },
+          "false_S": 4,
+          "non_S": 24,
+          "correct": 86,
+          "confusion_matrix": [
+            [
+              72,
+              15,
+              9
+            ],
+            [
+              2,
+              3,
+              3
+            ],
+            [
+              2,
+              3,
+              11
+            ]
+          ],
+          "coverage": {
+            "expected": 120,
+            "valid": 120,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.history103_full_natural.scores.label_only107"
+        },
+        {
+          "key": "lora103_9b512",
+          "method": "103 lora_9b512",
+          "N": 120,
+          "MCC": 0.5737807997726453,
+          "PA": 0.8583333333333333,
+          "PA_percent": 85.83333333333333,
+          "recalls": {
+            "Supported": 0.9375,
+            "Not Supported": 0.375,
+            "Not Addressed": 0.625
+          },
+          "recalls_percent": {
+            "Supported": 93.75,
+            "Not Supported": 37.5,
+            "Not Addressed": 62.5
+          },
+          "false_S": 7,
+          "non_S": 24,
+          "correct": 103,
+          "confusion_matrix": [
+            [
+              90,
+              4,
+              2
+            ],
+            [
+              2,
+              3,
+              3
+            ],
+            [
+              5,
+              1,
+              10
+            ]
+          ],
+          "coverage": {
+            "expected": 120,
+            "valid": 120,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.history103_full_natural.scores.lora103_9b512"
+        },
+        {
+          "key": "full_pool_sft120_step220",
+          "method": "120 full_pool_sft / step220",
+          "N": 120,
+          "MCC": 0.5378176677661552,
+          "PA": 0.8416666666666667,
+          "PA_percent": 84.16666666666667,
+          "recalls": {
+            "Supported": 0.9270833333333334,
+            "Not Supported": 0.625,
+            "Not Addressed": 0.4375
+          },
+          "recalls_percent": {
+            "Supported": 92.70833333333334,
+            "Not Supported": 62.5,
+            "Not Addressed": 43.75
+          },
+          "false_S": 7,
+          "non_S": 24,
+          "correct": 101,
+          "confusion_matrix": [
+            [
+              89,
+              4,
+              3
+            ],
+            [
+              2,
+              5,
+              1
+            ],
+            [
+              5,
+              4,
+              7
+            ]
+          ],
+          "coverage": {
+            "expected": 120,
+            "valid": 120,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "120_full_pool_sft/midpoint220_1817_predictions_sanitized.jsonl",
+          "source_node": "existing receipts, keys.history103_panel=natural"
+        },
+        {
+          "key": "mlp117_seed117",
+          "method": "117 原MLP / seed117",
+          "N": 120,
+          "MCC": 0.5781485042666503,
+          "PA": 0.85,
+          "PA_percent": 85.0,
+          "recalls": {
+            "Supported": 0.90625,
+            "Not Supported": 0.375,
+            "Not Addressed": 0.75
+          },
+          "recalls_percent": {
+            "Supported": 90.625,
+            "Not Supported": 37.5,
+            "Not Addressed": 75.0
+          },
+          "false_S": 6,
+          "non_S": 24,
+          "correct": 102,
+          "confusion_matrix": [
+            [
+              87,
+              4,
+              5
+            ],
+            [
+              2,
+              3,
+              3
+            ],
+            [
+              4,
+              0,
+              12
+            ]
+          ],
+          "coverage": {
+            "expected": 120,
+            "valid": 120,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/reconsidered_extension_verdict_mlp_predictions.jsonl",
+          "source_node": "existing1817 predictions restricted by history103_panel"
+        },
+        {
+          "key": "mlp117_seed118",
+          "method": "117 原MLP / seed118原选轮流程",
+          "N": 120,
+          "MCC": 0.554839444433571,
+          "PA": 0.8416666666666667,
+          "PA_percent": 84.16666666666667,
+          "recalls": {
+            "Supported": 0.8958333333333334,
+            "Not Supported": 0.5,
+            "Not Addressed": 0.6875
+          },
+          "recalls_percent": {
+            "Supported": 89.58333333333334,
+            "Not Supported": 50.0,
+            "Not Addressed": 68.75
+          },
+          "false_S": 7,
+          "non_S": 24,
+          "correct": 101,
+          "confusion_matrix": [
+            [
+              86,
+              4,
+              6
+            ],
+            [
+              2,
+              4,
+              2
+            ],
+            [
+              5,
+              0,
+              11
+            ]
+          ],
+          "coverage": {
+            "expected": 120,
+            "valid": 120,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "118_full_data_heads/unweighted_workflow_seed118_predictions.jsonl",
+          "source_node": "existing1817 predictions restricted by history103_panel"
+        },
+        {
+          "key": "sqrt_mean124",
+          "method": "124 sqrt_weight_full两seed概率均值",
+          "N": 120,
+          "MCC": 0.5149656864712521,
+          "PA": 0.8,
+          "PA_percent": 80.0,
+          "recalls": {
+            "Supported": 0.84375,
+            "Not Supported": 0.375,
+            "Not Addressed": 0.75
+          },
+          "recalls_percent": {
+            "Supported": 84.375,
+            "Not Supported": 37.5,
+            "Not Addressed": 75.0
+          },
+          "false_S": 4,
+          "non_S": 24,
+          "correct": 96,
+          "confusion_matrix": [
+            [
+              81,
+              7,
+              8
+            ],
+            [
+              2,
+              3,
+              3
+            ],
+            [
+              2,
+              2,
+              12
+            ]
+          ],
+          "coverage": {
+            "expected": 120,
+            "valid": 120,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "124_seed_mean_readout/predictions_sanitized.jsonl",
+          "source_node": "existing1817 predictions restricted by history103_panel"
+        }
+      ]
+    },
+    "history103_pressure": {
+      "N": 60,
+      "description": "Original103 same-ID cohort; separate from main1817 table",
+      "rows": [
+        {
+          "key": "paper_r1",
+          "method": "paper_r1",
+          "N": 60,
+          "MCC": 0.26690842163726697,
+          "PA": 0.5333333333333333,
+          "PA_percent": 53.333333333333336,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.6,
+            "Not Addressed": 0.4666666666666667
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 60.0,
+            "Not Addressed": 46.666666666666664
+          },
+          "false_S": 14,
+          "non_S": 60,
+          "correct": 32,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              9,
+              18,
+              3
+            ],
+            [
+              5,
+              11,
+              14
+            ]
+          ],
+          "coverage": {
+            "expected": 60,
+            "valid": 60,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.history103_full_pressure.scores.paper_r1"
+        },
+        {
+          "key": "nine_native103",
+          "method": "原作者式prompt＋未微调9B / 103 nine_native",
+          "N": 60,
+          "MCC": 0.03913302400974161,
+          "PA": 0.4666666666666667,
+          "PA_percent": 46.666666666666664,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.8,
+            "Not Addressed": 0.13333333333333333
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 80.0,
+            "Not Addressed": 13.333333333333334
+          },
+          "false_S": 6,
+          "non_S": 60,
+          "correct": 28,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              24,
+              3
+            ],
+            [
+              3,
+              23,
+              4
+            ]
+          ],
+          "coverage": {
+            "expected": 60,
+            "valid": 60,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "103_lora_selection/final_analysis.json",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "label_only107",
+          "method": "107 label_only",
+          "N": 60,
+          "MCC": 0.30691721148650053,
+          "PA": 0.5833333333333334,
+          "PA_percent": 58.333333333333336,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.26666666666666666,
+            "Not Addressed": 0.9
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 26.666666666666668,
+            "Not Addressed": 90.0
+          },
+          "false_S": 7,
+          "non_S": 60,
+          "correct": 35,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              8,
+              17
+            ],
+            [
+              2,
+              1,
+              27
+            ]
+          ],
+          "coverage": {
+            "expected": 60,
+            "valid": 60,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.history103_full_pressure.scores.label_only107"
+        },
+        {
+          "key": "lora103_9b512",
+          "method": "103 lora_9b512",
+          "N": 60,
+          "MCC": 0.3181818181818182,
+          "PA": 0.5,
+          "PA_percent": 50.0,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.26666666666666666,
+            "Not Addressed": 0.7333333333333333
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 26.666666666666668,
+            "Not Addressed": 73.33333333333333
+          },
+          "false_S": 21,
+          "non_S": 60,
+          "correct": 30,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              14,
+              8,
+              8
+            ],
+            [
+              7,
+              1,
+              22
+            ]
+          ],
+          "coverage": {
+            "expected": 60,
+            "valid": 60,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "111_half_extension/comparison.json",
+          "source_node": "sections.history103_full_pressure.scores.lora103_9b512"
+        },
+        {
+          "key": "full_pool_sft120_step220",
+          "method": "120 full_pool_sft / step220",
+          "N": 60,
+          "MCC": 0.36373497623707834,
+          "PA": 0.5666666666666667,
+          "PA_percent": 56.666666666666664,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.4666666666666667,
+            "Not Addressed": 0.6666666666666666
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 46.666666666666664,
+            "Not Addressed": 66.66666666666666
+          },
+          "false_S": 17,
+          "non_S": 60,
+          "correct": 34,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              11,
+              14,
+              5
+            ],
+            [
+              6,
+              4,
+              20
+            ]
+          ],
+          "coverage": {
+            "expected": 60,
+            "valid": 60,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "120_full_pool_sft/midpoint220_1817_predictions_sanitized.jsonl",
+          "source_node": "existing receipts, keys.history103_panel=pressure"
+        },
+        {
+          "key": "mlp117_seed117",
+          "method": "117 原MLP / seed117",
+          "N": 60,
+          "MCC": 0.29720618400772186,
+          "PA": 0.5333333333333333,
+          "PA_percent": 53.333333333333336,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.2,
+            "Not Addressed": 0.8666666666666667
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 20.0,
+            "Not Addressed": 86.66666666666667
+          },
+          "false_S": 14,
+          "non_S": 60,
+          "correct": 32,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              11,
+              6,
+              13
+            ],
+            [
+              3,
+              1,
+              26
+            ]
+          ],
+          "coverage": {
+            "expected": 60,
+            "valid": 60,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/reconsidered_extension_verdict_mlp_predictions.jsonl",
+          "source_node": "existing1817 predictions restricted by history103_panel"
+        },
+        {
+          "key": "mlp117_seed118",
+          "method": "117 原MLP / seed118原选轮流程",
+          "N": 60,
+          "MCC": 0.32606179937338187,
+          "PA": 0.5333333333333333,
+          "PA_percent": 53.333333333333336,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.26666666666666666,
+            "Not Addressed": 0.8
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 26.666666666666668,
+            "Not Addressed": 80.0
+          },
+          "false_S": 17,
+          "non_S": 60,
+          "correct": 32,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              8,
+              10
+            ],
+            [
+              5,
+              1,
+              24
+            ]
+          ],
+          "coverage": {
+            "expected": 60,
+            "valid": 60,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "118_full_data_heads/unweighted_workflow_seed118_predictions.jsonl",
+          "source_node": "existing1817 predictions restricted by history103_panel"
+        },
+        {
+          "key": "sqrt_mean124",
+          "method": "124 sqrt_weight_full两seed概率均值",
+          "N": 60,
+          "MCC": 0.28867513459481287,
+          "PA": 0.55,
+          "PA_percent": 55.00000000000001,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.23333333333333334,
+            "Not Addressed": 0.8666666666666667
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 23.333333333333332,
+            "Not Addressed": 86.66666666666667
+          },
+          "false_S": 11,
+          "non_S": 60,
+          "correct": 33,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              7,
+              15
+            ],
+            [
+              3,
+              1,
+              26
+            ]
+          ],
+          "coverage": {
+            "expected": 60,
+            "valid": 60,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "124_seed_mean_readout/predictions_sanitized.jsonl",
+          "source_node": "existing1817 predictions restricted by history103_panel"
+        }
+      ]
+    },
+    "fixed160_natural": {
+      "N": 128,
+      "description": "Nested160 same-ID cohort only; no full119 coverage claimed",
+      "rows": [
+        {
+          "key": "paper_r1",
+          "method": "paper_r1",
+          "N": 128,
+          "MCC": 0.387725996106655,
+          "PA": 0.796875,
+          "PA_percent": 79.6875,
+          "recalls": {
+            "Supported": 0.9029126213592233,
+            "Not Supported": 0.25,
+            "Not Addressed": 0.4117647058823529
+          },
+          "recalls_percent": {
+            "Supported": 90.29126213592234,
+            "Not Supported": 25.0,
+            "Not Addressed": 41.17647058823529
+          },
+          "false_S": 11,
+          "non_S": 25,
+          "correct": 102,
+          "confusion_matrix": [
+            [
+              93,
+              8,
+              2
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              5,
+              5,
+              7
+            ]
+          ],
+          "coverage": {
+            "expected": 128,
+            "valid": 128,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/recent_fair_comparison.json",
+          "source_node": "scopes.fixed160.baselines.paper_r1.natural"
+        },
+        {
+          "key": "label_only107",
+          "method": "107 label_only",
+          "N": 128,
+          "MCC": 0.4164735719701865,
+          "PA": 0.75,
+          "PA_percent": 75.0,
+          "recalls": {
+            "Supported": 0.8058252427184466,
+            "Not Supported": 0.25,
+            "Not Addressed": 0.6470588235294118
+          },
+          "recalls_percent": {
+            "Supported": 80.58252427184466,
+            "Not Supported": 25.0,
+            "Not Addressed": 64.70588235294117
+          },
+          "false_S": 5,
+          "non_S": 25,
+          "correct": 96,
+          "confusion_matrix": [
+            [
+              83,
+              13,
+              7
+            ],
+            [
+              3,
+              2,
+              3
+            ],
+            [
+              2,
+              4,
+              11
+            ]
+          ],
+          "coverage": {
+            "expected": 128,
+            "valid": 128,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/recent_fair_comparison.json",
+          "source_node": "scopes.fixed160.baselines.label_only107.natural"
+        },
+        {
+          "key": "warm_head_ft119",
+          "method": "119 warm_head_ft / step369",
+          "N": 128,
+          "MCC": 0.5913276048862951,
+          "PA": 0.8671875,
+          "PA_percent": 86.71875,
+          "recalls": {
+            "Supported": 0.941747572815534,
+            "Not Supported": 0.125,
+            "Not Addressed": 0.7647058823529411
+          },
+          "recalls_percent": {
+            "Supported": 94.1747572815534,
+            "Not Supported": 12.5,
+            "Not Addressed": 76.47058823529412
+          },
+          "false_S": 7,
+          "non_S": 25,
+          "correct": 111,
+          "confusion_matrix": [
+            [
+              97,
+              1,
+              5
+            ],
+            [
+              4,
+              1,
+              3
+            ],
+            [
+              3,
+              1,
+              13
+            ]
+          ],
+          "coverage": {
+            "expected": 128,
+            "valid": 128,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "119_warm_head_ft/trained_best160.json",
+          "source_node": "via scopes.fixed160.candidates.119 warm_head_ft/369步.panels.natural.scores"
+        },
+        {
+          "key": "full_pool_sft120_step220",
+          "method": "120 full_pool_sft / step220",
+          "N": 128,
+          "MCC": 0.5507351569096915,
+          "PA": 0.859375,
+          "PA_percent": 85.9375,
+          "recalls": {
+            "Supported": 0.9611650485436893,
+            "Not Supported": 0.5,
+            "Not Addressed": 0.4117647058823529
+          },
+          "recalls_percent": {
+            "Supported": 96.11650485436894,
+            "Not Supported": 50.0,
+            "Not Addressed": 41.17647058823529
+          },
+          "false_S": 9,
+          "non_S": 25,
+          "correct": 110,
+          "confusion_matrix": [
+            [
+              99,
+              3,
+              1
+            ],
+            [
+              4,
+              4,
+              0
+            ],
+            [
+              5,
+              5,
+              7
+            ]
+          ],
+          "coverage": {
+            "expected": 128,
+            "valid": 128,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "120_full_pool_sft/midpoint220_160.json",
+          "source_node": "via scopes.fixed160.candidates.120 full_pool_sft/220步中途检查.panels.natural.scores"
+        }
+      ]
+    },
+    "fixed160_pressure": {
+      "N": 32,
+      "description": "Nested160 same-ID cohort only; no full119 coverage claimed",
+      "rows": [
+        {
+          "key": "paper_r1",
+          "method": "paper_r1",
+          "N": 32,
+          "MCC": 0.1111111111111111,
+          "PA": 0.375,
+          "PA_percent": 37.5,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.4375,
+            "Not Addressed": 0.3125
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 43.75,
+            "Not Addressed": 31.25
+          },
+          "false_S": 12,
+          "non_S": 32,
+          "correct": 12,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              7,
+              1
+            ],
+            [
+              4,
+              7,
+              5
+            ]
+          ],
+          "coverage": {
+            "expected": 32,
+            "valid": 32,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/recent_fair_comparison.json",
+          "source_node": "scopes.fixed160.baselines.paper_r1.pressure"
+        },
+        {
+          "key": "label_only107",
+          "method": "107 label_only",
+          "N": 32,
+          "MCC": 0.3191423692521127,
+          "PA": 0.59375,
+          "PA_percent": 59.375,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.4375,
+            "Not Addressed": 0.75
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 43.75,
+            "Not Addressed": 75.0
+          },
+          "false_S": 5,
+          "non_S": 32,
+          "correct": 19,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              7,
+              6
+            ],
+            [
+              2,
+              2,
+              12
+            ]
+          ],
+          "coverage": {
+            "expected": 32,
+            "valid": 32,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "117_verdict_probe/recent_fair_comparison.json",
+          "source_node": "scopes.fixed160.baselines.label_only107.pressure"
+        },
+        {
+          "key": "warm_head_ft119",
+          "method": "119 warm_head_ft / step369",
+          "N": 32,
+          "MCC": 0.12403473458920847,
+          "PA": 0.40625,
+          "PA_percent": 40.625,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.0625,
+            "Not Addressed": 0.75
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 6.25,
+            "Not Addressed": 75.0
+          },
+          "false_S": 10,
+          "non_S": 32,
+          "correct": 13,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              7,
+              1,
+              8
+            ],
+            [
+              3,
+              1,
+              12
+            ]
+          ],
+          "coverage": {
+            "expected": 32,
+            "valid": 32,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "119_warm_head_ft/trained_best160.json",
+          "source_node": "via scopes.fixed160.candidates.119 warm_head_ft/369步.panels.pressure.scores"
+        },
+        {
+          "key": "full_pool_sft120_step220",
+          "method": "120 full_pool_sft / step220",
+          "N": 32,
+          "MCC": 0.3519947346980235,
+          "PA": 0.53125,
+          "PA_percent": 53.125,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.5,
+            "Not Addressed": 0.5625
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 50.0,
+            "Not Addressed": 56.25
+          },
+          "false_S": 11,
+          "non_S": 32,
+          "correct": 17,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              7,
+              8,
+              1
+            ],
+            [
+              4,
+              3,
+              9
+            ]
+          ],
+          "coverage": {
+            "expected": 32,
+            "valid": 32,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "120_full_pool_sft/midpoint220_160.json",
+          "source_node": "via scopes.fixed160.candidates.120 full_pool_sft/220步中途检查.panels.pressure.scores"
+        }
+      ]
+    }
+  },
+  "delta120_vs107": {
+    "MCC": 0.05253515786938345,
+    "PA_percent_points": 6.274078150798019,
+    "correct": 114,
+    "false_S": 63,
+    "class_correct_net": {
+      "Supported": 166,
+      "Not Supported": 4,
+      "Not Addressed": -56
+    }
+  },
+  "notes": [
+    "paper_r1 is author-released historical system, not a contemporaneous same-Judge control.",
+    "105 and107 full1817 predictions were completed in111 and are reused; no new105 work.",
+    "120 is fixed220 steps/1760 additional training presentations from107; planned369 was not completed.",
+    "120 and107 use original three-class JSON interface;117/118 use learned head argmax on frozen107 prompt-prefix features.",
+    "117 MLP seed118 is the original validation-selected workflow, not the separately recorded fixed6-epoch failed diagnostic.",
+    "103/119 are only shown on existing same-ID subsets and are not given1817 scores.",
+    "Old400 natural and100 artificially enriched pressure panels stay separate.",
+    "All supplied rows have complete valid coverage on their stated subsets; unavailable experiments are not filled with0.",
+    "Retain paper_r1, original-author-style unfinetuned9B actual coverage,107label_only, and matched104-prompt untuned105 common-ID table; retain117originalMLP."
+  ],
+  "matched_new_prompt_untuned105": {
+    "natural": {
+      "original_N": 400,
+      "common_valid_N": 391,
+      "excluded_invalid_base_judge": 9,
+      "GT": {
+        "Supported": 312,
+        "Not Supported": 26,
+        "Not Addressed": 53
+      },
+      "input105_107_token_identity_checked": true,
+      "same_IDs_for_all_rows": true,
+      "models_with_complete_valid_receipts": [
+        {
+          "key": "paper_r1",
+          "method": "paper_r1",
+          "N": 391,
+          "MCC": 0.42978130947355303,
+          "PA": 0.8056265984654731,
+          "PA_percent": 80.56265984654732,
+          "recalls": {
+            "Supported": 0.9198717948717948,
+            "Not Supported": 0.38461538461538464,
+            "Not Addressed": 0.33962264150943394
+          },
+          "recalls_percent": {
+            "Supported": 91.98717948717949,
+            "Not Supported": 38.46153846153847,
+            "Not Addressed": 33.9622641509434
+          },
+          "false_S": 28,
+          "non_S": 79,
+          "correct": 315,
+          "confusion_matrix": [
+            [
+              287,
+              17,
+              8
+            ],
+            [
+              11,
+              10,
+              5
+            ],
+            [
+              17,
+              18,
+              18
+            ]
+          ],
+          "coverage": {
+            "expected": 391,
+            "valid": 391,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "base_judge105",
+          "method": "104新版prompt＋未微调9B / 105 base_judge",
+          "N": 391,
+          "MCC": 0.3797417922934575,
+          "PA": 0.7084398976982097,
+          "PA_percent": 70.84398976982096,
+          "recalls": {
+            "Supported": 0.7916666666666666,
+            "Not Supported": 0.5,
+            "Not Addressed": 0.32075471698113206
+          },
+          "recalls_percent": {
+            "Supported": 79.16666666666666,
+            "Not Supported": 50.0,
+            "Not Addressed": 32.075471698113205
+          },
+          "false_S": 11,
+          "non_S": 79,
+          "correct": 277,
+          "confusion_matrix": [
+            [
+              247,
+              60,
+              5
+            ],
+            [
+              8,
+              13,
+              5
+            ],
+            [
+              3,
+              33,
+              17
+            ]
+          ],
+          "coverage": {
+            "expected": 391,
+            "valid": 391,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "label_only105",
+          "method": "105 label_only",
+          "N": 391,
+          "MCC": 0.4855243902556564,
+          "PA": 0.80306905370844,
+          "PA_percent": 80.30690537084399,
+          "recalls": {
+            "Supported": 0.8846153846153846,
+            "Not Supported": 0.38461538461538464,
+            "Not Addressed": 0.5283018867924528
+          },
+          "recalls_percent": {
+            "Supported": 88.46153846153845,
+            "Not Supported": 38.46153846153847,
+            "Not Addressed": 52.83018867924528
+          },
+          "false_S": 17,
+          "non_S": 79,
+          "correct": 314,
+          "confusion_matrix": [
+            [
+              276,
+              28,
+              8
+            ],
+            [
+              8,
+              10,
+              8
+            ],
+            [
+              9,
+              16,
+              28
+            ]
+          ],
+          "coverage": {
+            "expected": 391,
+            "valid": 391,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "label_only107",
+          "method": "107 label_only",
+          "N": 391,
+          "MCC": 0.5075979446366725,
+          "PA": 0.7979539641943734,
+          "PA_percent": 79.79539641943734,
+          "recalls": {
+            "Supported": 0.8525641025641025,
+            "Not Supported": 0.23076923076923078,
+            "Not Addressed": 0.7547169811320755
+          },
+          "recalls_percent": {
+            "Supported": 85.25641025641025,
+            "Not Supported": 23.076923076923077,
+            "Not Addressed": 75.47169811320755
+          },
+          "false_S": 12,
+          "non_S": 79,
+          "correct": 312,
+          "confusion_matrix": [
+            [
+              266,
+              26,
+              20
+            ],
+            [
+              7,
+              6,
+              13
+            ],
+            [
+              5,
+              8,
+              40
+            ]
+          ],
+          "coverage": {
+            "expected": 391,
+            "valid": 391,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "full_pool_sft120_step220",
+          "method": "120 full_pool_sft / step220",
+          "N": 391,
+          "MCC": 0.5531191386858417,
+          "PA": 0.8567774936061381,
+          "PA_percent": 85.6777493606138,
+          "recalls": {
+            "Supported": 0.9551282051282052,
+            "Not Supported": 0.4230769230769231,
+            "Not Addressed": 0.49056603773584906
+          },
+          "recalls_percent": {
+            "Supported": 95.51282051282051,
+            "Not Supported": 42.30769230769231,
+            "Not Addressed": 49.056603773584904
+          },
+          "false_S": 28,
+          "non_S": 79,
+          "correct": 335,
+          "confusion_matrix": [
+            [
+              298,
+              9,
+              5
+            ],
+            [
+              10,
+              11,
+              5
+            ],
+            [
+              18,
+              9,
+              26
+            ]
+          ],
+          "coverage": {
+            "expected": 391,
+            "valid": 391,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "mlp117_seed117",
+          "method": "117 原MLP / seed117",
+          "N": 391,
+          "MCC": 0.5654884980992166,
+          "PA": 0.8516624040920716,
+          "PA_percent": 85.16624040920716,
+          "recalls": {
+            "Supported": 0.9294871794871795,
+            "Not Supported": 0.19230769230769232,
+            "Not Addressed": 0.7169811320754716
+          },
+          "recalls_percent": {
+            "Supported": 92.94871794871796,
+            "Not Supported": 19.230769230769234,
+            "Not Addressed": 71.69811320754717
+          },
+          "false_S": 21,
+          "non_S": 79,
+          "correct": 333,
+          "confusion_matrix": [
+            [
+              290,
+              6,
+              16
+            ],
+            [
+              9,
+              5,
+              12
+            ],
+            [
+              12,
+              3,
+              38
+            ]
+          ],
+          "coverage": {
+            "expected": 391,
+            "valid": 391,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "mlp117_seed118",
+          "method": "117 原MLP / seed118原选轮流程",
+          "N": 391,
+          "MCC": 0.5396152545428745,
+          "PA": 0.8491048593350383,
+          "PA_percent": 84.91048593350384,
+          "recalls": {
+            "Supported": 0.9358974358974359,
+            "Not Supported": 0.19230769230769232,
+            "Not Addressed": 0.660377358490566
+          },
+          "recalls_percent": {
+            "Supported": 93.58974358974359,
+            "Not Supported": 19.230769230769234,
+            "Not Addressed": 66.0377358490566
+          },
+          "false_S": 27,
+          "non_S": 79,
+          "correct": 332,
+          "confusion_matrix": [
+            [
+              292,
+              7,
+              13
+            ],
+            [
+              12,
+              5,
+              9
+            ],
+            [
+              15,
+              3,
+              35
+            ]
+          ],
+          "coverage": {
+            "expected": 391,
+            "valid": 391,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        }
+      ],
+      "native103_coverage_note": "原作者式未微调9B不覆盖此共同集全部ID；仅原180表展示，未补跑。"
+    },
+    "pressure": {
+      "original_N": 100,
+      "common_valid_N": 94,
+      "excluded_invalid_base_judge": 6,
+      "GT": {
+        "Supported": 0,
+        "Not Supported": 46,
+        "Not Addressed": 48
+      },
+      "input105_107_token_identity_checked": true,
+      "same_IDs_for_all_rows": true,
+      "models_with_complete_valid_receipts": [
+        {
+          "key": "paper_r1",
+          "method": "paper_r1",
+          "N": 94,
+          "MCC": 0.17066717371537787,
+          "PA": 0.4574468085106383,
+          "PA_percent": 45.744680851063826,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.5217391304347826,
+            "Not Addressed": 0.3958333333333333
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 52.17391304347826,
+            "Not Addressed": 39.58333333333333
+          },
+          "false_S": 26,
+          "non_S": 94,
+          "correct": 43,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              14,
+              24,
+              8
+            ],
+            [
+              12,
+              17,
+              19
+            ]
+          ],
+          "coverage": {
+            "expected": 94,
+            "valid": 94,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "base_judge105",
+          "method": "104新版prompt＋未微调9B / 105 base_judge",
+          "N": 94,
+          "MCC": 0.23078915242326528,
+          "PA": 0.5638297872340425,
+          "PA_percent": 56.38297872340425,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.7608695652173914,
+            "Not Addressed": 0.375
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 76.08695652173914,
+            "Not Addressed": 37.5
+          },
+          "false_S": 9,
+          "non_S": 94,
+          "correct": 53,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              35,
+              6
+            ],
+            [
+              4,
+              26,
+              18
+            ]
+          ],
+          "coverage": {
+            "expected": 94,
+            "valid": 94,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "label_only105",
+          "method": "105 label_only",
+          "N": 94,
+          "MCC": 0.41776743577023284,
+          "PA": 0.648936170212766,
+          "PA_percent": 64.8936170212766,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.5869565217391305,
+            "Not Addressed": 0.7083333333333334
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 58.69565217391305,
+            "Not Addressed": 70.83333333333334
+          },
+          "false_S": 16,
+          "non_S": 94,
+          "correct": 61,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              27,
+              9
+            ],
+            [
+              6,
+              8,
+              34
+            ]
+          ],
+          "coverage": {
+            "expected": 94,
+            "valid": 94,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "label_only107",
+          "method": "107 label_only",
+          "N": 94,
+          "MCC": 0.3234205073703678,
+          "PA": 0.5957446808510638,
+          "PA_percent": 59.57446808510638,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.3695652173913043,
+            "Not Addressed": 0.8125
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 36.95652173913043,
+            "Not Addressed": 81.25
+          },
+          "false_S": 14,
+          "non_S": 94,
+          "correct": 56,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              17,
+              21
+            ],
+            [
+              6,
+              3,
+              39
+            ]
+          ],
+          "coverage": {
+            "expected": 94,
+            "valid": 94,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "full_pool_sft120_step220",
+          "method": "120 full_pool_sft / step220",
+          "N": 94,
+          "MCC": 0.3599523208094353,
+          "PA": 0.5638297872340425,
+          "PA_percent": 56.38297872340425,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.4782608695652174,
+            "Not Addressed": 0.6458333333333334
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 47.82608695652174,
+            "Not Addressed": 64.58333333333334
+          },
+          "false_S": 27,
+          "non_S": 94,
+          "correct": 53,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              16,
+              22,
+              8
+            ],
+            [
+              11,
+              6,
+              31
+            ]
+          ],
+          "coverage": {
+            "expected": 94,
+            "valid": 94,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "mlp117_seed117",
+          "method": "117 原MLP / seed117",
+          "N": 94,
+          "MCC": 0.32398360775457175,
+          "PA": 0.5425531914893617,
+          "PA_percent": 54.25531914893617,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.2608695652173913,
+            "Not Addressed": 0.8125
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 26.08695652173913,
+            "Not Addressed": 81.25
+          },
+          "false_S": 25,
+          "non_S": 94,
+          "correct": 51,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              17,
+              12,
+              17
+            ],
+            [
+              8,
+              1,
+              39
+            ]
+          ],
+          "coverage": {
+            "expected": 94,
+            "valid": 94,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        },
+        {
+          "key": "mlp117_seed118",
+          "method": "117 原MLP / seed118原选轮流程",
+          "N": 94,
+          "MCC": 0.3858943855670273,
+          "PA": 0.5957446808510638,
+          "PA_percent": 59.57446808510638,
+          "recalls": {
+            "Supported": null,
+            "Not Supported": 0.3695652173913043,
+            "Not Addressed": 0.8125
+          },
+          "recalls_percent": {
+            "Supported": null,
+            "Not Supported": 36.95652173913043,
+            "Not Addressed": 81.25
+          },
+          "false_S": 22,
+          "non_S": 94,
+          "correct": 56,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              15,
+              17,
+              14
+            ],
+            [
+              7,
+              2,
+              39
+            ]
+          ],
+          "coverage": {
+            "expected": 94,
+            "valid": 94,
+            "invalid": 0,
+            "missing": 0
+          },
+          "source": "existing cached predictions restricted by105 base_judge valid IDs",
+          "coverage_status": "complete_on_stated_cohort"
+        }
+      ],
+      "native103_coverage_note": "原作者式未微调9B不覆盖此共同集全部ID；仅原180表展示，未补跑。"
+    }
+  },
+  "baseline_identities": {
+    "paper_r1": "Author-released historical system; not same-Judge contemporaneous.",
+    "nine_native103": "Qwen3.5-9B original-author-style prompt; only180 completed. 4096 thinking+768 final, forced thinking boundary80/180.",
+    "base_judge105": "Unfinetuned same9B with104 rewritten prompt; no thinking, final384, old500 first receipts with15 truncations. Distinct fromnine_native103.",
+    "label_only107": "Same104 rewritten prompt, not original-author prompt; maintained ordinary fine-tuned baseline."
+  },
+  "native103_compute": {
+    "N": 180,
+    "exact_label_normalized": 0,
+    "forced_thinking_boundary": 80,
+    "invalid": 0,
+    "output_tokens": 17938,
+    "seconds": 4208.601582746953,
+    "strict_json_valid": 180,
+    "thinking_tokens": 534774
+  },
+  "native103_budget": {
+    "thinking_token_cap": 4096,
+    "final_token_cap": 768,
+    "forced_thinking_boundary": 80,
+    "total_N": 180,
+    "comparison_note": "Different prompt, thinking and output budgets versus104/105/107; not a matched single-factor training contrast."
+  }
+}

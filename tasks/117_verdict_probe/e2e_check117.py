@@ -1,4 +1,4 @@
-"""Small full-reference107 prefill plus two frozen CPU-head deployment check.
+"""Small full-reference107 prefill plus frozen CPU-head deployment check.
 
 No training or cached-state substitution.  Cached labels are loaded only after
 all live predictions.  This script never shuts down or releases the instance.
@@ -43,6 +43,13 @@ def classify(state, hidden):
     index = int(value.argmax(-1)[0])
     return dict(verdict=original.LABELS[index], valid=True,
                 probabilities=dict(zip(original.LABELS, probability)), probabilities_calibrated=False)
+
+
+def equal_mean(predictions, members):
+    values = {label: sum(predictions[name]['probabilities'][label] for name in members)/len(members)
+              for label in original.LABELS}
+    winner = max(original.LABELS, key=values.get)
+    return dict(verdict=winner, valid=True, probabilities=values, probabilities_calibrated=False)
 
 
 def main():
@@ -133,6 +140,11 @@ def main():
                 begin_head = time.perf_counter()
                 predictions[name] = classify(head, state)
                 head_times[name] = time.perf_counter()-begin_head
+            for name, members in job.get('equal_mean_heads', {}).items():
+                assert members and set(members) <= set(heads) and name not in heads
+                begin_head = time.perf_counter()
+                predictions[name] = equal_mean(predictions, members)
+                head_times[name] = time.perf_counter()-begin_head
         elapsed = time.perf_counter()-before
         record = dict(id=row['id'], input_tokens=len(sequence), prompt_tokens=len(sequence)-len(PREFIX),
                       tokenization_seconds=tokenization_seconds,
@@ -148,7 +160,7 @@ def main():
     # Expected cached predictions are not available to either live classifier.
     expected = common.read(resolve(job['cached_predictions']))
     checks = {}
-    for name in heads:
+    for name in [*heads, *job.get('equal_mean_heads', {})]:
         changed = []
         max_difference = 0.
         for row in measured:
@@ -167,7 +179,7 @@ def main():
                    min_live_seconds=min(times), max_live_seconds=max(times),
                    max_peak_allocated_bytes=max(row['peak_allocated_bytes'] for row in measured),
                    consistency=checks, epoch=time.time(), no_shutdown=True,
-                   measurement_scope='Original-reference tokenization, live107 prefill, transfer, and both frozen CPU heads; model loading separately timed; metadata-selected examples, not population throughput',
+                   measurement_scope='Original-reference tokenization, one live107 prefill, transfer, frozen CPU heads and fixed equal means; model loading separately timed; metadata-selected examples, not population throughput',
                    first_case_includes_first_use_overhead=True, cached_features_used_for_live_prediction=False,
                    new_training=False, new_API_calls=0)
     common.put(out/'complete.json', summary)

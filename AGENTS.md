@@ -43,6 +43,7 @@ MCC 和 false-S 相对更重要：前者反映类别失衡下的整体分类质�
 - 医生标签针对完整参考EHR；模型reference仅是实际检索输入，不是医生gold evidence。引用、理由、构造器/核对器输出不是新医生GT或内部推理证明。
 - 主指标使用verifact_research.evaluation.evaluate，配对使用paired_compare；允许独立算式/sklearn复核，但不另造标签映射。默认有效atomic claim，固定三分类micro PA/MCC/Gwet AC1，1000次患者cluster bootstrap。不同粒度、作者、有效性、自然/压力面板分开；具体冻结协议优先。
 - 主表按“配置｜MCC｜PA｜正确数｜错误支持数”，固定含原作者同ID结果，并报告Macro-F1、三类precision/recall/F1、confusion matrix、false-S/non-S及预测S假发现率。缺失/invalid/fallback单列，不能静默补旧答案。
+- 后续对比固定保留paper_r1、原作者式prompt＋未微调9B、107 label_only三类基线；按实际覆盖列同ID子集，缺失不填0。另列104新版prompt＋未微调9B作为107的提示词匹配对照；107并非作者原版prompt。117原MLP保留为有效取舍候选，不因推进加权方案而舍弃。
 - label_scores是LLM自报分数，不是真实token probability或已校准概率。区间跨0不等于等效；患者bootstrap不覆盖历史开发选择、重训或新医院泛化。
 - 用户可接受084程度的小幅false-S取舍，不把旧+3个百分点门槛当唯一升级标准；NS类别塌缩与总体风险仍完整披露。
 

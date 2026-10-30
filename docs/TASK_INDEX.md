@@ -6,6 +6,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|124_seed_mean_readout|[报告](../outputs/124_seed_mean_readout/final_report.md) · [完整结果](../outputs/124_seed_mean_readout/full1817.json)|固定160后补CPU1657；没有新训练/GPU/API|平方根均值保留；未加权均值相对原seed117没有明确增量，原MLP仍保留|
 |123_claim_only_control|[方案](../tasks/123_claim_only_control/CURRENT.md) · [词面控制](../outputs/123_claim_only_control/report.md)|同40人3675训练、20人1817评价；只去掉reference，不改GT|TF-IDF控制完成；同9B神经控制尚未启动GPU|
 |122_balanced_pool_sft|[当前方案](../tasks/122_balanced_pool_sft/CURRENT.md) · [进度](../outputs/122_balanced_pool_sft/实时进度.md)|32患者三类各243条、729条92步；最长原loss检查已通过|已从24步恢复训练，尚无分类结果；资源已延至20:57:46|
 |121_nearest_memory|[原160](../outputs/121_nearest_memory/report.md) · [固定扩展](../outputs/121_nearest_memory/reconsidered_extension.md)|无新GPU/API、原160复用、完整1817|MCC/PA提升伴随大幅false-S及少数类损失，较MLP取舍差|
