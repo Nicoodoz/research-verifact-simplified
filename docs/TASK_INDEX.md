@@ -8,7 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|134_author_baselines|[当前](../tasks/134_author_baselines/CURRENT.md) · [方案](../tasks/134_author_baselines/PROTOCOL.md) · [进度](../outputs/134_author_baselines/progress.md)|固定1817；已完成两臂500，共同495；paper_r1与匹配缓存复用|适配器正确+88、FS+31；继续新增1317，原作者接口尚无明确综合优势|
+|134_author_baselines|[当前](../tasks/134_author_baselines/CURRENT.md) · [方案](../tasks/134_author_baselines/PROTOCOL.md) · [进度](../outputs/134_author_baselines/progress.md)|未微调1817已完成、1806有效；适配器继续；500共同495已归档|未微调NA仅1/241正确；等待完整两臂比较，不填无效|
 |133_shuffle_repeat|[CPU状态](../tasks/133_shuffle_repeat/CURRENT.md)|固定训练顺序复验仅完成准备和CPU检查|依用户指令不启动，无分类结果|
 |132_midpoint_update|[最终结果](../outputs/132_midpoint_update/report.md) · [固定方案](../tasks/132_midpoint_update/PROTOCOL.md)|完整1817全有效，固定107/120更新中点|MCC .5988、正确1559、FS80/362；保留质量／风险取舍，不升级默认，按用户要求结束|
 |131_source_context_probe|[源文核查](../outputs/131_source_context_probe/report.md)|6例完整reference及相关原始note上下文；600片段可定位|没有新增分类成绩，未据此盲目扩大上下文或回填训练|

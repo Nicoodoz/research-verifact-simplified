@@ -1,9 +1,9 @@
-# 134 author_baselines：500阶段完成，继续新增1317
+# 134 author_baselines：未微调1817完成，适配器继续
 
-两臂各500首回执已完成，共同有效495。author_base9b／author_lora9b正确304／392、MCC .3945／.5820、false-S21／52（非S178）。适配器有质量收益和NS／false-S代价；相对104接口120少对2条、少3次false-S。
+author_base9b已返回1817条，1806有效、11截断；MCC .3425、正确1222、false-S44/361，NA仅1/241正确。较低false-S不能脱离NA损失称优。
 
-未微调3条截断、适配器2条JSON错误均保留；适配器另有76条有效标签缺reason。paper_r1直接复用；正在补两臂新增1317，不启动其他GPU实验。
+author_lora9b正在补新增1317。最近完整配对为原500：共同495，适配器正确392、MCC .5820、FS52/178；相对同权重104接口少对2、FS少3。新旧原始结果全部保留，无重发。
 
-GPU16元／API80元从2026-10-30 23:40起累计；不自动关机或释放。模型本身与输入优化的下一步须由完整基线和剩余预算决定。
+仍以23:40起GPU16元／API80元累计，不自动关机或释放。下一GPU研究等待完整统一比较。
 
-[阶段报告](../../outputs/134_author_baselines/report.md) · [进度](../../outputs/134_author_baselines/progress.md) · [冻结方案](PROTOCOL.md)
+[未微调完整阶段](../../outputs/134_author_baselines/base1817_stage.md) · [当前报告](../../outputs/134_author_baselines/report.md) · [实时进度](../../outputs/134_author_baselines/progress.md)

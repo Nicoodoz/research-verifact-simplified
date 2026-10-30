@@ -42,6 +42,10 @@ def main():
   source={r['id']:r for r in c.rows(path)};preds[name]={i:dict(verdict=source[i][field]) for i in valid}
  groups={'all':rows,'natural400':[r for r in rows if r['old_panel']=='natural'],'pressure100':[r for r in rows if r['old_panel']=='pressure'],
          'new1317':[r for r in rows if r['subset']=='new'],'history103_180':[r for r in rows if r['history103_panel'] in ('natural','pressure')]}
+ base104={}
+ if a.scope=='full1817':
+  base104={r['id']:r for r in c.rows(R/'outputs/105_brief_supervision/predictions_sanitized.jsonl') if r['arm']=='base_judge' and r['parsed']['valid']}
+  groups['same104_base_cached']=[r for r in rows if r['id'] in base104]
  standalone={}
  for arm in job['arms']:
   own=[keys[i] for i in sorted(target) if receipts[arm][i]['parsed']['valid']]
@@ -60,9 +64,14 @@ def main():
    if any(not historical[r['id']]['arms']['nine_native']['valid'] for r in rs):raise ValueError('Unexpected invalid historical103 row')
    score['base9b_thinking103_history']=metrics(rs,{r['id']:historical[r['id']]['predictions']['nine_native'] for r in rs})
    result['historical103_note']='Separate180 subset only: same upstream template but thinking4096 plus final768 with historical forced-thinking-stop behavior; never merged into the no-thinking baseline or attributed as a pure training effect.'
+  if name=='same104_base_cached':
+   score['base9b_104_cached105']=metrics(rs,{r['id']:base104[r['id']]['parsed']['verdict'] for r in rs})
+   result['cached104_note']='Existing485 valid of500 only, intersected with current common valid IDs;104 prompt, no-thinking,384 final tokens. The original15 invalid outputs remain excluded and are not filled.'
   pairs={}
-  for arm,reference in [('author_lora9b','author_base9b'),('author_lora9b','full_pool120'),('author_lora9b','label_only107'),('author_base9b','paper_r1')]:
-   pairs[arm+'_vs_'+reference]=paired(rs,preds[reference],preds[arm],reference,bootstrap=a.bootstrap and name=='all')
+  comparisons=[('author_lora9b','author_base9b'),('author_lora9b','full_pool120'),('author_lora9b','label_only107'),('author_base9b','paper_r1')]
+  if a.scope=='full1817':comparisons += [('author_lora9b','paper_r1'),('author_lora9b','midpoint132')]
+  for arm,reference in comparisons:
+   pairs[arm+'_vs_'+reference]=paired(rs,preds[reference],preds[arm],reference,bootstrap=a.bootstrap and name=='all' and arm=='author_lora9b')
   result['panels'][name]=dict(N=len(rs),scores=score,comparisons=pairs)
  for author in sorted({r['author'] for r in rows}):
   rs=[r for r in rows if r['author']==author]
