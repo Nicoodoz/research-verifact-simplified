@@ -20,6 +20,12 @@ def main():
         original_GT_unchanged=True,no_training=True,no_old_reason_reuse=True,
         original_full_reference=True,all_outputs_first_receipts=True,source_review_cases=len(checked),
         main120_results_unchanged=True,models={})
+    summary['historical_paper_r1']=dict(N=len(meta),correct_to_original_GT_N=sum(r['paper_r1']==r['GT'] for r in meta.values()),
+        generated_in_this_task=False,reason_requested_in_this_task=False)
+    summary['review_scope']=dict(reviewer='Codex root AI-assisted review, not independent physician certification',
+        consistency='Reason must justify its own verdict; unresolved scope or class-boundary inference is unclear.',
+        grounding='Does the actual supplied reference support the reason facts and relation? OriginalGT agreement is a separate axis.',
+        full_source6_selected_before_outputs=True,unreviewed_other_sources=14)
     for arm in job['arms']:
         rows=[]
         for identifier in job['ids']:

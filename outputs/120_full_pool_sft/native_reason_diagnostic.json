@@ -1,0 +1,84 @@
+{
+  "scope": "20 purposeful native-output diagnostic cases, not population accuracy",
+  "original_GT_unchanged": true,
+  "no_training": true,
+  "no_old_reason_reuse": true,
+  "original_full_reference": true,
+  "all_outputs_first_receipts": true,
+  "source_review_cases": 6,
+  "main120_results_unchanged": true,
+  "models": {
+    "base_original9b": {
+      "expected_N": 20,
+      "received_N": 20,
+      "missing_N": 0,
+      "label_valid_N": 20,
+      "pair_valid_N": 20,
+      "correct_to_original_GT_N": 8,
+      "consistency": {
+        "consistent": 15,
+        "unclear": 5
+      },
+      "fixed6_grounding": {
+        "supported": 4,
+        "ambiguous": 1,
+        "unsupported_detail": 1
+      },
+      "total_seconds": 169.06875160429627
+    },
+    "label_only107": {
+      "expected_N": 20,
+      "received_N": 20,
+      "missing_N": 0,
+      "label_valid_N": 20,
+      "pair_valid_N": 18,
+      "correct_to_original_GT_N": 11,
+      "consistency": {
+        "consistent": 14,
+        "unclear": 3,
+        "not_evaluable": 2,
+        "inconsistent": 1
+      },
+      "fixed6_grounding": {
+        "supported": 1,
+        "not_evaluable": 2,
+        "unsupported_detail": 2,
+        "contradicted": 1
+      },
+      "total_seconds": 106.99717666301876
+    },
+    "final369_120": {
+      "expected_N": 20,
+      "received_N": 20,
+      "missing_N": 0,
+      "label_valid_N": 20,
+      "pair_valid_N": 16,
+      "correct_to_original_GT_N": 15,
+      "consistency": {
+        "consistent": 10,
+        "unclear": 6,
+        "not_evaluable": 4
+      },
+      "fixed6_grounding": {
+        "supported": 1,
+        "not_evaluable": 3,
+        "unsupported_detail": 1,
+        "ambiguous": 1
+      },
+      "total_seconds": 102.04658098891377
+    }
+  },
+  "historical_paper_r1": {
+    "N": 20,
+    "correct_to_original_GT_N": 12,
+    "generated_in_this_task": false,
+    "reason_requested_in_this_task": false
+  },
+  "review_scope": {
+    "reviewer": "Codex root AI-assisted review, not independent physician certification",
+    "consistency": "Reason must justify its own verdict; unresolved scope or class-boundary inference is unclear.",
+    "grounding": "Does the actual supplied reference support the reason facts and relation? OriginalGT agreement is a separate axis.",
+    "full_source6_selected_before_outputs": true,
+    "unreviewed_other_sources": 14
+  }
+}
