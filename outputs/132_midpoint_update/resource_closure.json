@@ -1,0 +1,19 @@
+{
+  "status": "USER_CONFIRMED_POWERED_OFF",
+  "confirmation_recorded_at_beijing": "2026-10-30 22:12:26 +08:00",
+  "actual_shutdown_time": null,
+  "authorized_GPU_deadline_beijing": "2026-10-30 22:05:00 +08:00",
+  "assistant_sent_shutdown": false,
+  "no_reconnection_after_confirmation": true,
+  "new_GPU_authorization_required": true,
+  "completed_first_predictions": 160,
+  "remaining_original500_predictions": 340,
+  "additional687_started": false,
+  "all_actual_predictions_and_adapter_locally_saved": true,
+  "last_confirmed_return_epoch": 1793366359.4859998,
+  "last_confirmed_window_rental_estimate_CNY": 13.207696633255484,
+  "prior_window_estimate_CNY": 6.388905555555556,
+  "actual_final_GPU_bill_CNY": null,
+  "paid_API_CNY": 0,
+  "billing_note": "User confirmed powered off but did not give the shutdown time; neither SSH refusal nor message-recording time is a billing cutoff."
+}
