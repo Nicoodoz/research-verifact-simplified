@@ -1,0 +1,24 @@
+{
+  "cycle": 3,
+  "start_epoch": 1793320704,
+  "start_beijing": "2026-10-30 08:38:24",
+  "duration_seconds": 21600,
+  "deadline_beijing": "2026-10-30 14:38:24",
+  "GPU_cap_CNY": 9.48,
+  "API_cap_CNY": 80,
+  "hourly_CNY": 1.58,
+  "no_shutdown": true,
+  "authorization": "User explicitly authorized a new6-hour research/GPU window",
+  "previous_window_start_epoch": 1793287154,
+  "previous_window_closed_at_epoch": 1793320704,
+  "API_budget_scope": "Original80CNY cumulative allowance; not reset; used0",
+  "original_goal_start_epoch": 1793287154,
+  "previous_window": {
+    "start_beijing": "2026-10-29 23:19:14",
+    "original_deadline_beijing": "2026-10-30 09:19:14",
+    "closed_at_beijing": "2026-10-30 08:38:24",
+    "GPU_upper_estimate_if_continuously_on_CNY": 14.724722222222223,
+    "exact_GPU_cost_unknown_due_to_instance_stop_and_restart": true,
+    "API_used_CNY": 0
+  }
+}

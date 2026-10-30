@@ -1,0 +1,15 @@
+{
+  "status": "RECOVERED_SCREENING",
+  "epoch": 1793320649.6475637,
+  "selected_step": 128,
+  "last_complete_step": 272,
+  "original_planned_steps": 369,
+  "original_plan_completed": false,
+  "selection_only_internal_validation": true,
+  "screen_results_read": false,
+  "reason": "Instance interruption; remaining original night time cannot fit97 additional steps and validation",
+  "evaluate_only_preexisting_best": true,
+  "no_training_resumed": true,
+  "original_night_start_epoch": 1793287154,
+  "no_shutdown": true
+}
