@@ -8,13 +8,14 @@ sys.path.insert(0,str(ROOT/'tasks/120_full_pool_sft'));from analyze120 import co
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--scope',choices=('screen160','old500','internal687'),default='screen160')
+    p=argparse.ArgumentParser();p.add_argument('--scope',choices=('screen160','old500','selection1817','internal687'),default='screen160')
     p.add_argument('--runtime-root',type=Path,default=P,help='A fresh private runtime folder preserves earlier frozen sessions')
     a=p.parse_args()
     comp=c.read(P/'adapter_final/composition.json')
     keys=c.rows(ROOT/'.local_models/116_research_cycle/keys_selection1817.jsonl')
     screen=c.read(ROOT/'.local_models/117_verdict_probe/data_selection.json')['screen_ids']
     target=screen if a.scope=='screen160' else sorted(r['id'] for r in keys if r['old_panel'] in ('natural','pressure'))
+    if a.scope=='selection1817':target=sorted(r['id'] for r in keys)
     if a.scope=='internal687':
         internal=c.rows(ROOT/'outputs/120_full_pool_sft/internal687_predictions_sanitized.jsonl')
         target=sorted(r['id'] for r in internal)
@@ -23,6 +24,12 @@ def main():
     if a.scope=='old500':
         if not c.read(ROOT/'outputs/132_midpoint_update/screen160.json')['continue_']:raise ValueError('The fixed screening rule did not pass')
         if len(prior)!=160 or any(r['source_adapter_sha256']!=comp['adapter_sha256'] for r in prior):raise ValueError('Need the unchanged160 first receipts')
+    if a.scope=='selection1817':
+        if not c.read(ROOT/'outputs/132_midpoint_update/decision500.json')['continue_to1817']:
+            raise ValueError('Complete500 did not justify the larger fixed evaluation')
+        prior=collect([P/'evidence/midpoint_screen160',P/'evidence/midpoint_old500'])
+        if len(prior)!=500 or any(r['source_adapter_sha256']!=comp['adapter_sha256'] for r in prior):
+            raise ValueError('Reuse all500 first receipts, including invalid ones')
     complete={r['id'] for r in prior};needed=[i for i in target if i not in complete]
     input_path=ROOT/'.local_models/116_research_cycle/inputs_selection1817.jsonl'
     if a.scope=='internal687':input_path=ROOT/'.local_models/120_full_pool_sft/internal687/bundle/data/internal687/internal120_inputs.jsonl'
@@ -41,7 +48,7 @@ def main():
         adapter_sha256=comp['adapter_sha256'],inputs_path=rel+'/inputs.jsonl',session_path=rel+'/session.json',
         session_sha256=c.sha(data/'session.json'),ids=needed,N=len(needed),max_seq_length=16384,seed=117027,
         evaluation=dict(batch_size=2,max_new_tokens=384,do_sample=False,num_beams=1,repetition_penalty=1.,parser='parse105.parse'),
-        phase_limit_seconds=1000 if a.scope=='screen160' else (1800 if a.scope=='old500' else 2400),save_reserve_seconds=180,
+        phase_limit_seconds=1000 if a.scope=='screen160' else (1800 if a.scope=='old500' else (5400 if a.scope=='selection1817' else 2400)),save_reserve_seconds=180,
         no_training=True,no_shutdown=True,first_receipts_only=True)
     c.frozen(data/'job.json',(json.dumps(job,indent=2)+'\n').encode())
     files=['tasks/132_midpoint_update/compose132.py','tasks/132_midpoint_update/controller132.py',

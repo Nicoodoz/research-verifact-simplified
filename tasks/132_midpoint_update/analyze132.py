@@ -9,11 +9,14 @@ from final_compare120 import paired,metrics,LABELS
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--scope',choices=('screen160','old500','internal687'),default='screen160');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--scope',choices=('screen160','old500','selection1817','internal687'),default='screen160');a=p.parse_args()
     keys={r['id']:r for r in c.rows(ROOT/'.local_models/116_research_cycle/keys_selection1817.jsonl')}
     target=c.read(ROOT/'.local_models/117_verdict_probe/data_selection.json')['screen_ids'] if a.scope=='screen160' else sorted(i for i,r in keys.items() if r['old_panel'] in ('natural','pressure'))
     paths=[P/'evidence/midpoint_screen160']
     if a.scope=='old500':paths.append(P/'evidence/midpoint_old500')
+    if a.scope=='selection1817':
+        target=sorted(keys)
+        paths+=[P/'evidence/midpoint_old500',P/'evidence/midpoint_selection1817']
     internal=[]
     if a.scope=='internal687':
         internal=c.rows(ROOT/'outputs/120_full_pool_sft/internal687_predictions_sanitized.jsonl')
@@ -34,12 +37,13 @@ def main():
     joint=[keys[i] for i in target if new[i]['valid']]
     groups={'all':joint}
     native103={};base105={}
-    if a.scope=='old500':
+    if a.scope in ('old500','selection1817'):
         groups.update({panel:[r for r in joint if r['old_panel']==panel] for panel in ('natural','pressure')})
+        if a.scope=='selection1817':groups['new1317']=[r for r in joint if r.get('subset')=='new']
         native103={r['id']:r for r in c.rows(ROOT/'outputs/103_lora_selection/final_paired_predictions.jsonl')}
         base105={r['id']:r for r in c.rows(ROOT/'outputs/105_brief_supervision/predictions_sanitized.jsonl') if r['arm']=='base_judge'}
         for panel in ('natural','pressure'):
-            groups['same103_'+panel]=[r for r in joint if r['old_panel']==panel and r['id'] in native103 and native103[r['id']]['arms']['nine_native']['valid']]
+            groups['same103_'+panel]=[r for r in joint if r['id'] in native103 and native103[r['id']]['panel']==panel and native103[r['id']]['arms']['nine_native']['valid']]
             groups['same105base_'+panel]=[r for r in joint if r['old_panel']==panel and r['id'] in base105 and base105[r['id']]['parsed']['valid']]
     result=dict(scope=a.scope,expected_N=len(target),received_N=len(values),joint_valid_N=len(joint),invalid_N=len(values)-len(joint),
         fixed_alpha=.5,source107_sha256=c.read(P/'adapter_final/composition.json')['source107_sha256'],
@@ -56,7 +60,8 @@ def main():
         if name.startswith('same105base_'):
             if any(base105[r['id']]['prompt_token_sha256']!=b107[r['id']]['prompt_token_sha256'] for r in rows):raise ValueError('Cached unfine-tuned prompt differs')
             scores['base9b_same104_prompt_cached105']=metrics(rows,{r['id']:base105[r['id']]['parsed']['verdict'] for r in rows})
-        result['panels'][name]=dict(scores=scores,vs107=paired(rows,b107,new,'label_only107'),vs120=paired(rows,b120,new,'full_pool120'))
+        bootstrap=a.scope=='selection1817' and name=='all' and len(rows)==1817
+        result['panels'][name]=dict(scores=scores,vs107=paired(rows,b107,new,'label_only107',bootstrap=bootstrap),vs120=paired(rows,b120,new,'full_pool120',bootstrap=bootstrap))
     result['by_author']={author:dict(vs107=paired([r for r in joint if r['author']==author],b107,new,'label_only107'),
         vs120=paired([r for r in joint if r['author']==author],b120,new,'full_pool120')) for author in sorted({r['author'] for r in joint})}
     if a.scope=='screen160':

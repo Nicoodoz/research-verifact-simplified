@@ -1,0 +1,23 @@
+{
+  "continue_to1817": true,
+  "decision": "Expand the same fixed midpoint; no new coefficient or training",
+  "basis": {
+    "valid": 500,
+    "versus120_delta_correct": -3,
+    "versus120_delta_false_S": -12,
+    "versus120_delta_MCC": -0.0022802351531685527,
+    "natural_versus107_delta_correct": 21,
+    "natural_versus107_delta_false_S": 6,
+    "natural_versus107_delta_MCC": 0.06205188646090265,
+    "pressure_versus107_delta_correct": -3,
+    "pressure_versus107_delta_false_S": 9
+  },
+  "interpretation": "A plausible quality-risk compromise against120, with a material residual risk cost against107. Full development-cohort evaluation is warranted; success is not established.",
+  "new_predictions": 1317,
+  "cached_first_predictions": 500,
+  "estimated_minutes": [45, 55],
+  "new_coefficient_search": false,
+  "confirmation_patients_used": false,
+  "GPU_budget_window": "2026-10-30 22:15 BJT,19CNY cap at1.58CNY/h",
+  "no_shutdown": true
+}
