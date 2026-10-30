@@ -1,0 +1,107 @@
+{
+  "N": 9,
+  "all_human": true,
+  "sampling": "fixed outcome strata; new-patient preference; not a representative quality sample",
+  "physician_GT_unchanged": true,
+  "cases": [
+    {
+      "id": "09bae9ba-e0ed-98c3-d53c-3543cb816711",
+      "GT": "Not Supported",
+      "baseline107": "Not Addressed",
+      "candidate120": "Supported",
+      "selection_bucket": "falseS_new",
+      "assessment": "visible_scope_exception_conflict",
+      "full_input_reviewed": true,
+      "model_mechanism_not_proven": true,
+      "training_use": false
+    },
+    {
+      "id": "0e779106-0bfb-741e-0de6-1b183a1101b2",
+      "GT": "Not Supported",
+      "baseline107": "Not Supported",
+      "candidate120": "Supported",
+      "selection_bucket": "falseS_new",
+      "assessment": "missing_decisive_postoperative_duration",
+      "full_input_reviewed": true,
+      "model_mechanism_not_proven": true,
+      "training_use": false
+    },
+    {
+      "id": "0d7f4d79-7f2a-e785-2b84-0dbaee3b3d20",
+      "GT": "Not Supported",
+      "baseline107": "Not Addressed",
+      "candidate120": "Not Supported",
+      "selection_bucket": "NS_rescued",
+      "assessment": "partial_support_with_unestablished_total",
+      "full_input_reviewed": true,
+      "model_mechanism_not_proven": true,
+      "training_use": false
+    },
+    {
+      "id": "178458df-82cf-9ca7-eaf2-ab56136aaef9",
+      "GT": "Not Supported",
+      "baseline107": "Not Supported",
+      "candidate120": "Supported",
+      "selection_bucket": "NS_harmed",
+      "assessment": "ambiguous_date_attachment",
+      "full_input_reviewed": true,
+      "model_mechanism_not_proven": true,
+      "training_use": false
+    },
+    {
+      "id": "1055ac69-65b3-3649-df84-25dc19e4a7e1",
+      "GT": "Not Addressed",
+      "baseline107": "Not Supported",
+      "candidate120": "Not Addressed",
+      "selection_bucket": "NA_rescued",
+      "assessment": "unaddressed_causal_link_with_separate_later_episode",
+      "full_input_reviewed": true,
+      "model_mechanism_not_proven": true,
+      "training_use": false
+    },
+    {
+      "id": "1dfc4f7d-9a23-af49-13f6-6710ac94ce93",
+      "GT": "Not Addressed",
+      "baseline107": "Not Addressed",
+      "candidate120": "Supported",
+      "selection_bucket": "NA_harmed",
+      "assessment": "routine_process_inference_not_fully_established",
+      "full_input_reviewed": true,
+      "model_mechanism_not_proven": true,
+      "training_use": false
+    },
+    {
+      "id": "30582e21-7f96-04c5-6273-d5b671aa9ea9",
+      "GT": "Not Addressed",
+      "baseline107": "Not Addressed",
+      "candidate120": "Supported",
+      "selection_bucket": "NA_harmed",
+      "assessment": "earlier_state_extrapolated_to_discharge",
+      "full_input_reviewed": true,
+      "model_mechanism_not_proven": true,
+      "training_use": false
+    },
+    {
+      "id": "07b4ac66-8e17-4720-5aac-b80383f02c9b",
+      "GT": "Supported",
+      "baseline107": "Not Supported",
+      "candidate120": "Supported",
+      "selection_bucket": "S_rescued",
+      "assessment": "overall_trend_supported_with_interim_reversal",
+      "full_input_reviewed": true,
+      "model_mechanism_not_proven": true,
+      "training_use": false
+    },
+    {
+      "id": "0bcc61a0-2dc6-fbbb-bde5-7c6db9fccc2f",
+      "GT": "Supported",
+      "baseline107": "Not Supported",
+      "candidate120": "Supported",
+      "selection_bucket": "S_rescued",
+      "assessment": "partial_removal_evidence_broad_summary_label",
+      "full_input_reviewed": true,
+      "model_mechanism_not_proven": true,
+      "training_use": false
+    }
+  ]
+}
