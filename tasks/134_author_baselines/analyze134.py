@@ -50,6 +50,11 @@ def main():
  for name,rs in groups.items():
   if not rs:continue
   score={arm:metrics(rs,{r['id']:v[r['id']]['verdict'] for r in rs}) for arm,v in preds.items()}
+  if a.scope=='full1817' and name=='history103_180':
+   historical={r['id']:r for r in c.rows(R/'outputs/103_lora_selection/final_paired_predictions.jsonl')}
+   if any(not historical[r['id']]['arms']['nine_native']['valid'] for r in rs):raise ValueError('Unexpected invalid historical103 row')
+   score['base9b_thinking103_history']=metrics(rs,{r['id']:historical[r['id']]['predictions']['nine_native'] for r in rs})
+   result['historical103_note']='Separate180 subset only: same upstream template but thinking4096 plus final768 with historical forced-thinking-stop behavior; never merged into the no-thinking baseline or attributed as a pure training effect.'
   pairs={}
   for arm,reference in [('author_lora9b','author_base9b'),('author_lora9b','full_pool120'),('author_lora9b','label_only107'),('author_base9b','paper_r1')]:
    pairs[arm+'_vs_'+reference]=paired(rs,preds[reference],preds[arm],reference,bootstrap=a.bootstrap and name=='all')
