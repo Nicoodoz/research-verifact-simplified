@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "contract_version": "127_optional_reason_v1",
+  "real_reason_generated": false,
+  "real_model_fitted": false,
+  "GPU_calls": 0,
+  "API_calls": 0,
+  "exact_verdict_span_with_label_words_in_reason": true,
+  "JSON_escaping_and_EOS": true,
+  "prompt_and_pad_masks": true,
+  "GT_free_input": true,
+  "unchanged105_segmented_loss": true,
+  "tail_divisor": true,
+  "patient32_8_isolation": true,
+  "unapproved_reason_rejected": true,
+  "original104_task_and_classes_preserved": true
+}

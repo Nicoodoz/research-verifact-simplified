@@ -1,0 +1,154 @@
+{
+  "status": "PASS",
+  "real_pairs": 15,
+  "train_pairs": 11,
+  "validation_pairs": 4,
+  "exact_same_prompt_for_both_targets": true,
+  "source_clinical_UTF8_unchanged": true,
+  "no_input_truncation": true,
+  "max_prompt_tokens": 10376,
+  "max_total_tokens": 10444,
+  "reason_contains_label_phrase_N": 3,
+  "verdict_span_verified_for_every_pair": true,
+  "EOS_and_prompt_mask_verified": true,
+  "synthetic_final_check": "PASS (cpu_contract_selfcheck.json)",
+  "no_GPU_or_model_fitting": true,
+  "no_API_calls": true,
+  "details": [
+    {
+      "id": "0f1ec35a-848f-f673-7bee-bd39a1c22af9",
+      "fit_role": "train",
+      "GT": "Not Addressed",
+      "prompt_tokens": 8439,
+      "label_only_tokens": 8448,
+      "verdict_reason_tokens": 8492,
+      "verdict_tokens": 3
+    },
+    {
+      "id": "17870c84-3792-6e81-28c6-ec9ff749174d",
+      "fit_role": "train",
+      "GT": "Not Addressed",
+      "prompt_tokens": 8548,
+      "label_only_tokens": 8557,
+      "verdict_reason_tokens": 8592,
+      "verdict_tokens": 3
+    },
+    {
+      "id": "2e2c5804-379d-2bf2-cc52-b614f463c525",
+      "fit_role": "train",
+      "GT": "Supported",
+      "prompt_tokens": 10376,
+      "label_only_tokens": 10383,
+      "verdict_reason_tokens": 10444,
+      "verdict_tokens": 1
+    },
+    {
+      "id": "4666e549-709e-66b9-c513-4302121b70d7",
+      "fit_role": "train",
+      "GT": "Not Supported",
+      "prompt_tokens": 9151,
+      "label_only_tokens": 9159,
+      "verdict_reason_tokens": 9218,
+      "verdict_tokens": 2
+    },
+    {
+      "id": "4f2a8b8c-2f35-1301-bc3e-c5367f80ac35",
+      "fit_role": "train",
+      "GT": "Supported",
+      "prompt_tokens": 8578,
+      "label_only_tokens": 8585,
+      "verdict_reason_tokens": 8630,
+      "verdict_tokens": 1
+    },
+    {
+      "id": "74447773-de76-7809-b8f0-d0526081f6ad",
+      "fit_role": "train",
+      "GT": "Supported",
+      "prompt_tokens": 8625,
+      "label_only_tokens": 8632,
+      "verdict_reason_tokens": 8663,
+      "verdict_tokens": 1
+    },
+    {
+      "id": "7712a8a0-d902-8410-110c-3af70f5c44de",
+      "fit_role": "train",
+      "GT": "Not Supported",
+      "prompt_tokens": 7733,
+      "label_only_tokens": 7741,
+      "verdict_reason_tokens": 7788,
+      "verdict_tokens": 2
+    },
+    {
+      "id": "83b02a80-5392-c7fe-dd94-36a7ff3b9a3c",
+      "fit_role": "train",
+      "GT": "Not Supported",
+      "prompt_tokens": 9048,
+      "label_only_tokens": 9056,
+      "verdict_reason_tokens": 9109,
+      "verdict_tokens": 2
+    },
+    {
+      "id": "83be54d7-a9e6-2075-37bb-5136069898dd",
+      "fit_role": "train",
+      "GT": "Not Addressed",
+      "prompt_tokens": 7430,
+      "label_only_tokens": 7439,
+      "verdict_reason_tokens": 7492,
+      "verdict_tokens": 3
+    },
+    {
+      "id": "9046bfb2-d8d3-726e-4aa0-744da88c20e2",
+      "fit_role": "train",
+      "GT": "Not Addressed",
+      "prompt_tokens": 7230,
+      "label_only_tokens": 7239,
+      "verdict_reason_tokens": 7283,
+      "verdict_tokens": 3
+    },
+    {
+      "id": "c0dbafa6-5831-ab0b-623c-a42f4884fb16",
+      "fit_role": "train",
+      "GT": "Supported",
+      "prompt_tokens": 6922,
+      "label_only_tokens": 6929,
+      "verdict_reason_tokens": 6970,
+      "verdict_tokens": 1
+    },
+    {
+      "id": "10fd76fe-721c-427c-f51e-ddc650149223",
+      "fit_role": "validation",
+      "GT": "Supported",
+      "prompt_tokens": 7821,
+      "label_only_tokens": 7828,
+      "verdict_reason_tokens": 7886,
+      "verdict_tokens": 1
+    },
+    {
+      "id": "8217b1bf-45cd-8293-c33d-8e74fad389dc",
+      "fit_role": "validation",
+      "GT": "Not Supported",
+      "prompt_tokens": 8879,
+      "label_only_tokens": 8887,
+      "verdict_reason_tokens": 8944,
+      "verdict_tokens": 2
+    },
+    {
+      "id": "f25ed7c4-758e-f020-d184-f22efbf2c18e",
+      "fit_role": "validation",
+      "GT": "Not Addressed",
+      "prompt_tokens": 7436,
+      "label_only_tokens": 7445,
+      "verdict_reason_tokens": 7497,
+      "verdict_tokens": 3
+    },
+    {
+      "id": "ff6d45a9-5590-5d60-ac61-eeae7caf3394",
+      "fit_role": "validation",
+      "GT": "Supported",
+      "prompt_tokens": 6993,
+      "label_only_tokens": 7000,
+      "verdict_reason_tokens": 7057,
+      "verdict_tokens": 1
+    }
+  ]
+}

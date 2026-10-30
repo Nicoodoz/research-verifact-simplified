@@ -1,0 +1,84 @@
+{
+  "status": "CPU_DATA_PREPARATION_COMPLETE_NOT_EFFECT_VALIDATED",
+  "original_pool_N": 3675,
+  "patient_split": {
+    "train": 32,
+    "validation": 8
+  },
+  "reviewed_N": 24,
+  "reviewed_class_counts": {
+    "Not Addressed": 8,
+    "Not Supported": 8,
+    "Supported": 8
+  },
+  "reliable_paired_N": 15,
+  "reliable_class_counts": {
+    "Not Addressed": 5,
+    "Not Supported": 4,
+    "Supported": 6
+  },
+  "reliable_by_role_GT": {
+    "train/Not Addressed": 4,
+    "train/Not Supported": 3,
+    "train/Supported": 4,
+    "validation/Not Addressed": 1,
+    "validation/Not Supported": 1,
+    "validation/Supported": 2
+  },
+  "unresolved_N": 9,
+  "unresolved_class_counts": {
+    "Not Addressed": 3,
+    "Not Supported": 4,
+    "Supported": 2
+  },
+  "not_reviewed_N": 3651,
+  "all_label_only_N": 3675,
+  "prior105_same_ID_N": 12,
+  "prior105_comparison": {
+    "limited_scope_clarification_not_proven_quality_gain": 1,
+    "no_substantial_semantic_improvement": 11
+  },
+  "newly_usable_beyond105_N": 3,
+  "newly_usable_class_counts": {
+    "Not Addressed": 1,
+    "Supported": 2
+  },
+  "teacher_disagreement_reviewed_N": 13,
+  "teacher_disagreement_approved_N": 4,
+  "unresolved_issue_counts": {
+    "ALTERNATIVE_CAUSE_IS_NOT_NEGATION": 1,
+    "CLAIM_CONDITION_ANTECEDENT_UNRESOLVED": 1,
+    "DATE_NOT_EXCLUDED_BY_CROSS_DAY_WINDOW": 1,
+    "GT_REFERENCE_TENSION": 2,
+    "GT_reference_relation_tension": 4,
+    "UNSPECIFIED_TREATMENT_EPISODE": 1,
+    "USUAL_THRESHOLD_NOT_ABSOLUTE": 1,
+    "VAGUE_RESPONSE_DEGREE": 1,
+    "adjunct_vs_transition_distinction": 1,
+    "clinical_paraphrase_boundary": 1,
+    "conflicting_causal_evidence": 1,
+    "date_specific_assertion_not_resolved": 1,
+    "hedged_causal_claim": 1,
+    "measurement_versus_clinical_diagnosis_ambiguity": 1,
+    "measurement_vs_diagnosis_ambiguity": 1,
+    "oral_route_not_explicit": 1,
+    "planned_versus_completed_treatment": 1,
+    "relative_time_interval_ambiguity": 1,
+    "resolution_mode_not_explicit": 1,
+    "temporal_versus_causal_reading_ambiguous": 1,
+    "temporal_vs_causal_relation_ambiguous": 1,
+    "time_specific_evidence_mixed": 1,
+    "treatment_timing_uncertain": 1
+  },
+  "expanded_after_pilot": false,
+  "stop_reason": "No demonstrated substantive semantic improvement on the12 prior105 pairs; only3 additional defensible reasons, including0 NS. Do not mass-generate to a quota.",
+  "original_GT_changed": false,
+  "original_claim_or_reference_changed": false,
+  "selection20_used": false,
+  "confirmation40_used": false,
+  "new_GPU_training": false,
+  "new_paid_API_calls": 0,
+  "clinical_reason_source": "AI-assisted Codex primary review and cross-review; not physician-authored or independently clinically certified",
+  "classifier_benefit_tested": false,
+  "dataset_private_path": ".local_models/127_native_reason_data/dataset_v1"
+}
