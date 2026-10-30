@@ -1,0 +1,23 @@
+{
+  "N": 687,
+  "patients": 8,
+  "GT": {
+    "Not Addressed": 150,
+    "Supported": 492,
+    "Not Supported": 45
+  },
+  "original107_training_IDs_excluded": 43,
+  "additional120_training_IDs": 2945,
+  "cached107_N": 69,
+  "new107_N": 618,
+  "new120_N": 687,
+  "max_input_tokens": 13225,
+  "no_truncation": true,
+  "no_training": true,
+  "no_new_configuration": true,
+  "confirmation40_used": false,
+  "patient_exposure": "Original8 validation patients, historically exposed;43 other claims supervised in107.",
+  "cached_batch_size": 1,
+  "new_batch_size": 2,
+  "GPU_started": false
+}
