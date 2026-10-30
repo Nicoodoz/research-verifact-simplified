@@ -1,0 +1,47 @@
+{
+  "scope": "134 author_lora9b full1817 and135 reason_first160 existing outputs; no new inference",
+  "retrieval": "Lexical candidate search for explicit support/contradiction wording, followed by manual reading of all2 candidates",
+  "author_lora9b": {
+    "received": 1817,
+    "valid": 1804,
+    "nonempty_reason": 1638,
+    "lexical_candidates": 2,
+    "manually_confirmed_direct_inconsistencies": 2
+  },
+  "reason_first": {
+    "received": 160,
+    "nonempty_reason": 160,
+    "lexical_candidates": 0,
+    "not_a_coherence_guarantee": true
+  },
+  "limitation": "This is targeted retrieval, not exhaustive semantic adjudication;2 is a confirmed case count, not an estimated overall inconsistency rate. The two arms have different scope. No label or reason was rewritten.",
+  "cases": [
+    {
+      "id": "2aee6f2d-2798-e25e-0167-932900b1b27b",
+      "GT": "Supported",
+      "verdict": "Supported",
+      "reason_expressed_position": "Not Supported",
+      "in_reason_first160": false,
+      "evidence_kind": "reason explicitly says the reference contradicts the claim",
+      "manual_status": "direct wording inconsistency confirmed",
+      "labels_or_reason_changed": false
+    },
+    {
+      "id": "981911ca-41fe-162e-ce3e-14fcd5c25a71",
+      "GT": "Supported",
+      "verdict": "Supported",
+      "reason_expressed_position": "Not Supported",
+      "in_reason_first160": true,
+      "evidence_kind": "reason ends with an explicit Not Supported verdict",
+      "manual_status": "direct wording inconsistency confirmed",
+      "labels_or_reason_changed": false,
+      "matched_reason_first_result": {
+        "verdict": "Not Supported",
+        "reason_expressed_position": "Not Supported",
+        "label_correct_against_original_GT": false,
+        "verbal_position_matches_label": true,
+        "interpretation": "On this single matched ID, verbal consistency improved while the previously correct S label became wrong. This does not estimate a global effect or establish explanation truth."
+      }
+    }
+  ]
+}

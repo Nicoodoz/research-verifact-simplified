@@ -34,8 +34,23 @@ def main():
   lines += [name,'','|GT\\预测|S|NS|NA|','|---|---:|---:|---:|']
   for label,row in zip(['S','NS','NA'],m['confusion_matrix']):lines.append('|'+label+'|'+'|'.join(map(str,row))+'|')
   lines.append('')
- if 'patient_bootstrap' in p:lines+=['患者配对区间与风险区间已保留在统计JSON。区间不覆盖历史选型、重训或新医院泛化。','']
+ if 'patient_bootstrap' in p:
+  ci=p['patient_bootstrap']['metrics']['mcc']['ci95'];pa=p['patient_bootstrap']['metrics']['percent_agreement']['ci95']
+  lines += [f'1000次患者配对bootstrap：ΔMCC 95%区间[{ci[0]:+.4f}, {ci[1]:+.4f}]；ΔPA区间[{pa[0]:+.2%}, {pa[1]:+.2%}]。',
+   '区间仅描述当前开发患者的簇抽样，不覆盖历史选型、重训或新医院泛化；跨0不等于方法等效。风险与三类召回区间保留在统计JSON。','']
  lines+=['## 输入、覆盖与成本','',f"缺失{len(v['coverage']['missing_ids'])}，无效{len(v['coverage']['invalid_ids'])}；每个ID只保留首次返回，不因标签好坏重发。",'']
+ if a.scope=='full1817':
+  lines+=['|配置|模型与监督|输入／输出合同|','|---|---|---|',
+   '|author_base9b|未微调Qwen3.5-9B|原作者提示，完整作者reference；关闭thinking，768上限|',
+   '|author_lora9b|同9B＋120 final369|同原作者提示与768上限|',
+   '|paper_r1|原作者R1-70B发布结果，无本项目新增训练|历史作者系统，直接复用，不作为同模型对照|',
+   '|label_only107|同9B，196条标签监督的主要普通微调基线|104修改提示，384上限|',
+   '|full_pool120|107之后再用2945条训练369步|同104提示，384上限|',
+   '|midpoint132|107与120固定有效权重中点|同104提示，384上限；无新增训练|',
+   '|claim_repeat|完整复用120权重|同104提示，在reference之后重述原claim；384上限|','',
+   '本轮推理复用已有权重，不表示原微调训练没有成本。103旧thinking4096/final768预测与本轮不合并；134已核对原提示来源、缓存资格及两9B的独立无效输出。',
+   '135的reason_first仅完成同一固定160条初筛，正确−6且false-S不变，已停止扩大；不把其小样本结果混入本表，也不据此否定理由监督整条路线。',
+   '133仍仅CPU准备，127仍未证明reason数据带来分类收益；120的415条训练拟合诊断取消且0完整回执，不能拿它解释本表。','']
  if 'input_cost' in v:
   c=v['input_cost'];lines.append(f"重复原claim使每条输入平均增加{c['mean_extra_tokens']:.1f} tokens，中位数{c['median_extra_tokens']:.1f}、最大{c['max_extra_tokens']}；总输入增加{c['relative_total_input_increase']:.2%}。完整reference不变，输出上限仍384。")
  cost=(time.time()-1793374800)*1.58/3600;stamp=datetime.now(timezone(timedelta(hours=8))).isoformat(timespec='seconds')
