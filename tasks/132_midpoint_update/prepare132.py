@@ -8,7 +8,9 @@ sys.path.insert(0,str(ROOT/'tasks/120_full_pool_sft'));from analyze120 import co
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--scope',choices=('screen160','old500','internal687'),default='screen160');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--scope',choices=('screen160','old500','internal687'),default='screen160')
+    p.add_argument('--runtime-root',type=Path,default=P,help='A fresh private runtime folder preserves earlier frozen sessions')
+    a=p.parse_args()
     comp=c.read(P/'adapter_final/composition.json')
     keys=c.rows(ROOT/'.local_models/116_research_cycle/keys_selection1817.jsonl')
     screen=c.read(ROOT/'.local_models/117_verdict_probe/data_selection.json')['screen_ids']
@@ -29,7 +31,9 @@ def main():
     window=c.read(ROOT/'.local_models/CURRENT_RESEARCH.json')['window']
     session=dict(start_epoch=window['start_epoch'],duration_seconds=window['deadline_epoch']-window['start_epoch'],
         GPU_cap_CNY=window['GPU_cap_CNY'],hourly_CNY=window['hourly_CNY'],no_shutdown=True)
-    bundle=P/'bundle';rel='data/midpoint/'+a.scope;data=bundle/rel;data.mkdir(parents=True,exist_ok=True)
+    runtime=a.runtime_root.resolve()
+    if not runtime.is_relative_to((ROOT/'.local_models').resolve()):raise ValueError('Runtime must remain private')
+    bundle=runtime/'bundle';rel='data/midpoint/'+a.scope;data=bundle/rel;data.mkdir(parents=True,exist_ok=True)
     c.frozen(data/'session.json',(json.dumps(session,indent=2)+'\n').encode())
     c.frozen(data/'inputs.jsonl',''.join(c.canonical(r)+'\n' for r in inputs).encode())
     job=dict(name='midpoint_'+a.scope,task=132,candidate='midpoint_update',
@@ -46,7 +50,7 @@ def main():
            'tasks/105_brief_supervision/parse105.py','tasks/104_supervision_evidence/training104.py']
     for name in files:
         dest=bundle/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/name,dest)
-    with tarfile.open(P/('bundle132_'+a.scope+'.tar.gz'),'w:gz',compresslevel=1) as t:
+    with tarfile.open(runtime/('bundle132_'+a.scope+'.tar.gz'),'w:gz',compresslevel=1) as t:
         for f in bundle.rglob('*'):
             if f.is_file():t.add(f,arcname=f.relative_to(bundle),recursive=False)
     print(c.canonical(dict(scope=a.scope,new_calls=len(needed),first_receipts_reused=len(prior),adapter_sha256=comp['adapter_sha256'])))

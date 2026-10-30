@@ -6,4 +6,4 @@
 
 [协议](PROTOCOL.md) · [阶段结果](../../outputs/132_midpoint_update/report.md) · [160条指标](../../outputs/132_midpoint_update/screen160.md)。
 
-当前实例上保留源107、120与132适配器；本地也有完整132适配器与160条回执。原22:05授权窗口已经结束，不再重连或自动开机。未来获得新的GPU时间／费用授权后，只需接续已备好的`bundle132_old500.tar.gz`及`controller132.py --scope old500`，复用160条首回执；原session已过期，须明确记录新授权，不能偷偷重置预算、重发旧样本或更改alpha。
+当前实例上保留源107、120与132适配器；本地也有完整132适配器与160条回执。后续新授权：2026-10-30 22:15开机，GPU预算19元，仍按1.58元/小时；API累计80元额度已用0。已在新实例启动340条补缺，复用原160条。新session与运行包位于私有`instance2/`，原session保留；`prepare132.py --scope old500 --runtime-root .local_models/132_midpoint_update/instance2`支持独立保存接续配置。原实例无卡开机，只用于数据回收，不再运行GPU任务。

@@ -1,0 +1,19 @@
+{
+  "status": "RUNNING_MISSING340_ON_NEW_INSTANCE",
+  "start_beijing": "2026-10-30 22:15:00",
+  "deadline_beijing": "2026-10-31 10:16:31",
+  "GPU_cap_CNY": 19,
+  "hourly_CNY": 1.58,
+  "old_fees_not_reset": true,
+  "paid_API_cumulative_CNY": 0,
+  "prior_first_receipts_reused": 160,
+  "new_requested_predictions": 340,
+  "base_model_present_in_image": true,
+  "environment_reused": true,
+  "installed_or_upgraded_packages": false,
+  "large_base_model_transferred": false,
+  "original_instance_mode": "CPU-only; necessary records saved locally",
+  "inference": "BF16, original full input and parser, batch2, same rank32 midpoint adapter",
+  "no_shutdown": true,
+  "no_release": true
+}

@@ -1,0 +1,20 @@
+{
+  "source_instance_mode": "User reported CPU-only; filesystem was accessible",
+  "text_records_saved": 13789,
+  "text_source_bytes": 941002734,
+  "archive_bytes": 213284009,
+  "archive_structure_and_sizes_checked": true,
+  "existing_checkpoint_backups_reused": [
+    "107_full_state",
+    "119_full_state",
+    "120_final369_full_state",
+    "122_full_state",
+    "128_full_state",
+    "132_adapter"
+  ],
+  "newly_copied_large_checkpoints": 0,
+  "base9B_redownloaded": false,
+  "private_archive": ".local_models/132_midpoint_update/original_cpu_export/text_records.tar.gz",
+  "original_disk_not_released": true,
+  "no_raw_material_published": true
+}
