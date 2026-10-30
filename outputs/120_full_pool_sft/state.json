@@ -1,5 +1,5 @@
 {
-  "status": "stopped_after_user_requested_interim_check",
+  "status": "fixed220_expansion_to1817",
   "pid": 4347,
   "start_epoch": 1793326274.5477679,
   "training_N": 2945,
@@ -15,5 +15,10 @@
   "baseline_retained": "107_label_only",
   "current_369_step_result_available": false,
   "original_plan_fixed_final_checkpoint": true,
-  "observed_checkpoint_role": "interim_step220"
+  "observed_checkpoint_role": "interim_step220",
+  "candidate_retained_for_risk_tradeoff": true,
+  "continue_training_pending_effect": true,
+  "old500_completed": true,
+  "old500_valid": 500,
+  "pending_new_predictions": 1317
 }

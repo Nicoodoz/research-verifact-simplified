@@ -6,9 +6,9 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|122_balanced_pool_sft|[当前方案](../tasks/122_balanced_pool_sft/CURRENT.md) · [进度](../outputs/122_balanced_pool_sft/实时进度.md)|32患者三类各243条、729条92步；最长原loss检查已通过|正在训练，尚无分类结果；沿用原六小时窗口|
+|122_balanced_pool_sft|[当前方案](../tasks/122_balanced_pool_sft/CURRENT.md) · [进度](../outputs/122_balanced_pool_sft/实时进度.md)|32患者三类各243条、729条92步；最长原loss检查已通过|24步保存暂停待续，尚无分类结果；资源已延至20:57:46|
 |121_nearest_memory|[报告](../outputs/121_nearest_memory/report.md) · [指标](../outputs/121_nearest_memory/results.json)|CPU缓存近邻，32训练/8验证；固定160|新增10次false-S、避免0；停止扩大|
-|120_full_pool_sft|[中途报告](../outputs/120_full_pool_sft/report.md) · [同ID指标](../outputs/120_full_pool_sft/midpoint220_160.json)|用户要求220步提前检查；160全部有效，完整状态回传|false-S10→20、NA23→16；停止当前分支；原369步未完成|
+|120_full_pool_sft|[中途报告](../outputs/120_full_pool_sft/report.md) · [同ID指标](../outputs/120_full_pool_sft/midpoint220_160.json)|用户要求220步提前检查；160全部有效，完整状态回传|固定220已完成500：MCC双面板提高，风险也上升；正在扩1817；原369步未完成|
 |119_warm_head_ft|[报告](../outputs/119_warm_head_ft/report.md) · [指标](../outputs/119_warm_head_ft/trained_best160.json)|完整369步、内部验证与固定160；执行者复核|自然收益伴随压力/NS损失，停止扩大|
 |118_full_data_heads|[接续与方案](../tasks/118_full_data_heads/CURRENT.md) · [状态](../outputs/118_full_data_heads/state.json)|固定全3675训练头；同夜间额度|两个固定头的160条无综合增量，停止扩大|
 |117_verdict_probe|[方案](../tasks/117_verdict_probe/CURRENT.md) · [报告](../outputs/117_verdict_probe/report.md) · [完整1817](../outputs/117_verdict_probe/balanced_mlp_1817.json)|固定嵌套160、500与1817；1024训练/730内部验证|1817未保持收益，停止1024条版本；未用确认40，后续结果见118—122|

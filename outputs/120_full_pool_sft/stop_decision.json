@@ -1,14 +1,14 @@
 {
   "task": 120,
   "candidate": "full_pool_sft",
-  "decision": "stop_current_natural_mix_branch_after_step220",
+  "decision": "retain_fixed_step220_expand_to1817_to_judge_quality_risk_tradeoff",
   "continue_to_369": false,
   "observed_checkpoint_step": 220,
   "observed_presentations": 1760,
   "planned_steps": 369,
   "planned_presentations": 2945,
   "planned_training_completed": false,
-  "evaluation_scope": "fixed nested natural128 and pressure32 from old500 development panel",
+  "evaluation_scope": "completed original natural400/pressure100; initial160 retained; new340 reported separately",
   "coverage": {
     "expected_N": 160,
     "received_N": 160,
@@ -83,7 +83,7 @@
   ],
   "false_S_new": 10,
   "false_S_avoided": 0,
-  "reason": "Real MCC/correct-S gains accompany double false-S and seven lost NA judgments; current risk-quality tradeoff does not justify about1.5 more training hours.",
+  "reason": "Both full500 panels retain meaningful MCC gains. The new340 also retain positive MCC changes, though the natural gain is smaller. Keep the fixed220 candidate and expand to1817 while fully reporting additional false-S and lost NA; no further training or parameter search.",
   "engineering_exit": {
     "user_requested_early_check": true,
     "request_epoch": 1793334684.3507726,
@@ -102,23 +102,573 @@
   "claim_limits": {
     "step369_efficacy_tested": false,
     "all_full_pool_SFT_rejected": false,
-    "independent_confirmation_used": false
+    "independent_confirmation_used": false,
+    "full500_efficacy_verified": true,
+    "same_judge_author_strong_baseline_beaten": false,
+    "full1817_evaluation_completed": false,
+    "quality_risk_tradeoff_finally_validated": false,
+    "full500_efficacy_verified_scope": "Observed metrics reproduced on500; not an adoption or independent-confirmation claim"
   },
   "verification": {
     "method": "Independent formula from sanitized paired labels plus ID/GT/patient join checks",
     "matches_existing_reported_metrics": true,
-    "new_GPU_or_API": false
+    "new_GPU_or_API": false,
+    "full500_IDs_and_metric_formula_checked": true,
+    "original160_first_predictions_unchanged": true,
+    "new340_split": {
+      "natural": 272,
+      "pressure": 68
+    }
   },
   "resources": {
     "charged_to_shared_current_window": true,
     "API_window_CNY": 0,
     "exact_platform_payment_not_claimed": true,
     "shutdown_sent": false,
-    "instance_currently_used_for_separate122": true
+    "instance_currently_used_for_separate122": false,
+    "next_priority": "fixed220 prediction of remaining1317; no shutdown"
   },
   "next_task": {
     "task": 122,
     "scope": "separate balanced729 recipe",
-    "efficacy_result_available": false
-  }
+    "efficacy_result_available": false,
+    "status": "paused_at24_pending_resume",
+    "paused_step": 24
+  },
+  "decision_history": [
+    {
+      "decision": "stop_current_natural_mix_branch_after_step220",
+      "reason": "Real MCC/correct-S gains accompany double false-S and seven lost NA judgments; current risk-quality tradeoff does not justify about1.5 more training hours.",
+      "status": "candidate_rejection_superseded; stopping additional training retained"
+    },
+    {
+      "decision": "stop_additional_training_keep_step220_for_full500_validation",
+      "reason": "The160 screen has meaningful MCC and correct-S gains. Retain the fixed220-step candidate and test the same500 IDs before rejecting it; false-S increase and NA loss remain fully disclosed. Stopping extra149 training steps does not mean stopping validation.",
+      "status": "completed_full500; now expand fixed220 to1817"
+    }
+  ],
+  "candidate_status": "clear_MCC_gain_with_material_false_S_and_NA_cost",
+  "expand_fixed_checkpoint_to_500": true,
+  "correction": {
+    "prior_candidate_rejection_too_strict": true,
+    "trigger": "User requested reconsideration of the observed improvement",
+    "scientific_numbers_changed": false,
+    "training_pause_reversed": false
+  },
+  "expansion_plan": {
+    "checkpoint_step": 220,
+    "expected_total_N": 500,
+    "natural_N": 400,
+    "pressure_N": 100,
+    "reuse_first_receipts_N": 160,
+    "new_missing_IDs_N": 340,
+    "additional_training": false,
+    "new_checkpoint_search": false,
+    "prompt_reference_decode_unchanged": true,
+    "threshold_or_weight_search": false,
+    "results_available": true,
+    "status": "completed"
+  },
+  "paper_r1_reference160": {
+    "mcc": 0.4198312274221798,
+    "percent_agreement": 0.7125,
+    "correct": 114,
+    "false_S": 23,
+    "non_S": 57
+  },
+  "comparison_interpretation": {
+    "versus107": {
+      "delta_MCC": 0.09119323041776006,
+      "delta_correct": 12,
+      "delta_false_S": 10,
+      "delta_NA_correct": -7
+    },
+    "versus_paper_r1": {
+      "delta_MCC": 0.1625427037317263,
+      "delta_correct": 13,
+      "delta_false_S": -3
+    },
+    "paper_r1_is_historical_not_same_judge_strong_control": true
+  },
+  "expand_fixed_checkpoint_to_1817": true,
+  "full500_results_available": true,
+  "full500_results": {
+    "natural": {
+      "N": 400,
+      "baseline107": {
+        "mcc": 0.5031962809810817,
+        "percent_agreement": 0.7975,
+        "correct": 319,
+        "false_S": 12,
+        "non_S": 79,
+        "confusion_matrix": [
+          [
+            273,
+            28,
+            20
+          ],
+          [
+            7,
+            6,
+            13
+          ],
+          [
+            5,
+            8,
+            40
+          ]
+        ],
+        "recall": {
+          "Supported": 0.8504672897196262,
+          "Not Supported": 0.23076923076923078,
+          "Not Addressed": 0.7547169811320755
+        }
+      },
+      "step220": {
+        "mcc": 0.5547067783241383,
+        "percent_agreement": 0.86,
+        "correct": 344,
+        "false_S": 28,
+        "non_S": 79,
+        "confusion_matrix": [
+          [
+            307,
+            9,
+            5
+          ],
+          [
+            10,
+            11,
+            5
+          ],
+          [
+            18,
+            9,
+            26
+          ]
+        ],
+        "recall": {
+          "Supported": 0.956386292834891,
+          "Not Supported": 0.4230769230769231,
+          "Not Addressed": 0.49056603773584906
+        }
+      },
+      "paper_r1": {
+        "mcc": 0.4318960935400533,
+        "percent_agreement": 0.81,
+        "correct": 324,
+        "false_S": 28,
+        "non_S": 79,
+        "confusion_matrix": [
+          [
+            296,
+            17,
+            8
+          ],
+          [
+            11,
+            10,
+            5
+          ],
+          [
+            17,
+            18,
+            18
+          ]
+        ],
+        "recall": {
+          "Supported": 0.9221183800623053,
+          "Not Supported": 0.38461538461538464,
+          "Not Addressed": 0.33962264150943394
+        }
+      },
+      "delta_MCC": 0.05151049734305657,
+      "delta_PA": 0.0625,
+      "delta_correct": 25,
+      "delta_false_S": 16,
+      "class_changes": {
+        "Supported": {
+          "rescued": 34,
+          "harmed": 0,
+          "net": 34
+        },
+        "Not Supported": {
+          "rescued": 7,
+          "harmed": 2,
+          "net": 5
+        },
+        "Not Addressed": {
+          "rescued": 0,
+          "harmed": 14,
+          "net": -14
+        }
+      },
+      "false_S_new": 16,
+      "false_S_avoided": 0
+    },
+    "pressure": {
+      "N": 100,
+      "baseline107": {
+        "mcc": 0.31234752377721214,
+        "percent_agreement": 0.58,
+        "correct": 58,
+        "false_S": 16,
+        "non_S": 100,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            17,
+            23
+          ],
+          [
+            6,
+            3,
+            41
+          ]
+        ],
+        "recall": {
+          "Supported": null,
+          "Not Supported": 0.34,
+          "Not Addressed": 0.82
+        }
+      },
+      "step220": {
+        "mcc": 0.3748923023620588,
+        "percent_agreement": 0.57,
+        "correct": 57,
+        "false_S": 29,
+        "non_S": 100,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            18,
+            24,
+            8
+          ],
+          [
+            11,
+            6,
+            33
+          ]
+        ],
+        "recall": {
+          "Supported": null,
+          "Not Supported": 0.48,
+          "Not Addressed": 0.66
+        }
+      },
+      "paper_r1": {
+        "mcc": 0.15724272550828775,
+        "percent_agreement": 0.44,
+        "correct": 44,
+        "false_S": 30,
+        "non_S": 100,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            18,
+            24,
+            8
+          ],
+          [
+            12,
+            18,
+            20
+          ]
+        ],
+        "recall": {
+          "Supported": null,
+          "Not Supported": 0.48,
+          "Not Addressed": 0.4
+        }
+      },
+      "delta_MCC": 0.06254477858484664,
+      "delta_PA": -0.010000000000000009,
+      "delta_correct": -1,
+      "delta_false_S": 13,
+      "class_changes": {
+        "Supported": {
+          "rescued": 0,
+          "harmed": 0,
+          "net": 0
+        },
+        "Not Supported": {
+          "rescued": 12,
+          "harmed": 5,
+          "net": 7
+        },
+        "Not Addressed": {
+          "rescued": 0,
+          "harmed": 8,
+          "net": -8
+        }
+      },
+      "false_S_new": 13,
+      "false_S_avoided": 0
+    }
+  },
+  "new340_results": {
+    "natural": {
+      "N": 272,
+      "baseline107": {
+        "mcc": 0.5475706580707362,
+        "percent_agreement": 0.8198529411764706,
+        "correct": 223,
+        "false_S": 7,
+        "non_S": 54,
+        "confusion_matrix": [
+          [
+            190,
+            15,
+            13
+          ],
+          [
+            4,
+            4,
+            10
+          ],
+          [
+            3,
+            4,
+            29
+          ]
+        ],
+        "recall": {
+          "Supported": 0.8715596330275229,
+          "Not Supported": 0.2222222222222222,
+          "Not Addressed": 0.8055555555555556
+        }
+      },
+      "step220": {
+        "mcc": 0.5574880590487485,
+        "percent_agreement": 0.8602941176470589,
+        "correct": 234,
+        "false_S": 19,
+        "non_S": 54,
+        "confusion_matrix": [
+          [
+            208,
+            6,
+            4
+          ],
+          [
+            6,
+            7,
+            5
+          ],
+          [
+            13,
+            4,
+            19
+          ]
+        ],
+        "recall": {
+          "Supported": 0.9541284403669725,
+          "Not Supported": 0.3888888888888889,
+          "Not Addressed": 0.5277777777777778
+        }
+      },
+      "paper_r1": {
+        "mcc": 0.4524039437597857,
+        "percent_agreement": 0.8161764705882353,
+        "correct": 222,
+        "false_S": 17,
+        "non_S": 54,
+        "confusion_matrix": [
+          [
+            203,
+            9,
+            6
+          ],
+          [
+            5,
+            8,
+            5
+          ],
+          [
+            12,
+            13,
+            11
+          ]
+        ],
+        "recall": {
+          "Supported": 0.9311926605504587,
+          "Not Supported": 0.4444444444444444,
+          "Not Addressed": 0.3055555555555556
+        }
+      },
+      "delta_MCC": 0.009917400978012303,
+      "delta_PA": 0.040441176470588314,
+      "delta_correct": 11,
+      "delta_false_S": 12,
+      "class_changes": {
+        "Supported": {
+          "rescued": 18,
+          "harmed": 0,
+          "net": 18
+        },
+        "Not Supported": {
+          "rescued": 4,
+          "harmed": 1,
+          "net": 3
+        },
+        "Not Addressed": {
+          "rescued": 0,
+          "harmed": 10,
+          "net": -10
+        }
+      },
+      "false_S_new": 12,
+      "false_S_avoided": 0
+    },
+    "pressure": {
+      "N": 68,
+      "baseline107": {
+        "mcc": 0.311942353286711,
+        "percent_agreement": 0.5735294117647058,
+        "correct": 39,
+        "false_S": 11,
+        "non_S": 68,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            7,
+            10,
+            17
+          ],
+          [
+            4,
+            1,
+            29
+          ]
+        ],
+        "recall": {
+          "Supported": null,
+          "Not Supported": 0.29411764705882354,
+          "Not Addressed": 0.8529411764705882
+        }
+      },
+      "step220": {
+        "mcc": 0.38872628707000817,
+        "percent_agreement": 0.5882352941176471,
+        "correct": 40,
+        "false_S": 18,
+        "non_S": 68,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            11,
+            16,
+            7
+          ],
+          [
+            7,
+            3,
+            24
+          ]
+        ],
+        "recall": {
+          "Supported": null,
+          "Not Supported": 0.47058823529411764,
+          "Not Addressed": 0.7058823529411765
+        }
+      },
+      "paper_r1": {
+        "mcc": 0.17978292392812995,
+        "percent_agreement": 0.47058823529411764,
+        "correct": 32,
+        "false_S": 18,
+        "non_S": 68,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            17,
+            7
+          ],
+          [
+            8,
+            11,
+            15
+          ]
+        ],
+        "recall": {
+          "Supported": null,
+          "Not Supported": 0.5,
+          "Not Addressed": 0.4411764705882353
+        }
+      },
+      "delta_MCC": 0.07678393378329718,
+      "delta_PA": 0.014705882352941235,
+      "delta_correct": 1,
+      "delta_false_S": 7,
+      "class_changes": {
+        "Supported": {
+          "rescued": 0,
+          "harmed": 0,
+          "net": 0
+        },
+        "Not Supported": {
+          "rescued": 8,
+          "harmed": 2,
+          "net": 6
+        },
+        "Not Addressed": {
+          "rescued": 0,
+          "harmed": 5,
+          "net": -5
+        }
+      },
+      "false_S_new": 7,
+      "false_S_avoided": 0
+    }
+  },
+  "new340_definition": "Exact full500 IDs minus unchanged original160 IDs",
+  "current_results_scope": "full500 completed; initial160 retained under metrics",
+  "full500_coverage": {
+    "expected_N": 500,
+    "received_N": 500,
+    "valid_N": 500,
+    "invalid_N": 0,
+    "missing_N": 0,
+    "reused160_N": 160,
+    "new340_N": 340
+  },
+  "next_expansion_plan": {
+    "checkpoint_step": 220,
+    "expected_total_N": 1817,
+    "reuse500_N": 500,
+    "new_missing_IDs_N": 1317,
+    "new_training": false,
+    "prompt_reference_decode_unchanged": true,
+    "new_checkpoint_search": false,
+    "new_threshold_or_weight_search": false,
+    "results_available": false
+  },
+  "initial_evaluation_scope": "fixed nested natural128 and pressure32 from old500 development panel"
 }

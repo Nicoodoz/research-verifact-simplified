@@ -1,0 +1,23 @@
+{
+  "authorization": "User: do not reject useful gains too strictly; continue research; GPU remains available8h",
+  "start_epoch": 1793336266,
+  "start_beijing": "2026-10-30T12:57:46+08:00",
+  "duration_seconds": 28800,
+  "deadline_epoch": 1793365066,
+  "deadline_beijing": "2026-10-30T20:57:46+08:00",
+  "hourly_CNY": 1.58,
+  "GPU_cap_CNY": 12.64,
+  "API_cap_CNY": 80,
+  "API_used_CNY": 0,
+  "API_budget_reset": false,
+  "previous_window_start_epoch": 1793321709,
+  "previous_window_closed_epoch": 1793336266,
+  "previous_window_GPU_estimate_CNY": 6.388905555555556,
+  "GPU_since_0855_cap_CNY": 19.028905555555557,
+  "older_windows_retained_separately": true,
+  "exact_platform_bill_verified": false,
+  "no_shutdown": true,
+  "no_release": true,
+  "no_stop_codex": true,
+  "legacy_active_jobs_keep_frozen_session": true
+}

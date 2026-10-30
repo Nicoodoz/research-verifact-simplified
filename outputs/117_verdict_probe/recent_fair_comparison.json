@@ -1,5 +1,5 @@
 {
-  "updated_beijing": "2026-10-30T12:42:52+08:00",
+  "updated_beijing": "2026-10-30T13:14:39+08:00",
   "scope": "Recent116-121; same IDs within each table, not across tables",
   "anchor": {
     "sources": [
@@ -3971,6 +3971,204 @@
               "delta_PA": 0.040000000000000036,
               "delta_correct": 4,
               "delta_false_S": 0
+            }
+          }
+        },
+        {
+          "name": "120 full_pool_sft/220步",
+          "source": "outputs\\120_full_pool_sft\\midpoint220_500.json",
+          "panels": {
+            "natural": {
+              "scores": {
+                "n": 400,
+                "mcc": 0.5547067783241383,
+                "percent_agreement": 0.86,
+                "correct": 344,
+                "false_S": 28,
+                "non_S": 79,
+                "macro_F1": 0.6400817575591486,
+                "labels": [
+                  "Supported",
+                  "Not Supported",
+                  "Not Addressed"
+                ],
+                "confusion_matrix": [
+                  [
+                    307,
+                    9,
+                    5
+                  ],
+                  [
+                    10,
+                    11,
+                    5
+                  ],
+                  [
+                    18,
+                    9,
+                    26
+                  ]
+                ],
+                "per_class": {
+                  "Supported": {
+                    "support": 321,
+                    "predicted": 335,
+                    "tp": 307,
+                    "fn": 14,
+                    "fp": 28,
+                    "tn": 51,
+                    "recall": 0.956386292834891,
+                    "precision": 0.9164179104477612,
+                    "specificity": 0.6455696202531646,
+                    "npv": 0.7846153846153846,
+                    "f1": 0.9359756097560976
+                  },
+                  "Not Supported": {
+                    "support": 26,
+                    "predicted": 29,
+                    "tp": 11,
+                    "fn": 15,
+                    "fp": 18,
+                    "tn": 356,
+                    "recall": 0.4230769230769231,
+                    "precision": 0.3793103448275862,
+                    "specificity": 0.9518716577540107,
+                    "npv": 0.9595687331536388,
+                    "f1": 0.4
+                  },
+                  "Not Addressed": {
+                    "support": 53,
+                    "predicted": 36,
+                    "tp": 26,
+                    "fn": 27,
+                    "fp": 10,
+                    "tn": 337,
+                    "recall": 0.49056603773584906,
+                    "precision": 0.7222222222222222,
+                    "specificity": 0.9711815561959655,
+                    "npv": 0.9258241758241759,
+                    "f1": 0.5842696629213483
+                  }
+                }
+              },
+              "changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 34,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 7,
+                    "harmed": 2
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 14
+                  }
+                },
+                "false_S_new": 16,
+                "false_S_avoided": 0
+              },
+              "delta_MCC": 0.05151049734305657,
+              "delta_PA": 0.0625,
+              "delta_correct": 25,
+              "delta_false_S": 16
+            },
+            "pressure": {
+              "scores": {
+                "n": 100,
+                "mcc": 0.3748923023620588,
+                "percent_agreement": 0.57,
+                "correct": 57,
+                "false_S": 29,
+                "non_S": 100,
+                "macro_F1": 0.44175824175824174,
+                "labels": [
+                  "Supported",
+                  "Not Supported",
+                  "Not Addressed"
+                ],
+                "confusion_matrix": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    18,
+                    24,
+                    8
+                  ],
+                  [
+                    11,
+                    6,
+                    33
+                  ]
+                ],
+                "per_class": {
+                  "Supported": {
+                    "support": 0,
+                    "predicted": 29,
+                    "tp": 0,
+                    "fn": 0,
+                    "fp": 29,
+                    "tn": 71,
+                    "recall": null,
+                    "precision": 0.0,
+                    "specificity": 0.71,
+                    "npv": 1.0,
+                    "f1": 0.0
+                  },
+                  "Not Supported": {
+                    "support": 50,
+                    "predicted": 30,
+                    "tp": 24,
+                    "fn": 26,
+                    "fp": 6,
+                    "tn": 44,
+                    "recall": 0.48,
+                    "precision": 0.8,
+                    "specificity": 0.88,
+                    "npv": 0.6285714285714286,
+                    "f1": 0.6
+                  },
+                  "Not Addressed": {
+                    "support": 50,
+                    "predicted": 41,
+                    "tp": 33,
+                    "fn": 17,
+                    "fp": 8,
+                    "tn": 42,
+                    "recall": 0.66,
+                    "precision": 0.8048780487804879,
+                    "specificity": 0.84,
+                    "npv": 0.711864406779661,
+                    "f1": 0.7252747252747253
+                  }
+                }
+              },
+              "changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 0,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 12,
+                    "harmed": 5
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 8
+                  }
+                },
+                "false_S_new": 13,
+                "false_S_avoided": 0
+              },
+              "delta_MCC": 0.06254477858484664,
+              "delta_PA": -0.010000000000000009,
+              "delta_correct": -1,
+              "delta_false_S": 13
             }
           }
         }

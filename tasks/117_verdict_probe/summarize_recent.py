@@ -139,6 +139,16 @@ def main():
         v = read(midpoint120)['models']['full_pool_sft']
         add('fixed160', '120 full_pool_sft/220步中途检查', str(midpoint120.relative_to(R)), v['panels'],
             'outputs/120_full_pool_sft/midpoint220_160_predictions_sanitized.jsonl', screen_ids)
+    midpoint500 = R/'outputs/120_full_pool_sft/midpoint220_500.json'
+    if midpoint500.exists():
+        add('old500', '120 full_pool_sft/220步', str(midpoint500.relative_to(R)),
+            read(midpoint500)['models']['full_pool_sft']['panels'],
+            'outputs/120_full_pool_sft/midpoint220_500_predictions_sanitized.jsonl', old_ids)
+    midpoint1817 = R/'outputs/120_full_pool_sft/midpoint220_1817.json'
+    if midpoint1817.exists():
+        add('selection1817', '120 full_pool_sft/220步', str(midpoint1817.relative_to(R)),
+            read(midpoint1817)['models']['full_pool_sft']['panels'],
+            'outputs/120_full_pool_sft/midpoint220_1817_predictions_sanitized.jsonl', all_ids)
 
     file = 'outputs/116_research_cycle/claim_repeat_1817_missing.json'
     add('selection1817', '116 claim_repeat', file, read(file)['panels'],
@@ -162,7 +172,7 @@ def main():
     (O/'recent_fair_comparison.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
 
     lines = ['# 最近研究的同ID对比：116—122', '',
-        '截至 '+data['updated_beijing']+'。当前保留107 label_only；117—119及121尚无值得保留的综合增量，120'+('仍在训练。' if data['training_running'] else '已有首轮结果，见表及120报告。')+'122均衡样本方案正在训练，尚无分类成绩。', '',
+        '截至 '+data['updated_beijing']+'。当前保留107 label_only；117—119及121尚无值得保留的综合增量，120'+('仍在训练。' if data['training_running'] else '已有首轮结果，见表及120报告。')+'122保存暂停24步，优先120扩大后接续，尚无分类成绩。', '',
         '在完整1817个同ID上，107相对原作者历史系统：MCC **0.5445 vs 0.4842**，false-S **50 vs 105**；代价是少判对25条，PA **80.74% vs 82.11%**。这说明微调基线有实际的质量—风险收益，后续增量失败不能概括成“微调全部失败”。', '',
         '这里的“公平”首先指同一组ID、原医生GT和同一指标口径。paper_r1是原作者发布的历史系统预测，模型和推理设置未在本轮做同条件控制，因此只能作系统级历史参照，不能冒充同Judge同期强对照。107是当前普通微调主基线。新方案与107比较时也交代监督量、输出方式和成本差别，不把完整方案对比写成单组件消融。', '',
         '每格顺序均为 **MCC · PA · 正确数/评价数 · false-S/真实非S数**。自然与人为压力面板分开；160、180、500、1817不能跨表直接比数字。所有20名选型患者均有历史研究暴露，未使用后续确认40人。', '',
@@ -195,7 +205,7 @@ def main():
         if scope == 'fixed160' and data['training_running']:
             lines.append('|120 full_pool_sft / 正在训练|尚无分类结果|尚无分类结果|')
         if scope == 'fixed160':
-            lines.append('|122 balanced_pool_sft / 正在训练|尚无分类结果|尚无分类结果|')
+            lines.append('|122 balanced_pool_sft / 保存暂停24步|尚无分类结果|尚无分类结果|')
         lines.append('')
 
     lines += ['## 实际得失与当前决定', '',
@@ -203,7 +213,7 @@ def main():
         '- 117平衡MLP在500条净多3条正确、false-S少2；扩到1817后变成少12条正确、false-S仅少3，NA净损失11。小面板的信号没有维持。',
         '- 118全量数据冻结头仍无综合增量；119完整训练自然MCC提高明显，但压力正确少6、合计false-S多7，NS正确9/24降到2/24。',
         '- 121近邻自然多对13，压力少对2，合计新增10次false-S且没有避免任何一次；停止扩大。',
-        ('- 120按用户要求在220步/1760次呈现保存并提前检查：自然正确+14、压力−2，false-S合计10→20，NA正确23→16。停止当前自然比例全池分支；没有跑完原计划369步，不声称其最终点结果。' if midpoint120.exists() else '- 120正在检验同32人2945条的原JSON/原loss续训，尚无分类结论。'),
+        ('- 120按用户要求在220步/1760次呈现保存并提前检查：自然正确+14、压力−2，false-S合计10→20，NA正确23→16。有明显MCC收益，保留为需要扩大验证的风险取舍候选；暂停追加训练，不把风险增加等同于所有收益无效。原369步尚未完成。' if midpoint120.exists() else '- 120正在检验同32人2945条的原JSON/原loss续训，尚无分类结论。'),
         '- 122从原107重新开始，三类各243条、共729条、固定92步，检验均衡资料的实用配方。它同时改变资料组成与总呈现次数，不会单独证明类别不均衡是唯一原因。', '',
         '## 比较中的训练与接口差别', '',
         '|方案|实际监督范围与主要变化|', '|---|---|',
