@@ -9,14 +9,14 @@
   "hourly_CNY": 1.58,
   "no_shutdown": true,
   "status": "NIGHT_ACTIVE",
-  "active_job": "lpft_full32",
+  "active_job": "full_pool_sft",
   "best_candidate": "107_label_only",
   "paid_API_CNY": 0,
   "confirmation40_used": false,
   "train_N": 2945,
-  "validation_N": 730,
+  "validation_N": 0,
   "screen_N": 160,
-  "active_remote_pid": null,
+  "active_remote_pid": 4347,
   "feature_N": 5492,
   "completed_analyses": [
     "probe_initial",
@@ -30,16 +30,16 @@
     "mlp_500",
     "balanced_mlp_500"
   ],
-  "next_action": "Finish current160 screen; resume original optimizer and training plan; final model selected only by internal validation",
-  "current_result": "New6h authorization: complete original369-step plan from checkpoint272; keep recovered128 screen",
+  "next_action": "120 longest full-input original-loss backward; if passed, complete fixed369 training and160 screen",
+  "current_result": "119 complete369: natural correct+15/FS+2; pressure correct-6/FS+5; NS2/24. Stop119 expansion.",
   "development_candidate": null,
   "maintained_baseline": "107_label_only",
-  "active_task": 119,
+  "active_task": 120,
   "task117_status": "COMPLETED_NEGATIVE",
   "initial_train_N": 1024,
   "task118_status": "COMPLETED_NEGATIVE",
-  "task119_status": "RESUMING_ORIGINAL_PLAN",
-  "remote_compute_state": "resuming_from_committed272",
+  "task119_status": "COMPLETED_NEGATIVE",
+  "remote_compute_state": "running",
   "last_confirmed_training_steps": 272,
   "active_resource_window": {
     "cycle": 4,
@@ -84,5 +84,6 @@
     "previous_window_closed_at_epoch": 1793320704,
     "API_budget_scope": "Original80CNY cumulative allowance; not reset; used0",
     "original_goal_start_epoch": 1793287154
-  }
+  },
+  "task120_status": "TRAINING"
 }

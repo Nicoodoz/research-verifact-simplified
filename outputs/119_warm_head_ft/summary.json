@@ -1,0 +1,54 @@
+{
+  "status": "COMPLETED_NEGATIVE",
+  "training_steps": 369,
+  "training_presentations": 2945,
+  "selected_step": 369,
+  "coverage": 160,
+  "all_valid": true,
+  "delta": {
+    "screen160_enriched": {
+      "delta_MCC": 0.058565930004270905,
+      "delta_PA": 0.05625000000000002,
+      "delta_correct": 9,
+      "delta_false_S": 7
+    },
+    "natural": {
+      "delta_MCC": 0.17485403291610863,
+      "delta_PA": 0.1171875,
+      "delta_correct": 15,
+      "delta_false_S": 2
+    },
+    "pressure": {
+      "delta_MCC": -0.19510763466290423,
+      "delta_PA": -0.1875,
+      "delta_correct": -6,
+      "delta_false_S": 5
+    }
+  },
+  "classes": {
+    "by_class": {
+      "Supported": {
+        "rescued": 14,
+        "harmed": 0
+      },
+      "Not Supported": {
+        "rescued": 0,
+        "harmed": 7
+      },
+      "Not Addressed": {
+        "rescued": 3,
+        "harmed": 1
+      }
+    },
+    "false_S_new": 7,
+    "false_S_avoided": 0
+  },
+  "replayed_uncommitted_step273": true,
+  "no_500_expansion": true,
+  "default_unchanged": true,
+  "retained_baseline": "107_label_only",
+  "complete_states_backed_up": true,
+  "paid_API_CNY": 0,
+  "no_shutdown": true,
+  "current_window_GPU_estimate_through_return_CNY": 1.9831754955132803
+}

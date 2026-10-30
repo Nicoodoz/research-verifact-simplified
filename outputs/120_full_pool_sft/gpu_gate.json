@@ -1,0 +1,13 @@
+{
+  "prompt_tokens": 15570,
+  "total_tokens": 15577,
+  "seconds": 30.161587364971638,
+  "peak_allocated_bytes": 28383441408,
+  "headroom_bytes": 5072096768,
+  "LoRA_gradient": true,
+  "optimizer_updates": 0,
+  "fresh_Adam_memory_reserved": true,
+  "no_truncation": true,
+  "peak_GiB": 26.434139728546143,
+  "headroom_GiB": 4.723758220672607
+}

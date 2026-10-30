@@ -96,6 +96,7 @@ def prepare():
     common.put(bundle / 'data/full_pool_sft120.json', job)
     common.put(PRIVATE / 'job.json', job)
     modules = ['tasks/120_full_pool_sft/worker120.py', 'tasks/120_full_pool_sft/run120.py',
+               'tasks/120_full_pool_sft/analyze120.py', 'tasks/120_full_pool_sft/extend120.py',
                'tasks/104_supervision_evidence/training104.py',
                'tasks/105_brief_supervision/common105.py', 'tasks/105_brief_supervision/data105.py',
                'tasks/105_brief_supervision/loss105.py', 'tasks/105_brief_supervision/parse105.py',
