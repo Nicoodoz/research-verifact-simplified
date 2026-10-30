@@ -1,5 +1,5 @@
-# 136 claim_repeat_transfer
+# 136 claim_repeat_transfer：160条有信号，补原500
 
-160条可运行包已准备。复用120权重、104提示和已有120基线，仅把116已有claim_repeat操作迁移到120。尚无分类结果，原116小幅增量不保证迁移成功。
+原160全部有效：MCC+.0592、正确+4、false-S−3，NA净+5而S净−1。按冻结继续条件扩大；只生成原500缺少的340条，不重跑160。尚无完整500结论，不升级默认。
 
-[方案](PROTOCOL.md) · [准备](../../outputs/136_claim_repeat_transfer/claim_repeat_screen160_preparation.json) · [进度](../../outputs/136_claim_repeat_transfer/progress.md)
+[报告](../../outputs/136_claim_repeat_transfer/report.md) · [方案](PROTOCOL.md) · [进度](../../outputs/136_claim_repeat_transfer/progress.md)

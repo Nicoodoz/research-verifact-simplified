@@ -1,0 +1,19 @@
+{
+  "status": "PREPARED_NOT_RUN",
+  "variant": "claim_repeat",
+  "scope": "old500",
+  "target_N": 500,
+  "prior_receipts": 160,
+  "prior_invalid": 0,
+  "new_calls": 340,
+  "prefix_tokens": 0,
+  "generated_token_cap": 384,
+  "total_answer_token_budget": 384,
+  "max_input_tokens": 12724,
+  "same_claim_reference": true,
+  "same_120_weights": true,
+  "new_training": false,
+  "new_API": 0,
+  "global_window_start": "2026-10-30T23:40:00+08:00",
+  "GPU_cap_CNY": 16.0
+}
