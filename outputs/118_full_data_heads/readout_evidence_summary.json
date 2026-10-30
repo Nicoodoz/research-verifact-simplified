@@ -1,0 +1,6058 @@
+{
+  "iterations": 1000,
+  "resampling": "paired patients; seeds0..999; fixed fitted model",
+  "comparison": "candidate minus saved107",
+  "new_GPU_CNY": 0,
+  "new_API_CNY": 0,
+  "no_new_training": true,
+  "no_prediction_regeneration": true,
+  "confirmation40_used": false,
+  "limits": "CI does not cover training randomness, historical model/development selection, ancestor exposure, or external generalization; not an all-win gate.",
+  "models": {
+    "unweighted1024_seed117": {
+      "source_prediction": "outputs/117_verdict_probe/reconsidered_extension_verdict_mlp_predictions.jsonl",
+      "panels": {
+        "selection1817": {
+          "N": 1817,
+          "score": {
+            "mcc": 0.6108517772406853,
+            "percent_agreement": 0.868464501926252,
+            "correct": 1578,
+            "false_S": 92,
+            "non_S": 362,
+            "macro_F1": 0.6532350317168931,
+            "recall": {
+              "Supported": 0.9333333333333333,
+              "Not Supported": 0.256198347107438,
+              "Not Addressed": 0.7842323651452282
+            }
+          },
+          "delta": {
+            "MCC": 0.06631425345528008,
+            "PA": 0.061089708310401725,
+            "correct": 111,
+            "false_S": 42
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 138,
+                "harmed": 3
+              },
+              "Not Supported": {
+                "rescued": 5,
+                "harmed": 22
+              },
+              "Not Addressed": {
+                "rescued": 2,
+                "harmed": 9
+              }
+            },
+            "false_S_new": 43,
+            "false_S_avoided": 1
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 75,
+              "correct_delta": 8,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "22289",
+              "N": 175,
+              "correct_delta": 11,
+              "false_S_delta": 3
+            },
+            {
+              "sid": "25027",
+              "N": 173,
+              "correct_delta": 8,
+              "false_S_delta": 4
+            },
+            {
+              "sid": "30820",
+              "N": 41,
+              "correct_delta": 0,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "5954",
+              "N": 33,
+              "correct_delta": 1,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "59752",
+              "N": 193,
+              "correct_delta": 15,
+              "false_S_delta": 7
+            },
+            {
+              "sid": "60130",
+              "N": 76,
+              "correct_delta": 7,
+              "false_S_delta": 5
+            },
+            {
+              "sid": "69023",
+              "N": 65,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "72940",
+              "N": 45,
+              "correct_delta": 5,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 60,
+              "correct_delta": 0,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "76990",
+              "N": 94,
+              "correct_delta": 10,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "80454",
+              "N": 80,
+              "correct_delta": 10,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "81230",
+              "N": 21,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 75,
+              "correct_delta": 8,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "82564",
+              "N": 86,
+              "correct_delta": 6,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "84606",
+              "N": 108,
+              "correct_delta": 4,
+              "false_S_delta": 5
+            },
+            {
+              "sid": "87344",
+              "N": 144,
+              "correct_delta": 7,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "93571",
+              "N": 77,
+              "correct_delta": 4,
+              "false_S_delta": 3
+            },
+            {
+              "sid": "94404",
+              "N": 56,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "98089",
+              "N": 140,
+              "correct_delta": 1,
+              "false_S_delta": 6
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 17,
+              "down": 0,
+              "equal": 3
+            },
+            "false_S_delta": {
+              "up": 14,
+              "down": 0,
+              "equal": 6
+            }
+          },
+          "author": {
+            "human": {
+              "N": 1024,
+              "score": {
+                "mcc": 0.6149623274892667,
+                "percent_agreement": 0.814453125,
+                "correct": 834,
+                "false_S": 65,
+                "non_S": 326,
+                "macro_F1": 0.6594752899173785,
+                "recall": {
+                  "Supported": 0.8882521489971347,
+                  "Not Supported": 0.27722772277227725,
+                  "Not Addressed": 0.8266666666666667
+                }
+              },
+              "delta": {
+                "MCC": 0.0604676767422786,
+                "PA": 0.068359375,
+                "correct": 70,
+                "false_S": 36
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 92,
+                    "harmed": 3
+                  },
+                  "Not Supported": {
+                    "rescued": 4,
+                    "harmed": 17
+                  },
+                  "Not Addressed": {
+                    "rescued": 2,
+                    "harmed": 8
+                  }
+                },
+                "false_S_new": 37,
+                "false_S_avoided": 1
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 51,
+                  "correct_delta": 6,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "22289",
+                  "N": 92,
+                  "correct_delta": 4,
+                  "false_S_delta": 3
+                },
+                {
+                  "sid": "25027",
+                  "N": 140,
+                  "correct_delta": 7,
+                  "false_S_delta": 4
+                },
+                {
+                  "sid": "30820",
+                  "N": 22,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "59752",
+                  "N": 126,
+                  "correct_delta": 17,
+                  "false_S_delta": 5
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 5,
+                  "false_S_delta": 5
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 20,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 17,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 51,
+                  "correct_delta": 9,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 26,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 8,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 41,
+                  "correct_delta": 5,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 30,
+                  "correct_delta": 3,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "84606",
+                  "N": 58,
+                  "correct_delta": 3,
+                  "false_S_delta": 5
+                },
+                {
+                  "sid": "87344",
+                  "N": 86,
+                  "correct_delta": 5,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "93571",
+                  "N": 21,
+                  "correct_delta": 1,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "94404",
+                  "N": 36,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 113,
+                  "correct_delta": 0,
+                  "false_S_delta": 6
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 16,
+                  "down": 0,
+                  "equal": 4
+                },
+                "false_S_delta": {
+                  "up": 12,
+                  "down": 0,
+                  "equal": 8
+                }
+              }
+            },
+            "llm": {
+              "N": 793,
+              "score": {
+                "mcc": 0.2129428817795845,
+                "percent_agreement": 0.9382093316519546,
+                "correct": 744,
+                "false_S": 27,
+                "non_S": 36,
+                "macro_F1": 0.44838105954633445,
+                "recall": {
+                  "Supported": 0.9749009247027741,
+                  "Not Supported": 0.15,
+                  "Not Addressed": 0.1875
+                }
+              },
+              "delta": {
+                "MCC": 0.01063534718798706,
+                "PA": 0.05170239596469106,
+                "correct": 41,
+                "false_S": 6
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 46,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 1,
+                    "harmed": 5
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 1
+                  }
+                },
+                "false_S_new": 6,
+                "false_S_avoided": 0
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 24,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 83,
+                  "correct_delta": 7,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 33,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 19,
+                  "correct_delta": -1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "5954",
+                  "N": 13,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 67,
+                  "correct_delta": -2,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "69023",
+                  "N": 37,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 25,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 43,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "76990",
+                  "N": 43,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 54,
+                  "correct_delta": 9,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 34,
+                  "correct_delta": 3,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "82564",
+                  "N": 56,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 50,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 58,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "93571",
+                  "N": 56,
+                  "correct_delta": 3,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "94404",
+                  "N": 20,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 27,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 16,
+                  "down": 2,
+                  "equal": 2
+                },
+                "false_S_delta": {
+                  "up": 5,
+                  "down": 0,
+                  "equal": 15
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1817,
+              "evaluated_n": 1817,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "evaluated_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.061089708310401725,
+                "ci95": [
+                  0.0463383028597037,
+                  0.07541038537896708
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.08320863270316536,
+                "ci95": [
+                  0.06431896720382818,
+                  0.10143499749609078
+                ]
+              },
+              "mcc": {
+                "delta": 0.06631425345528008,
+                "ci95": [
+                  0.04034395691271646,
+                  0.09434636849254356
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.11602209944751382,
+              "ci95": [
+                0.08354752463537161,
+                0.164294403892944
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.09278350515463918,
+              "ci95": [
+                0.0784307424769393,
+                0.1075746233466154
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.14049586776859507,
+              "ci95": [
+                -0.25424499229583974,
+                -0.07999275362318843
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": -0.02904564315352698,
+              "ci95": [
+                -0.055355678556785595,
+                0.0
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        },
+        "new1317": {
+          "N": 1317,
+          "score": {
+            "mcc": 0.6120184144717079,
+            "percent_agreement": 0.8967350037965072,
+            "correct": 1181,
+            "false_S": 44,
+            "non_S": 183,
+            "macro_F1": 0.6427318370753178,
+            "recall": {
+              "Supported": 0.9338624338624338,
+              "Not Supported": 0.26666666666666666,
+              "Not Addressed": 0.7971014492753623
+            }
+          },
+          "delta": {
+            "MCC": 0.07222420914987959,
+            "PA": 0.0690964312832194,
+            "correct": 91,
+            "false_S": 22
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 112,
+                "harmed": 3
+              },
+              "Not Supported": {
+                "rescued": 1,
+                "harmed": 14
+              },
+              "Not Addressed": {
+                "rescued": 1,
+                "harmed": 6
+              }
+            },
+            "false_S_new": 23,
+            "false_S_avoided": 1
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 51,
+              "correct_delta": 5,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "22289",
+              "N": 138,
+              "correct_delta": 8,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "25027",
+              "N": 111,
+              "correct_delta": 7,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "30820",
+              "N": 29,
+              "correct_delta": 0,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "5954",
+              "N": 20,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "59752",
+              "N": 136,
+              "correct_delta": 13,
+              "false_S_delta": 3
+            },
+            {
+              "sid": "60130",
+              "N": 52,
+              "correct_delta": 6,
+              "false_S_delta": 3
+            },
+            {
+              "sid": "69023",
+              "N": 49,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "72940",
+              "N": 29,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 48,
+              "correct_delta": 0,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "76990",
+              "N": 76,
+              "correct_delta": 9,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "80454",
+              "N": 49,
+              "correct_delta": 6,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "81230",
+              "N": 17,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 57,
+              "correct_delta": 6,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "82564",
+              "N": 64,
+              "correct_delta": 6,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "84606",
+              "N": 88,
+              "correct_delta": 5,
+              "false_S_delta": 3
+            },
+            {
+              "sid": "87344",
+              "N": 107,
+              "correct_delta": 7,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "93571",
+              "N": 55,
+              "correct_delta": 3,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "94404",
+              "N": 41,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "98089",
+              "N": 100,
+              "correct_delta": 0,
+              "false_S_delta": 4
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 16,
+              "down": 0,
+              "equal": 4
+            },
+            "false_S_delta": {
+              "up": 12,
+              "down": 0,
+              "equal": 8
+            }
+          },
+          "author": {
+            "human": {
+              "N": 709,
+              "score": {
+                "mcc": 0.6227258684598488,
+                "percent_agreement": 0.846262341325811,
+                "correct": 600,
+                "false_S": 31,
+                "non_S": 165,
+                "macro_F1": 0.6511998369392735,
+                "recall": {
+                  "Supported": 0.8841911764705882,
+                  "Not Supported": 0.2972972972972973,
+                  "Not Addressed": 0.84375
+                }
+              },
+              "delta": {
+                "MCC": 0.07085196578857078,
+                "PA": 0.08744710860366711,
+                "correct": 62,
+                "false_S": 17
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 78,
+                    "harmed": 3
+                  },
+                  "Not Supported": {
+                    "rescued": 1,
+                    "harmed": 10
+                  },
+                  "Not Addressed": {
+                    "rescued": 1,
+                    "harmed": 5
+                  }
+                },
+                "false_S_new": 18,
+                "false_S_avoided": 1
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 31,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 70,
+                  "correct_delta": 4,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "25027",
+                  "N": 87,
+                  "correct_delta": 6,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "30820",
+                  "N": 15,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 11,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 84,
+                  "correct_delta": 15,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "60130",
+                  "N": 23,
+                  "correct_delta": 4,
+                  "false_S_delta": 3
+                },
+                {
+                  "sid": "69023",
+                  "N": 21,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 16,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 42,
+                  "correct_delta": 8,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 13,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 4,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 31,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 21,
+                  "correct_delta": 3,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "84606",
+                  "N": 51,
+                  "correct_delta": 4,
+                  "false_S_delta": 3
+                },
+                {
+                  "sid": "87344",
+                  "N": 62,
+                  "correct_delta": 4,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "93571",
+                  "N": 14,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 24,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 76,
+                  "correct_delta": -1,
+                  "false_S_delta": 4
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 16,
+                  "down": 1,
+                  "equal": 3
+                },
+                "false_S_delta": {
+                  "up": 9,
+                  "down": 0,
+                  "equal": 11
+                }
+              }
+            },
+            "llm": {
+              "N": 608,
+              "score": {
+                "mcc": 0.21161995994009822,
+                "percent_agreement": 0.9555921052631579,
+                "correct": 581,
+                "false_S": 13,
+                "non_S": 18,
+                "macro_F1": 0.4381192715064545,
+                "recall": {
+                  "Supported": 0.9796610169491525,
+                  "Not Supported": 0.125,
+                  "Not Addressed": 0.2
+                }
+              },
+              "delta": {
+                "MCC": -0.0456992044400569,
+                "PA": 0.047697368421052544,
+                "correct": 29,
+                "false_S": 5
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 34,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 0,
+                    "harmed": 4
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 1
+                  }
+                },
+                "false_S_new": 5,
+                "false_S_avoided": 0
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 20,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 68,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 24,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 14,
+                  "correct_delta": -1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "5954",
+                  "N": 9,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 52,
+                  "correct_delta": -2,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "60130",
+                  "N": 29,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 13,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 35,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "76990",
+                  "N": 34,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 36,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 26,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "82564",
+                  "N": 43,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 37,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 45,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 41,
+                  "correct_delta": 1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "94404",
+                  "N": 17,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 24,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 16,
+                  "down": 2,
+                  "equal": 2
+                },
+                "false_S_delta": {
+                  "up": 4,
+                  "down": 0,
+                  "equal": 16
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1317,
+              "evaluated_n": 1317,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "evaluated_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.0690964312832194,
+                "ci95": [
+                  0.0516359013867488,
+                  0.08474672500288687
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.08867711257049893,
+                "ci95": [
+                  0.06717617658886084,
+                  0.10900433791195524
+                ]
+              },
+              "mcc": {
+                "delta": 0.07222420914987959,
+                "ci95": [
+                  0.0371106665707706,
+                  0.10790244945910342
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.12021857923497267,
+              "ci95": [
+                0.07859538591045405,
+                0.18181818181818185
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.09611992945326275,
+              "ci95": [
+                0.08046797805791817,
+                0.11143455438246062
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.2888888888888889,
+              "ci95": [
+                -0.46671875,
+                -0.18643082380764683
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": -0.036231884057971064,
+              "ci95": [
+                -0.06923267326732671,
+                0.0
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        }
+      }
+    },
+    "unweighted1024_seed118": {
+      "source_prediction": "outputs/118_full_data_heads/unweighted_workflow_seed118_predictions.jsonl",
+      "panels": {
+        "selection1817": {
+          "N": 1817,
+          "score": {
+            "mcc": 0.5883890477052398,
+            "percent_agreement": 0.8596587782058338,
+            "correct": 1562,
+            "false_S": 99,
+            "non_S": 362,
+            "macro_F1": 0.659602357751303,
+            "recall": {
+              "Supported": 0.9237113402061856,
+              "Not Supported": 0.3305785123966942,
+              "Not Addressed": 0.7385892116182573
+            }
+          },
+          "delta": {
+            "MCC": 0.0438515239198346,
+            "PA": 0.05228398458998351,
+            "correct": 95,
+            "false_S": 49
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 135,
+                "harmed": 14
+              },
+              "Not Supported": {
+                "rescued": 8,
+                "harmed": 16
+              },
+              "Not Addressed": {
+                "rescued": 3,
+                "harmed": 21
+              }
+            },
+            "false_S_new": 52,
+            "false_S_avoided": 3
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 75,
+              "correct_delta": 7,
+              "false_S_delta": 3
+            },
+            {
+              "sid": "22289",
+              "N": 175,
+              "correct_delta": 12,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "25027",
+              "N": 173,
+              "correct_delta": 9,
+              "false_S_delta": 5
+            },
+            {
+              "sid": "30820",
+              "N": 41,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "5954",
+              "N": 33,
+              "correct_delta": 1,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "59752",
+              "N": 193,
+              "correct_delta": 13,
+              "false_S_delta": 6
+            },
+            {
+              "sid": "60130",
+              "N": 76,
+              "correct_delta": 6,
+              "false_S_delta": 5
+            },
+            {
+              "sid": "69023",
+              "N": 65,
+              "correct_delta": 5,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "72940",
+              "N": 45,
+              "correct_delta": 6,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 60,
+              "correct_delta": -1,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "76990",
+              "N": 94,
+              "correct_delta": 9,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "80454",
+              "N": 80,
+              "correct_delta": 9,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "81230",
+              "N": 21,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 75,
+              "correct_delta": 7,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "82564",
+              "N": 86,
+              "correct_delta": 3,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "84606",
+              "N": 108,
+              "correct_delta": 2,
+              "false_S_delta": 3
+            },
+            {
+              "sid": "87344",
+              "N": 144,
+              "correct_delta": 6,
+              "false_S_delta": 4
+            },
+            {
+              "sid": "93571",
+              "N": 77,
+              "correct_delta": 5,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "94404",
+              "N": 56,
+              "correct_delta": 0,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "98089",
+              "N": 140,
+              "correct_delta": -5,
+              "false_S_delta": 10
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 16,
+              "down": 2,
+              "equal": 2
+            },
+            "false_S_delta": {
+              "up": 17,
+              "down": 0,
+              "equal": 3
+            }
+          },
+          "author": {
+            "human": {
+              "N": 1024,
+              "score": {
+                "mcc": 0.5927950022332837,
+                "percent_agreement": 0.8046875,
+                "correct": 824,
+                "false_S": 76,
+                "non_S": 326,
+                "macro_F1": 0.6630534974760905,
+                "recall": {
+                  "Supported": 0.8810888252148997,
+                  "Not Supported": 0.33663366336633666,
+                  "Not Addressed": 0.7777777777777778
+                }
+              },
+              "delta": {
+                "MCC": 0.038300351486295625,
+                "PA": 0.05859375,
+                "correct": 60,
+                "false_S": 47
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 91,
+                    "harmed": 7
+                  },
+                  "Not Supported": {
+                    "rescued": 7,
+                    "harmed": 14
+                  },
+                  "Not Addressed": {
+                    "rescued": 2,
+                    "harmed": 19
+                  }
+                },
+                "false_S_new": 49,
+                "false_S_avoided": 2
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 51,
+                  "correct_delta": 6,
+                  "false_S_delta": 3
+                },
+                {
+                  "sid": "22289",
+                  "N": 92,
+                  "correct_delta": 5,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "25027",
+                  "N": 140,
+                  "correct_delta": 8,
+                  "false_S_delta": 5
+                },
+                {
+                  "sid": "30820",
+                  "N": 22,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "59752",
+                  "N": 126,
+                  "correct_delta": 17,
+                  "false_S_delta": 4
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 3,
+                  "false_S_delta": 6
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "72940",
+                  "N": 20,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 17,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 51,
+                  "correct_delta": 9,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "80454",
+                  "N": 26,
+                  "correct_delta": 1,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "81230",
+                  "N": 8,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 41,
+                  "correct_delta": 5,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 30,
+                  "correct_delta": 1,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "84606",
+                  "N": 58,
+                  "correct_delta": 1,
+                  "false_S_delta": 3
+                },
+                {
+                  "sid": "87344",
+                  "N": 86,
+                  "correct_delta": 3,
+                  "false_S_delta": 4
+                },
+                {
+                  "sid": "93571",
+                  "N": 21,
+                  "correct_delta": 1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "94404",
+                  "N": 36,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "98089",
+                  "N": 113,
+                  "correct_delta": -4,
+                  "false_S_delta": 10
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 14,
+                  "down": 1,
+                  "equal": 5
+                },
+                "false_S_delta": {
+                  "up": 16,
+                  "down": 0,
+                  "equal": 4
+                }
+              }
+            },
+            "llm": {
+              "N": 793,
+              "score": {
+                "mcc": 0.2595606349149398,
+                "percent_agreement": 0.9306431273644389,
+                "correct": 738,
+                "false_S": 23,
+                "non_S": 36,
+                "macro_F1": 0.47726327594487056,
+                "recall": {
+                  "Supported": 0.9630118890356671,
+                  "Not Supported": 0.3,
+                  "Not Addressed": 0.1875
+                }
+              },
+              "delta": {
+                "MCC": 0.057253100323342354,
+                "PA": 0.04413619167717531,
+                "correct": 35,
+                "false_S": 2
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 44,
+                    "harmed": 7
+                  },
+                  "Not Supported": {
+                    "rescued": 1,
+                    "harmed": 2
+                  },
+                  "Not Addressed": {
+                    "rescued": 1,
+                    "harmed": 2
+                  }
+                },
+                "false_S_new": 3,
+                "false_S_avoided": 1
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 24,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 83,
+                  "correct_delta": 7,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 33,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 19,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 13,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 67,
+                  "correct_delta": -4,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 3,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "69023",
+                  "N": 37,
+                  "correct_delta": 5,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 25,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 43,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "76990",
+                  "N": 43,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 54,
+                  "correct_delta": 8,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 34,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "82564",
+                  "N": 56,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 50,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 58,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 56,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 27,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 13,
+                  "down": 3,
+                  "equal": 4
+                },
+                "false_S_delta": {
+                  "up": 2,
+                  "down": 1,
+                  "equal": 17
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1817,
+              "evaluated_n": 1817,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "evaluated_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.05228398458998351,
+                "ci95": [
+                  0.032563788236886916,
+                  0.06923338098641885
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.07221426303914824,
+                "ci95": [
+                  0.04745079370619472,
+                  0.09378324120044877
+                ]
+              },
+              "mcc": {
+                "delta": 0.0438515239198346,
+                "ci95": [
+                  0.0043487459108682205,
+                  0.08073963851734026
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.13535911602209946,
+              "ci95": [
+                0.10666497461928935,
+                0.17334272300469483
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.08316151202749145,
+              "ci95": [
+                0.06866224318367467,
+                0.09851062157111923
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.06611570247933884,
+              "ci95": [
+                -0.17544452347083925,
+                0.0
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": -0.07468879668049788,
+              "ci95": [
+                -0.12154017857142858,
+                -0.025969005221582554
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        },
+        "new1317": {
+          "N": 1317,
+          "score": {
+            "mcc": 0.5698569296627296,
+            "percent_agreement": 0.8815489749430524,
+            "correct": 1161,
+            "false_S": 48,
+            "non_S": 183,
+            "macro_F1": 0.6366279762583065,
+            "recall": {
+              "Supported": 0.9197530864197531,
+              "Not Supported": 0.35555555555555557,
+              "Not Addressed": 0.7391304347826086
+            }
+          },
+          "delta": {
+            "MCC": 0.030062724340901292,
+            "PA": 0.05391040242976464,
+            "correct": 71,
+            "false_S": 26
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 105,
+                "harmed": 12
+              },
+              "Not Supported": {
+                "rescued": 1,
+                "harmed": 10
+              },
+              "Not Addressed": {
+                "rescued": 1,
+                "harmed": 14
+              }
+            },
+            "false_S_new": 27,
+            "false_S_avoided": 1
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 51,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "22289",
+              "N": 138,
+              "correct_delta": 8,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "25027",
+              "N": 111,
+              "correct_delta": 8,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "30820",
+              "N": 29,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "5954",
+              "N": 20,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "59752",
+              "N": 136,
+              "correct_delta": 7,
+              "false_S_delta": 4
+            },
+            {
+              "sid": "60130",
+              "N": 52,
+              "correct_delta": 4,
+              "false_S_delta": 4
+            },
+            {
+              "sid": "69023",
+              "N": 49,
+              "correct_delta": 3,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "72940",
+              "N": 29,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 48,
+              "correct_delta": 0,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "76990",
+              "N": 76,
+              "correct_delta": 7,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "80454",
+              "N": 49,
+              "correct_delta": 6,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "81230",
+              "N": 17,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 57,
+              "correct_delta": 5,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "82564",
+              "N": 64,
+              "correct_delta": 4,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "84606",
+              "N": 88,
+              "correct_delta": 3,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "87344",
+              "N": 107,
+              "correct_delta": 7,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "93571",
+              "N": 55,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "94404",
+              "N": 41,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "98089",
+              "N": 100,
+              "correct_delta": -6,
+              "false_S_delta": 8
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 16,
+              "down": 1,
+              "equal": 3
+            },
+            "false_S_delta": {
+              "up": 11,
+              "down": 0,
+              "equal": 9
+            }
+          },
+          "author": {
+            "human": {
+              "N": 709,
+              "score": {
+                "mcc": 0.5849229898391922,
+                "percent_agreement": 0.8293370944992948,
+                "correct": 588,
+                "false_S": 37,
+                "non_S": 165,
+                "macro_F1": 0.6419886131671902,
+                "recall": {
+                  "Supported": 0.8713235294117647,
+                  "Not Supported": 0.35135135135135137,
+                  "Not Addressed": 0.7890625
+                }
+              },
+              "delta": {
+                "MCC": 0.033049087167914215,
+                "PA": 0.07052186177715092,
+                "correct": 50,
+                "false_S": 23
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 74,
+                    "harmed": 6
+                  },
+                  "Not Supported": {
+                    "rescued": 1,
+                    "harmed": 8
+                  },
+                  "Not Addressed": {
+                    "rescued": 1,
+                    "harmed": 12
+                  }
+                },
+                "false_S_new": 24,
+                "false_S_avoided": 1
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 31,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 70,
+                  "correct_delta": 4,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "25027",
+                  "N": 87,
+                  "correct_delta": 7,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "30820",
+                  "N": 15,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 11,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 84,
+                  "correct_delta": 11,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "60130",
+                  "N": 23,
+                  "correct_delta": 2,
+                  "false_S_delta": 4
+                },
+                {
+                  "sid": "69023",
+                  "N": 21,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "72940",
+                  "N": 16,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 42,
+                  "correct_delta": 7,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 13,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 4,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 31,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 21,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "84606",
+                  "N": 51,
+                  "correct_delta": 2,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "87344",
+                  "N": 62,
+                  "correct_delta": 4,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "93571",
+                  "N": 14,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 24,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 76,
+                  "correct_delta": -5,
+                  "false_S_delta": 8
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 15,
+                  "down": 1,
+                  "equal": 4
+                },
+                "false_S_delta": {
+                  "up": 10,
+                  "down": 0,
+                  "equal": 10
+                }
+              }
+            },
+            "llm": {
+              "N": 608,
+              "score": {
+                "mcc": 0.2237385417972046,
+                "percent_agreement": 0.9424342105263158,
+                "correct": 573,
+                "false_S": 11,
+                "non_S": 18,
+                "macro_F1": 0.4401585532020314,
+                "recall": {
+                  "Supported": 0.964406779661017,
+                  "Not Supported": 0.375,
+                  "Not Addressed": 0.1
+                }
+              },
+              "delta": {
+                "MCC": -0.033580622582950526,
+                "PA": 0.03453947368421051,
+                "correct": 21,
+                "false_S": 3
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 31,
+                    "harmed": 6
+                  },
+                  "Not Supported": {
+                    "rescued": 0,
+                    "harmed": 2
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 2
+                  }
+                },
+                "false_S_new": 3,
+                "false_S_avoided": 0
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 20,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 68,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 24,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 14,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 9,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 52,
+                  "correct_delta": -4,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "60130",
+                  "N": 29,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 13,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 35,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "76990",
+                  "N": 34,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 36,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 26,
+                  "correct_delta": 1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "82564",
+                  "N": 43,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 37,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 45,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 41,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 17,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 24,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 13,
+                  "down": 2,
+                  "equal": 5
+                },
+                "false_S_delta": {
+                  "up": 2,
+                  "down": 0,
+                  "equal": 18
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1317,
+              "evaluated_n": 1317,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "evaluated_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.05391040242976464,
+                "ci95": [
+                  0.030742456779875145,
+                  0.07205871280096184
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.07054268377264272,
+                "ci95": [
+                  0.04370559236559203,
+                  0.09152294990278044
+                ]
+              },
+              "mcc": {
+                "delta": 0.030062724340901292,
+                "ci95": [
+                  -0.022910928226121452,
+                  0.08523886404745712
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.14207650273224046,
+              "ci95": [
+                0.08619458128078819,
+                0.19445346320346324
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.08201058201058198,
+              "ci95": [
+                0.06586307282702238,
+                0.09723805128063823
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.2,
+              "ci95": [
+                -0.3470490899062327,
+                -0.10000000000000003
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": -0.09420289855072472,
+              "ci95": [
+                -0.15454545454545454,
+                -0.02719432905905719
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        }
+      }
+    },
+    "sqrt3675_seed117": {
+      "source_prediction": "outputs/118_full_data_heads/reconsidered_refit_sqrt_weight_full_predictions.jsonl",
+      "panels": {
+        "selection1817": {
+          "N": 1817,
+          "score": {
+            "mcc": 0.5703694683270857,
+            "percent_agreement": 0.8277380297193175,
+            "correct": 1504,
+            "false_S": 56,
+            "non_S": 362,
+            "macro_F1": 0.6372085283836354,
+            "recall": {
+              "Supported": 0.8639175257731959,
+              "Not Supported": 0.35537190082644626,
+              "Not Addressed": 0.8464730290456431
+            }
+          },
+          "delta": {
+            "MCC": 0.025831944541680474,
+            "PA": 0.02036323610346724,
+            "correct": 37,
+            "false_S": 6
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 53,
+                "harmed": 19
+              },
+              "Not Supported": {
+                "rescued": 8,
+                "harmed": 13
+              },
+              "Not Addressed": {
+                "rescued": 11,
+                "harmed": 3
+              }
+            },
+            "false_S_new": 12,
+            "false_S_avoided": 6
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 75,
+              "correct_delta": 2,
+              "false_S_delta": -1
+            },
+            {
+              "sid": "22289",
+              "N": 175,
+              "correct_delta": 5,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "25027",
+              "N": 173,
+              "correct_delta": 1,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "30820",
+              "N": 41,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "5954",
+              "N": 33,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "59752",
+              "N": 193,
+              "correct_delta": 8,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "60130",
+              "N": 76,
+              "correct_delta": 6,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "69023",
+              "N": 65,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "72940",
+              "N": 45,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 60,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "76990",
+              "N": 94,
+              "correct_delta": 0,
+              "false_S_delta": -1
+            },
+            {
+              "sid": "80454",
+              "N": 80,
+              "correct_delta": -1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "81230",
+              "N": 21,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 75,
+              "correct_delta": 5,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82564",
+              "N": 86,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "84606",
+              "N": 108,
+              "correct_delta": 2,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "87344",
+              "N": 144,
+              "correct_delta": 1,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "93571",
+              "N": 77,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "94404",
+              "N": 56,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "98089",
+              "N": 140,
+              "correct_delta": -2,
+              "false_S_delta": 2
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 14,
+              "down": 2,
+              "equal": 4
+            },
+            "false_S_delta": {
+              "up": 6,
+              "down": 2,
+              "equal": 12
+            }
+          },
+          "author": {
+            "human": {
+              "N": 1024,
+              "score": {
+                "mcc": 0.5780076765238161,
+                "percent_agreement": 0.76953125,
+                "correct": 788,
+                "false_S": 35,
+                "non_S": 326,
+                "macro_F1": 0.6425574905772479,
+                "recall": {
+                  "Supported": 0.7908309455587392,
+                  "Not Supported": 0.36633663366336633,
+                  "Not Addressed": 0.8844444444444445
+                }
+              },
+              "delta": {
+                "MCC": 0.02351302577682801,
+                "PA": 0.0234375,
+                "correct": 24,
+                "false_S": 6
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 34,
+                    "harmed": 13
+                  },
+                  "Not Supported": {
+                    "rescued": 8,
+                    "harmed": 12
+                  },
+                  "Not Addressed": {
+                    "rescued": 10,
+                    "harmed": 3
+                  }
+                },
+                "false_S_new": 11,
+                "false_S_avoided": 5
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 51,
+                  "correct_delta": 2,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "22289",
+                  "N": 92,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "25027",
+                  "N": 140,
+                  "correct_delta": 1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "30820",
+                  "N": 22,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 126,
+                  "correct_delta": 8,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 4,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 17,
+                  "correct_delta": -1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 51,
+                  "correct_delta": 0,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "80454",
+                  "N": 26,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 8,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 41,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 30,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 58,
+                  "correct_delta": 1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "87344",
+                  "N": 86,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "93571",
+                  "N": 21,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 36,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 113,
+                  "correct_delta": -2,
+                  "false_S_delta": 2
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 11,
+                  "down": 4,
+                  "equal": 5
+                },
+                "false_S_delta": {
+                  "up": 7,
+                  "down": 2,
+                  "equal": 11
+                }
+              }
+            },
+            "llm": {
+              "N": 793,
+              "score": {
+                "mcc": 0.2294976488026593,
+                "percent_agreement": 0.9029003783102144,
+                "correct": 716,
+                "false_S": 21,
+                "non_S": 36,
+                "macro_F1": 0.4590635164993617,
+                "recall": {
+                  "Supported": 0.9313077939233818,
+                  "Not Supported": 0.3,
+                  "Not Addressed": 0.3125
+                }
+              },
+              "delta": {
+                "MCC": 0.02719011421106185,
+                "PA": 0.016393442622950838,
+                "correct": 13,
+                "false_S": 0
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 19,
+                    "harmed": 6
+                  },
+                  "Not Supported": {
+                    "rescued": 0,
+                    "harmed": 1
+                  },
+                  "Not Addressed": {
+                    "rescued": 1,
+                    "harmed": 0
+                  }
+                },
+                "false_S_new": 1,
+                "false_S_avoided": 1
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 24,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 83,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 33,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 19,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 13,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 67,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "69023",
+                  "N": 37,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 25,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 43,
+                  "correct_delta": 1,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "76990",
+                  "N": 43,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 54,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 34,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 56,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 50,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 58,
+                  "correct_delta": 1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "93571",
+                  "N": 56,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 27,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 10,
+                  "down": 1,
+                  "equal": 9
+                },
+                "false_S_delta": {
+                  "up": 1,
+                  "down": 1,
+                  "equal": 18
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1817,
+              "evaluated_n": 1817,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "evaluated_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.02036323610346724,
+                "ci95": [
+                  0.010219069633295644,
+                  0.031956576835346855
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.027661888727878448,
+                "ci95": [
+                  0.014822676207384542,
+                  0.04261830958149798
+                ]
+              },
+              "mcc": {
+                "delta": 0.025831944541680474,
+                "ci95": [
+                  0.00451708335031609,
+                  0.050399451923529064
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.0165745856353591,
+              "ci95": [
+                0.0,
+                0.03292229484386346
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.023367697594501746,
+              "ci95": [
+                0.013602460539171746,
+                0.033457637927548176
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.041322314049586806,
+              "ci95": [
+                -0.1367647058823529,
+                0.03885417667980387
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": 0.03319502074688796,
+              "ci95": [
+                0.0,
+                0.07281917996583187
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        },
+        "new1317": {
+          "N": 1317,
+          "score": {
+            "mcc": 0.5717600209877439,
+            "percent_agreement": 0.8511769172361427,
+            "correct": 1121,
+            "false_S": 22,
+            "non_S": 183,
+            "macro_F1": 0.6304241889416514,
+            "recall": {
+              "Supported": 0.86331569664903,
+              "Not Supported": 0.4666666666666667,
+              "Not Addressed": 0.8768115942028986
+            }
+          },
+          "delta": {
+            "MCC": 0.03196581566591561,
+            "PA": 0.023538344722854987,
+            "correct": 31,
+            "false_S": 0
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 45,
+                "harmed": 16
+              },
+              "Not Supported": {
+                "rescued": 2,
+                "harmed": 6
+              },
+              "Not Addressed": {
+                "rescued": 8,
+                "harmed": 2
+              }
+            },
+            "false_S_new": 5,
+            "false_S_avoided": 5
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 51,
+              "correct_delta": 2,
+              "false_S_delta": -1
+            },
+            {
+              "sid": "22289",
+              "N": 138,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "25027",
+              "N": 111,
+              "correct_delta": 2,
+              "false_S_delta": -1
+            },
+            {
+              "sid": "30820",
+              "N": 29,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "5954",
+              "N": 20,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "59752",
+              "N": 136,
+              "correct_delta": 5,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "60130",
+              "N": 52,
+              "correct_delta": 5,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "69023",
+              "N": 49,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "72940",
+              "N": 29,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 48,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "76990",
+              "N": 76,
+              "correct_delta": -1,
+              "false_S_delta": -1
+            },
+            {
+              "sid": "80454",
+              "N": 49,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "81230",
+              "N": 17,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 57,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82564",
+              "N": 64,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "84606",
+              "N": 88,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "87344",
+              "N": 107,
+              "correct_delta": 3,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "93571",
+              "N": 55,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "94404",
+              "N": 41,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "98089",
+              "N": 100,
+              "correct_delta": -2,
+              "false_S_delta": 1
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 13,
+              "down": 2,
+              "equal": 5
+            },
+            "false_S_delta": {
+              "up": 3,
+              "down": 3,
+              "equal": 14
+            }
+          },
+          "author": {
+            "human": {
+              "N": 709,
+              "score": {
+                "mcc": 0.575703131644245,
+                "percent_agreement": 0.7870239774330042,
+                "correct": 558,
+                "false_S": 15,
+                "non_S": 165,
+                "macro_F1": 0.625372073392865,
+                "recall": {
+                  "Supported": 0.78125,
+                  "Not Supported": 0.43243243243243246,
+                  "Not Addressed": 0.9140625
+                }
+              },
+              "delta": {
+                "MCC": 0.02382922897296702,
+                "PA": 0.028208744710860323,
+                "correct": 20,
+                "false_S": 1
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 30,
+                    "harmed": 11
+                  },
+                  "Not Supported": {
+                    "rescued": 2,
+                    "harmed": 6
+                  },
+                  "Not Addressed": {
+                    "rescued": 7,
+                    "harmed": 2
+                  }
+                },
+                "false_S_new": 5,
+                "false_S_avoided": 4
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 31,
+                  "correct_delta": 2,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "22289",
+                  "N": 70,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 87,
+                  "correct_delta": 2,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "30820",
+                  "N": 15,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 11,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 84,
+                  "correct_delta": 5,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "60130",
+                  "N": 23,
+                  "correct_delta": 3,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "69023",
+                  "N": 21,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 16,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 13,
+                  "correct_delta": -1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 42,
+                  "correct_delta": -1,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "80454",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 4,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 31,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 21,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 51,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 62,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "93571",
+                  "N": 14,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 24,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 76,
+                  "correct_delta": -2,
+                  "false_S_delta": 1
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 10,
+                  "down": 4,
+                  "equal": 6
+                },
+                "false_S_delta": {
+                  "up": 4,
+                  "down": 3,
+                  "equal": 13
+                }
+              }
+            },
+            "llm": {
+              "N": 608,
+              "score": {
+                "mcc": 0.32089007660716307,
+                "percent_agreement": 0.9259868421052632,
+                "correct": 563,
+                "false_S": 7,
+                "non_S": 18,
+                "macro_F1": 0.5058551413351587,
+                "recall": {
+                  "Supported": 0.9389830508474576,
+                  "Not Supported": 0.625,
+                  "Not Addressed": 0.4
+                }
+              },
+              "delta": {
+                "MCC": 0.06357091222700795,
+                "PA": 0.018092105263157854,
+                "correct": 11,
+                "false_S": -1
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 15,
+                    "harmed": 5
+                  },
+                  "Not Supported": {
+                    "rescued": 0,
+                    "harmed": 0
+                  },
+                  "Not Addressed": {
+                    "rescued": 1,
+                    "harmed": 0
+                  }
+                },
+                "false_S_new": 0,
+                "false_S_avoided": 1
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 68,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 24,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 14,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 9,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 52,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "60130",
+                  "N": 29,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 13,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 35,
+                  "correct_delta": 1,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "76990",
+                  "N": 34,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 36,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 26,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 43,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 37,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 45,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 41,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 17,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 24,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 9,
+                  "down": 2,
+                  "equal": 9
+                },
+                "false_S_delta": {
+                  "up": 0,
+                  "down": 1,
+                  "equal": 19
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1317,
+              "evaluated_n": 1317,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "evaluated_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.023538344722854987,
+                "ci95": [
+                  0.012995120125683568,
+                  0.03494192892703315
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.03023429297611424,
+                "ci95": [
+                  0.017147741342529436,
+                  0.043973505498884215
+                ]
+              },
+              "mcc": {
+                "delta": 0.03196581566591561,
+                "ci95": [
+                  0.009518796847683772,
+                  0.05937504725680592
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.0,
+              "ci95": [
+                -0.0303088133240805,
+                0.024999999999999994
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.025573192239858877,
+              "ci95": [
+                0.014755068009744507,
+                0.03571506414248348
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.0888888888888889,
+              "ci95": [
+                -0.23257751937984492,
+                0.03030303030303028
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": 0.04347826086956519,
+              "ci95": [
+                0.0,
+                0.10001572327044032
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        }
+      }
+    },
+    "sqrt3675_seed118": {
+      "source_prediction": "outputs/118_full_data_heads/seed_stability_full3675_sqrt_seed118_predictions.jsonl",
+      "panels": {
+        "selection1817": {
+          "N": 1817,
+          "score": {
+            "mcc": 0.5727157080394542,
+            "percent_agreement": 0.8387451843698404,
+            "correct": 1524,
+            "false_S": 74,
+            "non_S": 362,
+            "macro_F1": 0.646066281104653,
+            "recall": {
+              "Supported": 0.8845360824742268,
+              "Not Supported": 0.34710743801652894,
+              "Not Addressed": 0.8091286307053942
+            }
+          },
+          "delta": {
+            "MCC": 0.028178184254048944,
+            "PA": 0.03137039075399006,
+            "correct": 57,
+            "false_S": 24
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 118,
+                "harmed": 54
+              },
+              "Not Supported": {
+                "rescued": 12,
+                "harmed": 18
+              },
+              "Not Addressed": {
+                "rescued": 8,
+                "harmed": 9
+              }
+            },
+            "false_S_new": 28,
+            "false_S_avoided": 4
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 75,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "22289",
+              "N": 175,
+              "correct_delta": 7,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "25027",
+              "N": 173,
+              "correct_delta": 8,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "30820",
+              "N": 41,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "5954",
+              "N": 33,
+              "correct_delta": -2,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "59752",
+              "N": 193,
+              "correct_delta": 11,
+              "false_S_delta": 4
+            },
+            {
+              "sid": "60130",
+              "N": 76,
+              "correct_delta": 8,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "69023",
+              "N": 65,
+              "correct_delta": 1,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "72940",
+              "N": 45,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 60,
+              "correct_delta": -1,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "76990",
+              "N": 94,
+              "correct_delta": 9,
+              "false_S_delta": -1
+            },
+            {
+              "sid": "80454",
+              "N": 80,
+              "correct_delta": 8,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "81230",
+              "N": 21,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 75,
+              "correct_delta": 7,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "82564",
+              "N": 86,
+              "correct_delta": 5,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "84606",
+              "N": 108,
+              "correct_delta": -1,
+              "false_S_delta": 4
+            },
+            {
+              "sid": "87344",
+              "N": 144,
+              "correct_delta": -4,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "93571",
+              "N": 77,
+              "correct_delta": 5,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "94404",
+              "N": 56,
+              "correct_delta": -5,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "98089",
+              "N": 140,
+              "correct_delta": -4,
+              "false_S_delta": 4
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 12,
+              "down": 6,
+              "equal": 2
+            },
+            "false_S_delta": {
+              "up": 13,
+              "down": 1,
+              "equal": 6
+            }
+          },
+          "author": {
+            "human": {
+              "N": 1024,
+              "score": {
+                "mcc": 0.5890382717109008,
+                "percent_agreement": 0.7880859375,
+                "correct": 807,
+                "false_S": 51,
+                "non_S": 326,
+                "macro_F1": 0.6551956661986154,
+                "recall": {
+                  "Supported": 0.830945558739255,
+                  "Not Supported": 0.3564356435643564,
+                  "Not Addressed": 0.8488888888888889
+                }
+              },
+              "delta": {
+                "MCC": 0.034543620963912725,
+                "PA": 0.0419921875,
+                "correct": 43,
+                "false_S": 22
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 82,
+                    "harmed": 33
+                  },
+                  "Not Supported": {
+                    "rescued": 12,
+                    "harmed": 17
+                  },
+                  "Not Addressed": {
+                    "rescued": 8,
+                    "harmed": 9
+                  }
+                },
+                "false_S_new": 26,
+                "false_S_avoided": 4
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 51,
+                  "correct_delta": 5,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 92,
+                  "correct_delta": 2,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "25027",
+                  "N": 140,
+                  "correct_delta": 8,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "30820",
+                  "N": 22,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 20,
+                  "correct_delta": -3,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "59752",
+                  "N": 126,
+                  "correct_delta": 13,
+                  "false_S_delta": 3
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 8,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "72940",
+                  "N": 20,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 17,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 51,
+                  "correct_delta": 10,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "80454",
+                  "N": 26,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 8,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 41,
+                  "correct_delta": 5,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 30,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 58,
+                  "correct_delta": 1,
+                  "false_S_delta": 4
+                },
+                {
+                  "sid": "87344",
+                  "N": 86,
+                  "correct_delta": -4,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "93571",
+                  "N": 21,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "94404",
+                  "N": 36,
+                  "correct_delta": -5,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "98089",
+                  "N": 113,
+                  "correct_delta": -5,
+                  "false_S_delta": 4
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 12,
+                  "down": 4,
+                  "equal": 4
+                },
+                "false_S_delta": {
+                  "up": 12,
+                  "down": 1,
+                  "equal": 7
+                }
+              }
+            },
+            "llm": {
+              "N": 793,
+              "score": {
+                "mcc": 0.20582407754151325,
+                "percent_agreement": 0.9041614123581336,
+                "correct": 717,
+                "false_S": 23,
+                "non_S": 36,
+                "macro_F1": 0.4514325662331544,
+                "recall": {
+                  "Supported": 0.9339498018494056,
+                  "Not Supported": 0.3,
+                  "Not Addressed": 0.25
+                }
+              },
+              "delta": {
+                "MCC": 0.0035165429499157963,
+                "PA": 0.017654476670870056,
+                "correct": 14,
+                "false_S": 2
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 36,
+                    "harmed": 21
+                  },
+                  "Not Supported": {
+                    "rescued": 0,
+                    "harmed": 1
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 0
+                  }
+                },
+                "false_S_new": 2,
+                "false_S_avoided": 0
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 24,
+                  "correct_delta": -3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 83,
+                  "correct_delta": 5,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 33,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 19,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 13,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 67,
+                  "correct_delta": -2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "69023",
+                  "N": 37,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 25,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 43,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "76990",
+                  "N": 43,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 54,
+                  "correct_delta": 6,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 34,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "82564",
+                  "N": 56,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 50,
+                  "correct_delta": -2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 58,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 56,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 27,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 9,
+                  "down": 5,
+                  "equal": 6
+                },
+                "false_S_delta": {
+                  "up": 2,
+                  "down": 0,
+                  "equal": 18
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1817,
+              "evaluated_n": 1817,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "evaluated_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.03137039075399006,
+                "ci95": [
+                  0.009397489275122142,
+                  0.05237472184047895
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.04332345363827106,
+                "ci95": [
+                  0.014598241330196996,
+                  0.07148467249256885
+                ]
+              },
+              "mcc": {
+                "delta": 0.028178184254048944,
+                "ci95": [
+                  -0.01772008748536516,
+                  0.07057811777032595
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.06629834254143646,
+              "ci95": [
+                0.042133240609432375,
+                0.10278409090909091
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.0439862542955326,
+              "ci95": [
+                0.022569383227550515,
+                0.06464270674853285
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.049586776859504134,
+              "ci95": [
+                -0.1779032258064516,
+                0.05085832246849198
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": -0.004149377593360981,
+              "ci95": [
+                -0.04854368932038833,
+                0.04136121553884708
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        },
+        "new1317": {
+          "N": 1317,
+          "score": {
+            "mcc": 0.5642024659495531,
+            "percent_agreement": 0.8625664388762339,
+            "correct": 1136,
+            "false_S": 35,
+            "non_S": 183,
+            "macro_F1": 0.6290345170310373,
+            "recall": {
+              "Supported": 0.8853615520282186,
+              "Not Supported": 0.37777777777777777,
+              "Not Addressed": 0.8333333333333334
+            }
+          },
+          "delta": {
+            "MCC": 0.02440826062772483,
+            "PA": 0.03492786636294609,
+            "correct": 46,
+            "false_S": 13
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 96,
+                "harmed": 42
+              },
+              "Not Supported": {
+                "rescued": 2,
+                "harmed": 10
+              },
+              "Not Addressed": {
+                "rescued": 6,
+                "harmed": 6
+              }
+            },
+            "false_S_new": 15,
+            "false_S_avoided": 2
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 51,
+              "correct_delta": -1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "22289",
+              "N": 138,
+              "correct_delta": 5,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "25027",
+              "N": 111,
+              "correct_delta": 7,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "30820",
+              "N": 29,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "5954",
+              "N": 20,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "59752",
+              "N": 136,
+              "correct_delta": 9,
+              "false_S_delta": 2
+            },
+            {
+              "sid": "60130",
+              "N": 52,
+              "correct_delta": 6,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "69023",
+              "N": 49,
+              "correct_delta": 1,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "72940",
+              "N": 29,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 48,
+              "correct_delta": -1,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "76990",
+              "N": 76,
+              "correct_delta": 6,
+              "false_S_delta": -1
+            },
+            {
+              "sid": "80454",
+              "N": 49,
+              "correct_delta": 5,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "81230",
+              "N": 17,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 57,
+              "correct_delta": 6,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "82564",
+              "N": 64,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "84606",
+              "N": 88,
+              "correct_delta": 1,
+              "false_S_delta": 3
+            },
+            {
+              "sid": "87344",
+              "N": 107,
+              "correct_delta": -1,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "93571",
+              "N": 55,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "94404",
+              "N": 41,
+              "correct_delta": -3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "98089",
+              "N": 100,
+              "correct_delta": -4,
+              "false_S_delta": 3
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 13,
+              "down": 5,
+              "equal": 2
+            },
+            "false_S_delta": {
+              "up": 9,
+              "down": 1,
+              "equal": 10
+            }
+          },
+          "author": {
+            "human": {
+              "N": 709,
+              "score": {
+                "mcc": 0.5863331731264807,
+                "percent_agreement": 0.8124118476727785,
+                "correct": 576,
+                "false_S": 25,
+                "non_S": 165,
+                "macro_F1": 0.6326441135907501,
+                "recall": {
+                  "Supported": 0.8290441176470589,
+                  "Not Supported": 0.35135135135135137,
+                  "Not Addressed": 0.875
+                }
+              },
+              "delta": {
+                "MCC": 0.034459270455202695,
+                "PA": 0.05359661495063461,
+                "correct": 38,
+                "false_S": 11
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 71,
+                    "harmed": 26
+                  },
+                  "Not Supported": {
+                    "rescued": 2,
+                    "harmed": 9
+                  },
+                  "Not Addressed": {
+                    "rescued": 6,
+                    "harmed": 6
+                  }
+                },
+                "false_S_new": 13,
+                "false_S_avoided": 2
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 31,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 70,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "25027",
+                  "N": 87,
+                  "correct_delta": 6,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 15,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 11,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 84,
+                  "correct_delta": 11,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "60130",
+                  "N": 23,
+                  "correct_delta": 6,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "69023",
+                  "N": 21,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "72940",
+                  "N": 16,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 42,
+                  "correct_delta": 7,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "80454",
+                  "N": 13,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 4,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 31,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 21,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 51,
+                  "correct_delta": 2,
+                  "false_S_delta": 3
+                },
+                {
+                  "sid": "87344",
+                  "N": 62,
+                  "correct_delta": -2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "93571",
+                  "N": 14,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 24,
+                  "correct_delta": -3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 76,
+                  "correct_delta": -5,
+                  "false_S_delta": 3
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 12,
+                  "down": 3,
+                  "equal": 5
+                },
+                "false_S_delta": {
+                  "up": 8,
+                  "down": 1,
+                  "equal": 11
+                }
+              }
+            },
+            "llm": {
+              "N": 608,
+              "score": {
+                "mcc": 0.23828251574218115,
+                "percent_agreement": 0.9210526315789473,
+                "correct": 560,
+                "false_S": 10,
+                "non_S": 18,
+                "macro_F1": 0.4687407402064818,
+                "recall": {
+                  "Supported": 0.9372881355932203,
+                  "Not Supported": 0.5,
+                  "Not Addressed": 0.3
+                }
+              },
+              "delta": {
+                "MCC": -0.01903664863797397,
+                "PA": 0.013157894736842035,
+                "correct": 8,
+                "false_S": 2
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 25,
+                    "harmed": 16
+                  },
+                  "Not Supported": {
+                    "rescued": 0,
+                    "harmed": 1
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 0
+                  }
+                },
+                "false_S_new": 2,
+                "false_S_avoided": 0
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 20,
+                  "correct_delta": -2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 68,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 24,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 14,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 9,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 52,
+                  "correct_delta": -2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "60130",
+                  "N": 29,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 13,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 35,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "76990",
+                  "N": 34,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 36,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 26,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "82564",
+                  "N": 43,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 37,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 45,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 41,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 17,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 24,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 11,
+                  "down": 5,
+                  "equal": 4
+                },
+                "false_S_delta": {
+                  "up": 2,
+                  "down": 0,
+                  "equal": 18
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1317,
+              "evaluated_n": 1317,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "evaluated_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.03492786636294609,
+                "ci95": [
+                  0.01254074524546663,
+                  0.056340235771998794
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.045780979791007814,
+                "ci95": [
+                  0.01806115442189519,
+                  0.0727331264018058
+                ]
+              },
+              "mcc": {
+                "delta": 0.02440826062772483,
+                "ci95": [
+                  -0.0239885779094065,
+                  0.06903671230656798
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.07103825136612021,
+              "ci95": [
+                0.02872746865203761,
+                0.12096902609410312
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.04761904761904756,
+              "ci95": [
+                0.028045574057844025,
+                0.06625486127083031
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.1777777777777778,
+              "ci95": [
+                -0.35730519480519485,
+                -0.047564935064935164
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": 0.0,
+              "ci95": [
+                -0.057976765585461165,
+                0.0727320075757576
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        }
+      }
+    },
+    "sqrt1024_seed117": {
+      "source_prediction": "outputs/117_verdict_probe/sqrt_weight_mlp_predictions.jsonl",
+      "panels": {
+        "selection1817": {
+          "N": 1817,
+          "score": {
+            "mcc": 0.5783553252212151,
+            "percent_agreement": 0.8376444689047882,
+            "correct": 1522,
+            "false_S": 62,
+            "non_S": 362,
+            "macro_F1": 0.6483750808329485,
+            "recall": {
+              "Supported": 0.8831615120274914,
+              "Not Supported": 0.3884297520661157,
+              "Not Addressed": 0.7883817427385892
+            }
+          },
+          "delta": {
+            "MCC": 0.033817801435809924,
+            "PA": 0.03026967528893787,
+            "correct": 55,
+            "false_S": 12
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 64,
+                "harmed": 2
+              },
+              "Not Supported": {
+                "rescued": 6,
+                "harmed": 7
+              },
+              "Not Addressed": {
+                "rescued": 2,
+                "harmed": 8
+              }
+            },
+            "false_S_new": 13,
+            "false_S_avoided": 1
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 75,
+              "correct_delta": 5,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "22289",
+              "N": 175,
+              "correct_delta": 8,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "25027",
+              "N": 173,
+              "correct_delta": 6,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "30820",
+              "N": 41,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "5954",
+              "N": 33,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "59752",
+              "N": 193,
+              "correct_delta": 5,
+              "false_S_delta": 3
+            },
+            {
+              "sid": "60130",
+              "N": 76,
+              "correct_delta": 4,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "69023",
+              "N": 65,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "72940",
+              "N": 45,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 60,
+              "correct_delta": 0,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "76990",
+              "N": 94,
+              "correct_delta": 6,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "80454",
+              "N": 80,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "81230",
+              "N": 21,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 75,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82564",
+              "N": 86,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "84606",
+              "N": 108,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "87344",
+              "N": 144,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "93571",
+              "N": 77,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "94404",
+              "N": 56,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "98089",
+              "N": 140,
+              "correct_delta": -3,
+              "false_S_delta": 4
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 17,
+              "down": 1,
+              "equal": 2
+            },
+            "false_S_delta": {
+              "up": 7,
+              "down": 0,
+              "equal": 13
+            }
+          },
+          "author": {
+            "human": {
+              "N": 1024,
+              "score": {
+                "mcc": 0.5832950965340292,
+                "percent_agreement": 0.7783203125,
+                "correct": 797,
+                "false_S": 40,
+                "non_S": 326,
+                "macro_F1": 0.6512152669426589,
+                "recall": {
+                  "Supported": 0.8166189111747851,
+                  "Not Supported": 0.39603960396039606,
+                  "Not Addressed": 0.8311111111111111
+                }
+              },
+              "delta": {
+                "MCC": 0.028800445787041107,
+                "PA": 0.0322265625,
+                "correct": 33,
+                "false_S": 11
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 41,
+                    "harmed": 2
+                  },
+                  "Not Supported": {
+                    "rescued": 5,
+                    "harmed": 6
+                  },
+                  "Not Addressed": {
+                    "rescued": 2,
+                    "harmed": 7
+                  }
+                },
+                "false_S_new": 12,
+                "false_S_avoided": 1
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 51,
+                  "correct_delta": 3,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "22289",
+                  "N": 92,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "25027",
+                  "N": 140,
+                  "correct_delta": 6,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "30820",
+                  "N": 22,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 126,
+                  "correct_delta": 6,
+                  "false_S_delta": 2
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 20,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 17,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 51,
+                  "correct_delta": 6,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 26,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 8,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 41,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 30,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 58,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 86,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 21,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 36,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 113,
+                  "correct_delta": -3,
+                  "false_S_delta": 4
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 13,
+                  "down": 1,
+                  "equal": 6
+                },
+                "false_S_delta": {
+                  "up": 7,
+                  "down": 0,
+                  "equal": 13
+                }
+              }
+            },
+            "llm": {
+              "N": 793,
+              "score": {
+                "mcc": 0.23475812999353626,
+                "percent_agreement": 0.914249684741488,
+                "correct": 725,
+                "false_S": 22,
+                "non_S": 36,
+                "macro_F1": 0.4579428826416778,
+                "recall": {
+                  "Supported": 0.9445178335535006,
+                  "Not Supported": 0.35,
+                  "Not Addressed": 0.1875
+                }
+              },
+              "delta": {
+                "MCC": 0.032450595401938814,
+                "PA": 0.02774274905422447,
+                "correct": 22,
+                "false_S": 1
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 23,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 1,
+                    "harmed": 1
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 1
+                  }
+                },
+                "false_S_new": 1,
+                "false_S_avoided": 0
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 24,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 83,
+                  "correct_delta": 6,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 33,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 19,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 13,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 67,
+                  "correct_delta": -1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "60130",
+                  "N": 38,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "69023",
+                  "N": 37,
+                  "correct_delta": 3,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 25,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 43,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "76990",
+                  "N": 43,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 54,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 34,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 56,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 50,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 58,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 56,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 20,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 27,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 12,
+                  "down": 2,
+                  "equal": 6
+                },
+                "false_S_delta": {
+                  "up": 1,
+                  "down": 0,
+                  "equal": 19
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1817,
+              "evaluated_n": 1817,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "evaluated_cohort_sha256": "67a2bd8e3e2e17fe4db5408194d75244e31314cda91e1d533eb3e553dcd5714f",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.03026967528893787,
+                "ci95": [
+                  0.019551149772446794,
+                  0.03929659453777344
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.041269084473775086,
+                "ci95": [
+                  0.02825206365153102,
+                  0.05244380698437879
+                ]
+              },
+              "mcc": {
+                "delta": 0.033817801435809924,
+                "ci95": [
+                  0.011216671437252124,
+                  0.05495419007488105
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.03314917127071823,
+              "ci95": [
+                0.01562326388888889,
+                0.04773284681162374
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.04261168384879721,
+              "ci95": [
+                0.03612454480160278,
+                0.04958776005528375
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.008264462809917383,
+              "ci95": [
+                -0.04920081967213115,
+                0.014500805152979067
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": -0.024896265560165998,
+              "ci95": [
+                -0.05902403445401494,
+                0.007413793103448174
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        },
+        "new1317": {
+          "N": 1317,
+          "score": {
+            "mcc": 0.5793544568130837,
+            "percent_agreement": 0.8618071374335611,
+            "correct": 1135,
+            "false_S": 26,
+            "non_S": 183,
+            "macro_F1": 0.6441805015155162,
+            "recall": {
+              "Supported": 0.8818342151675485,
+              "Not Supported": 0.5111111111111111,
+              "Not Addressed": 0.8115942028985508
+            }
+          },
+          "delta": {
+            "MCC": 0.039560251491255416,
+            "PA": 0.034168564920273314,
+            "correct": 45,
+            "false_S": 4
+          },
+          "class_changes": {
+            "by_class": {
+              "Supported": {
+                "rescued": 52,
+                "harmed": 2
+              },
+              "Not Supported": {
+                "rescued": 1,
+                "harmed": 3
+              },
+              "Not Addressed": {
+                "rescued": 2,
+                "harmed": 5
+              }
+            },
+            "false_S_new": 5,
+            "false_S_avoided": 1
+          },
+          "patient_directions": [
+            {
+              "sid": "1084",
+              "N": 51,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "22289",
+              "N": 138,
+              "correct_delta": 6,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "25027",
+              "N": 111,
+              "correct_delta": 5,
+              "false_S_delta": -1
+            },
+            {
+              "sid": "30820",
+              "N": 29,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "5954",
+              "N": 20,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "59752",
+              "N": 136,
+              "correct_delta": 3,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "60130",
+              "N": 52,
+              "correct_delta": 4,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "69023",
+              "N": 49,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "72940",
+              "N": 29,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "74237",
+              "N": 48,
+              "correct_delta": 0,
+              "false_S_delta": 1
+            },
+            {
+              "sid": "76990",
+              "N": 76,
+              "correct_delta": 5,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "80454",
+              "N": 49,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "81230",
+              "N": 17,
+              "correct_delta": 0,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82030",
+              "N": 57,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "82564",
+              "N": 64,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "84606",
+              "N": 88,
+              "correct_delta": 3,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "87344",
+              "N": 107,
+              "correct_delta": 4,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "93571",
+              "N": 55,
+              "correct_delta": 2,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "94404",
+              "N": 41,
+              "correct_delta": 1,
+              "false_S_delta": 0
+            },
+            {
+              "sid": "98089",
+              "N": 100,
+              "correct_delta": -2,
+              "false_S_delta": 2
+            }
+          ],
+          "patient_summary": {
+            "correct_delta": {
+              "up": 17,
+              "down": 1,
+              "equal": 2
+            },
+            "false_S_delta": {
+              "up": 4,
+              "down": 1,
+              "equal": 15
+            }
+          },
+          "author": {
+            "human": {
+              "N": 709,
+              "score": {
+                "mcc": 0.5871042719439505,
+                "percent_agreement": 0.7983074753173484,
+                "correct": 566,
+                "false_S": 17,
+                "non_S": 165,
+                "macro_F1": 0.6435029749301118,
+                "recall": {
+                  "Supported": 0.8033088235294118,
+                  "Not Supported": 0.5135135135135135,
+                  "Not Addressed": 0.859375
+                }
+              },
+              "delta": {
+                "MCC": 0.035230369272672535,
+                "PA": 0.03949224259520445,
+                "correct": 28,
+                "false_S": 3
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 33,
+                    "harmed": 2
+                  },
+                  "Not Supported": {
+                    "rescued": 1,
+                    "harmed": 2
+                  },
+                  "Not Addressed": {
+                    "rescued": 2,
+                    "harmed": 4
+                  }
+                },
+                "false_S_new": 4,
+                "false_S_avoided": 1
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 31,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 70,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 87,
+                  "correct_delta": 5,
+                  "false_S_delta": -1
+                },
+                {
+                  "sid": "30820",
+                  "N": 15,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 11,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 84,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "60130",
+                  "N": 23,
+                  "correct_delta": 2,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "69023",
+                  "N": 21,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 16,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "76990",
+                  "N": 42,
+                  "correct_delta": 5,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 13,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 4,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 31,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 21,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 51,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 62,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 14,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 24,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 76,
+                  "correct_delta": -2,
+                  "false_S_delta": 2
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 13,
+                  "down": 1,
+                  "equal": 6
+                },
+                "false_S_delta": {
+                  "up": 3,
+                  "down": 1,
+                  "equal": 16
+                }
+              }
+            },
+            "llm": {
+              "N": 608,
+              "score": {
+                "mcc": 0.2729625251247177,
+                "percent_agreement": 0.9358552631578947,
+                "correct": 569,
+                "false_S": 9,
+                "non_S": 18,
+                "macro_F1": 0.46694570489751214,
+                "recall": {
+                  "Supported": 0.9542372881355933,
+                  "Not Supported": 0.5,
+                  "Not Addressed": 0.2
+                }
+              },
+              "delta": {
+                "MCC": 0.015643360744562573,
+                "PA": 0.02796052631578938,
+                "correct": 17,
+                "false_S": 1
+              },
+              "class_changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 19,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 0,
+                    "harmed": 1
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 1
+                  }
+                },
+                "false_S_new": 1,
+                "false_S_avoided": 0
+              },
+              "patient_directions": [
+                {
+                  "sid": "1084",
+                  "N": 20,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "22289",
+                  "N": 68,
+                  "correct_delta": 4,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "25027",
+                  "N": 24,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "30820",
+                  "N": 14,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "5954",
+                  "N": 9,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "59752",
+                  "N": 52,
+                  "correct_delta": -1,
+                  "false_S_delta": 1
+                },
+                {
+                  "sid": "60130",
+                  "N": 29,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "69023",
+                  "N": 28,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "72940",
+                  "N": 13,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "74237",
+                  "N": 35,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "76990",
+                  "N": 34,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "80454",
+                  "N": 36,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "81230",
+                  "N": 13,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82030",
+                  "N": 26,
+                  "correct_delta": -1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "82564",
+                  "N": 43,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "84606",
+                  "N": 37,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "87344",
+                  "N": 45,
+                  "correct_delta": 2,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "93571",
+                  "N": 41,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "94404",
+                  "N": 17,
+                  "correct_delta": 1,
+                  "false_S_delta": 0
+                },
+                {
+                  "sid": "98089",
+                  "N": 24,
+                  "correct_delta": 0,
+                  "false_S_delta": 0
+                }
+              ],
+              "patient_summary": {
+                "correct_delta": {
+                  "up": 12,
+                  "down": 2,
+                  "equal": 6
+                },
+                "false_S_delta": {
+                  "up": 1,
+                  "down": 0,
+                  "equal": 19
+                }
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "direction": "candidate minus baseline",
+            "coverage": {
+              "expected_n": 1317,
+              "evaluated_n": 1317,
+              "missing_n": 0,
+              "coverage": 1.0,
+              "missing_ids": [],
+              "missing_policy": "error",
+              "expected_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "evaluated_cohort_sha256": "d49fe1e901d94ffb677d9147ec677e3a29b6ab63f72288305f4919b52ad9d9a8",
+              "expected_patients": 20,
+              "evaluated_patients": 20
+            },
+            "bootstrap_iterations": 1000,
+            "resampling": "paired patients, seeds 0..iterations-1",
+            "metrics": {
+              "percent_agreement": {
+                "delta": 0.034168564920273314,
+                "ci95": [
+                  0.02274046305621528,
+                  0.04419656408340531
+                ]
+              },
+              "gwet_ac1": {
+                "delta": 0.044119134082076794,
+                "ci95": [
+                  0.030167499290751652,
+                  0.05639790438424179
+                ]
+              },
+              "mcc": {
+                "delta": 0.039560251491255416,
+                "ci95": [
+                  0.012585662929635191,
+                  0.06990285730907274
+                ]
+              }
+            }
+          },
+          "risk_recall_bootstrap": {
+            "false_S_rate": {
+              "delta": 0.021857923497267756,
+              "ci95": [
+                -0.0059180402930402954,
+                0.045757268424611225
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "S_recall": {
+              "delta": 0.04409171075837737,
+              "ci95": [
+                0.03585301650540691,
+                0.05344617163412124
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NS_recall": {
+              "delta": -0.04444444444444451,
+              "ci95": [
+                -0.1428571428571428,
+                0.0
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            },
+            "NA_recall": {
+              "delta": -0.021739130434782594,
+              "ci95": [
+                -0.057596919165935304,
+                0.017398999615236634
+              ],
+              "valid_draws": 1000,
+              "undefined_denominator": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

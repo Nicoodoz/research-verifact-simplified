@@ -1,5 +1,11 @@
-# 121 nearest_memory：已完成，停止扩大
+# 121 nearest_memory 当前导航
 
-用缓存107无答案表示做32人记忆库/8人内部验证的6配置kNN筛查，固定选k=31均匀投票。160上自然正确+13但false-S+5，压力正确−2且false-S+5；不扩大500，不改变107基线。
+当前是已完成1817扩展的质量—风险取舍候选，不再只停留在原160结论，也未自动替换107或重新搜索k。
 
-代码：[nearest_memory121.py](nearest_memory121.py)。[完整结果](../../outputs/121_nearest_memory/report.md)。新增GPU/API均为0；近邻和记忆向量保存在私有目录。
+[新授权后的固定配置扩展](../../outputs/121_nearest_memory/reconsidered_extension.md)复用原记忆与160条首回执，只补1657条。完整1817为MCC0.5911、正确1584、false-S127/362；107同ID为0.5445、1467、50/362。净正确+117、MCC+0.04654，但false-S+77，S/NS/NA净+172/−20/−35。新增1317也保留MCC收益，因此不是只在原小面板阳性；类别和风险代价必须一起披露。
+
+原160阶段按旧门槛停止的[报告](../../outputs/121_nearest_memory/report.md)与[原结果](../../outputs/121_nearest_memory/results.json)保持原样。后续扩展来自用户放宽取舍后的新授权，不冒充原门槛已通过。
+
+方法保持原样：32名训练患者2945条记忆、8名内部验证患者730条，六个配置只按验证选出k=31均匀投票；L2归一后余弦近邻，无新训练、不混107输出、不以患者ID为特征。只使用原20名选型患者评价，确认40人未用；这些患者均有历史暴露。
+
+[代码](nearest_memory121.py)与[扩展逐例结果](../../outputs/121_nearest_memory/reconsidered_extension_predictions_sanitized.jsonl)保留。记忆向量和近邻内容私有。扩展GPU/API新增0；新文本仍需107完整prefill，CPU近邻速度不是端到端速度。

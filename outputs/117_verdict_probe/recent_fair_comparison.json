@@ -1,5 +1,5 @@
 {
-  "updated_beijing": "2026-10-30T13:46:51+08:00",
+  "updated_beijing": "2026-10-30T14:00:50+08:00",
   "scope": "Recent116-121; same IDs within each table, not across tables",
   "anchor": {
     "sources": [
@@ -6599,78 +6599,6 @@
               }
             }
           },
-          "new1317": {
-            "n": 1317,
-            "mcc": 0.4763791391567983,
-            "percent_agreement": 0.853454821564161,
-            "correct": 1124,
-            "false_S": 47,
-            "non_S": 183,
-            "macro_F1": 0.5594480455770555,
-            "labels": [
-              "Supported",
-              "Not Supported",
-              "Not Addressed"
-            ],
-            "confusion_matrix": [
-              [
-                1047,
-                71,
-                16
-              ],
-              [
-                23,
-                19,
-                3
-              ],
-              [
-                24,
-                56,
-                58
-              ]
-            ],
-            "per_class": {
-              "Supported": {
-                "support": 1134,
-                "predicted": 1094,
-                "tp": 1047,
-                "fn": 87,
-                "fp": 47,
-                "tn": 136,
-                "recall": 0.9232804232804233,
-                "precision": 0.9570383912248629,
-                "specificity": 0.7431693989071039,
-                "npv": 0.6098654708520179,
-                "f1": 0.9398563734290843
-              },
-              "Not Supported": {
-                "support": 45,
-                "predicted": 146,
-                "tp": 19,
-                "fn": 26,
-                "fp": 127,
-                "tn": 1145,
-                "recall": 0.4222222222222222,
-                "precision": 0.13013698630136986,
-                "specificity": 0.9001572327044025,
-                "npv": 0.977796754910333,
-                "f1": 0.19895287958115182
-              },
-              "Not Addressed": {
-                "support": 138,
-                "predicted": 77,
-                "tp": 58,
-                "fn": 80,
-                "fp": 19,
-                "tn": 1160,
-                "recall": 0.42028985507246375,
-                "precision": 0.7532467532467533,
-                "specificity": 0.9838846480067854,
-                "npv": 0.9354838709677419,
-                "f1": 0.5395348837209303
-              }
-            }
-          },
           "selection1817": {
             "n": 1817,
             "mcc": 0.48417076427796296,
@@ -6740,6 +6668,78 @@
                 "specificity": 0.9746192893401016,
                 "npv": 0.9137418203450327,
                 "f1": 0.5092838196286472
+              }
+            }
+          },
+          "new1317": {
+            "n": 1317,
+            "mcc": 0.4763791391567983,
+            "percent_agreement": 0.853454821564161,
+            "correct": 1124,
+            "false_S": 47,
+            "non_S": 183,
+            "macro_F1": 0.5594480455770555,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                1047,
+                71,
+                16
+              ],
+              [
+                23,
+                19,
+                3
+              ],
+              [
+                24,
+                56,
+                58
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 1134,
+                "predicted": 1094,
+                "tp": 1047,
+                "fn": 87,
+                "fp": 47,
+                "tn": 136,
+                "recall": 0.9232804232804233,
+                "precision": 0.9570383912248629,
+                "specificity": 0.7431693989071039,
+                "npv": 0.6098654708520179,
+                "f1": 0.9398563734290843
+              },
+              "Not Supported": {
+                "support": 45,
+                "predicted": 146,
+                "tp": 19,
+                "fn": 26,
+                "fp": 127,
+                "tn": 1145,
+                "recall": 0.4222222222222222,
+                "precision": 0.13013698630136986,
+                "specificity": 0.9001572327044025,
+                "npv": 0.977796754910333,
+                "f1": 0.19895287958115182
+              },
+              "Not Addressed": {
+                "support": 138,
+                "predicted": 77,
+                "tp": 58,
+                "fn": 80,
+                "fp": 19,
+                "tn": 1160,
+                "recall": 0.42028985507246375,
+                "precision": 0.7532467532467533,
+                "specificity": 0.9838846480067854,
+                "npv": 0.9354838709677419,
+                "f1": 0.5395348837209303
               }
             }
           }
@@ -6889,78 +6889,6 @@
               }
             }
           },
-          "new1317": {
-            "n": 1317,
-            "mcc": 0.5397942053218283,
-            "percent_agreement": 0.8276385725132878,
-            "correct": 1090,
-            "false_S": 22,
-            "non_S": 183,
-            "macro_F1": 0.6236150680595125,
-            "labels": [
-              "Supported",
-              "Not Supported",
-              "Not Addressed"
-            ],
-            "confusion_matrix": [
-              [
-                950,
-                134,
-                50
-              ],
-              [
-                11,
-                25,
-                9
-              ],
-              [
-                11,
-                12,
-                115
-              ]
-            ],
-            "per_class": {
-              "Supported": {
-                "support": 1134,
-                "predicted": 972,
-                "tp": 950,
-                "fn": 184,
-                "fp": 22,
-                "tn": 161,
-                "recall": 0.8377425044091711,
-                "precision": 0.977366255144033,
-                "specificity": 0.8797814207650273,
-                "npv": 0.4666666666666667,
-                "f1": 0.9021842355175689
-              },
-              "Not Supported": {
-                "support": 45,
-                "predicted": 171,
-                "tp": 25,
-                "fn": 20,
-                "fp": 146,
-                "tn": 1126,
-                "recall": 0.5555555555555556,
-                "precision": 0.14619883040935672,
-                "specificity": 0.8852201257861635,
-                "npv": 0.9825479930191972,
-                "f1": 0.23148148148148148
-              },
-              "Not Addressed": {
-                "support": 138,
-                "predicted": 174,
-                "tp": 115,
-                "fn": 23,
-                "fp": 59,
-                "tn": 1120,
-                "recall": 0.8333333333333334,
-                "precision": 0.6609195402298851,
-                "specificity": 0.9499575911789653,
-                "npv": 0.9798775153105862,
-                "f1": 0.7371794871794872
-              }
-            }
-          },
           "selection1817": {
             "n": 1817,
             "mcc": 0.5445375237854052,
@@ -7032,10 +6960,472 @@
                 "f1": 0.7101449275362319
               }
             }
+          },
+          "new1317": {
+            "n": 1317,
+            "mcc": 0.5397942053218283,
+            "percent_agreement": 0.8276385725132878,
+            "correct": 1090,
+            "false_S": 22,
+            "non_S": 183,
+            "macro_F1": 0.6236150680595125,
+            "labels": [
+              "Supported",
+              "Not Supported",
+              "Not Addressed"
+            ],
+            "confusion_matrix": [
+              [
+                950,
+                134,
+                50
+              ],
+              [
+                11,
+                25,
+                9
+              ],
+              [
+                11,
+                12,
+                115
+              ]
+            ],
+            "per_class": {
+              "Supported": {
+                "support": 1134,
+                "predicted": 972,
+                "tp": 950,
+                "fn": 184,
+                "fp": 22,
+                "tn": 161,
+                "recall": 0.8377425044091711,
+                "precision": 0.977366255144033,
+                "specificity": 0.8797814207650273,
+                "npv": 0.4666666666666667,
+                "f1": 0.9021842355175689
+              },
+              "Not Supported": {
+                "support": 45,
+                "predicted": 171,
+                "tp": 25,
+                "fn": 20,
+                "fp": 146,
+                "tn": 1126,
+                "recall": 0.5555555555555556,
+                "precision": 0.14619883040935672,
+                "specificity": 0.8852201257861635,
+                "npv": 0.9825479930191972,
+                "f1": 0.23148148148148148
+              },
+              "Not Addressed": {
+                "support": 138,
+                "predicted": 174,
+                "tp": 115,
+                "fn": 23,
+                "fp": 59,
+                "tn": 1120,
+                "recall": 0.8333333333333334,
+                "precision": 0.6609195402298851,
+                "specificity": 0.9499575911789653,
+                "npv": 0.9798775153105862,
+                "f1": 0.7371794871794872
+              }
+            }
           }
         }
       },
       "candidates": [
+        {
+          "name": "120 full_pool_sft/220步",
+          "source": "outputs\\120_full_pool_sft\\midpoint220_1817.json",
+          "panels": {
+            "natural": {
+              "scores": {
+                "n": 400,
+                "mcc": 0.5547067783241383,
+                "percent_agreement": 0.86,
+                "correct": 344,
+                "false_S": 28,
+                "non_S": 79,
+                "macro_F1": 0.6400817575591486,
+                "labels": [
+                  "Supported",
+                  "Not Supported",
+                  "Not Addressed"
+                ],
+                "confusion_matrix": [
+                  [
+                    307,
+                    9,
+                    5
+                  ],
+                  [
+                    10,
+                    11,
+                    5
+                  ],
+                  [
+                    18,
+                    9,
+                    26
+                  ]
+                ],
+                "per_class": {
+                  "Supported": {
+                    "support": 321,
+                    "predicted": 335,
+                    "tp": 307,
+                    "fn": 14,
+                    "fp": 28,
+                    "tn": 51,
+                    "recall": 0.956386292834891,
+                    "precision": 0.9164179104477612,
+                    "specificity": 0.6455696202531646,
+                    "npv": 0.7846153846153846,
+                    "f1": 0.9359756097560976
+                  },
+                  "Not Supported": {
+                    "support": 26,
+                    "predicted": 29,
+                    "tp": 11,
+                    "fn": 15,
+                    "fp": 18,
+                    "tn": 356,
+                    "recall": 0.4230769230769231,
+                    "precision": 0.3793103448275862,
+                    "specificity": 0.9518716577540107,
+                    "npv": 0.9595687331536388,
+                    "f1": 0.4
+                  },
+                  "Not Addressed": {
+                    "support": 53,
+                    "predicted": 36,
+                    "tp": 26,
+                    "fn": 27,
+                    "fp": 10,
+                    "tn": 337,
+                    "recall": 0.49056603773584906,
+                    "precision": 0.7222222222222222,
+                    "specificity": 0.9711815561959655,
+                    "npv": 0.9258241758241759,
+                    "f1": 0.5842696629213483
+                  }
+                }
+              },
+              "changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 34,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 7,
+                    "harmed": 2
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 14
+                  }
+                },
+                "false_S_new": 16,
+                "false_S_avoided": 0
+              },
+              "delta_MCC": 0.05151049734305657,
+              "delta_PA": 0.0625,
+              "delta_correct": 25,
+              "delta_false_S": 16
+            },
+            "pressure": {
+              "scores": {
+                "n": 100,
+                "mcc": 0.3748923023620588,
+                "percent_agreement": 0.57,
+                "correct": 57,
+                "false_S": 29,
+                "non_S": 100,
+                "macro_F1": 0.44175824175824174,
+                "labels": [
+                  "Supported",
+                  "Not Supported",
+                  "Not Addressed"
+                ],
+                "confusion_matrix": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    18,
+                    24,
+                    8
+                  ],
+                  [
+                    11,
+                    6,
+                    33
+                  ]
+                ],
+                "per_class": {
+                  "Supported": {
+                    "support": 0,
+                    "predicted": 29,
+                    "tp": 0,
+                    "fn": 0,
+                    "fp": 29,
+                    "tn": 71,
+                    "recall": null,
+                    "precision": 0.0,
+                    "specificity": 0.71,
+                    "npv": 1.0,
+                    "f1": 0.0
+                  },
+                  "Not Supported": {
+                    "support": 50,
+                    "predicted": 30,
+                    "tp": 24,
+                    "fn": 26,
+                    "fp": 6,
+                    "tn": 44,
+                    "recall": 0.48,
+                    "precision": 0.8,
+                    "specificity": 0.88,
+                    "npv": 0.6285714285714286,
+                    "f1": 0.6
+                  },
+                  "Not Addressed": {
+                    "support": 50,
+                    "predicted": 41,
+                    "tp": 33,
+                    "fn": 17,
+                    "fp": 8,
+                    "tn": 42,
+                    "recall": 0.66,
+                    "precision": 0.8048780487804879,
+                    "specificity": 0.84,
+                    "npv": 0.711864406779661,
+                    "f1": 0.7252747252747253
+                  }
+                }
+              },
+              "changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 0,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 12,
+                    "harmed": 5
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 8
+                  }
+                },
+                "false_S_new": 13,
+                "false_S_avoided": 0
+              },
+              "delta_MCC": 0.06254477858484664,
+              "delta_PA": -0.010000000000000009,
+              "delta_correct": -1,
+              "delta_false_S": 13
+            },
+            "selection1817": {
+              "scores": {
+                "n": 1817,
+                "mcc": 0.5970726816547887,
+                "percent_agreement": 0.8701155751238305,
+                "correct": 1581,
+                "false_S": 113,
+                "non_S": 362,
+                "macro_F1": 0.6703095014688284,
+                "labels": [
+                  "Supported",
+                  "Not Supported",
+                  "Not Addressed"
+                ],
+                "confusion_matrix": [
+                  [
+                    1389,
+                    47,
+                    19
+                  ],
+                  [
+                    52,
+                    52,
+                    17
+                  ],
+                  [
+                    61,
+                    40,
+                    140
+                  ]
+                ],
+                "per_class": {
+                  "Supported": {
+                    "support": 1455,
+                    "predicted": 1502,
+                    "tp": 1389,
+                    "fn": 66,
+                    "fp": 113,
+                    "tn": 249,
+                    "recall": 0.954639175257732,
+                    "precision": 0.9247669773635153,
+                    "specificity": 0.6878453038674033,
+                    "npv": 0.7904761904761904,
+                    "f1": 0.939465674670274
+                  },
+                  "Not Supported": {
+                    "support": 121,
+                    "predicted": 139,
+                    "tp": 52,
+                    "fn": 69,
+                    "fp": 87,
+                    "tn": 1609,
+                    "recall": 0.4297520661157025,
+                    "precision": 0.37410071942446044,
+                    "specificity": 0.9487028301886793,
+                    "npv": 0.9588796185935637,
+                    "f1": 0.4
+                  },
+                  "Not Addressed": {
+                    "support": 241,
+                    "predicted": 176,
+                    "tp": 140,
+                    "fn": 101,
+                    "fp": 36,
+                    "tn": 1540,
+                    "recall": 0.5809128630705395,
+                    "precision": 0.7954545454545454,
+                    "specificity": 0.9771573604060914,
+                    "npv": 0.9384521633150518,
+                    "f1": 0.6714628297362111
+                  }
+                }
+              },
+              "changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 166,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 23,
+                    "harmed": 19
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 56
+                  }
+                },
+                "false_S_new": 63,
+                "false_S_avoided": 0
+              },
+              "delta_MCC": 0.05253515786938345,
+              "delta_PA": 0.06274078150798024,
+              "delta_correct": 114,
+              "delta_false_S": 63
+            },
+            "new1317": {
+              "scores": {
+                "n": 1317,
+                "mcc": 0.5790683301863335,
+                "percent_agreement": 0.8959757023538345,
+                "correct": 1180,
+                "false_S": 56,
+                "non_S": 183,
+                "macro_F1": 0.6360030308432876,
+                "labels": [
+                  "Supported",
+                  "Not Supported",
+                  "Not Addressed"
+                ],
+                "confusion_matrix": [
+                  [
+                    1082,
+                    38,
+                    14
+                  ],
+                  [
+                    24,
+                    17,
+                    4
+                  ],
+                  [
+                    32,
+                    25,
+                    81
+                  ]
+                ],
+                "per_class": {
+                  "Supported": {
+                    "support": 1134,
+                    "predicted": 1138,
+                    "tp": 1082,
+                    "fn": 52,
+                    "fp": 56,
+                    "tn": 127,
+                    "recall": 0.9541446208112875,
+                    "precision": 0.9507908611599297,
+                    "specificity": 0.6939890710382514,
+                    "npv": 0.7094972067039106,
+                    "f1": 0.9524647887323944
+                  },
+                  "Not Supported": {
+                    "support": 45,
+                    "predicted": 80,
+                    "tp": 17,
+                    "fn": 28,
+                    "fp": 63,
+                    "tn": 1209,
+                    "recall": 0.37777777777777777,
+                    "precision": 0.2125,
+                    "specificity": 0.9504716981132075,
+                    "npv": 0.9773645917542442,
+                    "f1": 0.272
+                  },
+                  "Not Addressed": {
+                    "support": 138,
+                    "predicted": 99,
+                    "tp": 81,
+                    "fn": 57,
+                    "fp": 18,
+                    "tn": 1161,
+                    "recall": 0.5869565217391305,
+                    "precision": 0.8181818181818182,
+                    "specificity": 0.9847328244274809,
+                    "npv": 0.9532019704433498,
+                    "f1": 0.6835443037974683
+                  }
+                }
+              },
+              "changes": {
+                "by_class": {
+                  "Supported": {
+                    "rescued": 132,
+                    "harmed": 0
+                  },
+                  "Not Supported": {
+                    "rescued": 4,
+                    "harmed": 12
+                  },
+                  "Not Addressed": {
+                    "rescued": 0,
+                    "harmed": 34
+                  }
+                },
+                "false_S_new": 34,
+                "false_S_avoided": 0
+              },
+              "delta_MCC": 0.03927412486450521,
+              "delta_PA": 0.06833712984054674,
+              "delta_correct": 90,
+              "delta_false_S": 34
+            }
+          }
+        },
         {
           "name": "116 claim_repeat",
           "source": "outputs/116_research_cycle/claim_repeat_1817_missing.json",

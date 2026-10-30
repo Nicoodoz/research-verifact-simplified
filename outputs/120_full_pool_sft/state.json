@@ -1,5 +1,5 @@
 {
-  "status": "fixed220_expansion_to1817",
+  "status": "fixed220_complete1817",
   "pid": 4347,
   "start_epoch": 1793326274.5477679,
   "training_N": 2945,
@@ -20,5 +20,13 @@
   "continue_training_pending_effect": true,
   "old500_completed": true,
   "old500_valid": 500,
-  "pending_new_predictions": 1317
+  "pending_new_predictions": 1317,
+  "complete1817": true,
+  "evaluated_N": 1817,
+  "valid_N": 1817,
+  "MCC": 0.5970726816547887,
+  "correct": 1581,
+  "false_S": 113,
+  "non_S": 362,
+  "training_completed": false
 }

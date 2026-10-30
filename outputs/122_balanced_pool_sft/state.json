@@ -1,10 +1,13 @@
 {
   "task": 122,
-  "status": "paused_for_120_expansion",
+  "status": "resumed_training",
   "saved_step": 24,
   "saved_presentations": 192,
   "planned_steps": 92,
   "final_results_available": false,
   "continuation_plan": "restore_same_optimizer_RNG_and_training_order_after120_extension",
-  "no_shutdown": true
+  "no_shutdown": true,
+  "resumed_from_step": 24,
+  "planned_N": 729,
+  "resource_deadline": "2026-10-30T20:57:46+08:00"
 }
