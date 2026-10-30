@@ -1,0 +1,124 @@
+{
+  "task": 120,
+  "candidate": "full_pool_sft",
+  "decision": "stop_current_natural_mix_branch_after_step220",
+  "continue_to_369": false,
+  "observed_checkpoint_step": 220,
+  "observed_presentations": 1760,
+  "planned_steps": 369,
+  "planned_presentations": 2945,
+  "planned_training_completed": false,
+  "evaluation_scope": "fixed nested natural128 and pressure32 from old500 development panel",
+  "coverage": {
+    "expected_N": 160,
+    "received_N": 160,
+    "valid_N": 160,
+    "invalid_N": 0,
+    "missing_N": 0
+  },
+  "metrics": {
+    "screen160_enriched": {
+      "baseline107": {
+        "mcc": 0.49118070073614606,
+        "percent_agreement": 0.71875,
+        "correct": 115,
+        "false_S": 10,
+        "non_S": 57
+      },
+      "step220": {
+        "mcc": 0.5823739311539061,
+        "percent_agreement": 0.79375,
+        "correct": 127,
+        "false_S": 20,
+        "non_S": 57
+      }
+    },
+    "natural": {
+      "baseline107": {
+        "mcc": 0.4164735719701865,
+        "percent_agreement": 0.75,
+        "correct": 96,
+        "false_S": 5,
+        "non_S": 25
+      },
+      "step220": {
+        "mcc": 0.5507351569096915,
+        "percent_agreement": 0.859375,
+        "correct": 110,
+        "false_S": 9,
+        "non_S": 25
+      }
+    },
+    "pressure": {
+      "baseline107": {
+        "mcc": 0.3191423692521127,
+        "percent_agreement": 0.59375,
+        "correct": 19,
+        "false_S": 5,
+        "non_S": 32
+      },
+      "step220": {
+        "mcc": 0.3519947346980235,
+        "percent_agreement": 0.53125,
+        "correct": 17,
+        "false_S": 11,
+        "non_S": 32
+      }
+    }
+  },
+  "class_correct_before": [
+    83,
+    9,
+    23
+  ],
+  "class_correct_after": [
+    99,
+    12,
+    16
+  ],
+  "class_order": [
+    "Supported",
+    "Not Supported",
+    "Not Addressed"
+  ],
+  "false_S_new": 10,
+  "false_S_avoided": 0,
+  "reason": "Real MCC/correct-S gains accompany double false-S and seven lost NA judgments; current risk-quality tradeoff does not justify about1.5 more training hours.",
+  "engineering_exit": {
+    "user_requested_early_check": true,
+    "request_epoch": 1793334684.3507726,
+    "signal": "SIGTERM",
+    "worker_error_type": "TimeoutError",
+    "normal_complete_update_saved": true,
+    "saved_step": 220,
+    "OOM": false,
+    "budget_expiry_was_cause": false,
+    "checkpoint_error": null
+  },
+  "assets": {
+    "complete_step220": ".local_models/120_full_pool_sft/evidence/full_pool_sft/train/checkpoint_a",
+    "step192_intermediate_retained": true
+  },
+  "claim_limits": {
+    "step369_efficacy_tested": false,
+    "all_full_pool_SFT_rejected": false,
+    "independent_confirmation_used": false
+  },
+  "verification": {
+    "method": "Independent formula from sanitized paired labels plus ID/GT/patient join checks",
+    "matches_existing_reported_metrics": true,
+    "new_GPU_or_API": false
+  },
+  "resources": {
+    "charged_to_shared_current_window": true,
+    "API_window_CNY": 0,
+    "exact_platform_payment_not_claimed": true,
+    "shutdown_sent": false,
+    "instance_currently_used_for_separate122": true
+  },
+  "next_task": {
+    "task": 122,
+    "scope": "separate balanced729 recipe",
+    "efficacy_result_available": false
+  }
+}

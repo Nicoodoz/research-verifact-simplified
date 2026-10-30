@@ -134,6 +134,12 @@ def main():
     add('fixed160', '121 nearest_memory', file, read(file)['stages']['160']['panels'],
         '.local_models/121_nearest_memory/predictions_160.jsonl', screen_ids)
 
+    midpoint120 = R/'outputs/120_full_pool_sft/midpoint220_160.json'
+    if midpoint120.exists():
+        v = read(midpoint120)['models']['full_pool_sft']
+        add('fixed160', '120 full_pool_sft/220步中途检查', str(midpoint120.relative_to(R)), v['panels'],
+            'outputs/120_full_pool_sft/midpoint220_160_predictions_sanitized.jsonl', screen_ids)
+
     file = 'outputs/116_research_cycle/claim_repeat_1817_missing.json'
     add('selection1817', '116 claim_repeat', file, read(file)['panels'],
         'outputs/116_research_cycle/claim_repeat_1817_missing_predictions.jsonl', all_ids)
@@ -149,15 +155,16 @@ def main():
     data = dict(updated_beijing=datetime.now(timezone(timedelta(hours=8))).isoformat(timespec='seconds'),
         scope='Recent116-121; same IDs within each table, not across tables', anchor=anchor(), scopes=scopes,
         paper_r1_historical_only=True, current_same_judge_verifact_ref_not_run=True,
-        new_GPU=False, new_API=False, training_running=not complete120.exists(),
+        new_GPU=False, new_API=False, training_running=not complete120.exists() and not midpoint120.exists(),
+        midpoint120_checked=midpoint120.exists(),
         caveat='All20 selection patients have historical exposure; no confirmation40 used. Baseline107 ancestors saw some internal-validation patients.')
     O.mkdir(exist_ok=True)
     (O/'recent_fair_comparison.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
 
-    lines = ['# 最近研究的同ID对比：116—121', '',
-        '截至 '+data['updated_beijing']+'。当前保留107 label_only；117—119及121尚无值得保留的综合增量，120'+('仍在训练。' if data['training_running'] else '已有首轮结果，见表及120报告。'), '',
+    lines = ['# 最近研究的同ID对比：116—122', '',
+        '截至 '+data['updated_beijing']+'。当前保留107 label_only；117—119及121尚无值得保留的综合增量，120'+('仍在训练。' if data['training_running'] else '已有首轮结果，见表及120报告。')+'122均衡样本方案正在训练，尚无分类成绩。', '',
         '在完整1817个同ID上，107相对原作者历史系统：MCC **0.5445 vs 0.4842**，false-S **50 vs 105**；代价是少判对25条，PA **80.74% vs 82.11%**。这说明微调基线有实际的质量—风险收益，后续增量失败不能概括成“微调全部失败”。', '',
-        '这里的“公平”首先指同一组ID、原医生GT和同一指标口径。paper_r1是原作者发布的历史系统预测，模型和检索条件不同，因此只能作系统级历史参照，不能冒充同Judge同期强对照。107是当前普通微调主基线。新方案与107比较时也交代监督量、输出方式和成本差别，不把完整方案对比写成单组件消融。', '',
+        '这里的“公平”首先指同一组ID、原医生GT和同一指标口径。paper_r1是原作者发布的历史系统预测，模型和推理设置未在本轮做同条件控制，因此只能作系统级历史参照，不能冒充同Judge同期强对照。107是当前普通微调主基线。新方案与107比较时也交代监督量、输出方式和成本差别，不把完整方案对比写成单组件消融。', '',
         '每格顺序均为 **MCC · PA · 正确数/评价数 · false-S/真实非S数**。自然与人为压力面板分开；160、180、500、1817不能跨表直接比数字。所有20名选型患者均有历史研究暴露，未使用后续确认40人。', '',
         '## 标签微调的历史收益仍然成立', '',
         '下面只用105未微调基线的有效共同ID；不沿用包含理由组时的390条自然子集，也不将107全400条数字搬到这里。只分析既有回执，没有补跑105。四者原输入token标识一致；105在A800/batch8，107在5090/batch2，仍属历史复用而非新同期重跑。', '',
@@ -187,6 +194,8 @@ def main():
             lines.append('|'+row['name']+'|'+'|'.join(cell(row['panels'][p]['scores']) for p in panels)+'|')
         if scope == 'fixed160' and data['training_running']:
             lines.append('|120 full_pool_sft / 正在训练|尚无分类结果|尚无分类结果|')
+        if scope == 'fixed160':
+            lines.append('|122 balanced_pool_sft / 正在训练|尚无分类结果|尚无分类结果|')
         lines.append('')
 
     lines += ['## 实际得失与当前决定', '',
@@ -194,7 +203,8 @@ def main():
         '- 117平衡MLP在500条净多3条正确、false-S少2；扩到1817后变成少12条正确、false-S仅少3，NA净损失11。小面板的信号没有维持。',
         '- 118全量数据冻结头仍无综合增量；119完整训练自然MCC提高明显，但压力正确少6、合计false-S多7，NS正确9/24降到2/24。',
         '- 121近邻自然多对13，压力少对2，合计新增10次false-S且没有避免任何一次；停止扩大。',
-        '- 120使用原JSON/原loss完成同32人2945条的一整轮续训，正在检验；不能用loss、显存正常或其余方案的结果代替120实际分类成绩。', '',
+        ('- 120按用户要求在220步/1760次呈现保存并提前检查：自然正确+14、压力−2，false-S合计10→20，NA正确23→16。停止当前自然比例全池分支；没有跑完原计划369步，不声称其最终点结果。' if midpoint120.exists() else '- 120正在检验同32人2945条的原JSON/原loss续训，尚无分类结论。'),
+        '- 122从原107重新开始，三类各243条、共729条、固定92步，检验均衡资料的实用配方。它同时改变资料组成与总呈现次数，不会单独证明类别不均衡是唯一原因。', '',
         '## 比较中的训练与接口差别', '',
         '|方案|实际监督范围与主要变化|', '|---|---|',
         '|107 label_only|原40患者中的196条，原9B新训练50步；主JSON基线|',

@@ -1,0 +1,25 @@
+{
+  "fingerprint": {
+    "task": 122,
+    "candidate": "balanced_pool_sft",
+    "train": "fccf9a3975ea862d73f2f5a76130af4dbad115998e5b124db6729e09ab119174",
+    "job": "2fc7d78c271f91b14638c0cea9d9e35b82a5adbaef34faf589ceef7f5ae7adad",
+    "source107": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+    "code": "288c0c08c728b254c013f533f2e3dfb70dd7ecf0823068bfc963e233686d3a0b"
+  },
+  "prompt_tokens": 12337,
+  "total_tokens": 12346,
+  "original_loss_info": {
+    "verdict_tokens": 3,
+    "other_tokens": 6,
+    "projected_positions": 9,
+    "max_head_rows": 9
+  },
+  "seconds": 24.384970053099096,
+  "peak_allocated_bytes": 26559669760,
+  "headroom_bytes": 6895868416,
+  "LoRA_gradient": true,
+  "optimizer_updates": 0,
+  "fresh_Adam_memory_reserved": true,
+  "no_truncation": true
+}

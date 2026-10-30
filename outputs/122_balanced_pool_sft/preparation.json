@@ -1,0 +1,38 @@
+{
+  "status": "running",
+  "task": 122,
+  "candidate": "balanced_pool_sft",
+  "source": "original107 adapter; fresh Adam",
+  "selection": "original32 pool; class243 each; seeded patient rotation; no review-status filter",
+  "seed": 117027,
+  "N": 729,
+  "GT": {
+    "Supported": 243,
+    "Not Supported": 243,
+    "Not Addressed": 243
+  },
+  "patients": 32,
+  "patients_by_class": {
+    "Supported": 32,
+    "Not Supported": 31,
+    "Not Addressed": 31
+  },
+  "steps": 92,
+  "tail_divisor": 1,
+  "learning_rate": 1e-05,
+  "max_full_tokens": 12346,
+  "full_training_tokens": 6156857,
+  "frozen120_unmodified": true,
+  "same_original_loss_and_checkpoint_logic": true,
+  "longest_actual_BF16_backward_still_required_on_GPU": true,
+  "estimated_total_minutes": [
+    70,
+    80
+  ],
+  "estimate_basis": "120 actual220-step token throughput plus loading/gate/screen/save",
+  "active_session_unchanged": true,
+  "new_GPU": true,
+  "new_API": false,
+  "archive_bytes": 5104711,
+  "CPU_checks_only_prove_implementation": true
+}

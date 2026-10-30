@@ -1,13 +1,19 @@
 {
-  "status": "TRAINING",
+  "status": "stopped_after_user_requested_interim_check",
   "pid": 4347,
   "start_epoch": 1793326274.5477679,
   "training_N": 2945,
   "planned_steps": 369,
   "screen_N": 160,
-  "fixed_final_checkpoint": true,
+  "fixed_final_checkpoint": false,
   "baseline": "107_label_only",
   "no_shutdown": true,
   "paid_API_CNY": 0,
-  "GPU_gate_passed": true
+  "GPU_gate_passed": true,
+  "completed_step": 220,
+  "completed_presentations": 1760,
+  "baseline_retained": "107_label_only",
+  "current_369_step_result_available": false,
+  "original_plan_fixed_final_checkpoint": true,
+  "observed_checkpoint_role": "interim_step220"
 }
