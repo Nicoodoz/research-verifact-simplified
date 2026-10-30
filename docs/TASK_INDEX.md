@@ -6,7 +6,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|127_native_reason_data|[数据准备](../outputs/127_native_reason_data/report.md) · [入口](../tasks/127_native_reason_data/CURRENT.md)|仅CPU，24条试审、15条配对及全部3675原标签保留|旧理由无实质语义提升证据；不批量扩写、不新训，120继续|
+|127_native_reason_data|[数据准备](../outputs/127_native_reason_data/report.md) · [入口](../tasks/127_native_reason_data/CURRENT.md)|仅CPU，累计32条审读、20条配对及全部3675原标签保留|医生备注有限补充5条；无分类收益证明，不新训|
 |126_conditional_state_readout|[准备与取消](../tasks/126_conditional_state_readout/CURRENT.md)|仅准备，未GPU提取、未真实拟合|按研究方向取消，无效果成绩|
 |125_dual_state_readout|[160报告](../outputs/125_dual_state_readout/report.md)|固定拼接头真实CPU初筛|相对原117 MLP净−4正确、FS+4，阴性停止|
 |124_seed_mean_readout|[报告](../outputs/124_seed_mean_readout/final_report.md) · [结果](../outputs/124_seed_mean_readout/full1817.json)|固定均值完整1817、区间及部署指针均保留|有真实标签增益；按用户最新方向停止后接融合主线，不改写为阴性|

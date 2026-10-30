@@ -55,3 +55,5 @@
 私有索引：`.local_models/127_native_reason_data/doctor_comment_index111.jsonl`。完整计数见[来源盘点](../outputs/127_native_reason_data/original_asset_inventory.json)，复现入口为`tasks/127_native_reason_data/inspect_source_assets.py`。临床备注、原reason和完整BHC不随GitHub发布。
 
 随后按固定规则各抽1条S／NS／NA、均来自训练侧且有较长裁定备注，完整审读了当前reference：1条NA可补可靠简短理由，另外2条仍存在特定因果限定或处置记录缺口。备注有时引用当前检索输入之外的材料，或自己保留NS／NA解释空间。因此没有直接批量转写111条，也未修改原15条配对数据；新增1条仅保存为私有待整合草稿。三条是小批可用性检查，不能当作111条或全数据的通过率。
+
+后续又核查5条含可定位医生引文的训练样本，4条可补理由，1条仍有NS／NA边界问题。合并两小批后只增加5条配对，累计20条；全部8条审读材料与问题都保留，未把医生意见直接当模型输入或改写GT。可定位引文帮助找到核查位置，但仍不能替代语义判断。
