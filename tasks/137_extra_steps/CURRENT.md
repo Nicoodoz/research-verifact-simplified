@@ -1,7 +1,9 @@
-# 137 extra_steps：已启动原生续训
+# 137 extra_steps：160初筛通过，补齐原500中
 
-完整120 step369的权重、Adam、scheduler和RNG已在独立137目录恢复，目标固定518；新增149步/1192次呈现。已进入正式训练，首个续训完整检查点已保存至400步；实时步数见进度文件，尚无新增分类结果。
+完整120 step369状态固定续训149步至518；模型、Adam、scheduler和RNG已回传，新增1192次呈现。32训练患者与20评价患者无交集，原GT、数据、顺序和loss不变。
 
-32训练患者与20评价患者无交集，原GT、数据、顺序和loss不变。评价固定136的claim_repeat输入及160 ID，基线直接复用。
+同136输入的160条全部有效：MCC .5707→.5937，正确126→127，false-S17→15/57；S/NS/NA净−2/+6/−3。符合事前质量与风险信号，不能据此断言全量收益。
 
-[方案](PROTOCOL.md) · [状态恢复回执](../../outputs/137_extra_steps/source_restore.json) · [实时进度](../../outputs/137_extra_steps/progress.md)
+当前仅补原500缺失的340条，不重推160、不重复训练。若500仍有信号且预算允许，再补1317；否则保存结果结束当前版本。总窗口仍为23:40起GPU16元、API80元，API已用0，不关机、不释放。
+
+[方案](PROTOCOL.md) · [初筛报告](../../outputs/137_extra_steps/report.md) · [训练完成](../../outputs/137_extra_steps/training_summary.json) · [实时进度](../../outputs/137_extra_steps/progress.md)

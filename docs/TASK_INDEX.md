@@ -1,4 +1,4 @@
-# 全部任务与当前入口（2026-10-30）
+# 全部任务与当前入口（2026-10-31）
 
 补充CPU核查：[120医生标注分层](../outputs/120_full_pool_sft/annotation_strata.md)显示，首轮三医师一致样本也同时出现质量提升与false-S增加，不能把风险全归于标注争议；[131源文上下文核查](../outputs/131_source_context_probe/report.md)完成6例，没有找到支持盲目扩大输入的新决定性依据。无新增GPU调用，40对reason仍为准备资产。
 
@@ -8,7 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|137_extra_steps|[当前](../tasks/137_extra_steps/CURRENT.md) · [方案](../tasks/137_extra_steps/PROTOCOL.md) · [进度](../outputs/137_extra_steps/progress.md)|120完整状态已恢复并进入正式训练，32/20患者无交集|尚无分类结果；同136输入，基线复用|
+|137_extra_steps|[当前](../tasks/137_extra_steps/CURRENT.md) · [报告](../outputs/137_extra_steps/report.md) · [进度](../outputs/137_extra_steps/progress.md)|149步完成并回传；160全有效：MCC .5937、正确127、FS15/57|相对136正确+1、FS−2，NS增益伴随S/NA损失；正补340至原500|
 |136_claim_repeat_transfer|[当前](../tasks/136_claim_repeat_transfer/CURRENT.md) · [方案](../tasks/136_claim_repeat_transfer/PROTOCOL.md) · [进度](../outputs/136_claim_repeat_transfer/progress.md)|全1817有效：MCC .6350、正确1593、FS88/362|相对120正确−6、FS−21；保留取舍，不升级默认|
 |135_reason_first|[报告](../outputs/135_reason_first/report.md) · [统计](../outputs/135_reason_first/screen160.json)|160有效、缺reason0；MCC−.0608、正确−6、FS不变|停止当前版本扩大，前缀对照仅CPU未跑|
 |134_author_baselines|[完整报告](../outputs/134_author_baselines/report.md) · [覆盖](../outputs/134_author_baselines/full1817_coverage.json)|两9B各1817，paper_r1历史1817；共同有效1793|真实微调收益与NS/FS代价；作者接口未全面优于104接口120|

@@ -1,0 +1,17 @@
+{
+  "scope": "old500",
+  "new_IDs": 340,
+  "already_attempted": 160,
+  "method": "Recorded136 per-ID batch time, multiplied by observed137 screen slowdown and1.25 safety; plus180s loading and900s return/analysis/publish reserve",
+  "recorded_new160_seconds": 347.3157641887665,
+  "slowdown_factor": 1,
+  "estimated_inference_and_loading_seconds": 1034.1707096085884,
+  "save_analysis_publish_reserve_seconds": 900,
+  "remaining_global_seconds": 6916.21724486351,
+  "current_GPU_estimate_CNY": 12.96454909808106,
+  "projected_GPU_estimate_CNY": 13.813435131742606,
+  "fits_current_budget": true,
+  "API_CNY": 0,
+  "no_shutdown": true,
+  "limitation": "Forecast only; actual progress and hard wall-clock guards remain authoritative. Invalid first outputs are not rerun."
+}

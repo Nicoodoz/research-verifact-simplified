@@ -51,6 +51,9 @@ def main():
   '',f'截至{stamp}，23:40窗口GPU累计估算¥{cost:.3f}/16，API0/80。加载、编译、等待、训练、推理和回传均计入；平台精确账单未核。完整模型/优化器/RNG已回传，不关机或释放。',
   '', 'loss下降、梯度正常不当作分类收益。本模型输出的标签来自同次原生生成；不得配上旧模型理由。当前不宣称reason自洽已解决，不自动升级默认。',
   '',f'[完整统计与三类precision/recall/F1]({a.scope}.json) · [训练完成摘要](training_summary.json) · [固定方案](../../tasks/137_extra_steps/PROTOCOL.md)','']
- (O/'report.md').write_text('\n'.join(lines),encoding='utf-8')
+ if 'operational_coverage' in v:
+  q=v['operational_coverage'];bounds=q['candidate_PA_full_target_bounds']
+  lines[-1:-1]=[f"按全目标{q['target_N']}条计，候选已正确{q['candidate_correct']}条，基线正确{q['baseline_correct_full_target']}条；候选PA边界[{bounds[0]:.2%}, {bounds[1]:.2%}]。无效仍是不作答，不在MCC中伪映射成任一类别。",'']
+ (O/'report.md').write_text('\n'.join(lines).rstrip()+'\n',encoding='utf-8')
  print(json.dumps(dict(scope=a.scope,N=v['joint_valid_N'],delta_MCC=s['delta_MCC'],delta_correct=s['delta_correct'],delta_false_S=s['delta_false_S'],GPU_CNY=cost)))
 if __name__=='__main__':main()

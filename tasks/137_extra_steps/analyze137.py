@@ -32,6 +32,12 @@ def main():
  token_deltas=[raw[i]['input_tokens']-base[i]['input_tokens'] for i in sorted(targets)]
  input_cost=dict(mean_extra_tokens=statistics.mean(token_deltas),median_extra_tokens=statistics.median(token_deltas),max_extra_tokens=max(token_deltas),relative_total_input_increase=sum(token_deltas)/sum(base[i]['input_tokens'] for i in targets),output_token_cap=384,interpretation='Input tokens only; billed GPU wall time also includes all preparation/loading/compilation/wait/return.')
  result=dict(candidate='extra_steps',base_weights='120_final369_plus149',expected_N=len(targets),joint_valid_N=len(valid),primary=score,panels=panels,by_author={label:paired([r for r in rows if r['author']==label],old,new,'claim_repeat136') for label in sorted({r['author'] for r in rows})},historical_on_primary_IDs=history,three_baseline_common_N=len(core),three_baseline_common_scores=core_scores,coverage=dict(missing_ids=sorted(targets-raw.keys()),invalid_ids=sorted(targets-set(valid))),screening=dict(quality_signal=quality,risk_signal=risk,guards=guards,continue_signal=bool(all(guards.values()) and (quality or risk))),input_cost=input_cost,new_training=True,new_API=0)
+ baseline_target_correct=sum(base[i]['verdict']==keys[i]['GT'] for i in targets)
+ result['operational_coverage']=dict(target_N=len(targets),valid_N=len(valid),unanswered_N=len(targets)-len(valid),
+  candidate_correct=newm['correct'],baseline_correct_full_target=baseline_target_correct,
+  candidate_PA_full_target_bounds=[newm['correct']/len(targets),(newm['correct']+len(targets)-len(valid))/len(targets)],
+  candidate_correct_minus_baseline_full_target=newm['correct']-baseline_target_correct,
+  note='Invalid output remains unanswered; no old label is substituted. Bounds are not a new label mapping.')
  if a.scope=='full1817':
   result['screening']=dict(applicable=False,reason='Protocol expansion gates apply to160 and500 only; full1817 has no further cohort to expand.',legacy_500_conditions=result['screening'],continue_signal=None)
  a.out.mkdir(parents=True,exist_ok=True);c.put(a.out/(a.scope+'.json'),result)

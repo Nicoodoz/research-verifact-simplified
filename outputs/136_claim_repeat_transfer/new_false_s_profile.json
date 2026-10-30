@@ -1,0 +1,60 @@
+{
+  "scope": "All four new false-S in136 versus120 on1817",
+  "method": "Manual description of original claim constraints; no new evidence adjudication or relabeling.",
+  "limitations": [
+    "Only four selected errors; not a population failure-rate estimate.",
+    "Claim surface features do not establish the cause of changed predictions.",
+    "No clinical text, dates, quantities or medication names included."
+  ],
+  "records": [
+    {
+      "id": "147c3d86-d3af-1b9b-a852-de7faa0c88f9",
+      "GT": "Not Supported",
+      "baseline120": "Not Addressed",
+      "claim_repeat136": "Supported",
+      "author": "llm",
+      "panel": "pressure",
+      "claim_constraint": "检查完成及出院前的时间限定"
+    },
+    {
+      "id": "6b624f05-8d94-39d2-e372-3c802ac51e6f",
+      "GT": "Not Supported",
+      "baseline120": "Not Supported",
+      "claim_repeat136": "Supported",
+      "author": "human",
+      "panel": "pressure",
+      "claim_constraint": "药物停止这一状态变化"
+    },
+    {
+      "id": "a6b256ba-736c-bf2c-2eec-f1715b8dd7e6",
+      "GT": "Not Addressed",
+      "baseline120": "Not Addressed",
+      "claim_repeat136": "Supported",
+      "author": "human",
+      "panel": "pressure",
+      "claim_constraint": "准确的出院日期"
+    },
+    {
+      "id": "dba7bba0-fa3e-a3d4-1083-0ae4e19364e6",
+      "GT": "Not Supported",
+      "baseline120": "Not Supported",
+      "claim_repeat136": "Supported",
+      "author": "llm",
+      "panel": "new",
+      "claim_constraint": "住院期间累计治疗量"
+    }
+  ],
+  "GT_counts": {
+    "Not Supported": 3,
+    "Not Addressed": 1
+  },
+  "author_counts": {
+    "human": 2,
+    "llm": 2
+  },
+  "panel_counts": {
+    "pressure": 3,
+    "new1317": 1
+  },
+  "evaluation_used_for_training": false
+}
