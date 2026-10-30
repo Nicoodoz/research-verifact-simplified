@@ -17,3 +17,12 @@
 `parse127.inspect_output`复用原`parse105`的分类结果，并单独检查reason是否存在且为非空文本。可用`require_reason=True`记录漏输出理由；不因理由格式问题改写标签，也不把reason中的标签词当成判定结果。截断、重复JSON键沿用原parser处理。
 
 结构有效不代表1—3句约束、医学语义、证据忠实性或reason与verdict的一致性已通过。训练数据的句数与语义由已保存审读记录确认；未来真实推理仍需单列这些检查。该CPU工具不调用模型，不改变120／128接口。
+# 研究解释边界（2026-10-30补充）
+
+当前接口先生成verdict，后生成reason，自回归分解为`P(verdict, reason | input) = P(verdict | input) × P(reason | input, verdict)`。因此，后写解释在本次推理中不会直接影响已输出的标签；训练时reason损失仍可通过共享参数改变分类。不能把更好的文字解释自动解释为更好的判别依据。
+
+[Distilling Step-by-Step（Hsieh等，2023）](https://arxiv.org/html/2305.02301v2)在第3.2节使用任务前缀区分标签预测与理由生成；第4.4节的T5实验中，串接理由和标签有时低于普通微调，多任务表现更好。这提供了“不应把理由串接视为必然增益”的直接依据，但其模型、数据与损失不同，不能替代105／127在临床任务上的真实评价，也不能由此宣布105失败原因已查明。
+
+[Jacovi与Goldberg（2020）](https://aclanthology.org/2020.acl-main.386/)强调区分解释的不同评价目标。[Measuring Faithfulness in Chain-of-Thought Reasoning（2023）](https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning)通过干预发现，输出理由对答案的影响因任务而异。对本项目的含义是：引用匹配、语义成立、与标签一致、对预测有实际作用是不同问题。129只证明模型响应空reference，不能认证非空条件下的医学解释或内部推理。
+
+这些文献不构成新训练启动指令。当前31对是准备资产，不是已验证有效的数据配方；若继续本方向，必须先有足够的真实关系覆盖并形成一个有区别、可检验的候选，避免仅改字段或堆数量后重做105。

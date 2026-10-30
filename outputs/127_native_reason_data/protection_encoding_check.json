@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "pairs": 31,
+  "unchanged_prior_checks_reused": 26,
+  "new_pairs_encoded": 5,
+  "old_source_and_target_equal": true,
+  "full_input_no_truncation": true,
+  "original_GT_preserved": true,
+  "GPU_calls": 0,
+  "API_calls": 0,
+  "model_loaded": false,
+  "details": [
+    {
+      "id": "09eb147c-b132-d583-97d2-fdf58a65ac89",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8162,
+      "total_tokens": 8214,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "15b52a3e-3ddf-ce05-74b0-229bd7f743bb",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 9074,
+      "total_tokens": 9141,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "72faaf2f-76cc-5a5e-906e-badaa9e5e1ae",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 8954,
+      "total_tokens": 9027,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "e4d10c46-ce75-40df-98cc-b924ba10bcbf",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8533,
+      "total_tokens": 8574,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "ef65afd9-6f5c-b8ee-c114-95c4e492dbd1",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 6989,
+      "total_tokens": 7051,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    }
+  ]
+}

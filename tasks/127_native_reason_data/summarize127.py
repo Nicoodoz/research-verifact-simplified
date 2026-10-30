@@ -49,12 +49,12 @@ def main():
         teacher_disagreement_reviewed_N=sum(x['source_provenance']['teacher_disagreement'] for x in review),
         teacher_disagreement_approved_N=sum(x['source_provenance']['teacher_disagreement'] for x in approved),
         unresolved_issue_counts=dict(sorted(Counter(c for x in unresolved for c in x['issue_codes']).items())),
-        expanded_after_pilot=False,
-        stop_reason='No demonstrated substantive semantic improvement on the12 prior105 pairs; only3 additional defensible reasons, including0 NS. Do not mass-generate to a quota.',
+        expanded_after_pilot=len(review)>24,
+        stop_reason='Prepared pairs have source-grounding reviews, not demonstrated classifier gains. Retain unresolved original labels; do not generate to a quota.',
         original_GT_changed=False,original_claim_or_reference_changed=False,
         selection20_used=False,confirmation40_used=False,
         new_GPU_training=False,new_paid_API_calls=0,
-        clinical_reason_source='AI-assisted Codex primary review and cross-review; not physician-authored or independently clinically certified',
+        clinical_reason_source='AI-assisted Codex reviews with per-record provenance; not physician-authored or independently clinically certified',
         classifier_benefit_tested=False,
         dataset_private_path=str(a.dataset.resolve().relative_to(ROOT)).replace('\\','/'))
     write(a.out/'summary.json',summary)
