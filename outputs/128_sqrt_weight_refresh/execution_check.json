@@ -1,0 +1,27 @@
+{
+  "status": "EXECUTOR_CHECK_PASSED_NOT_INDEPENDENT_AUDIT",
+  "steps": 149,
+  "starting_step": 220,
+  "final_step": 369,
+  "additional_presentations": 1185,
+  "original_final_consumed": 2945,
+  "original_remaining_ID_order_confirmed": true,
+  "parent_optimizer_RNG_restored": true,
+  "fixed_weights": {
+    "Supported": 1.0,
+    "Not Addressed": 2.7139132405807267,
+    "Not Supported": 3.1289172978508275
+  },
+  "tail_coefficient": 1.0,
+  "actual_nonuniform_coefficients_recorded": true,
+  "adapter_backup_checked": true,
+  "optimizer_state_backup_checked": true,
+  "adapter_sha256": "aaaca4cf714acd0da4f46454cbf59e804a049b49430b13b172e906b94821b763",
+  "full_input_preserved": true,
+  "pure_training_seconds": 5602.261017902754,
+  "first_evaluation_valid": 160,
+  "initial_launcher_error_before_training_preserved": true,
+  "API_CNY": 0,
+  "first_start_to160_return_CNY": 2.6730425984700523,
+  "no_shutdown": true
+}
