@@ -16,3 +16,5 @@
 160条GPU阶段含加载约6.44分钟；模型构造、等待与回传也计入原12:57:46起的统一开机账本。约21:19完成回传时，该窗口按时长估算约¥13.21，平台账单未核。SSH不可达后的电源及计费状态不能确认；没有发送shutdown。API新增0元。
 
 私有适配器：`.local_models/132_midpoint_update/adapter_final/`；原始回执：同目录的`evidence/midpoint_screen160/`。公开保留[完整初筛表](screen160.md)、[去正文预测](screen160_predictions_sanitized.jsonl)及[固定协议](../../tasks/132_midpoint_update/PROTOCOL.md)。
+
+[分面板复核](screen160_panels.md)进一步显示：相对107，自然128条正确+9、FS+2；压力32条正确−3、FS+5。相对120两面板都少一些false-S，但当前压力表现仍弱于107，不能只展示整体160的MCC增量。
