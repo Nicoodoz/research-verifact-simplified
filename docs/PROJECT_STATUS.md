@@ -1,12 +1,14 @@
-# 项目现状（2026-10-31，134统一基线进行中）
+# 项目现状（2026-10-31，134完成／135初筛运行）
 
-134的author_base9b已完成1817条：1806有效、11截断，MCC .3425、正确1222、false-S44/361，NA仅1/241正确。author_lora9b继续补新增1317。最近完整两臂配对为500中的共同495：适配器MCC .5820、正确392、FS52/178；相对104接口120少对2、FS少3。paper_r1完整1817直接复用，原103不同thinking预算结果单列，不填补无效。下一GPU研究仍等待完整统一比较。
+134三个基线覆盖已齐：两9B各1817首次回执，paper_r1复用历史1817。共同有效1793：未微调9B MCC .3422、正确1210、FS44/361；120适配器作者接口 .6104、1562、100/361；paper_r1 .4819、1468、105/361。相对未微调有真实微调收益和风险；相对104接口120少对15、FS少9，是取舍，未升级默认。11/13无效不补，166个有效适配器判定缺reason。
+
+135 reason_first已选定并启动冻结160条：同120权重与完整证据，先reason后verdict，结构前缀占原768预算；先看真实分类收益，再决定扩大或补前缀对照。133仍仅CPU准备。
 
 本轮从2026-10-30 23:40（UTC+8）累计：GPU16元硬上限，按现有实例1.58元／小时估算；收费API80元另账，当前新增0。交接、准备、等待、加载、编译和回传均计入。不自动关机或释放。旧窗口另记，不沿用其截止或余额。实质性阶段已授权提交、推送完整及精简仓库。
 
 120最终MCC .6250、正确1599、false-S109/362；132固定中点MCC .5988、正确1559、false-S80/362，均保留真实收益与风险，未升级默认。415诊断取消、0完整回执；133仅CPU准备，未训练。127为40对AI辅助reason，无分类收益证明。
 
-[134当前任务](../tasks/134_author_baselines/CURRENT.md) · [实时进度](../outputs/134_author_baselines/progress.md) · [冻结方案](../tasks/134_author_baselines/PROTOCOL.md)
+[135当前任务](../tasks/135_reason_first/CURRENT.md) · [实时进度](../outputs/135_reason_first/progress.md) · [134统一报告](../outputs/134_author_baselines/report.md)
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -14,7 +16,7 @@
 
 [116—121同ID公平对比](../outputs/117_verdict_probe/recent_fair_comparison.md)：原作者历史系统、未微调9B和107基线，以及各候选的真实覆盖、得失和监督差别。
 
-[研究历史同ID对比](../outputs/120_full_pool_sft/horizontal_comparison.md)：保留历史候选真实成绩；120的369步已完成，当前134补齐统一基线。后接分类/融合路线退出，标签成绩不证明旧reason与新判定一致。
+[研究历史同ID对比](../outputs/120_full_pool_sft/horizontal_comparison.md)：保留历史候选真实成绩；120的369步已完成，134已补齐统一基线。后接分类/融合路线退出，标签成绩不证明旧reason与新判定一致。
 
 [127原生reason数据准备](../outputs/127_native_reason_data/report.md)：保留32／8患者划分，40条经AI审读配对、20条问题单及全部原标签；没有证据支持批量扩写或新训练。
 

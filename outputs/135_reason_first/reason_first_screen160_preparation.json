@@ -1,0 +1,19 @@
+{
+  "status": "PREPARED_NOT_RUN",
+  "variant": "reason_first",
+  "scope": "screen160",
+  "target_N": 160,
+  "prior_receipts": 0,
+  "prior_invalid": 0,
+  "new_calls": 160,
+  "prefix_tokens": 4,
+  "generated_token_cap": 764,
+  "total_answer_token_budget": 768,
+  "max_input_tokens": 12616,
+  "same_claim_reference": true,
+  "same_120_weights": true,
+  "new_training": false,
+  "new_API": 0,
+  "global_window_start": "2026-10-30T23:40:00+08:00",
+  "GPU_cap_CNY": 16.0
+}

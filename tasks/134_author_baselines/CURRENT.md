@@ -1,9 +1,9 @@
-# 134 author_baselines：未微调1817完成，适配器继续
+# 134 author_baselines：完整统一比较已完成
 
-author_base9b已返回1817条，1806有效、11截断；MCC .3425、正确1222、false-S44/361，NA仅1/241正确。较低false-S不能脱离NA损失称优。
+两个9B各1817首次回执，paper_r1复用1817历史结果。严格共同有效1793：author_base9b MCC .3422、正确1210、FS44/361；author_lora9b .6104、1562、100/361；paper_r1 .4819、1468、105/361。
 
-author_lora9b正在补新增1317。最近完整配对为原500：共同495，适配器正确392、MCC .5820、FS52/178；相对同权重104接口少对2、FS少3。新旧原始结果全部保留，无重发。
+120适配器对同模型未微调有真实收益与NS/false-S代价；作者接口对104接口120少对15条、FS少9，未全面胜出。11/13条无效原样保留、不补旧答案；166个有效适配器判定缺reason。全部私有回执已回传，GPU计算结束，未关机。窗口截至134回传累计估算7.62元，后续继续累计。
 
-仍以23:40起GPU16元／API80元累计，不自动关机或释放。下一GPU研究等待完整统一比较。
+下一研究为135 reason_first；133仍未训练。
 
-[未微调完整阶段](../../outputs/134_author_baselines/base1817_stage.md) · [当前报告](../../outputs/134_author_baselines/report.md) · [实时进度](../../outputs/134_author_baselines/progress.md)
+[完整报告](../../outputs/134_author_baselines/report.md) · [详细结果](../../outputs/134_author_baselines/full1817.md)
