@@ -6,6 +6,8 @@
 
 [116工作流程复盘](116_WORKFLOW_REVIEW.md)：本周期如何执行、实际产出、费用及筛查顺序的问题。
 
+[116—121同ID公平对比](../outputs/117_verdict_probe/recent_fair_comparison.md)：原作者历史系统、未微调9B和107基线，以及各候选的真实覆盖、得失和监督差别。
+
 [研究117—121集中对比](../outputs/117_verdict_probe/night_summary.md)：117—119及121已完成；120完整池原接口续训进行中。
 
 ## 当前研究目标与运行事实
