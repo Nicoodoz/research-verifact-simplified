@@ -6,6 +6,8 @@
 
 从120 final369完整LoRA、Adam、scheduler和RNG继续，不从头重训、不重新跑旧基线。沿用32名梯度患者、2945条原训练池、原医生GT/claim/reference、104训练提示、loss105、BF16、microbatch1、accumulation8、AdamW 1e-5及原参数。第二轮沿原固定顺序只执行前149个完整更新，新增1192次呈现，到全局518步、累计4137次呈现；不是完整第二轮。固定518结束，不按评价结果选择checkpoint。
 
+上述步数和呈现次数只覆盖120阶段及本次续接，不包含107在更早阶段的196条标签微调；137继承的权重仍包含这些历史监督。
+
 源checkpoint和旧fingerprint只读保存；新任务独立目录使用新的fingerprint。源optimizer/scheduler/RNG完整恢复，不把权重加载称为完整续训。训练患者与20名评价患者无交集；不使用评价数据训练，不更改医生GT或配写理由。
 
 ## 评价与继续条件
