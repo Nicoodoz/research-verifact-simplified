@@ -1,14 +1,14 @@
-# 项目现状（2026-10-31，134完成／135初筛运行）
+# 项目现状（2026-10-31，134完整／135结束／136接续）
 
-134三个基线覆盖已齐：两9B各1817首次回执，paper_r1复用历史1817。共同有效1793：未微调9B MCC .3422、正确1210、FS44/361；120适配器作者接口 .6104、1562、100/361；paper_r1 .4819、1468、105/361。相对未微调有真实微调收益和风险；相对104接口120少对15、FS少9，是取舍，未升级默认。11/13无效不补，166个有效适配器判定缺reason。
+134已补齐三个基线：共同1793条，author_base9b/author_lora9b/paper_r1 MCC为.3422/.6104/.4819，正确1210/1562/1468，false-S44/100/105（非S361）。微调有真实质量收益与风险；作者接口比104接口120少对15、FS少9，未全面胜出。
 
-135 reason_first已选定并启动冻结160条：同120权重与完整证据，先reason后verdict，结构前缀占原768预算；先看真实分类收益，再决定扩大或补前缀对照。133仍仅CPU准备。
+135 reason_first的160条全部有效、缺理由0；但MCC−.0608、正确−6、FS不变，停止该版本扩大。136已准备claim_repeat迁移：同120权重和104提示，原操作在107上只得小幅信号，现做160条低成本验证。133仍未训练。
 
 本轮从2026-10-30 23:40（UTC+8）累计：GPU16元硬上限，按现有实例1.58元／小时估算；收费API80元另账，当前新增0。交接、准备、等待、加载、编译和回传均计入。不自动关机或释放。旧窗口另记，不沿用其截止或余额。实质性阶段已授权提交、推送完整及精简仓库。
 
 120最终MCC .6250、正确1599、false-S109/362；132固定中点MCC .5988、正确1559、false-S80/362，均保留真实收益与风险，未升级默认。415诊断取消、0完整回执；133仅CPU准备，未训练。127为40对AI辅助reason，无分类收益证明。
 
-[135当前任务](../tasks/135_reason_first/CURRENT.md) · [实时进度](../outputs/135_reason_first/progress.md) · [134统一报告](../outputs/134_author_baselines/report.md)
+[136当前任务](../tasks/136_claim_repeat_transfer/CURRENT.md) · [实时进度](../outputs/136_claim_repeat_transfer/progress.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 

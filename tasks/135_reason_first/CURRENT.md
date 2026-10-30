@@ -1,5 +1,5 @@
-# 135 reason_first
+# 135 reason_first：160初筛结束，停止当前版本扩大
 
-160条可运行准备包已形成并于04:33启动GPU：同120权重、完整作者reference，先reason后verdict，结构前缀占用原768答案预算。正在首次推理，尚无完整分类结果；CPU检查不是分类收益。
+全160有效、缺reason为0；相对同权重作者接口MCC−.0608、正确−6、false-S不变。NS净+2不足以抵消S/NA各−4。输出完整不等于分类有效，停止该版本；verdict_prefix仅CPU准备，未运行。原始回执已回传，不升级默认。
 
-[方案](PROTOCOL.md) · [准备配置](../../outputs/135_reason_first/reason_first_screen160_preparation.json) · [进度](../../outputs/135_reason_first/progress.md)
+[报告](../../outputs/135_reason_first/report.md) · [固定方案](PROTOCOL.md) · [完整统计](../../outputs/135_reason_first/screen160.json)

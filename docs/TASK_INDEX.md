@@ -8,9 +8,10 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|135_reason_first|[当前](../tasks/135_reason_first/CURRENT.md) · [方案](../tasks/135_reason_first/PROTOCOL.md) · [进度](../outputs/135_reason_first/progress.md)|冻结160条已准备并启动；同120权重，理由先于标签|原生输入小规模验证，尚无分类结论|
+|136_claim_repeat_transfer|[当前](../tasks/136_claim_repeat_transfer/CURRENT.md) · [方案](../tasks/136_claim_repeat_transfer/PROTOCOL.md) · [进度](../outputs/136_claim_repeat_transfer/progress.md)|原操作迁移到120，160条准备完成|不训练、不重跑基线，等待真实分类结果|
+|135_reason_first|[报告](../outputs/135_reason_first/report.md) · [统计](../outputs/135_reason_first/screen160.json)|160有效、缺reason0；MCC−.0608、正确−6、FS不变|停止当前版本扩大，前缀对照仅CPU未跑|
 |134_author_baselines|[完整报告](../outputs/134_author_baselines/report.md) · [覆盖](../outputs/134_author_baselines/full1817_coverage.json)|两9B各1817，paper_r1历史1817；共同有效1793|真实微调收益与NS/FS代价；作者接口未全面优于104接口120|
-|133_shuffle_repeat|[CPU状态](../tasks/133_shuffle_repeat/CURRENT.md)|固定训练顺序复验仅完成准备和CPU检查|依用户指令不启动，无分类结果|
+|133_shuffle_repeat|[CPU状态](../tasks/133_shuffle_repeat/CURRENT.md)|固定训练顺序复验仅完成准备和CPU检查|本轮尚未选为GPU方向，无分类结果|
 |132_midpoint_update|[最终结果](../outputs/132_midpoint_update/report.md) · [固定方案](../tasks/132_midpoint_update/PROTOCOL.md)|完整1817全有效，固定107/120更新中点|MCC .5988、正确1559、FS80/362；保留质量／风险取舍，不升级默认，按用户要求结束|
 |131_source_context_probe|[源文核查](../outputs/131_source_context_probe/report.md)|6例完整reference及相关原始note上下文；600片段可定位|没有新增分类成绩，未据此盲目扩大上下文或回填训练|
 |130_header_blocks|[最终报告](../outputs/130_header_blocks/final_report.md) · [固定方案](../tasks/130_header_blocks/PROTOCOL.md)|160初筛后只补340，完整500均有效；输入tokens−28.40%|总正确不变、FS+1、压力MCC下降，停止格式扩大|
