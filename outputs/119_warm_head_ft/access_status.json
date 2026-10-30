@@ -1,0 +1,22 @@
+{
+  "status": "REMOTE_ACCESS_UNAVAILABLE",
+  "observation_epoch": 1793319745.4120202,
+  "last_confirmed_remote_epoch": 1793309962.5294623,
+  "last_confirmed_beijing": "2026-10-30 05:39:22",
+  "last_confirmed_steps": 272,
+  "last_confirmed_presentations": 2176,
+  "planned_steps": 369,
+  "planned_presentations": 2945,
+  "final_training_state_verified": false,
+  "development_predictions_received": 0,
+  "trained_LoRA_backup_received": false,
+  "remote_compute_state": "unknown",
+  "reason": "Original SSH endpoint refuses connections; no authenticated management page is available",
+  "shutdown_sent": false,
+  "release_sent": false,
+  "restart_sent": false,
+  "GPU_estimate_at_last_confirmed_progress_CNY": 10.01041015291479,
+  "GPU_upper_estimate_if_continuously_on_CNY": 14.304008608868386,
+  "API_CNY": 0,
+  "next_action": "Restore access to the same instance and retrieve existing checkpoint, terminal markers and predictions; do not rerun training"
+}

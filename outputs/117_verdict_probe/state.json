@@ -8,7 +8,7 @@
   "API_cap_CNY": 80,
   "hourly_CNY": 1.58,
   "no_shutdown": true,
-  "status": "NIGHT_ACTIVE",
+  "status": "WAITING_FOR_INSTANCE_ACCESS",
   "active_job": "lpft_full32",
   "best_candidate": "107_label_only",
   "paid_API_CNY": 0,
@@ -30,13 +30,15 @@
     "mlp_500",
     "balanced_mlp_500"
   ],
-  "next_action": "119: one full epoch learned-head and source107 LoRA adaptation; select only on original8-patient internal validation",
-  "current_result": "118 fixed160: full MLP correct-6/FS-1; full linear correct-1/FS unchanged; no expansion",
+  "next_action": "Restore access to the same instance and retrieve existing checkpoint, terminal markers and predictions; do not rerun training",
+  "current_result": "117/118 completed without retained gain;119 final checkpoint and development result unavailable",
   "development_candidate": null,
   "maintained_baseline": "107_label_only",
   "active_task": 119,
   "task117_status": "COMPLETED_NEGATIVE",
   "initial_train_N": 1024,
   "task118_status": "COMPLETED_NEGATIVE",
-  "task119_status": "RUNNING"
+  "task119_status": "TERMINAL_STATE_UNVERIFIED",
+  "remote_compute_state": "unknown",
+  "last_confirmed_training_steps": 272
 }
