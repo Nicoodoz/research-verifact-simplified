@@ -9,10 +9,12 @@
 |130_header_blocks|[最终报告](../outputs/130_header_blocks/final_report.md) · [固定方案](../tasks/130_header_blocks/PROTOCOL.md)|160初筛后只补340，完整500均有效；输入tokens−28.40%|总正确不变、FS+1、压力MCC下降，停止格式扩大|
 |129_native_reference_check|[最终报告](../outputs/129_native_reference_check/final_report.md) · [固定诊断](../tasks/129_native_reference_check/PROTOCOL.md)|107/120各160，清空reference后全部判NA，回执已回传|会响应证据缺失；不证明非空证据关系判断正确|
 |128_sqrt_weight_refresh|[最终报告](../outputs/128_sqrt_weight_refresh/final_report.md) · [固定方案](../tasks/128_sqrt_weight_refresh/PROTOCOL.md)|同220起点149步和完整500完成，模型/完整状态回传|相对120正确−3、FS−3，MCC均下降；停止当前配方，不扩1317|
-|127_native_reason_data|[数据准备](../outputs/127_native_reason_data/report.md) · [入口](../tasks/127_native_reason_data/CURRENT.md)|仅CPU，累计47条审读、31条配对及全部3675原标签保留|有限补充S/NA保护理由；其中6条针对107真实错误；无分类收益证明，不新训|
+|127_native_reason_data|[数据准备](../outputs/127_native_reason_data/report.md) · [入口](../tasks/127_native_reason_data/CURRENT.md)|仅CPU，累计53条审读、35条配对及全部3675原标签保留|有限补充S/NA保护理由；其中6条针对107真实错误；无分类收益证明，不新训|
 |126_conditional_state_readout|[准备与取消](../tasks/126_conditional_state_readout/CURRENT.md)|仅准备，未GPU提取、未真实拟合|按研究方向取消，无效果成绩|
 |125_dual_state_readout|[160报告](../outputs/125_dual_state_readout/report.md)|固定拼接头真实CPU初筛|相对原117 MLP净−4正确、FS+4，阴性停止|
 |124_seed_mean_readout|[报告](../outputs/124_seed_mean_readout/final_report.md) · [结果](../outputs/124_seed_mean_readout/full1817.json)|固定均值完整1817、区间及部署指针均保留|有真实标签增益；按用户最新方向停止后接融合主线，不改写为阴性|
+
+补充CPU核查：[120医生标注分层](../outputs/120_full_pool_sft/annotation_strata.md)显示，首轮三医师一致样本也同时出现质量提升与false-S增加，不能把风险全归于标注争议；[131源文上下文核查](../outputs/131_source_context_probe/report.md)完成6例，没有找到支持盲目扩大输入的新决定性依据。无新增GPU调用，35对reason仍为准备资产。
 |123_claim_only_control|[状态](../tasks/123_claim_only_control/CURRENT.md) · [TF-IDF](../outputs/123_claim_only_control/report.md) · [既有端到端记录](../outputs/117_verdict_probe/e2e_live_check.json)|TF-IDF已完成；同9B空reference对照准备后取消未跑|没有同9B诊断成绩；保留既有TF-IDF和端到端记录|
 |122_balanced_pool_sft|[报告](../outputs/122_balanced_pool_sft/report.md) · [500指标](../outputs/122_balanced_pool_sft/balanced_pool_sft500.json)|32患者729条92步；500全部有效，160首回执复用|自然正确−21、压力+3；合计正确−18、FS−4，NS收益伴随S/NA损失；阴性结束|
 |121_nearest_memory|[原160](../outputs/121_nearest_memory/report.md) · [固定扩展](../outputs/121_nearest_memory/reconsidered_extension.md)|固定配置完整1817，历史结果不改|MCC/PA收益伴随大幅FS及少数类损失；按方向退出后接主线|

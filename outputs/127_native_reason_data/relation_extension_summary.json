@@ -1,0 +1,39 @@
+{
+  "reviewed_N": 53,
+  "paired_N": 35,
+  "unresolved_N": 18,
+  "not_reviewed_N": 3622,
+  "paired_GT_counts": {
+    "Supported": 10,
+    "Not Supported": 14,
+    "Not Addressed": 11
+  },
+  "paired_by_role_GT": {
+    "train": {
+      "Supported": 8,
+      "Not Supported": 13,
+      "Not Addressed": 10
+    },
+    "validation": {
+      "Supported": 2,
+      "Not Supported": 1,
+      "Not Addressed": 1
+    }
+  },
+  "additional_reviewed": 6,
+  "additional_reliable_reasons": 4,
+  "additional_GT": {
+    "Not Supported": 1,
+    "Not Addressed": 2,
+    "Supported": 1
+  },
+  "additional_prior105_paired": 1,
+  "all_original_labels_retained": true,
+  "new_GPU_training": false,
+  "new_API": 0,
+  "clinical_benefit_not_tested": true,
+  "current_private_dataset": "dataset_v7_relations",
+  "selection_rule": "Previously unreviewed physician-commented gradient32 cases; two per GT, prefer distinct patients, fixed hash",
+  "reused_prior_annotation_N": 47,
+  "source_probe131_evaluation_IDs_used_for_training": false
+}

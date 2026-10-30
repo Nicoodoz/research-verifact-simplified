@@ -1,0 +1,99 @@
+{
+  "status": "CPU_DATA_PREPARATION_COMPLETE_NOT_EFFECT_VALIDATED",
+  "original_pool_N": 3675,
+  "patient_split": {
+    "train": 32,
+    "validation": 8
+  },
+  "reviewed_N": 53,
+  "reviewed_class_counts": {
+    "Not Addressed": 15,
+    "Not Supported": 22,
+    "Supported": 16
+  },
+  "reliable_paired_N": 35,
+  "reliable_class_counts": {
+    "Not Addressed": 11,
+    "Not Supported": 14,
+    "Supported": 10
+  },
+  "reliable_by_role_GT": {
+    "train/Not Addressed": 10,
+    "train/Not Supported": 13,
+    "train/Supported": 8,
+    "validation/Not Addressed": 1,
+    "validation/Not Supported": 1,
+    "validation/Supported": 2
+  },
+  "unresolved_N": 18,
+  "unresolved_class_counts": {
+    "Not Addressed": 4,
+    "Not Supported": 8,
+    "Supported": 6
+  },
+  "not_reviewed_N": 3622,
+  "all_label_only_N": 3675,
+  "prior105_same_ID_N": 15,
+  "prior105_comparison": {
+    "New current-input semantic review; no classification-effect claim": 1,
+    "limited_scope_clarification_not_proven_quality_gain": 1,
+    "no_substantial_semantic_improvement": 11,
+    "old105_semantics_already_covered": 2
+  },
+  "newly_usable_beyond105_N": 20,
+  "newly_usable_class_counts": {
+    "Not Addressed": 6,
+    "Not Supported": 9,
+    "Supported": 5
+  },
+  "teacher_disagreement_reviewed_N": 30,
+  "teacher_disagreement_approved_N": 16,
+  "unresolved_issue_counts": {
+    "ALTERNATIVE_CAUSE_IS_NOT_NEGATION": 1,
+    "CLAIM_CONDITION_ANTECEDENT_UNRESOLVED": 1,
+    "DATE_NOT_EXCLUDED_BY_CROSS_DAY_WINDOW": 1,
+    "GT_REFERENCE_TENSION": 2,
+    "GT_reference_relation_tension": 4,
+    "NS_NA_boundary_unresolved": 1,
+    "UNSPECIFIED_TREATMENT_EPISODE": 1,
+    "USUAL_THRESHOLD_NOT_ABSOLUTE": 1,
+    "VAGUE_RESPONSE_DEGREE": 1,
+    "adjunct_vs_transition_distinction": 1,
+    "alternative_mechanism_does_not_exclude_potential_cause": 1,
+    "causal_attribution_not_resolved": 2,
+    "clinical_paraphrase_boundary": 1,
+    "conflicting_causal_evidence": 1,
+    "date_specific_assertion_not_resolved": 1,
+    "discharge_time_not_covered": 1,
+    "doctor_note_refers_to_unavailable_treatment_recommendation": 1,
+    "event_duration_not_established": 1,
+    "fragmented_lab_value_binding": 1,
+    "hedged_causal_claim": 2,
+    "later_symptom_recurrence": 1,
+    "measurement_versus_clinical_diagnosis_ambiguity": 1,
+    "measurement_vs_diagnosis_ambiguity": 1,
+    "oral_route_not_explicit": 1,
+    "oxygen_flow_saturation_time_not_jointly_resolved": 1,
+    "partial_support_vs_unaddressed_dose_boundary": 1,
+    "planned_versus_completed_treatment": 1,
+    "qualitative_numeric_trend_conflict": 1,
+    "relative_time_interval_ambiguity": 1,
+    "resolution_mode_not_explicit": 1,
+    "specific_transient_reversible_qualifier_not_established": 1,
+    "temporal_versus_causal_reading_ambiguous": 1,
+    "temporal_vs_causal_relation_ambiguous": 1,
+    "time_specific_evidence_mixed": 1,
+    "treatment_timing_uncertain": 1
+  },
+  "expanded_after_pilot": true,
+  "stop_reason": "Prepared pairs have source-grounding reviews, not demonstrated classifier gains. Retain unresolved original labels; do not generate to a quota.",
+  "original_GT_changed": false,
+  "original_claim_or_reference_changed": false,
+  "selection20_used": false,
+  "confirmation40_used": false,
+  "new_GPU_training": false,
+  "new_paid_API_calls": 0,
+  "clinical_reason_source": "AI-assisted Codex reviews with per-record provenance; not physician-authored or independently clinically certified",
+  "classifier_benefit_tested": false,
+  "dataset_private_path": ".local_models/127_native_reason_data/dataset_v7_relations"
+}

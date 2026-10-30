@@ -25,4 +25,4 @@
 
 [Jacovi与Goldberg（2020）](https://aclanthology.org/2020.acl-main.386/)强调区分解释的不同评价目标。[Measuring Faithfulness in Chain-of-Thought Reasoning（2023）](https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning)通过干预发现，输出理由对答案的影响因任务而异。对本项目的含义是：引用匹配、语义成立、与标签一致、对预测有实际作用是不同问题。129只证明模型响应空reference，不能认证非空条件下的医学解释或内部推理。
 
-这些文献不构成新训练启动指令。当前31对是准备资产，不是已验证有效的数据配方；若继续本方向，必须先有足够的真实关系覆盖并形成一个有区别、可检验的候选，避免仅改字段或堆数量后重做105。
+这些文献不构成新训练启动指令。当前35对是准备资产，不是已验证有效的数据配方；若继续本方向，必须先有足够的真实关系覆盖并形成一个有区别、可检验的候选，避免仅改字段或堆数量后重做105。

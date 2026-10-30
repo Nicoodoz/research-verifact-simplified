@@ -1,0 +1,66 @@
+{
+  "cases": 6,
+  "patients": 6,
+  "eligible_notes": 132,
+  "discharged_summaries_excluded": 0,
+  "matched_units": 600,
+  "total_units": 600,
+  "ambiguous_units": 126,
+  "per_case": [
+    {
+      "id": "6ae8ab7d-839a-f277-9bdb-2501490a00f2",
+      "sid": "55106",
+      "notes": 27,
+      "units": 100,
+      "matched": 100
+    },
+    {
+      "id": "c5cbfe77-77c2-00f8-5525-80c644c89faa",
+      "sid": "84454",
+      "notes": 19,
+      "units": 100,
+      "matched": 100
+    },
+    {
+      "id": "3cf0b801-f46e-bcdf-c0d8-b6e47047d0c2",
+      "sid": "97212",
+      "notes": 11,
+      "units": 100,
+      "matched": 100
+    },
+    {
+      "id": "992accd4-4a96-c738-1e39-5ee837243301",
+      "sid": "59250",
+      "notes": 21,
+      "units": 100,
+      "matched": 100
+    },
+    {
+      "id": "f701243f-86a4-fc02-c161-40f36389a541",
+      "sid": "72844",
+      "notes": 42,
+      "units": 100,
+      "matched": 100
+    },
+    {
+      "id": "df0acac8-7a86-a23a-ee57-b3f4c8aeaaeb",
+      "sid": "91315",
+      "notes": 12,
+      "units": 100,
+      "matched": 100
+    }
+  ],
+  "note_matching_only": true,
+  "not_a_classifier_result": true,
+  "GT_unchanged": true,
+  "reference_fully_read_N": 6,
+  "raw_scope_not_exhaustively_read": true,
+  "newly_located_decisive_support_N": 0,
+  "entity_binding_uncertain_N": 2,
+  "source_date_fields_not_rewritten": true,
+  "new_model_predictions": 0,
+  "new_training": 0,
+  "new_API_calls": 0,
+  "source_probe_not_method_effectiveness_test": true,
+  "training_use": false
+}

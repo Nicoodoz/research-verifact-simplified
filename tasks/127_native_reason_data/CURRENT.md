@@ -1,6 +1,6 @@
 # 127 native_reason_data
 
-当前累计31条经AI语义审读配对（S9／NS13／NA9），训练27条、内部验证4条；47条已审、16条问题单，全部3675条原标签保留。最新版为`dataset_v6_protection`，旧v1—v5不覆盖。最近6条S/NA保护样本中接纳5条、1条氧流量／数值／时间对应不明；仅新增5对做CPU编码，复用旧26对验证。[当前统计](../../outputs/127_native_reason_data/protection_extension/summary.json)
+当前累计35条经AI语义审读配对（S10／NS14／NA11），训练31条、内部验证4条；53条已审、18条问题单，全部3675条原标签保留。最新版为`dataset_v7_relations`，旧v1—v6不覆盖。最新6条原32名梯度训练患者的医生备注病例接纳4条，2条因因果或持续时间不清保留纯标签；新增4对完成CPU编码，复用旧31对检查。[当前统计](../../outputs/127_native_reason_data/relation_extension/summary.json)
 
 仅做数据与CPU接口准备；不启动reason监督训练，不改变正在运行的120。原40名训练患者沿用32名梯度训练、8名内部验证划分；选型20人及确认40人不用于本阶段。
 
