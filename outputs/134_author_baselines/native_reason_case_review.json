@@ -1,0 +1,17 @@
+{
+  "scope": "Targeted read of two changed predictions and three false-S examples in the completed160 stage",
+  "reviewer": "execution model; not independent clinical adjudication",
+  "unblinded": true,
+  "case": {
+    "id": "09bae9ba-e0ed-98c3-d53c-3543cb816711",
+    "original_GT": "Not Supported",
+    "native_verdict": "Supported",
+    "finding": "The explanation supports a narrower subset claim while the submitted claim uses a universal scope. The explanation also describes continuation by replacement. This does not logically justify full support of the universal claim.",
+    "category": "reason_supports_weaker_claim",
+    "assessment_scope": "Claim versus its own generated reason; no new whole-reference clinical adjudication",
+    "raw_verdict_preserved": true,
+    "used_as_training_data": false,
+    "clinical_text_published": false
+  },
+  "interpretation": "An available, fluent reason is not sufficient evidence that verdict and reason are semantically consistent. No population consistency rate is inferred from targeted cases."
+}

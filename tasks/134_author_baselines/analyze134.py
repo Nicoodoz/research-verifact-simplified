@@ -1,7 +1,7 @@
 """CPU comparison of committed native responses; never rewrites their labels."""
 from pathlib import Path
 from collections import Counter
-import argparse,json,sys
+import argparse,json,re,sys
 R=Path(__file__).resolve().parents[2];P=R/'.local_models/134_author_baselines';O=R/'outputs/134_author_baselines'
 sys.path.insert(0,str(R/'tasks/105_brief_supervision'));import common105 as c
 sys.path.insert(0,str(R/'tasks/120_full_pool_sft'));from final_compare120 import metrics,paired,LABELS
@@ -18,11 +18,16 @@ def main():
   for folder in [P/'bundle/results'/arm,P/'evidence'/arm]:
    for f in folder.glob('*.json'):
     r=c.read(f);i=r['id']
+    content=r['content'];fence=re.fullmatch(r'\s*```(?:json)?\s*\n(.*?)\n```\s*',content,re.S|re.I)
+    try:reason=json.loads(fence[1] if fence else content).get('reason')
+    except (ValueError,TypeError,AttributeError):reason=None
+    r['reason_is_nonempty_string']=isinstance(reason,str) and bool(reason.strip())
     if i in receipts[arm] and receipts[arm][i]['content']!=r['content']:raise ValueError('Conflicting first receipt')
     receipts[arm][i]=r
   received=set(receipts[arm])&target;invalid={i for i in received if not receipts[arm][i]['parsed']['valid']}
   coverage[arm]=dict(expected=len(target),received=len(received),valid=len(received-invalid),missing_ids=sorted(target-received),invalid_ids=sorted(invalid),
       missing_reason_ids=sorted(i for i in received if not receipts[arm][i]['parsed'].get('reason_present')),
+      missing_reason_valid_ids=sorted(i for i in received-invalid if not receipts[arm][i]['reason_is_nonempty_string']),
       invalid_by_GT=dict(Counter(keys[i]['GT'] for i in invalid)))
  c.put(O/(a.scope+'_coverage.json'),coverage)
  if any(v['missing_ids'] for v in coverage.values()):
@@ -65,7 +70,7 @@ def main():
     author_lora_vs120=paired(rs,preds['full_pool120'],preds['author_lora9b'],'full_pool120'))
  c.put(O/(a.scope+'.json'),result)
  c.putl(O/(a.scope+'_receipt_status_sanitized.jsonl'),[
-  dict(id=i,**{arm:dict(valid=receipts[arm][i]['parsed']['valid'],verdict=receipts[arm][i]['parsed']['verdict'],finish_reason=receipts[arm][i]['finish_reason'],reason_present=receipts[arm][i]['parsed'].get('reason_present',False)) for arm in job['arms']}) for i in sorted(target)])
+  dict(id=i,**{arm:dict(valid=receipts[arm][i]['parsed']['valid'],verdict=receipts[arm][i]['parsed']['verdict'],finish_reason=receipts[arm][i]['finish_reason'],reason_present=receipts[arm][i]['reason_is_nonempty_string']) for arm in job['arms']}) for i in sorted(target)])
  c.putl(O/(a.scope+'_predictions_sanitized.jsonl'),[dict(keys[i],**{arm:v[i]['verdict'] for arm,v in preds.items()}) for i in valid])
  lines=['# 134 '+a.scope+'：统一原作者提示词比较','',f'计划{len(target)}条，共同有效{len(rows)}条。无效、缺失和reason缺失单列于coverage；不填旧答案。',
   '','## 各自有效覆盖（跨行分母可能不同，不直接作差）','','|配置|有效N|MCC|PA|正确|false-S/非S|Macro-F1|','|---|---:|---:|---:|---:|---:|---:|']

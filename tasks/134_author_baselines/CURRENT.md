@@ -1,9 +1,9 @@
-# 134 author_baselines：160初筛完成，继续500及1817
+# 134 author_baselines：500阶段完成，继续新增1317
 
-两个9B各完成160首回执；严格共同158条，author_base9b／author_lora9b正确93／120、MCC .3650／.5117、false-S 8／19（非S57）。适配器有质量收益与风险代价；与104接口120正确数相同，仅NS/NA交换1条。未微调NA召回0，不把低false-S当独立胜出。
+两臂各500首回执已完成，共同有效495。author_base9b／author_lora9b正确304／392、MCC .3945／.5820、false-S21／52（非S178）。适配器有质量收益和NS／false-S代价；相对104接口120少对2条、少3次false-S。
 
-每臂首阶段复用8、补152；另外12条匹配缓存随后复用。未微调2条截断保留，适配器无无效但18条缺reason。当前继续补齐原500及完整1817，不启动新的改进推理或训练。
+未微调3条截断、适配器2条JSON错误均保留；适配器另有76条有效标签缺reason。paper_r1直接复用；正在补两臂新增1317，不启动其他GPU实验。
 
-GPU16元／API80元均从2026-10-30 23:40起另账；无新增收费API，不自动关机或释放。
+GPU16元／API80元从2026-10-30 23:40起累计；不自动关机或释放。模型本身与输入优化的下一步须由完整基线和剩余预算决定。
 
-[当前报告](../../outputs/134_author_baselines/report.md) · [进度](../../outputs/134_author_baselines/progress.md) · [冻结方案](PROTOCOL.md)
+[阶段报告](../../outputs/134_author_baselines/report.md) · [进度](../../outputs/134_author_baselines/progress.md) · [冻结方案](PROTOCOL.md)
