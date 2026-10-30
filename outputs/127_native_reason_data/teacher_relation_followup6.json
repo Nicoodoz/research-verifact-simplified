@@ -1,0 +1,19 @@
+{
+  "N": 6,
+  "same_reference_N": 6,
+  "original_teacher": "R1-70B/rater-121",
+  "teacher_GT_agreement_N": 3,
+  "categories": {
+    "uncertain_causal_attribution": 1,
+    "grounded": 2,
+    "unsupported_dose_claim": 1,
+    "grounded_but_GT_label_differs": 1,
+    "uncertain_duration": 1
+  },
+  "reason_missing_N": 0,
+  "selection": "Same six physician-commented gradient-training cases as the latest reason preparation; not a representative quality sample",
+  "no_population_quality_rate": true,
+  "no_new_model_calls": true,
+  "no_GT_changes": true,
+  "reviewer": "Current Codex; not independent clinician certification"
+}

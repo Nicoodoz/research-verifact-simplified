@@ -1,0 +1,15 @@
+{
+  "alpha": 0.5,
+  "source107_sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+  "source120_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+  "adapter_sha256": "792a10e03d3898377ee34446e5345c08687656b5ce339bf20d8a24cbe073489c",
+  "formula": "W0 + 0.5*DeltaW107 + 0.5*DeltaW120",
+  "rank": 32,
+  "scaling": 1,
+  "module_count": 248,
+  "max_effective_probe_error": 4.656612873077393e-10,
+  "source_factors_unchanged": true,
+  "factor_average": false,
+  "SVD": false,
+  "new_training": false
+}

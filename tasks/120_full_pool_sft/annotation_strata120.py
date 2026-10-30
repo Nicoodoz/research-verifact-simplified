@@ -33,6 +33,7 @@ def doctor_metadata():
             if key in result:raise ValueError('Duplicate physician metadata ID')
             result[key]=dict(GT=row['human_gt'],first_round_agreement=largest,
                 first_round_unanimous=largest==3,
+                initial_supported_votes=sum(v=='Supported' for v in votes),
                 any_first_round_uncertain=any(row['uncertain_flag'+str(i)].strip().lower()=='true' for i in range(1,4)),
                 adjudicated=bool(row['adjudicated_verdict'].strip()),
                 adjudication_changes_majority=bool(row['adjudicated_verdict'].strip() and row['human_gt']!=row['round1_majority_vote']))
@@ -80,6 +81,16 @@ def main():
         first_round_unanimity_not_certified_ground_truth=True,
         groups_overlap_except_declared_partitions=True,
         cohorts={name:evaluate(values,meta) for name,values in cohorts.items()})
+    result['initial_supported_votes']={}
+    for name,cohort in cohorts.items():
+        table={}
+        for votes in range(4):
+            group=[r for r in cohort if r['GT']!='Supported' and meta[r['id']]['initial_supported_votes']==votes]
+            table[str(votes)]=dict(non_S=len(group),
+                false_S107=sum(r['baseline107']=='Supported' for r in group),
+                false_S120=sum(r['verdict']=='Supported' for r in group),
+                added_false_S=sum(r['baseline107']!='Supported' and r['verdict']=='Supported' for r in group))
+        result['initial_supported_votes'][name]=table
     out=ROOT/'outputs/120_full_pool_sft'
     (out/'annotation_strata.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     lines=['# 120：医生原始标注分歧与分类得失','',
@@ -98,6 +109,11 @@ def main():
             lines.append(f"|{name}/{key}|{value['N']}（{count}）|{a['mcc']:.4f}→{b['mcc']:.4f}|{a['correct']}→{b['correct']}|{a['false_S']}→{b['false_S']}/{b['non_S']}|"+'|'.join(transition)+'|')
             summary[name][key]=dict(N=value['N'],delta_correct=value['delta_correct'],delta_MCC=value['delta_MCC'],
                 falseS107=a['false_S'],falseS120=b['false_S'],non_S=b['non_S'])
+    unanimous=result['cohorts']['selection1817']['first_round_unanimous']
+    no_S=result['initial_supported_votes']['selection1817']['0']
+    lines[2:2]=[
+        f"120的质量收益和错误放行代价并不只出现在有争议的样本。三医师一致的1328条中，正确数+{unanimous['delta_correct']}、MCC+{unanimous['delta_MCC']:.4f}，false-S仍从7增至25/140。",
+        f"再按是否有任何首轮医生判S区分：247条三位医生均未判S的真实非S中，false-S由8增至39，贡献新增59次错误放行中的{no_S['added_false_S']}次；内部687条同类样本为133条，false-S由6增至20。因此不能主要用标注争议解释掉风险，也不能因此否定已有质量收益。",'']
     lines+=['','原始GT与预测均按ID精确关联，1817与687各自完整且无交叉。无重新推理、训练、改标、删除有分歧样本或搜索临床成本权重。详细PA、三类指标与混淆矩阵见JSON。','']
     (out/'annotation_strata.md').write_text('\n'.join(lines),encoding='utf-8')
     print(json.dumps(summary,ensure_ascii=False))

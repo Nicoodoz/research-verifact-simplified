@@ -1,11 +1,15 @@
 # 全部任务与当前入口（2026-10-30）
 
+补充CPU核查：[120医生标注分层](../outputs/120_full_pool_sft/annotation_strata.md)显示，首轮三医师一致样本也同时出现质量提升与false-S增加，不能把风险全归于标注争议；[131源文上下文核查](../outputs/131_source_context_probe/report.md)完成6例，没有找到支持盲目扩大输入的新决定性依据。无新增GPU调用，35对reason仍为准备资产。
+
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
 当前默认、授权和环境以[PROJECT_STATUS](PROJECT_STATUS.md)、[AGENTS](../AGENTS.md)及[RUN_ENVIRONMENT](RUN_ENVIRONMENT.md)为准。此表只导航真实工件，不把任务结束解释成方法通过；旧协议、输出内README/CURRENT和审计正文保持原阶段语义。最新稿为[095完整论文](../outputs/095_anchored_minimal_contrast/manuscript_zh.md)。
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|132_midpoint_update|[阶段结果](../outputs/132_midpoint_update/report.md) · [固定方案](../tasks/132_midpoint_update/PROTOCOL.md)|107/120有效更新中点，160条全部有效并通过扩展条件|SSH中断，340条与687条尚未运行；不把粗筛当最终收益|
+|131_source_context_probe|[源文核查](../outputs/131_source_context_probe/report.md)|6例完整reference及相关原始note上下文；600片段可定位|没有新增分类成绩，未据此盲目扩大上下文或回填训练|
 |130_header_blocks|[最终报告](../outputs/130_header_blocks/final_report.md) · [固定方案](../tasks/130_header_blocks/PROTOCOL.md)|160初筛后只补340，完整500均有效；输入tokens−28.40%|总正确不变、FS+1、压力MCC下降，停止格式扩大|
 |129_native_reference_check|[最终报告](../outputs/129_native_reference_check/final_report.md) · [固定诊断](../tasks/129_native_reference_check/PROTOCOL.md)|107/120各160，清空reference后全部判NA，回执已回传|会响应证据缺失；不证明非空证据关系判断正确|
 |128_sqrt_weight_refresh|[最终报告](../outputs/128_sqrt_weight_refresh/final_report.md) · [固定方案](../tasks/128_sqrt_weight_refresh/PROTOCOL.md)|同220起点149步和完整500完成，模型/完整状态回传|相对120正确−3、FS−3，MCC均下降；停止当前配方，不扩1317|
@@ -13,8 +17,6 @@
 |126_conditional_state_readout|[准备与取消](../tasks/126_conditional_state_readout/CURRENT.md)|仅准备，未GPU提取、未真实拟合|按研究方向取消，无效果成绩|
 |125_dual_state_readout|[160报告](../outputs/125_dual_state_readout/report.md)|固定拼接头真实CPU初筛|相对原117 MLP净−4正确、FS+4，阴性停止|
 |124_seed_mean_readout|[报告](../outputs/124_seed_mean_readout/final_report.md) · [结果](../outputs/124_seed_mean_readout/full1817.json)|固定均值完整1817、区间及部署指针均保留|有真实标签增益；按用户最新方向停止后接融合主线，不改写为阴性|
-
-补充CPU核查：[120医生标注分层](../outputs/120_full_pool_sft/annotation_strata.md)显示，首轮三医师一致样本也同时出现质量提升与false-S增加，不能把风险全归于标注争议；[131源文上下文核查](../outputs/131_source_context_probe/report.md)完成6例，没有找到支持盲目扩大输入的新决定性依据。无新增GPU调用，35对reason仍为准备资产。
 |123_claim_only_control|[状态](../tasks/123_claim_only_control/CURRENT.md) · [TF-IDF](../outputs/123_claim_only_control/report.md) · [既有端到端记录](../outputs/117_verdict_probe/e2e_live_check.json)|TF-IDF已完成；同9B空reference对照准备后取消未跑|没有同9B诊断成绩；保留既有TF-IDF和端到端记录|
 |122_balanced_pool_sft|[报告](../outputs/122_balanced_pool_sft/report.md) · [500指标](../outputs/122_balanced_pool_sft/balanced_pool_sft500.json)|32患者729条92步；500全部有效，160首回执复用|自然正确−21、压力+3；合计正确−18、FS−4，NS收益伴随S/NA损失；阴性结束|
 |121_nearest_memory|[原160](../outputs/121_nearest_memory/report.md) · [固定扩展](../outputs/121_nearest_memory/reconsidered_extension.md)|固定配置完整1817，历史结果不改|MCC/PA收益伴随大幅FS及少数类损失；按方向退出后接主线|
