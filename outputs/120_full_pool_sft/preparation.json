@@ -1,0 +1,41 @@
+{
+  "status": "PREPARED_CONDITIONAL_NOT_STARTED",
+  "task": 120,
+  "original119_train_sha256": "0d484f8a4c6d0fc6dcf9b7613f280d7cc667f0a2da291ce4e4df0a850b9173ac",
+  "same119_ids_order_GT_claim_reference": true,
+  "training_N": 2945,
+  "training_patients": 32,
+  "GT": {
+    "Supported": 2379,
+    "Not Addressed": 323,
+    "Not Supported": 243
+  },
+  "steps": 369,
+  "final_tail": 1,
+  "max_prompt_tokens": 15570,
+  "max_total_tokens": 15577,
+  "total_training_tokens": 24738501,
+  "evaluation_N": 160,
+  "learning_rate": 1e-05,
+  "fresh_Adam": true,
+  "no_new_head": true,
+  "no_class_weights": true,
+  "no_input_truncation": true,
+  "no_new_GPU": true,
+  "no_API": true,
+  "bundle_bytes": 17738425,
+  "estimated_train_hours": 3.934847222222222,
+  "original_GPU_gate_still_required": true,
+  "seed": 117027,
+  "cpu_checks": {
+    "PASS": true,
+    "CPU_only": true,
+    "plan369": true,
+    "final_tail_divisor1": true,
+    "source_weight_nonzero_fresh_Adam": true,
+    "checkpoint_resume_matches": true,
+    "no_CUDA_initialized": true,
+    "real_model_loaded": false
+  },
+  "conditional_not_started": true
+}

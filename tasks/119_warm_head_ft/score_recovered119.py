@@ -1,4 +1,4 @@
-"""Score frozen recovered119 prefix states with the saved128-step head, CPU only.
+"""Score frozen recovered119 prefix states at an explicitly fixed step, CPU only.
 
 No fitting, GPU, language-model replay or GT access.  This requires complete
 already-extracted states for the requested IDs and the recovered head files.
@@ -36,10 +36,12 @@ def requested_ids(path):
     return values
 
 
-def load_recovered_head(npz_path, state_path, metadata_path):
+def load_recovered_head(npz_path, state_path, metadata_path, expected_step=SELECTED_STEP):
     metadata = read(metadata_path)
-    if metadata.get('step') != SELECTED_STEP:
-        raise ValueError('This scorer is fixed to the recovered128-step checkpoint')
+    if type(expected_step) is not int or expected_step < 0:
+        raise ValueError('Expected step must be a nonnegative integer')
+    if metadata.get('step') != expected_step:
+        raise ValueError(f'This scorer requires the explicitly fixed{expected_step}-step checkpoint')
     adapter_sha = metadata['files']['adapter_model.safetensors']
     if not isinstance(adapter_sha, str) or len(adapter_sha) != 64:
         raise ValueError('Recovered checkpoint lacks its adapter identity')
@@ -91,11 +93,12 @@ def load_states(directories, ids, adapter_sha):
     return np.stack([found[i] for i in ids]), lengths
 
 
-def score(features, ids_file, head_npz, head_state, checkpoint_meta, output, threads=4):
+def score(features, ids_file, head_npz, head_state, checkpoint_meta, output, threads=4,
+          expected_step=SELECTED_STEP):
     ids = requested_ids(ids_file)
     if Path(output).exists():
         raise FileExistsError('Preserve existing first scored receipts; choose a new output path')
-    head, adapter_sha, head_sha = load_recovered_head(head_npz, head_state, checkpoint_meta)
+    head, adapter_sha, head_sha = load_recovered_head(head_npz, head_state, checkpoint_meta, expected_step)
     states, lengths = load_states(features, ids, adapter_sha)
     torch.set_num_threads(threads)
     records = []
@@ -103,7 +106,7 @@ def score(features, ids_file, head_npz, head_state, checkpoint_meta, output, thr
         for start in range(0, len(ids), 256):
             logits = head(torch.from_numpy(states[start:start + 256]))
             for identifier, values in zip(ids[start:start + 256], logits):
-                record = dict(id=identifier, selected_step=SELECTED_STEP,
+                record = dict(id=identifier, selected_step=expected_step,
                               checkpoint_adapter_sha256=adapter_sha, head_sha256=head_sha,
                               prediction_origin='recovered_checkpoint_prefix_states')
                 if type(lengths[identifier]) is int:
@@ -125,7 +128,7 @@ def score(features, ids_file, head_npz, head_state, checkpoint_meta, output, thr
                                       for row in records) + '\n').encode('utf-8'))
     temporary.replace(output)
     return dict(N=len(records), valid=sum(row['valid'] for row in records),
-                selected_step=SELECTED_STEP, fit_performed=False, GPU_used=False,
+                selected_step=expected_step, fit_performed=False, GPU_used=False,
                 output=str(output))
 
 
@@ -170,8 +173,15 @@ def self_test():
             pass
         else:
             raise AssertionError('A different checkpoint was mislabeled as step128')
+        metadata['step'] = 369
+        meta_path.write_text(json.dumps(metadata), encoding='utf-8')
+        terminal = score([root / 'features'], ids_path, npz_path, state_path, meta_path,
+                         root / 'fixed369.jsonl', threads=1, expected_step=369)
+        if terminal['selected_step'] != 369:
+            raise AssertionError('Explicit terminal checkpoint was not preserved')
         return dict(status='PASS', restored_head_used=True, ID_order_preserved=True,
                     GT_free=True, fixed_step_checked=True, real_scoring_performed=False,
+                    explicit_step369_supported=True,
                     synthetic_N=result['N'])
 
 
@@ -184,15 +194,17 @@ def main():
     parser.add_argument('--checkpoint-meta', type=Path)
     parser.add_argument('--output', type=Path)
     parser.add_argument('--threads', type=int, default=4)
+    parser.add_argument('--expected-step', type=int, default=SELECTED_STEP,
+                        help='Fixed checkpoint step to verify; no checkpoint search')
     parser.add_argument('--self-test', action='store_true')
     args = parser.parse_args()
     if args.self_test:
         print(json.dumps(self_test())); return
-    if not args.features or not args.output or args.threads < 1:
-        parser.error('Require --features, --output and positive --threads')
+    if not args.features or not args.output or args.threads < 1 or args.expected_step < 0:
+        parser.error('Require --features, --output, positive --threads and nonnegative --expected-step')
     metadata = args.checkpoint_meta or args.head_state.with_name('checkpoint_complete.json')
     print(json.dumps(score(args.features, args.ids, args.head_npz, args.head_state,
-                           metadata, args.output, args.threads), ensure_ascii=False))
+                           metadata, args.output, args.threads, args.expected_step), ensure_ascii=False))
 
 
 if __name__ == '__main__':
