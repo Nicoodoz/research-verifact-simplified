@@ -1,4 +1,4 @@
-# 全部任务与当前入口（122运行中；2026-10-30）
+# 全部任务与当前入口（122运行中、123准备；2026-10-30）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,9 +6,10 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|122_balanced_pool_sft|[当前方案](../tasks/122_balanced_pool_sft/CURRENT.md) · [进度](../outputs/122_balanced_pool_sft/实时进度.md)|32患者三类各243条、729条92步；最长原loss检查已通过|24步保存暂停待续，尚无分类结果；资源已延至20:57:46|
+|123_claim_only_control|[方案](../tasks/123_claim_only_control/CURRENT.md) · [词面控制](../outputs/123_claim_only_control/report.md)|同40人3675训练、20人1817评价；只去掉reference，不改GT|TF-IDF控制完成；同9B神经控制尚未启动GPU|
+|122_balanced_pool_sft|[当前方案](../tasks/122_balanced_pool_sft/CURRENT.md) · [进度](../outputs/122_balanced_pool_sft/实时进度.md)|32患者三类各243条、729条92步；最长原loss检查已通过|已从24步恢复训练，尚无分类结果；资源已延至20:57:46|
 |121_nearest_memory|[原160](../outputs/121_nearest_memory/report.md) · [固定扩展](../outputs/121_nearest_memory/reconsidered_extension.md)|无新GPU/API、原160复用、完整1817|MCC/PA提升伴随大幅false-S及少数类损失，较MLP取舍差|
-|120_full_pool_sft|[中途报告](../outputs/120_full_pool_sft/report.md) · [同ID指标](../outputs/120_full_pool_sft/midpoint220_160.json)|用户要求220步提前检查；160全部有效，完整状态回传|固定220已完成500：MCC双面板提高，风险也上升；正在扩1817；原369步未完成|
+|120_full_pool_sft|[中途报告](../outputs/120_full_pool_sft/report.md) · [同ID指标](../outputs/120_full_pool_sft/midpoint220_160.json)|用户要求220步提前检查；160全部有效，完整状态回传|固定220已完成1817：MCC .5971、正确1581、FS113/362；保留质量—风险候选，原369步未完成|
 |119_warm_head_ft|[报告](../outputs/119_warm_head_ft/report.md) · [指标](../outputs/119_warm_head_ft/trained_best160.json)|完整369步、内部验证与固定160；执行者复核|自然收益伴随压力/NS损失，停止扩大|
 |118_full_data_heads|[原报告](../outputs/118_full_data_heads/report.md) · [新重拟合](../outputs/118_full_data_heads/reconsidered_refit.md) · [seed检查](../outputs/118_full_data_heads/seed_stability.md) · [原流程复验](../outputs/118_full_data_heads/unweighted_workflow_seed118.md)|原40人3675，20人开发队列，旧结果保留|平方根权重两seed均提高MCC；风险代价波动；全量无权重明显增加风险|
 |117_verdict_probe|[原报告](../outputs/117_verdict_probe/report.md) · [补充扩展](../outputs/117_verdict_probe/reconsidered_extension.md) · [温和权重](../outputs/117_verdict_probe/sqrt_weight_mlp.md)|同ID完整1817；内部验证选轮，两seed原流程检查|原MLP有MCC收益与风险代价；不能只据最早平衡头阴性概括全部方法|

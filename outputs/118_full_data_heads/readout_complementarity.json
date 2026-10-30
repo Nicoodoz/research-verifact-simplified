@@ -1,0 +1,668 @@
+{
+  "N": 1817,
+  "labels": [
+    "Supported",
+    "Not Supported",
+    "Not Addressed"
+  ],
+  "models": {
+    "sqrt3675_seed117": "outputs/118_full_data_heads/reconsidered_refit_sqrt_weight_full_predictions.jsonl",
+    "sqrt3675_seed118": "outputs/118_full_data_heads/seed_stability_full3675_sqrt_seed118_predictions.jsonl",
+    "unweighted1024_seed117": "outputs/117_verdict_probe/reconsidered_extension_verdict_mlp_predictions.jsonl",
+    "unweighted1024_seed118": "outputs/118_full_data_heads/unweighted_workflow_seed118_predictions.jsonl",
+    "step220": "outputs/120_full_pool_sft/midpoint220_1817_predictions_sanitized.jsonl"
+  },
+  "all_correct_N": 1352,
+  "all_wrong_N": 140,
+  "mixed_correctness_N": 325,
+  "no_combined_predictor_created": true,
+  "diagnostic_intersections_are_not_deployable_gains": true,
+  "no_reference_text_read": true,
+  "no_training40_missing_evidence_flags_used": true,
+  "cannot_infer_missing_evidence_from_predictions": true,
+  "new_GPU_CNY": 0,
+  "new_API_CNY": 0,
+  "by_GT": {
+    "Supported": {
+      "N": 1455,
+      "correct_models_histogram": {
+        "0": 51,
+        "1": 33,
+        "2": 23,
+        "3": 26,
+        "4": 132,
+        "5": 1190
+      },
+      "all_wrong_N": 51,
+      "all_correct_N": 1190,
+      "all_wrong_label_consensus": {
+        "Not Supported": 18,
+        "Not Addressed": 16
+      },
+      "all_wrong_with_prediction_disagreement": 17,
+      "all_wrong_each_model_predictions": {
+        "sqrt3675_seed117": {
+          "Not Addressed": 31,
+          "Not Supported": 20
+        },
+        "sqrt3675_seed118": {
+          "Not Addressed": 29,
+          "Not Supported": 22
+        },
+        "unweighted1024_seed117": {
+          "Not Addressed": 30,
+          "Not Supported": 21
+        },
+        "unweighted1024_seed118": {
+          "Not Supported": 25,
+          "Not Addressed": 26
+        },
+        "step220": {
+          "Not Supported": 33,
+          "Not Addressed": 18
+        }
+      }
+    },
+    "Not Supported": {
+      "N": 121,
+      "correct_models_histogram": {
+        "0": 55,
+        "1": 19,
+        "2": 10,
+        "3": 5,
+        "4": 6,
+        "5": 26
+      },
+      "all_wrong_N": 55,
+      "all_correct_N": 26,
+      "all_wrong_label_consensus": {
+        "Supported": 31,
+        "Not Addressed": 17
+      },
+      "all_wrong_with_prediction_disagreement": 7,
+      "all_wrong_each_model_predictions": {
+        "sqrt3675_seed117": {
+          "Supported": 32,
+          "Not Addressed": 23
+        },
+        "sqrt3675_seed118": {
+          "Not Addressed": 22,
+          "Supported": 33
+        },
+        "unweighted1024_seed117": {
+          "Supported": 36,
+          "Not Addressed": 19
+        },
+        "unweighted1024_seed118": {
+          "Not Addressed": 19,
+          "Supported": 36
+        },
+        "step220": {
+          "Supported": 38,
+          "Not Addressed": 17
+        }
+      }
+    },
+    "Not Addressed": {
+      "N": 241,
+      "correct_models_histogram": {
+        "0": 34,
+        "1": 7,
+        "2": 13,
+        "3": 11,
+        "4": 40,
+        "5": 136
+      },
+      "all_wrong_N": 34,
+      "all_correct_N": 136,
+      "all_wrong_label_consensus": {
+        "Supported": 21,
+        "Not Supported": 6
+      },
+      "all_wrong_with_prediction_disagreement": 7,
+      "all_wrong_each_model_predictions": {
+        "sqrt3675_seed117": {
+          "Supported": 21,
+          "Not Supported": 13
+        },
+        "sqrt3675_seed118": {
+          "Supported": 25,
+          "Not Supported": 9
+        },
+        "unweighted1024_seed117": {
+          "Supported": 27,
+          "Not Supported": 7
+        },
+        "unweighted1024_seed118": {
+          "Supported": 25,
+          "Not Supported": 9
+        },
+        "step220": {
+          "Supported": 27,
+          "Not Supported": 7
+        }
+      }
+    }
+  },
+  "pairs": {
+    "sqrt3675_seed117__sqrt3675_seed118": {
+      "left": "sqrt3675_seed117",
+      "right": "sqrt3675_seed118",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1207,
+          "both_wrong": 118,
+          "left_rescues_right_error": 50,
+          "left_harms_right_correct": 80
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 36,
+          "both_wrong": 72,
+          "left_rescues_right_error": 7,
+          "left_harms_right_correct": 6
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 194,
+          "both_wrong": 36,
+          "left_rescues_right_error": 10,
+          "left_harms_right_correct": 1
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 3,
+        "avoided": 21
+      }
+    },
+    "sqrt3675_seed117__unweighted1024_seed117": {
+      "left": "sqrt3675_seed117",
+      "right": "unweighted1024_seed117",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1254,
+          "both_wrong": 94,
+          "left_rescues_right_error": 3,
+          "left_harms_right_correct": 104
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 28,
+          "both_wrong": 75,
+          "left_rescues_right_error": 15,
+          "left_harms_right_correct": 3
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 188,
+          "both_wrong": 36,
+          "left_rescues_right_error": 16,
+          "left_harms_right_correct": 1
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 0,
+        "avoided": 36
+      }
+    },
+    "sqrt3675_seed117__unweighted1024_seed118": {
+      "left": "sqrt3675_seed117",
+      "right": "unweighted1024_seed118",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1241,
+          "both_wrong": 95,
+          "left_rescues_right_error": 16,
+          "left_harms_right_correct": 103
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 31,
+          "both_wrong": 69,
+          "left_rescues_right_error": 12,
+          "left_harms_right_correct": 9
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 176,
+          "both_wrong": 35,
+          "left_rescues_right_error": 28,
+          "left_harms_right_correct": 2
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 4,
+        "avoided": 47
+      }
+    },
+    "sqrt3675_seed117__step220": {
+      "left": "sqrt3675_seed117",
+      "right": "step220",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1257,
+          "both_wrong": 66,
+          "left_rescues_right_error": 0,
+          "left_harms_right_correct": 132
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 31,
+          "both_wrong": 57,
+          "left_rescues_right_error": 12,
+          "left_harms_right_correct": 21
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 140,
+          "both_wrong": 37,
+          "left_rescues_right_error": 64,
+          "left_harms_right_correct": 0
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 0,
+        "avoided": 57
+      }
+    },
+    "sqrt3675_seed118__unweighted1024_seed117": {
+      "left": "sqrt3675_seed118",
+      "right": "unweighted1024_seed117",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1276,
+          "both_wrong": 86,
+          "left_rescues_right_error": 11,
+          "left_harms_right_correct": 82
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 29,
+          "both_wrong": 77,
+          "left_rescues_right_error": 13,
+          "left_harms_right_correct": 2
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 183,
+          "both_wrong": 40,
+          "left_rescues_right_error": 12,
+          "left_harms_right_correct": 6
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 3,
+        "avoided": 21
+      }
+    },
+    "sqrt3675_seed118__unweighted1024_seed118": {
+      "left": "sqrt3675_seed118",
+      "right": "unweighted1024_seed118",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1259,
+          "both_wrong": 83,
+          "left_rescues_right_error": 28,
+          "left_harms_right_correct": 85
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 34,
+          "both_wrong": 73,
+          "left_rescues_right_error": 8,
+          "left_harms_right_correct": 6
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 173,
+          "both_wrong": 41,
+          "left_rescues_right_error": 22,
+          "left_harms_right_correct": 5
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 6,
+        "avoided": 31
+      }
+    },
+    "sqrt3675_seed118__step220": {
+      "left": "sqrt3675_seed118",
+      "right": "step220",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1284,
+          "both_wrong": 63,
+          "left_rescues_right_error": 3,
+          "left_harms_right_correct": 105
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 36,
+          "both_wrong": 63,
+          "left_rescues_right_error": 6,
+          "left_harms_right_correct": 16
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 136,
+          "both_wrong": 42,
+          "left_rescues_right_error": 59,
+          "left_harms_right_correct": 4
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 3,
+        "avoided": 42
+      }
+    },
+    "unweighted1024_seed117__unweighted1024_seed118": {
+      "left": "unweighted1024_seed117",
+      "right": "unweighted1024_seed118",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1328,
+          "both_wrong": 81,
+          "left_rescues_right_error": 30,
+          "left_harms_right_correct": 16
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 30,
+          "both_wrong": 80,
+          "left_rescues_right_error": 1,
+          "left_harms_right_correct": 10
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 176,
+          "both_wrong": 50,
+          "left_rescues_right_error": 13,
+          "left_harms_right_correct": 2
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 11,
+        "avoided": 18
+      }
+    },
+    "unweighted1024_seed117__step220": {
+      "left": "unweighted1024_seed117",
+      "right": "step220",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1352,
+          "both_wrong": 60,
+          "left_rescues_right_error": 6,
+          "left_harms_right_correct": 37
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 30,
+          "both_wrong": 68,
+          "left_rescues_right_error": 1,
+          "left_harms_right_correct": 22
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 140,
+          "both_wrong": 52,
+          "left_rescues_right_error": 49,
+          "left_harms_right_correct": 0
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 4,
+        "avoided": 25
+      }
+    },
+    "unweighted1024_seed118__step220": {
+      "left": "unweighted1024_seed118",
+      "right": "step220",
+      "by_GT": {
+        "Supported": {
+          "N": 1455,
+          "both_correct": 1335,
+          "both_wrong": 57,
+          "left_rescues_right_error": 9,
+          "left_harms_right_correct": 54
+        },
+        "Not Supported": {
+          "N": 121,
+          "both_correct": 36,
+          "both_wrong": 65,
+          "left_rescues_right_error": 4,
+          "left_harms_right_correct": 16
+        },
+        "Not Addressed": {
+          "N": 241,
+          "both_correct": 140,
+          "both_wrong": 63,
+          "left_rescues_right_error": 38,
+          "left_harms_right_correct": 0
+        }
+      },
+      "false_S_left_relative_to_right": {
+        "new": 13,
+        "avoided": 27
+      }
+    }
+  },
+  "family_intersections": {
+    "sqrt_both_correct_unweighted_both_wrong": {
+      "N": 16,
+      "by_GT": {
+        "Not Supported": 4,
+        "Not Addressed": 11,
+        "Supported": 1
+      }
+    },
+    "unweighted_both_correct_sqrt_both_wrong": {
+      "N": 24,
+      "by_GT": {
+        "Supported": 22,
+        "Not Supported": 2
+      }
+    },
+    "sqrt_both_correct_step220_wrong": {
+      "N": 63,
+      "by_GT": {
+        "Not Addressed": 58,
+        "Not Supported": 5
+      }
+    },
+    "step220_correct_sqrt_both_wrong": {
+      "N": 71,
+      "by_GT": {
+        "Supported": 55,
+        "Not Supported": 16
+      }
+    },
+    "only_sqrt_family_stably_correct": {
+      "N": 14,
+      "by_GT": {
+        "Not Addressed": 11,
+        "Not Supported": 3
+      }
+    }
+  },
+  "common_error_patients": [
+    {
+      "sid": "1084",
+      "N": 3,
+      "by_GT": {
+        "Not Supported": 3
+      }
+    },
+    {
+      "sid": "22289",
+      "N": 16,
+      "by_GT": {
+        "Not Supported": 13,
+        "Supported": 3
+      }
+    },
+    {
+      "sid": "25027",
+      "N": 17,
+      "by_GT": {
+        "Not Addressed": 1,
+        "Not Supported": 13,
+        "Supported": 3
+      }
+    },
+    {
+      "sid": "30820",
+      "N": 2,
+      "by_GT": {
+        "Not Addressed": 1,
+        "Not Supported": 1
+      }
+    },
+    {
+      "sid": "5954",
+      "N": 2,
+      "by_GT": {
+        "Not Supported": 1,
+        "Not Addressed": 1
+      }
+    },
+    {
+      "sid": "59752",
+      "N": 21,
+      "by_GT": {
+        "Supported": 12,
+        "Not Addressed": 6,
+        "Not Supported": 3
+      }
+    },
+    {
+      "sid": "60130",
+      "N": 8,
+      "by_GT": {
+        "Not Addressed": 4,
+        "Not Supported": 2,
+        "Supported": 2
+      }
+    },
+    {
+      "sid": "69023",
+      "N": 3,
+      "by_GT": {
+        "Not Supported": 2,
+        "Not Addressed": 1
+      }
+    },
+    {
+      "sid": "72940",
+      "N": 2,
+      "by_GT": {
+        "Supported": 2
+      }
+    },
+    {
+      "sid": "74237",
+      "N": 7,
+      "by_GT": {
+        "Supported": 1,
+        "Not Supported": 2,
+        "Not Addressed": 4
+      }
+    },
+    {
+      "sid": "76990",
+      "N": 6,
+      "by_GT": {
+        "Supported": 4,
+        "Not Supported": 2
+      }
+    },
+    {
+      "sid": "80454",
+      "N": 4,
+      "by_GT": {
+        "Not Supported": 2,
+        "Supported": 1,
+        "Not Addressed": 1
+      }
+    },
+    {
+      "sid": "82030",
+      "N": 10,
+      "by_GT": {
+        "Not Addressed": 3,
+        "Supported": 7
+      }
+    },
+    {
+      "sid": "82564",
+      "N": 3,
+      "by_GT": {
+        "Supported": 2,
+        "Not Addressed": 1
+      }
+    },
+    {
+      "sid": "84606",
+      "N": 5,
+      "by_GT": {
+        "Supported": 2,
+        "Not Supported": 2,
+        "Not Addressed": 1
+      }
+    },
+    {
+      "sid": "87344",
+      "N": 10,
+      "by_GT": {
+        "Supported": 6,
+        "Not Supported": 4
+      }
+    },
+    {
+      "sid": "93571",
+      "N": 5,
+      "by_GT": {
+        "Not Addressed": 3,
+        "Supported": 1,
+        "Not Supported": 1
+      }
+    },
+    {
+      "sid": "94404",
+      "N": 2,
+      "by_GT": {
+        "Supported": 2
+      }
+    },
+    {
+      "sid": "98089",
+      "N": 14,
+      "by_GT": {
+        "Supported": 3,
+        "Not Supported": 4,
+        "Not Addressed": 7
+      }
+    }
+  ],
+  "common_error_authors": {
+    "human": {
+      "Not Addressed": 24,
+      "Not Supported": 44,
+      "Supported": 42
+    },
+    "llm": {
+      "Supported": 9,
+      "Not Addressed": 10,
+      "Not Supported": 11
+    }
+  }
+}
