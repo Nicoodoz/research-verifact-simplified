@@ -1,0 +1,20 @@
+{
+  "status": "STOP_CURRENT_RECIPE",
+  "full500_valid": 500,
+  "delta_to_matched120": {
+    "natural_MCC": -0.015089931569328585,
+    "pressure_MCC": -0.011461332166380955,
+    "correct": -3,
+    "false_S": -3,
+    "class_net": {
+      "S": -3,
+      "NS": -3,
+      "NA": 3
+    }
+  },
+  "expanded1317": false,
+  "additional_training": false,
+  "source_checkpoints_preserved": true,
+  "selected_native_quality_candidate": "120_final369",
+  "baseline_retained": "107_label_only"
+}
