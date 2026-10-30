@@ -13,7 +13,7 @@
 |123_claim_only_control|[状态](../tasks/123_claim_only_control/CURRENT.md) · [TF-IDF](../outputs/123_claim_only_control/report.md) · [既有端到端记录](../outputs/117_verdict_probe/e2e_live_check.json)|TF-IDF已完成；同9B空reference对照准备后取消未跑|没有同9B诊断成绩；保留既有TF-IDF和端到端记录|
 |122_balanced_pool_sft|[报告](../outputs/122_balanced_pool_sft/report.md) · [500指标](../outputs/122_balanced_pool_sft/balanced_pool_sft500.json)|32患者729条92步；500全部有效，160首回执复用|自然正确−21、压力+3；合计正确−18、FS−4，NS收益伴随S/NA损失；阴性结束|
 |121_nearest_memory|[原160](../outputs/121_nearest_memory/report.md) · [固定扩展](../outputs/121_nearest_memory/reconsidered_extension.md)|固定配置完整1817，历史结果不改|MCC/PA收益伴随大幅FS及少数类损失；按方向退出后接主线|
-|120_full_pool_sft|[220报告](../outputs/120_full_pool_sft/report.md) · [1817指标](../outputs/120_full_pool_sft/midpoint220_1817.json) · [续跑入口](../tasks/120_full_pool_sft/resume369.py)|原220步/1760呈现状态保留；约15:03原计划恢复|独立verifact120_resume369继续至369，预计约105分钟；尚无369终点结果|
+|120_full_pool_sft|[220报告](../outputs/120_full_pool_sft/report.md) · [369步当前结果](../outputs/120_full_pool_sft/final_report.md)|369步2945条与500首次评价完成，模型回传|NA恢复伴随NS损失，正补余下1317；原220完整成绩保留|
 |119_warm_head_ft|[报告](../outputs/119_warm_head_ft/report.md) · [指标](../outputs/119_warm_head_ft/trained_best160.json)|完整369步、内部验证与固定160；执行者复核|自然收益伴随压力/NS损失，停止扩大|
 |118_full_data_heads|[重拟合](../outputs/118_full_data_heads/reconsidered_refit.md) · [seed检查](../outputs/118_full_data_heads/seed_stability.md)|全40人固定配方及两seed已完成|保留平方根头真实收益与风险；后接分类路线不再为论文主线|
 |117_verdict_probe|[原报告](../outputs/117_verdict_probe/report.md) · [扩展](../outputs/117_verdict_probe/reconsidered_extension.md) · [原流程复验](../outputs/118_full_data_heads/unweighted_workflow_seed118.md)|完整1817和原选轮流程两seed保留|MCC/PA真实收益不改；用户按研究方向停止后接分类主线|

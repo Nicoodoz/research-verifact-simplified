@@ -26,7 +26,7 @@ def lookup(path):
 
 def paired(rows,old,new,reference,bootstrap=False):
     value=section(rows,old,new)
-    value['reference']=reference
+    value['reference_model']=reference
     value['scores'][reference]=value['scores'].pop('label_only107')
     if bootstrap:
         truth=[dict(proposition_id=r['id'],subject_id=str(r['sid']),human_gt=r['GT']) for r in rows]
@@ -60,9 +60,12 @@ def evaluate(predictions,done_path,tag,bootstrap):
     if len(final)==1817 and set(final)==set(keys):
         groups.update(selection1817=list(keys.values()),new1317=[r for r in keys.values() if r.get('subset')=='new'])
     original103=lookup(ROOT/'outputs/103_lora_selection/final_paired_predictions.jsonl')
+    original105={r['id']:r for r in common.rows(ROOT/'outputs/105_brief_supervision/predictions_sanitized.jsonl')
+                 if r['arm']=='base_judge'}
     for p in ('natural','pressure'):
         groups['same103_'+p]=[keys[i] for i in final if i in original103 and original103[i]['panel']==p
             and original103[i]['arms']['nine_native']['valid']]
+        groups['same105_base_'+p]=[keys[i] for i in final if i in original105 and keys[i].get('old_panel')==p]
     result=dict(task=120,step=369,consumed=2945,source_adapter_sha256=done['adapter_sha256'],
         coverage=dict(expected=len(final),valid=len(valid),invalid=sum(r.get('receipt_status')=='invalid' for r in final.values()),
             missing=sum(r.get('receipt_status')=='missing' for r in final.values())),
@@ -70,6 +73,8 @@ def evaluate(predictions,done_path,tag,bootstrap):
         cohort_role='historically exposed development/selection patients',confirmation40_used=False)
     for name,requested in groups.items():
         rows=[r for r in requested if r['id'] in valid]
+        if name.startswith('same105_base_'):
+            rows=[r for r in rows if original105[r['id']]['parsed']['valid']]
         if not rows:continue
         models={'paper_r1':{r['id']:r['paper_r1'] for r in rows},
             '107_label_only':{r['id']:base[r['id']]['verdict'] for r in rows},
@@ -77,6 +82,10 @@ def evaluate(predictions,done_path,tag,bootstrap):
             '120_step369':{r['id']:valid[r['id']]['verdict'] for r in rows}}
         if name.startswith('same103_'):
             models['103_original_prompt_unfinetuned9B']={r['id']:original103[r['id']]['predictions']['nine_native'] for r in rows}
+        if name.startswith('same105_base_'):
+            if any(original105[r['id']]['prompt_token_sha256']!=base[r['id']]['prompt_token_sha256'] for r in rows):
+                raise ValueError('The105 cached base model does not use the identical prompt')
+            models['105_same_prompt_unfinetuned9B']={r['id']:original105[r['id']]['parsed']['verdict'] for r in rows}
         panel=dict(expected_N=len(requested),joint_valid_N=len(rows),
             scores={label:metrics(rows,pred) for label,pred in models.items()},
             versus107=paired(rows,base,valid,'107_label_only',bootstrap and name=='selection1817'),
@@ -87,6 +96,7 @@ def evaluate(predictions,done_path,tag,bootstrap):
     result['baseline_limits']={
         'paper_r1':'Historical author predictions, different Judge/configuration; not a same-model control.',
         '103_original_prompt_unfinetuned9B':'Only existing180 coverage; different prompt/thinking budget. Never imputed into the full cohort.',
+        '105_same_prompt_unfinetuned9B':'Original485 valid of500; invalid first outputs retained and excluded only in this explicitly common subset.',
         '107_label_only':'Maintained fine-tuned9B baseline, same104 prompt and complete reference.',
         '120_step220':'Preserved earlier checkpoint of the same training run; not a separate seed.'}
     return result
@@ -108,7 +118,7 @@ def render(result,tag):
         for compare in ('versus107','versus220'):
             p=panel[compare];c=p['changes']
             classes='|'.join(f"{c['by_class'][g]['rescued']}/{c['by_class'][g]['harmed']}" for g in LABELS)
-            lines.append(f"|{name}/{p['reference']}|{p['delta_MCC']:+.4f}|{p['delta_correct']:+d}|{p['delta_false_S']:+d}|{classes}|{c['false_S_new']}/{c['false_S_avoided']}|")
+            lines.append(f"|{name}/{p['reference_model']}|{p['delta_MCC']:+.4f}|{p['delta_correct']:+d}|{p['delta_false_S']:+d}|{classes}|{c['false_S_new']}/{c['false_S_avoided']}|")
     lines+=['','无效与缺失不补旧答案；患者、来源及混淆矩阵见同名JSON。标签指标不能证明理由正确或医学推理机制。',
         '表格是实际结果，不预设最终369优于220；是否继续由质量、错误放行及类别损失综合判断。','']
     return '\n'.join(lines)
