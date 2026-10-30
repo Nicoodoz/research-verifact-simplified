@@ -86,6 +86,7 @@ def main():
   '','|配置|MCC|PA|正确|false-S/非S|Macro-F1|S/NS/NA召回|','|---|---:|---:|---:|---:|---:|---|']
  models=dict(score['scores'],**history)
  for name,m in models.items():
+  name=a.candidate if name=='candidate' else name
   recalls='/'.join('—' if m['per_class'][g]['recall'] is None else f"{m['per_class'][g]['recall']:.2%}" for g in LABELS)
   lines.append(f"|{name}|{m['mcc']:.4f}|{m['percent_agreement']:.2%}|{m['correct']}|{m['false_S']}/{m['non_S']}|{m['macro_F1']:.4f}|{recalls}|")
  lines+=['','逐类救回／误伤、患者及作者方向、混淆矩阵、缺reason与首字段顺序见JSON。主比较只改变原生输入／生成前缀，不改模型标签。',

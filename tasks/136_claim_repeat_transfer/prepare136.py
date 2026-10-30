@@ -11,6 +11,8 @@ def main():
     p.add_argument('--variant',choices=['claim_repeat'],default='claim_repeat');p.add_argument('--prior',type=Path,nargs='*',default=[])
     args=p.parse_args();B=ROOT/'.local_models/134_author_baselines';original=c.read(B/'job.json')
     keys=c.rows(B/'keys.jsonl');all_ids={r['id'] for r in keys}
+    assert len(keys)==len(all_ids)==1817 and len({str(r['sid']) for r in keys})==20
+    assert sum(r['old_panel']=='natural' for r in keys)==400 and sum(r['old_panel']=='pressure' for r in keys)==100
     target=set(original['phases'][0]['ids']) if args.scope=='screen160' else ({r['id'] for r in keys if r['old_panel'] in ('natural','pressure')} if args.scope=='old500' else all_ids)
     prior={}
     for folder in args.prior:

@@ -1,0 +1,19 @@
+{
+  "status": "PREPARED_NOT_RUN",
+  "variant": "claim_repeat",
+  "scope": "full1817",
+  "target_N": 1817,
+  "prior_receipts": 500,
+  "prior_invalid": 0,
+  "new_calls": 1317,
+  "prefix_tokens": 0,
+  "generated_token_cap": 384,
+  "total_answer_token_budget": 384,
+  "max_input_tokens": 13447,
+  "same_claim_reference": true,
+  "same_120_weights": true,
+  "new_training": false,
+  "new_API": 0,
+  "global_window_start": "2026-10-30T23:40:00+08:00",
+  "GPU_cap_CNY": 16.0
+}
