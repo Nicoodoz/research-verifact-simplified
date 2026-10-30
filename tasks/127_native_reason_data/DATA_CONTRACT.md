@@ -11,3 +11,9 @@
 `prepare127.py --annotations <审核jsonl> --out <新私有目录>`完整保留all_label_only及独立issue_ledger；只有无未解决问题的可靠子集导出两份同ID、同序配对文件。ledger分别记录not_reviewed（待审，不等于被语义排除）、reviewed_unresolved（已审仍有问题）和approved。needs_review默认属于待审；status=reviewed_unresolved、review_completed=true或primary_full_reference_read=true表示已经审读，因此仍有问题时记为reviewed_unresolved。没有reason时允许配对N=0，不凑196/512，不删除未配对样本。manifest提供完整池、分角色GT及paired_by_role_GT统计。输出默认在私有目录，临床原文、reason及证据来源不公开。
 
 编码复用105的精确offset及原分段loss：组0为prompt/pad，组1仅序列化时定位的verdict字符串值，组2为其余JSON、reason及EOS。reason即使出现Supported/Not Supported等词也不能变成标签loss。继续使用loss105的两段分别归一后相加，不新加权；实际后续训练预算和科学对照须另行确定。CPU自检只证明合同与实现，不证明reason监督有效。
+
+## 原生reason回读
+
+`parse127.inspect_output`复用原`parse105`的分类结果，并单独检查reason是否存在且为非空文本。可用`require_reason=True`记录漏输出理由；不因理由格式问题改写标签，也不把reason中的标签词当成判定结果。截断、重复JSON键沿用原parser处理。
+
+结构有效不代表1—3句约束、医学语义、证据忠实性或reason与verdict的一致性已通过。训练数据的句数与语义由已保存审读记录确认；未来真实推理仍需单列这些检查。该CPU工具不调用模型，不改变120／128接口。

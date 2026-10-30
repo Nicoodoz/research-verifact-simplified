@@ -1,0 +1,27 @@
+{
+  "scope": "completed120 final369 on1817; cached diagnostics only",
+  "patient_correct_directions": {
+    "positive": 19,
+    "negative": 1,
+    "unchanged": 0,
+    "largest_positive_delta": 14,
+    "total_delta": 132
+  },
+  "patient_falseS_directions": {
+    "increase": 17,
+    "decrease": 0,
+    "unchanged": 3
+  },
+  "rescued_S": 170,
+  "rescued_S_also_correct_by_tfidf": 167,
+  "source_notes": [
+    "TFIDF used all40 patients;120 additional gradients used32, sharing historical107 initialization.",
+    "TFIDF overlap does not establish that120 ignores evidence; no matched-backbone evidence ablation has run.",
+    "TFIDF whole-cohort MCC .32755 and falseS298/362 are much worse than120 .62499 and109/362.",
+    "The primary120 gain is rescue of S; minority losses and falseS remain material.",
+    "TFIDF already recalls99.18% of all trueS;167/170 overlap is expected and is not evidence of shortcut use by120."
+  ],
+  "new_model_calls": 0,
+  "new_training": 0,
+  "new_API": 0
+}

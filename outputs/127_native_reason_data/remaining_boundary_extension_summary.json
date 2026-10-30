@@ -1,0 +1,33 @@
+{
+  "reviewed_N": 41,
+  "paired_N": 26,
+  "unresolved_N": 15,
+  "not_reviewed_N": 3634,
+  "paired_GT_counts": {
+    "Supported": 7,
+    "Not Supported": 13,
+    "Not Addressed": 6
+  },
+  "paired_by_role_GT": {
+    "train": {
+      "Supported": 5,
+      "Not Supported": 12,
+      "Not Addressed": 5
+    },
+    "validation": {
+      "Supported": 2,
+      "Not Supported": 1,
+      "Not Addressed": 1
+    }
+  },
+  "additional_actual107_errors_reviewed": 3,
+  "additional_reliable_reasons": 2,
+  "source_family_checked_before_expansion": true,
+  "pending_same_family_not_fully_read": [
+    "286e158a-8380-8136-2455-4368905eff21"
+  ],
+  "all_original_labels_retained": true,
+  "new_GPU_training": false,
+  "new_API": 0,
+  "clinical_benefit_not_tested": true
+}
