@@ -1,0 +1,31 @@
+{
+  "reviewed_N": 60,
+  "paired_N": 40,
+  "unresolved_N": 20,
+  "not_reviewed_N": 3615,
+  "paired_GT_counts": {
+    "Supported": 11,
+    "Not Supported": 17,
+    "Not Addressed": 12
+  },
+  "paired_by_role_GT": {
+    "train": {
+      "Supported": 9,
+      "Not Supported": 16,
+      "Not Addressed": 11
+    },
+    "validation": {
+      "Supported": 2,
+      "Not Supported": 1,
+      "Not Addressed": 1
+    }
+  },
+  "additional_reviewed": 4,
+  "additional_reliable_reasons": 3,
+  "additional_prior105_paired": 0,
+  "all_original_labels_retained": true,
+  "new_GPU_training": false,
+  "new_API": 0,
+  "clinical_benefit_not_tested": true,
+  "current_private_dataset": "dataset_v9_new_coverage"
+}

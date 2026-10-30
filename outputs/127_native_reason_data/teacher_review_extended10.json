@@ -1,0 +1,17 @@
+{
+  "N": 10,
+  "same_reference_N": 10,
+  "teacher_GT_agreement_N": 5,
+  "categories": {
+    "uncertain_causal_attribution": 1,
+    "grounded": 4,
+    "unsupported_dose_claim": 1,
+    "grounded_but_GT_label_differs": 2,
+    "uncertain_duration": 1,
+    "input_GT_tension": 1
+  },
+  "selected_physician_comment_cases": true,
+  "not_a_population_quality_estimate": true,
+  "no_new_model_calls": true,
+  "no_GT_changes": true
+}
