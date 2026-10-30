@@ -65,7 +65,9 @@ def main():
             models['103_original_prompt_unfinetuned9B']={r['id']:old103[r['id']]['predictions']['nine_native'] for r in group}
         result['panels'][panel]=dict(N=len(group),scores={name:metrics(group,p) for name,p in models.items()},
             versus107=paired(group,base107,pred,'107_label_only'),
-            versus120=paired(group,base120,pred,'120_full_pool_sft'))
+            versus120=paired(group,base120,pred,'120_full_pool_sft'),
+            by_author={author:paired([r for r in group if r['author']==author],base120,pred,'120_full_pool_sft')
+                for author in sorted({r['author'] for r in group})})
     result['baseline_limits']=dict(paper_r1='Author historical model/configuration, not same-Judge causal control.',
         original_prompt_unfinetuned9B='Actual common subset only; different original prompt and thinking budget.',
         label_only107='Maintained ordinary fine-tuning baseline; original104 prompt and full reference.',
@@ -77,6 +79,21 @@ def main():
         dict(id=i,sid=keys[i]['sid'],GT=keys[i]['GT'],author=keys[i]['author'],old_panel=keys[i]['old_panel'],
             verdict=pred.get(i,{}).get('verdict'),valid=pred.get(i,{}).get('valid',False),missing=i not in pred,
             baseline107=base107[i]['verdict'],baseline120=base120[i]['verdict']) for i in sorted(target)])
+    lines=['# 130 header_blocks：'+a.scope+'实际结果','',
+        '仅改变完整reference呈现。原正文和顺序保留；107、120与作者历史结果复用。原作者式未微调9B只列其已有共同子集。','',
+        '|范围／模型|共同有效N|MCC|PA|正确数|false-S/真实非S|S/NS/NA召回|',
+        '|---|---:|---:|---:|---:|---:|---|']
+    for panel,data in result['panels'].items():
+        for name,m in data['scores'].items():
+            recalls='/'.join('—' if m['per_class'][g]['recall'] is None else f"{m['per_class'][g]['recall']:.1%}" for g in LABELS)
+            lines.append(f"|{panel}/{name}|{data['N']}|{m['mcc']:.4f}|{m['percent_agreement']:.2%}|{m['correct']}|{m['false_S']}/{m['non_S']}|{recalls}|")
+    lines+=['','|范围／相对120|ΔMCC|Δ正确|Δfalse-S|S救回/误伤|NS救回/误伤|NA救回/误伤|','|---|---:|---:|---:|---:|---:|---:|']
+    for panel,data in result['panels'].items():
+        v=data['versus120'];change=v['changes']['by_class']
+        by_class='|'.join(f"{change[g]['rescued']}/{change[g]['harmed']}" for g in LABELS)
+        lines.append(f"|{panel}|{v['delta_MCC']:+.4f}|{v['delta_correct']:+d}|{v['delta_false_S']:+d}|{by_class}|")
+    lines+=['','缺失/无效单列于JSON，不补旧答案；来源、患者方向与混淆矩阵一并保存。不是独立未接触测试。','']
+    (out/(a.scope+'.md')).write_bytes('\n'.join(lines).encode())
     print(c.canonical(dict(scope=a.scope,received=len(raw),valid=len(valid),screen=result.get('screen'),
         panels={p:{k:d['versus120'][k] for k in ('delta_MCC','delta_correct','delta_false_S')} for p,d in result['panels'].items()})))
 
