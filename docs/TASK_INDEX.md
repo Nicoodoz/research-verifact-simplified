@@ -8,7 +8,8 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|132_midpoint_update|[阶段结果](../outputs/132_midpoint_update/report.md) · [固定方案](../tasks/132_midpoint_update/PROTOCOL.md)|107/120有效更新中点，160条全部有效并通过扩展条件|新实例22:15起19元预算，340条正在接续；原160条不重发，粗筛不是最终收益|
+|133_shuffle_repeat|[CPU状态](../tasks/133_shuffle_repeat/CURRENT.md)|固定训练顺序复验仅完成准备和CPU检查|依用户指令不启动，无分类结果|
+|132_midpoint_update|[最终结果](../outputs/132_midpoint_update/report.md) · [固定方案](../tasks/132_midpoint_update/PROTOCOL.md)|完整1817全有效，固定107/120更新中点|MCC .5988、正确1559、FS80/362；保留质量／风险取舍，不升级默认，按用户要求结束|
 |131_source_context_probe|[源文核查](../outputs/131_source_context_probe/report.md)|6例完整reference及相关原始note上下文；600片段可定位|没有新增分类成绩，未据此盲目扩大上下文或回填训练|
 |130_header_blocks|[最终报告](../outputs/130_header_blocks/final_report.md) · [固定方案](../tasks/130_header_blocks/PROTOCOL.md)|160初筛后只补340，完整500均有效；输入tokens−28.40%|总正确不变、FS+1、压力MCC下降，停止格式扩大|
 |129_native_reference_check|[最终报告](../outputs/129_native_reference_check/final_report.md) · [固定诊断](../tasks/129_native_reference_check/PROTOCOL.md)|107/120各160，清空reference后全部判NA，回执已回传|会响应证据缺失；不证明非空证据关系判断正确|

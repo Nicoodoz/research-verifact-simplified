@@ -1,0 +1,10 @@
+{
+  "kind": "executor_selfcheck_not_independent_audit",
+  "unique_complete1817": true,
+  "all_first_receipts_valid": true,
+  "confusion_matrix_and_MCC_formula_agree": true,
+  "paired_delta_arithmetic_agrees": true,
+  "source_adapter_and_prompt_identity_checked_by_analyze132": true,
+  "user_requested_stop": true,
+  "no_further_GPU_jobs": true
+}

@@ -1,0 +1,22 @@
+{
+  "new_GPU_calls": 0,
+  "new_training": false,
+  "parent_context_inventory": {
+    "cohort": 1817,
+    "original_parent_present": 1817,
+    "all_claims_match_original_source": true,
+    "all_parents_locate_within_own_document": true,
+    "median_parent_characters": 417,
+    "maximum_parent_characters": 711,
+    "narrow_explicit_scope_markers": 5,
+    "marker_GT": {"Supported": 4, "Not Addressed": 1},
+    "judgment": "This narrow issue does not justify blanket context augmentation now. No context experiment was launched; the inventory does not prove all context-dependent cases are rare or that context cannot help. Source-document text is unverified and cannot be used as EHR evidence."
+  },
+  "existing_native_reason_cache_comparison": {
+    "N": 20,
+    "purposefully_selected": true,
+    "label_only107": {"label_only_correct": 11, "reason_prompt_correct": 11, "label_only_falseS": 2, "reason_prompt_falseS": 2, "rescued": 1, "harmed": 1},
+    "final369_120": {"label_only_correct": 15, "reason_prompt_correct": 15, "label_only_falseS": 3, "reason_prompt_falseS": 3, "rescued": 0, "harmed": 0},
+    "judgment": "The existing reason-output diagnostic does not show a new classification gain on these same20 IDs. No predictions were rerun. This is not a population estimate or a proof that reason supervision can never work."
+  }
+}

@@ -1,7 +1,7 @@
-# 132 midpoint_update
+# 132 midpoint_update：完成
 
-完整500条已回传且全有效。相对120正确−3、false-S−12；相对107正确+18、false-S+15。自然／压力分别分析，不能据此宣称全面优于107。
+完整1817条全有效。相对107提高MCC与正确数但多30次false-S；相对120少29次false-S但少40条正确。保留为折中结果，不自动升级默认。
 
-固定中点正在新实例补缺1317条，以完成原20名开发选型患者的1817条；原500不重发，未增加训练、系数或后处理。22:15新窗口19元硬上限、¥1.58/h，不自动关机。原无卡实例必要资产已保存，已告知用户可关机；实际状态以平台为准。
+用户要求本任务收尾后停止目标模式：后续415诊断已取消，133仅CPU准备未运行。GPU计算已停止，实例仍开机且未释放。
 
-[当前报告](../../outputs/132_midpoint_update/report.md) · [扩展决定](../../outputs/132_midpoint_update/decision500.json) · [固定协议](PROTOCOL.md)
+[最终报告](../../outputs/132_midpoint_update/report.md) · [完整指标](../../outputs/132_midpoint_update/selection1817.json) · [资源状态](../../outputs/132_midpoint_update/resource_final.json)

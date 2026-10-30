@@ -1,0 +1,80 @@
+{
+  "steps": 369,
+  "examples": 2945,
+  "patients": 32,
+  "GT": {
+    "Supported": 2379,
+    "Not Addressed": 323,
+    "Not Supported": 243
+  },
+  "no_omitted_or_repeated_training_ID": true,
+  "last_tail_divisor": 1,
+  "logged_training_step_seconds": 13873.78762334492,
+  "logged_training_hours": 3.853829895373589,
+  "phases": {
+    "steps1_92": {
+      "steps": 92,
+      "examples": 736,
+      "GT": {
+        "Supported": 597,
+        "Not Addressed": 77,
+        "Not Supported": 62
+      },
+      "patients": 32,
+      "mean_logged_batch_loss": 0.2338994952242798,
+      "median_logged_batch_loss": 0.16951432803580246,
+      "mean_gradient_norm": 7.206804629334289,
+      "mean_tokens_per_example": 8393.910326086956,
+      "seconds_per_example": 4.700251800825556
+    },
+    "steps93_184": {
+      "steps": 92,
+      "examples": 736,
+      "GT": {
+        "Not Addressed": 77,
+        "Supported": 591,
+        "Not Supported": 68
+      },
+      "patients": 32,
+      "mean_logged_batch_loss": 0.23546206665627245,
+      "median_logged_batch_loss": 0.1808744289646711,
+      "mean_gradient_norm": 5.244630942526071,
+      "mean_tokens_per_example": 8362.921195652174,
+      "seconds_per_example": 4.68332660973892
+    },
+    "steps185_276": {
+      "steps": 92,
+      "examples": 736,
+      "GT": {
+        "Supported": 596,
+        "Not Addressed": 76,
+        "Not Supported": 64
+      },
+      "patients": 32,
+      "mean_logged_batch_loss": 0.18675252458049965,
+      "median_logged_batch_loss": 0.16035889564045647,
+      "mean_gradient_norm": 4.695579757185086,
+      "mean_tokens_per_example": 8425.933423913044,
+      "seconds_per_example": 4.7441480495250765
+    },
+    "steps277_369": {
+      "steps": 93,
+      "examples": 737,
+      "GT": {
+        "Supported": 595,
+        "Not Addressed": 93,
+        "Not Supported": 49
+      },
+      "patients": 32,
+      "mean_logged_batch_loss": 0.1818891019665507,
+      "median_logged_batch_loss": 0.12898370280163363,
+      "mean_gradient_norm": 4.573329784176362,
+      "mean_tokens_per_example": 8417.89145183175,
+      "seconds_per_example": 4.716120690256458
+    }
+  },
+  "per_class_loss_available": false,
+  "interpretation": "The old log stores one average loss per batch. Minority-specific loss and class probabilities cannot be recovered from it. Actual415 training-set predictions are queued to distinguish fitting from generalization.",
+  "new_training": false,
+  "new_GPU_calls": 0
+}

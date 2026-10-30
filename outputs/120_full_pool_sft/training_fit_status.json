@@ -1,0 +1,11 @@
+{
+  "status": "CANCELLED_BY_USER",
+  "expected_N": 415,
+  "completed_receipts": 0,
+  "started_loading": true,
+  "new_training": false,
+  "classification_conclusion": null,
+  "no_shutdown": true,
+  "reason": "User requested stop after132; no training-fit efficacy/fitting conclusion is available",
+  "private_log_backup": ".local_models/120_full_pool_sft/training_fit/cancelled_return/"
+}

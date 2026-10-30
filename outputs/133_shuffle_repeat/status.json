@@ -1,0 +1,24 @@
+{
+  "status": "CPU_PREPARED_NOT_RUN_USER_STOP",
+  "new_GPU": false,
+  "new_training": false,
+  "N": 2945,
+  "steps": 369,
+  "seed": 118027,
+  "reason": "User requested finish132, push both repositories, and stop goal mode",
+  "CPU_check": {
+    "status": "PASS_CPU_ONLY",
+    "new_order_N": 2945,
+    "patients": 32,
+    "GT": {
+      "Supported": 2379,
+      "Not Addressed": 323,
+      "Not Supported": 243
+    },
+    "same_IDs_labels_full_inputs": true,
+    "only_random_order_changed": true,
+    "same_training_settings": true,
+    "original160_screen_preserved": true,
+    "new_GPU_started": false
+  }
+}
