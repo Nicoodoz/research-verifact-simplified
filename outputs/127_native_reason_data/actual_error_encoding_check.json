@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "pairs": 22,
+  "unchanged_prior_checks_reused": 20,
+  "new_pairs_encoded": 2,
+  "old_source_and_target_equal": true,
+  "full_input_no_truncation": true,
+  "original_GT_preserved": true,
+  "GPU_calls": 0,
+  "API_calls": 0,
+  "model_loaded": false,
+  "details": [
+    {
+      "id": "52ce8a8c-2b2c-216f-5b43-603a7efe60d2",
+      "GT": "Not Supported",
+      "fit_role": "train",
+      "prompt_tokens": 9171,
+      "total_tokens": 9229,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "697391cf-ad0a-748e-7ac7-2ce46be54681",
+      "GT": "Not Supported",
+      "fit_role": "train",
+      "prompt_tokens": 9693,
+      "total_tokens": 9752,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    }
+  ]
+}

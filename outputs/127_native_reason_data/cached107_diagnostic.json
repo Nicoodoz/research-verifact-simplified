@@ -1,0 +1,64 @@
+{
+  "baseline": "frozen107_label_only",
+  "source107_adapter_sha256": "096f30c4d1885d2a9775f5390a0de24c214f430fc3b1fa1b507d901e7619f3f8",
+  "cached_pool_N": 527,
+  "doctor111": {
+    "N": 111,
+    "cached_N": 42,
+    "valid_cached_N": 42,
+    "unknown_N": 69,
+    "correct_N": 26,
+    "error_N": 16,
+    "false_S_N": 3,
+    "error_GT": {
+      "Not Supported": 13,
+      "Supported": 2,
+      "Not Addressed": 1
+    }
+  },
+  "approved20": {
+    "N": 20,
+    "cached_N": 15,
+    "valid_cached_N": 15,
+    "unknown_N": 5,
+    "correct_N": 14,
+    "error_N": 1,
+    "false_S_N": 0,
+    "error_GT": {
+      "Not Supported": 1
+    }
+  },
+  "source_is_not_current120": true,
+  "unknown_not_inferred": true,
+  "new_inference": 0,
+  "reason_quality_not_implied_by_baseline_correctness": true,
+  "by_fit_role": {
+    "train": {
+      "N": 93,
+      "cached_N": 38,
+      "valid_cached_N": 38,
+      "unknown_N": 55,
+      "correct_N": 25,
+      "error_N": 13,
+      "false_S_N": 3,
+      "error_GT": {
+        "Not Supported": 12,
+        "Supported": 1
+      }
+    },
+    "validation": {
+      "N": 18,
+      "cached_N": 4,
+      "valid_cached_N": 4,
+      "unknown_N": 14,
+      "correct_N": 1,
+      "error_N": 3,
+      "false_S_N": 0,
+      "error_GT": {
+        "Supported": 1,
+        "Not Addressed": 1,
+        "Not Supported": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "status": "CPU_PREPARED_GPU_NOT_STARTED",
+  "training_N": 2945,
+  "training_patients": 32,
+  "internal_validation_patients": 8,
+  "counts": {
+    "Supported": 2379,
+    "Not Addressed": 323,
+    "Not Supported": 243
+  },
+  "weights": {
+    "Supported": 1.0,
+    "Not Addressed": 2.7139132405807267,
+    "Not Supported": 3.1289172978508275
+  },
+  "start_step": 220,
+  "final_step": 369,
+  "new_steps": 149,
+  "remaining_presentations": 1185,
+  "remaining_GT_counts": {
+    "Supported": 956,
+    "Not Addressed": 140,
+    "Not Supported": 89
+  },
+  "normalization": "weighted mean within each existing optimizer step",
+  "single_example_tail_coefficient": 1.0,
+  "same_ID_order": true,
+  "new_API": 0,
+  "new_GPU_training": false,
+  "estimated_training_seconds": 5600.664,
+  "estimated_training_plus500_seconds": 6780.664,
+  "tests": {
+    "weighted_gradient": true,
+    "tail": true,
+    "parent_optimizer_RNG_restore": true,
+    "child_checkpoint_identity": true
+  },
+  "control": "completed120 unweighted continuation from identical220 parent",
+  "deployment": "original native9B three-class JSON, no added head or inference correction"
+}
