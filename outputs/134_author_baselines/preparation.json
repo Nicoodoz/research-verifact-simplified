@@ -1,0 +1,28 @@
+{
+  "stage": "prepared",
+  "N": 1817,
+  "patients": 20,
+  "prompt_source": "https://raw.githubusercontent.com/philipchung/verifact/f115d36cb65fa2073fce0a10df56bb37f4cbcd50/packages/llm_judge/src/llm_judge/prompts.py",
+  "prompt_exact_text_verified": true,
+  "system_exact_text_verified": true,
+  "old103_template_equal": true,
+  "cache_matched": {
+    "author_base9b": 20,
+    "author_lora9b": 20
+  },
+  "paper_r1_reused": 1817,
+  "new_calls": 3594,
+  "max_input_tokens": 13436,
+  "total_input_tokens": 15128503,
+  "generation": {
+    "dtype": "bfloat16",
+    "thinking": false,
+    "max_new_tokens": 768,
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "batch_size": 2,
+    "single_if_prompt_above": 12500
+  },
+  "GPU_started": false
+}
