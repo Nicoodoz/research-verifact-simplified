@@ -39,3 +39,5 @@
 私有数据位于`.local_models/127_native_reason_data/dataset_v1/`：`all_label_only.jsonl`保留全部3675条；`paired/`按train／validation分别存两版配对；`issue_ledger.jsonl`区分未审与已审待核。完整草稿、交叉审读、来源跨度和最终reason位于同级私有审读文件，不上传GitHub。
 
 公开发布仅包含代码、[数量统计](summary.json)、[去正文审读状态](review_status_sanitized.jsonl)及CPU验证结果。新增GPU训练0次、新增收费API0次；120既有任务的GPU时间仍记原账本，不因本阶段重置。
+
+后续只读盘点发现：原40训练患者另有111条命题带医生复审／裁定备注（训练93、内部验证18），已建立私有索引。前述24条中只有1条含备注；这为后续理由准备提供更有价值的优先来源，但没有自动更改本批15条或扩成新训练。详见[原始理由与医生备注盘点](../../docs/VERIFACT_REASON_ASSETS.md)。

@@ -1,0 +1,117 @@
+{
+  "local_version": "1.1.0",
+  "human_columns": [
+    "proposition_id",
+    "text",
+    "author_type",
+    "proposition_type",
+    "rater1",
+    "rater2",
+    "rater3",
+    "verdict1",
+    "verdict2",
+    "verdict3",
+    "uncertain_flag1",
+    "uncertain_flag2",
+    "uncertain_flag3",
+    "comment1",
+    "comment2",
+    "comment3",
+    "round1_num_raters_agree",
+    "round1_majority_vote",
+    "rater4",
+    "rater5",
+    "verdict4",
+    "verdict5",
+    "comment4",
+    "comment5",
+    "round2_decision",
+    "adjudicated_verdict",
+    "adjudicated_comment",
+    "human_gt"
+  ],
+  "proposition_columns": [
+    "proposition_id",
+    "text",
+    "author_type",
+    "proposition_type",
+    "parent_text_chunk",
+    "brief_hospital_course",
+    "subject_id",
+    "row_id",
+    "hadm_id",
+    "admitdate",
+    "admittime",
+    "dischargedate",
+    "dischargetime"
+  ],
+  "all_propositions": {
+    "N": 13070,
+    "by_column": {
+      "comment1": 0,
+      "comment2": 0,
+      "comment3": 6,
+      "comment4": 427,
+      "comment5": 8,
+      "adjudicated_comment": 231
+    },
+    "any_comment_N": 447,
+    "total_nonempty_comments": 672,
+    "comments_at_least20_chars": 611,
+    "comments_at_least60_chars": 348
+  },
+  "train40_valid_atomic": {
+    "N": 3675,
+    "by_column": {
+      "comment1": 0,
+      "comment2": 0,
+      "comment3": 1,
+      "comment4": 105,
+      "comment5": 3,
+      "adjudicated_comment": 64
+    },
+    "any_comment_N": 111,
+    "total_nonempty_comments": 173,
+    "comments_at_least20_chars": 158,
+    "comments_at_least60_chars": 86
+  },
+  "natural_text": {
+    "propositions_N": 13070,
+    "by_author": {
+      "human": 8625,
+      "llm": 4445
+    },
+    "source_BHC_present": 13070,
+    "unique_BHC_by_author": {
+      "human": 100,
+      "llm": 100
+    }
+  },
+  "no_clinical_body_published": true,
+  "pilot24_original_R1": {
+    "N": 24,
+    "same_reference_N": 24,
+    "reason_present": 24,
+    "verdict_matches_GT": 11,
+    "mismatch_not_automatically_bad_reason": true,
+    "pilot_is_boundary_enriched_not_representative": true
+  },
+  "train_doctor_comment_index": {
+    "N": 111,
+    "by_GT": {
+      "Not Supported": 52,
+      "Not Addressed": 29,
+      "Supported": 30
+    },
+    "by_role_GT": {
+      "train/Not Supported": 45,
+      "train/Not Addressed": 25,
+      "train/Supported": 23,
+      "validation/Supported": 7,
+      "validation/Not Addressed": 4,
+      "validation/Not Supported": 7
+    },
+    "pilot24_with_any_comment": 1,
+    "private_index": ".local_models/127_native_reason_data/doctor_comment_index111.jsonl"
+  }
+}
