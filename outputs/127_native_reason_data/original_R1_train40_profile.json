@@ -1,0 +1,47 @@
+{
+  "scope": "original40 training patients, all3675 valid atomic claims",
+  "rater_alias": "v1.1.0-rater-121",
+  "model_counts": {
+    "R1-70B": 3675
+  },
+  "N": 3675,
+  "same_reference_N": 3675,
+  "reason_present_N": 3675,
+  "reasoning_chain_present_N": 3675,
+  "reasoning_final_answer_present_N": 3675,
+  "label_matches_GT": 2973,
+  "per_GT": {
+    "Supported": {
+      "N": 2893,
+      "label_matches_GT": 2642,
+      "predicted_counts": {
+        "Supported": 2642,
+        "Not Supported": 201,
+        "Not Addressed": 50
+      }
+    },
+    "Not Supported": {
+      "N": 297,
+      "label_matches_GT": 144,
+      "predicted_counts": {
+        "Not Supported": 144,
+        "Not Addressed": 44,
+        "Supported": 109
+      }
+    },
+    "Not Addressed": {
+      "N": 485,
+      "label_matches_GT": 187,
+      "predicted_counts": {
+        "Supported": 126,
+        "Not Addressed": 187,
+        "Not Supported": 172
+      }
+    }
+  },
+  "reason_semantic_correctness_rate": "NOT_MEASURED",
+  "labels_different_not_automatically_excluded": true,
+  "note": "This is label agreement and field coverage, not reason validity. No current9B inference or new patient scope.",
+  "GPU_calls": 0,
+  "API_calls": 0
+}

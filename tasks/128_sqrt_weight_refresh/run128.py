@@ -45,7 +45,7 @@ def main():
     if active:
         raise RuntimeError('GPU already has a compute process; do not overlap120 or another job')
     with (out/'worker.log').open('ab') as log:
-        process = subprocess.Popen([sys.executable, '-u', str(ROOT/'tasks/120_full_pool_sft/worker128.py'),
+        process = subprocess.Popen([sys.executable, '-u', str(ROOT/'tasks/128_sqrt_weight_refresh/worker128.py'),
                                     '--job', str(path)], cwd=ROOT, stdout=log,
                                    stderr=subprocess.STDOUT, start_new_session=True)
         common.put(out/'pid.json', dict(pid=process.pid, controller_pid=os.getpid(),

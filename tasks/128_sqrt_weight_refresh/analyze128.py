@@ -42,6 +42,7 @@ def main():
     original105 = {r['id']: r for r in common.rows(ROOT/'outputs/105_brief_supervision/predictions_sanitized.jsonl')
                    if r['arm'] == 'base_judge'}
     groups = {p: [i for i in all_ids if keys[i].get('old_panel') == p] for p in ('natural', 'pressure')}
+    groups['screen160_enriched'] = [i for i in screen if i in all_ids]
     if args.scope == 'selection1817':
         if all_ids != set(keys):
             raise ValueError('Complete cohort must cover all1817 IDs')
