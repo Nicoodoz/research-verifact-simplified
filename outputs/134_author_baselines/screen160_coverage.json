@@ -1,0 +1,47 @@
+{
+  "author_base9b": {
+    "expected": 160,
+    "received": 160,
+    "valid": 158,
+    "missing_ids": [],
+    "invalid_ids": [
+      "c484cba1-913f-e001-31c6-7b8108b691d4",
+      "d067e687-75d0-3230-7782-c6e5382ec3a1"
+    ],
+    "missing_reason_ids": [
+      "c484cba1-913f-e001-31c6-7b8108b691d4",
+      "d067e687-75d0-3230-7782-c6e5382ec3a1"
+    ],
+    "invalid_by_GT": {
+      "Supported": 2
+    }
+  },
+  "author_lora9b": {
+    "expected": 160,
+    "received": 160,
+    "valid": 160,
+    "missing_ids": [],
+    "invalid_ids": [],
+    "missing_reason_ids": [
+      "44c82f6e-e2d4-49cf-8872-31cd66da42b9",
+      "57b4db54-c0dd-de18-3c57-ffd3d7ed1c62",
+      "616f1563-57af-6f24-35cd-0cefd10b8dbc",
+      "63058969-4b4a-9c0d-ee28-a96e449c60cf",
+      "658e3c02-b2fc-0abe-cee0-49e070806d26",
+      "7e91d55a-d21d-572f-b5d9-4e349f02fc85",
+      "916c989a-c5e6-1e9c-6365-5d28bb22a80e",
+      "928e7e79-2bdc-ce37-758c-47206e2dd702",
+      "ac96d94d-c8c1-9928-1c61-1d33465c6edb",
+      "adac6d14-5937-0b0b-e29b-62a467f0ebe5",
+      "b45207d5-de6c-dae7-e70d-0c52bf5e6cab",
+      "b7879ff9-71fc-cfe3-0357-89945c3f6f7a",
+      "b9065d80-b88b-47c5-086a-2fd3647b348a",
+      "c2e10a9a-f000-0e7a-60c2-98ca90ab18f8",
+      "ca84f1ab-61f6-c0ea-a223-90731a1bc5b2",
+      "ea8fc433-3946-037f-0d7a-d79e71b9f2fa",
+      "fb9bb38c-2e92-954e-6fb2-662a45e77b89",
+      "fef68761-dcf7-fc21-cd06-ea79973fdbae"
+    ],
+    "invalid_by_GT": {}
+  }
+}

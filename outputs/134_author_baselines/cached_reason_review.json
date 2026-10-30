@@ -1,0 +1,12 @@
+{
+  "scope": "The 20 configuration-matched cached generations for each9B arm; same-generation verdict and reason only",
+  "review_type": "Execution model qualitative read, not independent clinical review",
+  "author_base9b": {"N": 20, "reason_present": 20, "obvious_explicit_verdict_reason_contradictions_observed": 0},
+  "author_lora9b": {"N": 20, "reason_present": 16, "reason_missing": 4, "obvious_explicit_verdict_reason_contradictions_observed_among_present": 0},
+  "limitations": [
+    "Small deliberately selected historical diagnostic subset, not a population rate",
+    "No full-reference or medical correctness claim from this review",
+    "A plausible supporting explanation can omit a decisive qualifier; verbal consistency is weaker than factual correctness",
+    "No labels, reasons, physician GT, or source inputs changed"
+  ]
+}
