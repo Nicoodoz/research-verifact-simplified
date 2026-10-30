@@ -1,0 +1,68 @@
+{
+  "task": "117/124 live_end_to_end_check",
+  "N": 9,
+  "selection": "Preselected by input length, not random and not outcome-selected",
+  "original_claim_and_full_author_reference": true,
+  "frozen_backbone": "107 label_only",
+  "public_four_token_prefix": true,
+  "live_backbone_prefill": true,
+  "cached_features_used_for_live_prediction": false,
+  "new_training": false,
+  "new_API_calls": 0,
+  "feature_input_tokens": {
+    "min": 4672,
+    "median": 8121,
+    "max": 13403,
+    "sorted_values": [
+      4672,
+      5106,
+      5352,
+      8118,
+      8121,
+      8121,
+      12648,
+      12685,
+      13403
+    ]
+  },
+  "timing_seconds": {
+    "startup": 27.72369360923767,
+    "model_loading": 11.8879529600963,
+    "worker_wall": 86.83783650398254,
+    "end_to_end_median": 1.3926939219236374,
+    "end_to_end_min": 0.8328934889286757,
+    "first_use_including_compilation": 46.51017824187875
+  },
+  "timed_work": "Original text tokenization, one live107 prefill, transfer to CPU, three frozen heads and equal-weight sqrt mean",
+  "first_case_includes_first_use_overhead": true,
+  "peak_allocated_bytes": 20967152640,
+  "peak_allocated_GiB": 19.527182579040527,
+  "cache_consistency": {
+    "mlp_unweighted_1024": {
+      "N": 9,
+      "label_agreements": 9,
+      "max_probability_abs_difference": 0.024722546339035034
+    },
+    "sqrt_weight_full": {
+      "N": 9,
+      "label_agreements": 9,
+      "max_probability_abs_difference": 0.042926713824272156
+    },
+    "sqrt_weight_full_seed118": {
+      "N": 9,
+      "label_agreements": 9,
+      "max_probability_abs_difference": 0.04045496881008148
+    },
+    "sqrt_seed_mean": {
+      "N": 9,
+      "label_agreements": 9,
+      "max_probability_abs_difference": 0.0357549712061882
+    }
+  },
+  "limitations": [
+    "Only these9 examples and this input-length range were tested.",
+    "Labels agree but probabilities are not identical; probability calibration and bitwise reproduction were not established.",
+    "Peak allocated GPU memory is not a guarantee that every24GB deployment will fit.",
+    "No population-level throughput or clinical effectiveness claim follows from this small engineering check."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "task": 125,
+  "candidate": "dual_state_readout",
+  "decision": "STOP_AT_FIXED160",
+  "expand_to500": false,
+  "expand_to1817": false,
+  "retrain_or_search": false,
+  "reason": "No NS recovery over original117 MLP: fewer correct and more falseS with both NS andNA losses",
+  "selected_epoch": 6,
+  "completed_epochs": 14,
+  "other1657_scored": false,
+  "model_saved": ".local_models/125_dual_state_readout/model.pt",
+  "GPU_calls": 0,
+  "API_calls": 0
+}

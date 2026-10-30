@@ -1,5 +1,7 @@
 # 123 claim_only_control
 
+已按最新用户研究边界取消：不再以冻结Judge后接分类器、权重或规则作为论文主线，不能把原Judge理由配给新标签。本任务未启动GPU；现有准备文件仅作为历史保留，不授权继续实现、拟合或执行。
+
 状态：9B claim-only 对照已准备，未提取其真实表示、未拟合其读出头、无该对照分类成绩；廉价 TF-IDF 补充控制已完成。
 
 本轮诊断与 118 的 `sqrt_weight_full` 匹配：原 40 名训练患者的 3675 条、原 20 名选型患者的 1817 条，冻结 107 `label_only` 骨干、原 prompt 和公共 4-token verdict 前缀；唯一输入变化为 `reference=""`。保留完整 claim 和原医生 GT，不因拿掉证据将标签改成 NA。继续使用 MLP128、ReLU、dropout 0.1、AdamW lr 0.001、weight decay 0.01、batch64、seed117、平方根类权重 β=0.5、固定 10 轮，训练集单独拟合 StandardScaler，不重新选轮数或超参。

@@ -1,4 +1,4 @@
-# 全部任务与当前入口（122运行中、123准备；2026-10-30）
+# 全部任务与当前入口（120原计划续跑、后接路线退出；2026-10-30）
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -6,14 +6,16 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|124_seed_mean_readout|[报告](../outputs/124_seed_mean_readout/final_report.md) · [完整结果](../outputs/124_seed_mean_readout/full1817.json)|固定160后补CPU1657；没有新训练/GPU/API|平方根均值保留；未加权均值相对原seed117没有明确增量，原MLP仍保留|
-|123_claim_only_control|[方案](../tasks/123_claim_only_control/CURRENT.md) · [词面控制](../outputs/123_claim_only_control/report.md)|同40人3675训练、20人1817评价；只去掉reference，不改GT|TF-IDF控制完成；同9B神经控制尚未启动GPU|
-|122_balanced_pool_sft|[当前方案](../tasks/122_balanced_pool_sft/CURRENT.md) · [进度](../outputs/122_balanced_pool_sft/实时进度.md)|32患者三类各243条、729条92步；最长原loss检查已通过|已从24步恢复训练，尚无分类结果；资源已延至20:57:46|
-|121_nearest_memory|[原160](../outputs/121_nearest_memory/report.md) · [固定扩展](../outputs/121_nearest_memory/reconsidered_extension.md)|无新GPU/API、原160复用、完整1817|MCC/PA提升伴随大幅false-S及少数类损失，较MLP取舍差|
-|120_full_pool_sft|[中途报告](../outputs/120_full_pool_sft/report.md) · [同ID指标](../outputs/120_full_pool_sft/midpoint220_160.json)|用户要求220步提前检查；160全部有效，完整状态回传|固定220已完成1817：MCC .5971、正确1581、FS113/362；保留质量—风险候选，原369步未完成|
+|126_conditional_state_readout|[准备与取消](../tasks/126_conditional_state_readout/CURRENT.md)|仅准备，未GPU提取、未真实拟合|按研究方向取消，无效果成绩|
+|125_dual_state_readout|[160报告](../outputs/125_dual_state_readout/report.md)|固定拼接头真实CPU初筛|相对原117 MLP净−4正确、FS+4，阴性停止|
+|124_seed_mean_readout|[报告](../outputs/124_seed_mean_readout/final_report.md) · [结果](../outputs/124_seed_mean_readout/full1817.json)|固定均值完整1817、区间及部署指针均保留|有真实标签增益；按用户最新方向停止后接融合主线，不改写为阴性|
+|123_claim_only_control|[状态](../tasks/123_claim_only_control/CURRENT.md) · [TF-IDF](../outputs/123_claim_only_control/report.md) · [既有端到端记录](../outputs/117_verdict_probe/e2e_live_check.json)|TF-IDF已完成；同9B空reference对照准备后取消未跑|没有同9B诊断成绩；保留既有TF-IDF和端到端记录|
+|122_balanced_pool_sft|[报告](../outputs/122_balanced_pool_sft/report.md) · [500指标](../outputs/122_balanced_pool_sft/balanced_pool_sft500.json)|32患者729条92步；500全部有效，160首回执复用|自然正确−21、压力+3；合计正确−18、FS−4，NS收益伴随S/NA损失；阴性结束|
+|121_nearest_memory|[原160](../outputs/121_nearest_memory/report.md) · [固定扩展](../outputs/121_nearest_memory/reconsidered_extension.md)|固定配置完整1817，历史结果不改|MCC/PA收益伴随大幅FS及少数类损失；按方向退出后接主线|
+|120_full_pool_sft|[220报告](../outputs/120_full_pool_sft/report.md) · [1817指标](../outputs/120_full_pool_sft/midpoint220_1817.json) · [续跑入口](../tasks/120_full_pool_sft/resume369.py)|原220步/1760呈现状态保留；约15:03原计划恢复|独立verifact120_resume369继续至369，预计约105分钟；尚无369终点结果|
 |119_warm_head_ft|[报告](../outputs/119_warm_head_ft/report.md) · [指标](../outputs/119_warm_head_ft/trained_best160.json)|完整369步、内部验证与固定160；执行者复核|自然收益伴随压力/NS损失，停止扩大|
-|118_full_data_heads|[原报告](../outputs/118_full_data_heads/report.md) · [新重拟合](../outputs/118_full_data_heads/reconsidered_refit.md) · [seed检查](../outputs/118_full_data_heads/seed_stability.md) · [原流程复验](../outputs/118_full_data_heads/unweighted_workflow_seed118.md)|原40人3675，20人开发队列，旧结果保留|平方根权重两seed均提高MCC；风险代价波动；全量无权重明显增加风险|
-|117_verdict_probe|[原报告](../outputs/117_verdict_probe/report.md) · [补充扩展](../outputs/117_verdict_probe/reconsidered_extension.md) · [温和权重](../outputs/117_verdict_probe/sqrt_weight_mlp.md)|同ID完整1817；内部验证选轮，两seed原流程检查|原MLP有MCC收益与风险代价；不能只据最早平衡头阴性概括全部方法|
+|118_full_data_heads|[重拟合](../outputs/118_full_data_heads/reconsidered_refit.md) · [seed检查](../outputs/118_full_data_heads/seed_stability.md)|全40人固定配方及两seed已完成|保留平方根头真实收益与风险；后接分类路线不再为论文主线|
+|117_verdict_probe|[原报告](../outputs/117_verdict_probe/report.md) · [扩展](../outputs/117_verdict_probe/reconsidered_extension.md) · [原流程复验](../outputs/118_full_data_heads/unweighted_workflow_seed118.md)|完整1817和原选轮流程两seed保留|MCC/PA真实收益不改；用户按研究方向停止后接分类主线|
 |116_research_cycle|[报告](../outputs/116_research_cycle/report.md) · [比较](../outputs/116_research_cycle/comparison.jsonl) · [流程复盘](116_WORKFLOW_REVIEW.md) · [状态](../outputs/116_research_cycle/cycle_state.json)|六候选真实评价；两次训练及完整状态回传；确认40未用|未达到主要目标，保留107；API0，GPU空闲但未关机|
 |115_label_sum|[报告](../outputs/115_label_sum/final_report.md) · [分析](../outputs/115_label_sum/analysis.md) · [比较](../outputs/115_label_sum/comparison.json) · [协议](../tasks/115_label_sum/protocol.md)|同196、数值/梯度CPU检查、50步、500首次及患者配对；执行者自检|115未形成通过保护条件的综合增量，停止当前label_sum配方，保留107主基线。；完整状态回传，新授权双仓库发布，未关机，不自动116|
 |114_matched_refresh|[报告](../outputs/114_matched_refresh/final_report.md) · [比较](../outputs/114_matched_refresh/comparison.json) · [去正文预测](../outputs/114_matched_refresh/predictions_sanitized.jsonl) · [协议](../tasks/114_matched_refresh/protocol.md)|固定匹配清单、50步/392次、500同ID、患者配对及完整状态回传；执行者自检|自然风险改善伴随NA损失，未过事前保护条件，停止当前配方；107保留，未关机，不自动115|

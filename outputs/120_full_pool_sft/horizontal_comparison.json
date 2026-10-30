@@ -3841,5 +3841,264 @@
     "forced_thinking_boundary": 80,
     "total_N": 180,
     "comparison_note": "Different prompt, thinking and output budgets versus104/105/107; not a matched single-factor training contrast."
+  },
+  "other_systems_common1810": {
+    "status": "extra_historical_system_reference_not_same_Judge_control",
+    "source": "outputs/095_anchored_minimal_contrast/unified_9065_predictions.jsonl",
+    "cohort": "Current20 selection patients, restricted to095 frozen raw-valid IDs",
+    "expected_N": 1817,
+    "received_N": 1817,
+    "common_raw_valid_N": 1810,
+    "raw_invalid_N": 7,
+    "invalid_GT": {
+      "Supported": 5,
+      "Not Supported": 1,
+      "Not Addressed": 1
+    },
+    "all_rows_use_exact_same1810_IDs": true,
+    "model_settings": {
+      "model": "deepseek-v4-flash-0731",
+      "temperature": 0,
+      "enable_thinking": true,
+      "reasoning_effort": "high",
+      "max_tokens": 8192,
+      "n": 1
+    },
+    "evidence": "092_local_BGE_C48 for all1817 IDs; differs from original author reference in9B tasks",
+    "prompt": "T-S without demonstration B: shared three-label definitions; five ordered evidence checks; verdict/reason/checks/label_scores structured output, <=200 explanation words",
+    "no_PriorG_or_core_filter": true,
+    "no_imputed_invalids": true,
+    "no_new_model_calls": true,
+    "rows": [
+      {
+        "key": "paper_r1",
+        "method": "paper_r1",
+        "N": 1810,
+        "MCC": 0.48475466467728395,
+        "PA": 0.8215469613259668,
+        "PA_percent": 82.15469613259668,
+        "recalls": {
+          "Supported": 0.923448275862069,
+          "Not Supported": 0.44166666666666665,
+          "Not Addressed": 0.3958333333333333
+        },
+        "recalls_percent": {
+          "Supported": 92.3448275862069,
+          "Not Supported": 44.166666666666664,
+          "Not Addressed": 39.58333333333333
+        },
+        "false_S": 104,
+        "non_S": 360,
+        "correct": 1487,
+        "confusion_matrix": [
+          [
+            1339,
+            87,
+            24
+          ],
+          [
+            51,
+            53,
+            16
+          ],
+          [
+            53,
+            92,
+            95
+          ]
+        ]
+      },
+      {
+        "key": "DeepSeek_C48_raw095",
+        "method": "095 DeepSeek C48 raw",
+        "N": 1810,
+        "MCC": 0.5229603828611347,
+        "PA": 0.7784530386740331,
+        "PA_percent": 77.84530386740332,
+        "recalls": {
+          "Supported": 0.8041379310344827,
+          "Not Supported": 0.5916666666666667,
+          "Not Addressed": 0.7166666666666667
+        },
+        "recalls_percent": {
+          "Supported": 80.41379310344827,
+          "Not Supported": 59.166666666666664,
+          "Not Addressed": 71.66666666666667
+        },
+        "false_S": 39,
+        "non_S": 360,
+        "correct": 1409,
+        "confusion_matrix": [
+          [
+            1166,
+            244,
+            40
+          ],
+          [
+            20,
+            71,
+            29
+          ],
+          [
+            19,
+            49,
+            172
+          ]
+        ]
+      },
+      {
+        "key": "label_only107",
+        "method": "107 label_only",
+        "N": 1810,
+        "MCC": 0.544820949194941,
+        "PA": 0.8077348066298342,
+        "PA_percent": 80.77348066298342,
+        "recalls": {
+          "Supported": 0.8406896551724138,
+          "Not Supported": 0.4,
+          "Not Addressed": 0.8125
+        },
+        "recalls_percent": {
+          "Supported": 84.06896551724138,
+          "Not Supported": 40.0,
+          "Not Addressed": 81.25
+        },
+        "false_S": 50,
+        "non_S": 360,
+        "correct": 1462,
+        "confusion_matrix": [
+          [
+            1219,
+            161,
+            70
+          ],
+          [
+            28,
+            48,
+            44
+          ],
+          [
+            22,
+            23,
+            195
+          ]
+        ]
+      },
+      {
+        "key": "original_MLP117_seed117",
+        "method": "117 原MLP / seed117",
+        "N": 1810,
+        "MCC": 0.6099748051437953,
+        "PA": 0.8685082872928177,
+        "PA_percent": 86.85082872928177,
+        "recalls": {
+          "Supported": 0.9337931034482758,
+          "Not Supported": 0.25,
+          "Not Addressed": 0.7833333333333333
+        },
+        "recalls_percent": {
+          "Supported": 93.37931034482759,
+          "Not Supported": 25.0,
+          "Not Addressed": 78.33333333333333
+        },
+        "false_S": 92,
+        "non_S": 360,
+        "correct": 1572,
+        "confusion_matrix": [
+          [
+            1354,
+            35,
+            61
+          ],
+          [
+            51,
+            30,
+            39
+          ],
+          [
+            41,
+            11,
+            188
+          ]
+        ]
+      },
+      {
+        "key": "full_pool_sft120_step220",
+        "method": "120 full_pool_sft / step220",
+        "N": 1810,
+        "MCC": 0.598193938382003,
+        "PA": 0.8707182320441988,
+        "PA_percent": 87.07182320441989,
+        "recalls": {
+          "Supported": 0.9551724137931035,
+          "Not Supported": 0.425,
+          "Not Addressed": 0.5833333333333334
+        },
+        "recalls_percent": {
+          "Supported": 95.51724137931035,
+          "Not Supported": 42.5,
+          "Not Addressed": 58.333333333333336
+        },
+        "false_S": 112,
+        "non_S": 360,
+        "correct": 1576,
+        "confusion_matrix": [
+          [
+            1385,
+            46,
+            19
+          ],
+          [
+            52,
+            51,
+            17
+          ],
+          [
+            60,
+            40,
+            140
+          ]
+        ]
+      },
+      {
+        "key": "sqrt_weight_full_mean124",
+        "method": "124 sqrt两seed概率均值",
+        "N": 1810,
+        "MCC": 0.597040914840885,
+        "PA": 0.8486187845303867,
+        "PA_percent": 84.86187845303867,
+        "recalls": {
+          "Supported": 0.8951724137931034,
+          "Not Supported": 0.31666666666666665,
+          "Not Addressed": 0.8333333333333334
+        },
+        "recalls_percent": {
+          "Supported": 89.51724137931035,
+          "Not Supported": 31.666666666666664,
+          "Not Addressed": 83.33333333333334
+        },
+        "false_S": 61,
+        "non_S": 360,
+        "correct": 1536,
+        "confusion_matrix": [
+          [
+            1298,
+            79,
+            73
+          ],
+          [
+            37,
+            38,
+            45
+          ],
+          [
+            24,
+            16,
+            200
+          ]
+        ]
+      }
+    ],
+    "caveat": "Different model, evidence and prompt/output budget; not a same-Judge component control and not a replacement for the three required baselines."
   }
 }
