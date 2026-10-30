@@ -156,6 +156,47 @@ def main():
     file = 'outputs/117_verdict_probe/balanced_mlp_1817.json'
     add('selection1817', '117 mlp_balanced', file, read(file)['models']['verdict_mlp']['panels'],
         'outputs/117_verdict_probe/balanced_mlp_1817_verdict_mlp_predictions.jsonl', all_ids)
+    reconsidered117 = R/'outputs/117_verdict_probe/reconsidered_extension.json'
+    if reconsidered117.exists():
+        for model, value in read(reconsidered117)['models'].items():
+            parts={dict(natural400='natural',pressure100='pressure').get(k,k):v
+                   for k,v in value['panels'].items()}
+            add('selection1817', '117 '+model+'（补充扩展）', str(reconsidered117.relative_to(R)), parts,
+                'outputs/117_verdict_probe/reconsidered_extension_'+model+'_predictions.jsonl', all_ids)
+    reconsidered121 = R/'outputs/121_nearest_memory/reconsidered_extension.json'
+    if reconsidered121.exists():
+        values=read(reconsidered121)['stages']
+        add('old500', '121 nearest_memory（补充扩展）', str(reconsidered121.relative_to(R)), values['500']['panels'])
+        add('selection1817', '121 nearest_memory（补充扩展）', str(reconsidered121.relative_to(R)), values['1817']['panels'],
+            'outputs/121_nearest_memory/reconsidered_extension_predictions_sanitized.jsonl', all_ids)
+    sqrt_file = R/'outputs/117_verdict_probe/sqrt_weight_mlp.json'
+    if sqrt_file.exists():
+        values=read(sqrt_file)['stages']
+        add('old500', '117 sqrt_weight_mlp', str(sqrt_file.relative_to(R)), values['500']['panels'])
+        full_parts=dict(values['1817']['panels'])
+        full_parts['selection1817']=full_parts.pop('pooled')
+        add('selection1817', '117 sqrt_weight_mlp', str(sqrt_file.relative_to(R)), full_parts,
+            'outputs/117_verdict_probe/sqrt_weight_mlp_predictions.jsonl', all_ids)
+    refit_file = R/'outputs/118_full_data_heads/reconsidered_refit.json'
+    if refit_file.exists():
+        for model in ('unweighted_full','sqrt_weight_full','full_linear'):
+            values=read(refit_file)['models'][model]['panels']
+            parts={dict(natural400='natural',pressure100='pressure').get(k,k):v for k,v in values.items()}
+            add('selection1817', '118 '+model, str(refit_file.relative_to(R)), parts,
+                'outputs/118_full_data_heads/reconsidered_refit_'+model+'_predictions.jsonl', all_ids)
+    repeat_file = R/'outputs/118_full_data_heads/seed_stability.json'
+    if repeat_file.exists():
+        values=read(repeat_file)['models']['full3675_sqrt']['panels']
+        parts={dict(natural400='natural',pressure100='pressure').get(k,k):v['seed118'] for k,v in values.items()}
+        add('selection1817', '118 sqrt_weight_full / seed118', str(repeat_file.relative_to(R)), parts,
+            'outputs/118_full_data_heads/seed_stability_full3675_sqrt_seed118_predictions.jsonl', all_ids)
+    repeat_file = R/'outputs/118_full_data_heads/unweighted_workflow_seed118.json'
+    if repeat_file.exists():
+        values=read(repeat_file)['models']['seed118_original_workflow']
+        parts={dict(natural400='natural',pressure100='pressure').get(k,k):v for k,v in values.items()
+               if k in ('natural400','pressure100','new1317','selection1817')}
+        add('selection1817', '117 MLP / seed118原选轮流程', str(repeat_file.relative_to(R)), parts,
+            'outputs/118_full_data_heads/unweighted_workflow_seed118_predictions.jsonl', all_ids)
     complete120 = R/'outputs/120_full_pool_sft/full_pool_sft160.json'
     if complete120.exists():
         v = read(complete120)['models']['full_pool_sft']
@@ -172,7 +213,7 @@ def main():
     (O/'recent_fair_comparison.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
 
     lines = ['# 最近研究的同ID对比：116—122', '',
-        '截至 '+data['updated_beijing']+'。当前保留107 label_only；117—119及121尚无值得保留的综合增量，120'+('仍在训练。' if data['training_running'] else '已有首轮结果，见表及120报告。')+'122保存暂停24步，优先120扩大后接续，尚无分类成绩。', '',
+        '截至 '+data['updated_beijing']+'。107仍为低错误放行微调基线；117原MLP在完整1817已显示明显MCC/PA收益，同时有风险代价。120'+('仍在训练。' if data['training_running'] else '已有首轮结果，见表及120报告。')+'122保存暂停24步，优先120扩大后接续，尚无分类成绩。', '',
         '在完整1817个同ID上，107相对原作者历史系统：MCC **0.5445 vs 0.4842**，false-S **50 vs 105**；代价是少判对25条，PA **80.74% vs 82.11%**。这说明微调基线有实际的质量—风险收益，后续增量失败不能概括成“微调全部失败”。', '',
         '这里的“公平”首先指同一组ID、原医生GT和同一指标口径。paper_r1是原作者发布的历史系统预测，模型和推理设置未在本轮做同条件控制，因此只能作系统级历史参照，不能冒充同Judge同期强对照。107是当前普通微调主基线。新方案与107比较时也交代监督量、输出方式和成本差别，不把完整方案对比写成单组件消融。', '',
         '每格顺序均为 **MCC · PA · 正确数/评价数 · false-S/真实非S数**。自然与人为压力面板分开；160、180、500、1817不能跨表直接比数字。所有20名选型患者均有历史研究暴露，未使用后续确认40人。', '',
@@ -211,8 +252,11 @@ def main():
     lines += ['## 实际得失与当前决定', '',
         '- 116 claim_repeat在1817条净多7条正确、false-S多1，MCC仅增加约0.0073；属于很弱的开发信号，未达到稳定保留的证据。',
         '- 117平衡MLP在500条净多3条正确、false-S少2；扩到1817后变成少12条正确、false-S仅少3，NA净损失11。小面板的信号没有维持。',
-        '- 118全量数据冻结头仍无综合增量；119完整训练自然MCC提高明显，但压力正确少6、合计false-S多7，NS正确9/24降到2/24。',
-        '- 121近邻自然多对13，压力少对2，合计新增10次false-S且没有避免任何一次；停止扩大。',
+        '- 用户要求放宽过严取舍后，117原未加权MLP固定模型补评1317，完整1817 MCC升至0.6109、正确增加111、false-S增加42；线性头为0.5984、正确增加113、false-S增加61。MLP相对线性头少2条正确，换来更高MCC与少19次错误放行，值得保留为取舍候选。原先仅平衡MLP扩展的结论不能代表全部固定头。',
+        '- 118原平衡头和线性头未给出综合增量。后续固定平方根权重重拟合全3675条，得到MCC0.5704、正确1504、false-S56/362；另一seed为0.5727、1524、74/362。两次质量收益均在，风险代价存在波动；不能只展示false-S较低的一次。',
+        '- 无权重MLP按原内部验证选轮流程复验seed118，MCC0.5884、正确1562、false-S99/362，仍有质量收益。固定6轮的seed118诊断曾退化，不能将它冒充原选轮算法的完整复验或据此否定原流程。',
+        '- 119完整训练自然MCC提高明显，但压力正确少6、合计false-S多7，NS正确9/24降到2/24。',
+        '- 121最初160近邻检查后曾停止；固定配置补评完整1817后MCC为0.5911、正确增加117、false-S增加77，S/NS/NA净+172/−20/−35。它有真实MCC/PA收益，但风险与少数类代价大于117原MLP。原160停止记录和新扩展结果并列保留。',
         ('- 120按用户要求在220步/1760次呈现保存并提前检查：自然正确+14、压力−2，false-S合计10→20，NA正确23→16。有明显MCC收益，保留为需要扩大验证的风险取舍候选；暂停追加训练，不把风险增加等同于所有收益无效。原369步尚未完成。' if midpoint120.exists() else '- 120正在检验同32人2945条的原JSON/原loss续训，尚无分类结论。'),
         '- 122从原107重新开始，三类各243条、共729条、固定92步，检验均衡资料的实用配方。它同时改变资料组成与总呈现次数，不会单独证明类别不均衡是唯一原因。', '',
         '## 比较中的训练与接口差别', '',
