@@ -9,21 +9,28 @@ sys.path.insert(0,str(R/'tasks/136_claim_repeat_transfer'));from prompt136 impor
 from reorder142 import reorder_reference
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--scope',choices=['screen160','old500'],default='screen160')
+    ap=argparse.ArgumentParser();ap.add_argument('--scope',choices=['screen160','old500','full1817'],default='screen160')
     ap.add_argument('--compute-seconds',type=int,default=900);a=ap.parse_args()
     if a.scope=='screen160' and a.compute_seconds!=900:raise ValueError('Frozen160 compute cap is900 seconds')
+    if a.scope=='full1817' and a.compute_seconds!=3000:raise ValueError('Frozen full expansion compute cap is3000 seconds')
     source,lengths=read_source136()
     screen=set(c.read(R/'.local_models/134_author_baselines/job.json')['phases'][0]['ids'])
     keys={r['id']:r for r in c.rows(R/'.local_models/134_author_baselines/keys.jsonl')}
-    target=screen if a.scope=='screen160' else {i for i,r in keys.items() if r['old_panel'] in ('natural','pressure')}
+    old500={i for i,r in keys.items() if r['old_panel'] in ('natural','pressure')}
+    target=screen if a.scope=='screen160' else (old500 if a.scope=='old500' else set(keys))
     prior={}
     if a.scope!='screen160':
-        report=c.read(O/'relevance_order_screen160.json')
+        previous='screen160' if a.scope=='old500' else 'old500'
+        report=c.read(O/('relevance_order_'+previous+'.json'))
         if report['screening']['continue_signal'] is not True:raise ValueError('No prior fixed screening signal')
-        for file in (P/'screen160/evidence/relevance_order').glob('*.json'):
-            row=c.read(file);prior[row['id']]=row
-        if set(prior)!=screen:raise ValueError('Prior first responses incomplete')
-    needed=target-set(prior);expected=160 if a.scope=='screen160' else 340
+        for stage in (('screen160',) if a.scope=='old500' else ('screen160','old500')):
+            for file in (P/stage/'evidence/relevance_order').glob('*.json'):
+                row=c.read(file)
+                if row['id'] in prior:raise ValueError('Duplicate prior142 first response')
+                if row.get('adapter_sha256')!=report['source_adapter_sha256']:raise ValueError('Prior source adapter differs')
+                prior[row['id']]=row
+        if set(prior)!=(screen if a.scope=='old500' else old500):raise ValueError('Prior first responses incomplete')
+    needed=target-set(prior);expected={'screen160':160,'old500':340,'full1817':1317}[a.scope]
     assert len(needed)==expected
     work=P/a.scope;B=work/'bundle'
     if work.exists():raise FileExistsError('Prepared stage exists; inspect, never overwrite')

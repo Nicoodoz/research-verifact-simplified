@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-10-31T16:17:24+08:00",
-  "conclusion": "当前完整主证据仍是120的原生质量收益与136的风险取舍；138/140未形成进一步整体质量优势。142仅在原160条出现MCC+.0316、正确+2、false-S−2的信号，输入token相同、生成耗时约+5.2%，现只补340条验证原500，不预设完整1817有效。141保留500风险取舍，已停止全量扩评，额外11次实际尝试单列。127新增27条理由仍只是数据资产。",
+  "created_at": "2026-10-31T16:32:48+08:00",
+  "conclusion": "当前完整主证据仍是120的原生质量收益与136的风险取舍。142在原500条达到MCC+.0186、正确+4、false-S−3，两个面板正确数与风险同向改善，输入token不变、生成耗时约+5.6%；现只补1317验证完整1817，尚未取得全量结论。141保留500风险取舍，已停止全量扩评，额外11次实际尝试单列。127新增27条理由仍为未验证分类收益的数据资产。",
   "tables": {
     "full1817": {
       "claim_repeat136": {
@@ -346,6 +346,24 @@
         "source": "outputs/141_two_demos/two_demos_old500.json",
         "metric_path": "primary.scores.candidate",
         "source_scope": "old500"
+      },
+      "relevance_order142": {
+        "config": "relevance_order142",
+        "N": 500,
+        "MCC": 0.6314546076162614,
+        "PA": 0.814,
+        "correct": 407,
+        "false_S": 45,
+        "non_S": 179,
+        "recall": {
+          "Supported": 0.9376947040498442,
+          "Not Supported": 0.3684210526315789,
+          "Not Addressed": 0.7572815533980582
+        },
+        "macro_F1": 0.7009021307241531,
+        "source": "outputs/142_relevance_order/relevance_order_old500.json",
+        "metric_path": "primary.scores.candidate",
+        "source_scope": "old500"
       }
     },
     "screen160": {
@@ -678,6 +696,15 @@
         "missing_N": 0,
         "invalid_N": 0,
         "source": "outputs/141_two_demos/two_demos_old500.json"
+      },
+      {
+        "config": "relevance_order142",
+        "expected_N": 500,
+        "received_N": 500,
+        "valid_N": 500,
+        "missing_N": 0,
+        "invalid_N": 0,
+        "source": "outputs/142_relevance_order/relevance_order_old500.json"
       }
     ],
     "screen160": [
@@ -768,9 +795,7 @@
       "full_repeat139",
       "relevance_order142"
     ],
-    "old500": [
-      "relevance_order142"
-    ],
+    "old500": [],
     "screen160": []
   },
   "author_common_N": 1793,
@@ -1644,6 +1669,24 @@
         "metric_path": "panels.natural.scores.full_repeat",
         "source_scope": "old500"
       },
+      "relevance_order142": {
+        "config": "relevance_order142",
+        "N": 400,
+        "MCC": 0.6292400222100563,
+        "PA": 0.875,
+        "correct": 350,
+        "false_S": 18,
+        "non_S": 79,
+        "recall": {
+          "Supported": 0.9376947040498442,
+          "Not Supported": 0.34615384615384615,
+          "Not Addressed": 0.7547169811320755
+        },
+        "macro_F1": 0.6771894417247223,
+        "source": "outputs/142_relevance_order/relevance_order_old500.json",
+        "metric_path": "panels.natural.scores.candidate",
+        "source_scope": "old500"
+      },
       "label_only107": {
         "config": "label_only107",
         "N": 400,
@@ -1842,6 +1885,24 @@
         "macro_F1": 0.43180665098473314,
         "source": "outputs/139_full_repeat/old500.json",
         "metric_path": "panels.pressure.scores.full_repeat",
+        "source_scope": "old500"
+      },
+      "relevance_order142": {
+        "config": "relevance_order142",
+        "N": 100,
+        "MCC": 0.37040800403714674,
+        "PA": 0.57,
+        "correct": 57,
+        "false_S": 27,
+        "non_S": 100,
+        "recall": {
+          "Supported": null,
+          "Not Supported": 0.38,
+          "Not Addressed": 0.76
+        },
+        "macro_F1": 0.42676976894044,
+        "source": "outputs/142_relevance_order/relevance_order_old500.json",
+        "metric_path": "panels.pressure.scores.candidate",
         "source_scope": "old500"
       },
       "label_only107": {
@@ -2140,9 +2201,9 @@
   },
   "budget": {
     "start": "2026-10-31T09:36:01+08:00",
-    "as_of": "2026-10-31T16:17:24.623660+08:00",
-    "elapsed_seconds": 24083.62366,
-    "estimated_GPU_CNY": 10.570034828555556,
+    "as_of": "2026-10-31T16:32:48.954433+08:00",
+    "elapsed_seconds": 25007.954433,
+    "estimated_GPU_CNY": 10.975713334483332,
     "GPU_cap_CNY": 20,
     "API_used_CNY": 0,
     "API_cap_CNY": 80,
@@ -2174,6 +2235,7 @@
     "outputs/141_two_demos/two_demos_full1817.json",
     "outputs/141_two_demos/two_demos_old500.json",
     "outputs/141_two_demos/two_demos_screen160.json",
+    "outputs/142_relevance_order/relevance_order_old500.json",
     "outputs/142_relevance_order/relevance_order_screen160.json"
   ]
 }

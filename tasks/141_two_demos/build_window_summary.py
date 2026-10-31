@@ -109,7 +109,7 @@ def panel_rows(all_docs,extra_docs,panel,wanted):
 
 def render_table(rows, costs=None):
     extra=costs is not None
-    output=['|配置|N|MCC|PA|正确|FS/非S|S/NS/NA召回|'+('平均入/出token（记录N）|均摊生成秒（计时N）|' if extra else '')+'来源|',
+    output=['|配置|N|MCC|PA|正确|FS/非S|S/NS/NA召回|'+('平均入/出token（记录N）|均摊推理秒（计时N）|' if extra else '')+'来源|',
             '|---|---:|---:|---:|---:|---:|---|'+('---|---|' if extra else '')+'---|']
     for name in ORDER:
         if name not in rows:continue

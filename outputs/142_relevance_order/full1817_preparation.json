@@ -1,0 +1,27 @@
+{
+  "task": 142,
+  "status": "CPU_PREPARED_NOT_RUN",
+  "scope": "full1817",
+  "expected_N": 1317,
+  "target_N": 1817,
+  "original_GTs_untouched": true,
+  "no_reference_fragment_dropped": true,
+  "max_input_tokens": 13447,
+  "input_token_delta": {
+    "min": 0,
+    "median": 0,
+    "max": 0,
+    "sum": 0
+  },
+  "first_formal_IDs": [
+    "b5e2710e-e0cf-9e1e-3982-dfb0815f5099"
+  ],
+  "compute_limit_seconds": 3000,
+  "save_reserve_seconds": 600,
+  "source_adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+  "bundle_sha256": "453711eb8767a46227bc951d3abc25e3393f0fdc22fbdd70da1cf655421b8d1a",
+  "bundle_bytes": 7486453,
+  "no_GPU": true,
+  "new_API": 0,
+  "created_epoch": 1793435419.534061
+}
