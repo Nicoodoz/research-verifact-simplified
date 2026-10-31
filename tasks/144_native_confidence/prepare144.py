@@ -245,7 +245,7 @@ def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seco
             shutil.copy2(item['path'], target)
             encoded.append(item['encoded'])
             provenance.append(dict(id=i, variant=variant, source_path=str(item['path'].resolve()),
-                source_sha256=item['sha256'], copied_path=str(target.relative_to(bundle)),
+                source_sha256=item['sha256'], copied_path=target.relative_to(bundle).as_posix(),
                 source_results_root=item['source_results_root'],new_forward=False))
         (bundle/'reuse/encoded_manifest.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in encoded),encoding='utf-8',newline='\n')
         put(bundle / 'reuse/provenance.json', provenance)

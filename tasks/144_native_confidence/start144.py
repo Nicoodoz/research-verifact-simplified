@@ -36,7 +36,8 @@ def main():
     if not idle():raise RuntimeError('GPU became occupied; no overlap allowed')
     b=p/'bundle';job=json.loads((b/'data/job.json').read_text());session=json.loads((b/'data/session.json').read_text())
     started=time.time();global_end=session['start_epoch']+3600*session['GPU_cap_CNY']/session['hourly_CNY']
-    deadline=min(started+job['compute_limit_seconds'],global_end-job['save_reserve_seconds'])
+    deadline=min(started+job['compute_limit_seconds'],global_end-job['save_reserve_seconds'],
+                 job.get('absolute_compute_deadline',float('inf')))
     command=[PYTHON,'-u','-B',str(b/'score_worker.py'),'--execute','--bundle',str(b),
              '--session',str(b/'data/session.json'),'--compute-seconds',str(job['compute_limit_seconds']),
              '--save-reserve-seconds',str(job['save_reserve_seconds'])]

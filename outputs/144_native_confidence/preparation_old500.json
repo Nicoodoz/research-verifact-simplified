@@ -1,0 +1,63 @@
+{
+  "status": "CPU_PREPARED_NOT_RUN",
+  "scope": "old500",
+  "variants": [
+    "native120",
+    "claim_repeat136"
+  ],
+  "selected_IDs": 365,
+  "forwards": 713,
+  "source_adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+  "per_variant": {
+    "native120": {
+      "N": 361,
+      "tokens": 2991926,
+      "min": 5348,
+      "max": 12644
+    },
+    "claim_repeat136": {
+      "N": 352,
+      "tokens": 2932600,
+      "min": 5397,
+      "max": 12693
+    }
+  },
+  "historical_three_path_seconds_per_prompt_token": 0.0005114460309561217,
+  "optimistic_one_forward_rate": 0.00017048201031870725,
+  "estimate_note": "Linear113 proxy only; same architecture, different weights/kernel path. Loading, compilation and return excluded. Measure actual retained pilot first.",
+  "no_tokenizer_model_GPU_API": true,
+  "no_GT_or_greedy_in_score_inputs": true,
+  "evaluation_N": 500,
+  "score_N_by_variant": {
+    "native120": 361,
+    "claim_repeat136": 352
+  },
+  "reusable_score_N": 232,
+  "new_forwards": 481,
+  "pilot_overlap_by_variant": {
+    "native120": [],
+    "claim_repeat136": []
+  },
+  "compute_limit_seconds": 1200,
+  "save_reserve_seconds": 180,
+  "budget_status": "FROZEN",
+  "scope_prompt_tokens": 5924526,
+  "new_forward_prompt_tokens": 3995191,
+  "reuse_by_variant": {
+    "native120": {
+      "reused": 118,
+      "new_forwards": 243,
+      "reused_prompt_tokens": 981031,
+      "new_forward_prompt_tokens": 2010895
+    },
+    "claim_repeat136": {
+      "reused": 114,
+      "new_forwards": 238,
+      "reused_prompt_tokens": 948304,
+      "new_forward_prompt_tokens": 1984296
+    }
+  },
+  "reused_prompt_tokens": 1929335,
+  "source_cache_IDs": 1817,
+  "scope_compute_seconds_linear_proxy": 1010.0251026654493
+}

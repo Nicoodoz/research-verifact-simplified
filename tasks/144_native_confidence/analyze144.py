@@ -401,13 +401,21 @@ def render(result):
                 lines += metric_details(str(point['review_percent_of_original_S'])+'%送审后的自动集',point['automatic'])
         lines += ['', '所有点的患者、作者、自然/压力/新增/原180分组及其三类和分母见同名JSON；此路线不追加107判断。送审只加标记，原标签与原reason不改，也不假设人工送审后判对。']
     forward=cost['successful_forward_seconds'];tokens=cost['original_prompt_tokens']
+    newly_completed=cost['recorded_completed_forward_seconds']
+    runtime_counts=[]
+    for source in cost['runtime_records']:
+        record=source['record']
+        if 'reused_score_N' in record or 'new_forwards' in record:
+            runtime_counts.append(f"{Path(source['path']).name}：reused_score_N={record.get('reused_score_N','未记录')}，new_forwards={record.get('new_forwards','未记录')}")
     lines += ['', '## 评分资源与尝试', '',
-              f"成功记录forward秒数：已记录{forward['recorded_N']}项，总计{forward['total']}；原prompt tokens记录{tokens['recorded_N']}项，总计{tokens['total']}。", '',
-              f"worker墙钟按时间区间并集汇总：{cost['worker_wall_seconds']['recorded_N']}段，总计{number(cost['worker_wall_seconds']['total'])}秒；模型加载{number(cost['model_load_seconds']['total'])}秒，准备{number(cost['preparation_seconds']['total'])}秒。内外层完成/退出记录即使端点不同，嵌套或重叠也只计一次，不重叠运行相加；原记录保留在JSON。", '',
+              f"当前汇总分数对应耗时（含复用）：{cost['successful_unique_records']}条分数中{forward['recorded_N']}条有耗时，总计{number(forward['total'])}秒；原prompt tokens记录{tokens['recorded_N']}项，总计{tokens['total']}。如有复制的历史分数，其耗时包含在此总和中；不能据此直接认作本段新增计算。", '',
+              f"本段新增completed事件数：{cost['attempt_event_counts'].get('completed','未记录')}；其中{newly_completed['recorded_N']}项有forward耗时，合计{number(newly_completed['total'])}秒。仅按本段attempts中的completed事件计，不将复用JSON的seconds再次计为新forward。", '',
+              ('运行完成元数据：'+'；'.join(runtime_counts)+'。' if runtime_counts else '运行完成元数据尚未记录reused_score_N/new_forwards。'), '',
+              f"本段worker墙钟按时间区间并集汇总：{cost['worker_wall_seconds']['recorded_N']}段，总计{number(cost['worker_wall_seconds']['total'])}秒；模型加载{number(cost['model_load_seconds']['total'])}秒，准备{number(cost['preparation_seconds']['total'])}秒。内外层完成/退出记录即使端点不同，嵌套或重叠也只计一次，不重叠运行相加；原记录保留在JSON。", '',
               f"controller墙钟单列：{number(cost['controller_wall_seconds']['total'])}秒。控制器包含worker运行区间，不能与worker墙钟再次相加。", '',
               '实际batch分布：'+str(cost['batch_size_counts'])+'；尝试事件：'+str(cost['attempt_event_counts'])+'。', '',
               f"未配到完成事件的前向尝试{len(cost['pending_attempts'])}次；其forward成本未知时不填零，退出墙钟仍单列。", '',
-              '成功forward总和不是完整成本：加载、token编码、等待、失败/在途尝试及进程墙钟按runtime/attempt原始记录另列；字段缺失为未知，不能当作零。'
+              '汇总分数对应的forward总和不能作为本段新增付费时间。新增forward本身也不是完整成本：加载、token编码、等待、失败/在途尝试及进程墙钟按本段runtime/attempt原始记录另列；字段缺失为未知，不能当作零。'
               '理论上未来可在原生生成同一prefill同步捕获分支logits，但本项目尚未实现或测定该部署成本；当前额外评分需要实际前向。', '',
               '这是既有开发患者上的固定回顾，不是独立测试或CP/风险保证。当前分析新增GPU/API调用为0，已有评分任务的GPU成本须按全尝试账本计入。']
     return '\n'.join(lines).rstrip()+'\n'
@@ -423,7 +431,10 @@ def main():
     prefix=result['scope']
     c.put(args.out/(prefix+'_analysis.json'),result)
     (args.out/(prefix+'_analysis.md')).write_bytes(render(result).encode('utf-8'))
-    print(c.canonical(dict(status=result['status'],coverage=result['coverage'],effect_metrics_generated=result['effect_metrics_generated'])))
+    cov=result['coverage']
+    print(c.canonical(dict(status=result['status'],expected_N=cov['expected_N'],received_N=cov['received_N'],
+                          valid_N=cov['valid_score_N'],missing_N=len(cov['missing']),invalid_N=len(cov['invalid']),
+                          effect_metrics_generated=result['effect_metrics_generated'])))
 
 
 if __name__=='__main__':

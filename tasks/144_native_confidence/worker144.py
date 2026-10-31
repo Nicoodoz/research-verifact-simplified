@@ -2,7 +2,7 @@
 
 Import/help performs no model work. It generates no verdict/reason and never trains.
 """
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import argparse
 import json
 import inspect
@@ -19,6 +19,25 @@ STOP = False
 
 def read(path):
     return json.loads(Path(path).read_text(encoding='utf-8'))
+
+
+def resolve_bundle_path(bundle, serialized_path):
+    """Read either Windows or POSIX relative metadata without escaping bundle."""
+    if not isinstance(serialized_path, str) or not serialized_path:
+        raise ValueError('Expected a nonempty relative bundle path')
+    normalized = serialized_path.replace('\\', '/')
+    if PurePosixPath(normalized).is_absolute() or PureWindowsPath(normalized).drive:
+        raise ValueError('Bundle metadata path must be relative')
+    root = Path(bundle).resolve()
+    target = (root / normalized).resolve()
+    if not target.is_relative_to(root):
+        raise ValueError('Bundle metadata path escapes the bundle')
+    return target
+
+
+def compute_deadline(start, compute_seconds, global_end, save_seconds, job):
+    return min(start + compute_seconds, global_end - save_seconds,
+               job.get('absolute_compute_deadline', math.inf))
 
 
 def put(path, value):
@@ -52,7 +71,7 @@ def execute(bundle, session_path, compute_seconds, save_seconds):
     global_end = session['start_epoch'] + 3600 * session['GPU_cap_CNY'] / session['hourly_CNY']
     if 'duration_seconds' in session:
         global_end = min(global_end, session['start_epoch'] + session['duration_seconds'])
-    deadline = min(start + compute_seconds, global_end - save_seconds)
+    deadline = compute_deadline(start, compute_seconds, global_end, save_seconds, job)
     if deadline - start < 300:
         raise TimeoutError('Insufficient authorized window; do not load model')
     occupied = subprocess.check_output(['nvidia-smi', '--query-compute-apps=pid', '--format=csv,noheader'], text=True).strip()
@@ -114,12 +133,12 @@ def execute(bundle, session_path, compute_seconds, save_seconds):
         raise ValueError('Existing encoded scoring manifest differs')
     manifest_path.write_text(manifest_text, encoding='utf-8', newline='\n')
     reused = {}
-    reuse_root = bundle / job['reuse_results'] if job.get('reuse_results') else None
+    reuse_root = resolve_bundle_path(bundle, job['reuse_results']) if job.get('reuse_results') else None
     expected_reused = {(v,i) for v,ids in job.get('reused_score_ids_by_variant',{}).items() for i in ids}
     if reuse_root is not None:
         for item in read(reuse_root/'provenance.json'):
             key = (item['variant'],item['id'])
-            source = bundle / item['copied_path']
+            source = resolve_bundle_path(bundle, item['copied_path'])
             if key not in encoded or c.sha(source) != item['source_sha256']:
                 raise ValueError('Copied reusable score fingerprint changed')
             row = read(source)
