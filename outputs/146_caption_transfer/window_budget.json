@@ -1,0 +1,19 @@
+{
+  "start": "2026-10-31T21:12:00+08:00",
+  "end": "2026-11-01T09:12:00+08:00",
+  "start_epoch": 1793452320.0,
+  "end_epoch": 1793495520.0,
+  "duration_seconds": 43200,
+  "hourly_CNY": 1.58,
+  "GPU_cap_CNY": 18.96,
+  "API_cap_CNY": 80,
+  "API_used_CNY": 0,
+  "API_reserved_CNY": 0,
+  "no_shutdown": true,
+  "source": "2026-10-31 latest user authorization",
+  "old_window_closed_at_new_start_estimate_CNY": 18.327561111111113,
+  "as_of": "2026-10-31T21:27:52.192835+08:00",
+  "GPU_estimated_CNY": 0.4179068553611111,
+  "GPU_state": "146 running; original environment reused",
+  "new_API_CNY": 0
+}

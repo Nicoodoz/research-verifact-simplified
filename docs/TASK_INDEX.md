@@ -8,6 +8,9 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|146_caption_transfer|[当前](../tasks/146_caption_transfer/CURRENT.md)|145跨子集固定400验证|运行中；不重跑五基线|
+|147_fixed_reason|[当前](../tasks/147_fixed_reason/CURRENT.md)|固定136标签后的两种简短reason生成器，各60条|准备完成，等待146结束|
+|148_patient_score|[当前](../tasks/148_patient_score/CURRENT.md) · [报告](../outputs/148_patient_score/report.md)|零新增推理的患者内分数归一|178/290送审残留FS41/24，global_margin为44/29；回顾信号|
 |145_order_caption|[当前](../tasks/145_order_caption/CURRENT.md) · [报告](../outputs/145_order_caption/report.md) · [协议](../tasks/145_order_caption/PROTOCOL.md)|原500全部有效，复用160、仅新增340；停止本轮扩大|MCC .6427、正确410、FS45/179，较142正确+3/FS不变；无完整1817结果|
 |144_native_confidence|[当前](../tasks/144_native_confidence/CURRENT.md) · [协议](../tasks/144_native_confidence/PROTOCOL.md)|完整1817及24调用工程配对均完成|全量覆盖84.04%时FS88→29、新1317为40→11；代价231正确S送审，原生标签不变|
 |143_selective_verification|[当前](../tasks/143_selective_verification/CURRENT.md) · [固定基线](../outputs/143_selective_verification/report.md) · [文献判断](../outputs/143_selective_verification/literature_assessment.md)|1817固定分歧、107历史180原生分数回顾；六篇原始文献|136自动覆盖90.20%/拦截38次FS，原MCC不变；不是CP保证，成本与送审代价单列|
