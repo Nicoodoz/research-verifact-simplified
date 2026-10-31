@@ -1,0 +1,14 @@
+{
+  "status": "FULL_STATE_RETURNED",
+  "steps": 48,
+  "presentations": 384,
+  "adapter_sha256": "a3a3372495032bafb5bb753b7b742a6c93bea17f9fa7498e7a27cefbd88b936f",
+  "model_bytes": 173188512,
+  "optimizer_state_bytes": 346672501,
+  "teacher_cached_IDs": 156,
+  "transfer_bytes": 482146353,
+  "transfer_seconds": 115.00963687896729,
+  "archive_and_states_preserved": true,
+  "receipt_N": 160,
+  "no_shutdown": true
+}

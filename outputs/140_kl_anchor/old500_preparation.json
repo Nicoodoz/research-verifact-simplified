@@ -1,0 +1,18 @@
+{
+  "status": "PREPARED_NOT_RUN",
+  "task": 140,
+  "arm": "kl_anchor",
+  "scope": "old500",
+  "new_IDs": 340,
+  "target_N": 500,
+  "reused_invalid": 0,
+  "adapter_sha256": "a3a3372495032bafb5bb753b7b742a6c93bea17f9fa7498e7a27cefbd88b936f",
+  "max_input_tokens": 12724,
+  "source136_retokenized": false,
+  "compute_limit_seconds": 1800,
+  "save_reserve_seconds": 900,
+  "initial140_screen_batch2": true,
+  "extension_long_inputs_batch1": true,
+  "no_new_training": true,
+  "new_API": 0
+}
