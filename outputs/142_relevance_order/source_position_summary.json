@@ -1,0 +1,56 @@
+{
+  "status": "PASS_CPU_ONLY",
+  "N": 63,
+  "patients": 27,
+  "evaluation_patient_overlap": 0,
+  "reference_fragments": 6215,
+  "added_separator_chars_total": 0,
+  "all_fragment_multisets_numbers_and_headers_text_preserved": true,
+  "all_existing_citations_unchanged": true,
+  "citation_unit_positions": {
+    "original": {
+      "N": 181,
+      "front": 31,
+      "middle": 56,
+      "back": 94,
+      "median": 0.6835169583063296
+    },
+    "sorted": {
+      "N": 181,
+      "front": 116,
+      "middle": 26,
+      "back": 39,
+      "median": 0.16094147582697202
+    },
+    "moved_forward": 118,
+    "moved_back": 52
+  },
+  "first_citation_positions": {
+    "original": {
+      "N": 61,
+      "front": 19,
+      "middle": 24,
+      "back": 18,
+      "median": 0.4989444053483462
+    },
+    "sorted": {
+      "N": 61,
+      "front": 56,
+      "middle": 1,
+      "back": 4,
+      "median": 0.024236387782204515
+    },
+    "moved_forward": 51,
+    "moved_back": 7
+  },
+  "CPU_seconds": 0.33651889999964624,
+  "source": ".local_models/127_native_reason_data/dataset_v12_support20261031/paired/train_label_only.jsonl",
+  "method": "Unchanged008 tokenize/BM25; k1=1.2,b=.75; all intact numbered units sorted descending, original-order ties.",
+  "limitations": [
+    "Existing AI-assisted reason citations are not physician gold evidence.",
+    "Only approved training63 (27 patients); no validation4 or evaluation20 prediction used.",
+    "Character-position bins, not token locations or classification outcomes.",
+    "Citation movement may hurt recency or chronology; position improvement is not model improvement.",
+    "No evidence removal, deduplication, new text, new labels, model run or API."
+  ]
+}
