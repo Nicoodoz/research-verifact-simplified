@@ -154,7 +154,7 @@ def render(analysis, out_prefix=None):
         fig.savefig(path, dpi=190, facecolor='white')
         if path.suffix == '.svg':
             text = path.read_text(encoding='utf-8')
-            path.write_text('\n'.join(line.rstrip() for line in text.splitlines())+'\n', encoding='utf-8')
+            path.write_bytes(('\n'.join(line.rstrip() for line in text.splitlines())+'\n').encode('utf-8'))
     plt.close(fig)
     return dict(source=str(analysis), scope=result['scope'], panels=len(panels), variants=2,
                 fixed_points_per_curve=5, data_points=10 * len(panels),

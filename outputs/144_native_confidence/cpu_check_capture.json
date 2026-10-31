@@ -1,0 +1,13 @@
+{
+  "status": "PASS_CPU_ONLY_NOT_RUN",
+  "inputs": 12,
+  "unique_IDs": 8,
+  "calls": 24,
+  "predicted_class_length_selection": true,
+  "alternating_pair_order": true,
+  "source_code_SHA_valid": true,
+  "no_GT_in_inputs_or_selection": true,
+  "original_session_SHA_valid": true,
+  "compile_import_without_torch_unsloth": true,
+  "no_actual_results": true
+}

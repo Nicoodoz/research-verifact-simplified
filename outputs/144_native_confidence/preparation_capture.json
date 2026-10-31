@@ -1,0 +1,12 @@
+{
+  "status": "CPU_DEPLOYMENT_PREPARED_NOT_STARTED",
+  "source_private": ".local_models\\parallel_20261031\\selective_verification\\native_score_preparation\\capture_pilot",
+  "input_SHA_preserved": "8faa26defbfb166f415148b4f8965ac0db66a658b852c5ccfc765517c10886cb",
+  "job_SHA_preserved": "7c495b167733c163dac7f20540f5aa033491917415d7d87296848a300c5abb5e",
+  "archive_sha256": "ed04a25a725d445ab7c78a50d1c9269b21189c167efff9f0ef6b9ecaaf5a7a61",
+  "archive_bytes": 72096,
+  "expected_calls": 24,
+  "compute_seconds": 600,
+  "save_seconds": 180,
+  "normal_score_mode_untouched": true
+}
