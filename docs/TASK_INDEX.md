@@ -8,6 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|141_two_demos|[当前](../tasks/141_two_demos/CURRENT.md) · [方案](../tasks/141_two_demos/PROTOCOL.md) · [准备](../outputs/141_two_demos/preparation.json)|CPU可运行包，未运行GPU|固定完整S/NS示例；目标136不变，先160，未证明分类有效|
 |140_kl_anchor|[当前](../tasks/140_kl_anchor/CURRENT.md) · [方案](../tasks/140_kl_anchor/PROTOCOL.md) · [进度](../outputs/140_kl_anchor/progress.md)|缓存与最长反向检查完成，训练中，无分类结果|原156训练ID/48步，仅加固定KL，不重训匹配回放|
 |139_full_repeat|[当前](../tasks/139_full_repeat/CURRENT.md) · [方案](../tasks/139_full_repeat/PROTOCOL.md) · [进度](../outputs/139_full_repeat/progress.md)|500全有效，160运行时控制完成；不再扩大|相对120有收益；相对136正确−1/FS+3，输入近2倍不值得继续|
 |138_rationale_tasks|[当前](../tasks/138_rationale_tasks/CURRENT.md) · [完整报告](../outputs/138_rationale_tasks/report.md) · [方案](../tasks/138_rationale_tasks/PROTOCOL.md)|主臂1817全有效；MCC .5839、正确1532、FS66/362|相对136正确−61/FS−22，停止当前扩大；理由特异效应仅有500配对|

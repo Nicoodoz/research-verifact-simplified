@@ -1,0 +1,19 @@
+{
+  "task": 141,
+  "status": "PASS",
+  "N": 160,
+  "system_once": true,
+  "source_labels_exact": true,
+  "training_evaluation_patients_disjoint": true,
+  "all_user_contents_exact136": true,
+  "examples_have_full_references": true,
+  "no_reason_or_GT_field_in_model_input": true,
+  "longest_formal_first": true,
+  "precise_token_SHA_checked": true,
+  "max_screen_input_tokens": 27154,
+  "global_max_with384": 28346,
+  "compute_limit_seconds": 1500,
+  "save_reserve_seconds": 600,
+  "new_GPU": false,
+  "new_API": 0
+}

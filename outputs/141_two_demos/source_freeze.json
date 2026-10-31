@@ -1,0 +1,26 @@
+{
+  "task": 141,
+  "status": "CPU_SOURCE_FROZEN",
+  "example_ids": [
+    "93cd2c13-0d5a-b617-eb23-a479e6549d9b",
+    "e96580ee-ad16-3d5a-4b29-3739cd1b46bc"
+  ],
+  "demos_sha256": "0ab930cdaebecae2042f5674d8087e36fc3cbcbf5ac1347e35436cf2ab96f22b",
+  "source_dataset": "dataset_v12_support20261031 train_label_only",
+  "source_label_file_sha256": "b83625af04db87a6d349b95204e4f8f7383e3fc3e03f8926b80d136db086710e",
+  "train_patients": 32,
+  "eval_patients": 20,
+  "example_patient_overlap": 0,
+  "full_reference_preserved": true,
+  "token_prefix_delta": 14515,
+  "max_target_tokens": 13447,
+  "max_combined_tokens": 27962,
+  "max_with384": 28346,
+  "capacity": 32768,
+  "remaining_tokens": 4422,
+  "exact_longest_target_ID": "b5e2710e-e0cf-9e1e-3982-dfb0815f5099",
+  "exact_longest_prompt_sha256": "3253db1535a3f724dba0502d16af91cc1397339587f27363cf57f0f22ee4b2d1",
+  "all_other_targets_are_length_upper_bounds": true,
+  "no_full1817_retokenization": true,
+  "no_model_loaded": true
+}

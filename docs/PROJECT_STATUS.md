@@ -12,11 +12,13 @@
 
 140 kl_anchor已于13:17启动：复用138匹配回放的156个训练ID、192位置、48步，只加入固定0.5的120原生分布KL约束；不使用本轮新增理由、不重训对照。CPU检查通过，156个训练ID的teacher缓存已完成，最长11349 tokens反向实测峰值24.21 GiB，已进入固定48步训练，尚无分类结果。首阶段60分钟计算＋20分钟保存，现行20元累计预算不重置。
 
+141 two_demos已形成CPU可运行包：固定两条原训练侧S/NS完整示例，120权重、136目标user及输出格式不变；最长全池输入上界27962 tokens。先原160，1500秒计算＋600秒保存，尚无GPU或分类结果；等待140结果后安排，不抢占当前任务。
+
 本轮新增GPU硬上限20元，自2026-10-31 09:36:01（UTC+8）按1.58元/小时累计，估算截止22:15:30；准备、等待、加载、编译、回传均计入。原API硬上限80元累计仍为0，不重置。上一16元窗口连同等待至新授权估算¥15.695另记，不借用余额。持续目标内自主推进、实质阶段双仓发布；不自动关机或释放。
 
 120最终MCC .6250、正确1599、false-S109/362；132固定中点MCC .5988、正确1559、false-S80/362，均保留真实收益与风险，未升级默认。415诊断取消、0完整回执；133按用户要求暂停，未产生分类结果。127现为67对AI辅助reason（训练63、内部验证4），无分类收益证明；本轮27条新增未进入138或140。
 
-[140当前任务](../tasks/140_kl_anchor/CURRENT.md) · [140进度](../outputs/140_kl_anchor/progress.md) · [138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [138完整比较](../outputs/138_rationale_tasks/report.md) · [138实时进度](../outputs/138_rationale_tasks/progress.md) · [139当前](../tasks/139_full_repeat/CURRENT.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
+[141准备](../tasks/141_two_demos/CURRENT.md) · [140当前任务](../tasks/140_kl_anchor/CURRENT.md) · [140进度](../outputs/140_kl_anchor/progress.md) · [138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [138完整比较](../outputs/138_rationale_tasks/report.md) · [138实时进度](../outputs/138_rationale_tasks/progress.md) · [139当前](../tasks/139_full_repeat/CURRENT.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -46,6 +48,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|141 two_demos|CPU包和检查完成，未运行|仅加固定两条完整训练示例，无训练；等待140实际结果|
 |140 kl_anchor|156缓存和最长反向检查完成，固定48步训练中|同138回放数据/顺序/48步，仅加固定KL；无分类结果|
 |139 full_repeat|500全有效，160运行时控制完成；停止当前扩大|相对120有收益；相对便宜136正确−1/FS+3，近2倍输入不值得继续|
 |138 rationale_tasks|主臂1817全部有效，完整状态和结果回传；停止当前扩大|MCC .5839、正确1532、FS66/362；相对136正确−61/FS−22，风险收益伴随过大质量代价|

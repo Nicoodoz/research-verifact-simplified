@@ -1,0 +1,20 @@
+{
+  "task": 141,
+  "status": "CPU_PREPARED_NOT_RUN",
+  "scope": "screen160",
+  "N": 160,
+  "demos_sha256": "0ab930cdaebecae2042f5674d8087e36fc3cbcbf5ac1347e35436cf2ab96f22b",
+  "max_input_tokens": 27154,
+  "longest_first_ID": "6cc9f4bd-2c62-8e18-3405-ec5fdd381657",
+  "reference_truncated": false,
+  "target_users_unchanged": true,
+  "exact_tokenized_targets": 160,
+  "all1817_not_retokenized": true,
+  "compute_seconds": 1500,
+  "save_reserve_seconds": 600,
+  "bundle_sha256": "19a23e03e5eef811ff5314d5d70d58063c58a825e0dbfad8b4eee4be20960dbc",
+  "bundle_bytes": 936069,
+  "new_GPU": false,
+  "new_API": 0,
+  "final_source_refresh": true
+}
