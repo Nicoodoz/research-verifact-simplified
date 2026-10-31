@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "task": 138,
+  "kind": "extension_cpu_only",
+  "source136_N": 1817,
+  "rationale_old500_new_N": 340,
+  "actual_completed_checkpoint_verified": true,
+  "source_retokenized": false,
+  "no_fake_classification": true,
+  "batch2_threshold": 12701,
+  "compute_and900_save_separate": true,
+  "control_preparation_requires_actual_training_done": true
+}

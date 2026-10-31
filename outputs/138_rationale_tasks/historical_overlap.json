@@ -1,0 +1,40 @@
+{
+  "N": 160,
+  "role": "Descriptive overlap; historical137 is not a matched48-step control",
+  "classes": [
+    {
+      "GT": "Supported",
+      "new_rescued": 0,
+      "same_rescues_in137": 0,
+      "historical137_rescued": 0,
+      "new_harmed": 6,
+      "same_harms_in137": 2,
+      "historical137_harmed": 2
+    },
+    {
+      "GT": "Not Supported",
+      "new_rescued": 7,
+      "same_rescues_in137": 6,
+      "historical137_rescued": 6,
+      "new_harmed": 0,
+      "same_harms_in137": 0,
+      "historical137_harmed": 0
+    },
+    {
+      "GT": "Not Addressed",
+      "new_rescued": 1,
+      "same_rescues_in137": 1,
+      "historical137_rescued": 1,
+      "new_harmed": 3,
+      "same_harms_in137": 3,
+      "historical137_harmed": 4
+    }
+  ],
+  "label_changes": 19,
+  "same_as137": 154,
+  "transition_counts": {
+    "Not Addressed -> Not Supported": 10,
+    "Supported -> Not Supported": 8,
+    "Supported -> Not Addressed": 1
+  }
+}
