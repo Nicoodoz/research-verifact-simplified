@@ -106,7 +106,7 @@ def render(result):
         lines.append(f"|{name}|{calls['main_generations']}+{calls['conditional107_generations']}={calls['logical_generation_calls']}|{score['score_records']}|{score['score_forward_seconds_all_records']:.4f}|{score['new_completed_events']}/{score['new_completed_forward_seconds']:.4f}|")
     stage=result['recorded_stage_cost']
     lines += ['',f"本段评分worker墙钟并集{n(stage['worker_wall_seconds']['total'])}秒，controller {n(stage['controller_wall_seconds']['total'])}秒单列不相加；加载与墙钟不按模型强行平摊。", '',
-              '当前margin来自额外同模型prefill/forward；107方案需要额外107生成。两者逻辑调用相同不表示实际时间相同。未来在原生生成中同步捕获logits可能免第二次prefill，但本项目未实现或实测，不能把它写成已经零额外成本。', '',
+              '当前margin来自额外同模型prefill/forward；107方案需要额外107生成。两者逻辑调用相同不表示实际时间相同。随后24次工程配对已实现同次生成捕获分数，12对输出/token/标签相同；它说明免第二次prefill的实现可行，但尚无完整1817在线验证或可靠开销估计，不能声称零额外成本。', '',
               '这是既有开发患者上的固定等工作量回顾，不是独立验证、CP保证或人工复核效果；不改变原无拒答基线及0/5/10/20/30%五点。', '',
               '[附加完整统计]('+result['scope']+'_equal_workload.json)']
     return '\n'.join(lines).rstrip()+'\n'

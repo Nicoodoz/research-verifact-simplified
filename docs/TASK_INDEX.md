@@ -8,7 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|145_order_caption|[当前](../tasks/145_order_caption/CURRENT.md) · [协议](../tasks/145_order_caption/PROTOCOL.md)|原160全有效；复用160补余340验证原500|MCC .6260，较142正确+2/FS不变；小信号，不解释全量退化|
+|145_order_caption|[当前](../tasks/145_order_caption/CURRENT.md) · [报告](../outputs/145_order_caption/report.md) · [协议](../tasks/145_order_caption/PROTOCOL.md)|原500全部有效，复用160、仅新增340；停止本轮扩大|MCC .6427、正确410、FS45/179，较142正确+3/FS不变；无完整1817结果|
 |144_native_confidence|[当前](../tasks/144_native_confidence/CURRENT.md) · [协议](../tasks/144_native_confidence/PROTOCOL.md)|完整1817及24调用工程配对均完成|全量覆盖84.04%时FS88→29、新1317为40→11；代价231正确S送审，原生标签不变|
 |143_selective_verification|[当前](../tasks/143_selective_verification/CURRENT.md) · [固定基线](../outputs/143_selective_verification/report.md) · [文献判断](../outputs/143_selective_verification/literature_assessment.md)|1817固定分歧、107历史180原生分数回顾；六篇原始文献|136自动覆盖90.20%/拦截38次FS，原MCC不变；不是CP保证，成本与送审代价单列|
 |142_relevance_order|[当前](../tasks/142_relevance_order/CURRENT.md) · [完整报告](../outputs/142_relevance_order/report.md) · [进度](../outputs/142_relevance_order/progress.md)|1817条全部有效、成本与患者配对齐全|MCC 0.6284、PA87.51%、正确1590、FS92/362；相对136 MCC-0.0066、正确-3、FS+4，S/NS/NA净+0/+2/-5|

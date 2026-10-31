@@ -20,7 +20,7 @@ def phases():
         'kl_anchor140':[(P/'140_kl_anchor/evidence','predictions',16384,True)]+[(P/'140_kl_anchor/extension'/s/'evidence','kl_anchor',16384,False) for s in ('old500','full1817')],
         'two_demos141':[(P/'141_two_demos'/s/'evidence','two_demos',32768,False) for s in SCOPES],
         'relevance_order142':[(P/'142_relevance_order'/s/'evidence','relevance_order',16384,False) for s in SCOPES],
-        'order_caption145':[(P/'145_order_caption/screen160/evidence','order_caption',16384,False)],
+        'order_caption145':[(P/'145_order_caption'/s/'evidence','order_caption',16384,False) for s in ('screen160','old500')],
     }
 
 
@@ -195,7 +195,7 @@ def main():
     tables={s:{} for s in SCOPES};excluded={};stopped=[]
     for name,data in source.items():
         for scope in SCOPES:
-            if name=='order_caption145' and scope!='screen160':continue
+            if name=='order_caption145' and scope=='full1817':continue
             result=summarize(targets[scope],data)
             if scope=='full1817' and result['received_N']!=1817:
                 excluded[name]=dict(received_N=result['received_N'],missing_N=result['missing_N'])
@@ -231,7 +231,7 @@ def main():
             '140_extensions':'worker_eval140: seconds=elapsed/len(identifiers)',
             '141':'worker141: seconds=batch_seconds=elapsed; batch1',
             '142':'worker142: seconds=elapsed/actual batch size; original136 batch pairing',
-            '145':'worker145: seconds=elapsed/actual batch size; original142 batch pairing; screen160 only; caption adds3 input tokens per item'},
+            '145':'worker145: seconds=elapsed/actual batch size; original142 batch pairing; screen160 and old500 only; caption adds3 input tokens per item'},
         historical_timing_notes=HISTORICAL_TIMING_NOTES,
         common_settings='BF16 native9B; greedy; max_new_tokens384 except author134 cap768; no thinking. Batch/context differences are explicit, not treated as controlled speed tests.',
         call_count_rule='Received_N counts actual proposition-level Judge decisions. Local batched generation, zero API requests; batch sizes are separate from decision counts.',
@@ -271,7 +271,7 @@ def main():
             wall=row['phase_walls'][0]['recorded_wall'] if row['phase_walls'] else None
             lines.append('141额外1317阶段已收到 '+str(row['received_N'])+' 条（有效'+str(row['valid_N'])+'、无效'+str(row['invalid_N'])+'），已记录生成 '+cell(t['recorded_partial_total'])+' 秒，停止进程墙钟 '+cell(wall['seconds'] if wall else None)+' 秒，平均输入/输出 '+cell(row['input_tokens']['mean'])+'/'+cell(row['output_tokens']['mean'])+' tokens；仅为停止前尝试，**不并入原500正常成本**，也不列完整1817成本。')
     else:lines.append('本次快照未发现不足1317的额外141首答；不制造停止尝试数。')
-    lines+=['','107原500为RTX5090（原loads记录）；其补1317及120/132/137/138的历史硬件未重新核对，不能与本轮4080 SUPER按时长判优。120/132所记批次时长还包含tensor准备、解码和记录组装，与新worker只围绕generate同步计时的范围不同。132全部输出token缺失；任何未记录字段都未由字符串重新编码补造。','', '人民币未由生成秒数推定；实际GPU总账仍按09:36:01起1.58元/小时的共享20元窗口累计，包含准备、等待、加载、编译和回传，API为0。运行成本不含额外训练成本；本表不是完整方案总费用。','']
+    lines+=['','107原500为RTX5090（原loads记录）；其补1317及120/132/137/138的历史硬件未重新核对，不能与本轮4080 SUPER按时长判优。120/132所记批次时长还包含tensor准备、解码和记录组装，与新worker只围绕generate同步计时的范围不同。132全部输出token缺失；任何未记录字段都未由字符串重新编码补造。','', '人民币未由生成秒数推定；实际GPU总账仍按09:36:01起1.58元/小时的共享20元窗口累计，包含准备、等待、加载、编译和回传，API为0。运行成本不含额外训练成本；本表不是完整方案总费用。生成时间包含在controller/进程墙钟内，不能将生成、controller墙钟与费用账本再次相加。','']
     (args.out/'inference_cost.md').write_text('\n'.join(lines),encoding='utf-8')
     print(json.dumps(dict(scopes={s:list(v) for s,v in tables.items()},stopped_N=[x['received_N'] for x in stopped],output=str(args.out)),ensure_ascii=False))
 

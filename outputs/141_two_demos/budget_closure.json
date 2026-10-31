@@ -1,0 +1,41 @@
+{
+  "status": "research_closed_no_pending_paid_experiments",
+  "as_of": "2026-10-31T19:20:39+08:00",
+  "GPU": {
+    "start": "2026-10-31T09:36:01+08:00",
+    "hourly_CNY": 1.58,
+    "cap_CNY": 20.0,
+    "estimated_CNY": 15.395349781333334,
+    "remaining_cap_CNY": 4.6046502186666665,
+    "accounting": "All elapsed wall time including handoff, preparation, loading, compilation, waiting and return; not provider invoice",
+    "auto_stop_or_release": false,
+    "instance_remains_on": true,
+    "explicit_warning": "Powered-on time after this snapshot continues accruing; no cap reset or permission to exceed it"
+  },
+  "previous_GPU_window": {
+    "cap_CNY": 16.0,
+    "estimated_CNY": 15.695105555555557,
+    "end": "2026-10-31T09:36:01+08:00",
+    "separate_accounting": true,
+    "no_balance_transfer": true
+  },
+  "API": {
+    "cap_CNY": 80.0,
+    "new_CNY": 0.0,
+    "cumulative_this_authorization_CNY": 0.0
+  },
+  "compute_inspection": {
+    "as_of": "2026-10-31T19:18:30+08:00",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER, 32760 MiB, 1 MiB, 0 %",
+    "active_GPU_processes": 0
+  },
+  "pending_paid_tasks": [],
+  "preserved": {
+    "task133": "paused at step16 with states/logs, no evaluation",
+    "task141": "500 complete; full extension stopped, 10 valid +1 interrupted results retained",
+    "task145": "500 complete; no full1817; all raw answers and logs saved locally"
+  },
+  "next_research": "Freeze a deployment risk target and independent patient calibration role before any formal conformal claim; do not automatically repurpose confirmation40",
+  "no_default_upgrade": true,
+  "remote_publication_receipt": "Private .local_models/134_author_baselines/publication_latest.json records both verified main heads after publication"
+}

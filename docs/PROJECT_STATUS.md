@@ -1,4 +1,4 @@
-# 项目现状（2026-10-31，144全量与工程结果完成；145原500验证中）
+# 项目现状（2026-10-31，本轮实验收束；144全量、145原500完成）
 
 134统一三基线已完成；同1793有效ID下author_base9b/author_lora9b/paper_r1 MCC为.3422/.6104/.4819，正确1210/1562/1468，false-S44/100/105（非S361）。微调收益真实且伴随风险，作者接口不全面优于104接口120。
 
@@ -18,15 +18,15 @@
 
 用户2026-10-31开放风险控制/选择性核验/可选人工复核。143零新增推理回顾中，136自动覆盖90.20%，拦截38/88次原错误支持，同时送审140个正确S；部署约1.80次逻辑判定/命题。120/136过滤后的S集合恰为107的1273条，仍共享50个错误S。142补充点覆盖89.82%、残48个FS，另保留完整代价。原生MCC均未被送审提高；这是基线，不是Conformal或临床保证。六篇原始文献与107旧180分数粗筛已完成；独立校准仍未成立，不自动启用确认40人。
 
-144完整1817的2953分数均有效：136在92.02%自动覆盖时FS88→51、84.04%时88→29，分别送审108/231个正确S；新增1317的FS40→11。原生标签与MCC不变，无CP保证。同送审178条，136比分歧规则少6个残留FS且少送审6个正确S。24调用工程检查也完成，12对输出/token/标签均相同；不以小样本和冷编译时延声称零开销。
+144完整1817的2953分数均有效：136在92.02%自动覆盖时FS88→51、84.04%时88→29，分别送审108/231个正确S；新增1317的FS40→11。原生标签与MCC不变，无CP保证。同送审178条，136比分歧规则少6个残留FS且少送审6个正确S；固定送审标记的患者配对FS率差区间为[−3.747, 0.000]个百分点，条件于当前选择，不证明稳定优势。24调用工程检查也完成，12对输出/token/标签均相同；不以小样本和冷编译时延声称零开销。
 
-145原160全有效，较142正确+2、FS不变（S/NS/NA净+1/+1/0），生成实测约+1.1%。当前只补原500余340条，控制68403，1000秒含加载编译＋180秒保存；不自动1817，也不据2条解释142全量退化。
+145原500全有效：MCC .6427、PA82.00%、正确410、FS45/179；相对142正确+3、FS不变，S/NS/NA净+2/+1/0。原160已有+2，新增340仅再+1；3条均为Human来源、3名患者各+1，无新误伤。每例仅+3输入tokens，累计生成1091.94秒对142的1092.59秒。保留小幅收益，停止本轮扩大；没有145完整1817结果，不据500解释142全量退化。所有GPU计算已结束，模型、首答与日志保留；本轮不再启动收费任务，实例仍开机、不释放。
 
-本轮新增GPU硬上限20元，自2026-10-31 09:36:01（UTC+8）按1.58元/小时累计，估算截止22:15:30；准备、等待、加载、编译、回传均计入。原API硬上限80元累计仍为0，不重置。上一16元窗口连同等待至新授权估算¥15.695另记，不借用余额。持续目标内自主推进、实质阶段双仓发布；不自动关机或释放。
+本轮新增GPU硬上限20元，自2026-10-31 09:36:01（UTC+8）按1.58元/小时累计；截至19:20:39估算¥15.395/20，计算、回传与结果整理已结束，本轮成果按授权双仓归档。准备、等待、加载、编译、回传及发布均计入；实例保持开机后的时间继续计费，22:15:30为本窗口原估算上限时点，不自动关机或释放。原API硬上限80元累计仍为0，不重置。上一16元窗口连同等待至新授权估算¥15.695另记，不借用余额。持续目标内自主推进、实质阶段双仓发布；不自动关机或释放。
 
 120最终MCC .6250、正确1599、false-S109/362；132固定中点MCC .5988、正确1559、false-S80/362，均保留真实收益与风险，未升级默认。415诊断取消、0完整回执；133按用户要求暂停，未产生分类结果。127现为67对AI辅助reason（训练63、内部验证4），无分类收益证明；本轮27条新增未进入138或140。
 
-[142完整结果](../outputs/142_relevance_order/report.md) · [143选择性研究](../tasks/143_selective_verification/CURRENT.md) · [当前集中比较](../outputs/141_two_demos/window_summary.md) · [同ID推理成本](../outputs/141_two_demos/inference_cost.md) · [141当前任务](../tasks/141_two_demos/CURRENT.md) · [140当前任务](../tasks/140_kl_anchor/CURRENT.md) · [140进度](../outputs/140_kl_anchor/progress.md) · [138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [138完整比较](../outputs/138_rationale_tasks/report.md) · [138实时进度](../outputs/138_rationale_tasks/progress.md) · [139当前](../tasks/139_full_repeat/CURRENT.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
+[本轮费用与实例状态](../outputs/141_two_demos/budget_closure.md) · [145原500结果](../outputs/145_order_caption/report.md) · [144风险排序结果](../outputs/144_native_confidence/report.md) · [142完整结果](../outputs/142_relevance_order/report.md) · [143选择性研究](../tasks/143_selective_verification/CURRENT.md) · [当前集中比较](../outputs/141_two_demos/window_summary.md) · [同ID推理成本](../outputs/141_two_demos/inference_cost.md) · [141当前任务](../tasks/141_two_demos/CURRENT.md) · [140当前任务](../tasks/140_kl_anchor/CURRENT.md) · [140进度](../outputs/140_kl_anchor/progress.md) · [138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [138完整比较](../outputs/138_rationale_tasks/report.md) · [138实时进度](../outputs/138_rationale_tasks/progress.md) · [139当前](../tasks/139_full_repeat/CURRENT.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -40,7 +40,7 @@
 
 ## 当前研究目标与运行事实
 
-目标是在VeriFact数据集上以相同推理模型、同ID和统一评价形成有实际价值的优势；重点是前处理与Judge raw，不以更强模型或PriorG的收益替代。MCC与false-S相对优先，允许其他指标有合理代价，但须披露误报、三类损失与PA。这里减少false-S指少漏掉真实不一致；不是疾病漏诊率，也不允许靠全判NS/NA制造安全假象。目标不等于已经达成，默认配置未自动升级。
+目标是在VeriFact数据集上以相同推理模型、同ID和统一评价形成有实际价值的优势；重点是前处理与Judge raw，并允许有实际价值的风险控制及选择性核验；原生三分类与送审后的风险/覆盖贡献分开，不以更强模型或PriorG的收益替代。MCC与false-S相对优先，允许其他指标有合理代价，但须披露误报、三类损失与PA。这里减少false-S指少漏掉真实不一致；不是疾病漏诊率，也不允许靠全判NS/NA制造安全假象。目标不等于已经达成，默认配置未自动升级。
 
 服务更新（2026-10-26）：用户已授权启用https://maas.qianwenaiapi.com/compatible-mode/v1及新Key；主配置.env.aliyun已切换，默认模型deepseek-v4-flash-0731、thinking-high。原配置只留在受忽略的私有备份。此前新端点两次合成调用均HTTP200，无重试；其中thinking-high输入6571/输出288 tokens，估算¥0.022305。连接测试累计保留¥0.159494未对账预留，不因启用新默认清零。旧403记录仍属历史；此次配置切换未新增API调用，不构成临床实验或科学等价证明。
 
@@ -56,6 +56,8 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|145 order_caption|原500全部有效并回传；停止本轮扩大|MCC .6427、正确410、FS45/179；较142多对3条、FS不变，无完整1817结果|
+|144 native_confidence|完整2953分数及24调用工程检查完成|136自动覆盖84.04%时FS88→29，231正确S送审；原生标签不变，无CP保证|
 |143 selective_verification|1817固定分歧与107历史180分数回顾，均零新增推理|136自动覆盖90.20%，拦截38次原FS并送审140个正确S；原MCC不变，未实现CP保证|
 |142 relevance_order|1817条全部有效并回传|MCC 0.6284、PA87.51%、正确1590、FS92/362；相对136 MCC-0.0066、正确-3、FS+4，S/NS/NA净+0/+2/-5；500条小幅收益未保持到完整分布，当前重排不替换136，不继续扩大或换种子。后续原生分数主要比较120与136，142仅保留既定小批。|
 |141 two_demos|500全有效；全量扩评停止并回传额外11条|MCC .6132、正确400、FS35/179；保留风险取舍，不因达到门槛自动跑满；无完整1817结论|

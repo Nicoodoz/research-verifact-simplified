@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-10-31T19:04:34+08:00",
-  "conclusion": "144完整1817保留原生标签，同时取得实际风险排序收益：136在84.04%覆盖时FS88降至29，代价为231个正确S送审。24调用工程配对输出一致，但不证明零开销或安全保证。145只补原500的余340条检验说明修正，不自动扩大或升级默认。",
+  "created_at": "2026-10-31T19:19:54+08:00",
+  "conclusion": "145原500相对142仅多对3条，新增340仅多对1条，false-S不变；尚无完整1817，不外推或升级。144风险排序有实际收益，但原生标签/MCC不变；12对同次捕获仅验证本批可行，不证明零开销。本轮停止新增付费扩展，转入收尾。",
   "tables": {
     "full1817": {
       "claim_repeat136": {
@@ -382,6 +382,24 @@
         "source": "outputs/142_relevance_order/relevance_order_old500.json",
         "metric_path": "primary.scores.candidate",
         "source_scope": "old500"
+      },
+      "order_caption145": {
+        "config": "order_caption145",
+        "N": 500,
+        "MCC": 0.6427219852970724,
+        "PA": 0.82,
+        "correct": 410,
+        "false_S": 45,
+        "non_S": 179,
+        "recall": {
+          "Supported": 0.9439252336448598,
+          "Not Supported": 0.3815789473684211,
+          "Not Addressed": 0.7572815533980582
+        },
+        "macro_F1": 0.7099164621128509,
+        "source": "outputs/145_order_caption/order_caption_old500.json",
+        "metric_path": "primary.scores.candidate",
+        "source_scope": "old500"
       }
     },
     "screen160": {
@@ -750,6 +768,15 @@
         "missing_N": 0,
         "invalid_N": 0,
         "source": "outputs/142_relevance_order/relevance_order_old500.json"
+      },
+      {
+        "config": "order_caption145",
+        "expected_N": 500,
+        "received_N": 500,
+        "valid_N": 500,
+        "missing_N": 0,
+        "invalid_N": 0,
+        "source": "outputs/145_order_caption/order_caption_old500.json"
       }
     ],
     "screen160": [
@@ -1758,6 +1785,24 @@
         "metric_path": "panels.natural.scores.full_repeat",
         "source_scope": "old500"
       },
+      "order_caption145": {
+        "config": "order_caption145",
+        "N": 400,
+        "MCC": 0.6402927319178836,
+        "PA": 0.88,
+        "correct": 352,
+        "false_S": 18,
+        "non_S": 79,
+        "recall": {
+          "Supported": 0.9439252336448598,
+          "Not Supported": 0.34615384615384615,
+          "Not Addressed": 0.7547169811320755
+        },
+        "macro_F1": 0.6831717652522203,
+        "source": "outputs/145_order_caption/order_caption_old500.json",
+        "metric_path": "panels.natural.scores.candidate",
+        "source_scope": "old500"
+      },
       "label_only107": {
         "config": "label_only107",
         "N": 400,
@@ -1974,6 +2019,24 @@
         "macro_F1": 0.43180665098473314,
         "source": "outputs/139_full_repeat/old500.json",
         "metric_path": "panels.pressure.scores.full_repeat",
+        "source_scope": "old500"
+      },
+      "order_caption145": {
+        "config": "order_caption145",
+        "N": 100,
+        "MCC": 0.3865881164848537,
+        "PA": 0.58,
+        "correct": 58,
+        "false_S": 27,
+        "non_S": 100,
+        "recall": {
+          "Supported": null,
+          "Not Supported": 0.4,
+          "Not Addressed": 0.76
+        },
+        "macro_F1": 0.43601026769343604,
+        "source": "outputs/145_order_caption/order_caption_old500.json",
+        "metric_path": "panels.pressure.scores.candidate",
         "source_scope": "old500"
       },
       "label_only107": {
@@ -2308,9 +2371,9 @@
   },
   "budget": {
     "start": "2026-10-31T09:36:01+08:00",
-    "as_of": "2026-10-31T19:04:34.203072+08:00",
-    "elapsed_seconds": 34113.203072,
-    "estimated_GPU_CNY": 14.971905792711109,
+    "as_of": "2026-10-31T19:20:39+08:00",
+    "elapsed_seconds": 35078.01216,
+    "estimated_GPU_CNY": 15.395349781333334,
     "GPU_cap_CNY": 20,
     "API_used_CNY": 0,
     "API_cap_CNY": 80,
@@ -2354,6 +2417,198 @@
       "source": "outputs/144_native_confidence/capture_report.md"
     }
   ],
+  "caption_comparison_costs": {
+    "screen160": {
+      "source": "outputs/145_order_caption/order_caption_screen160.json",
+      "costs": {
+        "order_caption145": {
+          "received_N": 160,
+          "valid_N": 160,
+          "invalid_N": 0,
+          "generation_seconds": {
+            "recorded_N": 160,
+            "missing_N": 0,
+            "sum": 373.8664640644565,
+            "mean": 2.336665400402853,
+            "median": 1.943235066253692
+          },
+          "complete_generation_total": 373.8664640644565,
+          "input_tokens": {
+            "recorded_N": 160,
+            "missing_N": 0,
+            "sum": 1348247,
+            "mean": 8426.54375,
+            "median": 8268.0
+          },
+          "output_tokens": {
+            "recorded_N": 160,
+            "missing_N": 0,
+            "sum": 1202,
+            "mean": 7.5125,
+            "median": 7.0
+          },
+          "batch_size_items": {
+            "2": 160
+          },
+          "phase_walls": [
+            {
+              "source": "D:\\Research-VeriFact\\.local_models\\145_order_caption\\screen160\\evidence",
+              "received_N": 160,
+              "seconds": 425.15216183662415,
+              "kind": "controller_process_wall",
+              "whole_phase": true
+            }
+          ],
+          "rule": "seconds already divided by actual batch size; never sum batch_seconds per row",
+          "billing": "Process/worker intervals exclude preparation, upload, return and inter-stage wait; no CNY estimate or full-window substitution."
+        },
+        "relevance_order142": {
+          "received_N": 160,
+          "valid_N": 160,
+          "invalid_N": 0,
+          "generation_seconds": {
+            "recorded_N": 160,
+            "missing_N": 0,
+            "sum": 369.9380428530276,
+            "mean": 2.3121127678314224,
+            "median": 1.9518625643104315
+          },
+          "complete_generation_total": 369.9380428530276,
+          "input_tokens": {
+            "recorded_N": 160,
+            "missing_N": 0,
+            "sum": 1347767,
+            "mean": 8423.54375,
+            "median": 8265.0
+          },
+          "output_tokens": {
+            "recorded_N": 160,
+            "missing_N": 0,
+            "sum": 1204,
+            "mean": 7.525,
+            "median": 7.0
+          },
+          "batch_size_items": {
+            "2": 160
+          },
+          "phase_walls": [
+            {
+              "source": "D:\\Research-VeriFact\\.local_models\\142_relevance_order\\screen160\\evidence",
+              "received_N": 160,
+              "seconds": 416.1568765640259,
+              "kind": "controller_process_wall",
+              "whole_phase": true
+            }
+          ],
+          "rule": "seconds already divided by actual batch size; never sum batch_seconds per row",
+          "billing": "Process/worker intervals exclude preparation, upload, return and inter-stage wait; no CNY estimate or full-window substitution."
+        }
+      }
+    },
+    "old500": {
+      "source": "outputs/145_order_caption/order_caption_old500.json",
+      "costs": {
+        "order_caption145": {
+          "received_N": 500,
+          "valid_N": 500,
+          "invalid_N": 0,
+          "generation_seconds": {
+            "recorded_N": 500,
+            "missing_N": 0,
+            "sum": 1091.942025908269,
+            "mean": 2.183884051816538,
+            "median": 1.9453409553971142
+          },
+          "complete_generation_total": 1091.942025908269,
+          "input_tokens": {
+            "recorded_N": 500,
+            "missing_N": 0,
+            "sum": 4187923,
+            "mean": 8375.846,
+            "median": 8170.0
+          },
+          "output_tokens": {
+            "recorded_N": 500,
+            "missing_N": 0,
+            "sum": 3762,
+            "mean": 7.524,
+            "median": 7.0
+          },
+          "batch_size_items": {
+            "2": 498,
+            "1": 2
+          },
+          "phase_walls": [
+            {
+              "source": "D:\\Research-VeriFact\\.local_models\\145_order_caption\\screen160\\evidence",
+              "received_N": 160,
+              "seconds": 425.15216183662415,
+              "kind": "controller_process_wall",
+              "whole_phase": true
+            },
+            {
+              "source": "D:\\Research-VeriFact\\.local_models\\145_order_caption\\old500\\evidence",
+              "received_N": 340,
+              "seconds": 767.1678211688995,
+              "kind": "controller_process_wall",
+              "whole_phase": true
+            }
+          ],
+          "rule": "seconds already divided by actual batch size; never sum batch_seconds per row",
+          "billing": "Process/worker intervals exclude preparation, upload, return and inter-stage wait; no CNY estimate or full-window substitution."
+        },
+        "relevance_order142": {
+          "received_N": 500,
+          "valid_N": 500,
+          "invalid_N": 0,
+          "generation_seconds": {
+            "recorded_N": 500,
+            "missing_N": 0,
+            "sum": 1092.5932961292565,
+            "mean": 2.185186592258513,
+            "median": 1.9475855501368642
+          },
+          "complete_generation_total": 1092.5932961292565,
+          "input_tokens": {
+            "recorded_N": 500,
+            "missing_N": 0,
+            "sum": 4186423,
+            "mean": 8372.846,
+            "median": 8167.0
+          },
+          "output_tokens": {
+            "recorded_N": 500,
+            "missing_N": 0,
+            "sum": 3766,
+            "mean": 7.532,
+            "median": 7.0
+          },
+          "batch_size_items": {
+            "2": 498,
+            "1": 2
+          },
+          "phase_walls": [
+            {
+              "source": "D:\\Research-VeriFact\\.local_models\\142_relevance_order\\screen160\\evidence",
+              "received_N": 160,
+              "seconds": 416.1568765640259,
+              "kind": "controller_process_wall",
+              "whole_phase": true
+            },
+            {
+              "source": "D:\\Research-VeriFact\\.local_models\\142_relevance_order\\old500\\evidence",
+              "received_N": 340,
+              "seconds": 775.690247297287,
+              "kind": "controller_process_wall",
+              "whole_phase": true
+            }
+          ],
+          "rule": "seconds already divided by actual batch size; never sum batch_seconds per row",
+          "billing": "Process/worker intervals exclude preparation, upload, return and inter-stage wait; no CNY estimate or full-window substitution."
+        }
+      }
+    }
+  },
   "sources": [
     "outputs/132_midpoint_update/selection1817.json",
     "outputs/134_author_baselines/full1817.json",
@@ -2379,6 +2634,7 @@
     "outputs/142_relevance_order/relevance_order_full1817.json",
     "outputs/142_relevance_order/relevance_order_old500.json",
     "outputs/142_relevance_order/relevance_order_screen160.json",
+    "outputs/145_order_caption/order_caption_old500.json",
     "outputs/145_order_caption/order_caption_screen160.json"
   ]
 }

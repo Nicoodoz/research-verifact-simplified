@@ -141,7 +141,7 @@ def build(conclusion,as_of):
     for scope in SCOPES:
         docs[scope]={};missing_sources[scope]=[]
         for name,(folder,template) in SPECS.items():
-            if name=='order_caption145' and scope!='screen160':continue
+            if name=='order_caption145' and scope=='full1817':continue
             path=ROOT/'outputs'/folder/template.format(scope=scope)
             if path.exists():docs[scope][name]=(read(path),path);sources.add(path)
             else:missing_sources[scope].append(name)
@@ -187,6 +187,9 @@ def build(conclusion,as_of):
     for name,title in (('report.md','144总报告'),('capture_report.md','144同次捕获工程检查')):
         path=ROOT/'outputs/144_native_confidence'/name
         if path.exists():selective_links.append(dict(title=title,source=path.relative_to(ROOT).as_posix()))
+    caption_costs={scope:dict(source=path.relative_to(ROOT).as_posix(),costs=doc['inference_cost'])
+                   for scope in ('screen160','old500') if 'order_caption145' in docs[scope]
+                   for doc,path in [docs[scope]['order_caption145']]}
     report=dict(created_at=as_of.isoformat(timespec='seconds'),conclusion=conclusion,
         tables=mains,coverage=covs,scope_notes=notes,missing_analysis_sources=missing_sources,
         author_common_N=author_N,author_common=authors,author_raw_coverage=author_cov,
@@ -198,12 +201,14 @@ def build(conclusion,as_of):
         methodology='Only copy existing metric fields; never evaluate predictions, average MCC, merge matrices, or impute missing labels.',
         inference_cost_source=cost_path.relative_to(ROOT).as_posix() if inference_cost else None,
         selective_analysis_links=selective_links,
+        caption_comparison_costs=caption_costs,
         sources=[p.relative_to(ROOT).as_posix() for p in sorted(sources)])
     out=['# 当前窗口集中比较','',conclusion,'',
          '仅复用既有分析JSON。1817、500、160各自是固定同ID范围，禁止跨表直接相减；未完成/覆盖不同的候选不填0、不进入完整分母表。',
          '评价仍是原20名历史暴露的选型患者；100名患者都有研究暴露，不称全新holdout，也没有自动使用确认40人重新选型。当前训练维持原32人、内部验证8人的边界。','']
     if selective_links:
         out += ['选择性核验另见：'+'；'.join(link(ROOT/item['source'],item['title']) for item in selective_links)+'。这些自动子集结果不列入下方原生三分类表。','']
+        out += ['144同次捕获的12对工程检查仅支持本批取分可行性，不证明零开销、完整部署等价或安全保证。','']
     titles={'full1817':'完整1817','old500':'原500','screen160':'初筛160'}
     for scope,N in SCOPES.items():
         out+=['## '+titles[scope]+'：固定'+str(N)+'条','']+render_table(mains[scope],inference_cost.get('tables',{}).get(scope,{}))+['']
@@ -214,6 +219,22 @@ def build(conclusion,as_of):
         for cov in covs[scope]:
             out.append(f"|{cov['config']}|{cov['received_N']}|{cov['valid_N']}|{cov['missing_N']}|{cov['invalid_N']}|{link(ROOT/cov['source'])}|")
         out.append('')
+    if caption_costs:
+        out += ['## 145说明修正：仅160与500','',
+                '仅将142全局排序说明纠正为BM25排序，完整片段与顺序不变，每例输入增加3 tokens。没有完整1817结果，不能把子集收益外推。下表直接引用145对应范围的正式成本记录。','',
+                '|范围/配置|输入tokens总数|输出tokens总数|生成秒数|controller分段秒数（合计）|来源|',
+                '|---|---:|---:|---:|---|---|']
+        for scope,entry in caption_costs.items():
+            for name,caption_cost in entry['costs'].items():
+                walls=[w['seconds'] for w in caption_cost['phase_walls'] if w['kind']=='controller_process_wall' and w['seconds'] is not None]
+                wall_text=' + '.join(f'{value:.4f}' for value in walls) or '未记录'
+                if len(walls)!=len(caption_cost['phase_walls']):wall_text+='（部分记录）'
+                elif len(walls)>1:wall_text+=f' = {sum(walls):.4f}'
+                seconds=caption_cost['complete_generation_total']
+                seconds_text='未记录' if seconds is None else f'{seconds:.4f}'
+                inputs=caption_cost['input_tokens']['sum'];outputs=caption_cost['output_tokens']['sum']
+                out.append(f"|{scope}/{name}|{inputs if inputs is not None else '未记录'}|{outputs if outputs is not None else '未记录'}|{seconds_text}|{wall_text}|{link(ROOT/entry['source'])}|")
+        out += ['', 'controller各段包含当段生成与加载；分段相加不等于包含阶段间等待的总账本时间。生成、controller墙钟与费用账本不能再次相加。','']
     if author_N:
         out+=['## 原作者提示两9B：134固定共同'+str(author_N)+'条','',
               '这是独立共同子集，不与1817主表直接相减。作者提示两9B使用768输出上限。','']+render_table(authors)+['']
@@ -238,13 +259,13 @@ def build(conclusion,as_of):
         '|140|同138回放数据/顺序/48步，加固定0.5×KL；不使用新增理由数据。|',
         '|141|120权重，仅加固定S→NS两条完整标签演示；batch1/32768/greedy384，无新训练。|',
         '|142|120权重与136接口/批次，仅将全部原作者证据片段按固定008 BM25重排；不增删内容，无训练。|',
-        '|145|120权重，保留142全部片段及顺序，仅将全局caption纠正为BM25排序；同142批次，仅有screen160结果。|','',
+        '|145|120权重，保留142全部片段及顺序，仅将全局caption纠正为BM25排序；同142批次，已完成screen160与old500，未完成1817。|','',
         '127的67条理由（训练63、内部验证4）是数据准备成果，不能算作这67条已带来训练收益；138只用了更早36条，140不加理由，141只把其中两例的原标签用于in-context输入。133在16步安全暂停，未产生可列的评价成绩。','',
         '当前以标签性能为先，尚未证明同次生成reason与标签的语义自洽；不得给改变后的标签沿用旧reason。','',
         '各原分析JSON保留完整三类precision/recall/F1、混淆矩阵、false-S率和预测S假发现率、救回误伤、患者与作者变化及已有区间；上表来源链接即详细入口。不因这里只摘主列而改变原口径。','',
         '## 费用与状态','',
         f"从{start.isoformat(timespec='seconds')}起到{as_of.isoformat(timespec='seconds')}，按1.58元/小时估算GPU累计¥{cost:.3f}/20。所有准备、加载、编译、等待与回传均计入；这不是平台精确账单，也不因任务切换重置。API仍¥0/80。",
-        '不自动关机或释放。默认系统未因该汇总升级；这里的结论由调用者明确传入，脚本不替未完成结果编造结论。','']
+        '生成时间属于相应controller/进程墙钟的一部分；费用账本包含准备、等待和回传，三者不能再次相加。不自动关机或释放。默认系统未因该汇总升级；这里的结论由调用者明确传入，脚本不替未完成结果编造结论。','']
     if old_window_cost is not None:
         out += [f'上一16元窗口至本次新增授权前另估约¥{old_window_cost:.3f}，单独记录；旧余额未借用、API额度未重置。','']
     return report,'\n'.join(out)

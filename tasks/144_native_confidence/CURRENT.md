@@ -4,6 +4,6 @@
 
 同送审178条、覆盖90.20%时，136原生分数比107分歧规则多拦6次FS、少送审6个正确S；120在对应等工作量下两者汇总相同。完整阶段新增forward3231.59秒，worker3320.13秒、controller3324.19秒单列，均不冒充全程费用。
 
-24/24工程首答有效，12/12对的内容、token、标签均相同，capture前缀全部取得且匹配旧缓存。生成97.80秒，controller142.55秒；首次冷编译使平均耗时差不可当提速结论。中位差约−0.003秒，也不是零开销证明。本任务当前无待补分数；后续转向145原生输入对照，不自动升级或部署。
+24/24工程首答有效，12/12对的内容、token、标签均相同，capture前缀全部取得且匹配旧缓存。生成97.80秒，controller142.55秒；首次冷编译使平均耗时差不可当提速结论。中位差约−0.003秒，也不是零开销证明。本任务当前无待补分数；145原500也已完成，本轮不再启动收费任务，不自动升级或部署。固定送审标记的20患者配对bootstrap中，136相对107分歧的残留FS率差为−1.657个百分点，95%区间[−3.747, 0.000]，只反映当前选择下的患者组成不确定性，不证明稳定优势或CP保证。
 
 [总报告](../../outputs/144_native_confidence/report.md) · [全量详细指标](../../outputs/144_native_confidence/full1817_analysis.md) · [等工作量](../../outputs/144_native_confidence/full1817_equal_workload.md) · [工程实测](../../outputs/144_native_confidence/capture_report.md) · [工程检查方案](CAPTURE_CHECK.md) · [进度](../../outputs/144_native_confidence/progress.md)
