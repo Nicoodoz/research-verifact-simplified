@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-10-31T17:19:45+08:00",
-  "conclusion": "142完整1817较136正确少3、false-S多4，停止当前重排扩大。保留136的原生取舍，接续低成本原生分数与选择性核验研究；不把送审后的指标当三分类提升。",
+  "created_at": "2026-10-31T18:01:07+08:00",
+  "conclusion": "136保留完整1817质量与风险取舍；142全量未占优，145仅160说明修正多对2条。144原生分数在自然400有风险排序收益，正复用731个分数补完整1817；选择性自动集指标不等于原生分类提升。",
   "tables": {
     "full1817": {
       "claim_repeat136": {
@@ -600,6 +600,24 @@
         "source": "outputs/142_relevance_order/relevance_order_screen160.json",
         "metric_path": "primary.scores.candidate",
         "source_scope": "screen160"
+      },
+      "order_caption145": {
+        "config": "order_caption145",
+        "N": 160,
+        "MCC": 0.6259709815052158,
+        "PA": 0.8125,
+        "correct": 130,
+        "false_S": 15,
+        "non_S": 57,
+        "recall": {
+          "Supported": 0.9320388349514563,
+          "Not Supported": 0.4166666666666667,
+          "Not Addressed": 0.7272727272727273
+        },
+        "macro_F1": 0.7081563296516569,
+        "source": "outputs/145_order_caption/order_caption_screen160.json",
+        "metric_path": "primary.scores.candidate",
+        "source_scope": "screen160"
       }
     }
   },
@@ -806,6 +824,15 @@
         "missing_N": 0,
         "invalid_N": 0,
         "source": "outputs/142_relevance_order/relevance_order_screen160.json"
+      },
+      {
+        "config": "order_caption145",
+        "expected_N": 160,
+        "received_N": 160,
+        "valid_N": 160,
+        "missing_N": 0,
+        "invalid_N": 0,
+        "source": "outputs/145_order_caption/order_caption_screen160.json"
       }
     ]
   },
@@ -2281,9 +2308,9 @@
   },
   "budget": {
     "start": "2026-10-31T09:36:01+08:00",
-    "as_of": "2026-10-31T17:19:45.637937+08:00",
-    "elapsed_seconds": 27824.637937,
-    "estimated_GPU_CNY": 12.211924427905556,
+    "as_of": "2026-10-31T18:01:07.579748+08:00",
+    "elapsed_seconds": 30306.579748,
+    "estimated_GPU_CNY": 13.301221111622223,
     "GPU_cap_CNY": 20,
     "API_used_CNY": 0,
     "API_cap_CNY": 80,
@@ -2293,6 +2320,24 @@
   },
   "methodology": "Only copy existing metric fields; never evaluate predictions, average MCC, merge matrices, or impute missing labels.",
   "inference_cost_source": "outputs/141_two_demos/inference_cost.json",
+  "selective_analysis_links": [
+    {
+      "title": "144 screen160 选择性结果",
+      "source": "outputs/144_native_confidence/screen160_analysis.md"
+    },
+    {
+      "title": "144 screen160 固定等工作量比较",
+      "source": "outputs/144_native_confidence/screen160_equal_workload.md"
+    },
+    {
+      "title": "144 old500 选择性结果",
+      "source": "outputs/144_native_confidence/old500_analysis.md"
+    },
+    {
+      "title": "144 old500 固定等工作量比较",
+      "source": "outputs/144_native_confidence/old500_equal_workload.md"
+    }
+  ],
   "sources": [
     "outputs/132_midpoint_update/selection1817.json",
     "outputs/134_author_baselines/full1817.json",
@@ -2317,6 +2362,7 @@
     "outputs/141_two_demos/two_demos_screen160.json",
     "outputs/142_relevance_order/relevance_order_full1817.json",
     "outputs/142_relevance_order/relevance_order_old500.json",
-    "outputs/142_relevance_order/relevance_order_screen160.json"
+    "outputs/142_relevance_order/relevance_order_screen160.json",
+    "outputs/145_order_caption/order_caption_screen160.json"
   ]
 }

@@ -1,0 +1,91 @@
+{
+  "status": "CPU_PREPARED_NOT_RUN",
+  "scope": "full1817",
+  "variants": [
+    "native120",
+    "claim_repeat136"
+  ],
+  "selected_IDs": 1508,
+  "forwards": 2953,
+  "source_adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+  "per_variant": {
+    "native120": {
+      "N": 1502,
+      "tokens": 12415657,
+      "min": 4668,
+      "max": 13399
+    },
+    "claim_repeat136": {
+      "N": 1451,
+      "tokens": 12062797,
+      "min": 4713,
+      "max": 13447
+    }
+  },
+  "historical_three_path_seconds_per_prompt_token": 0.0005114460309561217,
+  "optimistic_one_forward_rate": 0.00017048201031870725,
+  "estimate_note": "Linear113 proxy only; same architecture, different weights/kernel path. Loading, compilation and return excluded. Measure actual retained pilot first.",
+  "no_tokenizer_model_GPU_API": true,
+  "no_GT_or_greedy_in_score_inputs": true,
+  "evaluation_N": 1817,
+  "score_N_by_variant": {
+    "native120": 1502,
+    "claim_repeat136": 1451
+  },
+  "reusable_score_N": 731,
+  "new_forwards": 2222,
+  "pilot_overlap_by_variant": {
+    "native120": [
+      "11ae4e7f-5d1a-39f9-7312-6634e0d8e021",
+      "34c523d0-f796-317d-ad05-0148a31d0fa8",
+      "4c362484-8ba1-4117-2130-6ddf23f93dc9",
+      "5f95ab51-61cc-327d-6aa0-30a7961c4247",
+      "7467a605-535a-d13b-a81a-3fe34ba14586",
+      "b37b45ab-2421-6915-cf2b-822b26be8115",
+      "b5e2710e-e0cf-9e1e-3982-dfb0815f5099",
+      "ba382cdc-619e-2be4-9b88-6294a0588dc1",
+      "d288320d-7329-f5d7-e41f-4c33030aee21"
+    ],
+    "claim_repeat136": [
+      "11ae4e7f-5d1a-39f9-7312-6634e0d8e021",
+      "34c523d0-f796-317d-ad05-0148a31d0fa8",
+      "4c362484-8ba1-4117-2130-6ddf23f93dc9",
+      "5f95ab51-61cc-327d-6aa0-30a7961c4247",
+      "7467a605-535a-d13b-a81a-3fe34ba14586",
+      "b37b45ab-2421-6915-cf2b-822b26be8115",
+      "b5e2710e-e0cf-9e1e-3982-dfb0815f5099",
+      "ba382cdc-619e-2be4-9b88-6294a0588dc1",
+      "d288320d-7329-f5d7-e41f-4c33030aee21"
+    ]
+  },
+  "compute_limit_seconds": 4000,
+  "save_reserve_seconds": 300,
+  "budget_status": "FROZEN",
+  "scope_prompt_tokens": 24478454,
+  "new_forward_prompt_tokens": 18402335,
+  "reuse_by_variant": {
+    "native120": {
+      "reused": 370,
+      "new_forwards": 1132,
+      "reused_prompt_tokens": 3067508,
+      "new_forward_prompt_tokens": 9348149
+    },
+    "claim_repeat136": {
+      "reused": 361,
+      "new_forwards": 1090,
+      "reused_prompt_tokens": 3008611,
+      "new_forward_prompt_tokens": 9054186
+    }
+  },
+  "reused_prompt_tokens": 6076119,
+  "source_cache_IDs": 1817,
+  "scope_compute_seconds_linear_proxy": 4173.136047414,
+  "source_session_start_epoch": 1793410561.0,
+  "source_session_start_local": "2026-10-31T09:36:01+08:00",
+  "source_session_SHA": "daaad1110a06b63d4ad1ddec0e47a9b743411b19f5b63c2cf330309254aed7c8",
+  "actual_old500_forward_rate": 0.0001840637217920319,
+  "estimated_new_forward_seconds": 3387.2022697637713,
+  "estimated_load_and_encoding_seconds": 136.60973706902385,
+  "estimated_compute_seconds": 3523.8120068327953,
+  "estimate_basis": "Successful old500 observed token throughput; extra compilation/long-input cost uncertain; fixed4000+300 cap"
+}

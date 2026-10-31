@@ -20,6 +20,7 @@ def phases():
         'kl_anchor140':[(P/'140_kl_anchor/evidence','predictions',16384,True)]+[(P/'140_kl_anchor/extension'/s/'evidence','kl_anchor',16384,False) for s in ('old500','full1817')],
         'two_demos141':[(P/'141_two_demos'/s/'evidence','two_demos',32768,False) for s in SCOPES],
         'relevance_order142':[(P/'142_relevance_order'/s/'evidence','relevance_order',16384,False) for s in SCOPES],
+        'order_caption145':[(P/'145_order_caption/screen160/evidence','order_caption',16384,False)],
     }
 
 
@@ -194,6 +195,7 @@ def main():
     tables={s:{} for s in SCOPES};excluded={};stopped=[]
     for name,data in source.items():
         for scope in SCOPES:
+            if name=='order_caption145' and scope!='screen160':continue
             result=summarize(targets[scope],data)
             if scope=='full1817' and result['received_N']!=1817:
                 excluded[name]=dict(received_N=result['received_N'],missing_N=result['missing_N'])
@@ -228,7 +230,8 @@ def main():
             '140_screen160':'worker140 has no seconds/output_tokens; missing retained. Batch2 from frozen loop.',
             '140_extensions':'worker_eval140: seconds=elapsed/len(identifiers)',
             '141':'worker141: seconds=batch_seconds=elapsed; batch1',
-            '142':'worker142: seconds=elapsed/actual batch size; original136 batch pairing'},
+            '142':'worker142: seconds=elapsed/actual batch size; original136 batch pairing',
+            '145':'worker145: seconds=elapsed/actual batch size; original142 batch pairing; screen160 only; caption adds3 input tokens per item'},
         historical_timing_notes=HISTORICAL_TIMING_NOTES,
         common_settings='BF16 native9B; greedy; max_new_tokens384 except author134 cap768; no thinking. Batch/context differences are explicit, not treated as controlled speed tests.',
         call_count_rule='Received_N counts actual proposition-level Judge decisions. Local batched generation, zero API requests; batch sizes are separate from decision counts.',

@@ -7,7 +7,7 @@ ROOT=next(p for p in Path(__file__).resolve().parents if (p/'docs/PROJECT_STATUS
 LABELS=('Supported','Not Supported','Not Addressed')
 SCOPES={'full1817':1817,'old500':500,'screen160':160}
 ORDER=('paper_r1','author_base9b','author_lora9b','base104_9b','label_only107','full_pool120','midpoint132',
-       'claim_repeat136','extra_steps137','rationale_tasks138','label_replay138','full_repeat139','kl_anchor140','two_demos141','relevance_order142')
+       'claim_repeat136','extra_steps137','rationale_tasks138','label_replay138','full_repeat139','kl_anchor140','two_demos141','relevance_order142','order_caption145')
 SPECS={
     'claim_repeat136':('136_claim_repeat_transfer','{scope}.json'),
     'extra_steps137':('137_extra_steps','{scope}.json'),
@@ -17,12 +17,14 @@ SPECS={
     'kl_anchor140':('140_kl_anchor','kl_anchor_{scope}.json'),
     'two_demos141':('141_two_demos','two_demos_{scope}.json'),
     'relevance_order142':('142_relevance_order','relevance_order_{scope}.json'),
+    'order_caption145':('145_order_caption','order_caption_{scope}.json'),
 }
 ALIASES={'candidate':None,'claim_repeat':'claim_repeat136','claim_repeat136':'claim_repeat136',
          'extra_steps':'extra_steps137','extra_steps137':'extra_steps137',
          'rationale_tasks':'rationale_tasks138','label_replay':'label_replay138',
          'kl_anchor':'kl_anchor140','two_demos':'two_demos141',
          'relevance_order':'relevance_order142',
+         'order_caption':'order_caption145',
          'full_repeat':'full_repeat139',
          '107_label_only':'label_only107','120_step369':'full_pool120'}
 
@@ -139,6 +141,7 @@ def build(conclusion,as_of):
     for scope in SCOPES:
         docs[scope]={};missing_sources[scope]=[]
         for name,(folder,template) in SPECS.items():
+            if name=='order_caption145' and scope!='screen160':continue
             path=ROOT/'outputs'/folder/template.format(scope=scope)
             if path.exists():docs[scope][name]=(read(path),path);sources.add(path)
             else:missing_sources[scope].append(name)
@@ -176,6 +179,11 @@ def build(conclusion,as_of):
     session_path=ROOT/'.local_models/140_kl_anchor/bundle/data/session.json'
     old_window_cost=read(session_path).get('prior_GPU_to_new_authorization_CNY') if session_path.exists() else None
     wall=max(0,(as_of-start).total_seconds());cost=wall*1.58/3600
+    selective_links=[]
+    for scope in ('screen160','old500','full1817'):
+        for suffix,title in (('analysis','选择性结果'),('equal_workload','固定等工作量比较')):
+            path=ROOT/'outputs/144_native_confidence'/f'{scope}_{suffix}.md'
+            if path.exists():selective_links.append(dict(title=f'144 {scope} {title}',source=path.relative_to(ROOT).as_posix()))
     report=dict(created_at=as_of.isoformat(timespec='seconds'),conclusion=conclusion,
         tables=mains,coverage=covs,scope_notes=notes,missing_analysis_sources=missing_sources,
         author_common_N=author_N,author_common=authors,author_raw_coverage=author_cov,
@@ -186,10 +194,13 @@ def build(conclusion,as_of):
                     prior16_window_estimate_CNY=old_window_cost),
         methodology='Only copy existing metric fields; never evaluate predictions, average MCC, merge matrices, or impute missing labels.',
         inference_cost_source=cost_path.relative_to(ROOT).as_posix() if inference_cost else None,
+        selective_analysis_links=selective_links,
         sources=[p.relative_to(ROOT).as_posix() for p in sorted(sources)])
     out=['# 当前窗口集中比较','',conclusion,'',
          '仅复用既有分析JSON。1817、500、160各自是固定同ID范围，禁止跨表直接相减；未完成/覆盖不同的候选不填0、不进入完整分母表。',
          '评价仍是原20名历史暴露的选型患者；100名患者都有研究暴露，不称全新holdout，也没有自动使用确认40人重新选型。当前训练维持原32人、内部验证8人的边界。','']
+    if selective_links:
+        out += ['选择性核验另见：'+'；'.join(link(ROOT/item['source'],item['title']) for item in selective_links)+'。这些自动子集结果不列入下方原生三分类表。','']
     titles={'full1817':'完整1817','old500':'原500','screen160':'初筛160'}
     for scope,N in SCOPES.items():
         out+=['## '+titles[scope]+'：固定'+str(N)+'条','']+render_table(mains[scope],inference_cost.get('tables',{}).get(scope,{}))+['']
@@ -223,7 +234,8 @@ def build(conclusion,as_of):
         '|139|完整用户输入重复，120权重、batch1/32768；仅列其实际160/500，不外推1817。|',
         '|140|同138回放数据/顺序/48步，加固定0.5×KL；不使用新增理由数据。|',
         '|141|120权重，仅加固定S→NS两条完整标签演示；batch1/32768/greedy384，无新训练。|',
-        '|142|120权重与136接口/批次，仅将全部原作者证据片段按固定008 BM25重排；不增删内容，无训练。|','',
+        '|142|120权重与136接口/批次，仅将全部原作者证据片段按固定008 BM25重排；不增删内容，无训练。|',
+        '|145|120权重，保留142全部片段及顺序，仅将全局caption纠正为BM25排序；同142批次，仅有screen160结果。|','',
         '127的67条理由（训练63、内部验证4）是数据准备成果，不能算作这67条已带来训练收益；138只用了更早36条，140不加理由，141只把其中两例的原标签用于in-context输入。133在16步安全暂停，未产生可列的评价成绩。','',
         '当前以标签性能为先，尚未证明同次生成reason与标签的语义自洽；不得给改变后的标签沿用旧reason。','',
         '各原分析JSON保留完整三类precision/recall/F1、混淆矩阵、false-S率和预测S假发现率、救回误伤、患者与作者变化及已有区间；上表来源链接即详细入口。不因这里只摘主列而改变原口径。','',

@@ -1,0 +1,21 @@
+{
+  "status": "PASS_CPU_REUSE_NO_GPU",
+  "evaluation_N": 1817,
+  "total_score_N": 2953,
+  "reused_N": 731,
+  "new_forward_N": 2222,
+  "total_prompt_tokens": 24478454,
+  "reused_prompt_tokens": 6076119,
+  "new_prompt_tokens": 18402335,
+  "reused_bytes_equal_sources": true,
+  "source_code_SHA_valid": true,
+  "POSIX_relative_paths_valid": true,
+  "original_session_bytes_preserved": true,
+  "compute_seconds": 4000,
+  "save_seconds": 300,
+  "analyzer_reused_valid_N": 731,
+  "analyzer_missing_N": 2222,
+  "analyzer_no_effect_metrics": true,
+  "worker_is_fixed_path_version": true,
+  "old_assets_not_modified": true
+}

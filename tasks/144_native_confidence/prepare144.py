@@ -88,11 +88,12 @@ def source_data(include_reordered=True):
 def native_screen_selection(scope='screen160'):
     """Select original native S only; never consult GT for score inclusion."""
     original = read(ROOT / '.local_models/134_author_baselines/job.json')
-    parts = ('screen160',) if scope == 'screen160' else ('screen160', 'old500')
+    parts = dict(screen160=('screen160',), old500=('screen160','old500'),
+                 full1817=('screen160','old500','full1817'))[scope]
     evaluation = [i for phase in original['phases'][:len(parts)] for i in phase['ids']]
     frozen136 = [read(ROOT / '.local_models/136_claim_repeat_transfer' / ('claim_repeat_'+part) / 'bundle/data/job.json') for part in parts]
     prior136 = [i for job in frozen136 for i in job['phases'][0]['ids']]
-    expected = 160 if scope == 'screen160' else 500
+    expected = dict(screen160=160,old500=500,full1817=1817)[scope]
     if len(evaluation) != expected or len(set(prior136)) != expected or set(evaluation) != set(prior136):
         raise ValueError('134/136 original '+scope+' IDs differ')
     specs = {
@@ -150,8 +151,8 @@ def reusable_scores(folders, records):
 
 
 def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seconds=None, save_seconds=None):
-    if scope not in ('pilot', 'screen160', 'old500'):
-        raise ValueError('Only pilot, original screen160 or original old500 is authorized')
+    if scope not in ('pilot', 'screen160', 'old500', 'full1817'):
+        raise ValueError('Unknown fixed input scope')
     data, settings = source_data(scope=='pilot')
     variants = VARIANTS if scope == 'pilot' else VARIANTS[:2]
     ids = sorted(data['native120'], key=lambda i: (max(data[v][i]['expected_prompt_tokens'] for v in variants), i))
@@ -265,7 +266,7 @@ def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seco
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--scope', choices=('pilot','screen160','old500'), default='pilot')
+    parser.add_argument('--scope', choices=('pilot','screen160','old500','full1817'), default='pilot')
     parser.add_argument('--out', type=Path)
     parser.add_argument('--check-only', action='store_true')
     parser.add_argument('--reuse-results', type=Path, nargs='*', default=[])
