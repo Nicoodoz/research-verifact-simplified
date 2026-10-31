@@ -1,0 +1,24 @@
+{
+  "example_ids": [
+    "93cd2c13-0d5a-b617-eb23-a479e6549d9b",
+    "e96580ee-ad16-3d5a-4b29-3739cd1b46bc",
+    "eec5864a-fa13-48a6-37db-ebfbc0fb3aa8"
+  ],
+  "labels": [
+    "Supported",
+    "Not Supported",
+    "Not Addressed"
+  ],
+  "original149_pair_unchanged": true,
+  "added_example_id": "eec5864a-fa13-48a6-37db-ebfbc0fb3aa8",
+  "added_example_original_GT": "Not Addressed",
+  "added_source_units": [
+    33,
+    78
+  ],
+  "full_reference_characters": 21649,
+  "excerpt_reference_characters": 741,
+  "in_actual120_training": true,
+  "target_reference_changed": false,
+  "evaluation_patient_used_as_demo": false
+}

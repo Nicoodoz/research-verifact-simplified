@@ -38,7 +38,7 @@ def send(messages,folder,*,max_tokens=2048,task='147_fixed_reason',json_mode=Tru
     attempt=folder.relative_to(ROOT).as_posix()
     with locked():
         session=json.loads((P/'session.json').read_text())
-        if time.time()+30>=session['end_epoch']:raise TimeoutError('Night API window ended')
+        if time.time()+150>=session['end_epoch']:raise TimeoutError('Night API completion reserve reached')
         used=sum(r['reservation_CNY'] for r in read_ledger() if r.get('event')=='reserved')
         if used+reservation>80:raise RuntimeError('Whole night API cap80 would be exceeded')
         append(dict(event='reserved',attempt=attempt,task=task,reservation_CNY=reservation,

@@ -1,4 +1,4 @@
-# 当前Judge配置（2026-10-26）
+# 当前Judge配置（2026-10-31维护）
 
 ## 已启用的默认方式
 
@@ -22,6 +22,7 @@ load_config只读取指定文件，环境变量不覆盖它；运行中的客户
 | 2026-10-25旧端点，三模型 | 403 AccessDenied.Unpurchased，保留历史失败记录 |
 | 2026-10-26新端点，V4非思考极简请求 | HTTP200，回答OK.，输入9／输出2 tokens，估算¥0.000045 |
 | 2026-10-26新端点，V4 thinking-high合成库存JSON请求 | HTTP200，输入6571／输出288 tokens（109推理tokens），返回verdict、checks和三分数；估算¥0.022305 |
+| 2026-10-31 21:14，默认V4 thinking-high极简请求 | HTTP200，返回OK，输入88／输出8 tokens（6推理tokens），请求耗时2.51秒，按忙时原价估算¥0.000336；0重试、未发送临床数据 |
 
 成功调用均无重试、未发送患者数据。价格按输入3／输出9元每百万token保守估算，不是已核账单；连接检查累计保留¥0.159494未知／未对账预留，启用主配置不清零。此次默认切换只做离线检查，未追加成功调用。
 
@@ -36,3 +37,5 @@ load_config只读取指定文件，环境变量不覆盖它；运行中的客户
 AliyunClient.send是单次传输层，不自动重试。旧CLI/call_once默认40元是历史代码保护值，新任务显式传通常20元的有效上限。不能仅换Key就把旧任务的累计费用归零。
 
 [官方Key与端点说明](https://platform.qianwenai.com/docs/api-reference/preparation/api-key) · [无密钥模板](config.env.example)
+
+2026-10-31该次连接测试的私有回执在.local_models/api_connection/aliyun_20261031T131437828001Z/，保留¥0.05未对账预留，连接测试累计预留¥0.209494；不无据清除原¥0.159494。随后新授权的夜间研究API单独按PROJECT_STATUS专项累计，实际请求在.local_models/night_20261031/api_ledger.jsonl登记；连接测试旧账不冒充新研究零成本。
