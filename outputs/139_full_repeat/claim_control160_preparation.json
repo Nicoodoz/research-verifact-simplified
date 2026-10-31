@@ -1,0 +1,21 @@
+{
+  "task": 139,
+  "status": "CPU_READY_NOT_RUN",
+  "arm": "claim_control",
+  "N": 160,
+  "input": "Exact136 screen160 claim_repeat cache",
+  "new_tokenization": false,
+  "max_input_tokens": 12639,
+  "batch_size": 1,
+  "capacity": 32768,
+  "compute_limit_seconds": 1800,
+  "save_reserve_seconds": 900,
+  "total_stage_limit_seconds": 2700,
+  "source_worker_sha256": "64e0e26b21515f37d4d9e6dd307e9b244499ff72a33155f21c74455530a9dc21",
+  "source_adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+  "archive_sha256": "f7f9597f9269e87739ad68f1fc257d45fad3a29a9f79ceaf6a235979dbf0f485",
+  "archive_bytes": 905194,
+  "static_check": "PASS",
+  "new_GPU": false,
+  "new_API": 0
+}
