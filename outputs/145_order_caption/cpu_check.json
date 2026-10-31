@@ -1,0 +1,14 @@
+{
+  "status": "PASS_CPU_ONLY",
+  "N": 160,
+  "actual_full_prompt_token_delta_each": 3,
+  "max_input_tokens": 12642,
+  "max_total_with_generation": 13026,
+  "source142_ID_order_batches_generation_identical": true,
+  "noncaption_reference_and_claim_exact": true,
+  "source142_prompt_SHA_checked": true,
+  "caption_edit_SHA_checked": true,
+  "worker_start_caption_import_compile": true,
+  "no_GPU_API": true,
+  "old142_files_unmodified": true
+}

@@ -85,18 +85,21 @@ def source_data(include_reordered=True):
     return result, settings
 
 
-def native_screen_selection():
+def native_screen_selection(scope='screen160'):
     """Select original native S only; never consult GT for score inclusion."""
     original = read(ROOT / '.local_models/134_author_baselines/job.json')
-    evaluation = original['phases'][0]['ids']
-    frozen136 = read(ROOT / '.local_models/136_claim_repeat_transfer/claim_repeat_screen160/bundle/data/job.json')
-    if len(evaluation) != 160 or set(evaluation) != set(frozen136['phases'][0]['ids']):
-        raise ValueError('134/136 original screen160 IDs differ')
+    parts = ('screen160',) if scope == 'screen160' else ('screen160', 'old500')
+    evaluation = [i for phase in original['phases'][:len(parts)] for i in phase['ids']]
+    frozen136 = [read(ROOT / '.local_models/136_claim_repeat_transfer' / ('claim_repeat_'+part) / 'bundle/data/job.json') for part in parts]
+    prior136 = [i for job in frozen136 for i in job['phases'][0]['ids']]
+    expected = 160 if scope == 'screen160' else 500
+    if len(evaluation) != expected or len(set(prior136)) != expected or set(evaluation) != set(prior136):
+        raise ValueError('134/136 original '+scope+' IDs differ')
     specs = {
         'native120': dict(path='outputs/120_full_pool_sft/final369_1817_predictions_sanitized.jsonl', field='verdict', validity_field='valid'),
         'claim_repeat136': dict(path='outputs/136_claim_repeat_transfer/full1817_predictions_sanitized.jsonl', field='claim_repeat'),
     }
-    status136 = indexed(ROOT / 'outputs/136_claim_repeat_transfer/screen160_receipt_status_sanitized.jsonl')
+    status136 = indexed(ROOT / 'outputs/136_claim_repeat_transfer' / (scope+'_receipt_status_sanitized.jsonl'))
     selected = {}
     for variant, spec in specs.items():
         source = ROOT / spec['path']
@@ -109,7 +112,7 @@ def native_screen_selection():
                 if row.get('valid') is not True or row['source_adapter_sha256'] != SOURCE_SHA:
                     raise ValueError('Invalid native120 identity')
             elif not status136[i]['valid'] or status136[i]['verdict'] != row[spec['field']]:
-                raise ValueError('136 source and original160 receipt differ')
+                raise ValueError('136 source and original '+scope+' receipt differ')
         selected[variant] = sorted(i for i in evaluation if pred[i][spec['field']] == 'Supported')
         spec['sha256'] = hashlib.sha256(source.read_bytes()).hexdigest()
     return evaluation, selected, specs
@@ -122,6 +125,8 @@ def reusable_scores(folders, records):
         if not folder.exists():
             raise FileNotFoundError('Explicit reuse source is missing: ' + str(folder))
         manifests = {(r['variant'], r['id']): r for r in rows(folder / 'encoded_manifest.jsonl')}
+        cost_files = [dict(path=str((folder/name).resolve()),sha256=hashlib.sha256((folder/name).read_bytes()).hexdigest())
+                      for name in ('attempts.jsonl','runtime.json','complete.json','run_exit.json','failure.json') if (folder/name).exists()]
         for key, target in expected.items():
             path = folder / key[0] / (key[1] + '.json')
             if not path.exists():
@@ -139,14 +144,14 @@ def reusable_scores(folders, records):
                 raise ValueError('Unverified reusable score: ' + str(path))
             if key in found and found[key]['record'] != record:
                 raise ValueError('Conflicting first score in explicit reuse sources')
-            found[key] = dict(record=record, encoded=encoded, path=path,
+            found[key] = dict(record=record, encoded=encoded, path=path,source_results_root=str(folder.resolve()),cost_files=cost_files,
                               sha256=hashlib.sha256(path.read_bytes()).hexdigest())
     return found
 
 
 def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seconds=None, save_seconds=None):
-    if scope not in ('pilot', 'screen160'):
-        raise ValueError('Only pilot or the original screen160 is authorized')
+    if scope not in ('pilot', 'screen160', 'old500'):
+        raise ValueError('Only pilot, original screen160 or original old500 is authorized')
     data, settings = source_data(scope=='pilot')
     variants = VARIANTS if scope == 'pilot' else VARIANTS[:2]
     ids = sorted(data['native120'], key=lambda i: (max(data[v][i]['expected_prompt_tokens'] for v in variants), i))
@@ -160,7 +165,7 @@ def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seco
         compute_seconds = 600 if compute_seconds is None else compute_seconds
         save_seconds = 180 if save_seconds is None else save_seconds
     else:
-        evaluation, selected, prediction_sources = native_screen_selection()
+        evaluation, selected, prediction_sources = native_screen_selection(scope)
     records = [data[v][i] for v in variants for i in selected[v]]
     records.sort(key=lambda r: (-r['expected_prompt_tokens'], r['id'], r['variant']))
     reusable = reusable_scores(reuse_results, records)
@@ -189,6 +194,11 @@ def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seco
                    budget_status='UNFROZEN_DO_NOT_START' if compute_seconds is None or save_seconds is None else 'FROZEN',
                    scope_prompt_tokens=sum(r['expected_prompt_tokens'] for r in records),
                    new_forward_prompt_tokens=sum(r['expected_prompt_tokens'] for r in records if (r['variant'],r['id']) not in reusable))
+    summary['reuse_by_variant'] = {v: dict(reused=sum(k[0]==v for k in reusable),
+        new_forwards=len(selected[v])-sum(k[0]==v for k in reusable),
+        reused_prompt_tokens=sum(data[v][i]['expected_prompt_tokens'] for variant,i in reusable if variant==v),
+        new_forward_prompt_tokens=sum(data[v][i]['expected_prompt_tokens'] for i in selected[v] if (v,i) not in reusable)) for v in variants}
+    summary['reused_prompt_tokens'] = summary['scope_prompt_tokens']-summary['new_forward_prompt_tokens']
     if scope != 'pilot':
         for field in ('full_IDs', 'pilot_IDs', 'pilot_length_ranks', 'pilot_prompt_tokens', 'full_prompt_tokens',
                       'pilot_compute_seconds_linear_proxy', 'full_compute_seconds_linear_proxy'):
@@ -211,7 +221,7 @@ def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seco
     job = dict(name='native_branch_scores', scope=scope, model_dir=settings['model_dir'],
                adapter=settings['adapter'], adapter_bytes=settings['adapter_bytes'], adapter_sha256=SOURCE_SHA,
                max_seq_length=16384, variants=list(variants), expected_N=len(records),
-               evaluation_scope='full1817' if scope=='pilot' else 'screen160', evaluation_ids=evaluation,
+               evaluation_scope='full1817' if scope=='pilot' else scope, evaluation_ids=evaluation,
                score_ids_by_variant=selected, evaluation_metrics_allowed=scope!='pilot',
                prefix='{"verdict":"', prefix_token_ids=[4754, 415, 8217, 3147], branch_ids={'S': 33490, 'Not': 2536},
                input='data/inputs.jsonl', first_results_reused=True, no_training=True, no_generation=True,
@@ -224,6 +234,8 @@ def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seco
     job['reuse_results'] = 'reuse' if reusable else None
     job['new_forwards_expected'] = len(records)-len(reusable)
     job['budget_status'] = summary['budget_status']
+    job['reuse_source_artifacts'] = list({item['source_results_root']:dict(results_root=item['source_results_root'],
+        cost_files=item['cost_files'],cost_attribution='historical, not new forwards') for item in reusable.values()}.values())
     if reusable:
         provenance = []
         encoded = []
@@ -233,7 +245,8 @@ def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seco
             shutil.copy2(item['path'], target)
             encoded.append(item['encoded'])
             provenance.append(dict(id=i, variant=variant, source_path=str(item['path'].resolve()),
-                source_sha256=item['sha256'], copied_path=str(target.relative_to(bundle)), new_forward=False))
+                source_sha256=item['sha256'], copied_path=str(target.relative_to(bundle)),
+                source_results_root=item['source_results_root'],new_forward=False))
         (bundle/'reuse/encoded_manifest.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in encoded),encoding='utf-8',newline='\n')
         put(bundle / 'reuse/provenance.json', provenance)
     put(bundle / 'data/job.json', job)
@@ -252,14 +265,14 @@ def prepare(out, scope='pilot', check_only=False, reuse_results=(), compute_seco
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--scope', choices=('pilot','screen160'), default='pilot')
+    parser.add_argument('--scope', choices=('pilot','screen160','old500'), default='pilot')
     parser.add_argument('--out', type=Path)
     parser.add_argument('--check-only', action='store_true')
     parser.add_argument('--reuse-results', type=Path, nargs='*', default=[])
     parser.add_argument('--compute-seconds', type=int)
     parser.add_argument('--save-reserve-seconds', type=int)
     args = parser.parse_args()
-    target = args.out or (HERE/'pilot' if args.scope=='pilot' else ROOT/'.local_models/144_native_confidence/screen160')
+    target = args.out or (HERE/'pilot' if args.scope=='pilot' else ROOT/'.local_models/144_native_confidence'/args.scope)
     print(json.dumps(prepare(target, args.scope, args.check_only, args.reuse_results,
                              args.compute_seconds, args.save_reserve_seconds), ensure_ascii=False))
 

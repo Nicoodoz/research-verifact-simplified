@@ -1,0 +1,30 @@
+{
+  "task": 145,
+  "status": "CPU_PREPARED_NOT_RUN",
+  "scope": "screen160",
+  "N": 160,
+  "source142_IDs_and_batches_unchanged": true,
+  "only_caption_changed": true,
+  "original_GT_untouched": true,
+  "old_caption": "Ordered by Time (Earliest to Latest):",
+  "new_caption": "Ordered by BM25 Relevance (Highest to Lowest):",
+  "caption_offset": 123,
+  "token_delta": {
+    "min": 3,
+    "median": 3.0,
+    "max": 3,
+    "sum": 480
+  },
+  "max_input_tokens": 12642,
+  "context_tokens": 16384,
+  "max_new_tokens": 384,
+  "compute_limit_seconds": 750,
+  "save_reserve_seconds": 180,
+  "source_adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+  "bundle_sha256": "5a8f832f51798034aa6b650af4a3a53b5bf370f542e677bbbf7f8cd32fc7f4a7",
+  "bundle_bytes": 946065,
+  "no_GPU": true,
+  "no_API": true,
+  "no_new_algorithm": true,
+  "created_epoch": 1793438975.647879
+}

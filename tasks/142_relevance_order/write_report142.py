@@ -73,6 +73,8 @@ def render(value,decision):
     lines += ['',f"冻结筛选判定：{value['screening']}。达到门槛仍须结合类别、自然/压力与成本决定，不自动扩大。",'',
         '训练63的已有AI辅助引用位置仅提供可行性依据，不是医生gold evidence，也不证明分类增益。047已做过C48前2块词重叠前置，'
         '本项不声称首次排序或算法原创。患者有历史暴露，bootstrap不覆盖既往选型、重训或新医院泛化。', '',
+        '后续输入检查发现：原全局前导仍称“按时间从早到晚排序”，但本项已按BM25改变顺序。这是实际输入中的混杂项，'
+        '尚不能认定它解释了成绩变化。当前负向取舍仍照实保留；仅纠正排序说明的对照见[145方案](../../tasks/145_order_caption/PROTOCOL.md)，不得据此抹去本结果。', '',
         f'[完整统计及各子集P/R/F1、矩阵](relevance_order_{scope}.json) · [固定方案](../../tasks/142_relevance_order/PROTOCOL.md)']
     return '\n'.join(lines).rstrip()+'\n'
 
