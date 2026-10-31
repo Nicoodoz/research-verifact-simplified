@@ -1,0 +1,91 @@
+{
+  "N_candidates": 6,
+  "decisions": [
+    {
+      "id": "9a4a5e5d-0595-5ae9-d2fb-ca3bb643de35",
+      "GT": "Supported",
+      "GT_changed": false,
+      "AI_suitable": false,
+      "local_retained": false,
+      "local_decision": "AI_unsuitable_for_clear_demo",
+      "material_omitted_units": []
+    },
+    {
+      "id": "3e9a0ee2-a8a7-8f4f-b785-5fbc0af8a358",
+      "GT": "Supported",
+      "GT_changed": false,
+      "AI_suitable": false,
+      "local_retained": false,
+      "local_decision": "AI_unsuitable_for_clear_demo",
+      "material_omitted_units": []
+    },
+    {
+      "id": "1e1a53f7-c1ea-1f6c-750d-481516331374",
+      "GT": "Not Supported",
+      "GT_changed": false,
+      "AI_suitable": false,
+      "local_retained": false,
+      "local_decision": "AI_unsuitable_for_clear_demo",
+      "material_omitted_units": []
+    },
+    {
+      "id": "f151201f-1899-5871-319d-bde96fe83e30",
+      "GT": "Not Supported",
+      "GT_changed": false,
+      "AI_suitable": true,
+      "local_retained": false,
+      "local_decision": "AI_selected_units_omit_material_same_reference_units",
+      "material_omitted_units": [
+        25,
+        26,
+        31,
+        32,
+        33,
+        49,
+        53
+      ]
+    },
+    {
+      "id": "8a1b103a-a336-0f0b-fd7e-27a9e485d527",
+      "GT": "Not Addressed",
+      "GT_changed": false,
+      "AI_suitable": true,
+      "local_retained": true,
+      "local_decision": "retained_NA_temporal_example_with_added_complete_anchor_unit37",
+      "material_omitted_units": []
+    },
+    {
+      "id": "93fcdf3a-ddee-2e7a-74fe-886ee6c0aa9a",
+      "GT": "Not Addressed",
+      "GT_changed": false,
+      "AI_suitable": false,
+      "local_retained": false,
+      "local_decision": "AI_unsuitable_for_clear_demo",
+      "material_omitted_units": []
+    }
+  ],
+  "retained_new_demo_N": 1,
+  "changed_example_label": "Not Addressed",
+  "original_S_NS_unchanged": true,
+  "source_units": [
+    36,
+    37,
+    41,
+    42
+  ],
+  "added_complete_unit_after_local_read": 37,
+  "excerpt_characters": 1321,
+  "excerpt_sha256": "04c4ff5c184656c5458d5129fec82437abf5cf3ffa5a313ee3b6d5622ac84b60",
+  "GT_changed": false,
+  "new_classification_calls": 0,
+  "budget": {
+    "attempts": 7,
+    "HTTP200": 6,
+    "unknown": 1,
+    "reserved_CNY": 1.19,
+    "known_peak_CNY": 0.203301,
+    "input_tokens": 47226,
+    "output_tokens": 6847,
+    "attempt_seconds": 104.09181489999901
+  }
+}

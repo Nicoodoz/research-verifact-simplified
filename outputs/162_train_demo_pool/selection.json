@@ -1,0 +1,74 @@
+{
+  "N": 6,
+  "training_only": true,
+  "GT_changed": false,
+  "evaluation_used": false,
+  "candidates": [
+    {
+      "id": "9a4a5e5d-0595-5ae9-d2fb-ca3bb643de35",
+      "sid": "71743",
+      "GT": "Supported",
+      "native_verdict": "Not Addressed",
+      "native_margin": -7.75,
+      "source": "155 original120 train32",
+      "reference_characters": 20535,
+      "units": 100,
+      "reference_sha256": "2996624f8ad06c3aa057bc6f27b53367ac64a22bcba7d31182455d3235cd8b90"
+    },
+    {
+      "id": "3e9a0ee2-a8a7-8f4f-b785-5fbc0af8a358",
+      "sid": "9030",
+      "GT": "Supported",
+      "native_verdict": "Not Addressed",
+      "native_margin": -4.625,
+      "source": "155 original120 train32",
+      "reference_characters": 20828,
+      "units": 100,
+      "reference_sha256": "8a2a45ac9d1db770b184835b6f91265fd9858bb94bb1fa302b8af26000eabeb5"
+    },
+    {
+      "id": "1e1a53f7-c1ea-1f6c-750d-481516331374",
+      "sid": "45979",
+      "GT": "Not Supported",
+      "native_verdict": "Supported",
+      "native_margin": 7.0,
+      "source": "155 original120 train32",
+      "reference_characters": 20450,
+      "units": 100,
+      "reference_sha256": "dfb9de0b9490317a903c9aa65a29a68cf6dd7aac4a955de52102f2ea1f7db430"
+    },
+    {
+      "id": "f151201f-1899-5871-319d-bde96fe83e30",
+      "sid": "45115",
+      "GT": "Not Supported",
+      "native_verdict": "Supported",
+      "native_margin": 7.0,
+      "source": "155 original120 train32",
+      "reference_characters": 22921,
+      "units": 91,
+      "reference_sha256": "db05bf8f1db20624aca141a52d9fc731b7d782c0fa518a5b290ee21fa9358ad1"
+    },
+    {
+      "id": "8a1b103a-a336-0f0b-fd7e-27a9e485d527",
+      "sid": "21706",
+      "GT": "Not Addressed",
+      "native_verdict": "Supported",
+      "native_margin": 5.375,
+      "source": "155 original120 train32",
+      "reference_characters": 22037,
+      "units": 100,
+      "reference_sha256": "d78c3c09ca9b2303af66fae222c86b1295edf5580aef024ac1b807b2fd2e9e9c"
+    },
+    {
+      "id": "93fcdf3a-ddee-2e7a-74fe-886ee6c0aa9a",
+      "sid": "97885",
+      "GT": "Not Addressed",
+      "native_verdict": "Supported",
+      "native_margin": 5.0,
+      "source": "155 original120 train32",
+      "reference_characters": 19385,
+      "units": 100,
+      "reference_sha256": "0737fd71d8e5681df6e897faf5fc18ab5225e33354eaeb955113f0afb165e7c4"
+    }
+  ]
+}

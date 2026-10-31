@@ -14,6 +14,10 @@
 |156_claim_repeat_sft|[当前](../tasks/156_claim_repeat_sft/CURRENT.md)|本夜独立研究单元；按实际范围解释|原2945条/369步136前缀训练已排队，未开始训练|
 |157_reason_risk|[当前](../tasks/157_reason_risk/CURRENT.md)|本夜独立研究单元；按实际范围解释|新300免费回顾：理由状态优先残留FS10/5，margin7/4，停止扩大|
 |158_minimal_reason|[当前](../tasks/158_minimal_reason/CURRENT.md)|本夜独立研究单元；按实际范围解释|固定100条准备完成并排队；关键依据一句话与原文日期约束|
+|159_review_interface|[当前](../tasks/159_review_interface/CURRENT.md)|本夜研究/工程单元|接口交付；合成及1817四点原标记匹配，非新分类收益|
+|160_paired_margin|[当前](../tasks/160_paired_margin/CURRENT.md)|本夜研究/工程单元|两提示分数固定组合残留FS47/29，无增益，停止扩大|
+|161_demo_ablation|[当前](../tasks/161_demo_ablation/CURRENT.md)|本夜研究/工程单元|两项原160删除检查免费准备中；未启动GPU|
+|162_train_demo_pool|[当前](../tasks/162_train_demo_pool/CURRENT.md)|只用原训练32人；6例完整源文审读|保留1个NA替换例；原GT不变，无分类收益证明|
 |146_caption_transfer|[当前](../tasks/146_caption_transfer/CURRENT.md)|145跨子集固定400验证|完成；较136正确−2/FS+2，停止扩大|
 |147_fixed_reason|[当前](../tasks/147_fixed_reason/CURRENT.md)|固定136标签后的两种简短reason生成器，各60条|两臂各60完成；base产出60/60，原标签不变，151继续|
 |150_label_path_risk|[当前](../tasks/150_label_path_risk/CURRENT.md)|本夜独立研究单元；按实际范围解释|352预测S完整路径评分完成；无实质排序收益，停止当前扩大|
