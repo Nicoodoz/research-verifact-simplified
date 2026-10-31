@@ -1,0 +1,33 @@
+{
+  "two_demos": {
+    "N": 160,
+    "generation_seconds_sum": 783.4067489439622,
+    "median_seconds": 4.541244766674936,
+    "mean_input_tokens": 22938.54375,
+    "peak_GiB": 22.17274761199951,
+    "process_wall_seconds": 828.9079449176788
+  },
+  "claim_control": {
+    "N": 160,
+    "generation_seconds_sum": 355.3433197028935,
+    "median_seconds": 1.890610605943948,
+    "mean_input_tokens": 8423.54375,
+    "peak_GiB": 19.84152603149414,
+    "process_wall_seconds": 401.2400622367859
+  },
+  "first_formal": {
+    "id": "6cc9f4bd-2c62-8e18-3405-ec5fdd381657",
+    "input_tokens": 27154,
+    "output_tokens": 9,
+    "seconds": 53.537627381272614,
+    "peak_allocated_bytes": 23807806464,
+    "finish_reason": "stop",
+    "max_seq_length": 32768,
+    "max_new_tokens": 384,
+    "batch_size": 1,
+    "valid": true,
+    "peak_GiB": 22.17274761199951,
+    "no_additional_inference": true
+  },
+  "scope_note": "Same160; one actual first output each. Process wall includes model loading/tokenization/compilation/inference, excludes preparation/upload/return; budget includes all wall-clock time from09:36:01."
+}

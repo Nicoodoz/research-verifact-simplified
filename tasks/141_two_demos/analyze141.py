@@ -92,6 +92,37 @@ def collect141(paths):
     return raw
 
 
+def baseline136():
+    """136 stores source identity in its frozen job, not in each old receipt."""
+    base = R / '.local_models/136_claim_repeat_transfer'
+    folders = []
+    provenance = {}
+    for scope in SCOPES:
+        folder = base / 'evidence' / scope
+        job_path = base / ('claim_repeat_' + scope) / 'bundle/data/job.json'
+        if not job_path.exists():
+            continue
+        job = c.read(job_path)
+        identity = c.read(folder / 'identity.json')
+        generation = job['generation']
+        if (identity['job_sha256'] != c.sha(job_path) or job.get('task') != 136
+                or job.get('variant') != 'claim_repeat'
+                or job.get('adapter') != '/root/autodl-tmp/verifact134/adapter120'
+                or job.get('adapter_bytes') != 173188512
+                or generation.get('thinking') is not False
+                or generation.get('max_new_tokens') != 384
+                or generation.get('do_sample') is not False):
+            raise ValueError('Wrong frozen136 source job: ' + scope)
+        folders.append(folder / 'claim_repeat')
+        provenance[scope] = dict(job_sha256=identity['job_sha256'],
+                                 adapter=job['adapter'], receipt_identity='adapter_state')
+    rows = checked_collect(folders)
+    if any(r.get('arm') != 'claim_repeat' or r.get('adapter_state') != 'claim_repeat'
+           for r in rows.values()):
+        raise ValueError('Wrong136 receipt adapter state')
+    return rows, provenance
+
+
 def historical_predictions(keys):
     specs = [
         ('full_pool120', R / 'outputs/120_full_pool_sft/final369_1817_predictions_sanitized.jsonl', 'verdict', 'valid'),
@@ -154,8 +185,7 @@ def analyze(scope, paths=None, bootstrap=False):
     raw = collect141(paths)
     if set(raw) - target:
         raise ValueError('141 receipts outside requested target')
-    baseline = checked_collect([R / '.local_models/136_claim_repeat_transfer/evidence' / s / 'claim_repeat'
-                                for s in SCOPES])
+    baseline, baseline_provenance = baseline136()
     unverified = []
     for i, row in raw.items():
         expected = lengths[i]
@@ -167,7 +197,7 @@ def analyze(scope, paths=None, bootstrap=False):
                 or row.get('batch_size') != 1 or row.get('max_seq_length') != 32768
                 or row.get('max_new_tokens') != 384):
             raise ValueError('141 first receipt does not match source/demos/full prompt/runtime: ' + i)
-        if (i not in baseline or baseline[i].get('adapter_sha256') != SOURCE120_SHA
+        if (i not in baseline
                 or baseline[i].get('prompt_token_sha256') != expected['target_prompt_token_sha256']
                 or baseline[i].get('input_tokens') != expected['target_input_tokens']):
             unverified.append(i)
@@ -203,6 +233,7 @@ def analyze(scope, paths=None, bootstrap=False):
                                        for name, values in optional.items()},
                   screening=screening(primary, cov, scope, unverified),
                   source_artifacts=jobs,
+                  baseline136_provenance=baseline_provenance,
                   bootstrap=dict(performed=bootstrap, iterations=1000 if bootstrap else 0,
                                  method='existing final_compare120.paired / patient cluster bootstrap'),
                   input_cost=dict(received_N=len(raw), batch_size=1, capacity=32768, output_cap=384,

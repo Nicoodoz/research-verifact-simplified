@@ -89,6 +89,16 @@ def render(value, decision):
               '所有分母、历史覆盖、救回误伤和其他配置完整P/R/F1及矩阵见JSON。'
               '标签成绩不证明reason自洽；无NA示例的影响不能从格式完整推定。', '',
               f"[完整统计](two_demos_{scope}.json) · [固定方案](../../tasks/141_two_demos/PROTOCOL.md)"]
+    runtime_path = O / 'runtime_cost160.json'
+    if runtime_path.exists():
+        runtime = c.read(runtime_path)
+        candidate, baseline = runtime['two_demos'], runtime['claim_control']
+        lines += ['', '固定160条的实际运行成本：两例示范模型进程约'
+                  f"{candidate['process_wall_seconds']:.1f}秒，对照约{baseline['process_wall_seconds']:.1f}秒；"
+                  f"平均输入{candidate['mean_input_tokens']:.1f}比{baseline['mean_input_tokens']:.1f} tokens，"
+                  f"峰值分配显存{candidate['peak_GiB']:.2f}GiB。模型进程耗时含加载、编译和推理，"
+                  '本轮预算另包含准备、上传及回传，不以进程耗时替代总费用。'
+                  '这是原160的成本实测，不能当作500或1817实测。[运行数据](runtime_cost160.json)']
     return '\n'.join(lines).rstrip() + '\n'
 
 

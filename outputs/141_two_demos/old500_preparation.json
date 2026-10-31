@@ -1,0 +1,19 @@
+{
+  "task": 141,
+  "status": "CPU_PREPARED_NOT_RUN",
+  "scope": "old500",
+  "N": 340,
+  "demos_sha256": "0ab930cdaebecae2042f5674d8087e36fc3cbcbf5ac1347e35436cf2ab96f22b",
+  "max_input_tokens": 27239,
+  "longest_first_ID": "debdabe4-9420-b27f-132c-2b7d9e50a954",
+  "reference_truncated": false,
+  "target_users_unchanged": true,
+  "exact_tokenized_targets": 340,
+  "all1817_not_retokenized": true,
+  "compute_seconds": 2400,
+  "save_reserve_seconds": 600,
+  "bundle_sha256": "5cb1b39bdda04efb12b954ef942a32e4d09dfe1bc79073fbf35a1c4ba07a7f42",
+  "bundle_bytes": 1911632,
+  "new_GPU": false,
+  "new_API": 0
+}
