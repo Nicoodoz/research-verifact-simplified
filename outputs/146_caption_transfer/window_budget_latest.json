@@ -1,23 +1,23 @@
 {
-  "as_of": "2026-10-31T22:20:12.345358+08:00",
+  "as_of": "2026-10-31T23:54:00.653657+08:00",
   "GPU_start": "2026-10-31T21:12:00+08:00",
   "GPU_end": "2026-11-01T09:12:00+08:00",
   "hourly_CNY": 1.58,
-  "elapsed_seconds": 4092.3453578948975,
-  "GPU_estimated_CNY": 1.7960849070760938,
+  "elapsed_seconds": 9720.653656959534,
+  "GPU_estimated_CNY": 4.266286882776685,
   "GPU_full_window_estimate_CNY": 18.96,
   "API_cap_CNY": 80,
-  "API_cumulative_reserved_CNY": 1.6000000000000008,
-  "API_known_usage_estimate_peak_CNY": 0.294777,
-  "API_attempts": 32,
-  "API_received": 32,
-  "API_HTTP200": 29,
-  "API_unknown_N": 3,
+  "API_cumulative_reserved_CNY": 6.459999999999987,
+  "API_known_usage_estimate_peak_CNY": 1.246119,
+  "API_attempts": 113,
+  "API_received": 113,
+  "API_HTTP200": 104,
+  "API_unknown_N": 9,
   "GPU_live": {
-    "epoch": 1793456411.2746177,
+    "epoch": 1793462004.5763414,
     "no_shutdown": true,
-    "gpu": "NVIDIA GeForce RTX 4080 SUPER, 32760 MiB, 20020 MiB, 100 %",
-    "compute_processes": "74545, /root/verifact_image/envs/venv103/bin/python, 20010 MiB",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER, 32760 MiB, 22142 MiB, 100 %",
+    "compute_processes": "79753, /root/verifact_image/envs/venv103/bin/python, 22132 MiB",
     "tasks": {
       "verifact146_caption_transfer": {
         "pid": {
@@ -141,16 +141,251 @@
         },
         "progress": {
           "stage": "scoring",
-          "completed": 311,
+          "completed": 351,
           "total": 352,
-          "remaining_seconds": 177.26607671145564,
-          "epoch": 1793456407.9144595
+          "remaining_seconds": 4.450909592338607,
+          "epoch": 1793456625.6905038
+        },
+        "complete": {
+          "N": 352,
+          "forward_calls": 1056,
+          "score_seconds": 1568.90247475449,
+          "worker_wall_seconds": 1613.8262088298798,
+          "epoch": 1793456632.3246138,
+          "no_shutdown": true
+        },
+        "process_present": false
+      },
+      "verifact149_demo_extract_old500": {
+        "pid": {
+          "pid": 75684,
+          "started": 1793456638.8147283,
+          "queue_wait_seconds": 685.2359063625336,
+          "no_shutdown": true
+        },
+        "progress": {
+          "task": 149,
+          "arm": "demo_extract",
+          "scope": "old500",
+          "stage": "complete",
+          "completed": 340,
+          "expected_N": 340,
+          "target_N": 500,
+          "prior_N": 160,
+          "epoch": 1793457489.8302839,
+          "compute_deadline": 1793457939.0512035,
+          "GPU_CNY": 2.2689810692456036,
+          "new_API": 0,
+          "no_shutdown": true,
+          "remaining_seconds": 0
+        },
+        "complete": {
+          "task": 149,
+          "arm": "demo_extract",
+          "scope": "old500",
+          "N": 340,
+          "source_checkpoint": "120_final369",
+          "adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+          "epoch": 1793457489.8305242,
+          "new_training": false,
+          "new_API": 0,
+          "no_shutdown": true
+        },
+        "controller": {
+          "task": 149,
+          "arm": "demo_extract",
+          "scope": "old500",
+          "exit_code": 0,
+          "epoch": 1793457494.3171926,
+          "no_shutdown": true
+        },
+        "process_present": false
+      },
+      "verifact151_fixed_reason_transfer": {
+        "pid": {
+          "pid": 76332,
+          "started": 1793457498.8564777,
+          "queue_wait_seconds": 1545.275384426117,
+          "no_shutdown": true
+        },
+        "progress": {
+          "stage": "generating",
+          "arm": "reason_base9b",
+          "completed": 299,
+          "total": 300,
+          "epoch": 1793458548.459291
+        },
+        "complete": {
+          "completed": 300,
+          "generated_seconds": 1005.13494839333,
+          "worker_wall_seconds": 1055.099666595459,
+          "epoch": 1793458554.1186233,
+          "no_shutdown": true
+        },
+        "process_present": false
+      },
+      "verifact152_demo_na": {
+        "pid": {
+          "pid": 77056,
+          "started": 1793458562.1643834,
+          "queue_wait_seconds": 2230.3754074573517,
+          "no_shutdown": true
+        },
+        "progress": {
+          "task": 152,
+          "arm": "demo_na",
+          "scope": "screen160",
+          "stage": "complete",
+          "completed": 160,
+          "expected_N": 160,
+          "target_N": 160,
+          "prior_N": 0,
+          "epoch": 1793459046.2746582,
+          "compute_deadline": 1793459462.4159036,
+          "GPU_CNY": 2.9520872112049,
+          "new_API": 0,
+          "no_shutdown": true,
+          "remaining_seconds": 0
+        },
+        "complete": {
+          "task": 152,
+          "arm": "demo_na",
+          "scope": "screen160",
+          "N": 160,
+          "source_checkpoint": "120_final369",
+          "adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+          "epoch": 1793459046.2747953,
+          "new_training": false,
+          "new_API": 0,
+          "no_shutdown": true
+        },
+        "controller": {
+          "task": 152,
+          "arm": "demo_na",
+          "scope": "screen160",
+          "exit_code": 0,
+          "epoch": 1793459050.3449602,
+          "no_shutdown": true
+        },
+        "process_present": false
+      },
+      "verifact152_demo_na_old500": {
+        "pid": {
+          "pid": 78735,
+          "started": 1793460813.028403,
+          "queue_wait_seconds": 0.09508562088012695,
+          "no_shutdown": true
+        },
+        "progress": {
+          "task": 152,
+          "arm": "demo_na",
+          "scope": "old500",
+          "stage": "complete",
+          "completed": 340,
+          "expected_N": 340,
+          "target_N": 500,
+          "prior_N": 160,
+          "epoch": 1793461717.2943108,
+          "compute_deadline": 1793462113.2815583,
+          "GPU_CNY": 4.124368058841759,
+          "new_API": 0,
+          "no_shutdown": true,
+          "remaining_seconds": 0
+        },
+        "complete": {
+          "task": 152,
+          "arm": "demo_na",
+          "scope": "old500",
+          "N": 340,
+          "source_checkpoint": "120_final369",
+          "adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+          "epoch": 1793461717.2944548,
+          "new_training": false,
+          "new_API": 0,
+          "no_shutdown": true
+        },
+        "controller": {
+          "task": 152,
+          "arm": "demo_na",
+          "scope": "old500",
+          "exit_code": 0,
+          "epoch": 1793461720.9980853,
+          "no_shutdown": true
+        },
+        "process_present": false
+      },
+      "verifact152_demo_na_full1817": {
+        "pid": {
+          "pid": 79750,
+          "started": 1793461834.3434665,
+          "recorded": 1793461925.654283,
+          "source": "observed controller PID and actual deadline start"
+        },
+        "progress": {
+          "task": 152,
+          "arm": "demo_na",
+          "scope": "full1817",
+          "stage": "inference",
+          "completed": 18,
+          "expected_N": 1317,
+          "target_N": 1817,
+          "prior_N": 500,
+          "epoch": 1793462001.4209898,
+          "compute_deadline": 1793466034.3434665,
+          "GPU_CNY": 4.249068101162381,
+          "new_API": 0,
+          "no_shutdown": true,
+          "remaining_seconds": 6294.016787106016
         },
         "process_present": true
       },
-      "verifact149_demo_extract_old500": {},
-      "verifact151_fixed_reason_transfer": {},
-      "verifact152_demo_na": {}
+      "verifact155_train_error_risk": {
+        "pid": {
+          "pid": 77710,
+          "started": 1793459257.8491125,
+          "queue_wait_seconds": 0.10061454772949219,
+          "no_shutdown": true
+        },
+        "progress": {
+          "task": 155,
+          "arm": "native_train",
+          "scope": "train512",
+          "stage": "complete",
+          "completed": 512,
+          "expected_N": 512,
+          "target_N": 512,
+          "prior_N": 0,
+          "epoch": 1793460344.4894228,
+          "compute_deadline": 1793460758.0963366,
+          "GPU_CNY": 3.5218592467771637,
+          "new_API": 0,
+          "no_shutdown": true,
+          "remaining_seconds": 0
+        },
+        "complete": {
+          "task": 155,
+          "arm": "native_train",
+          "scope": "train512",
+          "N": 512,
+          "source_checkpoint": "120_final369",
+          "adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+          "epoch": 1793460344.4895818,
+          "new_training": false,
+          "new_API": 0,
+          "no_shutdown": true
+        },
+        "controller": {
+          "task": 155,
+          "arm": "native_train",
+          "scope": "train512",
+          "exit_code": 0,
+          "epoch": 1793460348.0324252,
+          "no_shutdown": true
+        },
+        "process_present": false
+      },
+      "verifact156_claim_repeat_sft": {},
+      "verifact158_minimal_reason": {}
     }
   },
   "no_shutdown": true,

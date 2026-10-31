@@ -1,0 +1,16 @@
+{
+  "N": 512,
+  "patients": 32,
+  "GT_counts": {
+    "Supported": 256,
+    "Not Supported": 128,
+    "Not Addressed": 128
+  },
+  "evaluation_patient_overlap": 0,
+  "GT_in_model_inputs": false,
+  "source_pool_N": 2945,
+  "source_pool_patients": 32,
+  "source_weights": "120_final369",
+  "prompt": "136_claim_repeat",
+  "selection": "class_stratified_SHA256(train_error_risk|ID)"
+}

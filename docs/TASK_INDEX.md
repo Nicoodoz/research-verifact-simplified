@@ -8,12 +8,18 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|153_document_rank|[当前](../tasks/153_document_rank/CURRENT.md)|本夜独立研究单元；按实际范围解释|文档代理分组残留FS48/30，无收益|
+|154_mlp_risk|[当前](../tasks/154_mlp_risk/CURRENT.md)|本夜独立研究单元；按实际范围解释|原MLP及固定融合风险无收益，既有117分类收益保留|
+|155_train_error_risk|[当前](../tasks/155_train_error_risk/CURRENT.md)|本夜独立研究单元；按实际范围解释|原训练32人512条取分/拟合完成；残留FS49/29，无收益|
+|156_claim_repeat_sft|[当前](../tasks/156_claim_repeat_sft/CURRENT.md)|本夜独立研究单元；按实际范围解释|原2945条/369步136前缀训练已排队，未开始训练|
+|157_reason_risk|[当前](../tasks/157_reason_risk/CURRENT.md)|本夜独立研究单元；按实际范围解释|新300免费回顾：理由状态优先残留FS10/5，margin7/4，停止扩大|
+|158_minimal_reason|[当前](../tasks/158_minimal_reason/CURRENT.md)|本夜独立研究单元；按实际范围解释|固定100条准备完成并排队；关键依据一句话与原文日期约束|
 |146_caption_transfer|[当前](../tasks/146_caption_transfer/CURRENT.md)|145跨子集固定400验证|完成；较136正确−2/FS+2，停止扩大|
 |147_fixed_reason|[当前](../tasks/147_fixed_reason/CURRENT.md)|固定136标签后的两种简短reason生成器，各60条|两臂各60完成；base产出60/60，原标签不变，151继续|
-|150_label_path_risk|[当前](../tasks/150_label_path_risk/CURRENT.md)|复用106/113算子，原500支持池完整路径风险排序|GPU评分中，不改136标签|
-|151_fixed_reason_transfer|[当前](../tasks/151_fixed_reason_transfer/CURRENT.md)|固定136标签的新300条与reason封装|准备完成；不把评价病例用于训练|
-|152_demo_na|[当前](../tasks/152_demo_na/CURRENT.md)|相同精简两例增加一个明确NA示例|CPU准备中；计划结果与实际结果区分|
-|149_demo_extract|[当前](../tasks/149_demo_extract/CURRENT.md)|相同S/NS两例摘录各4个完整证据片段|原160完成；较136正确−2/FS−3，原500余340准备完成|
+|150_label_path_risk|[当前](../tasks/150_label_path_risk/CURRENT.md)|本夜独立研究单元；按实际范围解释|352预测S完整路径评分完成；无实质排序收益，停止当前扩大|
+|151_fixed_reason_transfer|[当前](../tasks/151_fixed_reason_transfer/CURRENT.md)|本夜独立研究单元；按实际范围解释|新300完成；298解释，282有效盲审中257方向一致，原标签不变|
+|152_demo_na|[当前](../tasks/152_demo_na/CURRENT.md)|本夜独立研究单元；按实际范围解释|原500正确+8/FS−10、MCC+.0371；只补其余1317中|
+|149_demo_extract|[当前](../tasks/149_demo_extract/CURRENT.md)|本夜独立研究单元；按实际范围解释|原500全有效；较136正确−2/FS−8，token大幅低于141|
 |148_patient_score|[当前](../tasks/148_patient_score/CURRENT.md) · [报告](../outputs/148_patient_score/report.md)|零新增推理的患者内分数归一|178/290送审残留FS41/24，global_margin为44/29；回顾信号|
 |145_order_caption|[当前](../tasks/145_order_caption/CURRENT.md) · [报告](../outputs/145_order_caption/report.md) · [协议](../tasks/145_order_caption/PROTOCOL.md)|原500全部有效，复用160、仅新增340；停止本轮扩大|MCC .6427、正确410、FS45/179，较142正确+3/FS不变；无完整1817结果|
 |144_native_confidence|[当前](../tasks/144_native_confidence/CURRENT.md) · [协议](../tasks/144_native_confidence/PROTOCOL.md)|完整1817及24调用工程配对均完成|全量覆盖84.04%时FS88→29、新1317为40→11；代价231正确S送审，原生标签不变|

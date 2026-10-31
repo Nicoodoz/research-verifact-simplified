@@ -1,10 +1,10 @@
 """Encode complete target136 inputs plus the extracted S/NS/NA demonstrations."""
 from pathlib import Path
 import argparse,json,shutil,sys,time
-ap=argparse.ArgumentParser();ap.add_argument('--scope',choices=['screen160','old500'],default='screen160');args=ap.parse_args()
-scope=args.scope;expected=160 if scope=='screen160' else 340
-BASE=Path('/root/autodl-tmp');P=BASE/('verifact152_demo_na' if scope=='screen160' else 'verifact152_demo_na_old500');S=BASE/('verifact136_claim_repeat_'+scope);OLD=BASE/'verifact146_caption_transfer'
-if (P/'data/job.json').exists():raise FileExistsError('149 already prepared')
+ap=argparse.ArgumentParser();ap.add_argument('--scope',choices=['screen160','old500','full1817'],default='screen160');args=ap.parse_args()
+scope=args.scope;expected={'screen160':160,'old500':340,'full1817':1317}[scope]
+BASE=Path('/root/autodl-tmp');P=BASE/('verifact152_demo_na' if scope=='screen160' else 'verifact152_demo_na_'+scope);S=BASE/('verifact136_claim_repeat_'+scope);OLD=BASE/'verifact146_caption_transfer'
+if (P/'data/job.json').exists():raise FileExistsError('152 scope already prepared')
 P.mkdir(exist_ok=True)
 shutil.copytree(OLD/'tasks',P/'tasks',dirs_exist_ok=True)
 T=P/'tasks/152_demo_na';T.mkdir(exist_ok=True);shutil.copy2(P/'prompt152.py',T/'prompt152.py')
@@ -33,8 +33,8 @@ while order:
     batch=order[:2] if ls[order[0]]<=12701 else order[:1]
     if max(ls[i] for i in batch)>12701:batch=batch[:1]
     batches.append(batch);order=order[len(batch):]
-job=dict(c.read(OLD/'data/job.json'),task=152,arm='demo_na',scope=scope,expected_N=expected,target_N=160 if scope=='screen160' else 500,prior_N=0 if scope=='screen160' else 160,
-    ids=[r['id'] for r in records],batches=batches,compute_limit_seconds=900 if scope=='screen160' else 1300,save_reserve_seconds=180,new_training=False,
+job=dict(c.read(OLD/'data/job.json'),task=152,arm='demo_na',scope=scope,expected_N=expected,target_N={'screen160':160,'old500':500,'full1817':1817}[scope],prior_N={'screen160':0,'old500':160,'full1817':500}[scope],
+    ids=[r['id'] for r in records],batches=batches,compute_limit_seconds={'screen160':900,'old500':1300,'full1817':4200}[scope],save_reserve_seconds=180,new_training=False,
     transform='append_conditional_NA_demo',source_task=149,selection_rule='original134 '+scope)
 c.putl(P/'data/inputs.jsonl',records);c.putl(P/'data/lengths.jsonl',lengths);c.put(P/'data/job.json',job)
 shutil.copy2(OLD/'data/session.json',P/'data/session.json')
