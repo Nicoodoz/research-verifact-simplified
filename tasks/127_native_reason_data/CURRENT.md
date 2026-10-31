@@ -1,13 +1,11 @@
 # 127 native_reason_data
 
-当前资产为私有 `dataset_v11_followup20261031`：58对AI辅助审读reason，训练54、内部验证4（S16／NS22／NA20）；90条已审、32条问题保留，3675条原标签全部保留。32名梯度训练／8名内部验证患者划分不变。
+当前私有版本`dataset_v12_support20261031`：67对AI辅助审读reason，训练63、内部验证4（S21／NS24／NA22）；102条已审、35条待核，3675条原医生标签保留。32名训练／8名内部验证划分不变。
 
-2026-10-31这批来自18条此前未处理的训练病例，全部有医生备注供核对；主要审读者先看完整实际reference，作者历史理由和备注只作为核对来源，不替代当前输入。接纳10条（S4／NS2／NA4），8条不强编理由。所有新10条均不在105理由集、127旧审读集或此前6例教师试查中，按患者、claim、reference检查也无旧样本重复。复用原40对，只对新增10条做CPU编码，完整输入和原GT均保留。
+最新12条均来自此前未处理的原32名训练患者命题，新增9对（S5／NS2／NA2），3条因时点、地点或适应证边界保留问题；一次时间解释在交叉检查后撤回，原记录及更正均保留。旧58对及编码检查直接复用，只编码新增9对。
 
-随后再审12条未处理训练病例，接纳8条（S1／NS3／NA4），4条待核；原50条检查复用，只编码新增8条。两批共新增18条理由，均留后续。
+本轮三批累计新增27对，均只留后续，不进入已完成138或正在运行140。新数据没有分类收益证明；不凭教师改GT，不强编解释。主要审读者完整阅读reference，根模型交叉核对新claim、理由、引文及边界；不称为医师认证。
 
-本批尚未训练，没有分类收益证据；不改变正在运行的138（冻结v9的36条训练理由）。后续是否使用新增数据，依据138及其他真实分类结果决定。原始草稿、交叉复核撤回记录和未决项留在私有目录，不把AI辅助理由称为医生标注。
+[最新批次](../../outputs/127_native_reason_data/new_batch_support_20261031/report.md) · [统计](../../outputs/127_native_reason_data/new_batch_support_20261031/summary.json) · [总报告与历史](../../outputs/127_native_reason_data/report.md) · [数据合同](DATA_CONTRACT.md)
 
-[当前简报](../../outputs/127_native_reason_data/new_batch_followup_20261031/report.md) · [统计](../../outputs/127_native_reason_data/new_batch_followup_20261031/summary.json) · [总报告与历史](../../outputs/127_native_reason_data/report.md) · [数据合同](DATA_CONTRACT.md)
-
-构建与汇总继续复用 `prepare127.py`、`summarize127.py`，新版本不得覆盖旧目录。实际临床文本、reason与完整审读记录仅保存在 `.local_models/127_native_reason_data/`。
+构建继续复用prepare127.py；新版本不覆盖旧目录。临床正文、reason、草稿和完整审读记录只存.local_models/127_native_reason_data/。

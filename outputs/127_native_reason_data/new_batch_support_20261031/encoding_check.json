@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "pairs": 67,
+  "unchanged_prior_checks_reused": 58,
+  "new_pairs_encoded": 9,
+  "old_source_and_target_equal": true,
+  "full_input_no_truncation": true,
+  "original_GT_preserved": true,
+  "GPU_calls": 0,
+  "API_calls": 0,
+  "model_loaded": false,
+  "details": [
+    {
+      "id": "0775ed09-af97-d23d-2846-62f78be43718",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 7975,
+      "total_tokens": 8022,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "59dd0f6f-1165-5dc5-9198-4032481840f6",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 7236,
+      "total_tokens": 7273,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "5ccdf0a8-168d-d771-8b26-d780c59bf6e7",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8571,
+      "total_tokens": 8619,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "b04597e8-df50-0da5-023f-5fb2fce84cf8",
+      "GT": "Not Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8159,
+      "total_tokens": 8217,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "c52d8ca2-67e8-ac25-d3d1-ac06cb8864c3",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 6997,
+      "total_tokens": 7072,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "c74869db-91b6-c324-90ff-2b990560518f",
+      "GT": "Not Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8734,
+      "total_tokens": 8788,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "d0a953d2-5599-fded-de2c-9b680fd39e90",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8894,
+      "total_tokens": 8957,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "edb7f363-9c65-f647-f94e-346731150366",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 9022,
+      "total_tokens": 9076,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "eec5864a-fa13-48a6-37db-ebfbc0fb3aa8",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 7725,
+      "total_tokens": 7778,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    }
+  ]
+}

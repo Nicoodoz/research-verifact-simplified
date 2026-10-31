@@ -1,0 +1,37 @@
+{
+  "dataset": "dataset_v12_support20261031",
+  "new_reviewed": 12,
+  "new_approved": 9,
+  "new_unresolved": 3,
+  "new_approved_GT": {
+    "Supported": 5,
+    "Not Supported": 2,
+    "Not Addressed": 2
+  },
+  "new_reviewed_with_doctor_comments": 9,
+  "new_reviewed_patients": 8,
+  "new_approved_patients": 7,
+  "new_approved_reference_contexts": 9,
+  "total_reviewed": 102,
+  "total_approved": 67,
+  "total_unresolved": 35,
+  "train": 63,
+  "internal_validation": 4,
+  "total_GT": {
+    "Supported": 21,
+    "Not Supported": 24,
+    "Not Addressed": 22
+  },
+  "all_original_labels_retained": 3675,
+  "unchanged_prior_checks_reused": 58,
+  "new_pairs_encoded": 9,
+  "original_GT_and_full_input_preserved": true,
+  "new_data_used_in138": false,
+  "new_data_used_in140": false,
+  "GPU_calls": 0,
+  "API_calls": 0,
+  "classification_effect_tested": false,
+  "AI_assisted_not_physician_certified": true,
+  "exact_patient_claim_reference_duplicates": 0,
+  "original_drafts_and_amendment_retained": true
+}
