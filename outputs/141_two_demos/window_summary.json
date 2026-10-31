@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-31T15:53:18+08:00",
+  "created_at": "2026-10-31T15:58:31+08:00",
   "conclusion": "当前可靠主证据仍为120的原生质量收益与136的风险取舍。138、140未在完整1817上形成进一步总体质量优势；141在500条降低false-S但损失S/NA并增加输入成本，因此停止当前全量扩评，不把通过初筛门槛等同于必须扩满。额外11条实际回执保留，未构成完整1817评价；127新增27条理由仅是数据资产，尚无分类收益证明。",
   "tables": {
     "full1817": {
@@ -2110,9 +2110,9 @@
   },
   "budget": {
     "start": "2026-10-31T09:36:01+08:00",
-    "as_of": "2026-10-31T15:53:18.327280+08:00",
-    "elapsed_seconds": 22637.32728,
-    "estimated_GPU_CNY": 9.935271417333333,
+    "as_of": "2026-10-31T15:58:31.313716+08:00",
+    "elapsed_seconds": 22950.313716,
+    "estimated_GPU_CNY": 10.072637686466669,
     "GPU_cap_CNY": 20,
     "API_used_CNY": 0,
     "API_cap_CNY": 80,
@@ -2121,6 +2121,7 @@
     "prior16_window_estimate_CNY": 15.695105555555557
   },
   "methodology": "Only copy existing metric fields; never evaluate predictions, average MCC, merge matrices, or impute missing labels.",
+  "inference_cost_source": "outputs/141_two_demos/inference_cost.json",
   "sources": [
     "outputs/132_midpoint_update/selection1817.json",
     "outputs/134_author_baselines/full1817.json",

@@ -93,12 +93,15 @@ def render(value, decision):
     if runtime_path.exists():
         runtime = c.read(runtime_path)
         candidate, baseline = runtime['two_demos'], runtime['claim_control']
-        lines += ['', '固定160条的实际运行成本：两例示范模型进程约'
+        lines += ['', '固定160条的历史计时记录：两例示范worker工作阶段约'
                   f"{candidate['process_wall_seconds']:.1f}秒，对照约{baseline['process_wall_seconds']:.1f}秒；"
                   f"平均输入{candidate['mean_input_tokens']:.1f}比{baseline['mean_input_tokens']:.1f} tokens，"
-                  f"峰值分配显存{candidate['peak_GiB']:.2f}GiB。模型进程耗时含加载、编译和推理，"
-                  '本轮预算另包含准备、上传及回传，不以进程耗时替代总费用。'
+                  f"峰值分配显存{candidate['peak_GiB']:.2f}GiB。工作阶段耗时含加载、编译和推理，"
+                  '本轮预算另包含准备、上传及回传，不以该时长替代总费用。'
                   '这是原160的成本实测，不能当作500或1817实测。[运行数据](runtime_cost160.json)']
+    if (O/'inference_cost.json').exists():
+        lines += ['', '[同ID推理成本表](inference_cost.md)另列实际160/500/1817的输入、输出、生成耗时和控制进程墙钟，'
+                  '并保留缺失计时与额外停止尝试；生成时间不代替含等待和回传的窗口总费用。']
     return '\n'.join(lines).rstrip() + '\n'
 
 

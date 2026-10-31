@@ -105,16 +105,30 @@ def panel_rows(all_docs,extra_docs,panel,wanted):
     return result
 
 
-def render_table(rows):
-    output=['|配置|N|MCC|PA|正确|FS/非S|S/NS/NA召回|来源|','|---|---:|---:|---:|---:|---:|---|---|']
+def render_table(rows, costs=None):
+    extra=costs is not None
+    output=['|配置|N|MCC|PA|正确|FS/非S|S/NS/NA召回|'+('平均入/出token（记录N）|均摊生成秒（计时N）|' if extra else '')+'来源|',
+            '|---|---:|---:|---:|---:|---:|---|'+('---|---|' if extra else '')+'---|']
     for name in ORDER:
         if name not in rows:continue
         r=rows[name];rec='/'.join('—' if r['recall'][g] is None else f"{r['recall'][g]:.2%}" for g in LABELS)
-        output.append(f"|{name}|{r['N']}|{r['MCC']:.4f}|{r['PA']:.2%}|{r['correct']}|{r['false_S']}/{r['non_S']}|{rec}|{link(ROOT/r['source'],r['source_scope'])}|")
+        cost_cells=''
+        if extra:
+            cost=costs.get(name)
+            def mean_cell(key):
+                if cost is None:return '本表未整理'
+                item=cost.get(key,{})
+                return '未记录' if item.get('mean') is None else f"{item['mean']:.2f}（{item['recorded_N']}）"
+            t=cost.get('generation_seconds',{}) if cost is not None else {}
+            seconds=('本表未整理' if cost is None else '未记录') if t.get('mean_per_recorded_item') is None else f"{t['mean_per_recorded_item']:.2f}（{t['recorded_N']}）"
+            cost_cells=mean_cell('input_tokens')+'/'+mean_cell('output_tokens')+'|'+seconds+'|'
+        output.append(f"|{name}|{r['N']}|{r['MCC']:.4f}|{r['PA']:.2%}|{r['correct']}|{r['false_S']}/{r['non_S']}|{rec}|{cost_cells}{link(ROOT/r['source'],r['source_scope'])}|")
     return output
 
 
 def build(conclusion,as_of):
+    cost_path=ROOT/'outputs/141_two_demos/inference_cost.json'
+    inference_cost=read(cost_path) if cost_path.exists() else {}
     keys=lines(ROOT/'.local_models/134_author_baselines/keys.jsonl')
     screen=set(read(ROOT/'.local_models/134_author_baselines/job.json')['phases'][0]['ids'])
     ids={'full1817':{r['id'] for r in keys},'old500':{r['id'] for r in keys if r['old_panel'] in ('natural','pressure')},'screen160':screen}
@@ -169,13 +183,15 @@ def build(conclusion,as_of):
                     includes_preparation_loading_compiling_waiting_return=True,no_shutdown=True,
                     prior16_window_estimate_CNY=old_window_cost),
         methodology='Only copy existing metric fields; never evaluate predictions, average MCC, merge matrices, or impute missing labels.',
+        inference_cost_source=cost_path.relative_to(ROOT).as_posix() if inference_cost else None,
         sources=[p.relative_to(ROOT).as_posix() for p in sorted(sources)])
     out=['# 当前窗口集中比较','',conclusion,'',
          '仅复用既有分析JSON。1817、500、160各自是固定同ID范围，禁止跨表直接相减；未完成/覆盖不同的候选不填0、不进入完整分母表。',
          '评价仍是原20名历史暴露的选型患者；100名患者都有研究暴露，不称全新holdout，也没有自动使用确认40人重新选型。当前训练维持原32人、内部验证8人的边界。','']
     titles={'full1817':'完整1817','old500':'原500','screen160':'初筛160'}
     for scope,N in SCOPES.items():
-        out+=['## '+titles[scope]+'：固定'+str(N)+'条','']+render_table(mains[scope])+['']
+        out+=['## '+titles[scope]+'：固定'+str(N)+'条','']+render_table(mains[scope],inference_cost.get('tables',{}).get(scope,{}))+['']
+        out+=['成本括号为实际计时或token记录条数，部分记录不是全范围总成本；其他历史配置的“本表未整理”不表示原日志没有记录。'+link(ROOT/'outputs/141_two_demos/inference_cost.md','生成总时长、batch、墙钟及停止尝试明细')+'。' if inference_cost else '尚未找到该快照的推理成本汇总，不补0。','']
         for note in notes[scope]:out += [note]
         if missing_sources[scope]:out += ['尚无该范围分析文件：'+', '.join(missing_sources[scope])+'；不列成绩。']
         out+=['','|实际候选|收到|有效|缺失|无效|详表|','|---|---:|---:|---:|---:|---|']

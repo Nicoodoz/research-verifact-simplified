@@ -1,0 +1,732 @@
+{
+  "main_HEAD": "00b1dae094b792020baef51f065336eadb58a085",
+  "scope_rule": "Fixed identical IDs per table; full1817 contains only configurations with1817 actual first receipts.",
+  "seconds_audit": {
+    "136": "worker136: seconds=elapsed/len(identifiers)",
+    "139": "worker139: seconds=batch_seconds=elapsed; batch1",
+    "140_screen160": "worker140 has no seconds/output_tokens; missing retained. Batch2 from frozen loop.",
+    "140_extensions": "worker_eval140: seconds=elapsed/len(identifiers)",
+    "141": "worker141: seconds=batch_seconds=elapsed; batch1"
+  },
+  "common_settings": "BF16 native9B; greedy; max_new_tokens384; no thinking. Batch/context differences are explicit, not treated as controlled speed tests.",
+  "call_count_rule": "Received_N counts actual proposition-level Judge decisions. Local batched generation, zero API requests; batch sizes are separate from decision counts.",
+  "wall_rule": "Actual recorded process/worker intervals only; stage sums have repeated loading. Missing values stay null. Post-training140 interval is not a standalone inference process or pure generation time.",
+  "billing": "No CNY inferred from generation times. Shared GPU20 CNY window starts2026-10-31 09:36:01+08:00 at1.58 CNY/hour; includes preparation, loading, compilation, waiting and return. These timings are not that total bill. API0.",
+  "unrecorded_historical_cost": {
+    "paper_r1": "Not recorded: historical author predictions have no matching local runtime receipts; never shown as zero."
+  },
+  "tables": {
+    "screen160": {
+      "claim_repeat136": {
+        "expected_N": 160,
+        "received_N": 160,
+        "valid_N": 160,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 351.7867678096518,
+          "recorded_partial_total": 351.7867678096518,
+          "recorded_N": 160,
+          "missing_N": 0,
+          "mean_per_recorded_item": 2.1986672988103235,
+          "median_per_recorded_item": 1.8359561020042747
+        },
+        "input_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1347767,
+          "mean": 8423.54375,
+          "median": 8265.0
+        },
+        "output_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1199,
+          "mean": 7.49375,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "2": 160
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "16384": 160
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/136_claim_repeat_transfer/evidence/screen160",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 396.2880313396454,
+              "kind": "worker_wall",
+              "basis": "completed progress.elapsed_seconds"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      },
+      "full_repeat139": {
+        "expected_N": 160,
+        "received_N": 160,
+        "valid_N": 160,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 591.7127368468791,
+          "recorded_partial_total": 591.7127368468791,
+          "recorded_N": 160,
+          "missing_N": 0,
+          "mean_per_recorded_item": 3.6982046052929944,
+          "median_per_recorded_item": 3.3125406899489462
+        },
+        "input_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 2675218,
+          "mean": 16720.1125,
+          "median": 16404.0
+        },
+        "output_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1196,
+          "mean": 7.475,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "1": 160
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "32768": 160
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/139_full_repeat/evidence/screen160",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 636.9902448654175,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item.",
+        "previous_cost160_generation_verified": true,
+        "previous_artifact_wall_seconds": 636.9902448654175
+      },
+      "claim_control139": {
+        "expected_N": 160,
+        "received_N": 160,
+        "valid_N": 160,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 355.3433197028935,
+          "recorded_partial_total": 355.3433197028935,
+          "recorded_N": 160,
+          "missing_N": 0,
+          "mean_per_recorded_item": 2.2208957481430844,
+          "median_per_recorded_item": 1.890610605943948
+        },
+        "input_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1347767,
+          "mean": 8423.54375,
+          "median": 8265.0
+        },
+        "output_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1199,
+          "mean": 7.49375,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "1": 160
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "32768": 160
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/139_full_repeat/claim_control160/evidence",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 401.2400622367859,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item.",
+        "previous_cost160_generation_verified": true,
+        "previous_artifact_wall_seconds": 401.2400622367859
+      },
+      "kl_anchor140": {
+        "expected_N": 160,
+        "received_N": 160,
+        "valid_N": 160,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": null,
+          "recorded_partial_total": null,
+          "recorded_N": 0,
+          "missing_N": 160,
+          "mean_per_recorded_item": null,
+          "median_per_recorded_item": null
+        },
+        "input_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1347767,
+          "mean": 8423.54375,
+          "median": 8265.0
+        },
+        "output_tokens": {
+          "recorded_N": 0,
+          "missing_N": 160,
+          "sum": null,
+          "mean": null,
+          "median": null
+        },
+        "batch_size_items": {
+          "2": 160
+        },
+        "inferred_batch_size_items": 160,
+        "context_capacity_items": {
+          "16384": 160
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/140_kl_anchor/evidence",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 307.222154378891,
+              "kind": "post_training_evaluation_interval",
+              "basis": "complete.epoch - training_done.epoch; includes eval setup, excludes training and backbone loading"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      },
+      "two_demos141": {
+        "expected_N": 160,
+        "received_N": 160,
+        "valid_N": 160,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 783.4067489439622,
+          "recorded_partial_total": 783.4067489439622,
+          "recorded_N": 160,
+          "missing_N": 0,
+          "mean_per_recorded_item": 4.8962921808997635,
+          "median_per_recorded_item": 4.541244766674936
+        },
+        "input_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 3670167,
+          "mean": 22938.54375,
+          "median": 22780.0
+        },
+        "output_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1198,
+          "mean": 7.4875,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "1": 160
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "32768": 160
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/141_two_demos/screen160/evidence",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 832.2225656509399,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item.",
+        "previous_cost160_generation_verified": true,
+        "previous_artifact_wall_seconds": 828.9079449176788,
+        "previous_artifact_wall_correction": "Previous828.91 labeled process wall matches worker elapsed828.9078; actual pid-to-controller832.2226 used consistently here. Original artifact retained."
+      }
+    },
+    "old500": {
+      "claim_repeat136": {
+        "expected_N": 500,
+        "received_N": 500,
+        "valid_N": 500,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 1035.1233354965225,
+          "recorded_partial_total": 1035.1233354965225,
+          "recorded_N": 500,
+          "missing_N": 0,
+          "mean_per_recorded_item": 2.070246670993045,
+          "median_per_recorded_item": 1.8293197534512728
+        },
+        "input_tokens": {
+          "recorded_N": 500,
+          "missing_N": 0,
+          "sum": 4186423,
+          "mean": 8372.846,
+          "median": 8167.0
+        },
+        "output_tokens": {
+          "recorded_N": 500,
+          "missing_N": 0,
+          "sum": 3758,
+          "mean": 7.516,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "2": 498,
+          "1": 2
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "16384": 500
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/136_claim_repeat_transfer/evidence/screen160",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 396.2880313396454,
+              "kind": "worker_wall",
+              "basis": "completed progress.elapsed_seconds"
+            }
+          },
+          {
+            "source": ".local_models/136_claim_repeat_transfer/evidence/old500",
+            "received_N": 340,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 732.5211400985718,
+              "kind": "worker_wall",
+              "basis": "completed progress.elapsed_seconds"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      },
+      "full_repeat139": {
+        "expected_N": 500,
+        "received_N": 500,
+        "valid_N": 500,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 1798.6107122851536,
+          "recorded_partial_total": 1798.6107122851536,
+          "recorded_N": 500,
+          "missing_N": 0,
+          "mean_per_recorded_item": 3.597221424570307,
+          "median_per_recorded_item": 3.3189760860987008
+        },
+        "input_tokens": {
+          "recorded_N": 500,
+          "missing_N": 0,
+          "sum": 8310042,
+          "mean": 16620.084,
+          "median": 16211.0
+        },
+        "output_tokens": {
+          "recorded_N": 500,
+          "missing_N": 0,
+          "sum": 3748,
+          "mean": 7.496,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "1": 500
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "32768": 500
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/139_full_repeat/evidence/screen160",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 636.9902448654175,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          },
+          {
+            "source": ".local_models/139_full_repeat/evidence/old500",
+            "received_N": 340,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 1259.9212937355042,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      },
+      "kl_anchor140": {
+        "expected_N": 500,
+        "received_N": 500,
+        "valid_N": 500,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": null,
+          "recorded_partial_total": 700.4919000221416,
+          "recorded_N": 340,
+          "missing_N": 160,
+          "mean_per_recorded_item": 2.0602702941827693,
+          "median_per_recorded_item": 1.860062992433086
+        },
+        "input_tokens": {
+          "recorded_N": 500,
+          "missing_N": 0,
+          "sum": 4186423,
+          "mean": 8372.846,
+          "median": 8167.0
+        },
+        "output_tokens": {
+          "recorded_N": 340,
+          "missing_N": 160,
+          "sum": 2568,
+          "mean": 7.552941176470588,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "2": 498,
+          "1": 2
+        },
+        "inferred_batch_size_items": 160,
+        "context_capacity_items": {
+          "16384": 500
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/140_kl_anchor/evidence",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 307.222154378891,
+              "kind": "post_training_evaluation_interval",
+              "basis": "complete.epoch - training_done.epoch; includes eval setup, excludes training and backbone loading"
+            }
+          },
+          {
+            "source": ".local_models/140_kl_anchor/extension/old500/evidence",
+            "received_N": 340,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 749.4800314903259,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      },
+      "two_demos141": {
+        "expected_N": 500,
+        "received_N": 500,
+        "valid_N": 500,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 2382.085161502473,
+          "recorded_partial_total": 2382.085161502473,
+          "recorded_N": 500,
+          "missing_N": 0,
+          "mean_per_recorded_item": 4.764170323004946,
+          "median_per_recorded_item": 4.537425073795021
+        },
+        "input_tokens": {
+          "recorded_N": 500,
+          "missing_N": 0,
+          "sum": 11443923,
+          "mean": 22887.846,
+          "median": 22682.0
+        },
+        "output_tokens": {
+          "recorded_N": 500,
+          "missing_N": 0,
+          "sum": 3765,
+          "mean": 7.53,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "1": 500
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "32768": 500
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/141_two_demos/screen160/evidence",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 832.2225656509399,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          },
+          {
+            "source": ".local_models/141_two_demos/old500/evidence",
+            "received_N": 340,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 1653.369395017624,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      }
+    },
+    "full1817": {
+      "claim_repeat136": {
+        "expected_N": 1817,
+        "received_N": 1817,
+        "valid_N": 1817,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 3473.097417560406,
+          "recorded_partial_total": 3473.097417560406,
+          "recorded_N": 1817,
+          "missing_N": 0,
+          "mean_per_recorded_item": 1.9114460195709444,
+          "median_per_recorded_item": 1.7909395531751215
+        },
+        "input_tokens": {
+          "recorded_N": 1817,
+          "missing_N": 0,
+          "sum": 15141090,
+          "mean": 8333.015960374243,
+          "median": 8161
+        },
+        "output_tokens": {
+          "recorded_N": 1817,
+          "missing_N": 0,
+          "sum": 13351,
+          "mean": 7.3478260869565215,
+          "median": 7
+        },
+        "batch_size_items": {
+          "2": 1814,
+          "1": 3
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "16384": 1817
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/136_claim_repeat_transfer/evidence/screen160",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 396.2880313396454,
+              "kind": "worker_wall",
+              "basis": "completed progress.elapsed_seconds"
+            }
+          },
+          {
+            "source": ".local_models/136_claim_repeat_transfer/evidence/old500",
+            "received_N": 340,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 732.5211400985718,
+              "kind": "worker_wall",
+              "basis": "completed progress.elapsed_seconds"
+            }
+          },
+          {
+            "source": ".local_models/136_claim_repeat_transfer/evidence/full1817",
+            "received_N": 1317,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 2508.0343194007874,
+              "kind": "worker_wall",
+              "basis": "completed progress.elapsed_seconds"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      },
+      "kl_anchor140": {
+        "expected_N": 1817,
+        "received_N": 1817,
+        "valid_N": 1817,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": null,
+          "recorded_partial_total": 3118.175539757125,
+          "recorded_N": 1657,
+          "missing_N": 160,
+          "mean_per_recorded_item": 1.8818198791533645,
+          "median_per_recorded_item": 1.7811430864967406
+        },
+        "input_tokens": {
+          "recorded_N": 1817,
+          "missing_N": 0,
+          "sum": 15141090,
+          "mean": 8333.015960374243,
+          "median": 8161
+        },
+        "output_tokens": {
+          "recorded_N": 1657,
+          "missing_N": 160,
+          "sum": 12180,
+          "mean": 7.350633675316837,
+          "median": 7
+        },
+        "batch_size_items": {
+          "2": 1814,
+          "1": 3
+        },
+        "inferred_batch_size_items": 160,
+        "context_capacity_items": {
+          "16384": 1817
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/140_kl_anchor/evidence",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 307.222154378891,
+              "kind": "post_training_evaluation_interval",
+              "basis": "complete.epoch - training_done.epoch; includes eval setup, excludes training and backbone loading"
+            }
+          },
+          {
+            "source": ".local_models/140_kl_anchor/extension/old500/evidence",
+            "received_N": 340,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 749.4800314903259,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          },
+          {
+            "source": ".local_models/140_kl_anchor/extension/full1817/evidence",
+            "received_N": 1317,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 2486.3723595142365,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      }
+    }
+  },
+  "not_complete_for_full1817": {
+    "full_repeat139": {
+      "received_N": 500,
+      "missing_N": 1317
+    },
+    "claim_control139": {
+      "received_N": 160,
+      "missing_N": 1657
+    },
+    "two_demos141": {
+      "received_N": 511,
+      "missing_N": 1306
+    }
+  },
+  "separate_stopped_attempts": [
+    {
+      "expected_N": 1317,
+      "received_N": 11,
+      "valid_N": 10,
+      "invalid_N": 1,
+      "missing_N": 1306,
+      "generation_seconds": {
+        "complete_total": 105.2376857753843,
+        "recorded_partial_total": 105.2376857753843,
+        "recorded_N": 11,
+        "missing_N": 0,
+        "mean_per_recorded_item": 9.567062343216755,
+        "median_per_recorded_item": 5.281761595979333
+      },
+      "input_tokens": {
+        "recorded_N": 11,
+        "missing_N": 0,
+        "sum": 294814,
+        "mean": 26801.272727272728,
+        "median": 26606
+      },
+      "output_tokens": {
+        "recorded_N": 11,
+        "missing_N": 0,
+        "sum": 74,
+        "mean": 6.7272727272727275,
+        "median": 7
+      },
+      "batch_size_items": {
+        "1": 11
+      },
+      "inferred_batch_size_items": 0,
+      "context_capacity_items": {
+        "32768": 11
+      },
+      "phase_walls": [
+        {
+          "source": ".local_models/141_two_demos/full1817/evidence",
+          "received_N": 11,
+          "whole_phase": true,
+          "recorded_wall": {
+            "seconds": 200.74116134643555,
+            "kind": "stopped_process_wall",
+            "basis": "controller_done.epoch - pid.started"
+          }
+        }
+      ],
+      "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item.",
+      "scope": "stopped/partial additional1317; excluded from normal old500 costs",
+      "failure": {
+        "type": "TimeoutError",
+        "error": "Computation deadline reached; no new formal request",
+        "epoch": 1793433121.3277068,
+        "no_shutdown": true,
+        "automatic_retry": false
+      }
+    }
+  ],
+  "no_model_or_tokenizer_loaded": true,
+  "no_reinference": true,
+  "no_full_SHA_scan": true
+}
