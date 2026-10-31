@@ -36,6 +36,9 @@ def main():
  lines.append('')
  for name,x in v['by_author'].items():lines.append(f"- {name}：正确{x['delta_correct']:+d}，false-S{x['delta_false_S']:+d}。")
  pts=s['patient_directions'];up=sum(x['correct_delta']>0 for x in pts);down=sum(x['correct_delta']<0 for x in pts);lines+=['',f'患者正确数：{up}升/{down}降/{len(pts)-up-down}持平。','']
+ if a.arm=='rationale_tasks' and a.scope=='full1817' and (O/'prediction_shift.json').exists():
+  shift=read(O/'prediction_shift.json')['prediction_shift']
+  lines += [f"描述性迁移：136→138的{shift['changed']}次改判中，{shift['toward_NS']}次转NS、{shift['away_from_NS']}次离开NS；另7次为S→NA。多数改判集中在增加NS，不能据此证明内部机制或理由任务的独立作用。[聚合计数](prediction_shift.json)。",'']
  for name,m in s['scores'].items():
   if name=='paper_r1':continue
   lines+=['|类别|Precision|Recall|F1|','|---|---:|---:|---:|']

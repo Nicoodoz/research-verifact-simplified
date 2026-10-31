@@ -1,0 +1,163 @@
+{
+  "scope": "complete1817",
+  "sources": {
+    "rationale_tasks": "outputs/138_rationale_tasks/rationale_tasks_full1817_predictions_sanitized.jsonl",
+    "claim_repeat136": "outputs/136_claim_repeat_transfer/full1817_predictions_sanitized.jsonl",
+    "extra_steps137": "outputs/137_extra_steps/full1817_predictions_sanitized.jsonl"
+  },
+  "coverage": {
+    "N": 1817,
+    "patients": 20,
+    "missing_or_invalid": 0,
+    "clinicaltext_read": false
+  },
+  "metric_source": "Reused analyze138 full1817 metrics; only fixed-label equality and transition counts newly computed; no new evaluator or bootstrap.",
+  "prediction_shift": {
+    "changed": 138,
+    "toward_NS": 131,
+    "toward_NS_fraction": 0.9492753623188406,
+    "away_from_NS": 0,
+    "non_diagonal": [
+      {
+        "from": "Supported",
+        "to": "Not Supported",
+        "N": 71
+      },
+      {
+        "from": "Supported",
+        "to": "Not Addressed",
+        "N": 7
+      },
+      {
+        "from": "Not Supported",
+        "to": "Supported",
+        "N": 0
+      },
+      {
+        "from": "Not Supported",
+        "to": "Not Addressed",
+        "N": 0
+      },
+      {
+        "from": "Not Addressed",
+        "to": "Supported",
+        "N": 0
+      },
+      {
+        "from": "Not Addressed",
+        "to": "Not Supported",
+        "N": 60
+      }
+    ],
+    "by_GT": {
+      "Supported": [
+        {
+          "from": "Supported",
+          "to": "Not Supported",
+          "N": 53
+        },
+        {
+          "from": "Supported",
+          "to": "Not Addressed",
+          "N": 3
+        },
+        {
+          "from": "Not Supported",
+          "to": "Supported",
+          "N": 0
+        },
+        {
+          "from": "Not Supported",
+          "to": "Not Addressed",
+          "N": 0
+        },
+        {
+          "from": "Not Addressed",
+          "to": "Supported",
+          "N": 0
+        },
+        {
+          "from": "Not Addressed",
+          "to": "Not Supported",
+          "N": 20
+        }
+      ],
+      "Not Supported": [
+        {
+          "from": "Supported",
+          "to": "Not Supported",
+          "N": 6
+        },
+        {
+          "from": "Supported",
+          "to": "Not Addressed",
+          "N": 1
+        },
+        {
+          "from": "Not Supported",
+          "to": "Supported",
+          "N": 0
+        },
+        {
+          "from": "Not Supported",
+          "to": "Not Addressed",
+          "N": 0
+        },
+        {
+          "from": "Not Addressed",
+          "to": "Supported",
+          "N": 0
+        },
+        {
+          "from": "Not Addressed",
+          "to": "Not Supported",
+          "N": 13
+        }
+      ],
+      "Not Addressed": [
+        {
+          "from": "Supported",
+          "to": "Not Supported",
+          "N": 12
+        },
+        {
+          "from": "Supported",
+          "to": "Not Addressed",
+          "N": 3
+        },
+        {
+          "from": "Not Supported",
+          "to": "Supported",
+          "N": 0
+        },
+        {
+          "from": "Not Supported",
+          "to": "Not Addressed",
+          "N": 0
+        },
+        {
+          "from": "Not Addressed",
+          "to": "Supported",
+          "N": 0
+        },
+        {
+          "from": "Not Addressed",
+          "to": "Not Supported",
+          "N": 27
+        }
+      ]
+    }
+  },
+  "with137": {
+    "label_agreement_N": 1755,
+    "label_disagreement_N": 62,
+    "both_correct_N": 1518,
+    "both_wrong_same_label_N": 237,
+    "both_wrong_different_label_N": 11
+  },
+  "limitations": [
+    "Observed prediction migrations do not establish a causal mechanism.",
+    "137 and138 are distinct update recipes; output similarity does not make them the same treatment.",
+    "All counts preserve original labels, cohorts and patient identities; no clinical explanations added."
+  ]
+}

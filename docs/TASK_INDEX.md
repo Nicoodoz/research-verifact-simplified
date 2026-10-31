@@ -8,7 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|140_kl_anchor|[当前](../tasks/140_kl_anchor/CURRENT.md) · [方案](../tasks/140_kl_anchor/PROTOCOL.md) · [进度](../outputs/140_kl_anchor/progress.md)|已启动teacher缓存，尚无分类结果|原156训练ID/48步，仅加固定KL，不重训匹配回放|
+|140_kl_anchor|[当前](../tasks/140_kl_anchor/CURRENT.md) · [方案](../tasks/140_kl_anchor/PROTOCOL.md) · [进度](../outputs/140_kl_anchor/progress.md)|缓存与最长反向检查完成，训练中，无分类结果|原156训练ID/48步，仅加固定KL，不重训匹配回放|
 |139_full_repeat|[当前](../tasks/139_full_repeat/CURRENT.md) · [方案](../tasks/139_full_repeat/PROTOCOL.md) · [进度](../outputs/139_full_repeat/progress.md)|500全有效，160运行时控制完成；不再扩大|相对120有收益；相对136正确−1/FS+3，输入近2倍不值得继续|
 |138_rationale_tasks|[当前](../tasks/138_rationale_tasks/CURRENT.md) · [完整报告](../outputs/138_rationale_tasks/report.md) · [方案](../tasks/138_rationale_tasks/PROTOCOL.md)|主臂1817全有效；MCC .5839、正确1532、FS66/362|相对136正确−61/FS−22，停止当前扩大；理由特异效应仅有500配对|
 |136_claim_repeat_transfer|[当前](../tasks/136_claim_repeat_transfer/CURRENT.md) · [方案](../tasks/136_claim_repeat_transfer/PROTOCOL.md) · [进度](../outputs/136_claim_repeat_transfer/progress.md)|全1817有效：MCC .6350、正确1593、FS88/362|相对120正确−6、FS−21；保留取舍，不升级默认|

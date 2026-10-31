@@ -1,0 +1,14 @@
+{
+  "tokens": 11349,
+  "initial_KL": 6.821216084063053e-05,
+  "initial_KL_tolerance": 0.01,
+  "LoRA_and_attention_dropout_zero": true,
+  "teacher_cache_preserves_dtype": true,
+  "no_optimizer_update": true,
+  "peak_allocated_bytes": 25998323712,
+  "gradient_norm": 0.730839192867279,
+  "training_completed": false,
+  "classification_effect_tested": false,
+  "source": "first actual140 longest backward, no optimizer update",
+  "peak_allocated_GiB": 24.212825775146484
+}
