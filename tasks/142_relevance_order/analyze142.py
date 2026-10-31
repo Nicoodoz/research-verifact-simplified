@@ -147,6 +147,10 @@ def analyze(scope,paths=None,bootstrap=False):
         input_cost=dict(mean_extra_tokens=statistics.mean(lengths[i]['input_tokens']-lengths[i]['source_input_tokens'] for i in raw),
             total_extra_tokens=sum(lengths[i]['input_tokens']-lengths[i]['source_input_tokens'] for i in raw)),
         new_training=False,new_supervision=False,new_API=0,no_postprocessing=True,no_label_rewrite=True,analysis_only=True)
+    unchanged=[i for i in valid if lengths[i]['prompt_token_sha256']==lengths[i]['source_prompt_token_sha256']]
+    result['same_input_internal_control']=dict(N=len(unchanged),ids=unchanged,
+        changed_label_ids=[i for i in unchanged if candidate[i]!=old[i]],
+        note='Included in frozen160 and original batch pairing; not independent evidence of ordering benefit.')
     authors={a:checked_collect([K/'bundle/results'/a,K/'evidence'/a]) for a in ('author_base9b','author_lora9b')}
     author_pred={a:{i:r['parsed']['verdict'] for i,r in data.items() if valid_raw(r)} for a,data in authors.items()}
     result['author_baseline_common']=common_table(valid,dict(relevance_order=candidate,claim_repeat136=old,paper_r1=history['paper_r1'],**author_pred),keys)

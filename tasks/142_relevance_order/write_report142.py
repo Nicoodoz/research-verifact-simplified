@@ -35,6 +35,10 @@ def render(value,decision):
     extra=value['input_cost']
     lines += ['',f"已收到样本平均输入变化{extra['mean_extra_tokens']:+.2f} tokens，总变化{extra['total_extra_tokens']:+d}；无新增API或训练。",'',
         '## 历史结果与真实覆盖','']
+    internal=value.get('same_input_internal_control',{})
+    if internal:
+        lines += [f"固定样本中原排序已相同的内部对照{internal['N']}条，其中标签变化{len(internal['changed_label_ids'])}条；"
+                  '它们保留原批次配对，不作为排序有效的独立证据。','']
     common=value['historical_common'];lines += [f"全部指定历史配置共同有效{common['N']}条。",'']
     lines += table(common['scores'],'relevance_order') if common['N'] else ['无完整共同子集；不可混用不同分母。']
     for name,part in value['historical_comparisons'].items():

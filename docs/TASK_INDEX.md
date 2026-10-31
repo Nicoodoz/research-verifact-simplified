@@ -8,7 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|142_relevance_order|[当前](../tasks/142_relevance_order/CURRENT.md) · [方案](../tasks/142_relevance_order/PROTOCOL.md) · [进度](../outputs/142_relevance_order/progress.md)|原160正式短筛中；输入等token、完整原片段|只改变片段顺序，先核对分类收益及实际成本，不自动扩大|
+|142_relevance_order|[当前](../tasks/142_relevance_order/CURRENT.md) · [160报告](../outputs/142_relevance_order/report.md) · [进度](../outputs/142_relevance_order/progress.md)|原160全有效，原500补评中|MCC+.0316、正确+2、FS−2，token不变；只补340，不自动扩大|
 |141_two_demos|[当前](../tasks/141_two_demos/CURRENT.md) · [500报告](../outputs/141_two_demos/report.md) · [停止记录](../outputs/141_two_demos/stop_summary.json)|500全有效；当前全量扩评已停止|相对136正确−3/FS−13；额外10有效/1中断、1306缺失，不能称完整1817|
 |140_kl_anchor|[当前](../tasks/140_kl_anchor/CURRENT.md) · [完整报告](../outputs/140_kl_anchor/report.md) · [进度](../outputs/140_kl_anchor/progress.md)|完整1817全有效，完整状态回传|相对136 MCC−.0322、正确−40、FS−20；停止当前配方扩大，保留风险取舍|
 |139_full_repeat|[当前](../tasks/139_full_repeat/CURRENT.md) · [方案](../tasks/139_full_repeat/PROTOCOL.md) · [进度](../outputs/139_full_repeat/progress.md)|500全有效，160运行时控制完成；不再扩大|相对120有收益；相对136正确−1/FS+3，输入近2倍不值得继续|

@@ -19,6 +19,7 @@ def phases():
         'claim_control139':[(P/'139_full_repeat/claim_control160/evidence','claim_control',32768,False)],
         'kl_anchor140':[(P/'140_kl_anchor/evidence','predictions',16384,True)]+[(P/'140_kl_anchor/extension'/s/'evidence','kl_anchor',16384,False) for s in ('old500','full1817')],
         'two_demos141':[(P/'141_two_demos'/s/'evidence','two_demos',32768,False) for s in SCOPES],
+        'relevance_order142':[(P/'142_relevance_order'/s/'evidence','relevance_order',16384,False) for s in SCOPES],
     }
 
 
@@ -129,7 +130,8 @@ def main():
             '139':'worker139: seconds=batch_seconds=elapsed; batch1',
             '140_screen160':'worker140 has no seconds/output_tokens; missing retained. Batch2 from frozen loop.',
             '140_extensions':'worker_eval140: seconds=elapsed/len(identifiers)',
-            '141':'worker141: seconds=batch_seconds=elapsed; batch1'},
+            '141':'worker141: seconds=batch_seconds=elapsed; batch1',
+            '142':'worker142: seconds=elapsed/actual batch size; original136 batch pairing'},
         common_settings='BF16 native9B; greedy; max_new_tokens384; no thinking. Batch/context differences are explicit, not treated as controlled speed tests.',
         call_count_rule='Received_N counts actual proposition-level Judge decisions. Local batched generation, zero API requests; batch sizes are separate from decision counts.',
         wall_rule='Actual recorded process/worker intervals only; stage sums have repeated loading. Missing values stay null. Post-training140 interval is not a standalone inference process or pure generation time.',

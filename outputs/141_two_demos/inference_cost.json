@@ -1,12 +1,13 @@
 {
-  "main_HEAD": "00b1dae094b792020baef51f065336eadb58a085",
+  "main_HEAD": "56aad839173a0b211c5ddcdc819a63200662d4eb",
   "scope_rule": "Fixed identical IDs per table; full1817 contains only configurations with1817 actual first receipts.",
   "seconds_audit": {
     "136": "worker136: seconds=elapsed/len(identifiers)",
     "139": "worker139: seconds=batch_seconds=elapsed; batch1",
     "140_screen160": "worker140 has no seconds/output_tokens; missing retained. Batch2 from frozen loop.",
     "140_extensions": "worker_eval140: seconds=elapsed/len(identifiers)",
-    "141": "worker141: seconds=batch_seconds=elapsed; batch1"
+    "141": "worker141: seconds=batch_seconds=elapsed; batch1",
+    "142": "worker142: seconds=elapsed/actual batch size; original136 batch pairing"
   },
   "common_settings": "BF16 native9B; greedy; max_new_tokens384; no thinking. Batch/context differences are explicit, not treated as controlled speed tests.",
   "call_count_rule": "Received_N counts actual proposition-level Judge decisions. Local batched generation, zero API requests; batch sizes are separate from decision counts.",
@@ -268,6 +269,55 @@
         "previous_cost160_generation_verified": true,
         "previous_artifact_wall_seconds": 828.9079449176788,
         "previous_artifact_wall_correction": "Previous828.91 labeled process wall matches worker elapsed828.9078; actual pid-to-controller832.2226 used consistently here. Original artifact retained."
+      },
+      "relevance_order142": {
+        "expected_N": 160,
+        "received_N": 160,
+        "valid_N": 160,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 369.9380428530276,
+          "recorded_partial_total": 369.9380428530276,
+          "recorded_N": 160,
+          "missing_N": 0,
+          "mean_per_recorded_item": 2.3121127678314224,
+          "median_per_recorded_item": 1.9518625643104315
+        },
+        "input_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1347767,
+          "mean": 8423.54375,
+          "median": 8265.0
+        },
+        "output_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1204,
+          "mean": 7.525,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "2": 160
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "16384": 160
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/142_relevance_order/screen160/evidence",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 416.1568765640259,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
       }
     },
     "old500": {
@@ -508,6 +558,55 @@
           }
         ],
         "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      },
+      "relevance_order142": {
+        "expected_N": 500,
+        "received_N": 160,
+        "valid_N": 160,
+        "invalid_N": 0,
+        "missing_N": 340,
+        "generation_seconds": {
+          "complete_total": 369.9380428530276,
+          "recorded_partial_total": 369.9380428530276,
+          "recorded_N": 160,
+          "missing_N": 0,
+          "mean_per_recorded_item": 2.3121127678314224,
+          "median_per_recorded_item": 1.9518625643104315
+        },
+        "input_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1347767,
+          "mean": 8423.54375,
+          "median": 8265.0
+        },
+        "output_tokens": {
+          "recorded_N": 160,
+          "missing_N": 0,
+          "sum": 1204,
+          "mean": 7.525,
+          "median": 7.0
+        },
+        "batch_size_items": {
+          "2": 160
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "16384": 160
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/142_relevance_order/screen160/evidence",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 416.1568765640259,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
       }
     },
     "full1817": {
@@ -665,6 +764,10 @@
     "two_demos141": {
       "received_N": 511,
       "missing_N": 1306
+    },
+    "relevance_order142": {
+      "received_N": 160,
+      "missing_N": 1657
     }
   },
   "separate_stopped_attempts": [

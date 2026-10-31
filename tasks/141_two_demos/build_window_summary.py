@@ -7,7 +7,7 @@ ROOT=next(p for p in Path(__file__).resolve().parents if (p/'docs/PROJECT_STATUS
 LABELS=('Supported','Not Supported','Not Addressed')
 SCOPES={'full1817':1817,'old500':500,'screen160':160}
 ORDER=('paper_r1','author_base9b','author_lora9b','base104_9b','label_only107','full_pool120','midpoint132',
-       'claim_repeat136','extra_steps137','rationale_tasks138','label_replay138','full_repeat139','kl_anchor140','two_demos141')
+       'claim_repeat136','extra_steps137','rationale_tasks138','label_replay138','full_repeat139','kl_anchor140','two_demos141','relevance_order142')
 SPECS={
     'claim_repeat136':('136_claim_repeat_transfer','{scope}.json'),
     'extra_steps137':('137_extra_steps','{scope}.json'),
@@ -16,11 +16,13 @@ SPECS={
     'full_repeat139':('139_full_repeat','{scope}.json'),
     'kl_anchor140':('140_kl_anchor','kl_anchor_{scope}.json'),
     'two_demos141':('141_two_demos','two_demos_{scope}.json'),
+    'relevance_order142':('142_relevance_order','relevance_order_{scope}.json'),
 }
 ALIASES={'candidate':None,'claim_repeat':'claim_repeat136','claim_repeat136':'claim_repeat136',
          'extra_steps':'extra_steps137','extra_steps137':'extra_steps137',
          'rationale_tasks':'rationale_tasks138','label_replay':'label_replay138',
          'kl_anchor':'kl_anchor140','two_demos':'two_demos141',
+         'relevance_order':'relevance_order142',
          'full_repeat':'full_repeat139',
          '107_label_only':'label_only107','120_step369':'full_pool120'}
 
@@ -220,7 +222,8 @@ def build(conclusion,as_of):
         '|137 / 138|137固定追加149步；138固定48步，主臂含36条旧理由辅助位置，对照为同位置标签回放。|',
         '|139|完整用户输入重复，120权重、batch1/32768；仅列其实际160/500，不外推1817。|',
         '|140|同138回放数据/顺序/48步，加固定0.5×KL；不使用新增理由数据。|',
-        '|141|120权重，仅加固定S→NS两条完整标签演示；batch1/32768/greedy384，无新训练。|','',
+        '|141|120权重，仅加固定S→NS两条完整标签演示；batch1/32768/greedy384，无新训练。|',
+        '|142|120权重与136接口/批次，仅将全部原作者证据片段按固定008 BM25重排；不增删内容，无训练。|','',
         '127的67条理由（训练63、内部验证4）是数据准备成果，不能算作这67条已带来训练收益；138只用了更早36条，140不加理由，141只把其中两例的原标签用于in-context输入。133在16步安全暂停，未产生可列的评价成绩。','',
         '当前以标签性能为先，尚未证明同次生成reason与标签的语义自洽；不得给改变后的标签沿用旧reason。','',
         '各原分析JSON保留完整三类precision/recall/F1、混淆矩阵、false-S率和预测S假发现率、救回误伤、患者与作者变化及已有区间；上表来源链接即详细入口。不因这里只摘主列而改变原口径。','',
