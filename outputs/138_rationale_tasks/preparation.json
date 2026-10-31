@@ -1,0 +1,33 @@
+{
+  "status": "CPU_PREPARED_NOT_RUN",
+  "source": "120 final369 weights; fresh Adam",
+  "seed": 138031,
+  "reason_N": 36,
+  "reason_patients": 21,
+  "reason_GT": {
+    "Not Addressed": 11,
+    "Supported": 9,
+    "Not Supported": 16
+  },
+  "extra_anchor_N": 120,
+  "label_unique_N": 156,
+  "all_train_patients": 32,
+  "slots_per_epoch": 192,
+  "epochs": 2,
+  "updates": 48,
+  "presentations": 384,
+  "candidate_tasks_per_epoch": {
+    "label": 156,
+    "reason": 36
+  },
+  "control_tasks_per_epoch": {
+    "label": 192
+  },
+  "same_original_ID_exposure": true,
+  "eval_N": 160,
+  "eval_input_matches136": true,
+  "GT_unchanged": true,
+  "no_new_reason_generated": true,
+  "max_training_tokens": 11349,
+  "new_API": 0
+}

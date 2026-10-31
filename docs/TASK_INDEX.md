@@ -8,11 +8,12 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|138_rationale_tasks|[当前](../tasks/138_rationale_tasks/CURRENT.md) · [方案](../tasks/138_rationale_tasks/PROTOCOL.md)|准备36条已审读训练理由＋匹配标签回放，384次呈现/48步|先做原生分类性能诊断；尚未训练，不声称理由数据已有效|
 |137_extra_steps|[集中总结](../outputs/137_extra_steps/window_summary.md) · [报告](../outputs/137_extra_steps/report.md) · [当前](../tasks/137_extra_steps/CURRENT.md)|149步与1817评价全部完成并回传；MCC .5952、正确1555、FS78/362|相对136正确−38、FS−10；NS增益伴随明显S/NA损失，停止当前追加配方|
 |136_claim_repeat_transfer|[当前](../tasks/136_claim_repeat_transfer/CURRENT.md) · [方案](../tasks/136_claim_repeat_transfer/PROTOCOL.md) · [进度](../outputs/136_claim_repeat_transfer/progress.md)|全1817有效：MCC .6350、正确1593、FS88/362|相对120正确−6、FS−21；保留取舍，不升级默认|
 |135_reason_first|[报告](../outputs/135_reason_first/report.md) · [统计](../outputs/135_reason_first/screen160.json)|160有效、缺reason0；MCC−.0608、正确−6、FS不变|停止当前版本扩大，前缀对照仅CPU未跑|
 |134_author_baselines|[完整报告](../outputs/134_author_baselines/report.md) · [覆盖](../outputs/134_author_baselines/full1817_coverage.json)|两9B各1817，paper_r1历史1817；共同有效1793|真实微调收益与NS/FS代价；作者接口未全面优于104接口120|
-|133_shuffle_repeat|[当前](../tasks/133_shuffle_repeat/CURRENT.md) · [新执行协议](../tasks/133_shuffle_repeat/EXECUTION_20261031.md)|新增20元窗口已启动固定118027种子/顺序、2945条/369步复验|已在独立目录启动；同新模型比较plain104与claim_repeat，旧预测复用|
+|133_shuffle_repeat|[当前](../tasks/133_shuffle_repeat/CURRENT.md) · [暂停回执](../outputs/133_shuffle_repeat/pause_summary.json)|按用户要求停在16步/128次呈现；模型、状态和日志已回传|原369步未完成、未评价；不再为本次复验补齐，稳定性后置|
 |132_midpoint_update|[最终结果](../outputs/132_midpoint_update/report.md) · [固定方案](../tasks/132_midpoint_update/PROTOCOL.md)|完整1817全有效，固定107/120更新中点|MCC .5988、正确1559、FS80/362；保留质量／风险取舍，不升级默认，按用户要求结束|
 |131_source_context_probe|[源文核查](../outputs/131_source_context_probe/report.md)|6例完整reference及相关原始note上下文；600片段可定位|没有新增分类成绩，未据此盲目扩大上下文或回填训练|
 |130_header_blocks|[最终报告](../outputs/130_header_blocks/final_report.md) · [固定方案](../tasks/130_header_blocks/PROTOCOL.md)|160初筛后只补340，完整500均有效；输入tokens−28.40%|总正确不变、FS+1、压力MCC下降，停止格式扩大|

@@ -1,0 +1,15 @@
+{
+  "status": "PAUSED_BY_USER",
+  "saved_step": 16,
+  "consumed": 128,
+  "planned_steps_not_completed": 369,
+  "evaluation_started": false,
+  "checkpoint_and_logs_returned": true,
+  "raw_worker_stop": "TimeoutError is the worker response to user-requested SIGTERM/STOP; not evidence of budget exhaustion or classifier failure.",
+  "global_goal_continues": true,
+  "source_model_and_all_attempts_preserved": true,
+  "resume_only_if_user_later_requests": true,
+  "no_shutdown": true,
+  "new_window_GPU_CNY_as_of_pause_archival": 0.5866302778893048,
+  "as_of": "2026-10-31T09:58:17+08:00"
+}
