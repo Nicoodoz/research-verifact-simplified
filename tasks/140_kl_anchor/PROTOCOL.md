@@ -8,6 +8,8 @@
 
 依据是[Learning without Forgetting](https://arxiv.org/abs/1606.09282)和[Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531)的软目标约束思路。这里只检验成熟训练方法的任务适配，不声称新算法、全局防遗忘保证或已有临床收益。约束也可能保留120错误、压制有效更新。
 
+补充LLM文献边界（不改配置）：[LoRA Learns Less and Forgets Less](https://arxiv.org/html/2405.09673v2)比较目标领域学习和其他任务保留，呈现二者取舍，不能据LoRA形式就认定本项目不会退化。[Context-Free Synthetic Data Mitigates Forgetting](https://arxiv.org/html/2505.13811v1)讨论以生成分布估计KL、保留预训练或推理能力；其无上下文合成数据与本任务完整患者reference、固定GT前缀不同。140只约束156个训练输入的标签位置，不是完整生成分布KL，不据类别漂移声称已验证或解决跨任务遗忘；也不据文献另加合成数据。
+
 评价复用固定160 ID及136的完整输入、greedy、关闭thinking、384上限、parse105。保留120、136、107、paper_r1和两种作者提示9B的同ID结果；直接复用138匹配回放，无重复训练。相对136，ΔMCC≥.015，或正确≥+3且ΔMCC≥−.01，或false-S≤−2且正确≥−3、ΔMCC≥−.03，作为继续信号；同时要求完整首答、有效率≥95%、false-S增加≤3，原TP≥6的类别不损失超过一半。只超过较弱回放、却无有用质量或风险取舍，不足以扩大。
 
 有信号再只补500的缺失340条，沿用138已冻结扩大口径；不按结果改λ、温度、步数或样本。所有首答保留，不因结果差重发。报告MCC、PA、正确数、false-S/真实非S、三类P/R/F1、混淆矩阵、救回误伤、患者和作者方向及缺失无效。CPU正确、loss或KL下降不作为分类收益；本任务不检验reason自洽。

@@ -49,6 +49,10 @@ def main():
   lines.append('')
  if 'patient_bootstrap' in s:
   lo,hi=s['patient_bootstrap']['metrics']['mcc']['ci95'];lines += [f'1000次患者配对ΔMCC 95%区间[{lo:+.4f},{hi:+.4f}]；不涵盖训练随机性、历史选型或新医院泛化。','']
+  for name,x in s.get('risk_and_recall_bootstrap',{}).items():
+   if x.get('ci95') is not None:
+    lo,hi=x['ci95'];lines += [f'{name}差值95%区间[{lo:+.2%},{hi:+.2%}]。']
+  lines.append('')
  if a.arm=='rationale_tasks' and a.scope=='screen160' and (P/'historical_overlap.json').exists():
   h=read(P/'historical_overlap.json');ns=next(x for x in h['classes'] if x['GT']=='Not Supported')
   lines += [f"描述性检查：160条中{h['same_as137']}条与历史137同标签，本次救回的{ns['new_rescued']}条NS中有{ns['same_rescues_in137']}条也曾被137救回。137不是匹配48步对照，这种重合不能证明或排除理由任务作用。",'']
