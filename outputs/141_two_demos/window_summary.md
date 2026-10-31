@@ -1,6 +1,6 @@
 # 当前窗口集中比较
 
-当前完整主证据仍是120的原生质量收益与136的风险取舍。142在原500条达到MCC+.0186、正确+4、false-S−3，两个面板正确数与风险同向改善，输入token不变、生成耗时约+5.6%；现只补1317验证完整1817，尚未取得全量结论。141保留500风险取舍，已停止全量扩评，额外11次实际尝试单列。127新增27条理由仍为未验证分类收益的数据资产。
+142完整1817较136正确少3、false-S多4，停止当前重排扩大。保留136的原生取舍，接续低成本原生分数与选择性核验研究；不把送审后的指标当三分类提升。
 
 仅复用既有分析JSON。1817、500、160各自是固定同ID范围，禁止跨表直接相减；未完成/覆盖不同的候选不填0、不进入完整分母表。
 评价仍是原20名历史暴露的选型患者；100名患者都有研究暴露，不称全新holdout，也没有自动使用确认40人重新选型。当前训练维持原32人、内部验证8人的边界。
@@ -17,11 +17,12 @@
 |extra_steps137|1817|0.5952|85.58%|1555|78/362|91.96%/47.11%/66.39%|8333.02（1817）/7.32（1657）|1.88（1657）|[full1817](../137_extra_steps/full1817.json)|
 |rationale_tasks138|1817|0.5839|84.31%|1532|66/362|89.83%/49.59%/68.46%|8333.02（1817）/7.35（1657）|1.88（1657）|[full1817](../138_rationale_tasks/rationale_tasks_full1817.json)|
 |kl_anchor140|1817|0.6027|85.47%|1553|68/362|91.00%/46.28%/71.78%|8333.02（1817）/7.35（1657）|1.88（1657）|[full1817](../140_kl_anchor/kl_anchor_full1817.json)|
+|relevance_order142|1817|0.6284|87.51%|1590|92/362|93.68%/35.54%/76.35%|8333.02（1817）/7.34（1817）|2.04（1817）|[full1817](../142_relevance_order/relevance_order_full1817.json)|
 
 成本括号为实际计时或token记录条数，部分记录不是全范围总成本；其他历史配置的“本表未整理”不表示原日志没有记录。[生成总时长、batch、墙钟及停止尝试明细](inference_cost.md)。
 
 two_demos141已有分析但未覆盖完整同ID分母（有效510/1817）；仅列覆盖和明细。
-尚无该范围分析文件：label_replay138, full_repeat139, relevance_order142；不列成绩。
+尚无该范围分析文件：label_replay138, full_repeat139；不列成绩。
 
 |实际候选|收到|有效|缺失|无效|详表|
 |---|---:|---:|---:|---:|---|
@@ -30,6 +31,7 @@ two_demos141已有分析但未覆盖完整同ID分母（有效510/1817）；仅�
 |rationale_tasks138|1817|1817|0|0|[明细](../138_rationale_tasks/rationale_tasks_full1817.json)|
 |kl_anchor140|1817|1817|0|0|[明细](../140_kl_anchor/kl_anchor_full1817.json)|
 |two_demos141|511|510|1306|1|[明细](two_demos_full1817.json)|
+|relevance_order142|1817|1817|0|0|[明细](../142_relevance_order/relevance_order_full1817.json)|
 
 ## 原500：固定500条
 
@@ -109,6 +111,7 @@ two_demos141已有分析但未覆盖完整同ID分母（有效510/1817）；仅�
 |extra_steps137|1793|0.5970|85.55%|1534|78/361|91.97%/47.50%/66.39%|[134共同子集](../137_extra_steps/full1817.json)|
 |rationale_tasks138|1793|0.5838|84.22%|1510|66/361|89.80%/49.17%/68.46%|[134共同子集](../138_rationale_tasks/rationale_tasks_full1817.json)|
 |kl_anchor140|1793|0.6045|85.44%|1532|68/361|90.99%/46.67%/71.78%|[134共同子集](../140_kl_anchor/kl_anchor_full1817.json)|
+|relevance_order142|1793|0.6307|87.51%|1569|92/361|93.72%/35.83%/76.35%|[134共同子集](../142_relevance_order/relevance_order_full1817.json)|
 
 author_base9b原始覆盖/invalid详见[明细](../134_author_baselines/full1817.json)；缺失0，无效11。
 author_lora9b原始覆盖/invalid详见[明细](../134_author_baselines/full1817.json)；缺失0，无效13。
@@ -146,7 +149,7 @@ author_lora9b原始覆盖/invalid详见[明细](../134_author_baselines/full1817
 |full_repeat139|400|0.5774|86.25%|345|23/79|94.39%/23.08%/67.92%|[old500](../139_full_repeat/old500.json)|
 |kl_anchor140|400|0.5891|85.50%|342|17/79|91.90%/38.46%/69.81%|[full1817](../140_kl_anchor/kl_anchor_full1817.json)|
 |two_demos141|400|0.5945|85.00%|340|12/79|91.28%/50.00%/64.15%|[full1817](two_demos_full1817.json)|
-|relevance_order142|400|0.6292|87.50%|350|18/79|93.77%/34.62%/75.47%|[old500](../142_relevance_order/relevance_order_old500.json)|
+|relevance_order142|400|0.6292|87.50%|350|18/79|93.77%/34.62%/75.47%|[full1817](../142_relevance_order/relevance_order_full1817.json)|
 
 ### 压力100
 
@@ -163,7 +166,7 @@ author_lora9b原始覆盖/invalid详见[明细](../134_author_baselines/full1817
 |full_repeat139|100|0.3746|57.00%|57|28/100|—/40.00%/74.00%|[old500](../139_full_repeat/old500.json)|
 |kl_anchor140|100|0.4022|62.00%|62|21/100|—/48.00%/76.00%|[full1817](../140_kl_anchor/kl_anchor_full1817.json)|
 |two_demos141|100|0.3802|60.00%|60|23/100|—/48.00%/72.00%|[full1817](two_demos_full1817.json)|
-|relevance_order142|100|0.3704|57.00%|57|27/100|—/38.00%/76.00%|[old500](../142_relevance_order/relevance_order_old500.json)|
+|relevance_order142|100|0.3704|57.00%|57|27/100|—/38.00%/76.00%|[full1817](../142_relevance_order/relevance_order_full1817.json)|
 
 ### 新增1317
 
@@ -177,6 +180,7 @@ author_lora9b原始覆盖/invalid详见[明细](../134_author_baselines/full1817
 |extra_steps137|1317|0.5717|87.47%|1152|35/183|91.62%/48.89%/65.94%|[full1817](../137_extra_steps/full1817.json)|
 |rationale_tasks138|1317|0.5534|85.95%|1132|29/183|89.68%/48.89%/67.39%|[full1817](../138_rationale_tasks/rationale_tasks_full1817.json)|
 |kl_anchor140|1317|0.5789|87.24%|1149|30/183|90.74%/48.89%/71.01%|[full1817](../140_kl_anchor/kl_anchor_full1817.json)|
+|relevance_order142|1317|0.6126|89.83%|1183|47/183|93.65%/33.33%/76.81%|[full1817](../142_relevance_order/relevance_order_full1817.json)|
 
 ### 103原面板180
 
@@ -188,6 +192,7 @@ author_lora9b原始覆盖/invalid详见[明细](../134_author_baselines/full1817
 |extra_steps137|180|0.6094|76.67%|138|15/84|91.67%/55.26%/63.04%|[full1817](../137_extra_steps/full1817.json)|
 |rationale_tasks138|180|0.5760|74.44%|134|15/84|86.46%/52.63%/67.39%|[full1817](../138_rationale_tasks/rationale_tasks_full1817.json)|
 |kl_anchor140|180|0.5747|74.44%|134|15/84|87.50%/44.74%/71.74%|[full1817](../140_kl_anchor/kl_anchor_full1817.json)|
+|relevance_order142|180|0.6102|76.67%|138|21/84|92.71%/31.58%/80.43%|[full1817](../142_relevance_order/relevance_order_full1817.json)|
 
 ## 配置与监督边界
 
@@ -211,7 +216,7 @@ author_lora9b原始覆盖/invalid详见[明细](../134_author_baselines/full1817
 
 ## 费用与状态
 
-从2026-10-31T09:36:01+08:00起到2026-10-31T16:32:48+08:00，按1.58元/小时估算GPU累计¥10.976/20。所有准备、加载、编译、等待与回传均计入；这不是平台精确账单，也不因任务切换重置。API仍¥0/80。
+从2026-10-31T09:36:01+08:00起到2026-10-31T17:19:45+08:00，按1.58元/小时估算GPU累计¥12.212/20。所有准备、加载、编译、等待与回传均计入；这不是平台精确账单，也不因任务切换重置。API仍¥0/80。
 不自动关机或释放。默认系统未因该汇总升级；这里的结论由调用者明确传入，脚本不替未完成结果编造结论。
 
 上一16元窗口至本次新增授权前另估约¥15.695，单独记录；旧余额未借用、API额度未重置。

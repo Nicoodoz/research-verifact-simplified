@@ -9,3 +9,5 @@
 内部8人曾用于选择且起点有43条监督；评价20人有反复研究暴露。当前不声称独立校准，不自动启用确认40人。142 GPU实验保持独立运行，本任务新增GPU/API为0。
 
 [结果与边界](../../outputs/143_selective_verification/report.md) · [文献判断](../../outputs/143_selective_verification/literature_assessment.md) · [固定回顾协议](PROTOCOL.md)
+
+142完整结果已按相同规则补充：自动覆盖89.82%，拦44次FS、残48次、送审141个正确S。120/136的保留S恰为107的1273条；142少保留3条，所以不能把残48误解为分歧规则发现了共同错误。见[补充比较](../../outputs/143_selective_verification/report142.md)。

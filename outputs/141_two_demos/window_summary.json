@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-10-31T16:32:48+08:00",
-  "conclusion": "当前完整主证据仍是120的原生质量收益与136的风险取舍。142在原500条达到MCC+.0186、正确+4、false-S−3，两个面板正确数与风险同向改善，输入token不变、生成耗时约+5.6%；现只补1317验证完整1817，尚未取得全量结论。141保留500风险取舍，已停止全量扩评，额外11次实际尝试单列。127新增27条理由仍为未验证分类收益的数据资产。",
+  "created_at": "2026-10-31T17:19:45+08:00",
+  "conclusion": "142完整1817较136正确少3、false-S多4，停止当前重排扩大。保留136的原生取舍，接续低成本原生分数与选择性核验研究；不把送审后的指标当三分类提升。",
   "tables": {
     "full1817": {
       "claim_repeat136": {
@@ -144,6 +144,24 @@
         },
         "macro_F1": 0.6724990910715496,
         "source": "outputs/140_kl_anchor/kl_anchor_full1817.json",
+        "metric_path": "primary.scores.candidate",
+        "source_scope": "full1817"
+      },
+      "relevance_order142": {
+        "config": "relevance_order142",
+        "N": 1817,
+        "MCC": 0.6284235076481199,
+        "PA": 0.8750687947165657,
+        "correct": 1590,
+        "false_S": 92,
+        "non_S": 362,
+        "recall": {
+          "Supported": 0.9367697594501718,
+          "Not Supported": 0.35537190082644626,
+          "Not Addressed": 0.7634854771784232
+        },
+        "macro_F1": 0.6857416253070748,
+        "source": "outputs/142_relevance_order/relevance_order_full1817.json",
         "metric_path": "primary.scores.candidate",
         "source_scope": "full1817"
       }
@@ -631,6 +649,15 @@
         "missing_N": 1306,
         "invalid_N": 1,
         "source": "outputs/141_two_demos/two_demos_full1817.json"
+      },
+      {
+        "config": "relevance_order142",
+        "expected_N": 1817,
+        "received_N": 1817,
+        "valid_N": 1817,
+        "missing_N": 0,
+        "invalid_N": 0,
+        "source": "outputs/142_relevance_order/relevance_order_full1817.json"
       }
     ],
     "old500": [
@@ -792,8 +819,7 @@
   "missing_analysis_sources": {
     "full1817": [
       "label_replay138",
-      "full_repeat139",
-      "relevance_order142"
+      "full_repeat139"
     ],
     "old500": [],
     "screen160": []
@@ -978,6 +1004,24 @@
       "macro_F1": 0.6740451706493245,
       "source": "outputs/140_kl_anchor/kl_anchor_full1817.json",
       "metric_path": "author_baseline_common.scores.kl_anchor",
+      "source_scope": "134共同子集"
+    },
+    "relevance_order142": {
+      "config": "relevance_order142",
+      "N": 1793,
+      "MCC": 0.6306939260305288,
+      "PA": 0.8750697155605132,
+      "correct": 1569,
+      "false_S": 92,
+      "non_S": 361,
+      "recall": {
+        "Supported": 0.9371508379888268,
+        "Not Supported": 0.35833333333333334,
+        "Not Addressed": 0.7634854771784232
+      },
+      "macro_F1": 0.6879072872618384,
+      "source": "outputs/142_relevance_order/relevance_order_full1817.json",
+      "metric_path": "author_baseline_common.scores.relevance_order",
       "source_scope": "134共同子集"
     }
   },
@@ -1633,6 +1677,24 @@
         "metric_path": "panels.natural.scores.candidate",
         "source_scope": "full1817"
       },
+      "relevance_order142": {
+        "config": "relevance_order142",
+        "N": 400,
+        "MCC": 0.6292400222100563,
+        "PA": 0.875,
+        "correct": 350,
+        "false_S": 18,
+        "non_S": 79,
+        "recall": {
+          "Supported": 0.9376947040498442,
+          "Not Supported": 0.34615384615384615,
+          "Not Addressed": 0.7547169811320755
+        },
+        "macro_F1": 0.6771894417247223,
+        "source": "outputs/142_relevance_order/relevance_order_full1817.json",
+        "metric_path": "panels.natural.scores.candidate",
+        "source_scope": "full1817"
+      },
       "label_replay138": {
         "config": "label_replay138",
         "N": 400,
@@ -1667,24 +1729,6 @@
         "macro_F1": 0.6237316782457031,
         "source": "outputs/139_full_repeat/old500.json",
         "metric_path": "panels.natural.scores.full_repeat",
-        "source_scope": "old500"
-      },
-      "relevance_order142": {
-        "config": "relevance_order142",
-        "N": 400,
-        "MCC": 0.6292400222100563,
-        "PA": 0.875,
-        "correct": 350,
-        "false_S": 18,
-        "non_S": 79,
-        "recall": {
-          "Supported": 0.9376947040498442,
-          "Not Supported": 0.34615384615384615,
-          "Not Addressed": 0.7547169811320755
-        },
-        "macro_F1": 0.6771894417247223,
-        "source": "outputs/142_relevance_order/relevance_order_old500.json",
-        "metric_path": "panels.natural.scores.candidate",
         "source_scope": "old500"
       },
       "label_only107": {
@@ -1851,6 +1895,24 @@
         "metric_path": "panels.pressure.scores.candidate",
         "source_scope": "full1817"
       },
+      "relevance_order142": {
+        "config": "relevance_order142",
+        "N": 100,
+        "MCC": 0.37040800403714674,
+        "PA": 0.57,
+        "correct": 57,
+        "false_S": 27,
+        "non_S": 100,
+        "recall": {
+          "Supported": null,
+          "Not Supported": 0.38,
+          "Not Addressed": 0.76
+        },
+        "macro_F1": 0.42676976894044,
+        "source": "outputs/142_relevance_order/relevance_order_full1817.json",
+        "metric_path": "panels.pressure.scores.candidate",
+        "source_scope": "full1817"
+      },
       "label_replay138": {
         "config": "label_replay138",
         "N": 100,
@@ -1885,24 +1947,6 @@
         "macro_F1": 0.43180665098473314,
         "source": "outputs/139_full_repeat/old500.json",
         "metric_path": "panels.pressure.scores.full_repeat",
-        "source_scope": "old500"
-      },
-      "relevance_order142": {
-        "config": "relevance_order142",
-        "N": 100,
-        "MCC": 0.37040800403714674,
-        "PA": 0.57,
-        "correct": 57,
-        "false_S": 27,
-        "non_S": 100,
-        "recall": {
-          "Supported": null,
-          "Not Supported": 0.38,
-          "Not Addressed": 0.76
-        },
-        "macro_F1": 0.42676976894044,
-        "source": "outputs/142_relevance_order/relevance_order_old500.json",
-        "metric_path": "panels.pressure.scores.candidate",
         "source_scope": "old500"
       },
       "label_only107": {
@@ -2051,6 +2095,24 @@
         "metric_path": "panels.new1317.scores.candidate",
         "source_scope": "full1817"
       },
+      "relevance_order142": {
+        "config": "relevance_order142",
+        "N": 1317,
+        "MCC": 0.6126189757548807,
+        "PA": 0.8982536066818527,
+        "correct": 1183,
+        "false_S": 47,
+        "non_S": 183,
+        "recall": {
+          "Supported": 0.9365079365079365,
+          "Not Supported": 0.3333333333333333,
+          "Not Addressed": 0.7681159420289855
+        },
+        "macro_F1": 0.658027850347044,
+        "source": "outputs/142_relevance_order/relevance_order_full1817.json",
+        "metric_path": "panels.new1317.scores.candidate",
+        "source_scope": "full1817"
+      },
       "label_only107": {
         "config": "label_only107",
         "N": 1317,
@@ -2196,14 +2258,32 @@
         "source": "outputs/140_kl_anchor/kl_anchor_full1817.json",
         "metric_path": "panels.history103_180.scores.candidate",
         "source_scope": "full1817"
+      },
+      "relevance_order142": {
+        "config": "relevance_order142",
+        "N": 180,
+        "MCC": 0.6102465923289637,
+        "PA": 0.7666666666666667,
+        "correct": 138,
+        "false_S": 21,
+        "non_S": 84,
+        "recall": {
+          "Supported": 0.9270833333333334,
+          "Not Supported": 0.3157894736842105,
+          "Not Addressed": 0.8043478260869565
+        },
+        "macro_F1": 0.6828407047824522,
+        "source": "outputs/142_relevance_order/relevance_order_full1817.json",
+        "metric_path": "panels.history103_180.scores.candidate",
+        "source_scope": "full1817"
       }
     }
   },
   "budget": {
     "start": "2026-10-31T09:36:01+08:00",
-    "as_of": "2026-10-31T16:32:48.954433+08:00",
-    "elapsed_seconds": 25007.954433,
-    "estimated_GPU_CNY": 10.975713334483332,
+    "as_of": "2026-10-31T17:19:45.637937+08:00",
+    "elapsed_seconds": 27824.637937,
+    "estimated_GPU_CNY": 12.211924427905556,
     "GPU_cap_CNY": 20,
     "API_used_CNY": 0,
     "API_cap_CNY": 80,
@@ -2235,6 +2315,7 @@
     "outputs/141_two_demos/two_demos_full1817.json",
     "outputs/141_two_demos/two_demos_old500.json",
     "outputs/141_two_demos/two_demos_screen160.json",
+    "outputs/142_relevance_order/relevance_order_full1817.json",
     "outputs/142_relevance_order/relevance_order_old500.json",
     "outputs/142_relevance_order/relevance_order_screen160.json"
   ]

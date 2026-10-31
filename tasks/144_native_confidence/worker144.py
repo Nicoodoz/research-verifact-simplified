@@ -42,6 +42,8 @@ def execute(bundle, session_path, compute_seconds, save_seconds):
     job = read(bundle / 'data/job.json')
     if job['adapter_sha256'] != '47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a':
         raise ValueError('Only the frozen120 final369 adapter is permitted')
+    if not isinstance(job.get('compute_limit_seconds'), (int, float)) or not isinstance(job.get('save_reserve_seconds'), (int, float)):
+        raise ValueError('Budget is not frozen; root must set compute and save limits before starting')
     if (job['max_seq_length'] != 16384 or not 0 < compute_seconds <= job['compute_limit_seconds']
             or save_seconds < job['save_reserve_seconds']):
         raise ValueError('Explicit bounded compute and at least180 seconds save reserve required')
@@ -80,6 +82,8 @@ def execute(bundle, session_path, compute_seconds, save_seconds):
     records = [json.loads(s) for s in (bundle / job['input']).read_text(encoding='utf-8').splitlines() if s.strip()]
     if len(records) != job['expected_N'] or len({(r['variant'], r['id']) for r in records}) != len(records):
         raise ValueError('Duplicate or missing variant/ID input')
+    if {(r['variant'],r['id']) for r in records} != {(v,i) for v, ids in job['score_ids_by_variant'].items() for i in ids}:
+        raise ValueError('Inputs differ from frozen per-variant score targets')
     tokenizer = AutoTokenizer.from_pretrained(job['model_dir'], local_files_only=True)
     prefix = tokenizer.encode(job['prefix'], add_special_tokens=False)
     if prefix != job['prefix_token_ids']:
@@ -109,6 +113,24 @@ def execute(bundle, session_path, compute_seconds, save_seconds):
     if manifest_path.exists() and manifest_path.read_text(encoding='utf-8') != manifest_text:
         raise ValueError('Existing encoded scoring manifest differs')
     manifest_path.write_text(manifest_text, encoding='utf-8', newline='\n')
+    reused = {}
+    reuse_root = bundle / job['reuse_results'] if job.get('reuse_results') else None
+    expected_reused = {(v,i) for v,ids in job.get('reused_score_ids_by_variant',{}).items() for i in ids}
+    if reuse_root is not None:
+        for item in read(reuse_root/'provenance.json'):
+            key = (item['variant'],item['id'])
+            source = bundle / item['copied_path']
+            if key not in encoded or c.sha(source) != item['source_sha256']:
+                raise ValueError('Copied reusable score fingerprint changed')
+            row = read(source)
+            if (row.get('adapter_sha256') != job['adapter_sha256']
+                    or row.get('scoring_input_token_sha256') != c.digest(c.canonical(encoded[key]))
+                    or row.get('prefix_token_ids') != prefix
+                    or not math.isfinite(row.get('logit_S_minus_Not',float('nan')))):
+                raise ValueError('Reusable score differs from this exact scoring input')
+            reused[key] = row
+    if set(reused) != expected_reused:
+        raise ValueError('Frozen reusable score inventory differs')
     model_load_start = time.time()
     checkpoint = Path(job['adapter']) / 'adapter_model.safetensors'
     if checkpoint.stat().st_size != job['adapter_bytes'] or c.sha(checkpoint) != job['adapter_sha256']:
@@ -142,6 +164,8 @@ def execute(bundle, session_path, compute_seconds, save_seconds):
     elapsed = []
     for r in records:
         key = (r['variant'], r['id'])
+        if key in reused:
+            continue
         path = out / r['variant'] / (r['id'] + '.json')
         if path.exists():
             old = read(path)
@@ -188,7 +212,8 @@ def execute(bundle, session_path, compute_seconds, save_seconds):
                      scoring_tokens=len(encoded[key])))
         (out / 'inflight.json').unlink(); elapsed.append(dict(seconds=seconds, prompt_tokens=r['expected_prompt_tokens']))
         del x, output, logits, probabilities
-    put(out / 'complete.json', dict(expected_N=len(records), retained_scores=len(records), new_forwards=len(elapsed),
+    put(out / 'complete.json', dict(scope=job['scope'], expected_N=len(records), retained_scores=len(records),
+                                    reused_score_N=len(reused), new_forwards=len(elapsed),
                                     new_forward_seconds=sum(r['seconds'] for r in elapsed),
                                     worker_started_epoch=start, worker_completed_epoch=time.time(),
                                     worker_wall_seconds=time.time()-start, no_training=True,
@@ -210,13 +235,14 @@ def main():
         parser.error('--execute requires an existing authorized session and explicit compute seconds')
     began = time.time()
     status = 'failed'
+    scope = read(args.bundle.resolve()/'data/job.json').get('scope')
     try:
         execute(args.bundle, args.session, args.compute_seconds, args.save_reserve_seconds)
         status = 'complete'
     finally:
         put(args.bundle.resolve().parent / 'results/run_exit.json',
             dict(status=status, worker_started_epoch=began, worker_completed_epoch=time.time(),
-                 worker_wall_seconds=time.time()-began, scope='pilot', no_shutdown=True))
+                 worker_wall_seconds=time.time()-began, scope=scope, no_shutdown=True))
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 {
-  "main_HEAD": "fe3903c3d1df738c9365d0b9f8cfd36c6ee6769a",
+  "main_HEAD": "0d55477cc79f6de0c6c188c0bded1a9f21e72c21",
   "scope_rule": "Fixed identical IDs per table; full1817 contains only configurations with1817 actual first receipts.",
   "seconds_audit": {
     "136": "worker136: seconds=elapsed/len(identifiers)",
@@ -1478,6 +1478,76 @@
         ],
         "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
       },
+      "relevance_order142": {
+        "expected_N": 1817,
+        "received_N": 1817,
+        "valid_N": 1817,
+        "invalid_N": 0,
+        "missing_N": 0,
+        "generation_seconds": {
+          "complete_total": 3703.5507671022788,
+          "recorded_partial_total": 3703.5507671022788,
+          "recorded_N": 1817,
+          "missing_N": 0,
+          "mean_per_recorded_item": 2.038277802477864,
+          "median_per_recorded_item": 1.9342909716069698
+        },
+        "input_tokens": {
+          "recorded_N": 1817,
+          "missing_N": 0,
+          "sum": 15141090,
+          "mean": 8333.015960374243,
+          "median": 8161
+        },
+        "output_tokens": {
+          "recorded_N": 1817,
+          "missing_N": 0,
+          "sum": 13342,
+          "mean": 7.342872867363787,
+          "median": 7
+        },
+        "batch_size_items": {
+          "2": 1814,
+          "1": 3
+        },
+        "inferred_batch_size_items": 0,
+        "context_capacity_items": {
+          "16384": 1817
+        },
+        "phase_walls": [
+          {
+            "source": ".local_models/142_relevance_order/screen160/evidence",
+            "received_N": 160,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 416.1568765640259,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          },
+          {
+            "source": ".local_models/142_relevance_order/old500/evidence",
+            "received_N": 340,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 775.690247297287,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          },
+          {
+            "source": ".local_models/142_relevance_order/full1817/evidence",
+            "received_N": 1317,
+            "whole_phase": true,
+            "recorded_wall": {
+              "seconds": 2681.396469593048,
+              "kind": "process_wall",
+              "basis": "controller_done.epoch - pid.started"
+            }
+          }
+        ],
+        "timing_rule": "Sum per-item seconds; batch_seconds is validation only, never summed per item."
+      },
       "label_only107": {
         "expected_N": 1817,
         "received_N": 1817,
@@ -1917,10 +1987,6 @@
     "two_demos141": {
       "received_N": 511,
       "missing_N": 1306
-    },
-    "relevance_order142": {
-      "received_N": 500,
-      "missing_N": 1317
     }
   },
   "separate_stopped_attempts": [

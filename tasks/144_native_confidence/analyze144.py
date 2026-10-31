@@ -129,8 +129,25 @@ def numeric_summary(values):
                 minimum=min(values) if values else None, maximum=max(values) if values else None)
 
 
+def interval_union(intervals):
+    """Merge overlapping/nested wall-clock spans; retain disjoint runs separately."""
+    spans=[]
+    for row in intervals:
+        start,end=row['started_epoch'],row['completed_epoch']
+        if not finite(start) or not finite(end) or end<start:
+            raise ValueError('Invalid recorded wall-clock interval')
+        spans.append((start,end))
+    merged=[]
+    for start,end in sorted(spans):
+        if merged and start<=merged[-1][1]:
+            merged[-1][1]=max(merged[-1][1],end)
+        else:
+            merged.append([start,end])
+    return [dict(started_epoch=start,completed_epoch=end,seconds=end-start) for start,end in merged]
+
+
 def cost_summary(results, found):
-    events, seen_events, runtime, workers = [], set(), [], {}
+    events, seen_events, runtime, workers, controllers = [], set(), [], {}, []
     for root in results:
         for row in rows_if(root / 'attempts.jsonl'):
             marker = c.canonical(row)
@@ -148,6 +165,10 @@ def cost_summary(results, found):
                         raise ValueError('Worker wall interval and duration disagree')
                     workers[interval]=dict(started_epoch=interval[0],completed_epoch=interval[1],
                         seconds=record['worker_wall_seconds'],status=record.get('status','complete'))
+        controller_path=root.parent/'controller_done.json'
+        if controller_path.exists():
+            controller=c.read(controller_path)
+            controllers.append(dict(path=str(controller_path),sha256=c.sha(controller_path),record=controller))
     pending, paired_attempts, unpaired_completions = {}, [], []
     for event in sorted(events, key=lambda row: row.get('epoch', 0)):
         key=(event.get('variant'),event.get('id'))
@@ -164,6 +185,9 @@ def cost_summary(results, found):
     safe_keys = ('event', 'status', 'attempt_id', 'variant', 'id', 'epoch', 'started', 'ended',
                  'seconds', 'forward_seconds', 'elapsed_seconds', 'input_tokens',
                  'original_prompt_tokens', 'prompt_tokens', 'scoring_tokens', 'batch_size', 'error_type')
+    union=interval_union(workers.values())
+    controller_union=interval_union(dict(started_epoch=row['record']['started'],completed_epoch=row['record']['ended'])
+        for row in controllers if finite(row['record'].get('started')) and finite(row['record'].get('ended')))
     return dict(successful_unique_records=len(found),
                 successful_forward_seconds=numeric_summary([row.get('seconds') for row in found.values()]),
                 original_prompt_tokens=numeric_summary([row.get('original_prompt_tokens') for row in found.values()]),
@@ -179,7 +203,12 @@ def cost_summary(results, found):
                 recorded_attempt_wall_seconds=numeric_summary([row['observed_wall_seconds'] for row in paired_attempts]),
                 attempt_observation_span_seconds=max(epochs)-min(epochs) if epochs else None,
                 recorded_worker_intervals=list(workers.values()),
-                worker_wall_seconds=numeric_summary([row['seconds'] for row in workers.values()]),
+                worker_interval_union=union,
+                worker_wall_seconds=numeric_summary([row['seconds'] for row in union]),
+                worker_wall_aggregation='Union of all recorded time intervals; nested/overlapping complete/run_exit spans count once, disjoint spans add.',
+                controller_records=controllers,
+                controller_wall_seconds=numeric_summary([row['seconds'] for row in controller_union]),
+                controller_interval_union=controller_union,
                 model_load_seconds=numeric_summary([row['record'].get('model_load_seconds') for row in runtime]),
                 preparation_seconds=numeric_summary([row['record'].get('preparation_seconds') for row in runtime]),
                 runtime_records=runtime,
@@ -212,6 +241,21 @@ def selective_summary(rows, native, reviewed):
     value.pop('logical_inference_calls')
     value['additional107_calls'] = 0
     return value
+
+
+def native_branch_consistency(native, margins):
+    """Prediction/score comparison only; never reads GT or filters a score."""
+    selected = sorted(i for i in margins if i in native and native[i]=='Supported')
+    if any(not finite(margins[i]) for i in selected):
+        raise ValueError('Consistency diagnostic requires valid finite margins')
+    negative = [dict(id=i, margin=margins[i]) for i in selected if margins[i] < 0]
+    zero = [dict(id=i, margin=margins[i]) for i in selected if margins[i] == 0]
+    return dict(scored_native_S_N=len(selected),
+                negative_N=len(negative), zero_N=len(zero),
+                minimum_margin=min((margins[i] for i in selected),default=None),
+                negative_records=negative, zero_records=zero,
+                action='Diagnostic only: preserve all original predictions and scores; no removal or resend.',
+                interpretation='Negative margin ranks Not above S under this fixed canonical prefix. Batch1 score extraction versus original batch2 generation may affect near-zero values; numerous materially negative margins require configuration/prefix/runtime review.')
 
 
 def load_native(job, data_folder, keys):
@@ -306,6 +350,7 @@ def analyze(bundle, results):
             output['stop_reason'] = 'Frozen score target does not cover every native Supported prediction.'
             return output
         scores = {i: valid[(variant,i)]['logit_S_minus_Not'] for i in supported}
+        consistency = native_branch_consistency(labels, scores)
         points = ranked_points(rows, labels, scores)
         for point in points:
             flags = set(point['review_ids'])
@@ -317,6 +362,7 @@ def analyze(bundle, results):
             point['authors'] = {name: selective_summary([r for r in rows if r['author']==name],labels,flags) for name in sorted({r['author'] for r in rows})}
             point['patients'] = {str(sid): selective_summary([r for r in rows if r['sid']==sid],labels,flags) for sid in sorted({r['sid'] for r in rows})}
         effects[variant] = dict(native=score(rows,labels), points=points,
+                               native_branch_consistency=consistency,
                                score_zero_N=sum(value==0 for value in scores.values()))
     output.update(status='COMPLETE_EFFECT_GRID', effect_metrics_generated=True,
                   evaluation_N=len(rows), evaluation_patients=len({r['sid'] for r in rows}),
@@ -334,6 +380,14 @@ def render(result):
         lines += ['', result['stop_reason'], '未生成分类效果、送审曲线或按部分数据挑选的点。']
     else:
         lines += ['', '## 全部原生结果', '']+metric_table((name,value['native']) for name,value in result['effects'].items())
+        lines += ['', '## 原生S与固定前缀分支的一致性诊断', '',
+                  '|输入形式|有分数的原生S|margin<0|margin=0|最小margin|', '|---|---:|---:|---:|---:|']
+        for variant,effect in result['effects'].items():
+            check=effect['native_branch_consistency']
+            lines.append(f"|{variant}|{check['scored_native_S_N']}|{check['negative_N']}|{check['zero_N']}|{number(check['minimum_margin'])}|")
+        lines += ['', '负值表示当前canonical前缀下Not分支高于S，与既有原生S输出的分支排序不同；零值只记并列。'
+                  '全部对应ID和原margin保留在JSON，不改分数、标签、不剔除、不重发。batch1评分与原batch2生成的数值差可能影响接近0的项；'
+                  '若负值很多且明显远离0，应先核对模型、前缀、输入与运行设置，不能直接解释为已校准不确定性。']
         lines += ['', '## 固定送审网格', '', '|模型/原S池送审%|送审n|自动N/覆盖|自动MCC|自动PA|残留FS/原非S|残留FS/自动非S|自动S FDR|送审正确S|拦截FS|随机期望[参考区间]|',
                   '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|']
         for variant,effect in result['effects'].items():
@@ -349,7 +403,8 @@ def render(result):
     forward=cost['successful_forward_seconds'];tokens=cost['original_prompt_tokens']
     lines += ['', '## 评分资源与尝试', '',
               f"成功记录forward秒数：已记录{forward['recorded_N']}项，总计{forward['total']}；原prompt tokens记录{tokens['recorded_N']}项，总计{tokens['total']}。", '',
-              f"已记录worker墙钟：{cost['worker_wall_seconds']['recorded_N']}段，总计{cost['worker_wall_seconds']['total']}秒；模型加载{cost['model_load_seconds']['total']}秒，准备{cost['preparation_seconds']['total']}秒。完成/退出重复记录的同一时间段只计一次。", '',
+              f"worker墙钟按时间区间并集汇总：{cost['worker_wall_seconds']['recorded_N']}段，总计{number(cost['worker_wall_seconds']['total'])}秒；模型加载{number(cost['model_load_seconds']['total'])}秒，准备{number(cost['preparation_seconds']['total'])}秒。内外层完成/退出记录即使端点不同，嵌套或重叠也只计一次，不重叠运行相加；原记录保留在JSON。", '',
+              f"controller墙钟单列：{number(cost['controller_wall_seconds']['total'])}秒。控制器包含worker运行区间，不能与worker墙钟再次相加。", '',
               '实际batch分布：'+str(cost['batch_size_counts'])+'；尝试事件：'+str(cost['attempt_event_counts'])+'。', '',
               f"未配到完成事件的前向尝试{len(cost['pending_attempts'])}次；其forward成本未知时不填零，退出墙钟仍单列。", '',
               '成功forward总和不是完整成本：加载、token编码、等待、失败/在途尝试及进程墙钟按runtime/attempt原始记录另列；字段缺失为未知，不能当作零。'

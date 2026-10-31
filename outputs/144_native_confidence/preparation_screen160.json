@@ -1,0 +1,48 @@
+{
+  "status": "CPU_PREPARED_NOT_RUN",
+  "scope": "screen160",
+  "variants": [
+    "native120",
+    "claim_repeat136"
+  ],
+  "selected_IDs": 119,
+  "forwards": 232,
+  "source_adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+  "per_variant": {
+    "native120": {
+      "N": 118,
+      "tokens": 981031,
+      "min": 6437,
+      "max": 11747
+    },
+    "claim_repeat136": {
+      "N": 114,
+      "tokens": 948304,
+      "min": 6411,
+      "max": 11787
+    }
+  },
+  "historical_three_path_seconds_per_prompt_token": 0.0005114460309561217,
+  "optimistic_one_forward_rate": 0.00017048201031870725,
+  "estimate_note": "Linear113 proxy only; same architecture, different weights/kernel path. Loading, compilation and return excluded. Measure actual retained pilot first.",
+  "no_tokenizer_model_GPU_API": true,
+  "no_GT_or_greedy_in_score_inputs": true,
+  "evaluation_N": 160,
+  "score_N_by_variant": {
+    "native120": 118,
+    "claim_repeat136": 114
+  },
+  "reusable_score_N": 0,
+  "new_forwards": 232,
+  "pilot_overlap_by_variant": {
+    "native120": [],
+    "claim_repeat136": []
+  },
+  "compute_limit_seconds": 900,
+  "save_reserve_seconds": 180,
+  "budget_status": "FROZEN",
+  "scope_prompt_tokens": 1929335,
+  "new_forward_prompt_tokens": 1929335,
+  "source_cache_IDs": 1817,
+  "scope_compute_seconds_linear_proxy": 328.916909378243
+}

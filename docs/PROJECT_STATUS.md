@@ -1,4 +1,4 @@
-# 项目现状（2026-10-31，142五百有信号，完整1817补评中；141全量停止）
+# 项目现状（2026-10-31，142完整评价完成；选择性风险研究继续）
 
 134统一三基线已完成；同1793有效ID下author_base9b/author_lora9b/paper_r1 MCC为.3422/.6104/.4819，正确1210/1562/1468，false-S44/100/105（非S361）。微调收益真实且伴随风险，作者接口不全面优于104接口120。
 
@@ -14,17 +14,17 @@
 
 141 two_demos保留500条完整结果：MCC .6132、PA80.0%、正确400、FS35/179；相对136正确−3、FS−13，S/NS/NA净−11/+14/−6，自然400正确−9/FS−8。用户质疑是否应无条件投入两小时后，执行者重新权衡输入成本与收益，停止当前完整扩评。额外生成11条（10有效、1中断无效）全部保留，尚缺1306条；没有完整1817结论，不重发或补旧答案。1657条同设置控制只作CPU准备，未运行。
 
-142 relevance_order的500条全部有效：MCC .6315、PA81.4%、正确407、FS45/179；相对136 MCC+.0186、正确+4、FS−3，S/NS/NA净−3/+5/+2。自然400正确+1/FS−2，压力100正确+3/FS−1。输入token逐条相同，生成1092.59秒对1035.12秒（约+5.6%）；患者区间仍跨0，尚不能声称稳定全面优势。依据两面板方向和较小成本，当前只补1317条验证完整1817，3000秒计算＋600秒保存，不预设成功。
+142 relevance_order完整1817条全部有效：MCC 0.6284、PA87.51%、正确1590、FS92/362；相对136 MCC-0.0066、正确-3、FS+4，S/NS/NA净+0/+2/-5。输入token逐条不变，实测生成3703.55秒对3473.10秒（+6.6%），全程租赁另计。500条小幅收益未保持到完整分布，当前重排不替换136，不继续扩大或换种子。后续原生分数主要比较120与136，142仅保留既定小批。
 
-用户2026-10-31开放风险控制/选择性核验/可选人工复核。143已做零新增推理的固定分歧回顾：136版本自动覆盖90.20%，拦截38/88次原错误支持，同时送审140条原正确S，部署约1.80次逻辑判定/命题；原生全量MCC未改变。这是基线，不是Conformal或临床保证。六篇原始文献已核对；107旧180条原生分数粗筛在自然120有风险排序信号，压力60无超出随机的排序优势，不挑最佳阈值。120/136缺少原生连续分数，内部8人和评价20人均不能直接冒称独立校准。继续先做低成本可行性，不中断142、不自动启用确认40人。
+用户2026-10-31开放风险控制/选择性核验/可选人工复核。143零新增推理回顾中，136自动覆盖90.20%，拦截38/88次原错误支持，同时送审140个正确S；部署约1.80次逻辑判定/命题。120/136过滤后的S集合恰为107的1273条，仍共享50个错误S。142补充点覆盖89.82%、残48个FS，另保留完整代价。原生MCC均未被送审提高；这是基线，不是Conformal或临床保证。六篇原始文献与107旧180分数粗筛已完成；独立校准仍未成立，不自动启用确认40人。
 
-144 native_confidence已形成可运行CPU准备包：复用120权重，对九个长度分位ID的三种原prompt取27个原生分支分数；GPU未启动，等待142结束。固定600秒含加载编译，另留180秒保存，先测实际成本；不承诺全三输入1817评分，不把分数可算等同分类收益。
+144 native_confidence已完成27/27有效原生分支评分：前向91.39秒、worker墙钟162.93秒，尚非性能结论。现启动原160的120/136原生S池232次评分，控制进程62924，900秒含加载编译＋180秒保存，预计6—9分钟；所有送审比例固定，不用部分结果挑点。142仅留小批，不再全量评分。
 
 本轮新增GPU硬上限20元，自2026-10-31 09:36:01（UTC+8）按1.58元/小时累计，估算截止22:15:30；准备、等待、加载、编译、回传均计入。原API硬上限80元累计仍为0，不重置。上一16元窗口连同等待至新授权估算¥15.695另记，不借用余额。持续目标内自主推进、实质阶段双仓发布；不自动关机或释放。
 
 120最终MCC .6250、正确1599、false-S109/362；132固定中点MCC .5988、正确1559、false-S80/362，均保留真实收益与风险，未升级默认。415诊断取消、0完整回执；133按用户要求暂停，未产生分类结果。127现为67对AI辅助reason（训练63、内部验证4），无分类收益证明；本轮27条新增未进入138或140。
 
-[当前集中比较](../outputs/141_two_demos/window_summary.md) · [同ID推理成本](../outputs/141_two_demos/inference_cost.md) · [141当前任务](../tasks/141_two_demos/CURRENT.md) · [140当前任务](../tasks/140_kl_anchor/CURRENT.md) · [140进度](../outputs/140_kl_anchor/progress.md) · [138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [138完整比较](../outputs/138_rationale_tasks/report.md) · [138实时进度](../outputs/138_rationale_tasks/progress.md) · [139当前](../tasks/139_full_repeat/CURRENT.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
+[142完整结果](../outputs/142_relevance_order/report.md) · [143选择性研究](../tasks/143_selective_verification/CURRENT.md) · [当前集中比较](../outputs/141_two_demos/window_summary.md) · [同ID推理成本](../outputs/141_two_demos/inference_cost.md) · [141当前任务](../tasks/141_two_demos/CURRENT.md) · [140当前任务](../tasks/140_kl_anchor/CURRENT.md) · [140进度](../outputs/140_kl_anchor/progress.md) · [138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [138完整比较](../outputs/138_rationale_tasks/report.md) · [138实时进度](../outputs/138_rationale_tasks/progress.md) · [139当前](../tasks/139_full_repeat/CURRENT.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -55,7 +55,7 @@
 |研究|实际完成内容|结论与限制|
 |---|---|---|
 |143 selective_verification|1817固定分歧与107历史180分数回顾，均零新增推理|136自动覆盖90.20%，拦截38次原FS并送审140个正确S；原MCC不变，未实现CP保证|
-|142 relevance_order|原500全有效，完整1817补评中|相对136 MCC+.0186、正确+4、FS−3，token不变；只补1317，成本上限明确|
+|142 relevance_order|1817条全部有效并回传|MCC 0.6284、PA87.51%、正确1590、FS92/362；相对136 MCC-0.0066、正确-3、FS+4，S/NS/NA净+0/+2/-5；500条小幅收益未保持到完整分布，当前重排不替换136，不继续扩大或换种子。后续原生分数主要比较120与136，142仅保留既定小批。|
 |141 two_demos|500全有效；全量扩评停止并回传额外11条|MCC .6132、正确400、FS35/179；保留风险取舍，不因达到门槛自动跑满；无完整1817结论|
 |140 kl_anchor|48步与1817全有效、完整状态回传|MCC .6027、正确1553、FS68/362；相对136正确−40/FS−20，保留风险取舍，当前配方停止扩大|
 |139 full_repeat|500全有效，160运行时控制完成；停止当前扩大|相对120有收益；相对便宜136正确−1/FS+3，近2倍输入不值得继续|
