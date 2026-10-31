@@ -1,0 +1,42 @@
+{
+  "method": "demo_extract",
+  "N_examples": 2,
+  "details": [
+    {
+      "id": "93cd2c13-0d5a-b617-eb23-a479e6549d9b",
+      "label": "Supported",
+      "selected_display_numbers": [
+        87,
+        89,
+        94,
+        96
+      ],
+      "full_reference_characters": 18125,
+      "excerpt_reference_characters": 979,
+      "original_unit_count": 100,
+      "excerpt_unit_count": 4,
+      "exact_full_units_preserved": true,
+      "training_patient": true,
+      "claim_and_label_unchanged": true
+    },
+    {
+      "id": "e96580ee-ad16-3d5a-4b29-3739cd1b46bc",
+      "label": "Not Supported",
+      "selected_display_numbers": [
+        59,
+        62,
+        67,
+        71
+      ],
+      "full_reference_characters": 21708,
+      "excerpt_reference_characters": 1259,
+      "original_unit_count": 80,
+      "excerpt_unit_count": 4,
+      "exact_full_units_preserved": true,
+      "training_patient": true,
+      "claim_and_label_unchanged": true
+    }
+  ],
+  "target_reference_changed": false,
+  "GT_changed": false
+}

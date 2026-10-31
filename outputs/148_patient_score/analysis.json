@@ -2592,5 +2592,535 @@
       }
     }
   },
-  "CPU_seconds": 9.143966000003275
+  "CPU_seconds": 3.3925898000015877,
+  "fixed_flag_audit": {
+    "patient_rank": {
+      "178": {
+        "delta_FS_rate": -0.008287292817679558,
+        "fixed_flag_patient_bootstrap_CI": [
+          -0.046584129210356415,
+          0.01935956709046968
+        ],
+        "patients": [
+          {
+            "sid": "1084",
+            "delta_residual_FS": 0,
+            "original_non_S": 8
+          },
+          {
+            "sid": "22289",
+            "delta_residual_FS": 0,
+            "original_non_S": 20
+          },
+          {
+            "sid": "25027",
+            "delta_residual_FS": 0,
+            "original_non_S": 63
+          },
+          {
+            "sid": "30820",
+            "delta_residual_FS": -1,
+            "original_non_S": 5
+          },
+          {
+            "sid": "5954",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "59752",
+            "delta_residual_FS": 0,
+            "original_non_S": 53
+          },
+          {
+            "sid": "60130",
+            "delta_residual_FS": 2,
+            "original_non_S": 26
+          },
+          {
+            "sid": "69023",
+            "delta_residual_FS": 0,
+            "original_non_S": 19
+          },
+          {
+            "sid": "72940",
+            "delta_residual_FS": 1,
+            "original_non_S": 3
+          },
+          {
+            "sid": "74237",
+            "delta_residual_FS": -4,
+            "original_non_S": 11
+          },
+          {
+            "sid": "76990",
+            "delta_residual_FS": 0,
+            "original_non_S": 7
+          },
+          {
+            "sid": "80454",
+            "delta_residual_FS": 0,
+            "original_non_S": 12
+          },
+          {
+            "sid": "81230",
+            "delta_residual_FS": 0,
+            "original_non_S": 6
+          },
+          {
+            "sid": "82030",
+            "delta_residual_FS": 0,
+            "original_non_S": 9
+          },
+          {
+            "sid": "82564",
+            "delta_residual_FS": -1,
+            "original_non_S": 13
+          },
+          {
+            "sid": "84606",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "87344",
+            "delta_residual_FS": 0,
+            "original_non_S": 23
+          },
+          {
+            "sid": "93571",
+            "delta_residual_FS": -2,
+            "original_non_S": 9
+          },
+          {
+            "sid": "94404",
+            "delta_residual_FS": 0,
+            "original_non_S": 2
+          },
+          {
+            "sid": "98089",
+            "delta_residual_FS": 2,
+            "original_non_S": 63
+          }
+        ],
+        "groups": {
+          "old500": {
+            "N": 500,
+            "old_residual_FS": 26,
+            "new_residual_FS": 25
+          },
+          "new1317": {
+            "N": 1317,
+            "old_residual_FS": 18,
+            "new_residual_FS": 16
+          },
+          "human": {
+            "N": 1024,
+            "old_residual_FS": 24,
+            "new_residual_FS": 23
+          },
+          "llm": {
+            "N": 793,
+            "old_residual_FS": 20,
+            "new_residual_FS": 18
+          }
+        }
+      },
+      "290": {
+        "delta_FS_rate": -0.013812154696132596,
+        "fixed_flag_patient_bootstrap_CI": [
+          -0.04582136310158964,
+          0.006997179431546969
+        ],
+        "patients": [
+          {
+            "sid": "1084",
+            "delta_residual_FS": 0,
+            "original_non_S": 8
+          },
+          {
+            "sid": "22289",
+            "delta_residual_FS": -2,
+            "original_non_S": 20
+          },
+          {
+            "sid": "25027",
+            "delta_residual_FS": 1,
+            "original_non_S": 63
+          },
+          {
+            "sid": "30820",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "5954",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "59752",
+            "delta_residual_FS": 1,
+            "original_non_S": 53
+          },
+          {
+            "sid": "60130",
+            "delta_residual_FS": 1,
+            "original_non_S": 26
+          },
+          {
+            "sid": "69023",
+            "delta_residual_FS": -1,
+            "original_non_S": 19
+          },
+          {
+            "sid": "72940",
+            "delta_residual_FS": 0,
+            "original_non_S": 3
+          },
+          {
+            "sid": "74237",
+            "delta_residual_FS": -3,
+            "original_non_S": 11
+          },
+          {
+            "sid": "76990",
+            "delta_residual_FS": 0,
+            "original_non_S": 7
+          },
+          {
+            "sid": "80454",
+            "delta_residual_FS": 0,
+            "original_non_S": 12
+          },
+          {
+            "sid": "81230",
+            "delta_residual_FS": 0,
+            "original_non_S": 6
+          },
+          {
+            "sid": "82030",
+            "delta_residual_FS": 0,
+            "original_non_S": 9
+          },
+          {
+            "sid": "82564",
+            "delta_residual_FS": 0,
+            "original_non_S": 13
+          },
+          {
+            "sid": "84606",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "87344",
+            "delta_residual_FS": -1,
+            "original_non_S": 23
+          },
+          {
+            "sid": "93571",
+            "delta_residual_FS": -1,
+            "original_non_S": 9
+          },
+          {
+            "sid": "94404",
+            "delta_residual_FS": 0,
+            "original_non_S": 2
+          },
+          {
+            "sid": "98089",
+            "delta_residual_FS": 0,
+            "original_non_S": 63
+          }
+        ],
+        "groups": {
+          "old500": {
+            "N": 500,
+            "old_residual_FS": 18,
+            "new_residual_FS": 13
+          },
+          "new1317": {
+            "N": 1317,
+            "old_residual_FS": 11,
+            "new_residual_FS": 11
+          },
+          "human": {
+            "N": 1024,
+            "old_residual_FS": 16,
+            "new_residual_FS": 14
+          },
+          "llm": {
+            "N": 793,
+            "old_residual_FS": 13,
+            "new_residual_FS": 10
+          }
+        }
+      }
+    },
+    "patient_center": {
+      "178": {
+        "delta_FS_rate": -0.0027624309392265192,
+        "fixed_flag_patient_bootstrap_CI": [
+          -0.04221028971028971,
+          0.020895036004471422
+        ],
+        "patients": [
+          {
+            "sid": "1084",
+            "delta_residual_FS": 0,
+            "original_non_S": 8
+          },
+          {
+            "sid": "22289",
+            "delta_residual_FS": 0,
+            "original_non_S": 20
+          },
+          {
+            "sid": "25027",
+            "delta_residual_FS": 3,
+            "original_non_S": 63
+          },
+          {
+            "sid": "30820",
+            "delta_residual_FS": -1,
+            "original_non_S": 5
+          },
+          {
+            "sid": "5954",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "59752",
+            "delta_residual_FS": 0,
+            "original_non_S": 53
+          },
+          {
+            "sid": "60130",
+            "delta_residual_FS": 0,
+            "original_non_S": 26
+          },
+          {
+            "sid": "69023",
+            "delta_residual_FS": 0,
+            "original_non_S": 19
+          },
+          {
+            "sid": "72940",
+            "delta_residual_FS": 1,
+            "original_non_S": 3
+          },
+          {
+            "sid": "74237",
+            "delta_residual_FS": -3,
+            "original_non_S": 11
+          },
+          {
+            "sid": "76990",
+            "delta_residual_FS": 1,
+            "original_non_S": 7
+          },
+          {
+            "sid": "80454",
+            "delta_residual_FS": 0,
+            "original_non_S": 12
+          },
+          {
+            "sid": "81230",
+            "delta_residual_FS": 0,
+            "original_non_S": 6
+          },
+          {
+            "sid": "82030",
+            "delta_residual_FS": 0,
+            "original_non_S": 9
+          },
+          {
+            "sid": "82564",
+            "delta_residual_FS": -1,
+            "original_non_S": 13
+          },
+          {
+            "sid": "84606",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "87344",
+            "delta_residual_FS": 0,
+            "original_non_S": 23
+          },
+          {
+            "sid": "93571",
+            "delta_residual_FS": -2,
+            "original_non_S": 9
+          },
+          {
+            "sid": "94404",
+            "delta_residual_FS": 0,
+            "original_non_S": 2
+          },
+          {
+            "sid": "98089",
+            "delta_residual_FS": 1,
+            "original_non_S": 63
+          }
+        ],
+        "groups": {
+          "old500": {
+            "N": 500,
+            "old_residual_FS": 26,
+            "new_residual_FS": 25
+          },
+          "new1317": {
+            "N": 1317,
+            "old_residual_FS": 18,
+            "new_residual_FS": 18
+          },
+          "human": {
+            "N": 1024,
+            "old_residual_FS": 24,
+            "new_residual_FS": 26
+          },
+          "llm": {
+            "N": 793,
+            "old_residual_FS": 20,
+            "new_residual_FS": 17
+          }
+        }
+      },
+      "290": {
+        "delta_FS_rate": -0.013812154696132596,
+        "fixed_flag_patient_bootstrap_CI": [
+          -0.040273890715430805,
+          0.0036112632739128416
+        ],
+        "patients": [
+          {
+            "sid": "1084",
+            "delta_residual_FS": 0,
+            "original_non_S": 8
+          },
+          {
+            "sid": "22289",
+            "delta_residual_FS": -2,
+            "original_non_S": 20
+          },
+          {
+            "sid": "25027",
+            "delta_residual_FS": 1,
+            "original_non_S": 63
+          },
+          {
+            "sid": "30820",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "5954",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "59752",
+            "delta_residual_FS": 0,
+            "original_non_S": 53
+          },
+          {
+            "sid": "60130",
+            "delta_residual_FS": 1,
+            "original_non_S": 26
+          },
+          {
+            "sid": "69023",
+            "delta_residual_FS": -1,
+            "original_non_S": 19
+          },
+          {
+            "sid": "72940",
+            "delta_residual_FS": 0,
+            "original_non_S": 3
+          },
+          {
+            "sid": "74237",
+            "delta_residual_FS": -2,
+            "original_non_S": 11
+          },
+          {
+            "sid": "76990",
+            "delta_residual_FS": 0,
+            "original_non_S": 7
+          },
+          {
+            "sid": "80454",
+            "delta_residual_FS": 0,
+            "original_non_S": 12
+          },
+          {
+            "sid": "81230",
+            "delta_residual_FS": 0,
+            "original_non_S": 6
+          },
+          {
+            "sid": "82030",
+            "delta_residual_FS": 0,
+            "original_non_S": 9
+          },
+          {
+            "sid": "82564",
+            "delta_residual_FS": 0,
+            "original_non_S": 13
+          },
+          {
+            "sid": "84606",
+            "delta_residual_FS": 0,
+            "original_non_S": 5
+          },
+          {
+            "sid": "87344",
+            "delta_residual_FS": -1,
+            "original_non_S": 23
+          },
+          {
+            "sid": "93571",
+            "delta_residual_FS": -1,
+            "original_non_S": 9
+          },
+          {
+            "sid": "94404",
+            "delta_residual_FS": 0,
+            "original_non_S": 2
+          },
+          {
+            "sid": "98089",
+            "delta_residual_FS": 0,
+            "original_non_S": 63
+          }
+        ],
+        "groups": {
+          "old500": {
+            "N": 500,
+            "old_residual_FS": 18,
+            "new_residual_FS": 14
+          },
+          "new1317": {
+            "N": 1317,
+            "old_residual_FS": 11,
+            "new_residual_FS": 10
+          },
+          "human": {
+            "N": 1024,
+            "old_residual_FS": 16,
+            "new_residual_FS": 13
+          },
+          "llm": {
+            "N": 793,
+            "old_residual_FS": 13,
+            "new_residual_FS": 11
+          }
+        }
+      }
+    }
+  }
 }

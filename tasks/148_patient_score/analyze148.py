@@ -44,6 +44,35 @@ def main():
     output=dict(N=1817,predicted_S_N=1451,patients=20,GT_used_for_score_construction=False,
                 label_changes=0,new_GPU_forwards=0,new_API_calls=0,results=results,five_baselines=baseline,
                 CPU_seconds=time.perf_counter()-started)
+    # Fixed-flag paired patient bootstrap: no thresholds or rankings are refitted.
+    patients=sorted({str(r['sid']) for r in keys.values()});audit={}
+    for name in ('patient_rank','patient_center'):
+        audit[name]={}
+        for k in (178,290):
+            old=set(flags['global_margin'][str(k)]);new=set(flags[name][str(k)])
+            counts=[];by_patient=[]
+            for sid in patients:
+                ids={i for i,r in keys.items() if str(r['sid'])==sid}
+                nonS=sum(keys[i]['GT']!='Supported' for i in ids)
+                a=sum(p[i]=='Supported' and keys[i]['GT']!='Supported' and i not in old for i in ids)
+                b=sum(p[i]=='Supported' and keys[i]['GT']!='Supported' and i not in new for i in ids)
+                counts.append((b-a,nonS));by_patient.append(dict(sid=sid,delta_residual_FS=b-a,original_non_S=nonS))
+            draws=[]
+            for seed in range(1000):
+                chosen=np.random.RandomState(seed).choice(len(patients),size=len(patients),replace=True)
+                denom=sum(counts[j][1] for j in chosen)
+                if denom:draws.append(sum(counts[j][0] for j in chosen)/denom)
+            group={}
+            for label,ids in dict(old500={i for i,r in keys.items() if r['old_panel'] in ('natural','pressure')},
+                                  new1317={i for i,r in keys.items() if r['subset']=='new'},
+                                  human={i for i,r in keys.items() if r['author']=='human'},
+                                  llm={i for i,r in keys.items() if r['author']=='llm'}).items():
+                fs=lambda review:sum(p[i]=='Supported' and keys[i]['GT']!='Supported' and i not in review for i in ids)
+                group[label]=dict(N=len(ids),old_residual_FS=fs(old),new_residual_FS=fs(new))
+            audit[name][str(k)]=dict(delta_FS_rate=(results[name][str(k)]['residual_FS']-results['global_margin'][str(k)]['residual_FS'])/362,
+                fixed_flag_patient_bootstrap_CI=np.quantile(draws,[.025,.975]).tolist(),patients=by_patient,groups=group)
+    output['fixed_flag_audit']=audit
+    output['CPU_seconds']=time.perf_counter()-started
     O=R/'outputs/148_patient_score';save(O/'analysis.json',output)
     save(R/'.local_models/148_patient_score/review_flags.json',flags)
     lines=['# 148 patient_score：患者内归一的等工作量回顾','',
@@ -61,6 +90,13 @@ def main():
     for name in ('patient_rank','patient_center'):
         changes={k:results[name][str(k)]['residual_FS']-results['global_margin'][str(k)]['residual_FS'] for k in (178,290)}
         lines.append(f"{name}相对global_margin残留FS变化（178/290送审）：{changes[178]:+d}/{changes[290]:+d}；同工作量下送审正确S随之同幅变化。")
+        for k in (178,290):
+            v=audit[name][str(k)];ci=v['fixed_flag_patient_bootstrap_CI'];pp=v['patients']
+            improved=sum(r['delta_residual_FS']<0 for r in pp);harmed=sum(r['delta_residual_FS']>0 for r in pp)
+            new=v['groups']['new1317']
+            lines.append(f"送审{k}：残留FS率差的固定标记患者bootstrap区间[{ci[0]*100:+.3f},{ci[1]*100:+.3f}]个百分点；患者{improved}改善/{harmed}变差/{20-improved-harmed}持平。新增1317残留FS{new['old_residual_FS']}→{new['new_residual_FS']}。")
+    lines+=['','以上1000次患者整簇bootstrap固定现有全批归一和送审标记，只反映当前患者混合的不确定性，不覆盖重新排序、历史选型或新医院泛化。患者内归一需要同一患者的一批待核验命题，不能宣称单命题流式部署等价。',
+            '结论：patient_rank在两个参考复核负担均有小幅经验收益，值得保留为低成本候选；patient_center同时保留全部结果，不按最优点包装成已校准部署规则。原生136分类不变。']
     (O/'report.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     print(json.dumps({n:{k:results[n][k]['residual_FS'] for k in ('178','290')} for n in results}))
 
