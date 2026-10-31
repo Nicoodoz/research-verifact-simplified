@@ -1,20 +1,11 @@
 # 127 native_reason_data
 
-当前累计40条经AI语义审读配对（S11／NS17／NA12），训练36条、内部验证4条；60条已审、20条问题单，全部3675条原标签保留。最新版为`dataset_v9_new_coverage`，旧v1—v8不覆盖。最新7条训练侧病例接纳5条，其中3条超出105覆盖；2条因因果或输入冲突保留纯标签。5个新增配对完成分批CPU编码，复用原35对检查。[当前统计](../../outputs/127_native_reason_data/new_coverage/summary.json)
+当前资产为私有 `dataset_v10_newbatch20261031`：50对AI辅助审读reason，训练46、内部验证4（S15／NS19／NA16）；78条已审、28条问题保留，3675条原标签全部保留。32名梯度训练／8名内部验证患者划分不变。
 
-仅做数据与CPU接口准备；不启动reason监督训练，不改变正在运行的120。原40名训练患者沿用32名梯度训练、8名内部验证划分；选型20人及确认40人不用于本阶段。
+2026-10-31这批来自18条此前未处理的训练病例，全部有医生备注供核对；主要审读者先看完整实际reference，作者历史理由和备注只作为核对来源，不替代当前输入。接纳10条（S4／NS2／NA4），8条不强编理由。所有新10条均不在105理由集、127旧审读集或此前6例教师试查中，按患者、claim、reference检查也无旧样本重复。复用原40对，只对新增10条做CPU编码，完整输入和原GT均保留。
 
-固定24条三类各8条的语义试审：其中12条来自105已有配对，另12条优先覆盖既有教师分歧和106边界问题。该批富集困难样本，不能用通过率估计全池质量。先独立审读当前完整reference和写草稿，再对照旧理由；缺少可靠依据时保留医生GT和label_only，不生成配对reason。
+本批尚未训练，没有分类收益证据；不改变正在运行的138（冻结v9的36条训练理由）。后续是否使用新增数据，依据138及其他真实分类结果决定。原始草稿、交叉复核撤回记录和未决项留在私有目录，不把AI辅助理由称为医生标注。
 
-初始试审产生15条可用理由、9条待核。旧105的12条已有理由没有展示实质语义提升；当时新增可用3条为S2/NA1。后来基于医生备注的有限补充增加5条配对，其中2条在旧105中已有类似解释；不是把111条备注批量转成理由，也不为达到196/512而扩写。
+[本批简报](../../outputs/127_native_reason_data/new_batch_20261031/report.md) · [统计](../../outputs/127_native_reason_data/new_batch_20261031/summary.json) · [总报告与历史](../../outputs/127_native_reason_data/report.md) · [数据合同](DATA_CONTRACT.md)
 
-入口：
-
-```powershell
-python tasks/127_native_reason_data/prepare127.py --annotations .local_models/127_native_reason_data/pilot24_reviewed.jsonl --out .local_models/127_native_reason_data/dataset_v1
-python tasks/127_native_reason_data/summarize127.py --reviews .local_models/127_native_reason_data/pilot24_reviewed.jsonl --dataset .local_models/127_native_reason_data/dataset_v1
-```
-
-`dataset_v1`已存在时不要覆盖；新修订另存版本。实际数据、reason、引用原文与审读记录只在私有目录。公开交付：[简短报告](../../outputs/127_native_reason_data/report.md)、[覆盖统计](../../outputs/127_native_reason_data/summary.json)、[去正文状态](../../outputs/127_native_reason_data/review_status_sanitized.jsonl)、[接口合同](DATA_CONTRACT.md)。
-
-CPU通过不等于9B分类有效。当前小批不支持宣称已改善105的数据语义质量，也不足以单独支持新训练；继续120原定任务，不追加本方向GPU实验。
+构建与汇总继续复用 `prepare127.py`、`summarize127.py`，新版本不得覆盖旧目录。实际临床文本、reason与完整审读记录仅保存在 `.local_models/127_native_reason_data/`。

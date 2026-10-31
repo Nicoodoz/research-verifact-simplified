@@ -1,0 +1,48 @@
+{
+  "rationale_tasks": {
+    "slots": 192,
+    "unique_original_IDs": 156,
+    "GT_slots": {
+      "Supported": 117,
+      "Not Supported": 42,
+      "Not Addressed": 33
+    },
+    "tasks": {
+      "label": 156,
+      "reason": 36
+    },
+    "full_training_tokens_two_epochs": 3246152,
+    "answer_tokens_two_epochs": 5688,
+    "by_task": {
+      "label": {
+        "full_tokens_two_epochs": 2634190,
+        "answer_tokens_two_epochs": 2324
+      },
+      "reason": {
+        "full_tokens_two_epochs": 611962,
+        "answer_tokens_two_epochs": 3364
+      }
+    }
+  },
+  "label_replay": {
+    "slots": 192,
+    "unique_original_IDs": 156,
+    "GT_slots": {
+      "Supported": 117,
+      "Not Supported": 42,
+      "Not Addressed": 33
+    },
+    "tasks": {
+      "label": 192
+    },
+    "full_training_tokens_two_epochs": 3246824,
+    "answer_tokens_two_epochs": 2904,
+    "by_task": {
+      "label": {
+        "full_tokens_two_epochs": 3246824,
+        "answer_tokens_two_epochs": 2904
+      }
+    }
+  },
+  "interpretation": "Same original-ID exposure, update count and source weights. Auxiliary task changes instruction and answer tokens; token compute is reported, not claimed byte-identical."
+}

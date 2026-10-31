@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "pairs": 50,
+  "unchanged_prior_checks_reused": 40,
+  "new_pairs_encoded": 10,
+  "old_source_and_target_equal": true,
+  "full_input_no_truncation": true,
+  "original_GT_preserved": true,
+  "GPU_calls": 0,
+  "API_calls": 0,
+  "model_loaded": false,
+  "details": [
+    {
+      "id": "0b1a55ea-23b3-5e75-c576-a0f6f9b9cf6b",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 8925,
+      "total_tokens": 9000,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "31ca1b4c-581d-23a8-fc19-ed38aca861d5",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8530,
+      "total_tokens": 8584,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "36ea6826-4b20-cba7-47ed-377d812be856",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 9076,
+      "total_tokens": 9148,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "62f37bd5-5f3b-a71e-2f04-39149ab2be76",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 8964,
+      "total_tokens": 9031,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "81997e1d-11a5-6527-02ae-74363cca03d9",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 9193,
+      "total_tokens": 9228,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "9260fc4b-74c6-91b6-0471-4f3e19f5d30e",
+      "GT": "Not Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8418,
+      "total_tokens": 8472,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "956a4473-f93a-a5c1-9117-82670b440893",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 9509,
+      "total_tokens": 9570,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "c5757615-6fe9-ff7d-f1ea-f3592771153f",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 7936,
+      "total_tokens": 7984,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "df237ef3-0280-77d5-623b-021df4244c94",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 8491,
+      "total_tokens": 8559,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "e45405be-e32b-7ac8-84a3-7a448eef494f",
+      "GT": "Not Supported",
+      "fit_role": "train",
+      "prompt_tokens": 10734,
+      "total_tokens": 10804,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    }
+  ]
+}
