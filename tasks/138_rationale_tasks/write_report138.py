@@ -53,7 +53,8 @@ def main():
   h=read(P/'historical_overlap.json');ns=next(x for x in h['classes'] if x['GT']=='Not Supported')
   lines += [f"描述性检查：160条中{h['same_as137']}条与历史137同标签，本次救回的{ns['new_rescued']}条NS中有{ns['same_rescues_in137']}条也曾被137救回。137不是匹配48步对照，这种重合不能证明或排除理由任务作用。",'']
  if 'rationale_vs_replay' in v:
-  x=v['rationale_vs_replay'];lines+=['## 与匹配标签回放的直接比较','']+table(x['scores'],'rationale_tasks')+[f"ΔMCC{x['delta_MCC']:+.4f}，Δ正确{x['delta_correct']:+d}，Δfalse-S{x['delta_false_S']:+d}。",'']
+  x=v['rationale_vs_replay'];lines+=[f"## 与匹配标签回放的直接比较（共同{x['N']}条）",'']+table(x['scores'],'rationale_tasks')+[f"ΔMCC{x['delta_MCC']:+.4f}，Δ正确{x['delta_correct']:+d}，Δfalse-S{x['delta_false_S']:+d}。",'']
+  if x['N']<v['valid_N']:lines+=['对照尚未覆盖当前全部评价ID；这张直接配对表只适用于上述共同子集。','']
   if 'patient_bootstrap' in x:
    lo,hi=x['patient_bootstrap']['metrics']['mcc']['ci95'];lines += [f'患者配对ΔMCC 95%区间[{lo:+.4f},{hi:+.4f}]；该区间不覆盖重新训练和历史选型的不确定性。','']
  else:lines+=['匹配标签回放对照尚无此范围的完整结果；此时不能把相对136的变化全部归因于理由任务。','']

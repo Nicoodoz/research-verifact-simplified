@@ -1,0 +1,13 @@
+{
+  "arm": "label_replay",
+  "status": "FULL_STATE_RETURNED",
+  "steps": 48,
+  "consumed": 384,
+  "training_log_rows": 48,
+  "adapter_sha256": "4d825bed66c3945bb193f880c2f4104081d8e5f6d682a1c7cf63507b4643aeb8",
+  "adapter_bytes": 173188512,
+  "optimizer_scheduler_RNG_state_bytes": 346671989,
+  "archive_bytes": 480469449,
+  "archive_extracted_successfully": true,
+  "no_shutdown": true
+}
