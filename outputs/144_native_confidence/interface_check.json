@@ -1,0 +1,75 @@
+{
+  "status": "CPU_SOURCE_CHECK_ONLY_NOT_GPU_TESTED",
+  "versions": {
+    "transformers": "5.17.0",
+    "unsloth": "2026.10.9",
+    "unsloth_zoo": "2026.10.9"
+  },
+  "transformers_member": "transformers/models/qwen3_5/modeling_qwen3_5.py",
+  "classes": {
+    "Qwen3_5ForCausalLM": {
+      "forward_line": 1683,
+      "explicit_logits_to_keep": true,
+      "slices_before_lm_head": true,
+      "member_sha256": "762feb6c7426a7f15b5bf830df54c07438bf9e7c27b8cdb23179045920412c3b"
+    },
+    "Qwen3_5ForConditionalGeneration": {
+      "forward_line": 1801,
+      "explicit_logits_to_keep": true,
+      "slices_before_lm_head": true,
+      "member_sha256": "762feb6c7426a7f15b5bf830df54c07438bf9e7c27b8cdb23179045920412c3b"
+    }
+  },
+  "unsloth_explicit_logit_arg_detection": true,
+  "runtime_guard": "Require explicit logits_to_keep on loaded forward; LM-head pre-hook refuses more than one position.",
+  "prefix": {
+    "text": "{\"verdict\":\"",
+    "token_ids": [
+      4754,
+      415,
+      8217,
+      3147
+    ],
+    "branch_ids": {
+      "S": 33490,
+      "Not": 2536
+    },
+    "source": "113 frozen label_sequences first four tokens; current tokenizer rechecked before model loading"
+  },
+  "output_formats": {
+    "native120": {
+      "N": 1817,
+      "formats": {
+        "exact_canonical_prefix": 1817
+      },
+      "paths": [
+        ".local_models\\120_full_pool_sft\\resume369\\evidence\\full_pool_sft\\batches",
+        ".local_models\\120_full_pool_sft\\resume369\\evidence\\full_pool_sft_old500\\batches",
+        ".local_models\\120_full_pool_sft\\resume369\\evidence\\full_pool_sft_selection1817\\batches"
+      ]
+    },
+    "claim_repeat136": {
+      "N": 1817,
+      "formats": {
+        "exact_canonical_prefix": 1817
+      },
+      "paths": [
+        ".local_models\\136_claim_repeat_transfer\\evidence\\screen160\\claim_repeat",
+        ".local_models\\136_claim_repeat_transfer\\evidence\\old500\\claim_repeat",
+        ".local_models\\136_claim_repeat_transfer\\evidence\\full1817\\claim_repeat"
+      ]
+    },
+    "relevance_order142": {
+      "N": 500,
+      "formats": {
+        "exact_canonical_prefix": 500
+      },
+      "paths": [
+        ".local_models\\142_relevance_order\\screen160\\evidence\\relevance_order",
+        ".local_models\\142_relevance_order\\old500\\evidence\\relevance_order"
+      ]
+    }
+  },
+  "no_GPU_API_model_import": true,
+  "interpretation": "Scores condition on a forced canonical prefix. Whitespace variants are not the same free-generation token history; never call these full-answer probabilities."
+}

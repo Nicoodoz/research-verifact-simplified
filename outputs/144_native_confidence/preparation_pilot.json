@@ -1,0 +1,67 @@
+{
+  "status": "CPU_PREPARED_NOT_RUN",
+  "scope": "pilot",
+  "full_IDs": 1817,
+  "variants": [
+    "native120",
+    "claim_repeat136",
+    "relevance_order142"
+  ],
+  "pilot_IDs": [
+    "d288320d-7329-f5d7-e41f-4c33030aee21",
+    "4c362484-8ba1-4117-2130-6ddf23f93dc9",
+    "ba382cdc-619e-2be4-9b88-6294a0588dc1",
+    "34c523d0-f796-317d-ad05-0148a31d0fa8",
+    "5f95ab51-61cc-327d-6aa0-30a7961c4247",
+    "b37b45ab-2421-6915-cf2b-822b26be8115",
+    "11ae4e7f-5d1a-39f9-7312-6634e0d8e021",
+    "7467a605-535a-d13b-a81a-3fe34ba14586",
+    "b5e2710e-e0cf-9e1e-3982-dfb0815f5099"
+  ],
+  "pilot_length_ranks": [
+    0,
+    227,
+    454,
+    681,
+    908,
+    1135,
+    1362,
+    1589,
+    1816
+  ],
+  "selected_IDs": 9,
+  "forwards": 27,
+  "source_adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+  "per_variant": {
+    "native120": {
+      "N": 1817,
+      "tokens": 15061274,
+      "min": 4668,
+      "median": 8117,
+      "max": 13399
+    },
+    "claim_repeat136": {
+      "N": 1817,
+      "tokens": 15141090,
+      "min": 4713,
+      "median": 8161,
+      "max": 13447
+    },
+    "relevance_order142": {
+      "N": 1817,
+      "tokens": 15141090,
+      "min": 4713,
+      "median": 8161,
+      "max": 13447
+    }
+  },
+  "pilot_prompt_tokens": 227604,
+  "full_prompt_tokens": 45343454,
+  "historical_three_path_seconds_per_prompt_token": 0.0005114460309561217,
+  "optimistic_one_forward_rate": 0.00017048201031870725,
+  "pilot_compute_seconds_linear_proxy": 38.80238747657904,
+  "full_compute_seconds_linear_proxy": 7730.243192713827,
+  "estimate_note": "Linear113 proxy only; same architecture, different weights/kernel path. Loading, compilation and return excluded. Measure actual retained pilot first.",
+  "no_tokenizer_model_GPU_API": true,
+  "no_GT_or_greedy_in_score_inputs": true
+}

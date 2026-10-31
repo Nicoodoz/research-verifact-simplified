@@ -1,0 +1,27 @@
+{
+  "status": "PASS_CPU_ONLY_NOT_GPU_TESTED",
+  "checked_scripts": [
+    "tasks\\144_native_confidence\\prepare144.py",
+    "tasks\\144_native_confidence\\worker144.py",
+    "tasks\\144_native_confidence\\check144.py",
+    ".local_models\\parallel_20261031\\selective_verification\\native_score_preparation\\prepare_inputs.py",
+    ".local_models\\parallel_20261031\\selective_verification\\native_score_preparation\\score_worker.py",
+    ".local_models\\parallel_20261031\\selective_verification\\native_score_preparation\\check_sources.py"
+  ],
+  "compile_and_import": true,
+  "no_torch_transformers_unsloth_imported": true,
+  "no_GPU_API_generation_training": true,
+  "scope": "pilot",
+  "common_IDs": 9,
+  "forwards": 27,
+  "evaluation_IDs_metadata_only": 1817,
+  "score_rows_no_GT_or_verdict": true,
+  "source_files_SHA_match": true,
+  "prompt_tokens": 227604,
+  "max_scoring_tokens": 13451,
+  "public_worker_matches_bundle": true,
+  "compute_limit_seconds": 600,
+  "save_reserve_seconds": 180,
+  "existing_results": false,
+  "reproducible_180_script": ".local_models\\parallel_20261031\\selective_verification\\native_score_pilot\\analyze_pilot.py"
+}
