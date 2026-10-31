@@ -1,4 +1,4 @@
-"""Prepare141 stage without GPU; only160 is currently authorized to package."""
+"""Prepare141 missing-ID stages on CPU after the frozen prior-stage signal."""
 from pathlib import Path
 import argparse,ast,shutil,sys,tarfile
 R=Path(__file__).resolve().parents[2];P=R/'.local_models/141_two_demos'

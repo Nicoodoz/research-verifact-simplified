@@ -8,7 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|141_two_demos|[当前](../tasks/141_two_demos/CURRENT.md) · [初筛报告](../outputs/141_two_demos/report.md) · [进度](../outputs/141_two_demos/progress.md)|160全有效，500补评中|相对136 MCC+.0107、正确−1、FS−4，输入成本上升；只补340条|
+|141_two_demos|[当前](../tasks/141_two_demos/CURRENT.md) · [500报告](../outputs/141_two_demos/report.md) · [进度](../outputs/141_two_demos/progress.md)|500全有效，完整1817补评中|相对136 MCC+.0004、正确−3、FS−13；自然正确−9/FS−8，继续验证完整分布|
 |140_kl_anchor|[当前](../tasks/140_kl_anchor/CURRENT.md) · [完整报告](../outputs/140_kl_anchor/report.md) · [进度](../outputs/140_kl_anchor/progress.md)|完整1817全有效，完整状态回传|相对136 MCC−.0322、正确−40、FS−20；停止当前配方扩大，保留风险取舍|
 |139_full_repeat|[当前](../tasks/139_full_repeat/CURRENT.md) · [方案](../tasks/139_full_repeat/PROTOCOL.md) · [进度](../outputs/139_full_repeat/progress.md)|500全有效，160运行时控制完成；不再扩大|相对120有收益；相对136正确−1/FS+3，输入近2倍不值得继续|
 |138_rationale_tasks|[当前](../tasks/138_rationale_tasks/CURRENT.md) · [完整报告](../outputs/138_rationale_tasks/report.md) · [方案](../tasks/138_rationale_tasks/PROTOCOL.md)|主臂1817全有效；MCC .5839、正确1532、FS66/362|相对136正确−61/FS−22，停止当前扩大；理由特异效应仅有500配对|
