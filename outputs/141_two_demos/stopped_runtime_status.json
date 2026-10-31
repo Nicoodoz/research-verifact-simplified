@@ -1,0 +1,10 @@
+{
+  "observed_epoch": 1793433185.1986725,
+  "controller_alive": false,
+  "worker_alive": false,
+  "compute_apps": "",
+  "gpu": "1 MiB, 0 %",
+  "instance_shutdown_requested": false,
+  "instance_or_disk_released": false,
+  "purpose": "Verify only141 inference stopped; retained instance remains user-managed."
+}
