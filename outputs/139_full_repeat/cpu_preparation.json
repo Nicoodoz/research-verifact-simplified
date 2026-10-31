@@ -1,0 +1,74 @@
+{
+  "status": "CPU_PREPARED_NOT_RUN",
+  "candidate": "full_repeat",
+  "N": 1817,
+  "screen_N": 160,
+  "all_input_tokens": {
+    "sum": 30055319,
+    "mean": 16541.177215189873,
+    "median": 16197,
+    "max": 26761,
+    "min": 9299
+  },
+  "screen_input_tokens": {
+    "sum": 2675218,
+    "mean": 16720.1125,
+    "median": 16404.0,
+    "max": 25105,
+    "min": 12707
+  },
+  "original104_input_tokens": {
+    "sum": 15061274,
+    "mean": 8289.088607594937,
+    "median": 8117,
+    "max": 13399,
+    "min": 4668
+  },
+  "maximum_with_384_output": 27145,
+  "capacity": 32768,
+  "screen_first_formal_ID": "6cc9f4bd-2c62-8e18-3405-ec5fdd381657",
+  "screen_first_formal_tokens": 25105,
+  "model_source_signature": {
+    "max_position_embeddings": 262144,
+    "rope_parameters": {
+      "mrope_interleaved": true,
+      "mrope_section": [
+        11,
+        11,
+        10
+      ],
+      "rope_type": "default",
+      "rope_theta": 10000000,
+      "partial_rotary_factor": 0.25
+    },
+    "rope_scaling": null,
+    "rope_theta": null
+  },
+  "GPU_runtime_config_checked": false,
+  "unchanged_claim_reference": true,
+  "source_inputs_sha256": "3bbcbf609d79acc683563049d2c421314409fad4d094f86d1b7d7cde42d75ba3",
+  "exact_whole_user_content_copies": 2,
+  "system_copies": 1,
+  "separator": "two LF characters",
+  "single_generation": true,
+  "GPU_used": false,
+  "new_API_CNY": 0,
+  "forecast": {
+    "screen136_recorded_generation_seconds": 351.7867678096518,
+    "screen_estimate_lower_seconds": 1303.5735356193036,
+    "screen_estimate_upper_seconds": 2007.1470712386072,
+    "method": "2x-4x old generation wall time +600s load/return; planning envelope, not measured throughput",
+    "hard_screen_phase_seconds": 3600,
+    "hard_screen_phase_CNY": 1.58,
+    "first_formal_longest_required": true,
+    "interpretation": "Original2x-4x runtime forecast retained; actual compute cap2700 plus900 save, global budget prevails."
+  },
+  "CPU_elapsed_seconds": 88.36908793449402,
+  "task": 139,
+  "compute_limit_seconds": 2700,
+  "save_reserve_seconds": 900,
+  "total_stage_limit_seconds": 3600,
+  "stage_max_CNY": 1.58,
+  "reuse_without_retokenization": true,
+  "source_adapter_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a"
+}

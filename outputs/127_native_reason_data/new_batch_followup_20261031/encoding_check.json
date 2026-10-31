@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "pairs": 58,
+  "unchanged_prior_checks_reused": 50,
+  "new_pairs_encoded": 8,
+  "old_source_and_target_equal": true,
+  "full_input_no_truncation": true,
+  "original_GT_preserved": true,
+  "GPU_calls": 0,
+  "API_calls": 0,
+  "model_loaded": false,
+  "details": [
+    {
+      "id": "34e1d6ed-6457-8cf0-1dd2-59a1eb0f2fd6",
+      "GT": "Not Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8444,
+      "total_tokens": 8506,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "483fc660-edac-2265-8c34-916063ba9e60",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 7669,
+      "total_tokens": 7734,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "9ee363a2-c3bd-300e-a122-730b6e21d3e2",
+      "GT": "Not Supported",
+      "fit_role": "train",
+      "prompt_tokens": 9825,
+      "total_tokens": 9891,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "b4a5153b-5f64-2b77-9ab3-05a9ed94d380",
+      "GT": "Supported",
+      "fit_role": "train",
+      "prompt_tokens": 7844,
+      "total_tokens": 7901,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "b5616184-28ea-d1fb-5433-d8e85097b09e",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 7290,
+      "total_tokens": 7351,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "c2e6c5c2-e8da-da5c-ae40-e2fefe015522",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 8756,
+      "total_tokens": 8821,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "c967fccc-6a08-24eb-43e6-5c35199b278e",
+      "GT": "Not Addressed",
+      "fit_role": "train",
+      "prompt_tokens": 8472,
+      "total_tokens": 8539,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    },
+    {
+      "id": "ee915324-b6ea-8578-b01e-bf45191d5b43",
+      "GT": "Not Supported",
+      "fit_role": "train",
+      "prompt_tokens": 8797,
+      "total_tokens": 8858,
+      "same_prompt": true,
+      "verdict_span_correct": true
+    }
+  ]
+}

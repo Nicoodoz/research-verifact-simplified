@@ -1,0 +1,13 @@
+{
+  "task": 139,
+  "scope": "screen160",
+  "status": "CPU_READY_NOT_RUN",
+  "bundle_sha256": "8cca1b483efb78b5cbdda7865c5b630c63ae9c803f5c7f91cccc1325d6a5e229",
+  "bundle_bytes": 907132,
+  "source_inputs_retokenized": false,
+  "compute_limit_seconds": 2700,
+  "save_reserve_seconds": 900,
+  "total_stage_limit_seconds": 3600,
+  "entry": "tasks/139_full_repeat/controller139.py",
+  "file_count": 11
+}

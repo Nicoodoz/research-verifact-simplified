@@ -6,11 +6,11 @@
 
 135 reason_first160全有效但正确−6、FS不变，已停止扩大。134另确认2例S标签/NS理由矛盾；其中一个匹配病例变成一致的NS输出却损失正确S，说明自洽不等于分类有效。133已按用户要求在16步安全暂停，未评价；稳定性复验后置。
 
-用户新增20元GPU预算并继续原目标，自2026-10-31 09:36:01（UTC+8）计入准备、等待、加载、编译和回传，按1.58元／小时估算至22:15:30。用户要求不再补完133：已停在16步/128次呈现并回传，评价未启动。当前138已启动独立理由辅助任务的小规模性能诊断，冻结使用v9的36条训练理由；匹配标签回放对照已准备，主臂有信号再运行。旧基线全部复用，尚无新分类结果。并行新增10条理由仅留后续；139完整输入重复正在做CPU准备，不抢占当前GPU。原API80元累计仍用0，不重置；上一16元窗口连同开机等待至新授权估算¥15.695另记，不借用其余额。不自动关机或释放，实质性阶段继续双仓发布。
+用户新增20元GPU预算并继续原目标，自2026-10-31 09:36:01（UTC+8）计入准备、等待、加载、编译和回传，按1.58元／小时估算至22:15:30。用户要求不再补完133：已停在16步/128次呈现并回传，评价未启动。当前138已启动独立理由辅助任务的小规模性能诊断，冻结使用v9的36条训练理由；匹配标签回放对照已准备，主臂有信号再运行。旧基线全部复用，尚无新分类结果。并行新增18条理由仅留后续；139完整输入重复已完成CPU准备，先固定160例、最多45分钟计算并留15分钟回传；待138结束按实际结果安排，不抢占当前GPU。原API80元累计仍用0，不重置；上一16元窗口连同开机等待至新授权估算¥15.695另记，不借用其余额。不自动关机或释放，实质性阶段继续双仓发布。
 
-120最终MCC .6250、正确1599、false-S109/362；132固定中点MCC .5988、正确1559、false-S80/362，均保留真实收益与风险，未升级默认。415诊断取消、0完整回执；133按用户要求暂停，未产生分类结果。127现为50对AI辅助reason（训练46、内部验证4），无分类收益证明；本批10条新增未进入138。
+120最终MCC .6250、正确1599、false-S109/362；132固定中点MCC .5988、正确1559、false-S80/362，均保留真实收益与风险，未升级默认。415诊断取消、0完整回执；133按用户要求暂停，未产生分类结果。127现为58对AI辅助reason（训练54、内部验证4），无分类收益证明；本轮18条新增未进入138。
 
-[138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [实时进度](../outputs/138_rationale_tasks/progress.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
+[138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [实时进度](../outputs/138_rationale_tasks/progress.md) · [139准备](../tasks/139_full_repeat/CURRENT.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -20,7 +20,7 @@
 
 [研究历史同ID对比](../outputs/120_full_pool_sft/horizontal_comparison.md)：保留历史候选真实成绩；120的369步已完成，134已补齐统一基线。后接分类/融合路线退出，标签成绩不证明旧reason与新判定一致。
 
-[127原生reason数据准备](../outputs/127_native_reason_data/report.md)：保留32／8患者划分，50条AI辅助审读配对、28条问题单及全部原标签；最新10条为未处理训练病例的增量，不改138冻结数据。
+[127原生reason数据准备](../outputs/127_native_reason_data/report.md)：保留32／8患者划分，58条AI辅助审读配对、32条问题单及全部原标签；最新18条为未处理训练病例的增量，不改138冻结数据。
 
 ## 当前研究目标与运行事实
 
@@ -45,7 +45,7 @@
 |130 header_blocks|完整500，保留全部原文的记录头归组|总正确不变、FS+1，压力MCC下降；停止当前格式|
 |129 native_reference_check|107与120各160空reference诊断均完成，全部判NA|会响应证据缺失，不能证明非空reference关系判断正确|
 |128 sqrt_weight_refresh|同220起点、同149步，完整500首次全有效|相对120正确−3、FS−3，MCC两面板均下降，当前配方停止，不扩1317|
-|127 native_reason_data|累计78条审读，50条配对、28条待核；3675原标签全保留|新10条均为训练侧，原40条检查复用；尚无分类收益，未加入当前138|
+|127 native_reason_data|累计90条审读，58条配对、32条待核；3675原标签全保留|新18条均为训练侧，原40条检查复用；尚无分类收益，未加入当前138|
 |126 conditional_state_readout|仅CPU准备，GPU提取与真实头拟合均取消未跑|无分类成绩；保留准备材料，不将取消解释成方法阴性|
 |125 dual_state_readout|固定拼接MLP完成160初筛|相对原117 MLP正确−4、MCC−.06450、FS+4，NS/NA损失；阴性停止，不扩大|
 |124 seed_mean_readout|两家族固定均值完成1817及患者配对区间|平方根均值MCC .5980、正确1542、FS61/362，确有标签收益；按用户方向停止后接融合主线，非指标阴性|

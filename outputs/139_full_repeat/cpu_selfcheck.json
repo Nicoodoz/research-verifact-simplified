@@ -1,0 +1,12 @@
+{
+  "task": 139,
+  "status": "PASS",
+  "budget_regression": "2700 computation plus900 save",
+  "same160": true,
+  "full_user_repeated": true,
+  "GT_not_input": true,
+  "source_inputs_not_retokenized": true,
+  "standard_metric_label_routing_checked": true,
+  "capacity_metadata_only_change_allowed": true,
+  "no_GPU": true
+}

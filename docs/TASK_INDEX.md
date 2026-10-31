@@ -1,6 +1,6 @@
 # 全部任务与当前入口（2026-10-31）
 
-补充CPU核查：[120医生标注分层](../outputs/120_full_pool_sft/annotation_strata.md)显示，首轮三医师一致样本也同时出现质量提升与false-S增加，不能把风险全归于标注争议；[131源文上下文核查](../outputs/131_source_context_probe/report.md)完成6例，没有找到支持盲目扩大输入的新决定性依据。以上CPU核查没有GPU调用；127现有50对reason，最新10条留后续，138仍冻结使用旧36条训练理由。
+补充CPU核查：[120医生标注分层](../outputs/120_full_pool_sft/annotation_strata.md)显示，首轮三医师一致样本也同时出现质量提升与false-S增加，不能把风险全归于标注争议；[131源文上下文核查](../outputs/131_source_context_probe/report.md)完成6例，没有找到支持盲目扩大输入的新决定性依据。以上CPU核查没有GPU调用；127现有58对reason，最新18条留后续，138仍冻结使用旧36条训练理由。
 
 102已按用户2026-10-27最新指令最终封存，不补跑；零API、分类效果未检验。原预算停止解释的更正和本次双仓库发布授权见[最终封存说明](../outputs/102_demo_relation/closure.md)。
 
@@ -8,6 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|139_full_repeat|[准备](../tasks/139_full_repeat/CURRENT.md) · [方案](../tasks/139_full_repeat/PROTOCOL.md)|CPU准备完成；120权重＋完整用户输入重复，固定160首筛|尚未GPU运行；全输入保留，最长正式样本首答检验容量；不抢占138|
 |138_rationale_tasks|[当前](../tasks/138_rationale_tasks/CURRENT.md) · [方案](../tasks/138_rationale_tasks/PROTOCOL.md)|主臂已启动：36条已审读训练理由＋匹配标签回放，384次呈现/48步|先做原生分类性能诊断；正在加载/训练，尚无分类成绩|
 |137_extra_steps|[集中总结](../outputs/137_extra_steps/window_summary.md) · [报告](../outputs/137_extra_steps/report.md) · [当前](../tasks/137_extra_steps/CURRENT.md)|149步与1817评价全部完成并回传；MCC .5952、正确1555、FS78/362|相对136正确−38、FS−10；NS增益伴随明显S/NA损失，停止当前追加配方|
 |136_claim_repeat_transfer|[当前](../tasks/136_claim_repeat_transfer/CURRENT.md) · [方案](../tasks/136_claim_repeat_transfer/PROTOCOL.md) · [进度](../outputs/136_claim_repeat_transfer/progress.md)|全1817有效：MCC .6350、正确1593、FS88/362|相对120正确−6、FS−21；保留取舍，不升级默认|
@@ -19,7 +20,7 @@
 |130_header_blocks|[最终报告](../outputs/130_header_blocks/final_report.md) · [固定方案](../tasks/130_header_blocks/PROTOCOL.md)|160初筛后只补340，完整500均有效；输入tokens−28.40%|总正确不变、FS+1、压力MCC下降，停止格式扩大|
 |129_native_reference_check|[最终报告](../outputs/129_native_reference_check/final_report.md) · [固定诊断](../tasks/129_native_reference_check/PROTOCOL.md)|107/120各160，清空reference后全部判NA，回执已回传|会响应证据缺失；不证明非空证据关系判断正确|
 |128_sqrt_weight_refresh|[最终报告](../outputs/128_sqrt_weight_refresh/final_report.md) · [固定方案](../tasks/128_sqrt_weight_refresh/PROTOCOL.md)|同220起点149步和完整500完成，模型/完整状态回传|相对120正确−3、FS−3，MCC均下降；停止当前配方，不扩1317|
-|127_native_reason_data|[数据准备](../outputs/127_native_reason_data/report.md) · [新增批次](../outputs/127_native_reason_data/new_batch_20261031/report.md) · [入口](../tasks/127_native_reason_data/CURRENT.md)|累计78条审读、50条配对、28条待核；3675原标签全保留|新增训练侧10条（S4/NS2/NA4），未进138；原40条复用，无分类收益证明|
+|127_native_reason_data|[数据准备](../outputs/127_native_reason_data/report.md) · [新增批次](../outputs/127_native_reason_data/new_batch_followup_20261031/report.md) · [入口](../tasks/127_native_reason_data/CURRENT.md)|累计90条审读、58条配对、32条待核；3675原标签全保留|新增训练侧18条（S5/NS5/NA8），未进138；原40条复用，无分类收益证明|
 |126_conditional_state_readout|[准备与取消](../tasks/126_conditional_state_readout/CURRENT.md)|仅准备，未GPU提取、未真实拟合|按研究方向取消，无效果成绩|
 |125_dual_state_readout|[160报告](../outputs/125_dual_state_readout/report.md)|固定拼接头真实CPU初筛|相对原117 MLP净−4正确、FS+4，阴性停止|
 |124_seed_mean_readout|[报告](../outputs/124_seed_mean_readout/final_report.md) · [结果](../outputs/124_seed_mean_readout/full1817.json)|固定均值完整1817、区间及部署指针均保留|有真实标签增益；按用户最新方向停止后接融合主线，不改写为阴性|
