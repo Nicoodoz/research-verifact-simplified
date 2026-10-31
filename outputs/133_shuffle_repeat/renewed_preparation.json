@@ -1,0 +1,46 @@
+{
+  "status": "READY_NOT_LAUNCHED",
+  "task": 133,
+  "seed": 118027,
+  "original_seed": 117027,
+  "train_N": 2945,
+  "train_patients": 32,
+  "eval_patients": 20,
+  "fixed_training_steps": 369,
+  "source": "same107 adapter, fresh Adam as120",
+  "train_data_source": "reused original frozen133 package; no evaluation data or relabeling",
+  "first_evaluation_N": 160,
+  "first_evaluation_panels": {
+    "natural": 128,
+    "pressure": 32
+  },
+  "target_evaluation_N_per_input": 1817,
+  "inputs": [
+    "plain104",
+    "claim_repeat"
+  ],
+  "cache_only_patch": "Existing134 compilation-cache path replaces retired109 cache path; training algorithm unchanged.",
+  "checkpoint_selection": "fixed369; no selection by evaluation",
+  "budget": {
+    "start_epoch": 1793410561.0,
+    "start_local": "2026-10-31T09:36:01+08:00",
+    "duration_seconds": 45569.620253164554,
+    "GPU_cap_CNY": 20.0,
+    "hourly_CNY": 1.58,
+    "API_cap_CNY": 80.0,
+    "API_used_CNY": 0.0,
+    "no_shutdown": true,
+    "no_release": true,
+    "authorization": "User renewed original native-verification goal with an additional20 CNY GPU budget; original API80 remains cumulative.",
+    "prior_window_start_epoch": 1793374800.0,
+    "prior_GPU_to_new_authorization_CNY": 15.695105555555557,
+    "unused_prior_GPU_balance_not_spent_in_this_window": true
+  },
+  "estimated_training_hours": 3.85,
+  "estimated_with_two_input_full_evaluation_and_return_hours": [
+    5,
+    6
+  ],
+  "baseline_inference_repeated": false,
+  "source_weights_downloaded": false
+}
