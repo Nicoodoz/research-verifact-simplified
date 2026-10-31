@@ -45,6 +45,12 @@ def main():
   lines.append('')
  if 'patient_bootstrap' in s:
   ci=s['patient_bootstrap']['metrics']['mcc']['ci95'];lines += [f'1000次患者配对bootstrap的ΔMCC 95%区间[{ci[0]:+.4f}, {ci[1]:+.4f}]；不覆盖训练随机性、历史开发选择或新医院泛化。','']
+ if 'risk_and_recall_bootstrap' in s:
+  lines += ['|指标|变化（百分点）|95%患者区间（百分点）|','|---|---:|---|']
+  for key,label in [('false_S_rate','false-S/真实非S'),('S_recall','S召回'),('NS_recall','NS召回'),('NA_recall','NA召回')]:
+   value=s['risk_and_recall_bootstrap'][key];lo,hi=value['ci95']
+   lines.append(f"|{label}|{100*value['delta']:+.2f}|[{100*lo:+.2f}, {100*hi:+.2f}]|")
+  lines.append('')
  cost=(time.time()-1793374800)*1.58/3600;stamp=datetime.now(timezone(timedelta(hours=8))).isoformat(timespec='seconds')
  lines+=['## 范围和成本','',f"无效{len(v['coverage']['invalid_ids'])}、缺失{len(v['coverage']['missing_ids'])}；不补旧答案、不重发成功或无效回答。全部原GT、claim、reference和实际尝试保留。",'',
   '训练32人、评价20人无交集，新增训练使用原顺序的1192条，未按评价错误选样本；所有患者有历史暴露，不称全新holdout。518步只包括120阶段与本次延续，不包含更早的107微调。',

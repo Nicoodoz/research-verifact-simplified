@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-10-31T08:50:35+08:00",
+  "GPU_start_local": "2026-10-30T23:40:00+08:00",
+  "GPU_hourly_CNY": 1.58,
+  "GPU_estimate_CNY": 14.499104332142407,
+  "GPU_cap_CNY": 16,
+  "API_CNY": 0,
+  "API_cap_CNY": 80,
+  "charged_time_scope": "All wall time since authorization, including preparation, loading, compilation, waiting, return and CPU analysis up to this timestamp.",
+  "platform_bill_verified": false,
+  "compute_finished": true,
+  "checkpoint_and_receipts_returned": true,
+  "instance_on": true,
+  "shutdown_sent": false,
+  "instance_released": false,
+  "disk_released": false,
+  "ongoing_rental_after_timestamp": true
+}

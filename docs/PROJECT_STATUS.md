@@ -1,8 +1,8 @@
-# 项目现状（2026-10-31，136完整／137进行中）
+# 项目现状（2026-10-31，本轮完整评价已收束）
 
 134统一三基线已完成；同1793有效ID下author_base9b/author_lora9b/paper_r1 MCC为.3422/.6104/.4819，正确1210/1562/1468，false-S44/100/105（非S361）。微调收益真实且伴随风险，作者接口不全面优于104接口120。
 
-136 claim_repeat完整1817全有效：MCC .6350、PA87.67%、正确1593、FS88/362；相对120正确−6、FS−21，S/NS/NA净−30/+6/+18。错误支持率改善区间不含0，MCC提升区间跨0；保留为实际取舍，不升级默认。137已完成固定149步续训（369→518），完整模型/优化器/RNG已回传；同136输入的500全部有效：MCC .6128→.6167、正确仍403、FS48→43/179，S/NS/NA净−5/+12/−7。通过事前风险门槛，正补1317至完整1817；自然正确−4、压力+4，尚不主张全量收益。
+136 claim_repeat完整1817全有效：MCC .6350、PA87.67%、正确1593、FS88/362；相对120正确−6、FS−21，S/NS/NA净−30/+6/+18。错误支持率改善区间不含0，MCC提升区间跨0；保留为实际取舍，不升级默认。137固定149步及1817评价全部完成并回传：MCC .5952、PA85.58%、正确1555、FS78/362；相对136正确−38、FS−10，S/NS/NA净−25/+16/−29。NS与风险收益真实，但完整评价的质量代价偏大，停止当前追加配方，不否定全部微调。全部GPU计算已结束，实例仍开机。
 
 135 reason_first160全有效但正确−6、FS不变，已停止扩大。134另确认2例S标签/NS理由矛盾；其中一个匹配病例变成一致的NS输出却损失正确S，说明自洽不等于分类有效。133仍未训练。
 
@@ -10,7 +10,7 @@
 
 120最终MCC .6250、正确1599、false-S109/362；132固定中点MCC .5988、正确1559、false-S80/362，均保留真实收益与风险，未升级默认。415诊断取消、0完整回执；133仅CPU准备，未训练。127为40对AI辅助reason，无分类收益证明。
 
-[137当前任务](../tasks/137_extra_steps/CURRENT.md) · [实时进度](../outputs/137_extra_steps/progress.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
+[本轮集中总结](../outputs/137_extra_steps/window_summary.md) · [137当前任务](../tasks/137_extra_steps/CURRENT.md) · [实时进度](../outputs/137_extra_steps/progress.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
