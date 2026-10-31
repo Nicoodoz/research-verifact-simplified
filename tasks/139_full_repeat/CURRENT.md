@@ -1,9 +1,9 @@
-# 139 full_repeat：160与匹配控制完成，主臂扩评500
+# 139 full_repeat：500完成，停止当前扩大
 
-full_repeat160与同运行时claim_control160均全有效；后者与旧136逐条同标签。full_repeat MCC .5848、PA79.375%、正确127、FS16/57；相对匹配控制正确+1、FS−1、ΔMCC+.0142，优势小但保留，正在补原500的缺失340条。
+full_repeat500全有效：MCC .6070、PA80.4%、正确402、false-S51/179。相对120为MCC+.0188、正确+4、FS−4；相对便宜的136为MCC−.0058、正确−1、FS+3，S/NS/NA净−1/+3/−3。保留真实NS收益，但近2倍输入未换来更好的整体表现，不追加1317。
 
-相同120权重、batch1/32768、384输出；控制只用136原输入，未重新训练。160条生成中位耗时full_repeat 3.31秒、控制1.89秒；输入量近2倍，尚未证明额外成本值得。最长25105 tokens首答已通过，峰值21.84 GiB，无截断或额外测速。
+160同batch1/32768控制与旧136逐条同标签，full_repeat当时+1正确/−1FS的小幅优势在扩大后没有保持。未补500同运行时控制，因此500是实际配置表现比较，不声称严格隔离了所有数值实现因素，也不否定全部输入优化。
 
-只补未生成ID，保留所有首答，不重发旧160；500主臂有信号后才补匹配控制340。2700秒计算＋900秒保存，沿09:36:01起20元GPU/原80元API累计，不关机或释放。
+不重训、不重发、不改GT；原128/32初筛、400/100旧500以及所有回执/运行记录保留。32GB可运行，首个25105-token正式样本峰值21.84 GiB。当前转回138所保留风险取舍的完整1817验证；默认不升级，不自动关机或释放。
 
-[当前报告](../../outputs/139_full_repeat/report.md) · [160完整统计](../../outputs/139_full_repeat/screen160.json) · [运行时控制](../../outputs/139_full_repeat/claim_control160.json) · [原方案](PROTOCOL.md) · [控制协议](RUNTIME_CONTROL.md) · [实时进度](../../outputs/139_full_repeat/progress.md)
+[500报告](../../outputs/139_full_repeat/report.md) · [完整统计](../../outputs/139_full_repeat/old500.json) · [160运行时控制](../../outputs/139_full_repeat/claim_control160.json) · [原方案](PROTOCOL.md)

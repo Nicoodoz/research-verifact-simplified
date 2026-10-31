@@ -1,0 +1,21 @@
+{
+  "status": "PREPARED_NOT_RUN",
+  "arm": "rationale_tasks",
+  "scope": "full1817",
+  "new_IDs": 1317,
+  "target_N": 1817,
+  "reused_first_receipts": 500,
+  "reused_invalid": 0,
+  "adapter": "/root/autodl-tmp/verifact138_rationale_tasks/results/train/checkpoint_b",
+  "adapter_sha256": "fe09d59ef3aaa5988ccc5489647731095e86d7ccc611b66b7083abae73cba17e",
+  "checkpoint_steps": 48,
+  "max_input_tokens": 13447,
+  "source136_retokenized": false,
+  "compute_limit_seconds": 5400,
+  "save_reserve_seconds": 900,
+  "total_stage_limit_seconds": 6300,
+  "same_generation_as136": true,
+  "screen138_used_batch2_for_all": true,
+  "extension_uses_long_input_batch1": true,
+  "new_API": 0
+}

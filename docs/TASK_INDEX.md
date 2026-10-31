@@ -8,8 +8,8 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
-|139_full_repeat|[当前](../tasks/139_full_repeat/CURRENT.md) · [方案](../tasks/139_full_repeat/PROTOCOL.md) · [进度](../outputs/139_full_repeat/progress.md)|两臂160全有效，控制与旧136逐条同标签；主臂补340到500|MCC .5848、正确127、FS16/57，相对控制+1正确/−1FS；待扩大|
-|138_rationale_tasks|[当前](../tasks/138_rationale_tasks/CURRENT.md) · [初筛](../outputs/138_rationale_tasks/rationale_tasks_screen160.md) · [方案](../tasks/138_rationale_tasks/PROTOCOL.md)|两臂48步/500全有效，完整状态均回传|理由相对回放正确+3/FS+3，ΔMCC+.0086区间跨0；保留取舍，暂不扩1317|
+|139_full_repeat|[当前](../tasks/139_full_repeat/CURRENT.md) · [方案](../tasks/139_full_repeat/PROTOCOL.md) · [进度](../outputs/139_full_repeat/progress.md)|500全有效，160运行时控制完成；不再扩大|相对120有收益；相对136正确−1/FS+3，输入近2倍不值得继续|
+|138_rationale_tasks|[当前](../tasks/138_rationale_tasks/CURRENT.md) · [初筛](../outputs/138_rationale_tasks/rationale_tasks_screen160.md) · [方案](../tasks/138_rationale_tasks/PROTOCOL.md)|两臂48步/500全有效，主臂补1317运行中|理由增量扩大后缩小；验证其相对136正确−3/FS−11的风险取舍能否保持|
 |137_extra_steps|[集中总结](../outputs/137_extra_steps/window_summary.md) · [报告](../outputs/137_extra_steps/report.md) · [当前](../tasks/137_extra_steps/CURRENT.md)|149步与1817评价全部完成并回传；MCC .5952、正确1555、FS78/362|相对136正确−38、FS−10；NS增益伴随明显S/NA损失，停止当前追加配方|
 |136_claim_repeat_transfer|[当前](../tasks/136_claim_repeat_transfer/CURRENT.md) · [方案](../tasks/136_claim_repeat_transfer/PROTOCOL.md) · [进度](../outputs/136_claim_repeat_transfer/progress.md)|全1817有效：MCC .6350、正确1593、FS88/362|相对120正确−6、FS−21；保留取舍，不升级默认|
 |135_reason_first|[报告](../outputs/135_reason_first/report.md) · [统计](../outputs/135_reason_first/screen160.json)|160有效、缺reason0；MCC−.0608、正确−6、FS不变|停止当前版本扩大，前缀对照仅CPU未跑|
