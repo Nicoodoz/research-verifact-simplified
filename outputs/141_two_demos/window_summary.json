@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-10-31T19:00:15+08:00",
-  "conclusion": "144完整1817的风险排序收益延续到新增1317，但原生标签不变：136在84.04%自动覆盖下FS88降至29，同时送审231个正确S。136保留原生质量与风险取舍，142全量未占优，145仅160有2条增量；当前只做小型capture成本配对，不自动升级默认。",
+  "created_at": "2026-10-31T19:04:34+08:00",
+  "conclusion": "144完整1817保留原生标签，同时取得实际风险排序收益：136在84.04%覆盖时FS88降至29，代价为231个正确S送审。24调用工程配对输出一致，但不证明零开销或安全保证。145只补原500的余340条检验说明修正，不自动扩大或升级默认。",
   "tables": {
     "full1817": {
       "claim_repeat136": {
@@ -2308,9 +2308,9 @@
   },
   "budget": {
     "start": "2026-10-31T09:36:01+08:00",
-    "as_of": "2026-10-31T19:00:15.822653+08:00",
-    "elapsed_seconds": 33854.822653,
-    "estimated_GPU_CNY": 14.858505497705558,
+    "as_of": "2026-10-31T19:04:34.203072+08:00",
+    "elapsed_seconds": 34113.203072,
+    "estimated_GPU_CNY": 14.971905792711109,
     "GPU_cap_CNY": 20,
     "API_used_CNY": 0,
     "API_cap_CNY": 80,
@@ -2344,6 +2344,14 @@
     {
       "title": "144 full1817 固定等工作量比较",
       "source": "outputs/144_native_confidence/full1817_equal_workload.md"
+    },
+    {
+      "title": "144总报告",
+      "source": "outputs/144_native_confidence/report.md"
+    },
+    {
+      "title": "144同次捕获工程检查",
+      "source": "outputs/144_native_confidence/capture_report.md"
     }
   ],
   "sources": [

@@ -1,0 +1,15 @@
+{
+  "status": "PASS_CPU_ONLY",
+  "target_N": 500,
+  "prior_first_answers": 160,
+  "new_inputs": 340,
+  "all_token_deltas": 3,
+  "max_input_tokens": 12727,
+  "max_input_plus384": 13111,
+  "ids_batches_generation_identical_to142": true,
+  "caption_only_roundtrip": true,
+  "prior_SHA_valid": true,
+  "session_bytes_preserved": true,
+  "syntax_import_pass": true,
+  "no_GPU_API": true
+}

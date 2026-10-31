@@ -1,9 +1,9 @@
-# 144 当前状态：完整1817已完成，工程成本配对中
+# 144 当前状态：完整1817与工程配对均完成
 
 2953/2953分支分数有效，复用731、仅新增2222。原生120/136标签未改。136在92.02%自动覆盖时FS88→51、送审108个正确S；84.04%覆盖时FS88→29、送审231个正确S。新增1317的FS40→11（同20%原S送审规则），收益延续但仍有明显复核负担。全五点、三类/矩阵/作者/患者均保留，不称原生MCC提高或CP保证。
 
 同送审178条、覆盖90.20%时，136原生分数比107分歧规则多拦6次FS、少送审6个正确S；120在对应等工作量下两者汇总相同。完整阶段新增forward3231.59秒，worker3320.13秒、controller3324.19秒单列，均不冒充全程费用。
 
-当前仅做原12个输入的24次control/capture配对工程检查，控制67935，600秒含加载编译＋180秒保存；不会重训、改标签或将此小批当分类收益。同一09:36:01起算20元窗口及API0/80保留，实例不自动关机或释放。
+24/24工程首答有效，12/12对的内容、token、标签均相同，capture前缀全部取得且匹配旧缓存。生成97.80秒，controller142.55秒；首次冷编译使平均耗时差不可当提速结论。中位差约−0.003秒，也不是零开销证明。本任务当前无待补分数；后续转向145原生输入对照，不自动升级或部署。
 
-[总报告](../../outputs/144_native_confidence/report.md) · [全量详细指标](../../outputs/144_native_confidence/full1817_analysis.md) · [等工作量](../../outputs/144_native_confidence/full1817_equal_workload.md) · [工程检查方案](CAPTURE_CHECK.md) · [进度](../../outputs/144_native_confidence/progress.md)
+[总报告](../../outputs/144_native_confidence/report.md) · [全量详细指标](../../outputs/144_native_confidence/full1817_analysis.md) · [等工作量](../../outputs/144_native_confidence/full1817_equal_workload.md) · [工程实测](../../outputs/144_native_confidence/capture_report.md) · [工程检查方案](CAPTURE_CHECK.md) · [进度](../../outputs/144_native_confidence/progress.md)

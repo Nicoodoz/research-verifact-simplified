@@ -1,11 +1,11 @@
 # 当前窗口集中比较
 
-144完整1817的风险排序收益延续到新增1317，但原生标签不变：136在84.04%自动覆盖下FS88降至29，同时送审231个正确S。136保留原生质量与风险取舍，142全量未占优，145仅160有2条增量；当前只做小型capture成本配对，不自动升级默认。
+144完整1817保留原生标签，同时取得实际风险排序收益：136在84.04%覆盖时FS88降至29，代价为231个正确S送审。24调用工程配对输出一致，但不证明零开销或安全保证。145只补原500的余340条检验说明修正，不自动扩大或升级默认。
 
 仅复用既有分析JSON。1817、500、160各自是固定同ID范围，禁止跨表直接相减；未完成/覆盖不同的候选不填0、不进入完整分母表。
 评价仍是原20名历史暴露的选型患者；100名患者都有研究暴露，不称全新holdout，也没有自动使用确认40人重新选型。当前训练维持原32人、内部验证8人的边界。
 
-选择性核验另见：[144 screen160 选择性结果](../144_native_confidence/screen160_analysis.md)；[144 screen160 固定等工作量比较](../144_native_confidence/screen160_equal_workload.md)；[144 old500 选择性结果](../144_native_confidence/old500_analysis.md)；[144 old500 固定等工作量比较](../144_native_confidence/old500_equal_workload.md)；[144 full1817 选择性结果](../144_native_confidence/full1817_analysis.md)；[144 full1817 固定等工作量比较](../144_native_confidence/full1817_equal_workload.md)。这些自动子集结果不列入下方原生三分类表。
+选择性核验另见：[144 screen160 选择性结果](../144_native_confidence/screen160_analysis.md)；[144 screen160 固定等工作量比较](../144_native_confidence/screen160_equal_workload.md)；[144 old500 选择性结果](../144_native_confidence/old500_analysis.md)；[144 old500 固定等工作量比较](../144_native_confidence/old500_equal_workload.md)；[144 full1817 选择性结果](../144_native_confidence/full1817_analysis.md)；[144 full1817 固定等工作量比较](../144_native_confidence/full1817_equal_workload.md)；[144总报告](../144_native_confidence/report.md)；[144同次捕获工程检查](../144_native_confidence/capture_report.md)。这些自动子集结果不列入下方原生三分类表。
 
 ## 完整1817：固定1817条
 
@@ -221,7 +221,7 @@ author_lora9b原始覆盖/invalid详见[明细](../134_author_baselines/full1817
 
 ## 费用与状态
 
-从2026-10-31T09:36:01+08:00起到2026-10-31T19:00:15+08:00，按1.58元/小时估算GPU累计¥14.859/20。所有准备、加载、编译、等待与回传均计入；这不是平台精确账单，也不因任务切换重置。API仍¥0/80。
+从2026-10-31T09:36:01+08:00起到2026-10-31T19:04:34+08:00，按1.58元/小时估算GPU累计¥14.972/20。所有准备、加载、编译、等待与回传均计入；这不是平台精确账单，也不因任务切换重置。API仍¥0/80。
 不自动关机或释放。默认系统未因该汇总升级；这里的结论由调用者明确传入，脚本不替未完成结果编造结论。
 
 上一16元窗口至本次新增授权前另估约¥15.695，单独记录；旧余额未借用、API额度未重置。

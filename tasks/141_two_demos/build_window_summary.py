@@ -184,6 +184,9 @@ def build(conclusion,as_of):
         for suffix,title in (('analysis','选择性结果'),('equal_workload','固定等工作量比较')):
             path=ROOT/'outputs/144_native_confidence'/f'{scope}_{suffix}.md'
             if path.exists():selective_links.append(dict(title=f'144 {scope} {title}',source=path.relative_to(ROOT).as_posix()))
+    for name,title in (('report.md','144总报告'),('capture_report.md','144同次捕获工程检查')):
+        path=ROOT/'outputs/144_native_confidence'/name
+        if path.exists():selective_links.append(dict(title=title,source=path.relative_to(ROOT).as_posix()))
     report=dict(created_at=as_of.isoformat(timespec='seconds'),conclusion=conclusion,
         tables=mains,coverage=covs,scope_notes=notes,missing_analysis_sources=missing_sources,
         author_common_N=author_N,author_common=authors,author_raw_coverage=author_cov,
