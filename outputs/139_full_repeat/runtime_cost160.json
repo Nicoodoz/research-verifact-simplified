@@ -1,0 +1,19 @@
+{
+  "full_repeat": {
+    "N": 160,
+    "generation_seconds_sum": 591.7127368468791,
+    "median_seconds": 3.3125406899489462,
+    "mean_input_tokens": 16720.1125,
+    "peak_GiB": 21.842585563659668,
+    "process_wall_seconds": 636.9902448654175
+  },
+  "claim_control": {
+    "N": 160,
+    "generation_seconds_sum": 355.3433197028935,
+    "median_seconds": 1.890610605943948,
+    "mean_input_tokens": 8423.54375,
+    "peak_GiB": 19.84152603149414,
+    "process_wall_seconds": 401.2400622367859
+  },
+  "scope_note": "Process wall includes loading/tokenization/compilation/inference, excludes preparation/upload/return; budget remains cumulative from09:36:01 including all time."
+}

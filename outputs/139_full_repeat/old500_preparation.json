@@ -1,0 +1,19 @@
+{
+  "task": 139,
+  "status": "PREPARED_NOT_RUN",
+  "scope": "old500",
+  "target_N": 500,
+  "prior_N": 160,
+  "new_calls": 340,
+  "prior_invalid": 0,
+  "max_input_tokens": 25325,
+  "first_formal_ID": "debdabe4-9420-b27f-132c-2b7d9e50a954",
+  "source": "Reuse frozen input/token-SHA/lengths; no CPU retokenization",
+  "compute_limit_seconds": 2700,
+  "save_reserve_seconds": 900,
+  "total_stage_limit_seconds": 3600,
+  "global_budget_CNY": 20.0,
+  "global_start": "2026-10-31T09:36:01+08:00",
+  "new_API_CNY": 0,
+  "new_training": false
+}

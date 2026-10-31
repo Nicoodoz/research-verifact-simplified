@@ -1,31 +1,76 @@
-"""Prepare the necessary160-ID runtime control; no inference or retokenization."""
+"""Prepare only missing fixed-scope runtime controls; no inference/retokenization."""
 from pathlib import Path
 import ast,json,shutil,sys,tarfile
-R=Path(__file__).resolve().parents[2];P=R/'.local_models/139_full_repeat';Q=P/'claim_control160'
+R=Path(__file__).resolve().parents[2];P=R/'.local_models/139_full_repeat'
 sys.path.insert(0,str(R/'tasks/105_brief_supervision'));import common105 as c
+RUNS={'screen160':'claim_control160','old500':'claim_control_old500','full1817':'claim_control_full1817'}
+
+
+def source136():
+    original=R/'.local_models/136_claim_repeat_transfer';inputs={};receipts={}
+    for scope in RUNS:
+        for row in c.rows(original/('claim_repeat_'+scope)/'bundle/data/inputs.jsonl'):
+            i=row['id']
+            if i in inputs and inputs[i]!=row:raise ValueError('Conflicting136 input')
+            inputs[i]=row
+        for file in (original/'evidence'/scope/'claim_repeat').glob('*.json'):
+            row=c.read(file)
+            if 'id' not in row:continue
+            i=row['id']
+            if i in receipts and receipts[i]!=row:raise ValueError('Conflicting136 first receipt')
+            receipts[i]=row
+    assert len(inputs)==len(receipts)==1817 and set(inputs)==set(receipts)
+    for i,row in inputs.items():
+        assert set(row)=={'id','claim','reference','prompt_token_sha256'}
+        assert row['prompt_token_sha256']==receipts[i]['prompt_token_sha256']
+    return inputs,receipts
+
+
+def plan(scope):
+    inputs,receipts=source136();settings=c.read(P/'source/settings.json')
+    keys={r['id']:r for r in c.rows(R/'.local_models/134_author_baselines/keys.jsonl')}
+    screen=set(c.read(R/'.local_models/134_author_baselines/job.json')['phases'][0]['ids'])
+    old500={i for i,r in keys.items() if r['old_panel'] in ('natural','pressure')}
+    target=screen if scope=='screen160' else (old500 if scope=='old500' else set(keys))
+    required=set() if scope=='screen160' else (screen if scope=='old500' else old500)
+    prior={}
+    for run in RUNS.values():
+        for file in (P/run/'evidence/claim_control').glob('*.json'):
+            row=c.read(file)
+            if 'id' not in row:continue
+            i=row['id']
+            if i not in inputs or row.get('arm')!='claim_control' or row.get('adapter_sha256')!=settings['adapter_sha256']:
+                raise ValueError('Wrong prior control arm/checkpoint/ID')
+            if row['prompt_token_sha256']!=inputs[i]['prompt_token_sha256']:raise ValueError('Changed prior control prompt')
+            if i in prior and prior[i]!=row:raise ValueError('Conflicting first control receipts')
+            prior[i]=row
+    if not required<=set(prior):raise ValueError('Previous control scope lacks returned first receipts; no expansion')
+    needed=sorted(target-set(prior),key=lambda i:(-receipts[i]['input_tokens'],i))
+    expected={'screen160':160,'old500':340,'full1817':1317}[scope]
+    if len(needed)!=expected:raise ValueError(f'Expected exactly{expected} missing IDs, found{len(needed)}; inspect existing work')
+    rows=[inputs[i] for i in needed]
+    lengths=[dict(id=i,input_tokens=receipts[i]['input_tokens'],prompt_token_sha256=inputs[i]['prompt_token_sha256']) for i in needed]
+    assert all(r['input_tokens']+384<=32768 for r in lengths)
+    return rows,lengths,needed,target,prior
 
 
 def main():
-    if Q.exists():raise FileExistsError('claim_control160 already prepared; preserve first-request identity')
-    original=R/'.local_models/136_claim_repeat_transfer'
-    rows=c.rows(original/'claim_repeat_screen160/bundle/data/inputs.jsonl')
-    targets=set(c.read(R/'.local_models/134_author_baselines/job.json')['phases'][0]['ids'])
-    assert len(rows)==160 and {r['id'] for r in rows}==targets
-    receipts={}
-    for file in (original/'evidence/screen160/claim_repeat').glob('*.json'):
-        row=c.read(file)
-        if 'id' in row:receipts[row['id']]=row
-    assert set(receipts)==targets
-    lengths=[]
-    for row in rows:
-        assert set(row)=={'id','claim','reference','prompt_token_sha256'}
-        old=receipts[row['id']];assert row['prompt_token_sha256']==old['prompt_token_sha256']
-        lengths.append(dict(id=row['id'],input_tokens=old['input_tokens'],prompt_token_sha256=row['prompt_token_sha256']))
-    order=sorted(targets,key=lambda i:(-receipts[i]['input_tokens'],i))
+    import argparse
+    ap=argparse.ArgumentParser();ap.add_argument('--scope',choices=list(RUNS),default='screen160')
+    ap.add_argument('--compute-seconds',type=int);ap.add_argument('--check-only',action='store_true');args=ap.parse_args()
+    scope=args.scope;run=RUNS[scope];Q=P/run
+    rows,lengths,order,targets,prior=plan(scope)
+    if args.check_only:
+        print(c.canonical(dict(scope=scope,target_N=len(targets),new_IDs=len(order),prior_N=len(targets&prior.keys()),
+            prior_invalid=sum(not prior[i]['parsed']['valid'] for i in targets&prior.keys()),no_files_written=True,no_GPU=True)))
+        return
+    if args.compute_seconds is None or args.compute_seconds<300:ap.error('--compute-seconds must explicitly allocate at least300 seconds')
+    if Q.exists():raise FileExistsError(run+' already prepared; preserve first-request identity')
+    compute_seconds=args.compute_seconds
     settings=c.read(P/'source/settings.json');session=c.read(P/'source/session.json')
-    job=dict(settings,task=139,name='claim_control160',variant='claim_control',scope='claim_control160',
-        inputs='data/inputs.jsonl',expected_N=160,target_N=160,prior_N=0,ids=order,first_formal_ID=order[0],
-        compute_limit_seconds=1800,save_reserve_seconds=900,total_stage_limit_seconds=2700,
+    job=dict(settings,task=139,name=run,variant='claim_control',scope=scope,
+        inputs='data/inputs.jsonl',expected_N=len(order),target_N=len(targets),prior_N=len(targets)-len(order),ids=order,first_formal_ID=order[0],
+        compute_limit_seconds=compute_seconds,save_reserve_seconds=900,total_stage_limit_seconds=compute_seconds+900,
         first_receipts_only=True,no_training=True,no_shutdown=True)
     assert job['generation']['batch_size']==1 and job['max_seq_length']==32768
     B=Q/'bundle';c.putl(B/'data/inputs.jsonl',rows);c.putl(B/'data/lengths.jsonl',lengths)
@@ -51,16 +96,17 @@ def main():
     monitor=(R/'tasks/139_full_repeat/monitor139.py').read_text(encoding='utf-8-sig')
     before="parser=argparse.ArgumentParser();parser.add_argument('--scope',required=True,choices=['screen160','old500','full1817'])"
     assert before in monitor
-    monitor=monitor.replace(before,'parser=argparse.ArgumentParser()').replace("scope=args.scope","scope='claim_control160'")
+    monitor=monitor.replace(before,'parser=argparse.ArgumentParser()').replace("scope=args.scope","scope="+repr(run))
     monitor=monitor.replace("R=Path(__file__).resolve().parents[2]", "R=next(p for p in Path(__file__).resolve().parents if (p/'tasks/139_full_repeat/PROTOCOL.md').exists())")
-    monitor=monitor.replace("remote='/root/autodl-tmp/verifact139_full_repeat_'+scope","remote='/root/autodl-tmp/verifact139_claim_control160'")
+    monitor=monitor.replace("remote='/root/autodl-tmp/verifact139_full_repeat_'+scope","remote="+repr('/root/autodl-tmp/verifact139_'+run))
     monitor=monitor.replace("evidence=P/'evidence'/scope","evidence=local/'evidence'")
     before="folders=[P/'evidence'/s/'full_repeat' for s in ['screen160','old500','full1817'] if (P/'evidence'/s/'full_repeat').exists()]"
     assert before in monitor
     monitor=monitor.replace(before,"folders=[local/'evidence'/'claim_control'] if (local/'evidence'/'claim_control').exists() else []")
     before="command=[sys.executable,'-B',str(R/'tasks/139_full_repeat/analyze139.py'),'--scope',scope,'--results',*[str(f) for f in folders],'--out',str(O)]"
     assert before in monitor
-    monitor=monitor.replace(before,"command=[sys.executable,'-B',str(R/'tasks/139_full_repeat/analyze_claim_control139.py'),'--control',str(folders[0]),'--out',str(local/'comparison')]")
+    monitor=monitor.replace(before,"command=[sys.executable,'-B',str(R/'tasks/139_full_repeat/analyze_claim_control139.py'),'--scope',"+repr(scope)+",'--out',str(local/'comparison')]")
+    monitor=monitor.replace("if scope=='full1817':command.append('--bootstrap')","if job['scope']=='full1817':command.append('--bootstrap')")
     monitor=monitor.replace('#139 full_repeat实时进度','#139 claim_control实时进度')
     (Q/'monitor.py').write_bytes(monitor.encode('utf-8'))
     for file in list(B.rglob('*.py'))+[Q/'start.py',Q/'monitor.py']:
@@ -70,9 +116,10 @@ def main():
     with tarfile.open(Q/'bundle.tar.gz','w:gz',compresslevel=1) as archive:
         for file in B.rglob('*'):
             if file.is_file():archive.add(file,arcname=file.relative_to(B),recursive=False)
-    result=dict(task=139,status='CPU_READY_NOT_RUN',arm='claim_control',N=160,
-        input='Exact136 screen160 claim_repeat cache',new_tokenization=False,max_input_tokens=max(x['input_tokens'] for x in lengths),
-        batch_size=1,capacity=32768,compute_limit_seconds=1800,save_reserve_seconds=900,total_stage_limit_seconds=2700,
+    result=dict(task=139,status='CPU_READY_NOT_RUN',arm='claim_control',scope=scope,N=len(order),target_N=len(targets),
+        prior_N=len(targets)-len(order),prior_invalid=sum(not prior[i]['parsed']['valid'] for i in targets&prior.keys()),
+        input='Exact136 claim_repeat caches',new_tokenization=False,max_input_tokens=max(x['input_tokens'] for x in lengths),
+        batch_size=1,capacity=32768,compute_limit_seconds=compute_seconds,save_reserve_seconds=900,total_stage_limit_seconds=compute_seconds+900,
         source_worker_sha256=c.sha(R/'tasks/139_full_repeat/worker139.py'),source_adapter_sha256=job['adapter_sha256'],
         archive_sha256=c.sha(Q/'bundle.tar.gz'),archive_bytes=(Q/'bundle.tar.gz').stat().st_size,
         static_check='PASS',new_GPU=False,new_API=0)
