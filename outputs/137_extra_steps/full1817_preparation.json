@@ -1,0 +1,15 @@
+{
+  "status": "PREPARED_NOT_RUN",
+  "scope": "full1817",
+  "target_N": 1817,
+  "prior_N": 500,
+  "new_calls": 1317,
+  "reused_invalid": 0,
+  "max_input_tokens": 13447,
+  "same_input_tokens_as136": true,
+  "fixed_checkpoint_step": 518,
+  "new_training": false,
+  "new_API": 0,
+  "source_adapter": "474904582b7cd22d640762ec03443effa478e32b87d9844cbfaab1ffc7a4bf29",
+  "GPU_window_start": "2026-10-30T23:40:00+08:00"
+}
