@@ -6,11 +6,11 @@
 
 135 reason_first160全有效但正确−6、FS不变，已停止扩大。134另确认2例S标签/NS理由矛盾；其中一个匹配病例变成一致的NS输出却损失正确S，说明自洽不等于分类有效。133已按用户要求在16步安全暂停，未评价；稳定性复验后置。
 
-用户新增20元GPU预算并继续原目标，自2026-10-31 09:36:01（UTC+8）计入准备、等待、加载、编译和回传，按1.58元／小时估算至22:15:30。用户要求不再补完133：已停在16步/128次呈现并回传，评价未启动。当前138已启动独立理由辅助任务的小规模性能诊断，冻结使用v9的36条训练理由；匹配标签回放对照已准备，主臂有信号再运行。旧基线全部复用，尚无新分类结果。并行新增18条理由仅留后续；139完整输入重复已完成CPU准备，先固定160例、最多45分钟计算并留15分钟回传；待138结束按实际结果安排，不抢占当前GPU。原API80元累计仍用0，不重置；上一16元窗口连同开机等待至新授权估算¥15.695另记，不借用其余额。不自动关机或释放，实质性阶段继续双仓发布。
+用户新增20元GPU预算并继续原目标，自2026-10-31 09:36:01（UTC+8）计入准备、等待、加载、编译和回传，按1.58元／小时估算至22:15:30。用户要求不再补完133：已停在16步/128次呈现并回传，评价未启动。138独立理由任务主臂已完成48步及160评价：MCC .5803、正确125、FS14/57；相对136 MCC+.0096、正确−1、FS−3，NS净+7但S−6/NA−2。轻量结果已回传，完整状态远端已保存、本地回传中。已达到风险初筛门槛，10:40:58启动事前冻结的匹配标签回放对照；尚不能归因于理由任务。冻结仍为v9的36条训练理由，旧基线全部复用。并行新增18条理由仅留后续；139完整输入重复已完成CPU准备，先固定160例、最多45分钟计算并留15分钟回传；待138结束按实际结果安排，不抢占当前GPU。原API80元累计仍用0，不重置；上一16元窗口连同开机等待至新授权估算¥15.695另记，不借用其余额。不自动关机或释放，实质性阶段继续双仓发布。
 
 120最终MCC .6250、正确1599、false-S109/362；132固定中点MCC .5988、正确1559、false-S80/362，均保留真实收益与风险，未升级默认。415诊断取消、0完整回执；133按用户要求暂停，未产生分类结果。127现为58对AI辅助reason（训练54、内部验证4），无分类收益证明；本轮18条新增未进入138。
 
-[138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [实时进度](../outputs/138_rationale_tasks/progress.md) · [139准备](../tasks/139_full_repeat/CURRENT.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
+[138当前任务](../tasks/138_rationale_tasks/CURRENT.md) · [主臂初筛](../outputs/138_rationale_tasks/rationale_tasks_screen160.md) · [实时进度](../outputs/138_rationale_tasks/progress.md) · [139准备](../tasks/139_full_repeat/CURRENT.md) · [133暂停](../tasks/133_shuffle_repeat/CURRENT.md) · [上一窗口总结](../outputs/137_extra_steps/window_summary.md) · [137结果](../outputs/137_extra_steps/report.md) · [136全量结果](../outputs/136_claim_repeat_transfer/report.md) · [135初筛](../outputs/135_reason_first/report.md) · [134统一报告](../outputs/134_author_baselines/report.md)
 
 [103最终报告](../outputs/103_lora_selection/final_report.md) · [GPU接续命令](../tasks/103_lora_selection/GPU_RUNBOOK.md) · [资源要求](../tasks/103_lora_selection/resource_advisory.md) · [102封存更正](../outputs/102_demo_relation/closure.md)。
 
@@ -40,6 +40,7 @@
 
 |研究|实际完成内容|结论与限制|
 |---|---|---|
+|138 rationale_tasks|固定48步/160完成且全有效；匹配标签回放对照运行|相对136 MCC+.0096、正确−1、FS−3；NS+7/S−6/NA−2，待对照确认理由任务增量|
 |132 midpoint_update|完整1817全有效，原160复用；GPU计算已结束|MCC .5988、正确1559、FS80/362；相对107有质量收益与风险代价，相对120减少风险但损失正确S|
 |131 source_context_probe|6例源文上下文核查、600片段可定位|没有新决定性支持证据；保留关系与实体歧义，未回填训练|
 |130 header_blocks|完整500，保留全部原文的记录头归组|总正确不变、FS+1，压力MCC下降；停止当前格式|

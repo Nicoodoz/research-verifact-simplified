@@ -14,8 +14,13 @@ def table(scores,arm):
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--arm',choices=['rationale_tasks','label_replay'],required=True);ap.add_argument('--scope',choices=['screen160','old500','full1817'],default='screen160');ap.add_argument('--decision',required=True);a=ap.parse_args()
  v=read(O/(a.arm+'_'+a.scope+'.json'));d=read(P/a.arm/'evidence/training_done.json');assert (d['steps'],d['consumed'])==(48,384)
- cp=P/a.arm/'evidence/train';pointer=read(cp/'resume.json');assert pointer['step']==48
- assert (cp/pointer['slot']/'training_state.pt').stat().st_size>300_000_000
+ cp=P/a.arm/'evidence/train';returned=(cp/'resume.json').exists()
+ if returned:
+  pointer=read(cp/'resume.json');assert pointer['step']==48
+  returned=(cp/pointer['slot']/'training_state.pt').exists() and (cp/pointer['slot']/'training_state.pt').stat().st_size>300_000_000
+ if not returned:
+  live=read(P/a.arm/'live_snapshot.json');pointer=live['results/train/resume.json']
+  assert pointer['step']==48 and live['results/training_done.json']['adapter_sha256']==d['adapter_sha256']
  s=v['primary'];lines=['# 138 '+a.arm+'：'+a.scope,'',a.decision,'',f"已完成固定48步/384次呈现；目标{v['expected_N']}，实际有效{v['valid_N']}。本表与136使用相同输入，变化来自训练。",'',
  '## 同ID比较','']+table(s['scores']|v['historical_on_same_IDs'],a.arm)
  lines+=['',f"## 三个指定基线共同{v['three_baseline_common_N']}条",'']+table(v['three_baseline_common_scores'],a.arm)
@@ -29,6 +34,12 @@ def main():
  pts=s['patient_directions'];up=sum(x['correct_delta']>0 for x in pts);down=sum(x['correct_delta']<0 for x in pts);lines+=['',f'患者正确数：{up}升/{down}降/{len(pts)-up-down}持平。','']
  for name,m in s['scores'].items():
   if name=='paper_r1':continue
+  lines+=['|类别|Precision|Recall|F1|','|---|---:|---:|---:|']
+  for label in LABELS:
+   row=m['per_class'][label]
+   values=['—' if row[k] is None else f"{row[k]:.4f}" for k in ['precision','recall','f1']]
+   lines.append('|'+label+'|'+'|'.join(values)+'|')
+  lines.append('')
   lines += [name+'混淆矩阵（行GT、列预测；S/NS/NA）','','|GT\\预测|S|NS|NA|','|---|---:|---:|---:|']
   for g,row in zip(['S','NS','NA'],m['confusion_matrix']):lines.append('|'+g+'|'+'|'.join(map(str,row))+'|')
   lines.append('')
@@ -41,7 +52,7 @@ def main():
  lines+=['## 覆盖与成本','',f"缺失{len(v['coverage']['missing_ids'])}、无效{len(v['coverage']['invalid_ids'])}；首答保留，不补旧答案、不按结果重发。",'',
  '训练只用原32名训练患者；评价固定原20名患者，均有历史暴露，不称全新holdout。36条理由逐字复用已有AI审读版本，不生成新reason、不改医生GT，不把评价数据用于训练。',
  '',f'截至{stamp}，09:36:01起新增窗口GPU估算¥{cost:.3f}/20，API原80元累计0；含准备、等待、加载、编译和回传。不自动关机或释放。',
- '', '完整状态已回传。loss/梯度检查不等于分类价值，标签成绩也不证明同次reason自洽已解决。',
+ '', ('完整状态已回传。' if returned else '最终48步完整状态已在远端保存；本地已收到160条评价和训练完成记录，大文件仍在回传。')+'loss/梯度检查不等于分类价值，标签成绩也不证明同次reason自洽已解决。',
  '',f'[完整统计]({a.arm}_{a.scope}.json) · [固定方案](../../tasks/138_rationale_tasks/PROTOCOL.md)']
  text='\n'.join(lines).rstrip()+'\n';(O/(a.arm+'_'+a.scope+'.md')).write_text(text,encoding='utf-8');(O/'report.md').write_text(text,encoding='utf-8')
  print(json.dumps(dict(arm=a.arm,scope=a.scope,delta_MCC=s['delta_MCC'],delta_correct=s['delta_correct'],delta_false_S=s['delta_false_S'])))
