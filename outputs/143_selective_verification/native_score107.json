@@ -1,0 +1,940 @@
+{
+  "status": "FIXED_GRID_COMPLETE_NO_THRESHOLD_SELECTED",
+  "protocol": "../../tasks/143_selective_verification/NATIVE_SCORE107_PROTOCOL.md",
+  "source_config": ".local_models/113_label_path/config.json",
+  "identity_checks": {
+    "N": 180,
+    "unique_IDs": 180,
+    "source_adapter_matches": true,
+    "prompt_SHA_matches": true,
+    "input_lengths_match": true,
+    "GT_sid_author_match": true,
+    "native_first_branch_fields_verified": true
+  },
+  "score_definition": "first_branch.S / (first_branch.S + first_branch.Not); raw full-vocabulary branch scores at same prefix, not calibrated",
+  "original_greedy_retained": true,
+  "fractions_percent": [
+    0,
+    5,
+    10,
+    20,
+    30
+  ],
+  "rounding": "floor(original_predicted_S_N * percent / 100)",
+  "selection_uses_GT": false,
+  "panels": {
+    "natural": {
+      "N": 120,
+      "patients": 19,
+      "GT": {
+        "Supported": 96,
+        "Not Supported": 8,
+        "Not Addressed": 16
+      },
+      "original_predicted_S_N": 76,
+      "original_false_S_N": 4,
+      "original_nonS_N": 24,
+      "diagnostic_only": false,
+      "points": [
+        {
+          "requested_percent_of_original_S": 0,
+          "referred_N": 0,
+          "actual_fraction_of_original_S": 0.0,
+          "referred_IDs": [],
+          "automatic_N": 120,
+          "automatic_coverage": 1.0,
+          "automatic_nonS_N": 24,
+          "residual_false_S_N": 4,
+          "original_nonS_denominator": 24,
+          "residual_false_S_over_original_nonS": 0.16666666666666666,
+          "automatic_predicted_S_N": 76,
+          "automatic_S_false_discovery_rate": 0.05263157894736842,
+          "automatic_MCC": 0.40776445357642943,
+          "automatic_PA": 0.7166666666666667,
+          "automatic_correct_N": 86,
+          "automatic_confusion_matrix": [
+            [
+              72,
+              15,
+              9
+            ],
+            [
+              2,
+              3,
+              3
+            ],
+            [
+              2,
+              3,
+              11
+            ]
+          ],
+          "referred_true_S_N": 0,
+          "referred_GT": {},
+          "captured_false_S_N": 0,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 0.0,
+            "residual_false_S_N": 4.0,
+            "residual_false_S_over_original_nonS": 0.16666666666666666,
+            "referred_true_S_N": 0.0
+          },
+          "empirical_score_boundary": {
+            "max_referred": null,
+            "min_retained_S": 0.43782351501953004
+          }
+        },
+        {
+          "requested_percent_of_original_S": 5,
+          "referred_N": 3,
+          "actual_fraction_of_original_S": 0.039473684210526314,
+          "referred_IDs": [
+            "875d2a13-ad93-08ab-dbb4-f831f384d920",
+            "9b7dbcd8-4696-6015-b27c-fd5741deec6c",
+            "d4d8b266-02cf-1982-c859-44ac08403e80"
+          ],
+          "automatic_N": 117,
+          "automatic_coverage": 0.975,
+          "automatic_nonS_N": 24,
+          "residual_false_S_N": 4,
+          "original_nonS_denominator": 24,
+          "residual_false_S_over_original_nonS": 0.16666666666666666,
+          "automatic_predicted_S_N": 73,
+          "automatic_S_false_discovery_rate": 0.0547945205479452,
+          "automatic_MCC": 0.4039961448152356,
+          "automatic_PA": 0.7094017094017094,
+          "automatic_correct_N": 83,
+          "automatic_confusion_matrix": [
+            [
+              69,
+              15,
+              9
+            ],
+            [
+              2,
+              3,
+              3
+            ],
+            [
+              2,
+              3,
+              11
+            ]
+          ],
+          "referred_true_S_N": 3,
+          "referred_GT": {
+            "Supported": 3
+          },
+          "captured_false_S_N": 0,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 0.15789473684210525,
+            "residual_false_S_N": 3.8421052631578947,
+            "residual_false_S_over_original_nonS": 0.1600877192982456,
+            "referred_true_S_N": 2.8421052631578947
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.6513548610696404,
+            "min_retained_S": 0.6791786892242129
+          }
+        },
+        {
+          "requested_percent_of_original_S": 10,
+          "referred_N": 7,
+          "actual_fraction_of_original_S": 0.09210526315789473,
+          "referred_IDs": [
+            "875d2a13-ad93-08ab-dbb4-f831f384d920",
+            "9b7dbcd8-4696-6015-b27c-fd5741deec6c",
+            "d4d8b266-02cf-1982-c859-44ac08403e80",
+            "a3296e1d-d777-9f77-76b6-50b7822a3b5c",
+            "66d93d6e-dbc6-0a15-6539-4ede07dfdf2d",
+            "d0ca051c-b015-be76-7603-abe3c68a4053",
+            "7e3d2a0a-e4a5-2405-2fd7-228ef32067d3"
+          ],
+          "automatic_N": 113,
+          "automatic_coverage": 0.9416666666666667,
+          "automatic_nonS_N": 23,
+          "residual_false_S_N": 3,
+          "original_nonS_denominator": 24,
+          "residual_false_S_over_original_nonS": 0.125,
+          "automatic_predicted_S_N": 69,
+          "automatic_S_false_discovery_rate": 0.043478260869565216,
+          "automatic_MCC": 0.41771877252067174,
+          "automatic_PA": 0.7079646017699115,
+          "automatic_correct_N": 80,
+          "automatic_confusion_matrix": [
+            [
+              66,
+              15,
+              9
+            ],
+            [
+              1,
+              3,
+              3
+            ],
+            [
+              2,
+              3,
+              11
+            ]
+          ],
+          "referred_true_S_N": 6,
+          "referred_GT": {
+            "Supported": 6,
+            "Not Supported": 1
+          },
+          "captured_false_S_N": 1,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 0.3684210526315789,
+            "residual_false_S_N": 3.6315789473684212,
+            "residual_false_S_over_original_nonS": 0.1513157894736842,
+            "referred_true_S_N": 6.631578947368421
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.9149009611502981,
+            "min_retained_S": 0.946596668535953
+          }
+        },
+        {
+          "requested_percent_of_original_S": 20,
+          "referred_N": 15,
+          "actual_fraction_of_original_S": 0.19736842105263158,
+          "referred_IDs": [
+            "875d2a13-ad93-08ab-dbb4-f831f384d920",
+            "9b7dbcd8-4696-6015-b27c-fd5741deec6c",
+            "d4d8b266-02cf-1982-c859-44ac08403e80",
+            "a3296e1d-d777-9f77-76b6-50b7822a3b5c",
+            "66d93d6e-dbc6-0a15-6539-4ede07dfdf2d",
+            "d0ca051c-b015-be76-7603-abe3c68a4053",
+            "7e3d2a0a-e4a5-2405-2fd7-228ef32067d3",
+            "e070066f-9d41-167f-ef7f-e9ba2bf32505",
+            "e65dd3f7-e1a2-89f5-eb93-799415ff98f5",
+            "79ebb6ef-2444-5354-ced3-6334e2d279d2",
+            "bb7e08e1-0306-29cb-57b8-68a830bff8b9",
+            "624d9738-fb5f-1874-b565-9e4b1607643b",
+            "13965da7-8049-437c-fee6-1970556e135b",
+            "5ecedf27-3985-081a-1c31-a51781d276f9",
+            "8b0ab099-df0f-de9f-04bc-aa9b7b549c97"
+          ],
+          "automatic_N": 105,
+          "automatic_coverage": 0.875,
+          "automatic_nonS_N": 20,
+          "residual_false_S_N": 0,
+          "original_nonS_denominator": 24,
+          "residual_false_S_over_original_nonS": 0.0,
+          "automatic_predicted_S_N": 61,
+          "automatic_S_false_discovery_rate": 0.0,
+          "automatic_MCC": 0.4716112494691906,
+          "automatic_PA": 0.7142857142857143,
+          "automatic_correct_N": 75,
+          "automatic_confusion_matrix": [
+            [
+              61,
+              15,
+              9
+            ],
+            [
+              0,
+              3,
+              3
+            ],
+            [
+              0,
+              3,
+              11
+            ]
+          ],
+          "referred_true_S_N": 11,
+          "referred_GT": {
+            "Supported": 11,
+            "Not Supported": 2,
+            "Not Addressed": 2
+          },
+          "captured_false_S_N": 4,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 0.7894736842105263,
+            "residual_false_S_N": 3.2105263157894735,
+            "residual_false_S_over_original_nonS": 0.1337719298245614,
+            "referred_true_S_N": 14.210526315789474
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.9933071491741087,
+            "min_retained_S": 0.9940889315240843
+          }
+        },
+        {
+          "requested_percent_of_original_S": 30,
+          "referred_N": 22,
+          "actual_fraction_of_original_S": 0.2894736842105263,
+          "referred_IDs": [
+            "875d2a13-ad93-08ab-dbb4-f831f384d920",
+            "9b7dbcd8-4696-6015-b27c-fd5741deec6c",
+            "d4d8b266-02cf-1982-c859-44ac08403e80",
+            "a3296e1d-d777-9f77-76b6-50b7822a3b5c",
+            "66d93d6e-dbc6-0a15-6539-4ede07dfdf2d",
+            "d0ca051c-b015-be76-7603-abe3c68a4053",
+            "7e3d2a0a-e4a5-2405-2fd7-228ef32067d3",
+            "e070066f-9d41-167f-ef7f-e9ba2bf32505",
+            "e65dd3f7-e1a2-89f5-eb93-799415ff98f5",
+            "79ebb6ef-2444-5354-ced3-6334e2d279d2",
+            "bb7e08e1-0306-29cb-57b8-68a830bff8b9",
+            "624d9738-fb5f-1874-b565-9e4b1607643b",
+            "13965da7-8049-437c-fee6-1970556e135b",
+            "5ecedf27-3985-081a-1c31-a51781d276f9",
+            "8b0ab099-df0f-de9f-04bc-aa9b7b549c97",
+            "ebd70319-b881-375b-f4d6-75ee76d9a249",
+            "890e6ad7-4734-439c-7053-c1b9fc4133d4",
+            "057556f0-1d09-b2c4-af43-ebab7b87a094",
+            "908d8fb4-1871-f34d-6e55-56be462836da",
+            "87526fa9-cedc-3284-2f83-79b5c348f350",
+            "c123c56e-98da-64bf-654f-f0fd212f3846",
+            "87c03859-139f-299f-abef-d0a23044eef9"
+          ],
+          "automatic_N": 98,
+          "automatic_coverage": 0.8166666666666667,
+          "automatic_nonS_N": 20,
+          "residual_false_S_N": 0,
+          "original_nonS_denominator": 24,
+          "residual_false_S_over_original_nonS": 0.0,
+          "automatic_predicted_S_N": 54,
+          "automatic_S_false_discovery_rate": 0.0,
+          "automatic_MCC": 0.4621784984095682,
+          "automatic_PA": 0.6938775510204082,
+          "automatic_correct_N": 68,
+          "automatic_confusion_matrix": [
+            [
+              54,
+              15,
+              9
+            ],
+            [
+              0,
+              3,
+              3
+            ],
+            [
+              0,
+              3,
+              11
+            ]
+          ],
+          "referred_true_S_N": 18,
+          "referred_GT": {
+            "Supported": 18,
+            "Not Supported": 2,
+            "Not Addressed": 2
+          },
+          "captured_false_S_N": 4,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 1.1578947368421053,
+            "residual_false_S_N": 2.8421052631578947,
+            "residual_false_S_over_original_nonS": 0.11842105263157894,
+            "referred_true_S_N": 20.842105263157894
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.997199072756205,
+            "min_retained_S": 0.9971990728785685
+          }
+        }
+      ]
+    },
+    "pressure": {
+      "N": 60,
+      "patients": 16,
+      "GT": {
+        "Not Supported": 30,
+        "Not Addressed": 30
+      },
+      "original_predicted_S_N": 7,
+      "original_false_S_N": 7,
+      "original_nonS_N": 60,
+      "diagnostic_only": false,
+      "points": [
+        {
+          "requested_percent_of_original_S": 0,
+          "referred_N": 0,
+          "actual_fraction_of_original_S": 0.0,
+          "referred_IDs": [],
+          "automatic_N": 60,
+          "automatic_coverage": 1.0,
+          "automatic_nonS_N": 60,
+          "residual_false_S_N": 7,
+          "original_nonS_denominator": 60,
+          "residual_false_S_over_original_nonS": 0.11666666666666667,
+          "automatic_predicted_S_N": 7,
+          "automatic_S_false_discovery_rate": 1.0,
+          "automatic_MCC": 0.30691721148650053,
+          "automatic_PA": 0.5833333333333334,
+          "automatic_correct_N": 35,
+          "automatic_confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              8,
+              17
+            ],
+            [
+              2,
+              1,
+              27
+            ]
+          ],
+          "referred_true_S_N": 0,
+          "referred_GT": {},
+          "captured_false_S_N": 0,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 0.0,
+            "residual_false_S_N": 7.0,
+            "residual_false_S_over_original_nonS": 0.11666666666666667,
+            "referred_true_S_N": 0.0
+          },
+          "empirical_score_boundary": {
+            "max_referred": null,
+            "min_retained_S": 0.5
+          }
+        },
+        {
+          "requested_percent_of_original_S": 5,
+          "referred_N": 0,
+          "actual_fraction_of_original_S": 0.0,
+          "referred_IDs": [],
+          "automatic_N": 60,
+          "automatic_coverage": 1.0,
+          "automatic_nonS_N": 60,
+          "residual_false_S_N": 7,
+          "original_nonS_denominator": 60,
+          "residual_false_S_over_original_nonS": 0.11666666666666667,
+          "automatic_predicted_S_N": 7,
+          "automatic_S_false_discovery_rate": 1.0,
+          "automatic_MCC": 0.30691721148650053,
+          "automatic_PA": 0.5833333333333334,
+          "automatic_correct_N": 35,
+          "automatic_confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              8,
+              17
+            ],
+            [
+              2,
+              1,
+              27
+            ]
+          ],
+          "referred_true_S_N": 0,
+          "referred_GT": {},
+          "captured_false_S_N": 0,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 0.0,
+            "residual_false_S_N": 7.0,
+            "residual_false_S_over_original_nonS": 0.11666666666666667,
+            "referred_true_S_N": 0.0
+          },
+          "empirical_score_boundary": {
+            "max_referred": null,
+            "min_retained_S": 0.5
+          }
+        },
+        {
+          "requested_percent_of_original_S": 10,
+          "referred_N": 0,
+          "actual_fraction_of_original_S": 0.0,
+          "referred_IDs": [],
+          "automatic_N": 60,
+          "automatic_coverage": 1.0,
+          "automatic_nonS_N": 60,
+          "residual_false_S_N": 7,
+          "original_nonS_denominator": 60,
+          "residual_false_S_over_original_nonS": 0.11666666666666667,
+          "automatic_predicted_S_N": 7,
+          "automatic_S_false_discovery_rate": 1.0,
+          "automatic_MCC": 0.30691721148650053,
+          "automatic_PA": 0.5833333333333334,
+          "automatic_correct_N": 35,
+          "automatic_confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              8,
+              17
+            ],
+            [
+              2,
+              1,
+              27
+            ]
+          ],
+          "referred_true_S_N": 0,
+          "referred_GT": {},
+          "captured_false_S_N": 0,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 0.0,
+            "residual_false_S_N": 7.0,
+            "residual_false_S_over_original_nonS": 0.11666666666666667,
+            "referred_true_S_N": 0.0
+          },
+          "empirical_score_boundary": {
+            "max_referred": null,
+            "min_retained_S": 0.5
+          }
+        },
+        {
+          "requested_percent_of_original_S": 20,
+          "referred_N": 1,
+          "actual_fraction_of_original_S": 0.14285714285714285,
+          "referred_IDs": [
+            "49ffd4cc-bcb7-e60e-da95-01467bc7684b"
+          ],
+          "automatic_N": 59,
+          "automatic_coverage": 0.9833333333333333,
+          "automatic_nonS_N": 59,
+          "residual_false_S_N": 6,
+          "original_nonS_denominator": 60,
+          "residual_false_S_over_original_nonS": 0.1,
+          "automatic_predicted_S_N": 6,
+          "automatic_S_false_discovery_rate": 1.0,
+          "automatic_MCC": 0.3070482551532038,
+          "automatic_PA": 0.5932203389830508,
+          "automatic_correct_N": 35,
+          "automatic_confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              4,
+              8,
+              17
+            ],
+            [
+              2,
+              1,
+              27
+            ]
+          ],
+          "referred_true_S_N": 0,
+          "referred_GT": {
+            "Not Supported": 1
+          },
+          "captured_false_S_N": 1,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 1.0,
+            "residual_false_S_N": 6.0,
+            "residual_false_S_over_original_nonS": 0.1,
+            "referred_true_S_N": 0.0
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.5,
+            "min_retained_S": 0.8933094090231963
+          }
+        },
+        {
+          "requested_percent_of_original_S": 30,
+          "referred_N": 2,
+          "actual_fraction_of_original_S": 0.2857142857142857,
+          "referred_IDs": [
+            "49ffd4cc-bcb7-e60e-da95-01467bc7684b",
+            "d90db78c-fa53-4f32-d78b-e7a337cdd605"
+          ],
+          "automatic_N": 58,
+          "automatic_coverage": 0.9666666666666667,
+          "automatic_nonS_N": 58,
+          "residual_false_S_N": 5,
+          "original_nonS_denominator": 60,
+          "residual_false_S_over_original_nonS": 0.08333333333333333,
+          "automatic_predicted_S_N": 5,
+          "automatic_S_false_discovery_rate": 1.0,
+          "automatic_MCC": 0.3073230322468735,
+          "automatic_PA": 0.603448275862069,
+          "automatic_correct_N": 35,
+          "automatic_confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              8,
+              17
+            ],
+            [
+              2,
+              1,
+              27
+            ]
+          ],
+          "referred_true_S_N": 0,
+          "referred_GT": {
+            "Not Supported": 2
+          },
+          "captured_false_S_N": 2,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 2.0,
+            "residual_false_S_N": 5.0,
+            "residual_false_S_over_original_nonS": 0.08333333333333333,
+            "referred_true_S_N": 0.0
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.8933094090231963,
+            "min_retained_S": 0.9465966701159393
+          }
+        }
+      ]
+    },
+    "enriched_all180": {
+      "N": 180,
+      "patients": 20,
+      "GT": {
+        "Supported": 96,
+        "Not Supported": 38,
+        "Not Addressed": 46
+      },
+      "original_predicted_S_N": 83,
+      "original_false_S_N": 11,
+      "original_nonS_N": 84,
+      "diagnostic_only": true,
+      "points": [
+        {
+          "requested_percent_of_original_S": 0,
+          "referred_N": 0,
+          "actual_fraction_of_original_S": 0.0,
+          "referred_IDs": [],
+          "automatic_N": 180,
+          "automatic_coverage": 1.0,
+          "automatic_nonS_N": 84,
+          "residual_false_S_N": 11,
+          "original_nonS_denominator": 84,
+          "residual_false_S_over_original_nonS": 0.13095238095238096,
+          "automatic_predicted_S_N": 83,
+          "automatic_S_false_discovery_rate": 0.13253012048192772,
+          "automatic_MCC": 0.4826021665282682,
+          "automatic_PA": 0.6722222222222223,
+          "automatic_correct_N": 121,
+          "automatic_confusion_matrix": [
+            [
+              72,
+              15,
+              9
+            ],
+            [
+              7,
+              11,
+              20
+            ],
+            [
+              4,
+              4,
+              38
+            ]
+          ],
+          "referred_true_S_N": 0,
+          "referred_GT": {},
+          "captured_false_S_N": 0,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 0.0,
+            "residual_false_S_N": 11.0,
+            "residual_false_S_over_original_nonS": 0.13095238095238096,
+            "referred_true_S_N": 0.0
+          },
+          "empirical_score_boundary": {
+            "max_referred": null,
+            "min_retained_S": 0.43782351501953004
+          }
+        },
+        {
+          "requested_percent_of_original_S": 5,
+          "referred_N": 4,
+          "actual_fraction_of_original_S": 0.04819277108433735,
+          "referred_IDs": [
+            "875d2a13-ad93-08ab-dbb4-f831f384d920",
+            "49ffd4cc-bcb7-e60e-da95-01467bc7684b",
+            "9b7dbcd8-4696-6015-b27c-fd5741deec6c",
+            "d4d8b266-02cf-1982-c859-44ac08403e80"
+          ],
+          "automatic_N": 176,
+          "automatic_coverage": 0.9777777777777777,
+          "automatic_nonS_N": 83,
+          "residual_false_S_N": 10,
+          "original_nonS_denominator": 84,
+          "residual_false_S_over_original_nonS": 0.11904761904761904,
+          "automatic_predicted_S_N": 79,
+          "automatic_S_false_discovery_rate": 0.12658227848101267,
+          "automatic_MCC": 0.4833876545097107,
+          "automatic_PA": 0.6704545454545454,
+          "automatic_correct_N": 118,
+          "automatic_confusion_matrix": [
+            [
+              69,
+              15,
+              9
+            ],
+            [
+              6,
+              11,
+              20
+            ],
+            [
+              4,
+              4,
+              38
+            ]
+          ],
+          "referred_true_S_N": 3,
+          "referred_GT": {
+            "Supported": 3,
+            "Not Supported": 1
+          },
+          "captured_false_S_N": 1,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 0.5301204819277109,
+            "residual_false_S_N": 10.46987951807229,
+            "residual_false_S_over_original_nonS": 0.12464142283419392,
+            "referred_true_S_N": 3.4698795180722892
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.6513548610696404,
+            "min_retained_S": 0.6791786892242129
+          }
+        },
+        {
+          "requested_percent_of_original_S": 10,
+          "referred_N": 8,
+          "actual_fraction_of_original_S": 0.0963855421686747,
+          "referred_IDs": [
+            "875d2a13-ad93-08ab-dbb4-f831f384d920",
+            "49ffd4cc-bcb7-e60e-da95-01467bc7684b",
+            "9b7dbcd8-4696-6015-b27c-fd5741deec6c",
+            "d4d8b266-02cf-1982-c859-44ac08403e80",
+            "a3296e1d-d777-9f77-76b6-50b7822a3b5c",
+            "66d93d6e-dbc6-0a15-6539-4ede07dfdf2d",
+            "d0ca051c-b015-be76-7603-abe3c68a4053",
+            "d90db78c-fa53-4f32-d78b-e7a337cdd605"
+          ],
+          "automatic_N": 172,
+          "automatic_coverage": 0.9555555555555556,
+          "automatic_nonS_N": 81,
+          "residual_false_S_N": 8,
+          "original_nonS_denominator": 84,
+          "residual_false_S_over_original_nonS": 0.09523809523809523,
+          "automatic_predicted_S_N": 75,
+          "automatic_S_false_discovery_rate": 0.10666666666666667,
+          "automatic_MCC": 0.49251319448115066,
+          "automatic_PA": 0.6744186046511628,
+          "automatic_correct_N": 116,
+          "automatic_confusion_matrix": [
+            [
+              67,
+              15,
+              9
+            ],
+            [
+              4,
+              11,
+              20
+            ],
+            [
+              4,
+              4,
+              38
+            ]
+          ],
+          "referred_true_S_N": 5,
+          "referred_GT": {
+            "Supported": 5,
+            "Not Supported": 3
+          },
+          "captured_false_S_N": 3,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 1.0602409638554218,
+            "residual_false_S_N": 9.939759036144578,
+            "residual_false_S_over_original_nonS": 0.11833046471600688,
+            "referred_true_S_N": 6.9397590361445785
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.8933094090231963,
+            "min_retained_S": 0.9149009611502981
+          }
+        },
+        {
+          "requested_percent_of_original_S": 20,
+          "referred_N": 16,
+          "actual_fraction_of_original_S": 0.1927710843373494,
+          "referred_IDs": [
+            "875d2a13-ad93-08ab-dbb4-f831f384d920",
+            "49ffd4cc-bcb7-e60e-da95-01467bc7684b",
+            "9b7dbcd8-4696-6015-b27c-fd5741deec6c",
+            "d4d8b266-02cf-1982-c859-44ac08403e80",
+            "a3296e1d-d777-9f77-76b6-50b7822a3b5c",
+            "66d93d6e-dbc6-0a15-6539-4ede07dfdf2d",
+            "d0ca051c-b015-be76-7603-abe3c68a4053",
+            "d90db78c-fa53-4f32-d78b-e7a337cdd605",
+            "7e3d2a0a-e4a5-2405-2fd7-228ef32067d3",
+            "e070066f-9d41-167f-ef7f-e9ba2bf32505",
+            "f59aa50a-969b-93d4-9330-b69383947ba7",
+            "e65dd3f7-e1a2-89f5-eb93-799415ff98f5",
+            "79ebb6ef-2444-5354-ced3-6334e2d279d2",
+            "4f09f652-5333-a6b3-e543-5e2e83df67dd",
+            "bb7e08e1-0306-29cb-57b8-68a830bff8b9",
+            "624d9738-fb5f-1874-b565-9e4b1607643b"
+          ],
+          "automatic_N": 164,
+          "automatic_coverage": 0.9111111111111111,
+          "automatic_nonS_N": 77,
+          "residual_false_S_N": 4,
+          "original_nonS_denominator": 84,
+          "residual_false_S_over_original_nonS": 0.047619047619047616,
+          "automatic_predicted_S_N": 67,
+          "automatic_S_false_discovery_rate": 0.05970149253731343,
+          "automatic_MCC": 0.5163857434406649,
+          "automatic_PA": 0.6829268292682927,
+          "automatic_correct_N": 112,
+          "automatic_confusion_matrix": [
+            [
+              63,
+              15,
+              9
+            ],
+            [
+              2,
+              11,
+              20
+            ],
+            [
+              2,
+              4,
+              38
+            ]
+          ],
+          "referred_true_S_N": 9,
+          "referred_GT": {
+            "Supported": 9,
+            "Not Supported": 5,
+            "Not Addressed": 2
+          },
+          "captured_false_S_N": 7,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 2.1204819277108435,
+            "residual_false_S_N": 8.879518072289157,
+            "residual_false_S_over_original_nonS": 0.10570854847963282,
+            "referred_true_S_N": 13.879518072289157
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.9796676473649841,
+            "min_retained_S": 0.9914225142028161
+          }
+        },
+        {
+          "requested_percent_of_original_S": 30,
+          "referred_N": 24,
+          "actual_fraction_of_original_S": 0.2891566265060241,
+          "referred_IDs": [
+            "875d2a13-ad93-08ab-dbb4-f831f384d920",
+            "49ffd4cc-bcb7-e60e-da95-01467bc7684b",
+            "9b7dbcd8-4696-6015-b27c-fd5741deec6c",
+            "d4d8b266-02cf-1982-c859-44ac08403e80",
+            "a3296e1d-d777-9f77-76b6-50b7822a3b5c",
+            "66d93d6e-dbc6-0a15-6539-4ede07dfdf2d",
+            "d0ca051c-b015-be76-7603-abe3c68a4053",
+            "d90db78c-fa53-4f32-d78b-e7a337cdd605",
+            "7e3d2a0a-e4a5-2405-2fd7-228ef32067d3",
+            "e070066f-9d41-167f-ef7f-e9ba2bf32505",
+            "f59aa50a-969b-93d4-9330-b69383947ba7",
+            "e65dd3f7-e1a2-89f5-eb93-799415ff98f5",
+            "79ebb6ef-2444-5354-ced3-6334e2d279d2",
+            "4f09f652-5333-a6b3-e543-5e2e83df67dd",
+            "bb7e08e1-0306-29cb-57b8-68a830bff8b9",
+            "624d9738-fb5f-1874-b565-9e4b1607643b",
+            "13965da7-8049-437c-fee6-1970556e135b",
+            "5ecedf27-3985-081a-1c31-a51781d276f9",
+            "b15c016d-5e75-1740-9fa9-58d26f3cb6ab",
+            "8b0ab099-df0f-de9f-04bc-aa9b7b549c97",
+            "ebd70319-b881-375b-f4d6-75ee76d9a249",
+            "890e6ad7-4734-439c-7053-c1b9fc4133d4",
+            "057556f0-1d09-b2c4-af43-ebab7b87a094",
+            "908d8fb4-1871-f34d-6e55-56be462836da"
+          ],
+          "automatic_N": 156,
+          "automatic_coverage": 0.8666666666666667,
+          "automatic_nonS_N": 75,
+          "residual_false_S_N": 2,
+          "original_nonS_denominator": 84,
+          "residual_false_S_over_original_nonS": 0.023809523809523808,
+          "automatic_predicted_S_N": 59,
+          "automatic_S_false_discovery_rate": 0.03389830508474576,
+          "automatic_MCC": 0.5214281855934936,
+          "automatic_PA": 0.6794871794871795,
+          "automatic_correct_N": 106,
+          "automatic_confusion_matrix": [
+            [
+              57,
+              15,
+              9
+            ],
+            [
+              1,
+              11,
+              20
+            ],
+            [
+              1,
+              4,
+              38
+            ]
+          ],
+          "referred_true_S_N": 15,
+          "referred_GT": {
+            "Supported": 15,
+            "Not Supported": 6,
+            "Not Addressed": 3
+          },
+          "captured_false_S_N": 9,
+          "random_same_size_hypergeometric_expectation": {
+            "referred_false_S_N": 3.180722891566265,
+            "residual_false_S_N": 7.8192771084337345,
+            "residual_false_S_over_original_nonS": 0.09308663224325875,
+            "referred_true_S_N": 20.819277108433734
+          },
+          "empirical_score_boundary": {
+            "max_referred": 0.996406397318935,
+            "min_retained_S": 0.9964063974356882
+          }
+        }
+      ]
+    }
+  },
+  "no_GPU_API_training": true,
+  "no_human_outcome_imputed": true,
+  "no_conformal_guarantee": true,
+  "no_best_threshold_selected": true,
+  "inference_cost": {
+    "cache_reuse_new_GPU_calls": 0,
+    "cache_reuse_new_API_calls": 0,
+    "historical_scoring_N": 180,
+    "historical_input_tokens_total": 1482267,
+    "historical_input_tokens_mean": 8234.816666666668,
+    "historical_three_path_scoring_seconds_sum": 807.3261686926708,
+    "historical_pilot_elapsed_seconds": 807.3261686926708,
+    "timing_scope": "Historical113 scores all three complete label paths; not the marginal cost of capturing two branch logits during native generation. Overall rental/transfer money not recorded here."
+  },
+  "limitations": [
+    "Historical180 development cohort, not a fresh holdout;pressure cohort is enriched and not exchangeable with deployment traffic.",
+    "Accepted-subset MCC/PA are conditional on retained cases;they are not full-cohort three-class improvements.",
+    "Only original107 Supported labels may be referred;all automatic labels remain unchanged.",
+    "107 branch confidence is not calibrated and does not represent120/136 models or prompts.",
+    "Hypergeometric figures are expectations for uniform random referral, not simulated outcomes or an oracle human result."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "checked_on": "2026-10-31",
+  "papers": [
+    {
+      "id": "aaai_ehr_2025",
+      "title": "Conformal Prediction and Verification of Large Language Model Extractions in EHR Data",
+      "authors": [
+        "Edward Kim",
+        "Richard Foty",
+        "Manil Shrestha",
+        "Vicki Seyfert-Margolis"
+      ],
+      "year": 2025,
+      "publication_date": "2025-11-23",
+      "venue": "Proceedings of the AAAI Symposium Series 7(1):539–546; 2025 AAAI Fall Symposium Series, SECURE-AI4H",
+      "doi": "10.1609/aaaiss.v7i1.36929",
+      "url": "https://ojs.aaai.org/index.php/AAAI-SS/article/view/36929",
+      "primary_text_url": "https://ojs.aaai.org/index.php/AAAI-SS/article/download/36929/39067/41006",
+      "access_status": "Official metadata and indexed official PDF method/Table4 passages read; direct PDF blocked by BotStopper/connection close. No complete local PDF acquired."
+    },
+    {
+      "id": "sr_mcqa_2026",
+      "title": "Risk-aware multiple-choice question answering with conformal P-values",
+      "authors": [
+        "Wenwen Fu",
+        "Yuanchang Ye",
+        "Ganggang Yang",
+        "Yanwen Wei",
+        "Lina Zhang"
+      ],
+      "year": 2026,
+      "publication_date": "2026-08-31",
+      "venue": "Scientific Reports16:27227",
+      "doi": "10.1038/s41598-026-66677-w",
+      "url": "https://www.nature.com/articles/s41598-026-66677-w",
+      "primary_text_url": "https://www.nature.com/articles/s41598-026-66677-w.pdf",
+      "access_status": "Official full-text PDF and publisher-indexed text read."
+    },
+    {
+      "id": "crc_2024",
+      "title": "Conformal Risk Control",
+      "authors": [
+        "Anastasios N. Angelopoulos",
+        "Stephen Bates",
+        "Adam Fisch",
+        "Lihua Lei",
+        "Tal Schuster"
+      ],
+      "year": 2024,
+      "venue": "ICLR2024 Conference",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/f3549ef9b5ff520a7e41ff3cc306ab2b-Abstract-Conference.html",
+      "primary_text_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/f3549ef9b5ff520a7e41ff3cc306ab2b-Paper-Conference.pdf",
+      "access_status": "Official proceedings and theorem1/corollary1 read."
+    },
+    {
+      "id": "ltt_2025",
+      "title": "Learn then Test: Calibrating Predictive Algorithms to Achieve Risk Control",
+      "authors": [
+        "Anastasios N. Angelopoulos",
+        "Stephen Bates",
+        "Emmanuel J. Candès",
+        "Michael I. Jordan",
+        "Lihua Lei"
+      ],
+      "year": 2025,
+      "venue": "The Annals of Applied Statistics19(2):1641–1662",
+      "doi": "10.1214/24-AOAS1998",
+      "url": "https://doi.org/10.1214/24-AOAS1998",
+      "primary_text_url": "https://people.eecs.berkeley.edu/~angelopoulos/publications/downloads/ltt.pdf",
+      "access_status": "Publisher metadata plus author/arXiv primary method and selective-classification section read."
+    },
+    {
+      "id": "rcps_2021",
+      "title": "Distribution-free, Risk-controlling Prediction Sets",
+      "authors": [
+        "Stephen Bates",
+        "Anastasios Angelopoulos",
+        "Lihua Lei",
+        "Jitendra Malik",
+        "Michael I. Jordan"
+      ],
+      "year": 2021,
+      "venue": "Journal of the ACM68(6),Article43:1–34",
+      "doi": "10.1145/3478535",
+      "url": "https://www.gsb.stanford.edu/faculty-research/publications/distribution-free-risk-controlling-prediction-sets",
+      "primary_text_url": "https://arxiv.org/html/2101.02703",
+      "access_status": "Author institution publication metadata and primary theorem1/method read."
+    },
+    {
+      "id": "clinical_coding_2024",
+      "title": "Conformal Prediction and Large Language Models for Medical Coding",
+      "authors": [
+        "Christopher Snyder",
+        "Victor Brodsky"
+      ],
+      "year": 2024,
+      "publication_date": "2024-10-15",
+      "venue": "American Journal of Clinical Pathology162(Supplement_1):S171–S172; supplement abstract",
+      "doi": "10.1093/ajcp/aqae129.377",
+      "url": "https://academic.oup.com/ajcp/article/162/Supplement_1/S171/7822986",
+      "access_status": "Official Oxford Academic abstract and supplement issue checked."
+    }
+  ],
+  "note": "Bibliographic record; detailed claims and limitations are in literature_assessment.md. No full paper text reproduced."
+}

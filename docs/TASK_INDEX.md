@@ -8,6 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|143_selective_verification|[当前](../tasks/143_selective_verification/CURRENT.md) · [固定基线](../outputs/143_selective_verification/report.md) · [文献判断](../outputs/143_selective_verification/literature_assessment.md)|1817固定分歧、107历史180原生分数回顾；六篇原始文献|136自动覆盖90.20%/拦截38次FS，原MCC不变；不是CP保证，成本与送审代价单列|
 |142_relevance_order|[当前](../tasks/142_relevance_order/CURRENT.md) · [500报告](../outputs/142_relevance_order/report.md) · [进度](../outputs/142_relevance_order/progress.md)|原500全有效，完整1817补评中|MCC+.0186、正确+4、FS−3，token不变，生成耗时约+5.6%；完整效果待验证|
 |141_two_demos|[当前](../tasks/141_two_demos/CURRENT.md) · [500报告](../outputs/141_two_demos/report.md) · [停止记录](../outputs/141_two_demos/stop_summary.json)|500全有效；当前全量扩评已停止|相对136正确−3/FS−13；额外10有效/1中断、1306缺失，不能称完整1817|
 |140_kl_anchor|[当前](../tasks/140_kl_anchor/CURRENT.md) · [完整报告](../outputs/140_kl_anchor/report.md) · [进度](../outputs/140_kl_anchor/progress.md)|完整1817全有效，完整状态回传|相对136 MCC−.0322、正确−40、FS−20；停止当前配方扩大，保留风险取舍|
