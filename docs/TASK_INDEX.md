@@ -8,6 +8,7 @@
 
 |任务|结果来源|核验与范围|当前适用范围|
 |---|---|---|---|
+|140_kl_anchor|[当前](../tasks/140_kl_anchor/CURRENT.md) · [方案](../tasks/140_kl_anchor/PROTOCOL.md) · [准备](../outputs/140_kl_anchor/preparation.json)|CPU包及检查完成，未运行GPU|原156训练ID/48步，只加固定KL；等待138结束，不重训匹配回放|
 |139_full_repeat|[当前](../tasks/139_full_repeat/CURRENT.md) · [方案](../tasks/139_full_repeat/PROTOCOL.md) · [进度](../outputs/139_full_repeat/progress.md)|500全有效，160运行时控制完成；不再扩大|相对120有收益；相对136正确−1/FS+3，输入近2倍不值得继续|
 |138_rationale_tasks|[当前](../tasks/138_rationale_tasks/CURRENT.md) · [初筛](../outputs/138_rationale_tasks/rationale_tasks_screen160.md) · [方案](../tasks/138_rationale_tasks/PROTOCOL.md)|两臂48步/500全有效，主臂补1317运行中|理由增量扩大后缩小；验证其相对136正确−3/FS−11的风险取舍能否保持|
 |137_extra_steps|[集中总结](../outputs/137_extra_steps/window_summary.md) · [报告](../outputs/137_extra_steps/report.md) · [当前](../tasks/137_extra_steps/CURRENT.md)|149步与1817评价全部完成并回传；MCC .5952、正确1555、FS78/362|相对136正确−38、FS−10；NS增益伴随明显S/NA损失，停止当前追加配方|

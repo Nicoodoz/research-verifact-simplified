@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "device": "CPU",
+  "loss_value": 3.41249680519104,
+  "reference_value": 3.41249680519104,
+  "loss_absolute_error": 0.0,
+  "max_gradient_error": 1.4901161193847656e-08,
+  "initial_KL": 0.0,
+  "causal_shift": true,
+  "per_example_mean": true,
+  "KL_only_on_group1": true,
+  "full_vocabulary_FP32": true,
+  "teacher_no_gradient": true,
+  "head_frozen": true,
+  "teacher_dtype_preserved": true,
+  "one_student_backbone_forward": true,
+  "sampled_head_fingerprint_checked": true,
+  "head_full_checksum_performed": false,
+  "resume_missing_or_wrong_teacher_rejected": true,
+  "duplicate_ID_consistency": true,
+  "GPU_used": false,
+  "clinical_predictions_generated": false
+}

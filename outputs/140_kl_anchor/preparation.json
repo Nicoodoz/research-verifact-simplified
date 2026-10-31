@@ -1,0 +1,42 @@
+{
+  "status": "CPU_READY_WAITING_FOR_IDLE_GPU",
+  "task": 140,
+  "arm": "kl_anchor",
+  "source": "120 final369",
+  "source_sha256": "47e129876475499628de7eca934ee9df156dbaef721f8de26abae31853c7a48a",
+  "original_training_patients": 32,
+  "unique_train_IDs": 156,
+  "slots": 192,
+  "presentations": 384,
+  "updates": 48,
+  "seed": 138031,
+  "slot_GT": {
+    "Supported": 117,
+    "Not Supported": 42,
+    "Not Addressed": 33
+  },
+  "teacher_label_positions": 226,
+  "longest_training_tokens": 11349,
+  "eval_N": 160,
+  "lambda_kl": 0.5,
+  "temperature": 1.0,
+  "matched_control": "138 label_replay",
+  "unchanged_input_file_SHA256": {
+    "train_tokens.jsonl": "0b8eafc567ba82bacd18dc96f1b870997c508fd3b5324ee6e5f5e77d20ccf61a",
+    "train.jsonl": "f0b56994a700b73f58ce7cd12465f76123b0360b8f93f4dcfb81d7277c71210b",
+    "plan.json": "8d870e3d48b9f4975b853bcf64f9e704c0a2b6122e057239bb4f10857a96a53a",
+    "eval_tokens.jsonl": "15587f86c6cd14b3357277fa1d780f5c1a7f4d40ecb86fb5d2d61bf5ef2a3413",
+    "session.json": "8745c60fb54d0e5df0a80abea26a3159067237d4e64c79c78ae7b01824d47630"
+  },
+  "train_eval_patient_overlap": 0,
+  "new_reason18_used": false,
+  "compute_seconds": 3600,
+  "save_reserve_seconds": 1200,
+  "maximum_phase_GPU_CNY": 2.1066666666666665,
+  "new_API_CNY": 0,
+  "classification_effect_tested": false,
+  "no_shutdown": true,
+  "worker_ready": true,
+  "CPU_checks": "PASS; not classification evidence",
+  "head_identity": "pinned model/config plus sampled frozen-head fingerprint, not a full head checksum"
+}
